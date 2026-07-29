@@ -5,7 +5,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   initAppleNavbar();
   initBackgroundVideo();
-  initDustParticles();
   initStatisticsCounter();
   initInteractiveSandbox();
   initPortfolioFilters();
@@ -55,7 +54,7 @@ function scrollToSection(id) {
 }
 
 /* --------------------------------------------------------------------------
-   2. HERO VIDEO & MEDIA CONTROLS
+   2. HERO VIDEO & MEDIA CONTROLS (OPTIMIZED 60FPS SMOOTH PLAYBACK)
    -------------------------------------------------------------------------- */
 function initBackgroundVideo() {
   const heroVideo = document.getElementById('hero-video');
@@ -66,6 +65,14 @@ function initBackgroundVideo() {
 
   const playToggleBtn = document.getElementById('video-play-toggle');
   const playIcon = document.getElementById('play-icon');
+
+  if (heroVideo) {
+    // Ensure smooth playback initialization
+    heroVideo.play().catch(() => {
+      // Browser autoplay policy retry on interaction
+      document.addEventListener('click', () => { heroVideo.play(); }, { once: true });
+    });
+  }
 
   function toggleAudio() {
     if (!heroVideo) return;
@@ -92,73 +99,7 @@ function initBackgroundVideo() {
 }
 
 /* --------------------------------------------------------------------------
-   3. DELICATE SILVER & GOLD DUST PARTICLES
-   -------------------------------------------------------------------------- */
-function initDustParticles() {
-  const canvas = document.getElementById('desert-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-
-  let width = canvas.width = window.innerWidth;
-  let height = canvas.height = window.innerHeight;
-
-  window.addEventListener('resize', () => {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-  });
-
-  const particles = [];
-  const particleCount = 60;
-
-  class DustParticle {
-    constructor() { this.reset(); }
-
-    reset() {
-      this.x = Math.random() * width;
-      this.y = Math.random() * height;
-      this.size = Math.random() * 2 + 0.4;
-      this.speedX = Math.random() * 0.4 + 0.1;
-      this.speedY = Math.random() * -0.3 - 0.05;
-      this.opacity = Math.random() * 0.4 + 0.1;
-      this.color = Math.random() > 0.4 ? '#f5f5f7' : '#e2b755';
-    }
-
-    update() {
-      this.x += this.speedX;
-      this.y += this.speedY;
-      if (this.x > width || this.y < 0) {
-        this.reset();
-        this.x = Math.random() * width * 0.5;
-        this.y = height + 10;
-      }
-    }
-
-    draw() {
-      ctx.save();
-      ctx.globalAlpha = this.opacity;
-      ctx.fillStyle = this.color;
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.restore();
-    }
-  }
-
-  for (let i = 0; i < particleCount; i++) {
-    particles.push(new DustParticle());
-  }
-
-  function renderLoop() {
-    ctx.clearRect(0, 0, width, height);
-    particles.forEach(p => { p.update(); p.draw(); });
-    requestAnimationFrame(renderLoop);
-  }
-
-  renderLoop();
-}
-
-/* --------------------------------------------------------------------------
-   4. STATISTICS ANIMATED COUNT-UP
+   3. STATISTICS ANIMATED COUNT-UP
    -------------------------------------------------------------------------- */
 function initStatisticsCounter() {
   const statNumbers = document.querySelectorAll('.spec-number-val');
@@ -196,7 +137,7 @@ function initStatisticsCounter() {
 }
 
 /* --------------------------------------------------------------------------
-   5. INTERACTIVE REAL-TIME SANDBOX WIDGET
+   4. INTERACTIVE REAL-TIME SANDBOX WIDGET
    -------------------------------------------------------------------------- */
 function initInteractiveSandbox() {
   const focalSlider = document.getElementById('range-focal');
@@ -252,7 +193,7 @@ function initInteractiveSandbox() {
 }
 
 /* --------------------------------------------------------------------------
-   6. PORTFOLIO SHOWCASE FILTERS
+   5. PORTFOLIO SHOWCASE FILTERS
    -------------------------------------------------------------------------- */
 function initPortfolioFilters() {
   const filterTabs = document.querySelectorAll('.apple-filter-btn');
@@ -281,7 +222,7 @@ function initPortfolioFilters() {
 }
 
 /* --------------------------------------------------------------------------
-   7. CINEMA LIGHTBOX MODAL PLAYER
+   6. CINEMA LIGHTBOX MODAL PLAYER
    -------------------------------------------------------------------------- */
 function initCinemaModal() {
   const modal = document.getElementById('cinema-modal');
@@ -324,7 +265,7 @@ function closeCinemaModal() {
 }
 
 /* --------------------------------------------------------------------------
-   8. GLOBAL STUDIO TIMEZONES
+   7. GLOBAL STUDIO TIMEZONES
    -------------------------------------------------------------------------- */
 function initGlobalClocks() {
   function updateClocks() {
@@ -359,7 +300,7 @@ function initGlobalClocks() {
 }
 
 /* --------------------------------------------------------------------------
-   9. PROPOSAL FORM SUBMISSION
+   8. PROPOSAL FORM SUBMISSION
    -------------------------------------------------------------------------- */
 function initProposalForm() {
   const form = document.getElementById('proposal-form');

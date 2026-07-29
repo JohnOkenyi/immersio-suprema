@@ -19,9 +19,6 @@
 </head>
 <body class="apple-body">
 
-  <!-- Ambient Gold & Silver Particles Canvas -->
-  <canvas id="desert-canvas"></canvas>
-
   <!-- TOP APPLE FROSTED GLASS NAVIGATION BAR -->
   <header class="apple-navbar" id="main-navbar">
     <div class="apple-nav-container">
@@ -64,9 +61,9 @@
   <!-- MAIN HERO SECTION (Apple Keynote Video Experience) -->
   <section id="home" class="apple-hero-section">
     
-    <!-- Background Autoplay Video Layer -->
+    <!-- Background Autoplay Video Layer (Smooth 60fps Hardware Accelerated) -->
     <div class="apple-hero-video-container">
-      <video id="hero-video" class="apple-hero-video" autoplay loop muted playsinline poster="logo.jpg">
+      <video id="hero-video" class="apple-hero-video" autoplay loop muted playsinline preload="auto" disablePictureInPicture poster="logo.jpg">
         <source src="showreel 2.mp4" type="video/mp4">
         <source src="https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4" type="video/mp4">
       </video>
@@ -410,7 +407,7 @@
       <div class="apple-sandbox-container">
         
         <div class="apple-viewport-frame">
-          <video id="sandbox-video-viewport" class="apple-viewport-video" autoplay loop muted playsinline poster="logo.jpg">
+          <video id="sandbox-video-viewport" class="apple-viewport-video" autoplay loop muted playsinline preload="auto" disablePictureInPicture poster="logo.jpg">
             <source src="showreel 2.mp4" type="video/mp4">
             <source src="https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4" type="video/mp4">
           </video>
@@ -569,7 +566,7 @@
         <article class="apple-pro-card article-card" onclick="openCinemaModal('VIRTUAL PRODUCTION STAGE CALIBRATION', 'Technical Whitepaper')">
           <span class="article-date">MAY 2026 • WHITEPAPER</span>
           <h3 class="pro-card-title">Virtual Production on the LED Stage</h3>
-          <p class="pro-card-desc">
+          <p class="article-excerpt">
             Best practices for zero-latency camera tracking, color matching, and in-camera visual effects (ICVFX).
           </p>
           <span class="apple-link">Read Research Article →</span>

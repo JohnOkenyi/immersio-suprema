@@ -64,18 +64,6 @@ body.apple-body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Particle Canvas Overlay */
-#desert-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.35;
-}
-
 /* Text Gradient Highlights */
 .apple-headline-gradient {
   background: linear-gradient(180deg, #ffffff 0%, #a1a1a6 100%);
@@ -228,7 +216,7 @@ body.apple-body {
 }
 
 /* --------------------------------------------------------------------------
-   4. APPLE HERO SECTION & KEYNOTE LAYOUT
+   4. APPLE HERO SECTION & HARDWARE ACCELERATED VIDEO
    -------------------------------------------------------------------------- */
 .apple-hero-section {
   position: relative;
@@ -256,8 +244,10 @@ body.apple-body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.03);
-  filter: contrast(1.06) brightness(0.92);
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  backface-visibility: hidden;
+  filter: contrast(1.06) brightness(0.94);
 }
 
 .apple-video-vignette {
@@ -267,8 +257,8 @@ body.apple-body {
   width: 100%;
   height: 100%;
   background: 
-    linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.8) 100%),
-    radial-gradient(circle at 30% 40%, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.75) 100%);
+    linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0.75) 100%),
+    radial-gradient(circle at 30% 40%, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.7) 100%);
   pointer-events: none;
 }
 
@@ -671,7 +661,6 @@ body.apple-body {
   font-weight: 300;
 }
 
-/* Apple 3-Column Grid with 28px Rounded Cards */
 .apple-grid-3col {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -718,7 +707,6 @@ body.apple-body {
   line-height: 1.6;
 }
 
-/* Portfolio Filter Pills */
 .apple-filter-pills { display: flex; gap: 10px; }
 
 .apple-filter-btn {
@@ -740,7 +728,6 @@ body.apple-body {
   border-color: var(--apple-pure-white);
 }
 
-/* Portfolio Cards Grid */
 .apple-portfolio-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -841,7 +828,14 @@ body.apple-body {
   overflow: hidden;
 }
 
-.apple-viewport-video { width: 100%; height: 100%; object-fit: cover; }
+.apple-viewport-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
 
 .apple-hud-pill {
   position: absolute;
