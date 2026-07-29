@@ -80,27 +80,27 @@ body.apple-body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 64px;
+  height: 68px;
   z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 4%;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
   border-bottom: 1px solid var(--border-apple-subtle);
   transition: var(--transition-apple-slow);
 }
 
 .apple-navbar.scrolled {
-  background: rgba(0, 0, 0, 0.88);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.92);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.95);
 }
 
 .apple-nav-container {
   width: 100%;
-  max-width: 1350px;
+  max-width: 1400px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -114,8 +114,8 @@ body.apple-body {
 }
 
 .apple-logo-badge {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   border: 1px solid var(--border-apple-light);
   overflow: hidden;
@@ -146,26 +146,39 @@ body.apple-body {
   display: block;
 }
 
-/* Nav Menu */
+/* Nav Menu Options */
 .apple-nav-menu {
   display: flex;
   list-style: none;
-  gap: 2.2rem;
+  gap: 1.8rem;
   align-items: center;
 }
 
 .apple-nav-link {
   text-decoration: none;
   font-family: var(--font-apple-ui);
-  font-size: 0.78rem;
-  font-weight: 500;
+  font-size: 0.72rem;
+  font-weight: 600;
   color: var(--apple-silver);
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   transition: var(--transition-apple-medium);
+  position: relative;
+  padding: 4px 0;
 }
 
 .apple-nav-link:hover, .apple-nav-link.active {
   color: var(--apple-pure-white);
+}
+
+.apple-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--apple-pure-white);
+  border-radius: 2px;
 }
 
 /* Apple Pill Button Primary */
@@ -199,14 +212,14 @@ body.apple-body {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  padding: 8px 18px;
+  padding: 10px 22px;
   border-radius: 20px;
   background: var(--apple-pure-white);
   color: var(--bg-space-black);
   font-family: var(--font-apple-ui);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 1px;
   transition: var(--transition-apple-medium);
 }
 
@@ -937,7 +950,12 @@ body.apple-body {
 .apple-footer-bottom { max-width: 1350px; margin: 0 auto; border-top: 1px solid var(--border-apple-subtle); padding-top: 2rem; display: flex; justify-content: space-between; font-family: var(--font-apple-ui); font-size: 0.72rem; color: var(--apple-muted); }
 
 /* Responsive Breakpoints */
-@media (max-width: 1250px) {
+@media (max-width: 1350px) {
+  .apple-nav-menu { gap: 1.2rem; }
+  .apple-nav-link { font-size: 0.68rem; letter-spacing: 1px; }
+}
+
+@media (max-width: 1200px) {
   .apple-nav-menu { display: none; }
   .apple-headline { font-size: 4rem; }
   .apple-specs-grid { grid-template-columns: repeat(2, 1fr); }
