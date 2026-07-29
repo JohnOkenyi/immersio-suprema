@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Immersio Suprema | Luxury VR, VFX & AI Architecture</title>
+  <meta name="description" content="Immersio Suprema provides world-class VR, VFX, AI, Advertising, Movie VFX, and Defense/Government Training solutions.">
+  
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Desert Particle Canvas -->
+  <canvas id="desert-canvas"></canvas>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="navbar">
+    <a href="#home" class="brand-container">
+      <img src="logo.jpg" alt="Immersio Suprema Logo" class="brand-logo-img">
+      <div class="brand-text">
+        <span class="brand-title">IMMERSIO SUPREMA</span>
+        <span class="brand-tagline">VR • VFX • AI ARCHITECTS</span>
+      </div>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#advertising" class="nav-link">Advertising Campaign</a></li>
+      <li><a href="#movies" class="nav-link">Movies</a></li>
+      <li><a href="#training" class="nav-link">Technologies Training</a></li>
+      <li><a href="#contact" class="nav-link">Contact & About Us</a></li>
+    </ul>
+
+    <div class="nav-controls">
+      <button class="btn-icon" id="sound-toggle" title="Unmute Audio">
+        <i class="fas fa-volume-mute"></i>
+      </button>
+      <a href="#contact" class="btn-quote">REQUEST PROPOSAL</a>
+    </div>
+  </header>
+
+  <!-- SECTION 1: HOME (FULLSCREEN VIDEO HERO) -->
+  <section id="home" class="section">
+    <div class="video-hero-container">
+      <video id="hero-video" class="video-hero-player" autoplay loop muted playsinline>
+        <source src="showreel 2.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+      <div class="video-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-emblem">
+        <img src="logo.jpg" alt="Emblem">
+      </div>
+      <div class="hero-tag">WORLD-CLASS CREATIVE TECHNOLOGY STUDIO</div>
+      <h1 class="hero-title">IMMERSIO SUPREMA</h1>
+      <p class="hero-subtitle">
+        Architecting Next-Gen Virtual Realities, Real-Time VFX & Defense-Grade AI Simulations for Feature Films, Global Brands, Governments & Enterprises.
+      </p>
+      <div class="hero-buttons">
+        <a href="#advertising" class="btn-primary">
+          <i class="fas fa-film"></i> ADVERTISING CAMPAIGNS
+        </a>
+        <a href="#movies" class="btn-secondary">
+          <i class="fas fa-play-circle"></i> MOVIE VFX SHOWCASE
+        </a>
+        <a href="#training" class="btn-secondary">
+          <i class="fas fa-graduation-cap"></i> VR & AI ACADEMY
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-stats-bar">
+      <div class="stat-item">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">Cinematic VFX Shots</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">40+</div>
+        <div class="stat-label">Global Brands & Studios</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Defense Sim Fidelity</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">6</div>
+        <div class="stat-label">Global Mocap Studios</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: ADVERTISING CAMPAIGN & 40 BRAND LOGOS -->
+  <section id="advertising" class="section">
+    <div class="section-header">
+      <span class="section-subtitle-gold">COMMERCIAL & BRAND EXPERIENCES</span>
+      <h2 class="section-title">GLOBAL ADVERTISING CAMPAIGNS</h2>
+      <p class="section-description">
+        Crafting photorealistic AI commercials, immersive VR specs, and real-time CGI visual effects for world-class luxury brands and global corporations.
+      </p>
+      <div class="gold-divider"></div>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active">ALL CAMPAIGNS</button>
+      <button class="filter-btn">AUTOMOTIVE VR</button>
+      <button class="filter-btn">LUXURY & FASHION</button>
+      <button class="filter-btn">AI VISUALS</button>
+      <button class="filter-btn">TECH & AEROSPACE</button>
+    </div>
+
+    <div class="carousel-wrapper">
+      <button class="carousel-nav-btn prev" id="adv-prev"><i class="fas fa-chevron-left"></i></button>
+      <div class="carousel-container">
+        <div class="carousel-track" id="adv-carousel-track">
+          
+          <!-- Adv Card 1 -->
+          <div class="adv-card" onclick="openVideoModal('PORSCHE 911 ELECTRIC VR', 'Virtual Reality Configurator & Real-Time CGI', 'showreel 2.mp4')">
+            <div class="adv-media-wrapper">
+              <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80" alt="Porsche VR">
+              <div class="play-badge"><i class="fas fa-play"></i></div>
+            </div>
+            <div class="adv-content">
+              <div class="adv-brand-tag">PORSCHE & IMMERSIO</div>
+              <h3 class="adv-title">NEON DUNES 911 VR</h3>
+              <p class="adv-desc">Interactive photorealistic unreal engine simulator allowing customers to test drive through desert dunes.</p>
+            </div>
+          </div>
+
+          <!-- Adv Card 2 -->
+          <div class="adv-card" onclick="openVideoModal('NIKE AIR AI MOTION', 'Generative AI Motion Capture & VFX', 'showreel 2.mp4')">
+            <div class="adv-media-wrapper">
+              <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="Nike Motion">
+              <div class="play-badge"><i class="fas fa-play"></i></div>
+            </div>
+            <div class="adv-content">
+              <div class="adv-brand-tag">NIKE GLOBAL</div>
+              <h3 class="adv-title">KINETIC GRAVITY AI</h3>
+              <p class="adv-desc">High-speed motion capture fluid simulation commercial for global broadcast.</p>
+            </div>
+          </div>
+
+          <!-- Adv Card 3 -->
+          <div class="adv-card" onclick="openVideoModal('ROLEX SUBMARINER OCEAN', 'Deep Sea Particle VFX', 'showreel 2.mp4')">
+            <div class="adv-media-wrapper">
+              <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80" alt="Rolex Commercial">
+              <div class="play-badge"><i class="fas fa-play"></i></div>
+            </div>
+            <div class="adv-content">
+              <div class="adv-brand-tag">ROLEX GENEVA</div>
+              <h3 class="adv-title">ABYSSAL PRECISION</h3>
+              <p class="adv-desc">Microscopic CAD liquid rendering showcasing watch movement accuracy under extreme pressures.</p>
+            </div>
+          </div>
+
+          <!-- Adv Card 4 -->
+          <div class="adv-card" onclick="openVideoModal('COCA-COLA MAGIC VR', 'Interactive VR World & CGI', 'showreel 2.mp4')">
+            <div class="adv-media-wrapper">
+              <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80" alt="Coca Cola VR">
+              <div class="play-badge"><i class="fas fa-play"></i></div>
+            </div>
+            <div class="adv-content">
+              <div class="adv-brand-tag">COCA-COLA</div>
+              <h3 class="adv-title">REAL MAGIC SPATIAL</h3>
+              <p class="adv-desc">Global holiday stadium AR installation and spatial visual effects experience.</p>
+            </div>
+          </div>
+
+          <!-- Adv Card 5 -->
+          <div class="adv-card" onclick="openVideoModal('TESLA CYBERTRUCK DESERT', 'Government & Heavy Duty VFX', 'showreel 2.mp4')">
+            <div class="adv-media-wrapper">
+              <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80" alt="Tesla Commercial">
+              <div class="play-badge"><i class="fas fa-play"></i></div>
+            </div>
+            <div class="adv-content">
+              <div class="adv-brand-tag">TESLA MOTORS</div>
+              <h3 class="adv-title">CYBER SHIELD WARFARE</h3>
+              <p class="adv-desc">Explosion & armor ballistic stress simulation visual effects commercial.</p>
+            </div>
+          </div>
+
+          <!-- Adv Card 6 -->
+          <div class="adv-card" onclick="openVideoModal('APPLE VISION PRO NEURAL', 'Spatial Computing Demo', 'showreel 2.mp4')">
+            <div class="adv-media-wrapper">
+              <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=600&q=80" alt="Apple Spatial">
+              <div class="play-badge"><i class="fas fa-play"></i></div>
+            </div>
+            <div class="adv-content">
+              <div class="adv-brand-tag">APPLE SPATIAL</div>
+              <h3 class="adv-title">NEURAL VOXEL VR</h3>
+              <p class="adv-desc">Next-gen volumetric hologram interactive app designed for Vision Pro.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <button class="carousel-nav-btn next" id="adv-next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <!-- 40 BRAND LOGOS (LOST BOYS STYLE GRID) -->
+    <div class="brand-studios-section">
+      <div class="brand-studios-header">
+        <span class="section-subtitle-gold">GLOBAL PARTNERSHIPS</span>
+        <h3>40 BRANDS & STUDIOS TRUSTING IMMERSIO SUPREMA</h3>
+        <p class="section-description" style="max-width:700px; margin:0.8rem auto 0;">
+          Displayed in high-contrast VFX Studio layout. Hover over any brand logo to inspect accredited production collaborations.
+        </p>
+      </div>
+
+      <div class="brand-logos-grid" id="brand-logos-container">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: MOVIES (40 POSTERS CAROUSEL / GRID) -->
+  <section id="movies" class="section">
+    <div class="section-header">
+      <span class="section-subtitle-gold">FEATURE FILM PRODUCTIONS</span>
+      <h2 class="section-title">40 CINEMATIC MOVIE SHOWCASES</h2>
+      <p class="section-description">
+        Explore our credited visual effects, virtual production environments, creature animation, and AI pipelines across 40 blockbuster movies. Click any poster to play trailer reel.
+      </p>
+      <div class="gold-divider"></div>
+    </div>
+
+    <div class="movies-controls">
+      <div class="filter-bar" style="margin-bottom:0;">
+        <button class="filter-btn active">ALL 40 MOVIES</button>
+        <button class="filter-btn">SCI-FI & CYBER</button>
+        <button class="filter-btn">EPIC FANTASY</button>
+        <button class="filter-btn">ACTION & WAR</button>
+        <button class="filter-btn">AI & ANIMATION</button>
+      </div>
+    </div>
+
+    <div class="movies-grid" id="movies-grid-container">
+      <!-- 40 Movie Poster Cards rendered dynamically by script.js -->
+    </div>
+  </section>
+
+  <!-- SECTION 4: TECHNOLOGIES TRAINING -->
+  <section id="training" class="section">
+    <div class="section-header">
+      <span class="section-subtitle-gold">ENTERPRISE & GOVERNMENT ACADEMY</span>
+      <h2 class="section-title">VR, VFX & AI TECHNOLOGIES TRAINING</h2>
+      <p class="section-description">
+        Empowering defense agencies, government personnel, aerospace engineers, and elite studios with world-class VR tactical simulation, AI modeling, and Unreal Engine 5 mastery.
+      </p>
+      <div class="gold-divider"></div>
+    </div>
+
+    <div class="training-grid">
+      
+      <!-- Course 1 -->
+      <div class="training-card">
+        <div class="training-icon-header">
+          <div class="training-icon-box"><i class="fas fa-shield-alt"></i></div>
+          <div>
+            <h3 class="training-category-title">GOVERNMENT & DEFENSE VR</h3>
+            <span class="training-target-badge">GOVERNMENT & MILITARY ACCREDITED</span>
+          </div>
+        </div>
+        <p class="training-body-text">
+          Hyper-realistic tactical combat, combat flight, emergency response, and multi-agent AI warfare simulation in networked VR environments.
+        </p>
+        <ul class="training-features-list">
+          <li><i class="fas fa-check-circle"></i> Flight Simulator & Tactical Land Combat</li>
+          <li><i class="fas fa-check-circle"></i> AI Threat Trajectory & Autonomous Swarm Response</li>
+          <li><i class="fas fa-check-circle"></i> Haptic Suit & Biometric Stress Monitoring</li>
+        </ul>
+        <div class="training-card-footer">
+          <span class="training-duration"><i class="fas fa-clock"></i> 8-Week Intensive Program</span>
+          <button class="btn-quote" onclick="openVideoModal('GOVERNMENT DEFENSE VR SIMULATOR', 'Tactical Military Flight & Combat Simulation Training', 'showreel 2.mp4')">INSPECT CURRICULUM</button>
+        </div>
+      </div>
+
+      <!-- Course 2 -->
+      <div class="training-card">
+        <div class="training-icon-header">
+          <div class="training-icon-box"><i class="fas fa-industry"></i></div>
+          <div>
+            <h3 class="training-category-title">CORPORATE INDUSTRIAL VR</h3>
+            <span class="training-target-badge">ENTERPRISE SAFETY & AEROSPACE</span>
+          </div>
+        </div>
+        <p class="training-body-text">
+          High-risk industrial machinery operations, oil rig emergency drills, aerospace maintenance, and executive crisis leadership simulations.
+        </p>
+        <ul class="training-features-list">
+          <li><i class="fas fa-check-circle"></i> Digital Twin Industrial Machinery VR</li>
+          <li><i class="fas fa-check-circle"></i> Hazardous Material Handling & Fire Suppression</li>
+          <li><i class="fas fa-check-circle"></i> Real-time Team Multi-user VR Sessions</li>
+        </ul>
+        <div class="training-card-footer">
+          <span class="training-duration"><i class="fas fa-clock"></i> 6-Week Certification</span>
+          <button class="btn-quote" onclick="openVideoModal('INDUSTRIAL VR SIMULATOR', 'Aerospace & Energy Sector Training', 'showreel 2.mp4')">INSPECT CURRICULUM</button>
+        </div>
+      </div>
+
+      <!-- Course 3 -->
+      <div class="training-card">
+        <div class="training-icon-header">
+          <div class="training-icon-box"><i class="fas fa-cubes"></i></div>
+          <div>
+            <h3 class="training-category-title">VFX & UNREAL ENGINE 5</h3>
+            <span class="training-target-badge">HOLLYWOOD VIRTUAL PRODUCTION</span>
+          </div>
+        </div>
+        <p class="training-body-text">
+          Master real-time LED wall virtual production, ICVFX, Houdini fluid dynamics, MetaHuman motion capture, and NeRF 3D Gaussian Splatting.
+        </p>
+        <ul class="training-features-list">
+          <li><i class="fas fa-check-circle"></i> Real-Time Ray Traced LED Wall Integration</li>
+          <li><i class="fas fa-check-circle"></i> Motion Capture Studio Rigging & Retargeting</li>
+          <li><i class="fas fa-check-circle"></i> Generative AI NeRF 3D Reconstruction</li>
+        </ul>
+        <div class="training-card-footer">
+          <span class="training-duration"><i class="fas fa-clock"></i> 12-Week Masterclass</span>
+          <button class="btn-quote" onclick="openVideoModal('UNREAL ENGINE 5 VIRTUAL PRODUCTION', 'Real-time VFX & LED Wall Workflows', 'showreel 2.mp4')">INSPECT CURRICULUM</button>
+        </div>
+      </div>
+
+      <!-- Course 4 -->
+      <div class="training-card">
+        <div class="training-icon-header">
+          <div class="training-icon-box"><i class="fas fa-brain"></i></div>
+          <div>
+            <h3 class="training-category-title">AI & SPATIAL COMPUTING</h3>
+            <span class="training-target-badge">MEDICAL & ACADEMIC LABS</span>
+          </div>
+        </div>
+        <p class="training-body-text">
+          Generative AI models for spatial computing, surgical VR simulations, interactive university research, and volumetric AI avatars.
+        </p>
+        <ul class="training-features-list">
+          <li><i class="fas fa-check-circle"></i> Surgical Anatomy VR & Micro-Robotic Control</li>
+          <li><i class="fas fa-check-circle"></i> Volumetric Hologram AI Instructors</li>
+          <li><i class="fas fa-check-circle"></i> Vision Pro & Quest 3 SDK Enterprise Integration</li>
+        </ul>
+        <div class="training-card-footer">
+          <span class="training-duration"><i class="fas fa-clock"></i> 4-Week Executive Track</span>
+          <button class="btn-quote" onclick="openVideoModal('SPATIAL COMPUTING AI', 'Medical & Academic VR Lab Integration', 'showreel 2.mp4')">INSPECT CURRICULUM</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- INTERACTIVE SIMULATION SANDBOX WIDGET -->
+    <div class="sim-sandbox-widget">
+      <div class="sim-widget-header">
+        <div class="sim-widget-title">
+          <i class="fas fa-sliders-h"></i> INTERACTIVE RENDER SIMULATION SANDBOX
+        </div>
+        <span class="vfx-badge">LIVE ENGINE TEST</span>
+      </div>
+
+      <div class="sim-preview-area">
+        <video id="sim-viewport" class="sim-canvas-viewport" autoplay loop muted playsinline>
+          <source src="showreel 2.mp4" type="video/mp4">
+        </video>
+        <div class="sim-hud-overlay">
+          <div>CAM: <span id="hud-focal">50mm</span></div>
+          <div>LIGHTING: <span id="hud-lighting">80%</span></div>
+          <div>SANDSTORM: <span id="hud-sandstorm">20%</span></div>
+        </div>
+      </div>
+
+      <div class="sim-controls-panel">
+        <div class="control-group">
+          <label>Camera Focal Length (mm)</label>
+          <input type="range" id="slider-focal" min="14" max="100" value="50" class="range-slider">
+        </div>
+        <div class="control-group">
+          <label>Atmospheric Lighting Intensity</label>
+          <input type="range" id="slider-lighting" min="10" max="100" value="80" class="range-slider">
+        </div>
+        <div class="control-group">
+          <label>Desert Sandstorm Volumetrics</label>
+          <input type="range" id="slider-sandstorm" min="0" max="100" value="20" class="range-slider">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: CONTACT & ABOUT US -->
+  <section id="contact" class="section">
+    <div class="section-header">
+      <span class="section-subtitle-gold">GLOBAL PRESENCE & CONTACT</span>
+      <h2 class="section-title">ABOUT IMMERSIO SUPREMA & INQUIRIES</h2>
+      <p class="section-description">
+        Partner with our global studio network to produce high-impact VFX, VR simulations, and enterprise AI solutions.
+      </p>
+      <div class="gold-divider"></div>
+    </div>
+
+    <div class="about-contact-grid">
+      
+      <!-- ABOUT US BOX -->
+      <div class="about-box">
+        <h3 class="about-title">OUR LEGACY & VISION</h3>
+        <p class="about-text">
+          Founded at the intersection of cinematic artistry and cutting-edge defense technology, <strong>Immersio Suprema</strong> has delivered over 500 visual effects shots for Hollywood blockbusters and engineered military-grade VR simulators for government agencies worldwide.
+        </p>
+        <p class="about-text">
+          Our desert-born aesthetic represents resilience, grandeur, and boundless horizons. Armed with custom generative NeRF pipelines, motion capture stages, and real-time ray-tracing rigs, we turn impossible visions into interactive reality.
+        </p>
+
+        <h4 style="font-size:1.1rem; color:var(--gold-bright); margin-bottom:1rem; margin-top:2rem;">GLOBAL STUDIO TIMEZONES</h4>
+        <div class="studios-locations-grid">
+          <div class="location-item">
+            <div class="location-name">VANCOUVER (HQ)</div>
+            <div class="location-time" id="time-vancouver">12:00 PM</div>
+          </div>
+          <div class="location-item">
+            <div class="location-name">LOS ANGELES</div>
+            <div class="location-time" id="time-la">12:00 PM</div>
+          </div>
+          <div class="location-item">
+            <div class="location-name">LONDON</div>
+            <div class="location-time" id="time-london">08:00 PM</div>
+          </div>
+          <div class="location-item">
+            <div class="location-name">DUBAI</div>
+            <div class="location-time" id="time-dubai">11:00 PM</div>
+          </div>
+          <div class="location-item">
+            <div class="location-name">RIYADH</div>
+            <div class="location-time" id="time-riyadh">11:00 PM</div>
+          </div>
+          <div class="location-item">
+            <div class="location-name">TOKYO</div>
+            <div class="location-time" id="time-tokyo">04:00 AM</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACT FORM -->
+      <div class="contact-form-box">
+        <h3 class="about-title" style="margin-bottom:1.5rem;">TRANSMIT PROJECT PROPOSAL</h3>
+        
+        <form id="immersio-contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-input" placeholder="e.g. Lord Alexander Vance" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Corporate / Official Email</label>
+              <input type="email" class="form-input" placeholder="vance@studio.com" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Organization Category</label>
+              <select class="form-select" required>
+                <option value="">Select Category...</option>
+                <option value="govt">Government / Military Agency</option>
+                <option value="movie">Movie Studio / Film Production</option>
+                <option value="brand">Global Commercial Brand</option>
+                <option value="enterprise">Enterprise Corporate</option>
+                <option value="academic">University / Medical Facility</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Primary Service Required</label>
+              <select class="form-select" required>
+                <option value="">Select Service...</option>
+                <option value="vfx">Movie Visual Effects (VFX)</option>
+                <option value="adv">Advertising Campaign & VR Spec</option>
+                <option value="training">Government/Enterprise VR Training</option>
+                <option value="ai">Custom AI Pipeline / NeRF 3D</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Estimated Project Budget (USD)</label>
+            <select class="form-select">
+              <option value="50k-250k">$50,000 - $250,000</option>
+              <option value="250k-1m">$250,000 - $1,000,000</option>
+              <option value="1m-5m">$1,000,000 - $5,000,000</option>
+              <option value="5m+">$5,000,000+ (Enterprise Defense/Major Studio)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Project Details & Requirements</label>
+            <textarea class="form-textarea" rows="4" placeholder="Describe your project scope, timeline, and technical deliverables..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary form-submit-btn">
+            <i class="fas fa-paper-plane"></i> TRANSMIT INQUIRY
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MODAL VIDEO PLAYER -->
+  <div class="modal-backdrop" id="video-modal">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modal-close"><i class="fas fa-times"></i></button>
+      <div class="modal-body">
+        <div class="modal-video-wrapper">
+          <video id="modal-video-element" controls playsinline>
+            <source src="showreel 2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <h3 id="modal-title" style="font-size:1.6rem; color:var(--gold-bright); margin-bottom:0.4rem;">SHOWCASE TITLE</h3>
+        <p id="modal-subtitle" style="color:var(--sand-muted); font-size:0.95rem;">VFX Breakdown & Technical Specifications</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand-container">
+          <img src="logo.jpg" alt="Immersio Suprema Logo" class="brand-logo-img">
+          <div class="brand-text">
+            <span class="brand-title">IMMERSIO SUPREMA</span>
+            <span class="brand-tagline">VR • VFX • AI ARCHITECTS</span>
+          </div>
+        </div>
+        <p>Architecting high-end visual experiences, defense VR simulators, and spatial AI pipelines worldwide.</p>
+      </div>
+
+      <div>
+        <h4 class="footer-title">NAVIGATION</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#advertising">Advertising Campaign</a></li>
+          <li><a href="#movies">Movies</a></li>
+          <li><a href="#training">Technologies Training</a></li>
+          <li><a href="#contact">Contact & About Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">STUDIOS</h4>
+        <ul class="footer-links">
+          <li><a href="#contact">Vancouver HQ</a></li>
+          <li><a href="#contact">Los Angeles</a></li>
+          <li><a href="#contact">London</a></li>
+          <li><a href="#contact">Dubai & Riyadh</a></li>
+          <li><a href="#contact">Tokyo</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">CONNECT</h4>
+        <div class="social-icons" style="margin-bottom:1rem;">
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        </div>
+        <span style="font-size:0.8rem; color:var(--sand-muted);">Encrypted Communications</span>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 Immersio Suprema. All Rights Reserved. World-Class VR, VFX & AI Architecture.</div>
+      <div>Designed with Desert Luxury & Supreme Precision.</div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
