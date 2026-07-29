@@ -79,7 +79,7 @@ body.vfx-body {
 }
 
 /* --------------------------------------------------------------------------
-   3. LOST BOYS VFX STYLE NAVIGATION BAR (DESERT GOLD & TERRACOTTA)
+   3. LOST BOYS VFX STYLE NAVIGATION BAR (CLEAN PROPER LOGO & MENU HIGHLIGHT)
    -------------------------------------------------------------------------- */
 .vfx-navbar {
   position: fixed;
@@ -121,32 +121,30 @@ body.vfx-body {
   text-decoration: none;
 }
 
+/* Seamless Proper Logo (No White Box Background) */
 .vfx-logo-badge {
-  height: 48px;
-  min-width: 48px;
-  border-radius: 10px;
-  border: 1px solid rgba(245, 215, 127, 0.4);
-  overflow: hidden;
+  height: 44px;
+  width: auto;
+  background: transparent;
+  border: none;
+  box-shadow: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ffffff;
-  padding: 4px 6px;
-  box-shadow: 0 4px 15px rgba(245, 215, 127, 0.25);
-  transition: var(--transition-apple-medium);
+  padding: 0;
 }
 
 .vfx-brand-wrapper:hover .vfx-logo-badge {
-  transform: scale(1.05);
-  border-color: var(--desert-gold);
-  box-shadow: 0 0 20px var(--desert-gold-glow);
+  transform: scale(1.06);
 }
 
 .vfx-logo-img {
-  height: 100%;
+  height: 44px;
   width: auto;
-  max-width: 110px;
+  max-width: 130px;
   object-fit: contain;
+  filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(245, 215, 127, 0.4));
+  transition: var(--transition-apple-medium);
 }
 
 .vfx-brand-title {
@@ -172,20 +170,21 @@ body.vfx-body {
 .vfx-nav-menu {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 0.8rem;
   align-items: center;
 }
 
 .vfx-nav-link {
   text-decoration: none;
   font-family: var(--font-vfx-ui);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 800;
-  color: #d1d1d6;
-  letter-spacing: 1.8px;
+  color: #a1a1a6;
+  letter-spacing: 1.5px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: 1px solid transparent;
   transition: var(--transition-apple-medium);
-  position: relative;
-  padding: 8px 0;
   display: inline-flex;
   align-items: center;
 }
@@ -193,37 +192,28 @@ body.vfx-body {
 .nav-caret {
   margin-left: 5px;
   font-size: 0.72rem;
-  color: var(--desert-gold);
+  color: inherit;
   transition: transform 0.3s ease;
 }
 
 .vfx-nav-link:hover .nav-caret {
-  color: var(--desert-gold);
   transform: translateY(2px);
 }
 
 .vfx-nav-link:hover {
-  color: var(--desert-gold);
+  color: var(--apple-pure-white);
+  background: rgba(255, 255, 255, 0.08);
 }
 
-/* Desert Gold Active Bar Indicator */
+/* Desert Gold Pill Active Menu Highlight (No Underline Bar) */
 .vfx-nav-link.active {
   color: var(--desert-gold);
+  background: rgba(245, 215, 127, 0.15);
+  border: 1px solid rgba(245, 215, 127, 0.35);
+  box-shadow: 0 0 16px rgba(245, 215, 127, 0.25);
 }
 
-.vfx-nav-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: -14px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: var(--desert-gradient);
-  box-shadow: 0 0 12px var(--desert-gold-glow);
-  border-radius: 1.5px;
-}
-
-/* VFX Action Buttons */
+/* Action Buttons */
 .vfx-nav-actions {
   display: flex;
   align-items: center;
@@ -915,8 +905,8 @@ body.vfx-body {
 
 /* Responsive Breakpoints */
 @media (max-width: 1350px) {
-  .vfx-nav-menu { gap: 1.2rem; }
-  .vfx-nav-link { font-size: 0.75rem; letter-spacing: 1.2px; }
+  .vfx-nav-menu { gap: 0.5rem; }
+  .vfx-nav-link { font-size: 0.72rem; letter-spacing: 1px; padding: 6px 10px; }
 }
 
 @media (max-width: 1200px) {
