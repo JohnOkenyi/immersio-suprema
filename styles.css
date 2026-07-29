@@ -79,7 +79,7 @@ body.vfx-body {
 }
 
 /* --------------------------------------------------------------------------
-   3. LOST BOYS VFX STYLE NAVIGATION BAR (CLEAN PROPER LOGO & MENU HIGHLIGHT)
+   3. NAVIGATION BAR (CRISP PROPER VISIBLE LOGO & DESERT HIGHLIGHT)
    -------------------------------------------------------------------------- */
 .vfx-navbar {
   position: fixed;
@@ -121,29 +121,33 @@ body.vfx-body {
   text-decoration: none;
 }
 
-/* Seamless Proper Logo (No White Box Background) */
+/* Crisp, Ultra-Visible Brand Logo Badge */
 .vfx-logo-badge {
   height: 44px;
-  width: auto;
-  background: transparent;
-  border: none;
-  box-shadow: none;
+  min-width: 44px;
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid rgba(245, 215, 127, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
+  padding: 4px 6px;
+  box-shadow: 0 4px 15px rgba(245, 215, 127, 0.3);
+  transition: var(--transition-apple-medium);
 }
 
 .vfx-brand-wrapper:hover .vfx-logo-badge {
-  transform: scale(1.06);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--desert-gold-glow);
+  border-color: var(--desert-gold);
 }
 
 .vfx-logo-img {
-  height: 44px;
+  height: 100%;
   width: auto;
-  max-width: 130px;
+  max-width: 110px;
   object-fit: contain;
-  filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(245, 215, 127, 0.4));
+  filter: none;
   transition: var(--transition-apple-medium);
 }
 
@@ -308,28 +312,7 @@ body.vfx-body {
   pointer-events: none;
 }
 
-/* Left & Right HUD */
-.apple-left-hud {
-  position: absolute;
-  left: 3.5%;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-}
-
-.apple-locations-track {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-family: var(--font-vfx-ui);
-  font-size: 0.65rem;
-  letter-spacing: 3.5px;
-  color: var(--apple-silver);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  opacity: 0.7;
-}
-
+/* Right HUD */
 .apple-right-hud {
   position: absolute;
   right: 3.5%;
@@ -918,7 +901,7 @@ body.vfx-body {
 }
 
 @media (max-width: 900px) {
-  .apple-left-hud, .apple-right-hud { display: none; }
+  .apple-right-hud { display: none; }
   .apple-headline { font-size: 3.2rem; }
   .apple-hero-cards-strip { grid-template-columns: 1fr; }
   .apple-grid-3col, .apple-portfolio-grid, .apple-footer-inner { grid-template-columns: 1fr; }
