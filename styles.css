@@ -1,9 +1,9 @@
 /* ==========================================================================
-   IMMERSIO SUPREMA - LOST BOYS VFX CAMPUS DESIGN STYLESHEET
+   IMMERSIO SUPREMA - DESERT LUXURY VFX DESIGN STYLESHEET
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. COLOR SYSTEM & DESIGN TOKENS
+   1. COLOR SYSTEM & DESERT TOKENS
    -------------------------------------------------------------------------- */
 :root {
   /* Dark Matte Charcoal & Space Black Palette */
@@ -13,20 +13,22 @@
   --bg-vfx-card-hover: #1c1c20;
   --bg-apple-frosted: rgba(14, 14, 17, 0.85);
 
-  /* Typography & VFX Red Accent Colors */
-  --vfx-red: #e50914;
-  --vfx-red-bright: #ff1e27;
-  --vfx-red-dark: #b20710;
-  --vfx-red-glow: rgba(229, 9, 20, 0.45);
+  /* Desert Colors: Liquid Gold & Terracotta Sunset Accents */
+  --desert-gold: #f5d77f;
+  --desert-champagne: #e5c158;
+  --desert-terracotta: #d96b3f;
+  --desert-terracotta-dark: #b8522b;
+  --desert-gold-glow: rgba(245, 215, 127, 0.45);
+  --desert-terracotta-glow: rgba(217, 107, 63, 0.45);
+  --desert-gradient: linear-gradient(135deg, #f5d77f 0%, #e5c158 40%, #d96b3f 100%);
 
   --apple-white: #f5f5f7;
   --apple-pure-white: #ffffff;
   --apple-silver: #cccccc;
   --apple-muted: #88888e;
-  --apple-blue: #0071e3;
 
   /* Borders & Glass Strokes */
-  --border-apple-light: rgba(255, 255, 255, 0.14);
+  --border-apple-light: rgba(245, 215, 127, 0.25);
   --border-apple-subtle: rgba(255, 255, 255, 0.08);
 
   /* Typography Families */
@@ -70,14 +72,14 @@ body.vfx-body {
 
 /* Text Gradient Highlights */
 .apple-headline-gradient {
-  background: linear-gradient(180deg, #ffffff 0%, #a1a1a6 100%);
+  background: var(--desert-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
 
 /* --------------------------------------------------------------------------
-   3. LOST BOYS VFX CAMPUS NAVIGATION BAR
+   3. LOST BOYS VFX STYLE NAVIGATION BAR (DESERT GOLD & TERRACOTTA)
    -------------------------------------------------------------------------- */
 .vfx-navbar {
   position: fixed;
@@ -93,7 +95,7 @@ body.vfx-body {
   background: rgba(14, 14, 17, 0.92);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(245, 215, 127, 0.15);
   transition: var(--transition-apple-slow);
 }
 
@@ -101,7 +103,7 @@ body.vfx-body {
   height: 66px;
   background: rgba(8, 8, 10, 0.96);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.95);
-  border-bottom-color: rgba(229, 9, 20, 0.3);
+  border-bottom-color: rgba(245, 215, 127, 0.35);
 }
 
 .vfx-nav-container {
@@ -123,21 +125,21 @@ body.vfx-body {
   height: 48px;
   min-width: 48px;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(245, 215, 127, 0.4);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #ffffff;
   padding: 4px 6px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 15px rgba(245, 215, 127, 0.25);
   transition: var(--transition-apple-medium);
 }
 
 .vfx-brand-wrapper:hover .vfx-logo-badge {
   transform: scale(1.05);
-  border-color: var(--vfx-red);
-  box-shadow: 0 0 20px var(--vfx-red-glow);
+  border-color: var(--desert-gold);
+  box-shadow: 0 0 20px var(--desert-gold-glow);
 }
 
 .vfx-logo-img {
@@ -159,14 +161,14 @@ body.vfx-body {
 .vfx-brand-sub {
   font-family: var(--font-vfx-ui);
   font-size: 0.58rem;
-  color: var(--vfx-red-bright);
+  color: var(--desert-gold);
   letter-spacing: 2.5px;
   display: block;
   margin-top: 2px;
   font-weight: 700;
 }
 
-/* Lost Boys Navigation Menu Options */
+/* Navigation Menu Options */
 .vfx-nav-menu {
   display: flex;
   list-style: none;
@@ -191,22 +193,22 @@ body.vfx-body {
 .nav-caret {
   margin-left: 5px;
   font-size: 0.72rem;
-  color: var(--apple-silver);
+  color: var(--desert-gold);
   transition: transform 0.3s ease;
 }
 
 .vfx-nav-link:hover .nav-caret {
-  color: var(--vfx-red-bright);
+  color: var(--desert-gold);
   transform: translateY(2px);
 }
 
 .vfx-nav-link:hover {
-  color: var(--apple-pure-white);
+  color: var(--desert-gold);
 }
 
-/* Red Active Bar Indicator (Exact Lost Boys VFX Style) */
+/* Desert Gold Active Bar Indicator */
 .vfx-nav-link.active {
-  color: var(--apple-pure-white);
+  color: var(--desert-gold);
 }
 
 .vfx-nav-link.active::after {
@@ -216,8 +218,8 @@ body.vfx-body {
   left: 0;
   width: 100%;
   height: 3px;
-  background: var(--vfx-red);
-  box-shadow: 0 0 10px var(--vfx-red-glow);
+  background: var(--desert-gradient);
+  box-shadow: 0 0 12px var(--desert-gold-glow);
   border-radius: 1.5px;
 }
 
@@ -232,9 +234,9 @@ body.vfx-body {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  border: 1px solid var(--border-apple-subtle);
+  border: 1px solid rgba(245, 215, 127, 0.2);
   background: var(--bg-apple-frosted);
-  color: var(--apple-silver);
+  color: var(--desert-gold);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -243,9 +245,9 @@ body.vfx-body {
 }
 
 .vfx-icon-btn:hover {
-  color: var(--vfx-red-bright);
-  border-color: var(--vfx-red);
-  background: rgba(229, 9, 20, 0.15);
+  color: var(--bg-space-black);
+  border-color: var(--desert-gold);
+  background: var(--desert-gold);
 }
 
 .vfx-btn-pill-apply {
@@ -254,20 +256,19 @@ body.vfx-body {
   text-decoration: none;
   padding: 10px 22px;
   border-radius: 20px;
-  background: var(--vfx-red);
-  color: var(--apple-pure-white);
+  background: var(--desert-gradient);
+  color: var(--bg-space-black);
   font-family: var(--font-vfx-ui);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 1.5px;
-  box-shadow: 0 4px 15px var(--vfx-red-glow);
+  box-shadow: 0 4px 15px var(--desert-gold-glow);
   transition: var(--transition-apple-medium);
 }
 
 .vfx-btn-pill-apply:hover {
-  background: var(--vfx-red-bright);
   transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 6px 20px rgba(255, 30, 39, 0.6);
+  box-shadow: 0 6px 20px var(--desert-terracotta-glow);
 }
 
 /* --------------------------------------------------------------------------
@@ -357,7 +358,7 @@ body.vfx-body {
   gap: 8px;
   padding: 6px 14px;
   border-radius: 16px;
-  border: 1px solid var(--border-apple-subtle);
+  border: 1px solid rgba(245, 215, 127, 0.3);
   background: var(--bg-apple-frosted);
   backdrop-filter: blur(12px);
 }
@@ -366,15 +367,15 @@ body.vfx-body {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #34d399;
-  box-shadow: 0 0 8px #34d399;
+  background: var(--desert-gold);
+  box-shadow: 0 0 8px var(--desert-gold);
 }
 
 .apple-badge-txt {
   font-family: var(--font-vfx-ui);
   font-size: 0.65rem;
   letter-spacing: 1.5px;
-  color: var(--apple-white);
+  color: var(--desert-gold);
   font-weight: 600;
 }
 
@@ -384,9 +385,9 @@ body.vfx-body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid var(--border-apple-subtle);
+  border: 1px solid rgba(245, 215, 127, 0.2);
   background: var(--bg-apple-frosted);
-  color: var(--apple-silver);
+  color: var(--desert-gold);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -395,9 +396,9 @@ body.vfx-body {
 }
 
 .apple-ctrl-pill:hover {
-  color: var(--vfx-red-bright);
-  border-color: var(--vfx-red);
-  background: rgba(229, 9, 20, 0.15);
+  color: var(--bg-space-black);
+  border-color: var(--desert-gold);
+  background: var(--desert-gold);
 }
 
 /* Apple Hero Content */
@@ -412,7 +413,7 @@ body.vfx-body {
   font-family: var(--font-vfx-ui);
   font-size: 0.75rem;
   letter-spacing: 3.5px;
-  color: var(--vfx-red-bright);
+  color: var(--desert-gold);
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 1rem;
@@ -451,19 +452,20 @@ body.vfx-body {
   gap: 10px;
   padding: 14px 28px;
   border-radius: 30px;
-  background: var(--apple-pure-white);
+  background: var(--desert-gradient);
   color: var(--bg-space-black);
   border: none;
   font-family: var(--font-vfx-ui);
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 800;
   cursor: pointer;
+  box-shadow: 0 4px 20px var(--desert-gold-glow);
   transition: var(--transition-apple-medium);
 }
 
 .apple-btn-white-pill:hover {
-  background: #e2e2e7;
   transform: scale(1.02);
+  box-shadow: 0 6px 25px var(--desert-terracotta-glow);
 }
 
 .apple-btn-glass-pill {
@@ -474,18 +476,18 @@ body.vfx-body {
   padding: 14px 28px;
   border-radius: 30px;
   background: var(--bg-apple-frosted);
-  border: 1px solid var(--border-apple-light);
-  color: var(--apple-white);
+  border: 1px solid rgba(245, 215, 127, 0.3);
+  color: var(--desert-gold);
   font-family: var(--font-vfx-ui);
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
   backdrop-filter: blur(12px);
   transition: var(--transition-apple-medium);
 }
 
 .apple-btn-glass-pill:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: var(--vfx-red-bright);
+  background: rgba(245, 215, 127, 0.15);
+  border-color: var(--desert-gold);
 }
 
 /* Apple Hero Bottom Cards Strip */
@@ -499,7 +501,7 @@ body.vfx-body {
   grid-template-columns: repeat(5, 1fr);
   background: rgba(10, 10, 12, 0.85);
   backdrop-filter: blur(20px);
-  border-top: 1px solid var(--border-apple-subtle);
+  border-top: 1px solid rgba(245, 215, 127, 0.15);
 }
 
 .apple-strip-card {
@@ -513,13 +515,13 @@ body.vfx-body {
 }
 
 .apple-strip-card:hover {
-  background: rgba(229, 9, 20, 0.12);
+  background: rgba(245, 215, 127, 0.08);
 }
 
 .card-step-num {
   font-family: var(--font-vfx-ui);
   font-size: 0.75rem;
-  color: var(--vfx-red-bright);
+  color: var(--desert-gold);
   font-weight: 800;
 }
 
@@ -547,7 +549,7 @@ body.vfx-body {
   font-family: var(--font-vfx-ui);
   font-size: 0.78rem;
   font-weight: 800;
-  color: var(--apple-white);
+  color: var(--desert-gold);
 }
 
 /* --------------------------------------------------------------------------
@@ -587,7 +589,7 @@ body.vfx-body {
   font-family: var(--font-vfx-ui);
   font-size: 0.75rem;
   letter-spacing: 3px;
-  color: var(--vfx-red-bright);
+  color: var(--desert-gold);
   font-weight: 700;
   text-transform: uppercase;
   display: block;
@@ -620,7 +622,7 @@ body.vfx-body {
 
 .apple-pro-card {
   background: var(--bg-vfx-card);
-  border: 1px solid var(--border-apple-subtle);
+  border: 1px solid rgba(245, 215, 127, 0.15);
   border-radius: 20px;
   padding: 3rem 2.4rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
@@ -629,16 +631,16 @@ body.vfx-body {
 
 .apple-pro-card:hover {
   transform: scale(1.02);
-  border-color: var(--vfx-red);
+  border-color: var(--desert-gold);
   background: var(--bg-vfx-card-hover);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 25px var(--vfx-red-glow);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 25px var(--desert-gold-glow);
 }
 
 .card-num-badge {
   font-family: var(--font-vfx-ui);
   font-size: 1.5rem;
   font-weight: 900;
-  color: var(--vfx-red-bright);
+  color: var(--desert-gold);
   margin-bottom: 1.2rem;
   display: block;
 }
@@ -662,7 +664,7 @@ body.vfx-body {
 
 .apple-filter-btn {
   background: var(--bg-vfx-card);
-  border: 1px solid var(--border-apple-subtle);
+  border: 1px solid rgba(245, 215, 127, 0.2);
   color: var(--apple-silver);
   font-family: var(--font-vfx-ui);
   font-size: 0.75rem;
@@ -674,10 +676,10 @@ body.vfx-body {
 }
 
 .apple-filter-btn:hover, .apple-filter-btn.active {
-  background: var(--vfx-red);
-  color: var(--apple-pure-white);
-  border-color: var(--vfx-red);
-  box-shadow: 0 4px 15px var(--vfx-red-glow);
+  background: var(--desert-gradient);
+  color: var(--bg-space-black);
+  border-color: var(--desert-gold);
+  box-shadow: 0 4px 15px var(--desert-gold-glow);
 }
 
 .apple-portfolio-grid {
@@ -688,7 +690,7 @@ body.vfx-body {
 
 .apple-work-card {
   background: var(--bg-vfx-card);
-  border: 1px solid var(--border-apple-subtle);
+  border: 1px solid rgba(245, 215, 127, 0.15);
   border-radius: 24px;
   overflow: hidden;
   cursor: pointer;
@@ -697,8 +699,8 @@ body.vfx-body {
 
 .apple-work-card:hover {
   transform: scale(1.02);
-  border-color: var(--vfx-red);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.85), 0 0 25px var(--vfx-red-glow);
+  border-color: var(--desert-gold);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.85), 0 0 25px var(--desert-gold-glow);
 }
 
 .work-img-container {
@@ -736,28 +738,28 @@ body.vfx-body {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: var(--vfx-red);
-  color: var(--apple-pure-white);
+  background: var(--desert-gradient);
+  color: var(--bg-space-black);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 15px var(--vfx-red-glow);
+  box-shadow: 0 0 15px var(--desert-gold-glow);
 }
 
 .apple-tag {
   font-family: var(--font-vfx-ui);
   font-size: 0.65rem;
   letter-spacing: 1.5px;
-  color: var(--apple-white);
-  border: 1px solid var(--border-apple-light);
+  color: var(--desert-gold);
+  border: 1px solid rgba(245, 215, 127, 0.3);
   padding: 4px 12px;
   border-radius: 14px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(8px);
 }
 
 .work-meta-box { padding: 2rem; }
-.work-client { font-family: var(--font-vfx-ui); font-size: 0.68rem; letter-spacing: 2.5px; color: var(--vfx-red-bright); font-weight: 700; display: block; margin-bottom: 6px; }
+.work-client { font-family: var(--font-vfx-ui); font-size: 0.68rem; letter-spacing: 2.5px; color: var(--desert-gold); font-weight: 700; display: block; margin-bottom: 6px; }
 .work-title { font-family: var(--font-vfx-ui); font-size: 1.4rem; font-weight: 800; color: var(--apple-pure-white); margin-bottom: 8px; }
 .work-desc { font-family: var(--font-apple-body); font-size: 0.9rem; color: var(--apple-muted); line-height: 1.5; }
 
@@ -767,7 +769,7 @@ body.vfx-body {
   grid-template-columns: 2fr 1fr;
   gap: 2rem;
   background: var(--bg-vfx-card);
-  border: 1px solid var(--border-apple-subtle);
+  border: 1px solid rgba(245, 215, 127, 0.15);
   border-radius: 24px;
   padding: 2rem;
 }
@@ -800,7 +802,7 @@ body.vfx-body {
   backdrop-filter: blur(12px);
   padding: 10px 20px;
   border-radius: 20px;
-  border: 1px solid var(--border-apple-subtle);
+  border: 1px solid rgba(245, 215, 127, 0.2);
   font-family: var(--font-vfx-ui);
   font-size: 0.7rem;
 }
@@ -811,14 +813,14 @@ body.vfx-body {
 .ctrl-header-title { font-family: var(--font-vfx-ui); font-size: 0.8rem; letter-spacing: 2px; color: var(--apple-white); margin-bottom: 1.5rem; }
 .apple-slider-group { margin-bottom: 1.8rem; }
 .slider-meta { display: flex; justify-content: space-between; font-family: var(--font-vfx-ui); font-size: 0.75rem; color: var(--apple-silver); margin-bottom: 8px; }
-.apple-range { width: 100%; accent-color: var(--vfx-red-bright); cursor: pointer; }
+.apple-range { width: 100%; accent-color: var(--desert-gold); cursor: pointer; }
 .sandbox-ctrl-footer { display: flex; flex-direction: column; gap: 12px; }
-.status-txt { font-family: var(--font-vfx-ui); font-size: 0.65rem; letter-spacing: 1.5px; color: var(--apple-silver); }
+.status-txt { font-family: var(--font-vfx-ui); font-size: 0.65rem; letter-spacing: 1.5px; color: var(--desert-gold); }
 
 .apple-btn-secondary-sm {
   background: var(--bg-apple-frosted);
-  border: 1px solid var(--border-apple-light);
-  color: var(--apple-white);
+  border: 1px solid rgba(245, 215, 127, 0.3);
+  color: var(--desert-gold);
   font-family: var(--font-vfx-ui);
   font-size: 0.72rem;
   font-weight: 700;
@@ -828,15 +830,15 @@ body.vfx-body {
   transition: var(--transition-apple-medium);
 }
 
-.apple-btn-secondary-sm:hover { background: var(--vfx-red); color: var(--apple-pure-white); border-color: var(--vfx-red); }
+.apple-btn-secondary-sm:hover { background: var(--desert-gradient); color: var(--bg-space-black); border-color: var(--desert-gold); }
 
 /* Training Cards */
 .training-card { display: flex; flex-direction: column; justify-content: space-between; }
-.card-badge { font-family: var(--font-vfx-ui); font-size: 0.62rem; letter-spacing: 2px; color: var(--vfx-red-bright); font-weight: 800; margin-bottom: 10px; display: block; }
+.card-badge { font-family: var(--font-vfx-ui); font-size: 0.62rem; letter-spacing: 2px; color: var(--desert-gold); font-weight: 800; margin-bottom: 10px; display: block; }
 
 .apple-list { list-style: none; margin: 1.5rem 0; }
 .apple-list li { font-family: var(--font-apple-body); font-size: 0.88rem; color: var(--apple-white); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
-.apple-list li i { color: var(--vfx-red-bright); font-size: 0.8rem; }
+.apple-list li i { color: var(--desert-gold); font-size: 0.8rem; }
 
 .card-action-bar { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-apple-subtle); padding-top: 1.2rem; }
 .duration { font-family: var(--font-vfx-ui); font-size: 0.68rem; color: var(--apple-muted); }
@@ -849,7 +851,7 @@ body.vfx-body {
 
 .apple-form-card.centered-form {
   background: var(--bg-vfx-card);
-  border: 1px solid var(--border-apple-subtle);
+  border: 1px solid rgba(245, 215, 127, 0.2);
   border-radius: 24px;
   padding: 3.5rem 3rem;
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8);
@@ -858,9 +860,9 @@ body.vfx-body {
 .form-title { font-family: var(--font-vfx-ui); font-size: 1.5rem; font-weight: 800; color: var(--apple-pure-white); margin-bottom: 2rem; text-align: center; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .field-box { display: flex; flex-direction: column; margin-bottom: 1.5rem; }
-.field-box label { font-family: var(--font-vfx-ui); font-size: 0.72rem; color: var(--apple-silver); margin-bottom: 8px; font-weight: 600; }
-.field-box input, .field-box select, .field-box textarea { background: var(--bg-space-black); border: 1px solid var(--border-apple-subtle); border-radius: 12px; color: var(--apple-pure-white); padding: 14px 16px; font-family: var(--font-apple-body); font-size: 0.95rem; outline: none; transition: var(--transition-apple-medium); }
-.field-box input:focus, .field-box select:focus, .field-box textarea:focus { border-color: var(--vfx-red); box-shadow: 0 0 12px var(--vfx-red-glow); }
+.field-box label { font-family: var(--font-vfx-ui); font-size: 0.72rem; color: var(--desert-gold); margin-bottom: 8px; font-weight: 600; }
+.field-box input, .field-box select, .field-box textarea { background: var(--bg-space-black); border: 1px solid rgba(245, 215, 127, 0.2); border-radius: 12px; color: var(--apple-pure-white); padding: 14px 16px; font-family: var(--font-apple-body); font-size: 0.95rem; outline: none; transition: var(--transition-apple-medium); }
+.field-box input:focus, .field-box select:focus, .field-box textarea:focus { border-color: var(--desert-gold); box-shadow: 0 0 12px var(--desert-gold-glow); }
 
 .vfx-btn-submit-red {
   display: inline-flex;
@@ -869,22 +871,21 @@ body.vfx-body {
   gap: 10px;
   padding: 16px 28px;
   border-radius: 30px;
-  background: var(--vfx-red);
-  color: var(--apple-pure-white);
+  background: var(--desert-gradient);
+  color: var(--bg-space-black);
   border: none;
   font-family: var(--font-vfx-ui);
   font-size: 0.85rem;
   font-weight: 800;
   letter-spacing: 1.5px;
   cursor: pointer;
-  box-shadow: 0 4px 20px var(--vfx-red-glow);
+  box-shadow: 0 4px 20px var(--desert-gold-glow);
   transition: var(--transition-apple-medium);
 }
 
 .vfx-btn-submit-red:hover {
-  background: var(--vfx-red-bright);
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(255, 30, 39, 0.7);
+  box-shadow: 0 8px 30px var(--desert-terracotta-glow);
 }
 
 .vfx-btn-submit-red.full-width { width: 100%; margin-top: 1rem; }
@@ -893,7 +894,7 @@ body.vfx-body {
 .cinema-modal-backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 2000; background: rgba(0, 0, 0, 0.94); backdrop-filter: blur(30px); display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: var(--transition-apple-slow); }
 .cinema-modal-backdrop.active { opacity: 1; pointer-events: auto; }
 .cinema-modal-wrapper { position: relative; width: 90%; max-width: 1100px; background: var(--bg-vfx-card); border: 1px solid var(--border-apple-light); border-radius: 24px; overflow: hidden; box-shadow: 0 40px 100px rgba(0, 0, 0, 0.95); }
-.cinema-modal-close { position: absolute; top: 1.5rem; right: 1.5rem; z-index: 10; background: rgba(0, 0, 0, 0.6); border: 1px solid var(--border-apple-light); color: var(--apple-white); width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.cinema-modal-close { position: absolute; top: 1.5rem; right: 1.5rem; z-index: 10; background: rgba(0, 0, 0, 0.6); border: 1px solid var(--border-apple-light); color: var(--desert-gold); width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
 .cinema-video-frame { width: 100%; height: 580px; background: #000; }
 .cinema-video-frame video { width: 100%; height: 100%; object-fit: cover; }
 .cinema-modal-details { padding: 2rem; border-top: 1px solid var(--border-apple-subtle); }
@@ -904,11 +905,11 @@ body.vfx-body {
 .apple-footer { background: var(--bg-vfx-charcoal); border-top: 1px solid var(--border-apple-subtle); padding: 5rem 6% 3rem; }
 .apple-footer-inner { max-width: 1350px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 4rem; margin-bottom: 3.5rem; }
 .footer-desc { font-family: var(--font-apple-body); font-size: 0.9rem; color: var(--apple-muted); margin-top: 1rem; max-width: 360px; }
-.footer-col h4 { font-family: var(--font-vfx-ui); font-size: 0.75rem; letter-spacing: 2px; color: var(--vfx-red-bright); text-transform: uppercase; margin-bottom: 1.2rem; font-weight: 800; }
+.footer-col h4 { font-family: var(--font-vfx-ui); font-size: 0.75rem; letter-spacing: 2px; color: var(--desert-gold); text-transform: uppercase; margin-bottom: 1.2rem; font-weight: 800; }
 .footer-col ul { list-style: none; }
 .footer-col ul li { margin-bottom: 8px; }
 .footer-col ul li a { color: var(--apple-muted); text-decoration: none; font-family: var(--font-apple-body); font-size: 0.88rem; transition: var(--transition-apple-medium); }
-.footer-col ul li a:hover { color: var(--apple-pure-white); }
+.footer-col ul li a:hover { color: var(--desert-gold); }
 .meta-txt { font-family: var(--font-apple-body); font-size: 0.85rem; color: var(--apple-muted); margin-bottom: 6px; }
 .apple-footer-bottom { max-width: 1350px; margin: 0 auto; border-top: 1px solid var(--border-apple-subtle); padding-top: 2rem; display: flex; justify-content: space-between; font-family: var(--font-vfx-ui); font-size: 0.72rem; color: var(--apple-muted); }
 
