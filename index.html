@@ -6,10 +6,10 @@
   <title>IMMERSIO SUPREMA | Centre d'Innovation Immersif</title>
   <meta name="description" content="Pioneering next-gen worlds, photorealistic VFX, defense-grade VR simulation, and spatial AI architecture for Hollywood feature films, global brands, and governments.">
   
-  <!-- Premium Apple-Style Fonts (Inter & Outfit + Serif Accents) -->
+  <!-- Premium Modern Fonts (Inter & Montserrat + Serif Accents) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@500;600;700;800;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- FontAwesome Line Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -17,46 +17,50 @@
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="apple-body">
+<body class="vfx-body">
 
-  <!-- TOP APPLE FROSTED GLASS NAVIGATION BAR -->
-  <header class="apple-navbar" id="main-navbar">
-    <div class="apple-nav-container">
+  <!-- TOP LOST BOYS VFX STYLE NAVIGATION BAR -->
+  <header class="vfx-navbar" id="main-navbar">
+    <div class="vfx-nav-container">
       
-      <a href="#home" class="apple-brand-wrapper">
-        <div class="apple-logo-badge">
-          <img src="logo.png" alt="Immersio Suprema Logo" class="apple-logo-img">
+      <a href="#home" class="vfx-brand-wrapper">
+        <div class="vfx-logo-badge">
+          <img src="logo.png" alt="Immersio Suprema Logo" class="vfx-logo-img">
         </div>
-        <div class="apple-brand-text">
-          <span class="apple-brand-title">IMMERSIO SUPREMA</span>
-          <span class="apple-brand-sub">CENTRE D'INNOVATION IMMERSIF</span>
+        <div class="vfx-brand-text">
+          <span class="vfx-brand-title">IMMERSIO SUPREMA</span>
+          <span class="vfx-brand-sub">CENTRE D'INNOVATION IMMERSIF</span>
         </div>
       </a>
 
-      <nav class="apple-menu-wrapper">
-        <ul class="apple-nav-menu">
-          <li><a href="#home" class="apple-nav-link active">HOME</a></li>
-          <li><a href="#showcase" class="apple-nav-link">ADVERTISING CAMPAIGN</a></li>
-          <li><a href="#studio" class="apple-nav-link">MOVIES</a></li>
-          <li><a href="#training" class="apple-nav-link">TECHNOLOGIES TRAINING</a></li>
-          <li><a href="#contact" class="apple-nav-link">CONTACT & ABOUT US</a></li>
+      <nav class="vfx-menu-wrapper">
+        <ul class="vfx-nav-menu">
+          <li><a href="#home" class="vfx-nav-link active">HOME</a></li>
+          <li><a href="#contact" class="vfx-nav-link">APPLY</a></li>
+          <li class="vfx-dropdown">
+            <a href="#training" class="vfx-nav-link">PROGRAMS <i class="fas fa-caret-down nav-caret"></i></a>
+          </li>
+          <li><a href="#training" class="vfx-nav-link">ADMISSIONS</a></li>
+          <li><a href="#contact" class="vfx-nav-link">CONTACT</a></li>
+          <li><a href="#studio" class="vfx-nav-link">ABOUT</a></li>
+          <li><a href="#showcase" class="vfx-nav-link">EXPERIENCE</a></li>
         </ul>
       </nav>
 
-      <div class="apple-nav-actions">
-        <button class="apple-icon-btn" id="sound-toggle" title="Toggle Cinema Audio">
+      <div class="vfx-nav-actions">
+        <button class="vfx-icon-btn" id="sound-toggle" title="Toggle Cinema Audio">
           <i class="fas fa-volume-mute" id="sound-icon"></i>
         </button>
 
-        <a href="#contact" class="apple-btn-pill-primary">
-          <span>REQUEST PROPOSAL</span>
+        <a href="#contact" class="vfx-btn-pill-apply">
+          <span>APPLY NOW</span>
         </a>
       </div>
 
     </div>
   </header>
 
-  <!-- MAIN HERO SECTION (Apple Keynote Video Experience) -->
+  <!-- MAIN HERO SECTION (Keynote Video Experience) -->
   <section id="home" class="apple-hero-section">
     
     <!-- Background Autoplay Video Layer (Smooth 60fps Hardware Accelerated) -->
@@ -68,7 +72,7 @@
       <div class="apple-video-vignette"></div>
     </div>
 
-    <!-- Apple Hero Left HUD: Vertical Location Track -->
+    <!-- Hero Left HUD: Vertical Location Track -->
     <div class="apple-left-hud">
       <div class="apple-locations-track">
         <span>LOS ANGELES</span><span>•</span>
@@ -79,7 +83,7 @@
       </div>
     </div>
 
-    <!-- Apple Hero Right HUD: Render Badge & Media Controls -->
+    <!-- Hero Right HUD: Render Badge & Media Controls -->
     <div class="apple-right-hud">
       <div class="apple-render-badge">
         <span class="apple-pulse-dot"></span>
@@ -96,7 +100,7 @@
       </div>
     </div>
 
-    <!-- Apple Hero Content Center/Left -->
+    <!-- Hero Content Center/Left -->
     <div class="apple-hero-content">
       <div class="apple-eyebrow">
         <span class="apple-eyebrow-tag">WE ARCHITECT</span>
@@ -128,7 +132,7 @@
       </div>
     </div>
 
-    <!-- Apple Hero Bottom Feature Cards Strip -->
+    <!-- Hero Bottom Feature Cards Strip -->
     <div class="apple-hero-cards-strip">
       <div class="apple-strip-card" onclick="scrollToSection('showcase')">
         <span class="card-step-num">01</span>
@@ -172,13 +176,13 @@
 
   </section>
 
-  <!-- SECTION 2: MOVIES & STUDIO PHILOSOPHY -->
+  <!-- SECTION 2: MOVIES & STUDIO PHILOSOPHY (ABOUT) -->
   <section id="studio" class="apple-section">
     <div class="apple-section-container">
       
       <div class="apple-header-block">
         <span class="apple-kicker">Creative Technology & Architecture</span>
-        <h2 class="apple-section-title">Movies & Cinema Worlds</h2>
+        <h2 class="apple-section-title">About Our Studio & Cinema Worlds</h2>
         <p class="apple-section-desc">
           Immersio Suprema is an ultra-high-end visual engineering collective. We build photorealistic synthetic environments, custom AI neural graphics, and real-time defense simulators for the world's most demanding creators.
         </p>
@@ -215,14 +219,14 @@
     </div>
   </section>
 
-  <!-- SECTION 3: ADVERTISING CAMPAIGN SHOWCASE -->
+  <!-- SECTION 3: SHOWCASE (EXPERIENCE) -->
   <section id="showcase" class="apple-section apple-dark-bg">
     <div class="apple-section-container">
       
       <div class="apple-header-flex">
         <div>
-          <span class="apple-kicker">Commercial Productions</span>
-          <h2 class="apple-section-title">Advertising Campaigns</h2>
+          <span class="apple-kicker">VFX Showcase & Productions</span>
+          <h2 class="apple-section-title">Experience Our Works</h2>
         </div>
 
         <div class="apple-filter-pills">
@@ -386,13 +390,13 @@
     </div>
   </section>
 
-  <!-- SECTION 5: ENTERPRISE & DEFENSE TRAINING ACADEMY -->
+  <!-- SECTION 5: ENTERPRISE & DEFENSE TRAINING ACADEMY (PROGRAMS & ADMISSIONS) -->
   <section id="training" class="apple-section apple-dark-bg">
     <div class="apple-section-container">
       
       <div class="apple-header-block">
-        <span class="apple-kicker">Academy & Accredited Certifications</span>
-        <h2 class="apple-section-title">Technologies Training</h2>
+        <span class="apple-kicker">Programs & Accredited Certifications</span>
+        <h2 class="apple-section-title">VFX & Spatial Tech Programs</h2>
         <p class="apple-section-desc">
           High-fidelity training modules for military pilots, aerospace engineers, industrial operators, and elite visual effects supervisors.
         </p>
@@ -415,7 +419,7 @@
           </div>
           <div class="card-action-bar">
             <span class="duration">8-WEEK INTENSIVE</span>
-            <button class="apple-btn-secondary-sm" onclick="openCinemaModal('DEFENSE VR CURRICULUM', 'Government & Military Accredited Simulation Program')">Inspect</button>
+            <button class="apple-btn-secondary-sm" onclick="openCinemaModal('DEFENSE VR CURRICULUM', 'Government & Military Accredited Simulation Program')">Admissions</button>
           </div>
         </div>
 
@@ -434,7 +438,7 @@
           </div>
           <div class="card-action-bar">
             <span class="duration">6-WEEK TRACK</span>
-            <button class="apple-btn-secondary-sm" onclick="openCinemaModal('INDUSTRIAL VR CURRICULUM', 'Aerospace & Heavy Industry VR Program')">Inspect</button>
+            <button class="apple-btn-secondary-sm" onclick="openCinemaModal('INDUSTRIAL VR CURRICULUM', 'Aerospace & Heavy Industry VR Program')">Admissions</button>
           </div>
         </div>
 
@@ -453,7 +457,7 @@
           </div>
           <div class="card-action-bar">
             <span class="duration">12-WEEK MASTERCLASS</span>
-            <button class="apple-btn-secondary-sm" onclick="openCinemaModal('UNREAL ENGINE 5 MASTERCLASS', 'Virtual Production & LED Wall Integration')">Inspect</button>
+            <button class="apple-btn-secondary-sm" onclick="openCinemaModal('UNREAL ENGINE 5 MASTERCLASS', 'Virtual Production & LED Wall Integration')">Admissions</button>
           </div>
         </div>
 
@@ -462,21 +466,21 @@
     </div>
   </section>
 
-  <!-- SECTION 6: CONTACT & ABOUT US -->
+  <!-- SECTION 6: CONTACT & APPLY -->
   <section id="contact" class="apple-section apple-dark-bg">
     <div class="apple-section-container">
       
       <div class="apple-header-block centered-header">
-        <span class="apple-kicker">Direct Commission Transmission</span>
-        <h2 class="apple-section-title">Contact & About Us</h2>
+        <span class="apple-kicker">Admissions & Direct Transmission</span>
+        <h2 class="apple-section-title">Apply & Contact Studio</h2>
         <p class="apple-section-desc">
-          For Hollywood feature films, government defense agency contracts, and global brand partnerships.
+          Submit your application or commission inquiry for Hollywood feature films, defense contracts, and global brand partnerships.
         </p>
       </div>
 
       <div class="apple-contact-centered-wrapper">
         <div class="apple-form-card centered-form">
-          <h3 class="form-title">Request Proposal</h3>
+          <h3 class="form-title">Application & Contact Form</h3>
           
           <form id="proposal-form">
             <div class="form-row">
@@ -492,29 +496,29 @@
 
             <div class="form-row">
               <div class="field-box">
-                <label>Organization Type</label>
+                <label>Inquiry Type</label>
                 <select required>
                   <option value="">Select Category...</option>
+                  <option value="apply">Program Admission / Application</option>
                   <option value="govt">Government / Military Agency</option>
                   <option value="film">Hollywood Studio / Film Production</option>
                   <option value="brand">Global Commercial Brand</option>
-                  <option value="enterprise">Enterprise Aerospace / Energy</option>
                 </select>
               </div>
               <div class="field-box">
-                <label>Target Service</label>
+                <label>Target Service / Program</label>
                 <select required>
-                  <option value="">Select Service...</option>
+                  <option value="">Select Track...</option>
                   <option value="vfx">Feature Film VFX</option>
                   <option value="brand-vr">Automotive / Brand VR Experience</option>
                   <option value="sim">Defense / Tactical VR Simulator</option>
-                  <option value="training">Enterprise Tech Training</option>
+                  <option value="training">VFX Technologies Academy</option>
                 </select>
               </div>
             </div>
 
             <div class="field-box">
-              <label>Estimated Project Budget (USD)</label>
+              <label>Estimated Project / Program Budget (USD)</label>
               <select required>
                 <option value="250k-1m">$250,000 - $1,000,000</option>
                 <option value="1m-5m">$1,000,000 - $5,000,000</option>
@@ -523,12 +527,12 @@
             </div>
 
             <div class="field-box">
-              <label>Project Scope & Specifications</label>
-              <textarea rows="4" placeholder="Detail your project timeline, technical requirements, and target deliverables..." required></textarea>
+              <label>Application Details & Specifications</label>
+              <textarea rows="4" placeholder="Detail your background, target deliverables, or project timeline..." required></textarea>
             </div>
 
-            <button type="submit" class="apple-btn-white-pill full-width">
-              <span>Submit Proposal Request</span>
+            <button type="submit" class="vfx-btn-submit-red full-width">
+              <span>SUBMIT APPLICATION</span>
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
@@ -562,16 +566,16 @@
     </div>
   </div>
 
-  <!-- APPLE-STYLE FOOTER -->
+  <!-- LOST BOYS VFX STYLE FOOTER -->
   <footer class="apple-footer">
     <div class="apple-footer-inner">
       
       <div class="footer-col-brand">
-        <div class="apple-brand-wrapper">
-          <div class="apple-logo-badge" style="width:34px; height:34px; min-width:34px;">
-            <img src="logo.png" alt="Logo" class="apple-logo-img">
+        <div class="vfx-brand-wrapper">
+          <div class="vfx-logo-badge" style="width:36px; height:36px; min-width:36px;">
+            <img src="logo.png" alt="Logo" class="vfx-logo-img">
           </div>
-          <span class="apple-brand-title" style="font-size:1rem;">IMMERSIO SUPREMA</span>
+          <span class="vfx-brand-title" style="font-size:1rem;">IMMERSIO SUPREMA</span>
         </div>
         <p class="footer-desc">
           Centre d'Innovation Immersif. Architecting photorealistic synthetic worlds, defense-grade virtual simulators, and spatial AI pipelines for visionary creators worldwide.
@@ -581,11 +585,13 @@
       <div class="footer-col">
         <h4>Navigation</h4>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#showcase">Advertising Campaign</a></li>
-          <li><a href="#studio">Movies</a></li>
-          <li><a href="#training">Technologies Training</a></li>
-          <li><a href="#contact">Contact & About Us</a></li>
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#contact">APPLY</a></li>
+          <li><a href="#training">PROGRAMS</a></li>
+          <li><a href="#training">ADMISSIONS</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+          <li><a href="#studio">ABOUT</a></li>
+          <li><a href="#showcase">EXPERIENCE</a></li>
         </ul>
       </div>
 
@@ -610,7 +616,7 @@
 
     <div class="apple-footer-bottom">
       <div>&copy; 2026 IMMERSIO SUPREMA. Centre d'Innovation Immersif. All Rights Reserved.</div>
-      <div>Designed in Apple Signature Design System.</div>
+      <div>VFX Campus & Digital Innovation Engine.</div>
     </div>
   </footer>
 

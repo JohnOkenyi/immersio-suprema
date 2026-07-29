@@ -1,9 +1,9 @@
 /* ==========================================================================
-   IMMERSIO SUPREMA - APPLE INTERACTIVE ENGINE
+   IMMERSIO SUPREMA - LOST BOYS VFX CAMPUS INTERACTIVE ENGINE
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initAppleNavbar();
+  initVFXNavbar();
   initBackgroundVideo();
   initInteractiveSandbox();
   initPortfolioFilters();
@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
 /* --------------------------------------------------------------------------
    1. NAVBAR & SCROLL EFFECTS
    -------------------------------------------------------------------------- */
-function initAppleNavbar() {
+function initVFXNavbar() {
   const navbar = document.getElementById('main-navbar');
-  const navLinks = document.querySelectorAll('.apple-nav-link');
+  const navLinks = document.querySelectorAll('.vfx-nav-link');
   const sections = document.querySelectorAll('section');
 
   window.addEventListener('scroll', () => {
@@ -37,7 +37,8 @@ function initAppleNavbar() {
 
     navLinks.forEach(link => {
       link.classList.remove('active');
-      if (link.getAttribute('href') === `#${currentSectionId}`) {
+      const href = link.getAttribute('href');
+      if (href === `#${currentSectionId}`) {
         link.classList.add('active');
       }
     });
@@ -223,7 +224,7 @@ function closeCinemaModal() {
 }
 
 /* --------------------------------------------------------------------------
-   6. PROPOSAL FORM SUBMISSION
+   6. PROPOSAL / APPLICATION FORM SUBMISSION
    -------------------------------------------------------------------------- */
 function initProposalForm() {
   const form = document.getElementById('proposal-form');
@@ -231,14 +232,14 @@ function initProposalForm() {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const submitBtn = form.querySelector('.apple-btn-white-pill');
+    const submitBtn = form.querySelector('.vfx-btn-submit-red');
     const originalText = submitBtn.innerHTML;
 
-    submitBtn.innerHTML = '<span>Encrypting & Transmitting...</span>';
+    submitBtn.innerHTML = '<span>TRANSMITTING APPLICATION...</span>';
     submitBtn.style.opacity = '0.7';
 
     setTimeout(() => {
-      submitBtn.innerHTML = '<span>Proposal Transmitted Successfully ✓</span>';
+      submitBtn.innerHTML = '<span>APPLICATION TRANSMITTED SUCCESSFULLY ✓</span>';
       submitBtn.style.background = '#34d399';
       submitBtn.style.color = '#000000';
       form.reset();
