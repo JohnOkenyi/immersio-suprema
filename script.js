@@ -5,11 +5,9 @@
 document.addEventListener('DOMContentLoaded', () => {
   initAppleNavbar();
   initBackgroundVideo();
-  initStatisticsCounter();
   initInteractiveSandbox();
   initPortfolioFilters();
   initCinemaModal();
-  initGlobalClocks();
   initProposalForm();
 });
 
@@ -67,9 +65,7 @@ function initBackgroundVideo() {
   const playIcon = document.getElementById('play-icon');
 
   if (heroVideo) {
-    // Ensure smooth playback initialization
     heroVideo.play().catch(() => {
-      // Browser autoplay policy retry on interaction
       document.addEventListener('click', () => { heroVideo.play(); }, { once: true });
     });
   }
@@ -99,45 +95,7 @@ function initBackgroundVideo() {
 }
 
 /* --------------------------------------------------------------------------
-   3. STATISTICS ANIMATED COUNT-UP
-   -------------------------------------------------------------------------- */
-function initStatisticsCounter() {
-  const statNumbers = document.querySelectorAll('.spec-number-val');
-  let animated = false;
-
-  function checkScroll() {
-    const statsSection = document.querySelector('.apple-specs-section');
-    if (!statsSection) return;
-
-    const rect = statsSection.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom >= 0 && !animated) {
-      animated = true;
-      statNumbers.forEach(stat => {
-        const target = parseInt(stat.getAttribute('data-target'), 10);
-        const suffix = stat.textContent.includes('+') ? '+' : (stat.textContent.includes('%') ? '%' : '');
-        let count = 0;
-        const duration = 1800;
-        const stepTime = Math.max(20, Math.floor(duration / target));
-
-        const timer = setInterval(() => {
-          count += Math.ceil(target / 40);
-          if (count >= target) {
-            stat.textContent = target + suffix;
-            clearInterval(timer);
-          } else {
-            stat.textContent = count + suffix;
-          }
-        }, stepTime);
-      });
-    }
-  }
-
-  window.addEventListener('scroll', checkScroll);
-  checkScroll();
-}
-
-/* --------------------------------------------------------------------------
-   4. INTERACTIVE REAL-TIME SANDBOX WIDGET
+   3. INTERACTIVE REAL-TIME SANDBOX WIDGET
    -------------------------------------------------------------------------- */
 function initInteractiveSandbox() {
   const focalSlider = document.getElementById('range-focal');
@@ -193,7 +151,7 @@ function initInteractiveSandbox() {
 }
 
 /* --------------------------------------------------------------------------
-   5. PORTFOLIO SHOWCASE FILTERS
+   4. PORTFOLIO SHOWCASE FILTERS
    -------------------------------------------------------------------------- */
 function initPortfolioFilters() {
   const filterTabs = document.querySelectorAll('.apple-filter-btn');
@@ -222,7 +180,7 @@ function initPortfolioFilters() {
 }
 
 /* --------------------------------------------------------------------------
-   6. CINEMA LIGHTBOX MODAL PLAYER
+   5. CINEMA LIGHTBOX MODAL PLAYER
    -------------------------------------------------------------------------- */
 function initCinemaModal() {
   const modal = document.getElementById('cinema-modal');
@@ -265,42 +223,7 @@ function closeCinemaModal() {
 }
 
 /* --------------------------------------------------------------------------
-   7. GLOBAL STUDIO TIMEZONES
-   -------------------------------------------------------------------------- */
-function initGlobalClocks() {
-  function updateClocks() {
-    const now = new Date();
-
-    const van = new Date(now.toLocaleString('en-US', { timeZone: 'America/Vancouver' }));
-    const la = new Date(now.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
-    const lon = new Date(now.toLocaleString('en-US', { timeZone: 'Europe/London' }));
-    const dxb = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Dubai' }));
-    const ruh = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Riyadh' }));
-    const tyo = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Tokyo' }));
-
-    const format = date => date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
-
-    const vanEl = document.getElementById('clock-van');
-    const laEl = document.getElementById('clock-la');
-    const lonEl = document.getElementById('clock-lon');
-    const dxbEl = document.getElementById('clock-dxb');
-    const ruhEl = document.getElementById('clock-ruh');
-    const tyoEl = document.getElementById('clock-tyo');
-
-    if (vanEl) vanEl.textContent = format(van);
-    if (laEl) laEl.textContent = format(la);
-    if (lonEl) lonEl.textContent = format(lon);
-    if (dxbEl) dxbEl.textContent = format(dxb);
-    if (ruhEl) ruhEl.textContent = format(ruh);
-    if (tyoEl) tyoEl.textContent = format(tyo);
-  }
-
-  updateClocks();
-  setInterval(updateClocks, 30000);
-}
-
-/* --------------------------------------------------------------------------
-   8. PROPOSAL FORM SUBMISSION
+   6. PROPOSAL FORM SUBMISSION
    -------------------------------------------------------------------------- */
 function initProposalForm() {
   const form = document.getElementById('proposal-form');

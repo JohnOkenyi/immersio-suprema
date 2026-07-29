@@ -80,13 +80,13 @@ body.apple-body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 68px;
+  height: 76px;
   z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 4%;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.82);
   backdrop-filter: blur(28px);
   -webkit-backdrop-filter: blur(28px);
   border-bottom: 1px solid var(--border-apple-subtle);
@@ -94,13 +94,14 @@ body.apple-body {
 }
 
 .apple-navbar.scrolled {
-  background: rgba(0, 0, 0, 0.92);
+  height: 68px;
+  background: rgba(0, 0, 0, 0.94);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.95);
 }
 
 .apple-nav-container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1440px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -109,50 +110,56 @@ body.apple-body {
 .apple-brand-wrapper {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   text-decoration: none;
 }
 
+/* Prominent, Crisp White Apple Logo Emblem Container */
 .apple-logo-badge {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid var(--border-apple-light);
+  height: 52px;
+  min-width: 52px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #ffffff;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+  padding: 4px 8px;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
   transition: var(--transition-apple-medium);
 }
 
 .apple-brand-wrapper:hover .apple-logo-badge {
-  transform: scale(1.06);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+  border-color: #ffffff;
+  box-shadow: 0 6px 25px rgba(255, 255, 255, 0.4);
 }
 
 .apple-logo-img {
-  width: 100%;
   height: 100%;
+  width: auto;
+  max-width: 120px;
   object-fit: contain;
-  padding: 2px;
 }
 
 .apple-brand-title {
   font-family: var(--font-serif-heading);
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 1.08rem;
+  font-weight: 800;
   color: var(--apple-pure-white);
   letter-spacing: 2px;
+  line-height: 1.1;
 }
 
 .apple-brand-sub {
   font-family: var(--font-apple-ui);
-  font-size: 0.55rem;
+  font-size: 0.58rem;
   color: var(--apple-silver);
   letter-spacing: 2.5px;
   display: block;
+  margin-top: 2px;
+  font-weight: 500;
 }
 
 /* Nav Menu Options */
@@ -198,8 +205,8 @@ body.apple-body {
 }
 
 .apple-icon-btn {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   border: 1px solid var(--border-apple-subtle);
   background: var(--bg-apple-frosted);
@@ -518,117 +525,7 @@ body.apple-body {
 }
 
 /* --------------------------------------------------------------------------
-   5. APPLE TECHNICAL SPECIFICATIONS GRID (STATISTICS)
-   -------------------------------------------------------------------------- */
-.apple-specs-section {
-  width: 100%;
-  background: var(--bg-space-dark);
-  border-bottom: 1px solid var(--border-apple-subtle);
-  padding: 4rem 6%;
-}
-
-.apple-section-container {
-  max-width: 1350px;
-  margin: 0 auto;
-}
-
-.apple-specs-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-}
-
-.apple-spec-card {
-  background: var(--bg-apple-card);
-  border: 1px solid var(--border-apple-subtle);
-  border-radius: 24px;
-  padding: 2.2rem 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  transition: var(--transition-apple-slow);
-}
-
-.apple-spec-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--border-apple-light);
-  background: var(--bg-apple-card-hover);
-}
-
-.spec-icon-box {
-  color: var(--apple-white);
-  margin-bottom: 1rem;
-}
-
-.spec-number-val {
-  font-family: var(--font-apple-ui);
-  font-size: 3rem;
-  font-weight: 800;
-  color: var(--apple-pure-white);
-  line-height: 1;
-  letter-spacing: -0.02em;
-}
-
-.spec-label-title {
-  font-family: var(--font-apple-ui);
-  font-size: 0.68rem;
-  letter-spacing: 2px;
-  color: var(--apple-muted);
-  margin-top: 8px;
-  font-weight: 600;
-}
-
-/* --------------------------------------------------------------------------
-   6. BRAND STRIP ("TRUSTED BY VISIONARIES")
-   -------------------------------------------------------------------------- */
-.apple-brand-strip {
-  width: 100%;
-  background: var(--bg-space-black);
-  border-bottom: 1px solid var(--border-apple-subtle);
-  padding: 2.5rem 6%;
-}
-
-.apple-strip-inner {
-  max-width: 1350px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-}
-
-.apple-partner-tag {
-  font-family: var(--font-apple-ui);
-  font-size: 0.7rem;
-  letter-spacing: 2.5px;
-  color: var(--apple-silver);
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.apple-logos-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex: 1;
-  gap: 2rem;
-}
-
-.apple-logos-row span {
-  font-family: var(--font-serif-heading);
-  font-size: 1.15rem;
-  letter-spacing: 4px;
-  color: var(--apple-muted);
-  opacity: 0.5;
-  transition: var(--transition-apple-medium);
-}
-
-.apple-logos-row span:hover {
-  opacity: 1;
-  color: var(--apple-pure-white);
-}
-
-/* --------------------------------------------------------------------------
-   7. APPLE ROUNDED CARDS & EDITORIAL SECTIONS (28px Radius)
+   5. APPLE ROUNDED CARDS & EDITORIAL SECTIONS (28px Radius)
    -------------------------------------------------------------------------- */
 .apple-section {
   padding: 8rem 6%;
@@ -645,6 +542,12 @@ body.apple-body {
 .apple-header-block {
   max-width: 700px;
   margin-bottom: 4.5rem;
+}
+
+.apple-header-block.centered-header {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .apple-header-flex {
@@ -899,7 +802,7 @@ body.apple-body {
 
 .apple-btn-secondary-sm:hover { background: var(--apple-pure-white); color: var(--bg-space-black); }
 
-/* Training Cards & Articles */
+/* Training Cards */
 .training-card { display: flex; flex-direction: column; justify-content: space-between; }
 .card-badge { font-family: var(--font-apple-ui); font-size: 0.62rem; letter-spacing: 2px; color: var(--apple-silver); font-weight: 700; margin-bottom: 10px; display: block; }
 
@@ -910,24 +813,21 @@ body.apple-body {
 .card-action-bar { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-apple-subtle); padding-top: 1.2rem; }
 .duration { font-family: var(--font-apple-ui); font-size: 0.68rem; color: var(--apple-muted); }
 
-.article-card { cursor: pointer; }
-.article-date { font-family: var(--font-apple-ui); font-size: 0.65rem; letter-spacing: 2px; color: var(--apple-silver); margin-bottom: 1rem; display: block; }
-.apple-link { font-family: var(--font-apple-ui); font-size: 0.75rem; color: var(--apple-blue); font-weight: 600; margin-top: 1.2rem; display: inline-block; }
+/* Centered Proposal Form Container */
+.apple-contact-centered-wrapper {
+  max-width: 780px;
+  margin: 0 auto;
+}
 
-/* Contact Section & Form */
-.apple-contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 4rem; }
-.info-title { font-family: var(--font-apple-ui); font-size: 1.4rem; font-weight: 700; color: var(--apple-pure-white); margin-bottom: 1rem; }
-.info-desc { font-family: var(--font-apple-body); font-size: 0.98rem; color: var(--apple-muted); line-height: 1.6; margin-bottom: 2.5rem; }
+.apple-form-card.centered-form {
+  background: var(--bg-apple-card);
+  border: 1px solid var(--border-apple-subtle);
+  border-radius: 28px;
+  padding: 3.5rem 3rem;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8);
+}
 
-.apple-clocks-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 2.5rem; }
-.clock-card { background: var(--bg-apple-card); border: 1px solid var(--border-apple-subtle); border-radius: 16px; padding: 1rem; display: flex; flex-direction: column; }
-.clock-card span { font-family: var(--font-apple-ui); font-size: 0.65rem; color: var(--apple-silver); }
-.clock-card strong { font-family: var(--font-apple-ui); font-size: 1.2rem; font-weight: 700; color: var(--apple-pure-white); margin-top: 4px; }
-
-.encrypted-tag { font-family: var(--font-apple-ui); font-size: 0.7rem; color: var(--apple-muted); display: flex; align-items: center; gap: 10px; }
-
-.apple-form-card { background: var(--bg-apple-card); border: 1px solid var(--border-apple-subtle); border-radius: 28px; padding: 3rem 2.5rem; }
-.form-title { font-family: var(--font-apple-ui); font-size: 1.4rem; font-weight: 700; color: var(--apple-pure-white); margin-bottom: 2rem; }
+.form-title { font-family: var(--font-apple-ui); font-size: 1.5rem; font-weight: 700; color: var(--apple-pure-white); margin-bottom: 2rem; text-align: center; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .field-box { display: flex; flex-direction: column; margin-bottom: 1.5rem; }
 .field-box label { font-family: var(--font-apple-ui); font-size: 0.72rem; color: var(--apple-silver); margin-bottom: 8px; font-weight: 500; }
@@ -967,7 +867,6 @@ body.apple-body {
 @media (max-width: 1200px) {
   .apple-nav-menu { display: none; }
   .apple-headline { font-size: 4rem; }
-  .apple-specs-grid { grid-template-columns: repeat(2, 1fr); }
   .apple-hero-cards-strip { grid-template-columns: repeat(3, 1fr); }
   .apple-strip-card:nth-child(4), .apple-strip-card:nth-child(5) { display: none; }
   .apple-sandbox-container { grid-template-columns: 1fr; }
@@ -977,6 +876,7 @@ body.apple-body {
   .apple-left-hud, .apple-right-hud { display: none; }
   .apple-headline { font-size: 3.2rem; }
   .apple-hero-cards-strip { grid-template-columns: 1fr; }
-  .apple-grid-3col, .apple-portfolio-grid, .apple-contact-grid, .apple-footer-inner { grid-template-columns: 1fr; }
+  .apple-grid-3col, .apple-portfolio-grid, .apple-footer-inner { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
+  .apple-form-card.centered-form { padding: 2.5rem 1.5rem; }
 }
