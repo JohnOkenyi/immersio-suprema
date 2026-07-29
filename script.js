@@ -1,62 +1,104 @@
 /* ==========================================================================
-   IMMERSIO SUPREMA - INTERACTIVE JAVASCRIPT ENGINE
+   IMMERSIO SUPREMA - APPLE INTERACTIVE ENGINE
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initNavbar();
-  initDesertParticles();
+  initAppleNavbar();
   initBackgroundVideo();
-  renderBrandLogos();
-  renderMoviePosters();
-  initCarouselNav();
-  initSimSandbox();
-  initModals();
-  initContactForm();
-  initTimezones();
+  initDustParticles();
+  initStatisticsCounter();
+  initInteractiveSandbox();
+  initPortfolioFilters();
+  initCinemaModal();
+  initGlobalClocks();
+  initProposalForm();
 });
 
 /* --------------------------------------------------------------------------
    1. NAVBAR & SCROLL EFFECTS
    -------------------------------------------------------------------------- */
-function initNavbar() {
-  const navbar = document.querySelector('.navbar');
-  const navLinks = document.querySelectorAll('.nav-link');
+function initAppleNavbar() {
+  const navbar = document.getElementById('main-navbar');
+  const navLinks = document.querySelectorAll('.apple-nav-link');
   const sections = document.querySelectorAll('section');
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 40) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
     }
 
-    // ScrollSpy active indicator
-    let current = '';
+    let currentSectionId = '';
     sections.forEach(section => {
       const sectionTop = section.offsetTop - 120;
       const sectionHeight = section.clientHeight;
       if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-        current = section.getAttribute('id');
+        currentSectionId = section.getAttribute('id');
       }
     });
 
     navLinks.forEach(link => {
       link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
+      if (link.getAttribute('href') === `#${currentSectionId}`) {
         link.classList.add('active');
       }
     });
   });
 }
 
+function scrollToSection(id) {
+  const target = document.getElementById(id);
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
 /* --------------------------------------------------------------------------
-   2. DESERT SAND DUST PARTICLES CANVAS
+   2. HERO VIDEO & MEDIA CONTROLS
    -------------------------------------------------------------------------- */
-function initDesertParticles() {
+function initBackgroundVideo() {
+  const heroVideo = document.getElementById('hero-video');
+  const soundToggleBtn = document.getElementById('sound-toggle');
+  const soundToggleHero = document.getElementById('sound-toggle-hero');
+  const soundIcon = document.getElementById('sound-icon');
+  const soundIconHero = document.getElementById('sound-icon-hero');
+
+  const playToggleBtn = document.getElementById('video-play-toggle');
+  const playIcon = document.getElementById('play-icon');
+
+  function toggleAudio() {
+    if (!heroVideo) return;
+    heroVideo.muted = !heroVideo.muted;
+    const iconClass = heroVideo.muted ? 'fas fa-volume-mute' : 'fas fa-volume-up';
+    if (soundIcon) soundIcon.className = iconClass;
+    if (soundIconHero) soundIconHero.className = iconClass;
+  }
+
+  if (soundToggleBtn) soundToggleBtn.addEventListener('click', toggleAudio);
+  if (soundToggleHero) soundToggleHero.addEventListener('click', toggleAudio);
+
+  if (heroVideo && playToggleBtn) {
+    playToggleBtn.addEventListener('click', () => {
+      if (heroVideo.paused) {
+        heroVideo.play();
+        if (playIcon) playIcon.className = 'fas fa-pause';
+      } else {
+        heroVideo.pause();
+        if (playIcon) playIcon.className = 'fas fa-play';
+      }
+    });
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. DELICATE SILVER & GOLD DUST PARTICLES
+   -------------------------------------------------------------------------- */
+function initDustParticles() {
   const canvas = document.getElementById('desert-canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  
+
   let width = canvas.width = window.innerWidth;
   let height = canvas.height = window.innerHeight;
 
@@ -66,27 +108,24 @@ function initDesertParticles() {
   });
 
   const particles = [];
-  const numParticles = 70;
+  const particleCount = 60;
 
-  class Particle {
-    constructor() {
-      this.reset();
-    }
+  class DustParticle {
+    constructor() { this.reset(); }
 
     reset() {
       this.x = Math.random() * width;
       this.y = Math.random() * height;
-      this.size = Math.random() * 2.5 + 0.5;
-      this.speedX = Math.random() * 0.8 + 0.2;
-      this.speedY = Math.random() * -0.5 - 0.1;
-      this.alpha = Math.random() * 0.5 + 0.1;
-      this.color = Math.random() > 0.3 ? '#d4af37' : '#c85a32';
+      this.size = Math.random() * 2 + 0.4;
+      this.speedX = Math.random() * 0.4 + 0.1;
+      this.speedY = Math.random() * -0.3 - 0.05;
+      this.opacity = Math.random() * 0.4 + 0.1;
+      this.color = Math.random() > 0.4 ? '#f5f5f7' : '#e2b755';
     }
 
     update() {
       this.x += this.speedX;
       this.y += this.speedY;
-
       if (this.x > width || this.y < 0) {
         this.reset();
         this.x = Math.random() * width * 0.5;
@@ -96,7 +135,7 @@ function initDesertParticles() {
 
     draw() {
       ctx.save();
-      ctx.globalAlpha = this.alpha;
+      ctx.globalAlpha = this.opacity;
       ctx.fillStyle = this.color;
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -105,326 +144,247 @@ function initDesertParticles() {
     }
   }
 
-  for (let i = 0; i < numParticles; i++) {
-    particles.push(new Particle());
+  for (let i = 0; i < particleCount; i++) {
+    particles.push(new DustParticle());
   }
 
-  function animate() {
+  function renderLoop() {
     ctx.clearRect(0, 0, width, height);
-    particles.forEach(p => {
-      p.update();
-      p.draw();
-    });
-    requestAnimationFrame(animate);
+    particles.forEach(p => { p.update(); p.draw(); });
+    requestAnimationFrame(renderLoop);
   }
 
-  animate();
+  renderLoop();
 }
 
 /* --------------------------------------------------------------------------
-   3. BACKGROUND VIDEO CONTROLS
+   4. STATISTICS ANIMATED COUNT-UP
    -------------------------------------------------------------------------- */
-function initBackgroundVideo() {
-  const video = document.getElementById('hero-video');
-  const soundBtn = document.getElementById('sound-toggle');
-  const soundIcon = soundBtn ? soundBtn.querySelector('i') : null;
+function initStatisticsCounter() {
+  const statNumbers = document.querySelectorAll('.spec-number-val');
+  let animated = false;
 
-  if (video && soundBtn) {
-    soundBtn.addEventListener('click', () => {
-      video.muted = !video.muted;
-      if (video.muted) {
-        soundIcon.className = 'fas fa-volume-mute';
-        soundBtn.setAttribute('title', 'Unmute Sound');
-      } else {
-        soundIcon.className = 'fas fa-volume-up';
-        soundBtn.setAttribute('title', 'Mute Sound');
-      }
-    });
-  }
-}
+  function checkScroll() {
+    const statsSection = document.querySelector('.apple-specs-section');
+    if (!statsSection) return;
 
-/* --------------------------------------------------------------------------
-   4. 40 BRAND LOGOS GRID (Lost Boys VFX Studios Style)
-   -------------------------------------------------------------------------- */
-const brandData = [
-  { name: 'Google', icon: 'fab fa-google' },
-  { name: 'Coca Cola', icon: 'fas fa-wine-bottle' },
-  { name: 'Nike', icon: 'fas fa-running' },
-  { name: 'Apple', icon: 'fab fa-apple' },
-  { name: 'Tesla', icon: 'fas fa-car-battery' },
-  { name: 'Rolex', icon: 'fas fa-clock' },
-  { name: 'Porsche', icon: 'fas fa-car-side' },
-  { name: 'Samsung', icon: 'fas fa-mobile-alt' },
-  { name: 'Sony', icon: 'fas fa-gamepad' },
-  { name: 'Red Bull', icon: 'fas fa-bolt' },
-  { name: 'Louis Vuitton', icon: 'fas fa-gem' },
-  { name: 'Mercedes-Benz', icon: 'fas fa-star' },
-  { name: 'Amazon', icon: 'fab fa-amazon' },
-  { name: 'Microsoft', icon: 'fab fa-microsoft' },
-  { name: 'Nvidia', icon: 'fas fa-microchip' },
-  { name: 'Disney', icon: 'fas fa-magic' },
-  { name: 'Warner Bros', icon: 'fas fa-film' },
-  { name: 'Paramount', icon: 'fas fa-mountain' },
-  { name: 'Netflix', icon: 'fas fa-play-circle' },
-  { name: 'Heineken', icon: 'fas fa-beer' },
-  { name: 'Audi', icon: 'fas fa-circle-notch' },
-  { name: 'Cartier', icon: 'fas fa-crown' },
-  { name: 'Prada', icon: 'fas fa-tshirt' },
-  { name: 'Intel', icon: 'fas fa-memory' },
-  { name: 'SpaceX', icon: 'fas fa-rocket' },
-  { name: 'Meta', icon: 'fas fa-vr-cardboard' },
-  { name: 'Ubisoft', icon: 'fas fa-headset' },
-  { name: 'Epic Games', icon: 'fas fa-cube' },
-  { name: 'EA Sports', icon: 'fas fa-trophy' },
-  { name: 'Burberry', icon: 'fas fa-user-ninja' },
-  { name: 'Lexus', icon: 'fas fa-car' },
-  { name: 'Qatar Airways', icon: 'fas fa-plane' },
-  { name: 'Emirates', icon: 'fas fa-plane-departure' },
-  { name: 'Pepsi', icon: 'fas fa-glass-whiskey' },
-  { name: 'Mastercard', icon: 'fas fa-credit-card' },
-  { name: 'Visa', icon: 'fab fa-cc-visa' },
-  { name: 'IBM', icon: 'fas fa-server' },
-  { name: 'Adobe', icon: 'fas fa-layer-group' },
-  { name: 'Aston Martin', icon: 'fas fa-tachometer-alt' },
-  { name: 'Gucci', icon: 'fas fa-shopping-bag' }
-];
+    const rect = statsSection.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom >= 0 && !animated) {
+      animated = true;
+      statNumbers.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-target'), 10);
+        const suffix = stat.textContent.includes('+') ? '+' : (stat.textContent.includes('%') ? '%' : '');
+        let count = 0;
+        const duration = 1800;
+        const stepTime = Math.max(20, Math.floor(duration / target));
 
-function renderBrandLogos() {
-  const container = document.getElementById('brand-logos-container');
-  if (!container) return;
-
-  container.innerHTML = brandData.map(brand => `
-    <div class="brand-logo-card" data-brand="${brand.name}">
-      <i class="${brand.icon} brand-icon"></i>
-      <span class="brand-name">${brand.name}</span>
-    </div>
-  `).join('');
-}
-
-/* --------------------------------------------------------------------------
-   5. 40 MOVIE POSTERS CAROUSEL / GRID
-   -------------------------------------------------------------------------- */
-const moviesData = [
-  { id: 1, title: 'DUNE: PART II', year: '2024', genre: 'Sci-Fi / Epic', vfx: 'Desert Simulation & Creature FX', poster: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 2, title: 'LONGLEGS', year: '2024', genre: 'Horror / Thriller', vfx: 'Atmospheric Color & Matte', poster: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 3, title: 'BEETLEJUICE 2', year: '2024', genre: 'Fantasy / Comedy', vfx: 'Practical Stop Motion VFX', poster: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 4, title: 'JOHN WICK 4', year: '2023', genre: 'Action / Cyber', vfx: 'Digital Stunts & Pyrotechnics', poster: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 5, title: 'MADAME WEB', year: '2024', genre: 'Action / Sci-Fi', vfx: 'Particle Distortion & CGI', poster: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 6, title: 'IF', year: '2024', genre: 'Animation / Family', vfx: 'Photoreal Fur & CGI Creatures', poster: 'https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 7, title: 'ALIEN: ROMULUS', year: '2024', genre: 'Sci-Fi / Horror', vfx: 'Space Simulation & Animatronics', poster: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 8, title: 'THE RINGS OF POWER', year: '2023', genre: 'Fantasy / Epic', vfx: 'Full Environment Compositing', poster: 'https://images.unsplash.com/photo-1514539079130-25950c84af65?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 9, title: 'DUNGEONS & DRAGONS', year: '2023', genre: 'Action / Fantasy', vfx: 'Spell FX & Creature Motion', poster: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 10, title: 'TRANSFORMERS ONE', year: '2024', genre: 'Sci-Fi / Animation', vfx: 'Hard Surface Robot Rendering', poster: 'https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 11, title: 'ANT-MAN: QUANTUM', year: '2023', genre: 'Sci-Fi / Action', vfx: 'Quantum Realm FX', poster: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 12, title: 'THOR: RAGNAROK', year: '2022', genre: 'Sci-Fi / Action', vfx: 'Gladiator Arena Simulation', poster: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 13, title: 'DOCTOR STRANGE 2', year: '2022', genre: 'Fantasy / Magic', vfx: 'Multiverse Portal FX', poster: 'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 14, title: 'AVENGERS: ENDGAME', year: '2021', genre: 'Sci-Fi / Epic', vfx: 'Massive Crowd & Debris Sim', poster: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 15, title: 'STAR WARS: EP IX', year: '2020', genre: 'Sci-Fi / Space', vfx: 'Lightsaber & Ocean VFX', poster: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 16, title: 'STAR WARS: EP VII', year: '2019', genre: 'Sci-Fi / Space', vfx: 'X-Wing Aerial Dynamics', poster: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 17, title: '1917', year: '2020', genre: 'War / Drama', vfx: 'Seamless Stitching & Smoke', poster: 'https://images.unsplash.com/photo-1514539079130-25950c84af65?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 18, title: 'JOKER', year: '2019', genre: 'Drama / Thriller', vfx: 'Period Matte Painting', poster: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 19, title: 'THE IRISHMAN', year: '2020', genre: 'Crime / Drama', vfx: 'AI De-aging Neural Engine', poster: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 20, title: 'GODZILLA: KING', year: '2021', genre: 'Monster / Sci-Fi', vfx: 'Kaiju Fluid & Fire Sim', poster: 'https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 21, title: 'BLADE RUNNER 2099', year: '2025', genre: 'Cyberpunk', vfx: 'Holographic Neon Render', poster: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 22, title: 'AVATAR: FIRE & ASH', year: '2025', genre: 'Sci-Fi / Epic', vfx: 'Underwater Volcanic VFX', poster: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 23, title: 'MATRIX RESURRECT', year: '2022', genre: 'Sci-Fi / Cyber', vfx: 'Bullet Time Ray Tracing', poster: 'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 24, title: 'TENET', year: '2020', genre: 'Sci-Fi / Thriller', vfx: 'Time Inversion Physics', poster: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 25, title: 'OPPENHEIMER', year: '2023', genre: 'History / Drama', vfx: 'Practical Atomic Simulation', poster: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 26, title: 'KINGDOM OF APES', year: '2024', genre: 'Sci-Fi / Adventure', vfx: 'Facial Performance Mocap', poster: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 27, title: 'FURIOSA: MAD MAX', year: '2024', genre: 'Action / Wasteland', vfx: 'Sandstorm & Metal Destruction', poster: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 28, title: 'VENOM: LAST DANCE', year: '2024', genre: 'Action / Sci-Fi', vfx: 'Symbiote Fluid Simulation', poster: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 29, title: 'GLADIATOR II', year: '2024', genre: 'Historical Epic', vfx: 'Colosseum Naval Battle Sim', poster: 'https://images.unsplash.com/photo-1514539079130-25950c84af65?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 30, title: 'DEADPOOL & WOLVERINE', year: '2024', genre: 'Action / Comedy', vfx: 'Claw Slash & Gore CGI', poster: 'https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 31, title: 'SPIDER-VERSE 3', year: '2025', genre: 'Animation / Sci-Fi', vfx: 'Multi-Style Shader Pipelines', poster: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 32, title: 'THE BATMAN PART II', year: '2025', genre: 'Noir / Crime', vfx: 'Rain & Shadow Compositing', poster: 'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 33, title: 'TRON: ARES', year: '2025', genre: 'Cyber / Sci-Fi', vfx: 'Volumetric Light Cycle Grid', poster: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 34, title: 'INCEPTION', year: '2010', genre: 'Sci-Fi / Heist', vfx: 'Folding City Architecture', poster: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 35, title: 'TRON: LEGACY', year: '2010', genre: 'Cyberpunk', vfx: 'Digital De-aging & Glow Lines', poster: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 36, title: 'PACIFIC RIM', year: '2013', genre: 'Sci-Fi / Mecha', vfx: 'Jaeger vs Kaiju Water Sim', poster: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 37, title: 'INTERSTELLAR', year: '2014', genre: 'Sci-Fi / Cosmic', vfx: 'Gargantua Black Hole Sim', poster: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 38, title: 'GRAVITY', year: '2013', genre: 'Space / Survival', vfx: 'Zero-G Reflection Rendering', poster: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 39, title: 'THE MARTIAN', year: '2015', genre: 'Sci-Fi / Survival', vfx: 'Mars Red Landscape Grading', poster: 'https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' },
-  { id: 40, title: 'EX MACHINA', year: '2015', genre: 'AI / Sci-Fi', vfx: 'Transparent Android Rigging', poster: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80', video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4' }
-];
-
-function renderMoviePosters() {
-  const container = document.getElementById('movies-grid-container');
-  if (!container) return;
-
-  container.innerHTML = moviesData.map(movie => `
-    <div class="movie-poster-card" data-id="${movie.id}" onclick="openVideoModal('${movie.title}', '${movie.vfx}', '${movie.video}')">
-      <img src="${movie.poster}" alt="${movie.title}" class="movie-poster-img" loading="lazy" />
-      <span class="vfx-badge">VFX WORK</span>
-      <span class="movie-year-badge">${movie.year}</span>
-      <div class="movie-poster-overlay">
-        <h4 class="movie-title">${movie.title}</h4>
-        <div class="movie-genre">${movie.genre}</div>
-        <div class="movie-action">
-          <i class="fas fa-play-circle"></i> WATCH VFX REEL
-        </div>
-      </div>
-    </div>
-  `).join('');
-}
-
-/* --------------------------------------------------------------------------
-   6. CAROUSEL NAVIGATION (Advertising)
-   -------------------------------------------------------------------------- */
-function initCarouselNav() {
-  const track = document.getElementById('adv-carousel-track');
-  const prevBtn = document.getElementById('adv-prev');
-  const nextBtn = document.getElementById('adv-next');
-  if (!track || !prevBtn || !nextBtn) return;
-
-  let position = 0;
-  const cardWidth = 340; // Card width + gap
-
-  prevBtn.addEventListener('click', () => {
-    position = Math.min(position + cardWidth * 2, 0);
-    track.style.transform = `translateX(${position}px)`;
-  });
-
-  nextBtn.addEventListener('click', () => {
-    const maxScroll = -(track.children.length * cardWidth - track.parentElement.clientWidth);
-    position = Math.max(position - cardWidth * 2, maxScroll);
-    track.style.transform = `translateX(${position}px)`;
-  });
-}
-
-/* --------------------------------------------------------------------------
-   7. INTERACTIVE SIMULATION SANDBOX WIDGET
-   -------------------------------------------------------------------------- */
-function initSimSandbox() {
-  const viewport = document.getElementById('sim-viewport');
-  const focalSlider = document.getElementById('slider-focal');
-  const lightingSlider = document.getElementById('slider-lighting');
-  const sandstormSlider = document.getElementById('slider-sandstorm');
-  
-  const hudFocal = document.getElementById('hud-focal');
-  const hudLighting = document.getElementById('hud-lighting');
-  const hudSandstorm = document.getElementById('hud-sandstorm');
-
-  if (!viewport || !focalSlider) return;
-
-  function updateSim() {
-    const focalVal = focalSlider.value;
-    const lightVal = lightingSlider.value;
-    const sandVal = sandstormSlider.value;
-
-    hudFocal.innerText = `${focalVal}mm`;
-    hudLighting.innerText = `${lightVal}%`;
-    hudSandstorm.innerText = `${sandVal}%`;
-
-    // Apply visual CSS filter adjustments simulating render viewport
-    const brightness = 0.5 + (lightVal / 100) * 0.7;
-    const sepia = (sandVal / 100) * 0.8;
-    const blur = (sandVal / 100) * 1.5;
-    const scale = 1 + (100 - focalVal) * 0.002;
-
-    viewport.style.filter = `brightness(${brightness}) sepia(${sepia}) blur(${blur}px) contrast(1.1)`;
-    viewport.style.transform = `scale(${scale})`;
+        const timer = setInterval(() => {
+          count += Math.ceil(target / 40);
+          if (count >= target) {
+            stat.textContent = target + suffix;
+            clearInterval(timer);
+          } else {
+            stat.textContent = count + suffix;
+          }
+        }, stepTime);
+      });
+    }
   }
 
-  focalSlider.addEventListener('input', updateSim);
-  lightingSlider.addEventListener('input', updateSim);
-  sandstormSlider.addEventListener('input', updateSim);
-
-  updateSim();
+  window.addEventListener('scroll', checkScroll);
+  checkScroll();
 }
 
 /* --------------------------------------------------------------------------
-   8. MODAL PLAYER SYSTEM
+   5. INTERACTIVE REAL-TIME SANDBOX WIDGET
    -------------------------------------------------------------------------- */
-function initModals() {
-  const backdrop = document.getElementById('video-modal');
-  const closeBtn = document.getElementById('modal-close');
+function initInteractiveSandbox() {
+  const focalSlider = document.getElementById('range-focal');
+  const lightSlider = document.getElementById('range-light');
+  const sandSlider = document.getElementById('range-sand');
 
-  if (closeBtn && backdrop) {
-    closeBtn.addEventListener('click', closeVideoModal);
-    backdrop.addEventListener('click', (e) => {
-      if (e.target === backdrop) closeVideoModal();
+  const valFocal = document.getElementById('val-focal');
+  const valLight = document.getElementById('val-light');
+  const valSand = document.getElementById('val-sand');
+
+  const labelFocalNum = document.getElementById('label-focal-num');
+  const labelLightNum = document.getElementById('label-light-num');
+  const labelSandNum = document.getElementById('label-sand-num');
+
+  const sandboxVideo = document.getElementById('sandbox-video-viewport');
+  const btnReset = document.getElementById('btn-reset-sandbox');
+
+  function updateViewport() {
+    if (!sandboxVideo) return;
+
+    const focal = focalSlider ? focalSlider.value : 50;
+    const light = lightSlider ? lightSlider.value : 80;
+    const sand = sandSlider ? sandSlider.value : 25;
+
+    if (valFocal) valFocal.textContent = `${focal}mm`;
+    if (labelFocalNum) labelFocalNum.textContent = `${focal}mm`;
+
+    if (valLight) valLight.textContent = `${light}%`;
+    if (labelLightNum) labelLightNum.textContent = `${light}%`;
+
+    if (valSand) valSand.textContent = `${sand}%`;
+    if (labelSandNum) labelSandNum.textContent = `${sand}%`;
+
+    const brightnessVal = light / 80;
+    const blurVal = (105 - focal) / 25;
+    const sepiaVal = sand / 100;
+
+    sandboxVideo.style.filter = `brightness(${brightnessVal}) blur(${blurVal}px) sepia(${sepiaVal * 0.3})`;
+  }
+
+  if (focalSlider) focalSlider.addEventListener('input', updateViewport);
+  if (lightSlider) lightSlider.addEventListener('input', updateViewport);
+  if (sandSlider) sandSlider.addEventListener('input', updateViewport);
+
+  if (btnReset) {
+    btnReset.addEventListener('click', () => {
+      if (focalSlider) focalSlider.value = 50;
+      if (lightSlider) lightSlider.value = 80;
+      if (sandSlider) sandSlider.value = 25;
+      updateViewport();
     });
   }
 }
 
-function openVideoModal(title, subtitle, videoSrc) {
-  const backdrop = document.getElementById('video-modal');
-  const modalTitle = document.getElementById('modal-title');
-  const modalSubtitle = document.getElementById('modal-subtitle');
-  const videoPlayer = document.getElementById('modal-video-element');
-
-  if (!backdrop) return;
-
-  modalTitle.innerText = title;
-  modalSubtitle.innerText = subtitle;
-  videoPlayer.src = videoSrc;
-  
-  backdrop.classList.add('active');
-  videoPlayer.play().catch(e => console.log('Autoplay handled:', e));
-}
-
-function closeVideoModal() {
-  const backdrop = document.getElementById('video-modal');
-  const videoPlayer = document.getElementById('modal-video-element');
-  if (backdrop) backdrop.classList.remove('active');
-  if (videoPlayer) {
-    videoPlayer.pause();
-    videoPlayer.currentTime = 0;
-  }
-}
-
 /* --------------------------------------------------------------------------
-   9. CONTACT FORM SUBMISSION TOAST
+   6. PORTFOLIO SHOWCASE FILTERS
    -------------------------------------------------------------------------- */
-function initContactForm() {
-  const form = document.getElementById('immersio-contact-form');
-  if (!form) return;
+function initPortfolioFilters() {
+  const filterTabs = document.querySelectorAll('.apple-filter-btn');
+  const portfolioCards = document.querySelectorAll('.apple-work-card');
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const btn = form.querySelector('button[type="submit"]');
-    const originalText = btn.innerHTML;
-    
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> TRANSMITTING INQUIRY...';
-    btn.disabled = true;
+  filterTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      filterTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
 
-    setTimeout(() => {
-      alert('Thank you for contacting Immersio Suprema. Our executive team will review your proposal and get in touch within 24 hours.');
-      form.reset();
-      btn.innerHTML = originalText;
-      btn.disabled = false;
-    }, 1500);
+      const filterValue = tab.getAttribute('data-filter');
+
+      portfolioCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filterValue === 'all' || category === filterValue) {
+          card.style.display = 'block';
+          setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'scale(1)'; }, 50);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.95)';
+          setTimeout(() => { card.style.display = 'none'; }, 300);
+        }
+      });
+    });
   });
 }
 
 /* --------------------------------------------------------------------------
-   10. GLOBAL STUDIO TIMEZONES
+   7. CINEMA LIGHTBOX MODAL PLAYER
    -------------------------------------------------------------------------- */
-function initTimezones() {
-  const timeElements = {
-    vancouver: 'America/Vancouver',
-    la: 'America/Los_Angeles',
-    london: 'Europe/London',
-    dubai: 'Asia/Dubai',
-    riyadh: 'Asia/Riyadh',
-    tokyo: 'Asia/Tokyo'
-  };
+function initCinemaModal() {
+  const modal = document.getElementById('cinema-modal');
+  const closeBtn = document.getElementById('modal-close-btn');
 
+  if (closeBtn && modal) {
+    closeBtn.addEventListener('click', closeCinemaModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeCinemaModal();
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeCinemaModal();
+  });
+}
+
+function openCinemaModal(title, description) {
+  const modal = document.getElementById('cinema-modal');
+  const modalTitle = document.getElementById('modal-project-title');
+  const modalDesc = document.getElementById('modal-project-desc');
+  const modalVideo = document.getElementById('modal-video-player');
+
+  if (modalTitle) modalTitle.textContent = title;
+  if (modalDesc) modalDesc.textContent = description;
+
+  if (modal) modal.classList.add('active');
+  if (modalVideo) {
+    modalVideo.currentTime = 0;
+    modalVideo.play();
+  }
+}
+
+function closeCinemaModal() {
+  const modal = document.getElementById('cinema-modal');
+  const modalVideo = document.getElementById('modal-video-player');
+
+  if (modal) modal.classList.remove('active');
+  if (modalVideo) modalVideo.pause();
+}
+
+/* --------------------------------------------------------------------------
+   8. GLOBAL STUDIO TIMEZONES
+   -------------------------------------------------------------------------- */
+function initGlobalClocks() {
   function updateClocks() {
-    Object.keys(timeElements).forEach(id => {
-      const el = document.getElementById(`time-${id}`);
-      if (el) {
-        const timeStr = new Date().toLocaleTimeString('en-US', {
-          timeZone: timeElements[id],
-          hour: '2-digit',
-          minute: '2-digit',
-          hour12: true
-        });
-        el.innerText = timeStr;
-      }
-    });
+    const now = new Date();
+
+    const van = new Date(now.toLocaleString('en-US', { timeZone: 'America/Vancouver' }));
+    const la = new Date(now.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
+    const lon = new Date(now.toLocaleString('en-US', { timeZone: 'Europe/London' }));
+    const dxb = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Dubai' }));
+    const ruh = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Riyadh' }));
+    const tyo = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Tokyo' }));
+
+    const format = date => date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+
+    const vanEl = document.getElementById('clock-van');
+    const laEl = document.getElementById('clock-la');
+    const lonEl = document.getElementById('clock-lon');
+    const dxbEl = document.getElementById('clock-dxb');
+    const ruhEl = document.getElementById('clock-ruh');
+    const tyoEl = document.getElementById('clock-tyo');
+
+    if (vanEl) vanEl.textContent = format(van);
+    if (laEl) laEl.textContent = format(la);
+    if (lonEl) lonEl.textContent = format(lon);
+    if (dxbEl) dxbEl.textContent = format(dxb);
+    if (ruhEl) ruhEl.textContent = format(ruh);
+    if (tyoEl) tyoEl.textContent = format(tyo);
   }
 
   updateClocks();
   setInterval(updateClocks, 30000);
+}
+
+/* --------------------------------------------------------------------------
+   9. PROPOSAL FORM SUBMISSION
+   -------------------------------------------------------------------------- */
+function initProposalForm() {
+  const form = document.getElementById('proposal-form');
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const submitBtn = form.querySelector('.apple-btn-white-pill');
+    const originalText = submitBtn.innerHTML;
+
+    submitBtn.innerHTML = '<span>Encrypting & Transmitting...</span>';
+    submitBtn.style.opacity = '0.7';
+
+    setTimeout(() => {
+      submitBtn.innerHTML = '<span>Proposal Transmitted Successfully ✓</span>';
+      submitBtn.style.background = '#34d399';
+      submitBtn.style.color = '#000000';
+      form.reset();
+
+      setTimeout(() => {
+        submitBtn.innerHTML = originalText;
+        submitBtn.style.opacity = '1';
+        submitBtn.style.background = '';
+        submitBtn.style.color = '';
+      }, 4000);
+    }, 1800);
+  });
 }
