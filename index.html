@@ -390,65 +390,100 @@
         </p>
       </div>
 
-      <div class="apple-grid-3col">
-        
-        <div class="apple-pro-card training-card">
-          <div>
-            <span class="card-badge">FILM STUDIOS & PRODUCTION HOUSES</span>
-            <h3 class="pro-card-title">Studio VFX & Virtual Production</h3>
-            <p class="pro-card-desc">
-              Custom on-site masterclasses for Hollywood VFX studios, commercial agencies, and virtual production LED wall stages. Upskill pipeline artists in Houdini fluid dynamics, MetaHuman mocap, and Unreal Engine 5.
-            </p>
-            <ul class="apple-list">
-              <li><i class="fas fa-check"></i> On-Site Training at Major Film Studios</li>
-              <li><i class="fas fa-check"></i> LED Wall ICVFX & Mocap Stage Calibration</li>
-              <li><i class="fas fa-check"></i> Houdini Physics & Generative AI Pipelines</li>
-            </ul>
+      <!-- INTERACTIVE 3D ROTATING CYBER CAMPUS HOUSE STAGE -->
+      <div class="cyber-house-stage-wrapper">
+        <div class="cyber-house-viewport-container" id="cyber-house-viewport">
+          
+          <!-- 3D Pedestal Stage Ring -->
+          <div class="cyber-house-stage-pedestal">
+            <div class="pedestal-glow-ring"></div>
+            <div class="pedestal-track-label"><i class="fas fa-mouse-pointer"></i> DRAG TO ROTATE 3D CAMPUS • SCROLL TO ZOOM • CLICK ROOM WINGS FOR SECTOR DETAILS</div>
           </div>
-          <div class="card-action-bar">
-            <span class="duration">STUDIOS & PRODUCTION HOUSES</span>
-            <button class="apple-btn-secondary-sm" onclick="openCinemaModal('STUDIO VFX TRAINING', 'Custom On-Site Training for Film Studios & Agencies')">Book Training</button>
-          </div>
-        </div>
 
-        <div class="apple-pro-card training-card">
-          <div>
-            <span class="card-badge">UNIVERSITIES & FILM SCHOOLS</span>
-            <h3 class="pro-card-title">Academic & School Workshops</h3>
-            <p class="pro-card-desc">
-              Accredited degree modules, faculty certification programs, and guest workshops for universities, film academies, and creative technology institutes to equip students with industry-ready skills.
-            </p>
-            <ul class="apple-list">
-              <li><i class="fas fa-check"></i> University & Film School Turnkey Curriculum</li>
-              <li><i class="fas fa-check"></i> Faculty Certification & Virtual Lab Setup</li>
-              <li><i class="fas fa-check"></i> Student Capstone Mentorship & Masterclasses</li>
-            </ul>
-          </div>
-          <div class="card-action-bar">
-            <span class="duration">UNIVERSITIES & ACADEMIES</span>
-            <button class="apple-btn-secondary-sm" onclick="openCinemaModal('ACADEMIC TRAINING SERVICES', 'Turnkey Curriculum & Guest Workshops for Universities')">Book Training</button>
-          </div>
-        </div>
+          <!-- The 3D Cyber House Structure -->
+          <div class="cyber-house-3d-model" id="cyber-house-model">
+            
+            <!-- Roof Complex -->
+            <div class="house-roof-structure">
+              <div class="house-roof-face house-roof-left">
+                <div class="roof-solar-pattern"></div>
+                <span class="roof-badge">IMMERSIO ACADEMY</span>
+              </div>
+              <div class="house-roof-face house-roof-right">
+                <div class="roof-solar-pattern"></div>
+              </div>
+              <div class="house-roof-ridge"></div>
+            </div>
 
-        <div class="apple-pro-card training-card">
-          <div>
-            <span class="card-badge">DEFENSE & ENTERPRISE ACADEMIES</span>
-            <h3 class="pro-card-title">Government & Corporate Training</h3>
-            <p class="pro-card-desc">
-              Tactical VR flight combat, industrial digital twin machinery drills, and biometric stress telemetry for defense academies, aerospace contractors, and enterprise innovation centers.
-            </p>
-            <ul class="apple-list">
-              <li><i class="fas fa-check"></i> Military Flight & Tactical Combat VR</li>
-              <li><i class="fas fa-check"></i> Aerospace & Industrial Digital Twins</li>
-              <li><i class="fas fa-check"></i> Biometric Telemetry & Swarm AI Drills</li>
-            </ul>
-          </div>
-          <div class="card-action-bar">
-            <span class="duration">DEFENSE & ENTERPRISE</span>
-            <button class="apple-btn-secondary-sm" onclick="openCinemaModal('DEFENSE & ENTERPRISE TRAINING', 'Accredited Simulation Training for Government & Industry')">Book Training</button>
-          </div>
-        </div>
+            <!-- Main Building Core & 4 Sector Room Wings -->
+            <div class="house-body-structure">
+              
+              <!-- FRONT ROOM WING: UNIVERSITIES & ACADEMIES -->
+              <div class="house-wall house-wall-front house-room-wing" data-angle="0">
+                <div class="room-window-glass">
+                  <span class="room-sector-tag"><i class="fas fa-university"></i> ACADEMIC WING</span>
+                  <h3 class="room-title">Universities & Film Schools</h3>
+                  <p class="room-desc">Turnkey accredited degree curricula, faculty workshops, and student capstone mentorship worldwide.</p>
+                  <div class="room-stats-pill">
+                    <span><i class="fas fa-graduation-cap"></i> 50+ INSTITUTES</span>
+                    <button class="room-action-btn" onclick="openCinemaModal('ACADEMIC TRAINING SERVICES', 'Turnkey Curriculum & Guest Workshops for Universities')">Explore Wing</button>
+                  </div>
+                </div>
+              </div>
 
+              <!-- RIGHT ROOM WING: GOVERNMENT & DEFENSE -->
+              <div class="house-wall house-wall-right house-room-wing" data-angle="90">
+                <div class="room-window-glass">
+                  <span class="room-sector-tag"><i class="fas fa-shield-alt"></i> DEFENSE COMPLEX</span>
+                  <h3 class="room-title">Government & Corporate</h3>
+                  <p class="room-desc">Tactical VR flight combat, industrial digital twin machinery drills, and biometric stress telemetry.</p>
+                  <div class="room-stats-pill">
+                    <span><i class="fas fa-fighter-jet"></i> MILITARY ACCREDITED</span>
+                    <button class="room-action-btn" onclick="openCinemaModal('DEFENSE & ENTERPRISE TRAINING', 'Accredited Simulation Training for Government & Industry')">Explore Wing</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- LEFT ROOM WING: HOLLYWOOD STUDIO VFX -->
+              <div class="house-wall house-wall-left house-room-wing" data-angle="-90">
+                <div class="room-window-glass">
+                  <span class="room-sector-tag"><i class="fas fa-film"></i> STUDIO PRODUCTION</span>
+                  <h3 class="room-title">Studio VFX & Virtual Production</h3>
+                  <p class="room-desc">Custom on-site masterclasses for Hollywood VFX studios, ICVFX LED walls, and Houdini fluid dynamics.</p>
+                  <div class="room-stats-pill">
+                    <span><i class="fas fa-video"></i> 8K ICVFX STAGES</span>
+                    <button class="room-action-btn" onclick="openCinemaModal('STUDIO VFX TRAINING', 'Custom On-Site Training for Film Studios & Agencies')">Explore Wing</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- BACK ROOM WING: AI NEURAL GRAPHICS LAB -->
+              <div class="house-wall house-wall-back house-room-wing" data-angle="180">
+                <div class="room-window-glass">
+                  <span class="room-sector-tag"><i class="fas fa-brain"></i> AI & GAUSSIAN LAB</span>
+                  <h3 class="room-title">Neural Graphics & AI Lab</h3>
+                  <p class="room-desc">NeRF 3D Gaussian Splatting, real-time AI ray tracing at 120fps, and autonomous character synthesis.</p>
+                  <div class="room-stats-pill">
+                    <span><i class="fas fa-microchip"></i> UNREAL ENGINE 5.4</span>
+                    <button class="room-action-btn" onclick="openCinemaModal('NEURAL AI GRAPHICS LAB', 'Real-Time NeRF Gaussian Splatting & AI Pipelines')">Explore Lab</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Interactive Control Navigation Pills -->
+          <div class="cyber-house-nav-bar">
+            <button class="house-nav-tab active" onclick="rotateHouseToAngle(0)"><i class="fas fa-university"></i> Academic Wing</button>
+            <button class="house-nav-tab" onclick="rotateHouseToAngle(-90)"><i class="fas fa-film"></i> Studio Production</button>
+            <button class="house-nav-tab" onclick="rotateHouseToAngle(90)"><i class="fas fa-shield-alt"></i> Defense Complex</button>
+            <button class="house-nav-tab" onclick="rotateHouseToAngle(180)"><i class="fas fa-brain"></i> AI Neural Lab</button>
+            <button class="house-nav-tab auto-rotate-btn active" id="house-autorotate-toggle" onclick="toggleHouseAutoRotate()"><i class="fas fa-sync-alt fa-spin"></i> Auto-Rotate: ON</button>
+          </div>
+
+        </div>
       </div>
 
     </div>

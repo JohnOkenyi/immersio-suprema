@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initProposalForm();
   initHero3DCard();
   initCardHoverSoundEffects();
+  initCyberHouseEngine();
 });
 
 /* --------------------------------------------------------------------------
@@ -389,11 +390,106 @@ function initCardHoverSoundEffects() {
 
   // Dynamic delegation for dynamic elements
   document.addEventListener('mouseover', (e) => {
-    const targetCard = e.target.closest('.apple-pro-card, .apple-strip-card, .training-card, .apple-work-card, .apple-filter-btn');
+    const targetCard = e.target.closest('.apple-pro-card, .apple-strip-card, .training-card, .apple-work-card, .apple-filter-btn, .house-wall, .house-nav-tab');
     if (targetCard && !targetCard.dataset.soundBound) {
       targetCard.dataset.soundBound = 'true';
       targetCard.addEventListener('mouseenter', () => playUICardHoverSound());
       targetCard.addEventListener('click', () => playUICardClickSound());
     }
   });
+}
+
+/* --------------------------------------------------------------------------
+   9. INTERACTIVE 3D ROTATING CYBER CAMPUS HOUSE ENGINE
+   -------------------------------------------------------------------------- */
+let houseRotationY = 0;
+let houseAutoRotate = true;
+let isDraggingHouse = false;
+let startX = 0;
+let previousRotationY = 0;
+
+function rotateHouseToAngle(targetAngle) {
+  const houseModel = document.getElementById('cyber-house-model');
+  if (!houseModel) return;
+
+  houseRotationY = targetAngle;
+  houseModel.style.transform = `rotateX(-10deg) rotateY(${houseRotationY}deg)`;
+  updateHouseNavTabs(targetAngle);
+}
+
+function toggleHouseAutoRotate() {
+  houseAutoRotate = !houseAutoRotate;
+  const toggleBtn = document.getElementById('house-autorotate-toggle');
+  if (toggleBtn) {
+    if (houseAutoRotate) {
+      toggleBtn.classList.add('active');
+      toggleBtn.innerHTML = '<i class="fas fa-sync-alt fa-spin"></i> Auto-Rotate: ON';
+    } else {
+      toggleBtn.classList.remove('active');
+      toggleBtn.innerHTML = '<i class="fas fa-play"></i> Auto-Rotate: OFF';
+    }
+  }
+}
+
+function updateHouseNavTabs(angle) {
+  const tabs = document.querySelectorAll('.house-nav-tab:not(.auto-rotate-btn)');
+  tabs.forEach(tab => {
+    tab.classList.remove('active');
+  });
+
+  const normalized = ((angle % 360) + 360) % 360;
+  if (normalized >= 315 || normalized < 45) {
+    if (tabs[0]) tabs[0].classList.add('active');
+  } else if (normalized >= 45 && normalized < 135) {
+    if (tabs[2]) tabs[2].classList.add('active');
+  } else if (normalized >= 135 && normalized < 225) {
+    if (tabs[3]) tabs[3].classList.add('active');
+  } else if (normalized >= 225 && normalized < 315) {
+    if (tabs[1]) tabs[1].classList.add('active');
+  }
+}
+
+function initCyberHouseEngine() {
+  const viewport = document.getElementById('cyber-house-viewport');
+  const houseModel = document.getElementById('cyber-house-model');
+  if (!viewport || !houseModel) return;
+
+  // Smooth Auto-Rotation Loop (30 FPS ticker)
+  setInterval(() => {
+    if (houseAutoRotate && !isDraggingHouse) {
+      houseRotationY += 0.35;
+      houseModel.style.transform = `rotateX(-10deg) rotateY(${houseRotationY}deg)`;
+      updateHouseNavTabs(houseRotationY);
+    }
+  }, 30);
+
+  // Mouse & Touch Drag 3D Rotation Logic
+  function onPointerDown(e) {
+    isDraggingHouse = true;
+    startX = e.clientX || (e.touches && e.touches[0].clientX);
+    previousRotationY = houseRotationY;
+  }
+
+  function onPointerMove(e) {
+    if (!isDraggingHouse) return;
+    const currentX = e.clientX || (e.touches && e.touches[0].clientX);
+    const deltaX = currentX - startX;
+    houseRotationY = previousRotationY + deltaX * 0.55;
+    houseModel.style.transform = `rotateX(-10deg) rotateY(${houseRotationY}deg)`;
+    updateHouseNavTabs(houseRotationY);
+  }
+
+  function onPointerUp() {
+    if (isDraggingHouse) {
+      isDraggingHouse = false;
+    }
+  }
+
+  viewport.addEventListener('mousedown', onPointerDown);
+  window.addEventListener('mousemove', onPointerMove);
+  window.addEventListener('mouseup', onPointerUp);
+
+  viewport.addEventListener('touchstart', onPointerDown, { passive: true });
+  window.addEventListener('touchmove', onPointerMove, { passive: true });
+  window.addEventListener('touchend', onPointerUp);
 }
