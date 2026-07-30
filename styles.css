@@ -466,7 +466,7 @@ body.vfx-body {
 /* On Click: Surface and Letters Extrude Out Off The Screen Growing From Ground Up */
 .apple-hero-content.card-extruded-active {
   background: rgba(12, 12, 18, 0.55);
-  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(125px) scale(1.03) !important;
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(125px) !important;
   box-shadow:
     0 0 0 2px var(--burkina-yellow),
     0 2px 0 #ffffff,
@@ -486,46 +486,41 @@ body.vfx-body {
 }
 
 .apple-hero-content.card-extruded-active .apple-headline {
-  transform: translateZ(160px) scale(1.06);
+  transform: translateZ(150px);
   text-shadow:
-    0 1px 0 #e6e6e6,
-    0 2px 0 #cccccc,
-    0 3px 0 #b3b3b3,
-    0 4px 0 #999999,
-    0 5px 0 #808080,
-    0 6px 0 #666666,
-    0 7px 0 #4d4d4d,
-    0 8px 0 #333333,
-    0 9px 0 #1a1a1a,
-    0 10px 0 #0d0d0d,
-    0 28px 60px rgba(0, 0, 0, 0.95);
+    0 1px 0 #1a1a24,
+    0 2px 0 #1a1a24,
+    0 3px 0 #242432,
+    0 4px 0 #242432,
+    0 5px 0 #2e2e40,
+    0 6px 0 #2e2e40,
+    0 7px 0 #38384e,
+    0 8px 0 #38384e,
+    0 15px 30px rgba(0, 0, 0, 0.9);
 }
 
 .apple-hero-content.card-extruded-active .apple-subheadline {
-  transform: translateZ(115px);
+  transform: translateZ(105px);
   color: #ffffff;
   font-weight: 400;
   text-shadow:
-    0 1px 0 #cccccc,
-    0 2px 0 #aaaaaa,
-    0 3px 0 #888888,
-    0 4px 0 #666666,
-    0 5px 0 #444444,
-    0 20px 40px rgba(0, 0, 0, 0.92);
+    0 1px 0 #1a1a24,
+    0 2px 0 #242432,
+    0 3px 0 #2e2e40,
+    0 10px 25px rgba(0, 0, 0, 0.85);
 }
 
 .apple-hero-content.card-extruded-active .apple-eyebrow-tag {
-  transform: translateZ(130px);
+  transform: translateZ(120px);
   text-shadow:
     0 1px 0 #ffd60a,
     0 2px 0 #cca300,
     0 3px 0 #806600,
-    0 4px 0 #4d3d00,
-    0 14px 28px rgba(0, 0, 0, 0.85);
+    0 10px 20px rgba(0, 0, 0, 0.8);
 }
 
 .apple-hero-content.card-extruded-active .apple-hero-buttons {
-  transform: translateZ(135px) scale(1.07);
+  transform: translateZ(125px);
 }
 
 .apple-eyebrow-tag {
@@ -551,25 +546,27 @@ body.vfx-body {
   text-shadow: none;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), text-shadow 0.6s ease;
   cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
-/* Hovering over headline or card extrudes letters UP in 3D like growing from flat surface */
+/* Hovering over headline or card extrudes letters UP in 3D with razor-sharp readability */
 .apple-headline:hover,
 .apple-hero-content:hover .apple-headline {
-  transform: translateZ(95px) scale(1.04);
+  transform: translateZ(90px);
   text-shadow:
-    0 1px 0 #ffffff,
-    0 2px 0 #e6e6e6,
-    0 3px 0 #cccccc,
-    0 4px 0 #b3b3b3,
-    0 5px 0 #999999,
-    0 6px 0 #808080,
-    0 7px 0 #666666,
-    0 8px 0 #4d4d4d,
-    0 9px 0 #333333,
-    0 10px 0 #1a1a1a,
-    0 12px 0 #0d0d0d,
-    0 25px 50px rgba(0, 0, 0, 0.95);
+    0 1px 0 #181822,
+    0 2px 0 #181822,
+    0 3px 0 #222230,
+    0 4px 0 #222230,
+    0 5px 0 #2c2c3d,
+    0 6px 0 #2c2c3d,
+    0 7px 0 #36364b,
+    0 8px 0 #36364b,
+    0 12px 25px rgba(0, 0, 0, 0.85);
 }
 
 .apple-subheadline {
@@ -582,18 +579,20 @@ body.vfx-body {
   font-weight: 300;
   transform: translateZ(0px);
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), text-shadow 0.6s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 .apple-subheadline:hover,
 .apple-hero-content:hover .apple-subheadline {
-  transform: translateZ(60px);
+  transform: translateZ(55px);
   color: #ffffff;
   text-shadow:
-    0 1px 0 #cccccc,
-    0 2px 0 #aaaaaa,
-    0 3px 0 #888888,
-    0 4px 0 #666666,
-    0 15px 30px rgba(0, 0, 0, 0.9);
+    0 1px 0 #1a1a24,
+    0 2px 0 #242432,
+    0 3px 0 #2e2e40,
+    0 10px 20px rgba(0, 0, 0, 0.8);
 }
 
 .apple-hero-buttons {
