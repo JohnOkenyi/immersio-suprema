@@ -75,12 +75,13 @@ body.vfx-body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Apple Burkina Faso Tricolor Headline Gradient */
+/* Pure White Headline Accent */
 .apple-headline-gradient {
-  background: var(--burkina-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
   display: inline-block;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 }
 
 /* --------------------------------------------------------------------------
@@ -384,7 +385,7 @@ body.vfx-body {
   background: var(--burkina-yellow);
 }
 
-/* Apple Hero Content - Straight Transparent Card with Heavy 3D Extrusion Thickness */
+/* Apple Hero Content - Transparent Card with Ultra-Thick Visible 3D Edges */
 .apple-hero-content {
   position: relative;
   z-index: 5;
@@ -395,67 +396,73 @@ body.vfx-body {
   background: rgba(10, 10, 15, 0.28);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1.5px solid rgba(255, 255, 255, 0.32);
-  border-top: 2px solid rgba(255, 255, 255, 0.6);
-  border-left: 2px solid rgba(255, 255, 255, 0.45);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top: 3px solid rgba(255, 255, 255, 0.75);
+  border-left: 3px solid rgba(255, 255, 255, 0.55);
   transform-style: preserve-3d;
-  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(60px);
+  transform: perspective(1000px) rotateY(-6deg) rotateX(3deg) translateZ(60px);
   transition: transform 0.4s var(--ease-apple), box-shadow 0.4s var(--ease-apple), background 0.4s ease;
   box-shadow:
     /* Top edge rim light stroke */
-    0 0 0 1px rgba(255, 255, 255, 0.2),
-    /* 22px Heavy Solid 3D Extrusion Wall Thickness (Visible 3D Slab Depth) */
-    -1px 1px 0 rgba(255, 255, 255, 0.4),
-    -2px 2px 0 #3a3a48,
-    -3px 3px 0 #333340,
-    -4px 4px 0 #2c2c38,
-    -5px 5px 0 #262630,
-    -6px 6px 0 #202028,
-    -7px 7px 0 #1b1b22,
-    -8px 8px 0 #17171c,
-    -9px 9px 0 #131317,
-    -10px 10px 0 #101014,
-    -11px 11px 0 #0d0d11,
-    -12px 12px 0 #0a0a0d,
-    -13px 13px 0 #08080a,
-    -14px 14px 0 #060608,
-    -15px 15px 0 #050507,
-    -16px 16px 0 #040405,
-    -18px 18px 0 #030304,
-    -20px 20px 0 #020203,
-    -22px 22px 0 #010102,
-    /* Deep atmospheric drop shadow behind the thick 3D slab */
-    -35px 40px 90px rgba(0, 0, 0, 0.98),
+    0 0 0 1px rgba(255, 255, 255, 0.3),
+    /* 35px Ultra-Thick 3D Extrusion Wall (Clearly Visible 3D Edge Depth) */
+    -1px 1px 0 rgba(255, 255, 255, 0.7),
+    -2px 2px 0 rgba(255, 255, 255, 0.5),
+    -3px 3px 0 #4a4a5b,
+    -4px 4px 0 #424252,
+    -5px 5px 0 #3a3a4a,
+    -6px 6px 0 #343442,
+    -7px 7px 0 #2e2e3a,
+    -8px 8px 0 #282834,
+    -9px 9px 0 #23232d,
+    -10px 10px 0 #1e1e27,
+    -11px 11px 0 #1a1a22,
+    -12px 12px 0 #16161d,
+    -13px 13px 0 #131319,
+    -14px 14px 0 #101015,
+    -15px 15px 0 #0e0e12,
+    -16px 16px 0 #0c0c0f,
+    -18px 18px 0 #0a0a0d,
+    -20px 20px 0 #08080a,
+    -22px 22px 0 #060608,
+    -25px 25px 0 #050507,
+    -28px 28px 0 #040405,
+    -31px 31px 0 #020203,
+    -35px 35px 0 #010102,
+    /* Deep atmospheric cast shadow behind the thick 3D block */
+    -45px 50px 110px rgba(0, 0, 0, 0.99),
     0 15px 40px rgba(0, 0, 0, 0.85),
-    0 0 50px rgba(255, 255, 255, 0.1),
+    0 0 60px rgba(255, 255, 255, 0.12),
     /* Specular glass reflection & inner bevel highlights */
-    inset 0 1.5px 2px rgba(255, 255, 255, 0.5),
+    inset 0 2px 3px rgba(255, 255, 255, 0.65),
     inset 0 -2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .apple-hero-content:hover {
   background: rgba(10, 10, 15, 0.36);
-  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(90px);
+  transform: perspective(1000px) rotateY(-3deg) rotateX(2deg) translateZ(85px);
   box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.3),
-    -1px 1px 0 rgba(255, 255, 255, 0.5),
-    -3px 3px 0 #424252,
-    -5px 5px 0 #363644,
-    -7px 7px 0 #2d2d38,
-    -9px 9px 0 #24242e,
-    -11px 11px 0 #1d1d26,
-    -13px 13px 0 #17171e,
-    -15px 15px 0 #121217,
-    -17px 17px 0 #0e0e12,
-    -19px 19px 0 #0a0a0d,
-    -21px 21px 0 #070709,
-    -23px 23px 0 #040406,
-    -25px 25px 0 #020203,
-    -27px 27px 0 #010102,
-    -42px 48px 110px rgba(0, 0, 0, 0.99),
+    0 0 0 1px rgba(255, 255, 255, 0.4),
+    -1px 1px 0 rgba(255, 255, 255, 0.8),
+    -3px 3px 0 #525264,
+    -5px 5px 0 #444454,
+    -7px 7px 0 #383846,
+    -9px 9px 0 #2e2e3a,
+    -11px 11px 0 #242430,
+    -13px 13px 0 #1c1c26,
+    -15px 15px 0 #16161f,
+    -17px 17px 0 #111117,
+    -19px 19px 0 #0d0d12,
+    -21px 21px 0 #09090d,
+    -24px 24px 0 #060609,
+    -27px 27px 0 #040406,
+    -30px 30px 0 #020203,
+    -35px 35px 0 #010102,
+    -40px 40px 0 #000001,
+    -55px 60px 130px rgba(0, 0, 0, 0.99),
     0 20px 50px rgba(0, 0, 0, 0.9),
-    0 0 70px rgba(255, 255, 255, 0.18),
-    inset 0 2px 3px rgba(255, 255, 255, 0.65),
+    0 0 80px rgba(255, 255, 255, 0.2),
+    inset 0 2.5px 4px rgba(255, 255, 255, 0.75),
     inset 0 -3px 10px rgba(0, 0, 0, 0.6);
 }
 
