@@ -1507,7 +1507,7 @@ body.vfx-body {
 .cinema-modal-details { padding: 2rem; border-top: 1px solid var(--border-apple-subtle); }
 
 /* ==========================================================================
-   PROPER ANIMATED 3D ROTATING HOUSE STAGE
+   EXACT REALISTIC 3D ROTATING HOUSE MODEL (HOMELY HEALTH CARE SPEC)
    ========================================================================== */
 .cyber-house-stage-wrapper {
   width: 100%;
@@ -1538,20 +1538,20 @@ body.vfx-body {
   cursor: grabbing;
 }
 
-/* Turntable Pedestal Stage Base */
+/* Metallic Turntable Pedestal Base */
 .cyber-house-stage-pedestal {
   position: absolute;
   bottom: 40px;
-  width: 620px;
-  height: 620px;
+  width: 650px;
+  height: 650px;
   border-radius: 50%;
-  transform: rotateX(74deg) translateZ(-170px);
-  background: radial-gradient(circle, rgba(20, 18, 30, 0.98) 0%, rgba(10, 12, 16, 0.9) 70%, transparent 100%);
-  border: 3px solid rgba(245, 158, 11, 0.5);
+  transform: rotateX(74deg) translateZ(-180px);
+  background: radial-gradient(circle, #1a1926 0%, #0a0912 75%, transparent 100%);
+  border: 3px solid #d97706;
   box-shadow:
-    0 0 50px rgba(245, 158, 11, 0.3),
-    0 0 75px rgba(5, 150, 105, 0.25),
-    inset 0 0 45px rgba(230, 57, 70, 0.3);
+    0 0 50px rgba(217, 119, 6, 0.4),
+    0 0 80px rgba(5, 150, 105, 0.25),
+    inset 0 0 40px rgba(255, 214, 10, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1559,11 +1559,11 @@ body.vfx-body {
 }
 
 .pedestal-glow-ring {
-  width: 84%;
-  height: 84%;
+  width: 86%;
+  height: 86%;
   border-radius: 50%;
-  border: 2.5px dashed #ffd60a;
-  animation: spinPedestalRing 28s linear infinite;
+  border: 2px dashed rgba(255, 214, 10, 0.6);
+  animation: spinPedestalRing 30s linear infinite;
 }
 
 @keyframes spinPedestalRing {
@@ -1571,28 +1571,58 @@ body.vfx-body {
   to { transform: rotate(360deg); }
 }
 
+.pedestal-sector-labels {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+}
+
+.orbit-label {
+  position: absolute;
+  font-family: var(--font-vfx-ui);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.9), 0 0 15px rgba(255, 214, 10, 0.6);
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.orbit-label:hover {
+  color: #ffd60a;
+  transform: scale(1.15);
+}
+
+.label-front { bottom: 15px; left: 50%; transform: translateX(-50%); }
+.label-right { right: 15px; top: 50%; transform: translateY(-50%) rotate(90deg); }
+.label-back  { top: 15px; left: 50%; transform: translateX(-50%) rotate(180deg); }
+.label-left  { left: 15px; top: 50%; transform: translateY(-50%) rotate(-90deg); }
+
 .pedestal-track-label {
   position: absolute;
   bottom: -45px;
   font-family: var(--font-vfx-ui);
   font-size: 0.68rem;
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
   color: #ffd60a;
+  font-weight: 800;
   text-transform: uppercase;
-  background: rgba(0, 0, 0, 0.85);
-  padding: 7px 20px;
+  background: rgba(0, 0, 0, 0.88);
+  padding: 7px 22px;
   border-radius: 16px;
   border: 1.5px solid rgba(255, 214, 10, 0.4);
   backdrop-filter: blur(12px);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
   pointer-events: auto;
 }
 
-/* THE 3D PROPER HOUSE MODEL */
+/* THE 3D ARCHITECTURAL HOUSE MODEL */
 .cyber-house-3d-model {
   position: relative;
-  width: 460px;
-  height: 320px;
+  width: 480px;
+  height: 330px;
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
   transform: rotateX(-12deg) rotateY(0deg);
@@ -1600,327 +1630,177 @@ body.vfx-body {
   will-change: transform;
 }
 
-/* Animated Chimney & Smoke */
-.house-chimney {
-  position: absolute;
-  top: -65px;
-  right: 60px;
-  width: 38px;
-  height: 70px;
-  background: linear-gradient(180deg, #2a2836 0%, #161420 100%);
-  border: 1.5px solid rgba(245, 158, 11, 0.6);
-  border-top: 3px solid #e63946;
-  border-radius: 4px;
-  transform: translateZ(30px);
-  box-shadow: 0 0 15px rgba(230, 57, 70, 0.4);
-  z-index: 25;
-}
-
-.chimney-smoke {
-  position: absolute;
-  top: -15px;
-  left: 10px;
-  width: 18px;
-  height: 18px;
-  background: rgba(255, 255, 255, 0.4);
-  border-radius: 50%;
-  filter: blur(4px);
-  animation: floatSmoke 3s infinite ease-out;
-}
-
-.smoke-1 { animation-delay: 0s; }
-.smoke-2 { animation-delay: 1s; }
-.smoke-3 { animation-delay: 2s; }
-
-@keyframes floatSmoke {
-  0% { transform: translateY(0) scale(0.6); opacity: 0.7; }
-  50% { transform: translateY(-30px) translateX(-10px) scale(1.4); opacity: 0.4; }
-  100% { transform: translateY(-65px) translateX(-20px) scale(2.2); opacity: 0; }
-}
-
-/* Roof Structure & Pitch Gables */
+/* Terracotta Amber Pitched Roof */
 .house-roof-structure {
   position: absolute;
-  top: -130px;
+  top: -140px;
   left: 0;
-  width: 460px;
-  height: 130px;
+  width: 480px;
+  height: 140px;
   transform-style: preserve-3d;
   z-index: 20;
 }
 
-.roof-gable-front {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 460px;
-  height: 130px;
-  transform: translateZ(230px);
-  display: flex;
-  justify-content: center;
-}
-
-.roof-gable-triangle {
-  width: 0;
-  height: 0;
-  border-left: 230px solid transparent;
-  border-right: 230px solid transparent;
-  border-bottom: 120px solid rgba(24, 20, 32, 0.96);
-  position: relative;
-  filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.3));
-}
-
-.house-address-badge {
-  position: absolute;
-  bottom: -110px;
-  left: -65px;
-  font-family: var(--font-vfx-ui);
-  font-size: 0.65rem;
-  letter-spacing: 2px;
-  color: #ffd60a;
-  font-weight: 900;
-  background: rgba(0, 0, 0, 0.85);
-  padding: 4px 12px;
-  border-radius: 10px;
-  border: 1px solid #ffd60a;
-}
-
 .house-roof-face {
   position: absolute;
-  width: 460px;
-  height: 160px;
-  background: linear-gradient(135deg, rgba(38, 28, 48, 0.98) 0%, rgba(14, 24, 20, 0.98) 100%);
-  border: 2px solid rgba(245, 158, 11, 0.6);
-  box-shadow: 0 0 30px rgba(245, 158, 11, 0.35), inset 0 2px 6px rgba(255, 255, 255, 0.8);
+  width: 480px;
+  height: 175px;
+  background: linear-gradient(135deg, #e58e26 0%, #cc7000 100%);
+  border: 2px solid #b86500;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 2px 8px rgba(255, 255, 255, 0.4);
 }
 
 .house-roof-left {
-  transform: origin(50% 100%) rotateX(46deg) translateZ(10px);
-  border-top: 4px solid #e63946;
+  transform: origin(50% 100%) rotateX(48deg) translateZ(10px);
+  border-top: 4px solid #f59e0b;
 }
 
 .house-roof-right {
-  transform: origin(50% 100%) rotateX(-46deg) translateZ(10px);
-  border-top: 4px solid #059669;
+  transform: origin(50% 100%) rotateX(-48deg) translateZ(10px);
+  border-top: 4px solid #f59e0b;
 }
 
-.shingle-pattern {
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(0deg, transparent, transparent 14px, rgba(255, 214, 10, 0.12) 14px, rgba(255, 214, 10, 0.12) 16px);
+.roof-gable-triangle {
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-left: 240px solid transparent;
+  border-right: 240px solid transparent;
+  border-bottom: 130px solid #f8fafc;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.15));
 }
+
+.gable-front { transform: translateZ(240px); }
+.gable-back  { transform: rotateY(180deg) translateZ(240px); }
 
 .house-roof-ridge {
   position: absolute;
-  top: -5px;
-  left: 0;
-  width: 460px;
-  height: 8px;
-  background: linear-gradient(90deg, #e63946 0%, #ffd60a 50%, #059669 100%);
-  box-shadow: 0 0 20px #ffd60a;
+  top: -6px;
+  left: -5px;
+  width: 490px;
+  height: 10px;
+  background: #b86500;
+  box-shadow: 0 0 12px rgba(184, 101, 0, 0.6);
 }
 
-/* House Walls & Windows */
+/* White Plaster House Walls & Hollow Room Cutout Windows */
 .house-body-structure {
   position: absolute;
   top: 0;
   left: 0;
-  width: 460px;
-  height: 320px;
+  width: 480px;
+  height: 330px;
   transform-style: preserve-3d;
 }
 
 .house-wall {
   position: absolute;
-  width: 460px;
-  height: 320px;
+  width: 480px;
+  height: 330px;
   backface-visibility: visible;
-  border-radius: 20px;
-  padding: 1.6rem;
-  background: linear-gradient(145deg, rgba(22, 20, 32, 0.96) 0%, rgba(12, 16, 15, 0.98) 100%);
-  border: 2px solid rgba(255, 255, 255, 0.28);
-  border-top: 3.5px solid rgba(255, 255, 255, 0.8);
-  box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.95),
-    0 0 40px rgba(245, 158, 11, 0.3),
-    inset 0 1.5px 2px rgba(255, 255, 255, 0.5);
-  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  padding: 1.2rem;
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.95);
 }
 
-.house-wall-front  { transform: translateZ(230px); }
-.house-wall-back   { transform: rotateY(180deg) translateZ(230px); }
-.house-wall-right  { transform: rotateY(90deg) translateZ(230px); }
-.house-wall-left   { transform: rotateY(-90deg) translateZ(230px); }
-
-/* Front Entrance Porch & Door */
-.house-porch-entrance {
-  position: absolute;
-  bottom: 0;
-  left: 20px;
-  width: 90px;
-  height: 150px;
-  border-radius: 8px 8px 0 0;
-  background: linear-gradient(180deg, #1e1c28 0%, #0d0c14 100%);
-  border: 1.5px solid rgba(245, 158, 11, 0.5);
-  border-bottom: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 10px;
-  z-index: 15;
+.house-wall-front {
+  background: #f1f5f9;
+  border: 2px solid #cbd5e1;
+  transform: translateZ(240px);
 }
 
-.porch-lantern {
-  width: 14px;
-  height: 14px;
-  background: #ffd60a;
-  border-radius: 50%;
-  box-shadow: 0 0 15px #ffd60a, 0 0 25px #ffd60a;
-  margin-bottom: 12px;
-  animation: pulseLantern 2s infinite alternate;
+.house-wall-back {
+  background: #e2e8f0;
+  border: 2px solid #cbd5e1;
+  transform: rotateY(180deg) translateZ(240px);
 }
 
-@keyframes pulseLantern {
-  from { opacity: 0.7; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1.1); }
+.house-wall-right {
+  background: #cbd5e1;
+  border: 2px solid #94a3b8;
+  transform: rotateY(90deg) translateZ(240px);
 }
 
-.house-door {
-  width: 60px;
-  height: 100px;
-  background: linear-gradient(180deg, #3a2a1a 0%, #1f140a 100%);
-  border: 1.5px solid #d97706;
-  border-radius: 6px 6px 0 0;
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 8px;
+.house-wall-left {
+  background: #cbd5e1;
+  border: 2px solid #94a3b8;
+  transform: rotateY(-90deg) translateZ(240px);
 }
 
-.door-knob {
-  position: absolute;
-  right: 8px;
-  top: 48px;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #ffd60a;
-  box-shadow: 0 0 6px #ffd60a;
-}
-
-.door-tag {
-  font-family: var(--font-vfx-ui);
-  font-size: 0.5rem;
-  letter-spacing: 1px;
-  color: #ffd60a;
-  font-weight: 900;
-  text-align: center;
-}
-
-/* Room Window Frame & Interior Animation */
-.house-window-frame {
+/* Large Hollow Room Cutout Window & Photo Interiors */
+.room-cutout-window {
   position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 16px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 100%);
-  border: 1.5px solid rgba(255, 214, 10, 0.4);
-  padding: 1.8rem 1.6rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  border-radius: 12px;
+  border: 4px solid #1e293b;
   overflow: hidden;
+  cursor: pointer;
+  box-shadow: inset 0 0 35px rgba(0, 0, 0, 0.85);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.house-wall-front .house-window-frame {
-  margin-left: 95px;
-  width: calc(100% - 95px);
+.room-cutout-window:hover {
+  border-color: #ffd60a;
+  transform: scale(1.02);
+  box-shadow: inset 0 0 45px rgba(255, 214, 10, 0.4), 0 0 35px rgba(255, 214, 10, 0.5);
 }
 
-.window-interior-light {
+.room-photo-interior {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 14px;
-  background: radial-gradient(circle at center, rgba(255, 214, 10, 0.18) 0%, transparent 80%);
-  pointer-events: none;
 }
 
-.animated-vfx-screen {
+.room-photo-interior img {
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, rgba(230, 57, 70, 0.15), rgba(245, 158, 11, 0.2), rgba(5, 150, 105, 0.15));
-  animation: vfxPulse 4s infinite alternate;
+  object-fit: cover;
+  filter: brightness(0.9) contrast(1.1);
+  transition: transform 0.6s ease, filter 0.6s ease;
 }
 
-@keyframes vfxPulse {
-  0% { opacity: 0.3; }
-  100% { opacity: 0.8; }
+.room-cutout-window:hover .room-photo-interior img {
+  transform: scale(1.08);
+  filter: brightness(1.05) contrast(1.15);
 }
 
-.window-content-overlay {
-  position: relative;
-  z-index: 5;
+.room-overlay-card {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 1.4rem;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 65%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
-.room-tag {
+.room-badge-white {
   font-family: var(--font-vfx-ui);
-  font-size: 0.65rem;
-  letter-spacing: 2px;
+  font-size: 0.68rem;
+  letter-spacing: 2.5px;
   color: #ffd60a;
   font-weight: 900;
   text-transform: uppercase;
-  text-shadow: 0 0 12px rgba(255, 214, 10, 0.6);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+  margin-bottom: 4px;
 }
 
-.room-title {
+.room-heading-white {
   font-family: var(--font-vfx-ui);
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   font-weight: 900;
   color: #ffffff;
-  margin-bottom: 8px;
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.95);
 }
 
-.room-desc {
-  font-family: var(--font-apple-body);
-  font-size: 0.92rem;
-  color: #e4e4ec;
-  line-height: 1.55;
-  margin-bottom: 16px;
-}
-
-.room-explore-btn {
-  background: var(--burkina-gradient);
-  color: #000000;
-  border: 1px solid #ffd60a;
-  font-family: var(--font-vfx-ui);
-  font-size: 0.75rem;
-  font-weight: 900;
-  padding: 8px 18px;
-  border-radius: 14px;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.room-explore-btn:hover {
-  transform: translateY(-2px);
-  background: #ffffff;
-  color: #000000;
-  box-shadow: 0 6px 25px rgba(255, 255, 255, 0.6);
-}
-
-/* Control Navigation Pills */
+/* Control Navigation Tabs */
 .cyber-house-nav-bar {
   position: absolute;
   bottom: -25px;
@@ -1964,19 +1844,17 @@ body.vfx-body {
 
 @media (max-width: 768px) {
   .cyber-house-viewport-container { height: 600px; }
-  .cyber-house-3d-model { width: 320px; height: 280px; }
-  .house-roof-structure { width: 320px; }
-  .house-roof-face { width: 320px; }
-  .roof-gable-front { width: 320px; }
-  .roof-gable-triangle { border-left-width: 160px; border-right-width: 160px; }
-  .house-wall { width: 320px; height: 280px; }
-  .house-wall-front  { transform: translateZ(160px); }
-  .house-wall-back   { transform: rotateY(180deg) translateZ(160px); }
-  .house-wall-right  { transform: rotateY(90deg) translateZ(160px); }
-  .house-wall-left   { transform: rotateY(-90deg) translateZ(160px); }
-  .house-porch-entrance { width: 70px; }
-  .house-window-frame { padding: 1.2rem; }
-  .house-wall-front .house-window-frame { margin-left: 75px; width: calc(100% - 75px); }
+  .cyber-house-3d-model { width: 330px; height: 280px; }
+  .house-roof-structure { width: 330px; }
+  .house-roof-face { width: 330px; }
+  .roof-gable-triangle { border-left-width: 165px; border-right-width: 165px; }
+  .house-wall { width: 330px; height: 280px; }
+  .house-wall-front  { transform: translateZ(165px); }
+  .house-wall-back   { transform: rotateY(180deg) translateZ(165px); }
+  .house-wall-right  { transform: rotateY(90deg) translateZ(165px); }
+  .house-wall-left   { transform: rotateY(-90deg) translateZ(165px); }
+  .gable-front { transform: translateZ(165px); }
+  .gable-back  { transform: rotateY(180deg) translateZ(165px); }
 }
 .modal-title { font-family: var(--font-vfx-ui); font-size: 1.4rem; font-weight: 800; color: var(--apple-pure-white); margin-bottom: 6px; }
 .modal-desc { font-family: var(--font-apple-body); font-size: 0.95rem; color: var(--apple-muted); }
