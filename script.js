@@ -449,16 +449,16 @@ function initCyberHouseEngine() {
   const container = document.getElementById('cyber-house-viewport');
   if (!container || typeof THREE === 'undefined') return;
 
-  const width = container.clientWidth || 1000;
-  const height = 620;
+  const width = container.clientWidth || 1100;
+  const height = 740;
 
-  // 1. Scene & Camera Setup
+  // 1. Scene & Camera Setup (Positioned for zero top/bottom clipping)
   threeScene = new THREE.Scene();
   threeScene.background = null;
 
-  threeCamera = new THREE.PerspectiveCamera(38, width / height, 0.1, 1000);
-  threeCamera.position.set(0, 3.2, 22);
-  threeCamera.lookAt(0, -0.5, 0);
+  threeCamera = new THREE.PerspectiveCamera(40, width / height, 0.1, 1000);
+  threeCamera.position.set(0, 1.2, 27);
+  threeCamera.lookAt(0, 0.6, 0);
 
   // 2. WebGL Renderer
   threeRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
@@ -495,6 +495,7 @@ function initCyberHouseEngine() {
 
   // 4. Master 3D House Group
   houseGroup = new THREE.Group();
+  houseGroup.position.set(0, -0.6, 0);
   threeScene.add(houseGroup);
 
   // 5. PBR Materials
@@ -725,8 +726,8 @@ function initCyberHouseEngine() {
 
   window.addEventListener('resize', () => {
     if (!container) return;
-    const w = container.clientWidth || 1000;
-    const h = 620;
+    const w = container.clientWidth || 1100;
+    const h = 740;
     threeCamera.aspect = w / h;
     threeCamera.updateProjectionMatrix();
     threeRenderer.setSize(w, h);
