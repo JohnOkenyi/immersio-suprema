@@ -2256,6 +2256,35 @@ body.vfx-body {
   .apple-headline { font-size: 3.2rem; }
   .apple-hero-cards-strip { position: relative; bottom: auto; left: auto; width: 100%; grid-template-columns: 1fr; margin-top: 2rem; }
   .apple-strip-card { transform: none !important; }
+}
+
+/* Inline Card Video Player */
+.close-inline-video-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 25;
+  background: rgba(0, 0, 0, 0.88);
+  color: #ffd60a;
+  border: 1px solid rgba(255, 214, 10, 0.7);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-family: var(--font-vfx-ui);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8);
+  transition: all 0.25s ease;
+}
+
+.close-inline-video-btn:hover {
+  background: #ffd60a;
+  color: #000;
+  transform: scale(1.06);
+}
+
   .apple-grid-3col, .apple-portfolio-grid, .apple-footer-inner { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .apple-form-card.centered-form { padding: 2.5rem 1.5rem; }
