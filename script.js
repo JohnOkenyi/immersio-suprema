@@ -417,10 +417,10 @@ function playCardLocalVideo(cardElement, videoSrc) {
   // If video is already playing inside this card, return
   if (imgContainer.querySelector('.inline-card-video')) return;
 
-  // Create HTML5 video element
+  // Create HTML5 video element (Cloud CDN stream)
   const video = document.createElement('video');
   video.className = 'inline-card-video';
-  video.src = videoSrc || 'showreelone.mp4';
+  video.src = videoSrc || 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreelone.mp4';
   video.autoplay = true;
   video.controls = true;
   video.playsInline = true;
