@@ -400,43 +400,6 @@ function initCardHoverSoundEffects() {
 }
 
 /* --------------------------------------------------------------------------
-   8.1 INLINE CARD YOUTUBE VIDEO PLAYER (Plays in box without opening new tab)
-   -------------------------------------------------------------------------- */
-function playCardInlineVideo(cardElement, youtubeId) {
-  if (!cardElement) return;
-  
-  const imgContainer = cardElement.querySelector('.work-img-container');
-  if (!imgContainer) return;
-  
-  if (typeof playUICardClickSound === 'function') playUICardClickSound();
-
-  // If video is already playing, return
-  if (imgContainer.querySelector('.inline-video-iframe')) return;
-
-  // Create iframe element
-  const iframe = document.createElement('iframe');
-  iframe.className = 'inline-video-iframe';
-  iframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1&controls=1`;
-  iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-  iframe.setAttribute('allowfullscreen', 'true');
-  iframe.style.cssText = 'position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; z-index: 10; border-radius: 20px;';
-
-  // Create floating close button
-  const closeBtn = document.createElement('button');
-  closeBtn.className = 'close-inline-video-btn';
-  closeBtn.innerHTML = '<i class="fas fa-times"></i> Close Video';
-  closeBtn.onclick = function(e) {
-    e.stopPropagation();
-    iframe.remove();
-    closeBtn.remove();
-  };
-
-  imgContainer.style.position = 'relative';
-  imgContainer.appendChild(iframe);
-  imgContainer.appendChild(closeBtn);
-}
-
-/* --------------------------------------------------------------------------
    9. PHOTOREALISTIC WEBGL THREE.JS 3D CLAPPERBOARD ARCHITECTURAL HOUSE ENGINE
    -------------------------------------------------------------------------- */
 let threeScene, threeCamera, threeRenderer, houseGroup;
