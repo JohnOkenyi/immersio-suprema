@@ -460,8 +460,8 @@ function initCyberHouseEngine() {
   threeCamera.position.set(0, 1.2, 27);
   threeCamera.lookAt(0, 0.6, 0);
 
-  // 2. WebGL Renderer
-  threeRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
+  // 2. WebGL Renderer with Logarithmic Depth Buffer to Eliminate Z-Fighting Flicker
+  threeRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, logarithmicDepthBuffer: true, powerPreference: 'high-performance' });
   threeRenderer.setSize(width, height);
   threeRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   threeRenderer.shadowMap.enabled = true;
@@ -644,16 +644,23 @@ function initCyberHouseEngine() {
   const clapstickTex = new THREE.CanvasTexture(clapstickCanvas);
   clapstickTex.wrapS = THREE.RepeatWrapping;
   clapstickTex.repeat.set(2, 1);
-  const clapstickMat = new THREE.MeshStandardMaterial({ map: clapstickTex, roughness: 0.4, metalness: 0.3 });
+  const clapstickMat = new THREE.MeshStandardMaterial({
+    map: clapstickTex,
+    roughness: 0.4,
+    metalness: 0.3,
+    polygonOffset: true,
+    polygonOffsetFactor: -1,
+    polygonOffsetUnits: -1
+  });
 
-  // Fixed Base Eave Stick
+  // Fixed Base Eave Stick (Positioned at Z = 3.18)
   const fixedStick = new THREE.Mesh(new THREE.BoxGeometry(11.2, 1.2, 1.2), clapstickMat);
-  fixedStick.position.set(0, 4.0, 3.2);
+  fixedStick.position.set(0, 4.0, 3.18);
   houseGroup.add(fixedStick);
 
-  // Angled Top Open Clapstick
+  // Angled Top Open Clapstick (Positioned at Z = 3.42 to prevent depth overlap flicker)
   const topStick = new THREE.Mesh(new THREE.BoxGeometry(11.2, 1.2, 1.2), clapstickMat);
-  topStick.position.set(0.6, 5.2, 3.2);
+  topStick.position.set(0.6, 5.2, 3.42);
   topStick.rotation.z = -0.26;
   houseGroup.add(topStick);
 
