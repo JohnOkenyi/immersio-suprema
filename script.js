@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCinemaModal();
   initProposalForm();
   initHero3DCard();
+  initCardHoverSoundEffects();
 });
 
 /* --------------------------------------------------------------------------
@@ -284,5 +285,115 @@ function initHero3DCard() {
   heroSection.addEventListener('mouseleave', () => {
     if (window.innerWidth <= 900 || heroCard.classList.contains('card-extruded-active')) return;
     heroCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(65px)';
+  });
+}
+
+/* --------------------------------------------------------------------------
+   8. SCI-FI GAME UI HOVER & SELECTION SOUND SYNTHESIZER (WEB AUDIO API)
+   -------------------------------------------------------------------------- */
+let uiAudioCtx = null;
+
+function getUIAudioContext() {
+  if (!uiAudioCtx) {
+    const AudioCtxClass = window.AudioContext || window.webkitAudioContext;
+    if (AudioCtxClass) {
+      uiAudioCtx = new AudioCtxClass();
+    }
+  }
+  if (uiAudioCtx && uiAudioCtx.state === 'suspended') {
+    uiAudioCtx.resume();
+  }
+  return uiAudioCtx;
+}
+
+// Crisp Sci-Fi Game UI Menu Hover Selection Sound (Pitch Sweep 750Hz -> 1350Hz)
+function playUICardHoverSound() {
+  try {
+    const ctx = getUIAudioContext();
+    if (!ctx) return;
+
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    const now = ctx.currentTime;
+
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(750, now);
+    osc.frequency.exponentialRampToValueAtTime(1350, now + 0.05);
+
+    gain.gain.setValueAtTime(0.045, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.055);
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.start(now);
+    osc.stop(now + 0.06);
+  } catch (e) {
+    // Non-blocking Web Audio error handler
+  }
+}
+
+// Crisp Sci-Fi Game Selection Click Sound (Pitch Sweep 1300Hz -> 650Hz)
+function playUICardClickSound() {
+  try {
+    const ctx = getUIAudioContext();
+    if (!ctx) return;
+
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    const now = ctx.currentTime;
+
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(1300, now);
+    osc.frequency.exponentialRampToValueAtTime(650, now + 0.08);
+
+    gain.gain.setValueAtTime(0.06, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.09);
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.start(now);
+    osc.stop(now + 0.09);
+  } catch (e) {}
+}
+
+function initCardHoverSoundEffects() {
+  // Target all interactive cards and elements across the website
+  const cardSelectors = [
+    '.apple-pro-card',
+    '.apple-strip-card',
+    '.training-card',
+    '.apple-work-card',
+    '.apple-hero-3d-card',
+    '.apple-form-card',
+    '.apple-btn-white-pill',
+    '.apple-btn-glass-pill',
+    '.apple-btn-secondary-sm',
+    '.vfx-btn-submit-red',
+    '.apple-filter-btn',
+    '.vfx-nav-link'
+  ].join(', ');
+
+  const cards = document.querySelectorAll(cardSelectors);
+
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      playUICardHoverSound();
+    });
+
+    card.addEventListener('click', () => {
+      playUICardClickSound();
+    });
+  });
+
+  // Dynamic delegation for dynamic elements
+  document.addEventListener('mouseover', (e) => {
+    const targetCard = e.target.closest('.apple-pro-card, .apple-strip-card, .training-card, .apple-work-card, .apple-filter-btn');
+    if (targetCard && !targetCard.dataset.soundBound) {
+      targetCard.dataset.soundBound = 'true';
+      targetCard.addEventListener('mouseenter', () => playUICardHoverSound());
+      targetCard.addEventListener('click', () => playUICardClickSound());
+    }
   });
 }
