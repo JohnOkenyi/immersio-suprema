@@ -390,7 +390,7 @@
         </p>
       </div>
 
-      <!-- HIGH-TECH 3D DIGITAL TRAINING HOUSE STAGE -->
+      <!-- REALISTIC 3D CLAPPERBOARD HOUSE STAGE -->
       <div class="cyber-house-stage-wrapper">
         <div class="cyber-house-viewport-container" id="cyber-house-viewport">
           
@@ -399,107 +399,138 @@
             <div class="pedestal-glow-ring"></div>
             <!-- Orbiting 3D Sector Labels on Turntable Floor -->
             <div class="pedestal-sector-labels">
-              <span class="orbit-label label-front" onclick="rotateHouseToAngle(0)">FILM & STUDIO VFX</span>
-              <span class="orbit-label label-right" onclick="rotateHouseToAngle(90)">UNIVERSITY ACADEMY</span>
-              <span class="orbit-label label-back" onclick="rotateHouseToAngle(180)">NEURAL AI LAB</span>
-              <span class="orbit-label label-left" onclick="rotateHouseToAngle(-90)">DEFENSE VR SIM</span>
+              <span class="orbit-label label-front" onclick="rotateHouseToAngle(0)">SCENE 01: STUDIO VFX</span>
+              <span class="orbit-label label-right" onclick="rotateHouseToAngle(90)">TAKE 02: UNIVERSITIES</span>
+              <span class="orbit-label label-back" onclick="rotateHouseToAngle(180)">SOUND 04: AI NEURAL LAB</span>
+              <span class="orbit-label label-left" onclick="rotateHouseToAngle(-90)">ROLL 03: DEFENSE SIM</span>
             </div>
-            <div class="pedestal-track-label">DRAG TO ROTATE 3D HOUSE • SCROLL TO ZOOM • CLICK ROOM WINGS FOR DETAILS</div>
+            <div class="pedestal-track-label">DRAG TO ROTATE CLAPPERBOARD HOUSE • SCROLL TO ZOOM • CLICK SLATE ROOMS TO EXPLORE</div>
           </div>
 
-          <!-- THE 3D DIGITAL ARCHITECTURAL HOUSE MODEL -->
-          <div class="cyber-house-3d-model" id="cyber-house-model">
+          <!-- THE REALISTIC 3D CLAPPERBOARD HOUSE MODEL -->
+          <div class="cyber-house-3d-model clapperboard-house" id="cyber-house-model">
             
-            <!-- Sleek Cyber Solar Slate Roof Structure -->
-            <div class="house-roof-structure">
-              <!-- Cyber Satellite Communications Array on Roof Ridge -->
-              <div class="roof-satellite-dish">
-                <div class="satellite-dish-bowl"></div>
-                <div class="satellite-signal-beam"></div>
+            <!-- 3D Clapperboard Roof & Open Clapping Stick Structure -->
+            <div class="house-roof-structure clapperboard-roof">
+              
+              <!-- Upper Clapping Stick (Angled open roof gable with B&W diagonal stripes) -->
+              <div class="clapper-stick stick-top">
+                <div class="clapper-stripes-pattern"></div>
+                <div class="clapper-hinge-pin"></div>
+                <span class="clapper-slate-title">IMMERSIO SUPREMA STUDIOS</span>
               </div>
 
-              <!-- Left Slope Cyber Solar Roof Face -->
-              <div class="house-roof-face house-roof-left">
-                <div class="solar-grid-tiles"></div>
-                <div class="roof-dormer-window dormer-left"></div>
+              <!-- Lower Clapping Stick (Roof Eaves Base) -->
+              <div class="clapper-stick stick-bottom">
+                <div class="clapper-stripes-pattern"></div>
               </div>
 
-              <!-- Right Slope Cyber Solar Roof Face -->
-              <div class="house-roof-face house-roof-right">
-                <div class="solar-grid-tiles"></div>
-                <div class="roof-dormer-window dormer-right"></div>
+              <!-- Clapperboard Front Triangular Gable Wall -->
+              <div class="roof-gable-triangle gable-front clapper-gable">
+                <span class="gable-house-tag"><i class="fas fa-video"></i> DIRECT TRANSMISSION HOUSE</span>
               </div>
+              <div class="roof-gable-triangle gable-back clapper-gable"></div>
 
-              <!-- Architectural White Gable Triangles with Burkina Gold Trim -->
-              <div class="roof-gable-triangle gable-front">
-                <span class="gable-house-tag"><i class="fas fa-microchip"></i> IMMERSIO CYBER CAMPUS</span>
-              </div>
-              <div class="roof-gable-triangle gable-back"></div>
-
-              <!-- Multi-Stop Luminous LED Ridge Beam -->
+              <!-- Burkina Flag LED Ridge Beam -->
               <div class="house-roof-ridge"></div>
             </div>
 
-            <!-- Main Architectural House Body & 4 Sector Room Cutout Windows -->
-            <div class="house-body-structure">
+            <!-- Main Clapperboard House Body & Slate Fields -->
+            <div class="house-body-structure clapperboard-body">
               
-              <!-- FRONT ROOM WING: FILM STUDIOS & HOLLYWOOD VFX -->
-              <div class="house-wall house-wall-front" data-angle="0">
+              <!-- FRONT CLAPPERBOARD SLATE WALL: STUDIO VFX (SCENE 01) -->
+              <div class="house-wall house-wall-front clapper-wall" data-angle="0">
+                <div class="clapper-slate-header">
+                  <span class="slate-field-box">SCENE <strong class="gold-txt">01</strong></span>
+                  <span class="slate-field-box">TAKE <strong class="gold-txt">01</strong></span>
+                  <span class="slate-field-box">ROLL <strong class="gold-txt">8K</strong></span>
+                </div>
                 <div class="room-cutout-window" onclick="openCinemaModal('HOLLYWOOD VFX & VIRTUAL PRODUCTION', 'Custom On-Site Masterclasses for Hollywood Film Studios, Netflix Productions, and ICVFX LED Wall Stages')">
                   <div class="room-photo-interior">
                     <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?auto=format&fit=crop&w=800&q=80" alt="Hollywood VFX LED Stage">
                   </div>
                   <div class="room-overlay-card">
-                    <span class="room-badge-white"><i class="fas fa-film"></i> HOLLYWOOD & NETFLIX STUDIOS</span>
+                    <span class="room-badge-white"><i class="fas fa-film"></i> SCENE 01 • FILM & STUDIO VFX</span>
                     <h3 class="room-heading-white">Studio VFX & Virtual Production</h3>
-                    <p class="room-subtext-white">On-site studio masterclasses in Unreal Engine 5 ICVFX LED walls, Houdini fluid physics, and MetaHuman mocap.</p>
-                    <button class="room-action-btn-gold">Explore Sector <i class="fas fa-arrow-right"></i></button>
+                    <p class="room-subtext-white">On-site masterclasses in Unreal Engine 5 ICVFX LED walls, Houdini fluid physics, and MetaHuman mocap.</p>
+                    <button class="room-action-btn-gold">Explore Slate <i class="fas fa-arrow-right"></i></button>
                   </div>
+                </div>
+                <div class="clapper-slate-footer">
+                  <span>PROD. CO: IMMERSIO STUDIOS</span>
+                  <span>DIRECTOR: VISIONARY CREW</span>
                 </div>
               </div>
 
-              <!-- RIGHT ROOM WING: UNIVERSITIES & FILM SCHOOLS -->
-              <div class="house-wall house-wall-right" data-angle="90">
+              <!-- RIGHT CLAPPERBOARD SLATE WALL: UNIVERSITIES (TAKE 02) -->
+              <div class="house-wall house-wall-right clapper-wall" data-angle="90">
+                <div class="clapper-slate-header">
+                  <span class="slate-field-box">SCENE <strong class="gold-txt">02</strong></span>
+                  <span class="slate-field-box">TAKE <strong class="gold-txt">02</strong></span>
+                  <span class="slate-field-box">ROLL <strong class="gold-txt">DEGREE</strong></span>
+                </div>
                 <div class="room-cutout-window" onclick="openCinemaModal('UNIVERSITY & DEGREE WORKSHOPS', 'Accredited Turnkey Degree Curricula, Faculty Certification Programs, and Student Capstone Mentorship')">
                   <div class="room-photo-interior">
                     <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="University Film Academy Lab">
                   </div>
                   <div class="room-overlay-card">
-                    <span class="room-badge-white"><i class="fas fa-graduation-cap"></i> UNIVERSITIES & FILM SCHOOLS</span>
+                    <span class="room-badge-white"><i class="fas fa-graduation-cap"></i> TAKE 02 • UNIVERSITIES & ACADEMIES</span>
                     <h3 class="room-heading-white">Academic Degree Workshops</h3>
                     <p class="room-subtext-white">Turnkey degree modules, faculty certification, virtual production lab setup, and student capstone mentorship.</p>
-                    <button class="room-action-btn-gold">Explore Sector <i class="fas fa-arrow-right"></i></button>
+                    <button class="room-action-btn-gold">Explore Slate <i class="fas fa-arrow-right"></i></button>
                   </div>
+                </div>
+                <div class="clapper-slate-footer">
+                  <span>PROD. CO: GLOBAL UNIVERSITIES</span>
+                  <span>FACULTY: ACCREDITED LABS</span>
                 </div>
               </div>
 
-              <!-- LEFT ROOM WING: GOVERNMENT & TACTICAL DEFENSE VR -->
-              <div class="house-wall house-wall-left" data-angle="-90">
+              <!-- LEFT CLAPPERBOARD SLATE WALL: DEFENSE VR SIM (ROLL 03) -->
+              <div class="house-wall house-wall-left clapper-wall" data-angle="-90">
+                <div class="clapper-slate-header">
+                  <span class="slate-field-box">SCENE <strong class="gold-txt">03</strong></span>
+                  <span class="slate-field-box">TAKE <strong class="gold-txt">03</strong></span>
+                  <span class="slate-field-box">ROLL <strong class="gold-txt">TACTICAL</strong></span>
+                </div>
                 <div class="room-cutout-window" onclick="openCinemaModal('DEFENSE & INDUSTRIAL SIMULATION', 'Tactical VR Combat Flight Drills, Aerospace Machinery Digital Twins, and Biometric Telemetry')">
                   <div class="room-photo-interior">
                     <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=800&q=80" alt="Defense VR Flight Simulator">
                   </div>
                   <div class="room-overlay-card">
-                    <span class="room-badge-white"><i class="fas fa-shield-alt"></i> DEFENSE & AEROSPACE ACADEMIES</span>
+                    <span class="room-badge-white"><i class="fas fa-shield-alt"></i> ROLL 03 • DEFENSE & AEROSPACE</span>
                     <h3 class="room-heading-white">Government & Tactical VR SIM</h3>
                     <p class="room-subtext-white">Tactical VR combat flight simulation, industrial machinery digital twins, and biometric stress telemetry.</p>
-                    <button class="room-action-btn-gold">Explore Sector <i class="fas fa-arrow-right"></i></button>
+                    <button class="room-action-btn-gold">Explore Slate <i class="fas fa-arrow-right"></i></button>
                   </div>
+                </div>
+                <div class="clapper-slate-footer">
+                  <span>PROD. CO: DEFENSE ACADEMIES</span>
+                  <span>UNIT: VR FLIGHT COMBAT</span>
                 </div>
               </div>
 
-              <!-- BACK ROOM WING: NEURAL AI & 3D GAUSSIAN LAB -->
-              <div class="house-wall house-wall-back" data-angle="180">
+              <!-- BACK CLAPPERBOARD SLATE WALL: NEURAL AI LAB (SOUND 04) -->
+              <div class="house-wall house-wall-back clapper-wall" data-angle="180">
+                <div class="clapper-slate-header">
+                  <span class="slate-field-box">SCENE <strong class="gold-txt">04</strong></span>
+                  <span class="slate-field-box">TAKE <strong class="gold-txt">04</strong></span>
+                  <span class="slate-field-box">SOUND <strong class="gold-txt">NEURAL AI</strong></span>
+                </div>
                 <div class="room-cutout-window" onclick="openCinemaModal('NEURAL AI GRAPHICS & GAUSSIAN LAB', 'Real-Time NeRF 3D Gaussian Splatting, 120fps AI Ray Tracing, and Autonomous MetaHuman Characters')">
                   <div class="room-photo-interior">
                     <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="Neural AI Workstation Lab">
                   </div>
                   <div class="room-overlay-card">
-                    <span class="room-badge-white"><i class="fas fa-brain"></i> ENTERPRISE AI LABS</span>
+                    <span class="room-badge-white"><i class="fas fa-brain"></i> SOUND 04 • ENTERPRISE NEURAL AI</span>
                     <h3 class="room-heading-white">Neural AI & Gaussian Lab</h3>
                     <p class="room-subtext-white">NeRF 3D Gaussian Splatting, 120fps AI ray tracing, generative neural pipelines, and autonomous AI characters.</p>
-                    <button class="room-action-btn-gold">Explore Sector <i class="fas fa-arrow-right"></i></button>
+                    <button class="room-action-btn-gold">Explore Slate <i class="fas fa-arrow-right"></i></button>
                   </div>
+                </div>
+                <div class="clapper-slate-footer">
+                  <span>PROD. CO: AI NEURAL LABS</span>
+                  <span>ENGINE: UNREAL 5.4</span>
                 </div>
               </div>
 
@@ -509,10 +540,10 @@
 
           <!-- Interactive Rotation Navigation Tabs -->
           <div class="cyber-house-nav-bar">
-            <button class="house-nav-tab active" onclick="rotateHouseToAngle(0)"><i class="fas fa-film"></i> Film Studios</button>
-            <button class="house-nav-tab" onclick="rotateHouseToAngle(90)"><i class="fas fa-university"></i> Universities</button>
-            <button class="house-nav-tab" onclick="rotateHouseToAngle(-90)"><i class="fas fa-shield-alt"></i> Defense VR</button>
-            <button class="house-nav-tab" onclick="rotateHouseToAngle(180)"><i class="fas fa-brain"></i> Neural AI Lab</button>
+            <button class="house-nav-tab active" onclick="rotateHouseToAngle(0)"><i class="fas fa-film"></i> Scene 01: Studio VFX</button>
+            <button class="house-nav-tab" onclick="rotateHouseToAngle(90)"><i class="fas fa-university"></i> Take 02: Universities</button>
+            <button class="house-nav-tab" onclick="rotateHouseToAngle(-90)"><i class="fas fa-shield-alt"></i> Roll 03: Defense VR</button>
+            <button class="house-nav-tab" onclick="rotateHouseToAngle(180)"><i class="fas fa-brain"></i> Sound 04: AI Lab</button>
             <button class="house-nav-tab auto-rotate-btn active" id="house-autorotate-toggle" onclick="toggleHouseAutoRotate()"><i class="fas fa-sync-alt fa-spin"></i> Auto-Rotate: ON</button>
           </div>
 
