@@ -276,13 +276,13 @@ function initHero3DCard() {
     const rect = heroSection.getBoundingClientRect();
     const distFromCenter = Math.abs(e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
 
-    const zOffset = 60 + (1 - Math.min(distFromCenter, 1)) * 30;
+    const zOffset = 65 + (1 - Math.min(distFromCenter, 1)) * 30;
 
     heroCard.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(${zOffset}px)`;
   });
 
   heroSection.addEventListener('mouseleave', () => {
     if (window.innerWidth <= 900 || heroCard.classList.contains('card-extruded-active')) return;
-    heroCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(60px)';
+    heroCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(65px)';
   });
 }
