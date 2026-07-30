@@ -466,12 +466,80 @@ body.vfx-body {
     inset 0 -3px 10px rgba(0, 0, 0, 0.6);
 }
 
+.apple-hero-content {
+  cursor: pointer;
+}
+
 .apple-hero-content .apple-eyebrow,
 .apple-hero-content .apple-headline,
 .apple-hero-content .apple-subheadline,
 .apple-hero-content .apple-hero-buttons {
   transform: translateZ(25px);
-  transition: transform 0.4s ease;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), text-shadow 0.5s ease, color 0.3s ease;
+}
+
+/* On Click: Ultra 3D Letter Extrusion Effect Popping Out Of The Screen */
+.apple-hero-content.card-extruded-active {
+  background: rgba(12, 12, 18, 0.48);
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(105px) !important;
+  box-shadow:
+    0 0 0 2px var(--burkina-yellow),
+    -1px 1px 0 #ffffff,
+    -3px 3px 0 #ffd60a,
+    -5px 5px 0 #e6b800,
+    -7px 7px 0 #b38f00,
+    -9px 9px 0 #806600,
+    -11px 11px 0 #4d3d00,
+    -15px 15px 0 #202028,
+    -20px 20px 0 #15151c,
+    -25px 25px 0 #0a0a0e,
+    -35px 35px 0 #040406,
+    -55px 65px 140px rgba(0, 0, 0, 0.99),
+    0 0 90px rgba(255, 214, 10, 0.4),
+    inset 0 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.apple-hero-content.card-extruded-active .apple-headline {
+  transform: translateZ(135px) scale(1.05);
+  text-shadow:
+    0 1px 0 #e6e6e6,
+    0 2px 0 #cccccc,
+    0 3px 0 #b3b3b3,
+    0 4px 0 #999999,
+    0 5px 0 #808080,
+    0 6px 0 #666666,
+    0 7px 0 #4d4d4d,
+    0 8px 0 #333333,
+    0 9px 0 #1a1a1a,
+    0 10px 0 #0d0d0d,
+    0 25px 55px rgba(0, 0, 0, 0.95);
+}
+
+.apple-hero-content.card-extruded-active .apple-subheadline {
+  transform: translateZ(100px);
+  color: #ffffff;
+  font-weight: 400;
+  text-shadow:
+    0 1px 0 #cccccc,
+    0 2px 0 #aaaaaa,
+    0 3px 0 #888888,
+    0 4px 0 #666666,
+    0 5px 0 #444444,
+    0 18px 35px rgba(0, 0, 0, 0.92);
+}
+
+.apple-hero-content.card-extruded-active .apple-eyebrow-tag {
+  transform: translateZ(115px);
+  text-shadow:
+    0 1px 0 #ffd60a,
+    0 2px 0 #cca300,
+    0 3px 0 #806600,
+    0 4px 0 #4d3d00,
+    0 12px 25px rgba(0, 0, 0, 0.85);
+}
+
+.apple-hero-content.card-extruded-active .apple-hero-buttons {
+  transform: translateZ(120px) scale(1.06);
 }
 
 .apple-eyebrow-tag {

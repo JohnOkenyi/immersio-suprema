@@ -264,8 +264,15 @@ function initHero3DCard() {
 
   if (!heroSection || !heroCard) return;
 
+  heroCard.addEventListener('click', (e) => {
+    if (e.target.closest('.apple-btn-white-pill') || e.target.closest('.apple-btn-glass-pill')) {
+      return;
+    }
+    heroCard.classList.toggle('card-extruded-active');
+  });
+
   heroSection.addEventListener('mousemove', (e) => {
-    if (window.innerWidth <= 900) return;
+    if (window.innerWidth <= 900 || heroCard.classList.contains('card-extruded-active')) return;
     const rect = heroSection.getBoundingClientRect();
     const distFromCenter = Math.abs(e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
 
@@ -275,7 +282,7 @@ function initHero3DCard() {
   });
 
   heroSection.addEventListener('mouseleave', () => {
-    if (window.innerWidth <= 900) return;
+    if (window.innerWidth <= 900 || heroCard.classList.contains('card-extruded-active')) return;
     heroCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(60px)';
   });
 }
