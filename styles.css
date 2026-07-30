@@ -832,11 +832,36 @@ body.vfx-body {
   position: relative;
 }
 
+/* Luxury Apple-Grade Burkina Faso Flag Atmospheric Background */
 .apple-section.apple-dark-bg {
-  background: linear-gradient(135deg, rgba(38, 28, 68, 0.65) 0%, rgba(18, 50, 38, 0.65) 50%, rgba(55, 42, 18, 0.65) 100%);
-  backdrop-filter: blur(24px);
-  border-top: 1.5px solid rgba(255, 255, 255, 0.35);
-  border-bottom: 1.5px solid rgba(255, 255, 255, 0.35);
+  background:
+    radial-gradient(ellipse at 15% 20%, rgba(230, 57, 70, 0.32) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 25%, rgba(5, 150, 105, 0.32) 0%, transparent 55%),
+    radial-gradient(circle at 50% 85%, rgba(245, 158, 11, 0.28) 0%, transparent 60%),
+    linear-gradient(135deg, #161022 0%, #0b1a15 35%, #221808 70%, #0d1222 100%);
+  position: relative;
+  overflow: hidden;
+  border-top: 1.5px solid rgba(245, 158, 11, 0.3);
+  border-bottom: 1.5px solid rgba(5, 150, 105, 0.3);
+}
+
+.apple-dark-bg .apple-section-title,
+.apple-dark-bg .pro-card-title,
+.apple-dark-bg .work-title {
+  color: #ffffff !important;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6) !important;
+}
+
+.apple-dark-bg .apple-section-desc,
+.apple-dark-bg .pro-card-desc,
+.apple-dark-bg .work-desc {
+  color: #e4e4ec !important;
+  font-weight: 400;
+}
+
+.apple-dark-bg .apple-kicker {
+  color: var(--burkina-yellow) !important;
+  text-shadow: 0 0 16px rgba(255, 214, 10, 0.5) !important;
 }
 
 /* Pure White Background Section for Studio / About */
