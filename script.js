@@ -140,6 +140,10 @@ function initInteractiveSandbox() {
     sandboxVideo.style.filter = `brightness(${brightnessVal}) blur(${blurVal}px) sepia(${sepiaVal * 0.3})`;
   }
 
+  if (sandboxVideo) {
+    sandboxVideo.play().catch(() => {});
+  }
+
   if (focalSlider) focalSlider.addEventListener('input', updateViewport);
   if (lightSlider) lightSlider.addEventListener('input', updateViewport);
   if (sandSlider) sandSlider.addEventListener('input', updateViewport);
