@@ -189,7 +189,7 @@ body.vfx-body {
   font-family: var(--font-vfx-ui);
   font-size: 0.78rem;
   font-weight: 800;
-  color: #a1a1a6;
+  color: #ffffff;
   letter-spacing: 1.5px;
   padding: 8px 16px;
   border-radius: 12px;
@@ -197,12 +197,13 @@ body.vfx-body {
   transition: var(--transition-apple-medium);
   display: inline-flex;
   align-items: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .nav-caret {
   margin-left: 5px;
   font-size: 0.72rem;
-  color: inherit;
+  color: #ffffff;
   transition: transform 0.3s ease;
 }
 
@@ -211,16 +212,18 @@ body.vfx-body {
 }
 
 .vfx-nav-link:hover {
-  color: var(--apple-pure-white);
-  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
 }
 
-/* Burkina Faso Flag Active Menu Pill Highlight */
+/* White Pill Active Menu Highlight */
 .vfx-nav-link.active {
-  color: var(--burkina-yellow);
-  background: rgba(255, 214, 10, 0.14);
-  border: 1px solid rgba(255, 214, 10, 0.4);
-  box-shadow: 0 0 16px rgba(255, 214, 10, 0.3);
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.35), inset 0 0 8px rgba(255, 255, 255, 0.2);
 }
 
 /* Action Buttons */
@@ -284,6 +287,7 @@ body.vfx-body {
   justify-content: center;
   padding: 0 6%;
   overflow: hidden;
+  perspective: 1200px;
 }
 
 .apple-hero-video-container {
@@ -380,12 +384,69 @@ body.vfx-body {
   background: var(--burkina-yellow);
 }
 
-/* Apple Hero Content */
+/* Apple Hero Content - Realistic 3D Extruded Card */
 .apple-hero-content {
   position: relative;
   z-index: 5;
   max-width: 680px;
-  margin-top: -30px;
+  margin-top: -20px;
+  padding: 3.2rem 3.5rem;
+  border-radius: 28px;
+  background: linear-gradient(145deg, rgba(16, 16, 22, 0.82) 0%, rgba(8, 8, 12, 0.92) 100%);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.38);
+  border-left: 1.5px solid rgba(255, 255, 255, 0.28);
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateY(6deg) rotateX(2deg) translateZ(15px);
+  transition: transform 0.4s var(--ease-apple), box-shadow 0.4s var(--ease-apple);
+  box-shadow:
+    /* Layered 3D block extrusion depth steps */
+    -1px 1px 0 rgba(255, 255, 255, 0.15),
+    -2px 2px 0 #1f1f26,
+    -3px 3px 0 #1b1b21,
+    -4px 4px 0 #17171d,
+    -5px 5px 0 #141419,
+    -6px 6px 0 #111115,
+    -7px 7px 0 #0e0e12,
+    -8px 8px 0 #0b0b0f,
+    -9px 9px 0 #09090c,
+    -10px 10px 0 #060608,
+    -12px 12px 0 #040405,
+    -14px 14px 0 #020203,
+    /* Deep realistic atmospheric cast shadow */
+    -28px 32px 70px rgba(0, 0, 0, 0.95),
+    0 15px 35px rgba(0, 0, 0, 0.8),
+    /* Inner rim specular lighting */
+    inset 0 1px 2px rgba(255, 255, 255, 0.4),
+    inset 0 -2px 12px rgba(0, 0, 0, 0.7);
+}
+
+.apple-hero-content:hover {
+  transform: perspective(1000px) rotateY(2deg) rotateX(1deg) translateZ(32px) scale(1.015);
+  box-shadow:
+    -1px 1px 0 rgba(255, 255, 255, 0.22),
+    -3px 3px 0 #24242e,
+    -5px 5px 0 #1e1e26,
+    -7px 7px 0 #18181f,
+    -9px 9px 0 #131319,
+    -11px 11px 0 #0f0f14,
+    -13px 13px 0 #0b0b0e,
+    -15px 15px 0 #070709,
+    -18px 18px 0 #040405,
+    -35px 42px 90px rgba(0, 0, 0, 0.98),
+    0 20px 45px rgba(0, 0, 0, 0.85),
+    inset 0 1px 2px rgba(255, 255, 255, 0.5),
+    inset 0 -2px 15px rgba(0, 0, 0, 0.8);
+}
+
+.apple-hero-content .apple-eyebrow,
+.apple-hero-content .apple-headline,
+.apple-hero-content .apple-subheadline,
+.apple-hero-content .apple-hero-buttons {
+  transform: translateZ(25px);
+  transition: transform 0.4s ease;
 }
 
 .apple-eyebrow-tag {
@@ -908,6 +969,12 @@ body.vfx-body {
 
 @media (max-width: 900px) {
   .apple-right-hud { display: none; }
+  .apple-hero-content {
+    padding: 2rem 1.8rem;
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg) translateZ(0px);
+    margin-top: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+  }
   .apple-headline { font-size: 3.2rem; }
   .apple-hero-cards-strip { grid-template-columns: 1fr; }
   .apple-grid-3col, .apple-portfolio-grid, .apple-footer-inner { grid-template-columns: 1fr; }

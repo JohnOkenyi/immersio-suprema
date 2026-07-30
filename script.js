@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPortfolioFilters();
   initCinemaModal();
   initProposalForm();
+  initHero3DCard();
 });
 
 /* --------------------------------------------------------------------------
@@ -251,5 +252,32 @@ function initProposalForm() {
         submitBtn.style.color = '';
       }, 4000);
     }, 1800);
+  });
+}
+
+/* --------------------------------------------------------------------------
+   7. DYNAMIC INTERACTIVE 3D TILT FOR HERO EXTRUDED CARD
+   -------------------------------------------------------------------------- */
+function initHero3DCard() {
+  const heroSection = document.getElementById('home');
+  const heroCard = document.querySelector('.apple-hero-content');
+
+  if (!heroSection || !heroCard) return;
+
+  heroSection.addEventListener('mousemove', (e) => {
+    if (window.innerWidth <= 900) return;
+    const rect = heroSection.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+
+    const rotateY = (x / (rect.width / 2)) * 12;
+    const rotateX = -(y / (rect.height / 2)) * 10;
+
+    heroCard.style.transform = `perspective(1000px) rotateY(${rotateY + 6}deg) rotateX(${rotateX + 2}deg) translateZ(25px)`;
+  });
+
+  heroSection.addEventListener('mouseleave', () => {
+    if (window.innerWidth <= 900) return;
+    heroCard.style.transform = 'perspective(1000px) rotateY(6deg) rotateX(2deg) translateZ(15px)';
   });
 }
