@@ -510,63 +510,140 @@ function initCyberHouseEngine() {
   });
   const goldGlowMat = new THREE.MeshStandardMaterial({ color: 0xffd60a, roughness: 0.2, metalness: 0.9, emissive: 0xffd60a, emissiveIntensity: 0.35 });
 
-  // 6. Dynamic Slate Canvas Texture
-  const slateCanvas = document.createElement('canvas');
-  slateCanvas.width = 1024;
-  slateCanvas.height = 768;
-  const ctx = slateCanvas.getContext('2d');
+  // 6. Dynamic Slate Canvas Texture Generator for Each Surface Facade
+  function createSlateMaterial(sceneNum, takeNum, rollNum, titleText, descText, prodText, dirText) {
+    const canvas = document.createElement('canvas');
+    canvas.width = 1024;
+    canvas.height = 768;
+    const ctx = canvas.getContext('2d');
 
-  ctx.fillStyle = '#0a090e';
-  ctx.fillRect(0, 0, 1024, 768);
+    // Matte Black Slate Facade Background
+    ctx.fillStyle = '#0a090e';
+    ctx.fillRect(0, 0, 1024, 768);
 
-  ctx.fillStyle = '#f8fafc';
-  ctx.font = 'italic bold 38px Montserrat, sans-serif';
-  ctx.fillText('SCENE', 60, 80);
-  ctx.fillText('TAKE', 420, 80);
-  ctx.fillText('ROLL', 780, 80);
+    // Clapperboard Slate Header Fields
+    ctx.fillStyle = '#f8fafc';
+    ctx.font = 'italic bold 36px Montserrat, sans-serif';
+    ctx.fillText('SCENE', 60, 75);
+    ctx.fillText('TAKE', 420, 75);
+    ctx.fillText('ROLL', 780, 75);
 
-  ctx.fillStyle = '#ffd60a';
-  ctx.font = 'bold 48px Montserrat, sans-serif';
-  ctx.fillText('01', 60, 140);
-  ctx.fillText('02', 420, 140);
-  ctx.fillText('8K', 780, 140);
+    ctx.fillStyle = '#ffd60a';
+    ctx.font = 'bold 44px Montserrat, sans-serif';
+    ctx.fillText(sceneNum, 60, 135);
+    ctx.fillText(takeNum, 420, 135);
+    ctx.fillText(rollNum, 780, 135);
 
-  ctx.strokeStyle = '#ffffff';
-  ctx.lineWidth = 4;
-  ctx.beginPath();
-  ctx.moveTo(40, 175); ctx.lineTo(984, 175);
-  ctx.moveTo(40, 310); ctx.lineTo(984, 310);
-  ctx.moveTo(40, 440); ctx.lineTo(984, 440);
-  ctx.moveTo(40, 570); ctx.lineTo(984, 570);
-  ctx.stroke();
+    // White Divider Lines
+    ctx.strokeStyle = '#ffffff';
+    ctx.lineWidth = 4;
+    ctx.beginPath();
+    ctx.moveTo(40, 165); ctx.lineTo(984, 165);
+    ctx.moveTo(40, 310); ctx.lineTo(984, 310);
+    ctx.moveTo(40, 490); ctx.lineTo(984, 490);
+    ctx.moveTo(40, 630); ctx.lineTo(984, 630);
+    ctx.stroke();
 
-  ctx.fillStyle = '#f8fafc';
-  ctx.font = 'bold 30px Montserrat, sans-serif';
-  ctx.fillText('DATE  2026.07.30', 60, 245);
-  ctx.fillText('SOUND  NEURAL AI', 580, 245);
+    // Target Industry Service Section
+    ctx.fillStyle = '#ffd60a';
+    ctx.font = 'bold 30px Montserrat, sans-serif';
+    ctx.fillText('SERVICE OFFERED:', 60, 215);
 
-  ctx.fillText('PROD.CO.  IMMERSIO SUPREMA', 60, 375);
-  ctx.fillText('DIRECTOR  ADVANCED AGENTIC CREW', 60, 505);
-  ctx.fillText('CAMERAMAN  LOST BOYS VFX LABS', 60, 635);
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 40px Montserrat, sans-serif';
+    ctx.fillText(titleText, 60, 270);
 
-  const slateTexture = new THREE.CanvasTexture(slateCanvas);
-  const slateMat = new THREE.MeshStandardMaterial({ map: slateTexture, roughness: 0.6, metalness: 0.1 });
+    // Service Description Text
+    ctx.fillStyle = '#cbd5e1';
+    ctx.font = '28px Inter, sans-serif';
+    
+    const words = descText.split(' ');
+    let line = '';
+    let y = 360;
+    for (let n = 0; n < words.length; n++) {
+      const testLine = line + words[n] + ' ';
+      const metrics = ctx.measureText(testLine);
+      if (metrics.width > 900 && n > 0) {
+        ctx.fillText(line, 60, y);
+        line = words[n] + ' ';
+        y += 40;
+      } else {
+        line = testLine;
+      }
+    }
+    ctx.fillText(line, 60, y);
 
-  // 7. Solid Watertight House Geometry (Single Solid Connected Building)
+    // Clapperboard Footer Metadata
+    ctx.fillStyle = '#94a3b8';
+    ctx.font = 'bold 26px Montserrat, sans-serif';
+    ctx.fillText('PROD.CO.  ' + prodText, 60, 570);
+    ctx.fillText('DIRECTOR  ' + dirText, 60, 700);
+
+    const texture = new THREE.CanvasTexture(canvas);
+    return new THREE.MeshStandardMaterial({ map: texture, roughness: 0.5, metalness: 0.1 });
+  }
+
+  // Generate 4 Facade Materials for Each Surface Face
+  const frontMat = createSlateMaterial(
+    '01', '01', 'FILM',
+    'FILM & TELEVISION STUDIOS',
+    'Industry-accredited training & specialized masterclasses delivered on-site & online: ICVFX LED Wall Virtual Production, Houdini Fluid Physics, Unreal Engine 5.4, and Motion Capture.',
+    'IMMERSIO SUPREMA STUDIOS',
+    'HOLLYWOOD & NETFLIX PIPELINES'
+  );
+
+  const rightMat = createSlateMaterial(
+    '02', '02', 'GAME',
+    'ANIMATION & GAME DEV STUDIOS',
+    'Industry-accredited training & specialized masterclasses delivered on-site & online: AAA Game Pipelines, Real-Time Shaders, Procedural Art, MetaHuman Rigging, and C++ Unreal Engine.',
+    'GLOBAL GAME DEV LABS',
+    'AAA UNREAL ENGINE & UNITY 6'
+  );
+
+  const backMat = createSlateMaterial(
+    '03', '03', 'DEGREE',
+    'UNIVERSITIES & FILM SCHOOLS',
+    'Industry-accredited training & specialized masterclasses delivered on-site & online: Turnkey Degree Curricula, Faculty Certification Programs, Virtual Production Campus Setup, and Student Capstone Mentorship.',
+    'ACADEMIC PARTNER NETWORK',
+    'GOVERNMENT & ACCREDITED DEGREE LABS'
+  );
+
+  const leftMat = createSlateMaterial(
+    '04', '04', 'DEFENSE',
+    'DEFENSE & GOVERNMENT AGENCIES',
+    'Industry-accredited training & specialized masterclasses delivered on-site & online: Tactical VR Combat Flight Simulation, Aerospace Machinery Digital Twins, Biometric Telemetry, and Mission Rehearsal.',
+    'DEFENSE & AEROSPACE ACADEMIES',
+    'MILITARY SIMULATION CONTRACTORS'
+  );
+
+  // 7. Solid Watertight House Geometry (Single Solid Flush Box Architecture)
   const houseMainBox = new THREE.Mesh(new THREE.BoxGeometry(11, 7.2, 7), matteConcreteMat);
   houseMainBox.castShadow = true;
   houseMainBox.receiveShadow = true;
   houseGroup.add(houseMainBox);
 
-  // Front Facade Slate Panel
-  const frontSlateMesh = new THREE.Mesh(new THREE.PlaneGeometry(10.8, 7.0), slateMat);
+  // Front Slate Surface Facade (0°)
+  const frontSlateMesh = new THREE.Mesh(new THREE.PlaneGeometry(10.8, 7.0), frontMat);
   frontSlateMesh.position.set(0, 0, 3.52);
   houseGroup.add(frontSlateMesh);
 
-  // Left 2-Story Glass Window Wall
-  const glassWallMesh = new THREE.Mesh(new THREE.BoxGeometry(0.2, 6.8, 6.8), glassMat);
-  glassWallMesh.position.set(-5.51, 0, 0);
-  houseGroup.add(glassWallMesh);
+  // Right Slate Surface Facade (90°)
+  const rightSlateMesh = new THREE.Mesh(new THREE.PlaneGeometry(6.8, 7.0), rightMat);
+  rightSlateMesh.rotation.y = Math.PI / 2;
+  rightSlateMesh.position.set(5.52, 0, 0);
+  houseGroup.add(rightSlateMesh);
+
+  // Back Slate Surface Facade (180°)
+  const backSlateMesh = new THREE.Mesh(new THREE.PlaneGeometry(10.8, 7.0), backMat);
+  backSlateMesh.rotation.y = Math.PI;
+  backSlateMesh.position.set(0, 0, -3.52);
+  houseGroup.add(backSlateMesh);
+
+  // Left Slate Surface Facade (-90°)
+  const leftSlateMesh = new THREE.Mesh(new THREE.PlaneGeometry(6.8, 7.0), leftMat);
+  leftSlateMesh.rotation.y = -Math.PI / 2;
+  leftSlateMesh.position.set(-5.52, 0, 0);
+  houseGroup.add(leftSlateMesh);
 
   // 8. Hinged Top Clapstick Roof Structure (Attached with Metal Bracket & Bolts)
   const clapstickCanvas = document.createElement('canvas');
@@ -612,21 +689,7 @@ function initCyberHouseEngine() {
   const b2 = new THREE.Mesh(boltGeo, boltMat); b2.rotation.x = Math.PI / 2; b2.position.set(-5.0, 5.0, 3.2); houseGroup.add(b2);
   const b3 = new THREE.Mesh(boltGeo, boltMat); b3.rotation.x = Math.PI / 2; b3.position.set(-5.2, 4.0, 3.2); houseGroup.add(b3);
 
-  // 9. Recessed Entrance Structure
-  const recessedNook = new THREE.Mesh(new THREE.BoxGeometry(2.4, 3.2, 2.0), matteConcreteMat);
-  recessedNook.position.set(-2.0, -2.0, 3.2);
-  houseGroup.add(recessedNook);
-
-  const glassDoor = new THREE.Mesh(new THREE.PlaneGeometry(1.2, 2.6), glassMat);
-  glassDoor.position.set(-2.0, -2.0, 4.21);
-  houseGroup.add(glassDoor);
-
-  // 10. Integrated Luxury Garage
-  const garageBox = new THREE.Mesh(new THREE.BoxGeometry(4.2, 3.2, 2.0), aluminumMat);
-  garageBox.position.set(3.2, -2.0, 3.2);
-  houseGroup.add(garageBox);
-
-  // 11. Pedestal Turntable Base
+  // 9. Pedestal Turntable Base
   const pedestalBase = new THREE.Mesh(new THREE.CylinderGeometry(8.5, 9.0, 0.6, 64), aluminumMat);
   pedestalBase.position.set(0, -4.0, 0);
   houseGroup.add(pedestalBase);
