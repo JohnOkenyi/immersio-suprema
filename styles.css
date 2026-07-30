@@ -1112,6 +1112,51 @@ body.vfx-body {
   font-weight: 700;
 }
 
+/* Pure White Background Form Card for Section 6 (Apply & Contact Studio) */
+.apple-pure-white-bg .apple-form-card.centered-form {
+  background: linear-gradient(145deg, #ffffff 0%, #f8f9fd 100%) !important;
+  border: 1.5px solid rgba(217, 119, 6, 0.35) !important;
+  border-top: 2.5px solid rgba(230, 57, 70, 0.85) !important;
+  border-left: 2.5px solid rgba(5, 150, 105, 0.85) !important;
+  border-right: 1.5px solid rgba(217, 119, 6, 0.5) !important;
+  border-bottom: 1.5px solid rgba(5, 150, 105, 0.5) !important;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.08),
+    0 0 40px rgba(217, 119, 6, 0.15) !important;
+}
+
+.apple-pure-white-bg .form-title {
+  color: #1d1d1f !important;
+  text-shadow: none !important;
+}
+
+.apple-pure-white-bg .field-box label {
+  color: #d97706 !important;
+  font-weight: 800 !important;
+}
+
+.apple-pure-white-bg .field-box input,
+.apple-pure-white-bg .field-box select,
+.apple-pure-white-bg .field-box textarea {
+  background: #f4f5f9 !important;
+  border: 1.5px solid rgba(0, 0, 0, 0.12) !important;
+  color: #1d1d1f !important;
+  font-weight: 600 !important;
+}
+
+.apple-pure-white-bg .field-box input:focus,
+.apple-pure-white-bg .field-box select:focus,
+.apple-pure-white-bg .field-box textarea:focus {
+  background: #ffffff !important;
+  border-color: #d97706 !important;
+  box-shadow: 0 0 15px rgba(217, 119, 6, 0.25) !important;
+}
+
+.apple-pure-white-bg .field-box select option {
+  background: #ffffff !important;
+  color: #1d1d1f !important;
+}
+
 .apple-header-block {
   max-width: 700px;
   margin-bottom: 4.5rem;
