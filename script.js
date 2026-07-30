@@ -510,8 +510,8 @@ function initCyberHouseEngine() {
   });
   const goldGlowMat = new THREE.MeshStandardMaterial({ color: 0xffd60a, roughness: 0.2, metalness: 0.9, emissive: 0xffd60a, emissiveIntensity: 0.35 });
 
-  // 6. Dynamic Slate Canvas Texture Generator for Each Surface Facade
-  function createSlateMaterial(sceneNum, takeNum, rollNum, titleText, descText, prodText, dirText) {
+  // 6. Clean Slate Canvas Texture Generator (Removed SCENE/TAKE/ROLL top header & PROD.CO/DIRECTOR footer per user request)
+  function createSlateMaterial(titleText, descText) {
     const canvas = document.createElement('canvas');
     canvas.width = 1024;
     canvas.height = 768;
@@ -521,99 +521,78 @@ function initCyberHouseEngine() {
     ctx.fillStyle = '#0a090e';
     ctx.fillRect(0, 0, 1024, 768);
 
-    // Clapperboard Slate Header Fields
-    ctx.fillStyle = '#f8fafc';
-    ctx.font = 'italic bold 36px Montserrat, sans-serif';
-    ctx.fillText('SCENE', 60, 75);
-    ctx.fillText('TAKE', 420, 75);
-    ctx.fillText('ROLL', 780, 75);
+    // Outer Slate Border Accent
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.25)';
+    ctx.lineWidth = 6;
+    ctx.strokeRect(20, 20, 984, 728);
 
+    // Target Industry Service Badge
     ctx.fillStyle = '#ffd60a';
-    ctx.font = 'bold 44px Montserrat, sans-serif';
-    ctx.fillText(sceneNum, 60, 135);
-    ctx.fillText(takeNum, 420, 135);
-    ctx.fillText(rollNum, 780, 135);
+    ctx.font = 'bold 36px Montserrat, sans-serif';
+    ctx.fillText('PROGRAM & SERVICE OFFERED:', 60, 110);
 
-    // White Divider Lines
-    ctx.strokeStyle = '#ffffff';
+    // Divider Line under Badge
+    ctx.strokeStyle = '#ffd60a';
     ctx.lineWidth = 4;
     ctx.beginPath();
-    ctx.moveTo(40, 165); ctx.lineTo(984, 165);
-    ctx.moveTo(40, 310); ctx.lineTo(984, 310);
-    ctx.moveTo(40, 490); ctx.lineTo(984, 490);
-    ctx.moveTo(40, 630); ctx.lineTo(984, 630);
+    ctx.moveTo(60, 135); ctx.lineTo(964, 135);
     ctx.stroke();
 
-    // Target Industry Service Section
-    ctx.fillStyle = '#ffd60a';
-    ctx.font = 'bold 30px Montserrat, sans-serif';
-    ctx.fillText('SERVICE OFFERED:', 60, 215);
-
+    // Main Industry Title (Big, Bold, White)
     ctx.fillStyle = '#ffffff';
-    ctx.font = 'bold 40px Montserrat, sans-serif';
-    ctx.fillText(titleText, 60, 270);
+    ctx.font = 'bold 52px Montserrat, sans-serif';
+    ctx.fillText(titleText, 60, 215);
 
-    // Service Description Text
-    ctx.fillStyle = '#cbd5e1';
-    ctx.font = '28px Inter, sans-serif';
+    // Secondary White Divider Line
+    ctx.strokeStyle = '#ffffff';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(60, 250); ctx.lineTo(964, 250);
+    ctx.stroke();
+
+    // Detailed Service Description Text (Large, Legible 36px Font)
+    ctx.fillStyle = '#e2e8f0';
+    ctx.font = '36px Inter, sans-serif';
     
     const words = descText.split(' ');
     let line = '';
-    let y = 360;
+    let y = 330;
     for (let n = 0; n < words.length; n++) {
       const testLine = line + words[n] + ' ';
       const metrics = ctx.measureText(testLine);
-      if (metrics.width > 900 && n > 0) {
+      if (metrics.width > 880 && n > 0) {
         ctx.fillText(line, 60, y);
         line = words[n] + ' ';
-        y += 40;
+        y += 52;
       } else {
         line = testLine;
       }
     }
     ctx.fillText(line, 60, y);
 
-    // Clapperboard Footer Metadata
-    ctx.fillStyle = '#94a3b8';
-    ctx.font = 'bold 26px Montserrat, sans-serif';
-    ctx.fillText('PROD.CO.  ' + prodText, 60, 570);
-    ctx.fillText('DIRECTOR  ' + dirText, 60, 700);
-
     const texture = new THREE.CanvasTexture(canvas);
     return new THREE.MeshStandardMaterial({ map: texture, roughness: 0.5, metalness: 0.1 });
   }
 
-  // Generate 4 Facade Materials for Each Surface Face
+  // Generate 4 Facade Materials for Each Surface Face (Cleaned & Focused)
   const frontMat = createSlateMaterial(
-    '01', '01', 'FILM',
     'FILM & TELEVISION STUDIOS',
-    'Industry-accredited training & specialized masterclasses delivered on-site & online: ICVFX LED Wall Virtual Production, Houdini Fluid Physics, Unreal Engine 5.4, and Motion Capture.',
-    'IMMERSIO SUPREMA STUDIOS',
-    'HOLLYWOOD & NETFLIX PIPELINES'
+    'Industry-accredited training & specialized masterclasses delivered on-site & online: ICVFX LED Wall Virtual Production, Houdini Fluid Physics, Unreal Engine 5.4, and Motion Capture.'
   );
 
   const rightMat = createSlateMaterial(
-    '02', '02', 'GAME',
     'ANIMATION & GAME DEV STUDIOS',
-    'Industry-accredited training & specialized masterclasses delivered on-site & online: AAA Game Pipelines, Real-Time Shaders, Procedural Art, MetaHuman Rigging, and C++ Unreal Engine.',
-    'GLOBAL GAME DEV LABS',
-    'AAA UNREAL ENGINE & UNITY 6'
+    'Industry-accredited training & specialized masterclasses delivered on-site & online: AAA Game Pipelines, Real-Time Shaders, Procedural Art, MetaHuman Rigging, and C++ Unreal Engine.'
   );
 
   const backMat = createSlateMaterial(
-    '03', '03', 'DEGREE',
     'UNIVERSITIES & FILM SCHOOLS',
-    'Industry-accredited training & specialized masterclasses delivered on-site & online: Turnkey Degree Curricula, Faculty Certification Programs, Virtual Production Campus Setup, and Student Capstone Mentorship.',
-    'ACADEMIC PARTNER NETWORK',
-    'GOVERNMENT & ACCREDITED DEGREE LABS'
+    'Industry-accredited training & specialized masterclasses delivered on-site & online: Turnkey Degree Curricula, Faculty Certification Programs, Virtual Production Campus Setup, and Student Capstone Mentorship.'
   );
 
   const leftMat = createSlateMaterial(
-    '04', '04', 'DEFENSE',
     'DEFENSE & GOVERNMENT AGENCIES',
-    'Industry-accredited training & specialized masterclasses delivered on-site & online: Tactical VR Combat Flight Simulation, Aerospace Machinery Digital Twins, Biometric Telemetry, and Mission Rehearsal.',
-    'DEFENSE & AEROSPACE ACADEMIES',
-    'MILITARY SIMULATION CONTRACTORS'
+    'Industry-accredited training & specialized masterclasses delivered on-site & online: Tactical VR Combat Flight Simulation, Aerospace Machinery Digital Twins, Biometric Telemetry, and Mission Rehearsal.'
   );
 
   // 7. Solid Watertight House Geometry (Single Solid Flush Box Architecture)
