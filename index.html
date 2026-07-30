@@ -313,7 +313,8 @@
 
   <!-- SECTION 4: INTERACTIVE REAL-TIME SIMULATION SANDBOX -->
   <section id="technology" class="apple-section">
-    <div class="apple-section-container">
+    <div class="vfx-ambient-glow orb-green"></div>
+    <div class="apple-section-container" style="position: relative; z-index: 2;">
       
       <div class="apple-header-block">
         <span class="apple-kicker">Proprietary Render Engine</span>
@@ -352,23 +353,25 @@
 
           <div class="apple-slider-group">
             <div class="slider-meta">
-              <label>Cinematic Lighting Exposure</label>
+              <label>Lighting Key Intensity</label>
               <span id="label-light-num">80%</span>
             </div>
-            <input type="range" id="range-light" min="20" max="100" value="80" class="apple-range">
+            <input type="range" id="range-light" min="0" max="100" value="80" class="apple-range">
           </div>
 
           <div class="apple-slider-group">
             <div class="slider-meta">
-              <label>Desert Volumetric Atmosphere</label>
+              <label>Volumetric Sandstorm Density</label>
               <span id="label-sand-num">25%</span>
             </div>
             <input type="range" id="range-sand" min="0" max="100" value="25" class="apple-range">
           </div>
 
           <div class="sandbox-ctrl-footer">
-            <span class="status-txt">● UNREAL ENGINE 5.4 INTEGRATION</span>
-            <button class="apple-btn-secondary-sm" id="btn-reset-sandbox">Reset Parameters</button>
+            <span class="status-txt"><i class="fas fa-microchip"></i> UNREAL ENGINE 5.4 LIVE VIEWPORT</span>
+            <button class="apple-btn-white-pill" style="width: 100%; justify-content: center;" onclick="resetSandbox()">
+              <i class="fas fa-undo"></i> Reset Parameters
+            </button>
           </div>
         </div>
 
@@ -379,7 +382,8 @@
 
   <!-- SECTION 5: ENTERPRISE & DEFENSE TRAINING ACADEMY (PROGRAMS & ADMISSIONS) -->
   <section id="training" class="apple-section apple-dark-bg">
-    <div class="apple-section-container">
+    <div class="vfx-ambient-glow orb-gold"></div>
+    <div class="apple-section-container" style="position: relative; z-index: 2;">
       
       <div class="apple-header-block">
         <span class="apple-kicker">Programs & Accredited Certifications</span>
@@ -455,7 +459,8 @@
 
   <!-- SECTION 6: CONTACT & APPLY -->
   <section id="contact" class="apple-section apple-dark-bg">
-    <div class="apple-section-container">
+    <div class="vfx-ambient-glow orb-red"></div>
+    <div class="apple-section-container" style="position: relative; z-index: 2;">
       
       <div class="apple-header-block centered-header">
         <span class="apple-kicker">Admissions & Direct Transmission</span>

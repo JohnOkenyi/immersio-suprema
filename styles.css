@@ -67,7 +67,12 @@ html {
 
 body.vfx-body {
   font-family: var(--font-apple-body);
-  background: radial-gradient(circle at 50% 20%, #151524 0%, #0a0a10 50%, #030306 100%);
+  background:
+    radial-gradient(ellipse at 15% 20%, rgba(255, 59, 48, 0.35) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 25%, rgba(48, 209, 88, 0.35) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 65%, rgba(255, 214, 10, 0.3) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 85%, rgba(0, 210, 255, 0.32) 0%, transparent 50%),
+    linear-gradient(135deg, #1c152d 0%, #0e241c 35%, #2a1f0c 70%, #121832 100%);
   background-attachment: fixed;
   color: var(--apple-white);
   line-height: 1.6;
@@ -89,34 +94,42 @@ body.vfx-body {
 .vfx-ambient-glow {
   position: absolute;
   border-radius: 50%;
-  filter: blur(130px);
-  opacity: 0.32;
+  filter: blur(100px);
+  opacity: 0.55;
   pointer-events: none;
   z-index: 0;
 }
 
 .orb-green {
-  width: 550px;
-  height: 550px;
-  background: radial-gradient(circle, #30d158 0%, rgba(48, 209, 88, 0) 70%);
-  top: 15%;
-  right: 5%;
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, #30d158 0%, rgba(48, 209, 88, 0.12) 70%);
+  top: 10%;
+  right: 2%;
 }
 
 .orb-gold {
-  width: 650px;
-  height: 650px;
-  background: radial-gradient(circle, #ffd60a 0%, rgba(255, 214, 10, 0) 70%);
-  top: 45%;
-  left: 2%;
+  width: 750px;
+  height: 750px;
+  background: radial-gradient(circle, #ffd60a 0%, rgba(255, 214, 10, 0.12) 70%);
+  top: 35%;
+  left: 0%;
 }
 
 .orb-cyan {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, #00d2ff 0%, rgba(0, 210, 255, 0) 70%);
-  top: 70%;
-  right: 10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #00d2ff 0%, rgba(0, 210, 255, 0.12) 70%);
+  top: 65%;
+  right: 5%;
+}
+
+.orb-red {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, #ff3b30 0%, rgba(255, 59, 48, 0.12) 70%);
+  top: 85%;
+  left: 8%;
 }
 
 /* --------------------------------------------------------------------------
@@ -133,18 +146,18 @@ body.vfx-body {
   justify-content: center;
   align-items: center;
   padding: 0 3%;
-  background: rgba(10, 10, 13, 0.92);
+  background: rgba(22, 22, 34, 0.78);
   backdrop-filter: blur(28px);
   -webkit-backdrop-filter: blur(28px);
-  border-bottom: 1px solid rgba(255, 214, 10, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
   transition: var(--transition-apple-slow);
 }
 
 .vfx-navbar.scrolled {
   height: 66px;
-  background: rgba(6, 6, 8, 0.96);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.95);
-  border-bottom-color: rgba(48, 209, 88, 0.35);
+  background: rgba(16, 16, 26, 0.92);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  border-bottom-color: rgba(48, 209, 88, 0.45);
 }
 
 .vfx-nav-container {
