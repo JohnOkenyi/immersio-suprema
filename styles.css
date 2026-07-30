@@ -839,6 +839,55 @@ body.vfx-body {
   border-bottom: 1.5px solid rgba(255, 255, 255, 0.35);
 }
 
+/* Pure White Background Section for Studio / About */
+.apple-section.apple-pure-white-bg {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  color: #1d1d1f !important;
+  position: relative;
+  z-index: 2;
+}
+
+.apple-pure-white-bg .apple-kicker {
+  color: #d97706 !important;
+  text-shadow: none !important;
+}
+
+.apple-pure-white-bg .apple-section-title {
+  color: #1d1d1f !important;
+  text-shadow: none !important;
+}
+
+.apple-pure-white-bg .apple-section-desc {
+  color: #424245 !important;
+}
+
+.apple-pure-white-bg .apple-pro-card {
+  background: #f5f5f9 !important;
+  border: 1.5px solid rgba(0, 0, 0, 0.08) !important;
+  border-top: 2.5px solid rgba(217, 119, 6, 0.6) !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06) !important;
+}
+
+.apple-pure-white-bg .apple-pro-card:hover {
+  background: #ffffff !important;
+  border-color: #34c759 !important;
+  border-top-color: #ffcc00 !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12), 0 0 30px rgba(255, 204, 0, 0.25) !important;
+}
+
+.apple-pure-white-bg .card-num-badge {
+  color: #d97706 !important;
+}
+
+.apple-pure-white-bg .pro-card-title {
+  color: #1d1d1f !important;
+}
+
+.apple-pure-white-bg .pro-card-desc {
+  color: #52525a !important;
+}
+
 .apple-header-block {
   max-width: 700px;
   margin-bottom: 4.5rem;
