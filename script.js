@@ -267,17 +267,17 @@ function initHero3DCard() {
   heroSection.addEventListener('mousemove', (e) => {
     if (window.innerWidth <= 900) return;
     const rect = heroSection.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
+    const x = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2);
+    const y = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
 
-    const rotateY = (x / (rect.width / 2)) * 12;
-    const rotateX = -(y / (rect.height / 2)) * 10;
+    const moveX = x * 8;
+    const moveY = y * 8;
 
-    heroCard.style.transform = `perspective(1000px) rotateY(${rotateY + 6}deg) rotateX(${rotateX + 2}deg) translateZ(25px)`;
+    heroCard.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translate3d(${moveX}px, ${moveY}px, 55px) scale(1.015)`;
   });
 
   heroSection.addEventListener('mouseleave', () => {
     if (window.innerWidth <= 900) return;
-    heroCard.style.transform = 'perspective(1000px) rotateY(6deg) rotateX(2deg) translateZ(15px)';
+    heroCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(40px)';
   });
 }

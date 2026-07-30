@@ -384,7 +384,7 @@ body.vfx-body {
   background: var(--burkina-yellow);
 }
 
-/* Apple Hero Content - Realistic 3D Extruded Card */
+/* Apple Hero Content - Straight Realistic 3D Extruded Card Popping Out */
 .apple-hero-content {
   position: relative;
   z-index: 5;
@@ -392,60 +392,60 @@ body.vfx-body {
   margin-top: -20px;
   padding: 3.2rem 3.5rem;
   border-radius: 28px;
-  background: linear-gradient(145deg, rgba(16, 16, 22, 0.82) 0%, rgba(8, 8, 12, 0.92) 100%);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-top: 1.5px solid rgba(255, 255, 255, 0.38);
-  border-left: 1.5px solid rgba(255, 255, 255, 0.28);
+  background: linear-gradient(145deg, rgba(18, 18, 25, 0.88) 0%, rgba(8, 8, 12, 0.95) 100%);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  border-top: 2px solid rgba(255, 255, 255, 0.45);
   transform-style: preserve-3d;
-  transform: perspective(1000px) rotateY(6deg) rotateX(2deg) translateZ(15px);
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(40px);
   transition: transform 0.4s var(--ease-apple), box-shadow 0.4s var(--ease-apple);
   box-shadow:
-    /* Layered 3D block extrusion depth steps */
-    -1px 1px 0 rgba(255, 255, 255, 0.15),
-    -2px 2px 0 #1f1f26,
-    -3px 3px 0 #1b1b21,
-    -4px 4px 0 #17171d,
-    -5px 5px 0 #141419,
-    -6px 6px 0 #111115,
-    -7px 7px 0 #0e0e12,
-    -8px 8px 0 #0b0b0f,
-    -9px 9px 0 #09090c,
-    -10px 10px 0 #060608,
-    -12px 12px 0 #040405,
-    -14px 14px 0 #020203,
-    /* Deep realistic atmospheric cast shadow */
-    -28px 32px 70px rgba(0, 0, 0, 0.95),
-    0 15px 35px rgba(0, 0, 0, 0.8),
-    /* Inner rim specular lighting */
-    inset 0 1px 2px rgba(255, 255, 255, 0.4),
-    inset 0 -2px 12px rgba(0, 0, 0, 0.7);
+    /* Straight rim stroke glow */
+    0 0 0 1px rgba(255, 255, 255, 0.15),
+    /* 3D solid extruded side walls popping out straight */
+    0 2px 0 #282832,
+    0 4px 0 #22222b,
+    0 6px 0 #1d1d25,
+    0 8px 0 #18181f,
+    0 10px 0 #141419,
+    0 12px 0 #101014,
+    0 14px 0 #0c0c0f,
+    0 16px 0 #09090c,
+    0 18px 0 #060608,
+    /* Deep atmospheric drop shadow cast straight onto background video */
+    0 30px 75px rgba(0, 0, 0, 0.98),
+    0 12px 35px rgba(0, 0, 0, 0.85),
+    0 0 45px rgba(255, 255, 255, 0.06),
+    /* Specular glass reflection & inner bevel highlights */
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.5),
+    inset 0 -3px 12px rgba(0, 0, 0, 0.75);
 }
 
 .apple-hero-content:hover {
-  transform: perspective(1000px) rotateY(2deg) rotateX(1deg) translateZ(32px) scale(1.015);
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(65px) scale(1.025);
   box-shadow:
-    -1px 1px 0 rgba(255, 255, 255, 0.22),
-    -3px 3px 0 #24242e,
-    -5px 5px 0 #1e1e26,
-    -7px 7px 0 #18181f,
-    -9px 9px 0 #131319,
-    -11px 11px 0 #0f0f14,
-    -13px 13px 0 #0b0b0e,
-    -15px 15px 0 #070709,
-    -18px 18px 0 #040405,
-    -35px 42px 90px rgba(0, 0, 0, 0.98),
-    0 20px 45px rgba(0, 0, 0, 0.85),
-    inset 0 1px 2px rgba(255, 255, 255, 0.5),
-    inset 0 -2px 15px rgba(0, 0, 0, 0.8);
+    0 0 0 1px rgba(255, 255, 255, 0.25),
+    0 3px 0 #30303c,
+    0 6px 0 #282832,
+    0 9px 0 #202029,
+    0 12px 0 #1a1a21,
+    0 15px 0 #141419,
+    0 18px 0 #0f0f13,
+    0 21px 0 #0a0a0d,
+    0 24px 0 #060608,
+    0 40px 95px rgba(0, 0, 0, 0.99),
+    0 18px 45px rgba(0, 0, 0, 0.9),
+    0 0 60px rgba(255, 255, 255, 0.12),
+    inset 0 2px 3px rgba(255, 255, 255, 0.65),
+    inset 0 -4px 15px rgba(0, 0, 0, 0.85);
 }
 
 .apple-hero-content .apple-eyebrow,
 .apple-hero-content .apple-headline,
 .apple-hero-content .apple-subheadline,
 .apple-hero-content .apple-hero-buttons {
-  transform: translateZ(25px);
+  transform: translateZ(35px);
   transition: transform 0.4s ease;
 }
 
