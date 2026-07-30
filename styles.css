@@ -1631,175 +1631,425 @@ body.vfx-body {
 }
 
 /* ==========================================================================
-   REALISTIC 3D CINEMA CLAPPERBOARD HOUSE ARCHITECTURE
+   100% PHOTOREALISTIC 3D CLAPPERBOARD ARCHITECTURAL HOUSE (EXACT REFERENCE SPEC)
    ========================================================================== */
-.clapperboard-house {
+.exact-clapper-house {
   position: relative;
-  width: 490px;
-  height: 340px;
+  width: 520px;
+  height: 360px;
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
-  transform: rotateX(-12deg) rotateY(0deg);
+  transform: rotateX(-12deg) rotateY(-18deg);
   transition: transform 0.12s ease-out;
   will-change: transform;
 }
 
-/* 3D Clapperboard Roof & Open Clapping Sticks */
-.clapperboard-roof {
+/* TOP HINGED CLAPSTICK ASSEMBLY & REALISTIC HARDWARE BOLTS */
+.photo-clapper-hinge-assembly {
   position: absolute;
-  top: -145px;
+  top: -150px;
   left: 0;
-  width: 490px;
-  height: 145px;
+  width: 520px;
+  height: 150px;
   transform-style: preserve-3d;
-  z-index: 25;
+  z-index: 30;
 }
 
-.clapper-stick {
+/* Heavy Metal Hinge Bracket with 3 Stainless Steel Mounting Bolts */
+.hinge-hardware-bracket {
   position: absolute;
-  width: 490px;
-  height: 48px;
-  background: #111118;
-  border: 2px solid #ffffff;
+  left: -8px;
+  top: 15px;
+  width: 55px;
+  height: 75px;
+  background: linear-gradient(135deg, #334155 0%, #0f172a 100%);
+  border: 2px solid #64748b;
   border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.95), inset 0 2px 4px rgba(255, 255, 255, 0.6);
+  z-index: 40;
+  clip-path: polygon(0 0, 100% 0, 100% 60%, 50% 100%, 0 100%);
+}
+
+.hinge-bolt {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f8fafc 0%, #94a3b8 60%, #334155 100%);
+  border: 1px solid #1e293b;
+  box-shadow: inset 0 1px 2px #ffffff, 0 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+.bolt-top-left  { top: 8px; left: 8px; }
+.bolt-top-right { top: 8px; right: 8px; }
+.bolt-bottom    { bottom: 12px; left: 50%; transform: translateX(-50%); }
+
+/* Top Angled Open Clapstick (Exact angle matching reference image) */
+.photo-clapstick-angled {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  width: 520px;
+  height: 52px;
+  background: #09090b;
+  border: 2px solid #27272a;
+  border-radius: 6px;
+  transform-origin: 0% 100%;
+  transform: rotateZ(-16deg) rotateX(38deg) translateZ(20px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.98), inset 0 1.5px 3px rgba(255, 255, 255, 0.4);
+  display: flex;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), inset 0 1.5px 3px rgba(255, 255, 255, 0.8);
+}
+
+/* Fixed Eave Base Clapstick */
+.photo-clapstick-fixed {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 520px;
+  height: 52px;
+  background: #09090b;
+  border: 2px solid #27272a;
+  border-radius: 6px;
+  transform: rotateX(38deg) translateZ(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+  display: flex;
+  overflow: hidden;
+}
+
+.clapstick-stripe {
+  flex: 1;
+  height: 100%;
+}
+
+.clapstick-stripe:nth-child(odd) {
+  background: #09090b;
+}
+
+.clapstick-stripe:nth-child(even) {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  transform: skewX(-32deg);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Integrated Linear LED Strip Light under Top Clapstick (Warm 3000K) */
+.clapstick-led-strip {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #ffedd5;
+  box-shadow: 0 0 15px #f97316, 0 0 25px #fdba74;
+}
+
+/* MATTE CONCRETE HOUSE BODY & ELEVATION FACADES */
+.photo-house-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 520px;
+  height: 360px;
+  transform-style: preserve-3d;
+}
+
+.photo-wall-front {
+  background: linear-gradient(145deg, #121216 0%, #09090b 100%) !important;
+  border: 3px solid #27272a !important;
+  border-radius: 12px;
+  padding: 1.5rem 1.6rem;
+  transform: translateZ(260px);
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.98), inset 0 2px 4px rgba(255, 255, 255, 0.15) !important;
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  grid-template-rows: 1fr 140px;
+  gap: 12px;
+}
+
+/* MAIN SLATE CONCRETE FACADE WITH ENGRAVED WHITE TYPOGRAPHY */
+.photo-slate-facade {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.slate-grid-row.top-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.slate-cell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.slate-cell:hover {
+  background: rgba(255, 214, 10, 0.12);
+}
+
+.slate-label {
+  font-family: var(--font-vfx-ui);
+  font-size: 0.95rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #f8fafc;
+  font-style: italic;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+.slate-value-glow {
+  font-family: var(--font-vfx-ui);
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #ffd60a;
+  text-shadow: 0 0 15px rgba(255, 214, 10, 0.8);
+}
+
+.slate-divider-line {
+  width: 100%;
+  height: 2.5px;
+  background: #f8fafc;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  margin: 6px 0;
+}
+
+.slate-list-rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.slate-text-line {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1.5rem;
+  padding: 4px 6px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s ease;
 }
 
-/* Upper Clapping Stick (Angled Open Roof Gable at -18deg) */
-.stick-top {
-  top: -35px;
-  left: -5px;
-  transform-origin: 0% 100%;
-  transform: rotateZ(-18deg) rotateX(42deg) translateZ(15px);
-  border-color: #ffd60a;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.95), 0 0 25px rgba(255, 214, 10, 0.4);
+.slate-text-line:hover {
+  background: rgba(255, 214, 10, 0.12);
 }
 
-/* Lower Clapping Stick (Roof Base Eaves) */
-.stick-bottom {
-  bottom: 0;
-  left: 0;
-  transform: rotateX(42deg) translateZ(10px);
+.slate-inline-val {
+  font-family: var(--font-vfx-ui);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #cbd5e1;
+  margin-left: 10px;
 }
 
-.clapper-stripes-pattern {
-  position: absolute;
-  top: 0;
-  left: 0;
+.slate-right-box {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+/* RECESSED ENTRANCE NOOK WITH WARM 3000K LED LIGHTING */
+.recessed-entrance-structure {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  position: relative;
+  background: #09090b;
+  border: 2px solid #27272a;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.entrance-inner-nook {
+  position: relative;
   width: 100%;
   height: 100%;
-  background: repeating-linear-gradient(
-    -55deg,
-    #ffffff 0,
-    #ffffff 28px,
-    #111118 28px,
-    #111118 56px
-  );
-  opacity: 0.92;
+  background: linear-gradient(180deg, #18181b 0%, #09090b 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.clapper-hinge-pin {
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #ffd60a 0%, #d97706 100%);
-  border: 2px solid #ffffff;
-  box-shadow: 0 0 10px #ffd60a;
-  z-index: 10;
-}
-
-.clapper-slate-title {
-  position: relative;
-  z-index: 5;
-  font-family: var(--font-vfx-ui);
-  font-size: 0.72rem;
-  letter-spacing: 3px;
-  color: #000000;
-  font-weight: 900;
-  background: #ffd60a;
-  padding: 4px 14px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
-}
-
-.clapper-gable {
-  border-bottom: 130px solid #111118 !important;
-  filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.6)) !important;
-}
-
-/* Matte Black Cinema Clapperboard House Slate Body */
-.clapperboard-body {
+.entrance-warm-downlight {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 490px;
-  height: 340px;
-  transform-style: preserve-3d;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 60px;
+  background: radial-gradient(ellipse at top, rgba(254, 215, 170, 0.95) 0%, rgba(249, 115, 22, 0.4) 50%, transparent 100%);
+  filter: blur(4px);
+  pointer-events: none;
 }
 
-.clapper-wall {
-  background: linear-gradient(145deg, #181824 0%, #0d0c14 100%) !important;
-  border: 2.5px solid rgba(255, 255, 255, 0.35) !important;
-  border-top: 3.5px solid #ffd60a !important;
-  border-radius: 16px;
-  padding: 1rem 1.2rem;
+.architectural-glass-door {
+  width: 38px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  position: relative;
+}
+
+.vertical-door-handle {
+  position: absolute;
+  right: 4px;
+  top: 40%;
+  width: 3px;
+  height: 22px;
+  background: #f8fafc;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.entrance-concrete-steps {
+  width: 100%;
+  height: 12px;
+  background: #18181b;
+  border-top: 1.5px solid #ffedd5;
+  box-shadow: 0 -2px 10px rgba(249, 115, 22, 0.5);
+}
+
+/* INTEGRATED LUXURY GARAGE STRUCTURE */
+.integrated-garage-structure {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  position: relative;
+  background: #09090b;
+  border: 2px solid #27272a;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.9);
+}
+
+.garage-header-fascia {
+  height: 24px;
+  background: #18181b;
+  border-bottom: 1.5px solid #27272a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.garage-downlight-bar {
+  display: flex;
+  gap: 30px;
+}
+
+.spot-light {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffedd5;
+  box-shadow: 0 4px 12px #f97316, 0 6px 18px #fdba74;
+}
+
+.garage-sectional-door {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 4px;
+  background: #09090b;
+}
+
+.garage-panel {
+  flex: 1;
+  background: linear-gradient(180deg, #18181b 0%, #09090b 100%);
+  border: 1px solid #27272a;
+  border-radius: 3px;
+}
+
+/* LEFT ELEVATION: FLOOR-TO-CEILING TINTED GLASS WINDOWS */
+.photo-wall-left {
+  background: #09090b !important;
+  border: 2px solid #27272a !important;
+  transform: rotateY(-90deg) translateZ(260px);
+  padding: 1.2rem;
+}
+
+.glass-façade-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.glass-floor {
+  flex: 1;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.9);
+}
+
+.glass-warm-interior {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 30%, rgba(254, 215, 170, 0.35) 0%, rgba(15, 23, 42, 0.95) 80%);
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
+}
+
+.interior-lounge-light, .interior-dining-light {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 40px;
+  background: radial-gradient(ellipse, rgba(253, 186, 116, 0.9) 0%, transparent 70%);
+  filter: blur(6px);
+}
+
+.glass-room-tag {
+  font-family: var(--font-vfx-ui);
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #ffd60a;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #ffd60a;
+}
+
+/* RIGHT ELEVATION & REAR ELEVATION PROFILE */
+.photo-wall-right {
+  background: #121216 !important;
+  border: 2px solid #27272a !important;
+  transform: rotateY(90deg) translateZ(260px);
+  padding: 1.2rem;
+}
+
+.photo-wall-back {
+  background: #09090b !important;
+  border: 2px solid #27272a !important;
+  transform: rotateY(180deg) translateZ(260px);
+  padding: 1.2rem;
+}
+
+.right-profile-concrete, .rear-facade-concrete {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.98), inset 0 1.5px 3px rgba(255, 255, 255, 0.3) !important;
-}
-
-.house-wall-front.clapper-wall  { transform: translateZ(245px); }
-.house-wall-back.clapper-wall   { transform: rotateY(180deg) translateZ(245px); }
-.house-wall-right.clapper-wall  { transform: rotateY(90deg) translateZ(245px); }
-.house-wall-left.clapper-wall   { transform: rotateY(-90deg) translateZ(245px); }
-
-/* Clapperboard Slate Header Fields */
-.clapper-slate-header {
-  display: flex;
-  justify-content: space-around;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
-  padding-bottom: 8px;
-  margin-bottom: 8px;
-}
-
-.slate-field-box {
-  font-family: var(--font-vfx-ui);
-  font-size: 0.72rem;
-  letter-spacing: 2px;
-  color: #ffffff;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.gold-txt {
-  color: #ffd60a !important;
-  font-size: 0.9rem;
-  font-weight: 900;
-  margin-left: 4px;
-}
-
-/* Clapperboard Slate Footer Metadata */
-.clapper-slate-footer {
-  display: flex;
-  justify-content: space-between;
-  border-top: 2px solid rgba(255, 255, 255, 0.3);
-  padding-top: 8px;
-  margin-top: 8px;
-  font-family: var(--font-vfx-ui);
-  font-size: 0.65rem;
-  letter-spacing: 1.5px;
-  color: #c0c0cc;
-  font-weight: 700;
 }
 
 /* Large Hollow Room Cutout Window & Photo Interiors */
