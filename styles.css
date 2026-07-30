@@ -6,36 +6,37 @@
    1. COLOR SYSTEM & BURKINA FASO FLAG TOKENS
    -------------------------------------------------------------------------- */
 :root {
-  /* Space Black & Dark Graphite Base with Radial Atmosphere */
-  --bg-space-black: #06060c;
-  --bg-vfx-charcoal: #0e0e16;
-  --bg-vfx-card: rgba(22, 22, 32, 0.75);
-  --bg-vfx-card-hover: rgba(30, 30, 44, 0.9);
-  --bg-apple-frosted: rgba(255, 255, 255, 0.09);
+  /* Ultra-Vivid Apple Pro Base & Canvas Tokens */
+  --bg-space-black: #0c0818;
+  --bg-vfx-charcoal: #161226;
+  --bg-vfx-card: rgba(255, 255, 255, 0.12);
+  --bg-vfx-card-hover: rgba(255, 255, 255, 0.22);
+  --bg-apple-frosted: rgba(255, 255, 255, 0.16);
 
-  /* Burkina Faso Flag Colors (Red, Golden Star Yellow, Emerald Green) */
-  --burkina-red: #ff3b30;
-  --burkina-yellow: #ffd60a;
-  --burkina-green: #30d158;
+  /* High-Saturation Saturated Apple Pro Colors (Electric Crimson, Gold Star Yellow, Hyper Emerald, Pro Cyan) */
+  --burkina-red: #ff2d55;
+  --burkina-yellow: #ffcc00;
+  --burkina-green: #34c759;
+  --apple-cyan: #00f0ff;
 
   /* Apple-Style Metallic Gradients Blending Burkina Faso Flag Colors */
-  --burkina-gradient: linear-gradient(135deg, #ff3b30 0%, #ffd60a 50%, #30d158 100%);
-  --burkina-gradient-horizontal: linear-gradient(90deg, #ff3b30 0%, #ffd60a 50%, #30d158 100%);
-  --burkina-gold-green: linear-gradient(135deg, #ffd60a 0%, #30d158 100%);
+  --burkina-gradient: linear-gradient(135deg, #ff2d55 0%, #ffcc00 50%, #34c759 100%);
+  --burkina-gradient-horizontal: linear-gradient(90deg, #ff2d55 0%, #ffcc00 50%, #34c759 100%);
+  --burkina-gold-green: linear-gradient(135deg, #ffcc00 0%, #34c759 100%);
 
-  /* Ambient Glows */
-  --burkina-red-glow: rgba(255, 59, 48, 0.35);
-  --burkina-gold-glow: rgba(255, 214, 10, 0.35);
-  --burkina-green-glow: rgba(48, 209, 88, 0.35);
+  /* High-Luminance Ambient Glows */
+  --burkina-red-glow: rgba(255, 45, 85, 0.45);
+  --burkina-gold-glow: rgba(255, 204, 0, 0.45);
+  --burkina-green-glow: rgba(52, 199, 89, 0.45);
 
-  --apple-white: #f8f8fa;
+  --apple-white: #ffffff;
   --apple-pure-white: #ffffff;
-  --apple-silver: #e2e2e8;
-  --apple-muted: #b0b0bb;
+  --apple-silver: #f2f2f7;
+  --apple-muted: #e5e5ea;
 
-  /* Borders & Glass Strokes */
-  --border-apple-light: rgba(255, 255, 255, 0.22);
-  --border-apple-subtle: rgba(255, 255, 255, 0.12);
+  /* Razor-Sharp Borders & Glass Strokes */
+  --border-apple-light: rgba(255, 255, 255, 0.38);
+  --border-apple-subtle: rgba(255, 255, 255, 0.22);
 
   /* Typography Families */
   --font-vfx-ui: 'Inter', 'Montserrat', -apple-system, sans-serif;
@@ -60,21 +61,21 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  background-color: var(--bg-space-black);
-  color: var(--apple-white);
+  background-color: #0c0818;
+  color: #ffffff;
   overflow-x: hidden;
 }
 
 body.vfx-body {
   font-family: var(--font-apple-body);
   background:
-    radial-gradient(ellipse at 15% 20%, rgba(255, 59, 48, 0.35) 0%, transparent 50%),
-    radial-gradient(ellipse at 85% 25%, rgba(48, 209, 88, 0.35) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 65%, rgba(255, 214, 10, 0.3) 0%, transparent 55%),
-    radial-gradient(ellipse at 80% 85%, rgba(0, 210, 255, 0.32) 0%, transparent 50%),
-    linear-gradient(135deg, #1c152d 0%, #0e241c 35%, #2a1f0c 70%, #121832 100%);
+    radial-gradient(ellipse at 15% 15%, rgba(255, 45, 85, 0.45) 0%, transparent 48%),
+    radial-gradient(ellipse at 85% 20%, rgba(52, 199, 89, 0.45) 0%, transparent 48%),
+    radial-gradient(ellipse at 50% 55%, rgba(255, 204, 0, 0.4) 0%, transparent 52%),
+    radial-gradient(ellipse at 80% 80%, rgba(0, 240, 255, 0.42) 0%, transparent 48%),
+    linear-gradient(135deg, #1e1438 0%, #0d2e22 35%, #35260b 70%, #122044 100%);
   background-attachment: fixed;
-  color: var(--apple-white);
+  color: #ffffff;
   line-height: 1.6;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
@@ -832,9 +833,10 @@ body.vfx-body {
 }
 
 .apple-section.apple-dark-bg {
-  background: radial-gradient(ellipse at 50% 50%, #141422 0%, #090912 70%, #040407 100%);
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(135deg, rgba(38, 28, 68, 0.65) 0%, rgba(18, 50, 38, 0.65) 50%, rgba(55, 42, 18, 0.65) 100%);
+  backdrop-filter: blur(24px);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.35);
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.35);
 }
 
 .apple-header-block {
@@ -857,13 +859,14 @@ body.vfx-body {
 
 .apple-kicker {
   font-family: var(--font-vfx-ui);
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   letter-spacing: 3px;
   color: var(--burkina-yellow);
-  font-weight: 800;
+  font-weight: 900;
   text-transform: uppercase;
   display: block;
   margin-bottom: 0.8rem;
+  text-shadow: 0 0 16px rgba(255, 204, 0, 0.5);
 }
 
 .apple-section-title {
@@ -872,14 +875,15 @@ body.vfx-body {
   font-weight: 900;
   line-height: 1.08;
   letter-spacing: -0.02em;
-  color: var(--apple-pure-white);
+  color: #ffffff !important;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
 }
 
 .apple-section-desc {
   font-family: var(--font-apple-body);
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   line-height: 1.65;
-  color: #d8d8e5 !important;
+  color: #f2f2f7 !important;
   margin-top: 1rem;
   font-weight: 400;
 }
@@ -891,24 +895,30 @@ body.vfx-body {
 }
 
 .apple-pro-card {
-  background: linear-gradient(145deg, rgba(28, 28, 42, 0.78) 0%, rgba(14, 14, 22, 0.88) 100%);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-  border: 1.5px solid rgba(255, 255, 255, 0.22);
-  border-top: 2px solid rgba(255, 255, 255, 0.55);
-  border-left: 2px solid rgba(255, 255, 255, 0.38);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.07) 100%);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-top: 2.5px solid #ffffff;
+  border-left: 2px solid rgba(255, 255, 255, 0.6);
   border-radius: 24px;
   padding: 3rem 2.4rem;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), inset 0 1.5px 2px rgba(255, 255, 255, 0.4);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35),
+    0 0 35px rgba(255, 204, 0, 0.25),
+    inset 0 2px 3px rgba(255, 255, 255, 0.7);
   transition: var(--transition-apple-slow);
 }
 
 .apple-pro-card:hover {
   transform: translateY(-8px) scale(1.02);
-  border-color: var(--burkina-yellow);
+  border-color: #ffcc00;
   border-top-color: #ffffff;
-  background: linear-gradient(145deg, rgba(36, 36, 52, 0.9) 0%, rgba(18, 18, 28, 0.95) 100%);
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), 0 0 35px rgba(255, 214, 10, 0.35);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.12) 100%);
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.45),
+    0 0 50px rgba(255, 204, 0, 0.5),
+    0 0 70px rgba(52, 199, 89, 0.4);
 }
 
 .card-num-badge {
@@ -924,14 +934,14 @@ body.vfx-body {
   font-family: var(--font-vfx-ui);
   font-size: 1.35rem;
   font-weight: 800;
-  color: var(--apple-pure-white);
+  color: #ffffff !important;
   margin-bottom: 0.8rem;
 }
 
 .pro-card-desc {
   font-family: var(--font-apple-body);
-  font-size: 0.95rem;
-  color: #d1d1db !important;
+  font-size: 0.98rem;
+  color: #f2f2f7 !important;
   line-height: 1.6;
   font-weight: 400;
 }
@@ -939,8 +949,8 @@ body.vfx-body {
 .apple-filter-pills { display: flex; gap: 10px; }
 
 .apple-filter-btn {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
   color: #ffffff;
   font-family: var(--font-vfx-ui);
   font-size: 0.75rem;
