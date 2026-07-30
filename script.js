@@ -400,21 +400,19 @@ function initCardHoverSoundEffects() {
 }
 
 /* --------------------------------------------------------------------------
-   9. INTERACTIVE 3D ROTATING CYBER CAMPUS HOUSE ENGINE
+   9. PHOTOREALISTIC WEBGL THREE.JS 3D CLAPPERBOARD ARCHITECTURAL HOUSE ENGINE
    -------------------------------------------------------------------------- */
-let houseRotationY = 0;
+let threeScene, threeCamera, threeRenderer, houseGroup;
+let targetHouseRotationY = -0.4;
+let currentHouseRotationY = -0.4;
 let houseAutoRotate = true;
 let isDraggingHouse = false;
 let startX = 0;
 let previousRotationY = 0;
 
-function rotateHouseToAngle(targetAngle) {
-  const houseModel = document.getElementById('cyber-house-model');
-  if (!houseModel) return;
-
-  houseRotationY = targetAngle;
-  houseModel.style.transform = `rotateX(-10deg) rotateY(${houseRotationY}deg)`;
-  updateHouseNavTabs(targetAngle);
+function rotateHouseToAngle(targetAngleRad) {
+  targetHouseRotationY = (targetAngleRad * Math.PI) / 180;
+  updateHouseNavTabs((targetAngleRad % 360 + 360) % 360);
 }
 
 function toggleHouseAutoRotate() {
@@ -431,13 +429,11 @@ function toggleHouseAutoRotate() {
   }
 }
 
-function updateHouseNavTabs(angle) {
+function updateHouseNavTabs(angleDeg) {
   const tabs = document.querySelectorAll('.house-nav-tab:not(.auto-rotate-btn)');
-  tabs.forEach(tab => {
-    tab.classList.remove('active');
-  });
+  tabs.forEach(tab => tab.classList.remove('active'));
 
-  const normalized = ((angle % 360) + 360) % 360;
+  const normalized = ((angleDeg % 360) + 360) % 360;
   if (normalized >= 315 || normalized < 45) {
     if (tabs[0]) tabs[0].classList.add('active');
   } else if (normalized >= 45 && normalized < 135) {
@@ -450,46 +446,247 @@ function updateHouseNavTabs(angle) {
 }
 
 function initCyberHouseEngine() {
-  const viewport = document.getElementById('cyber-house-viewport');
-  const houseModel = document.getElementById('cyber-house-model');
-  if (!viewport || !houseModel) return;
+  const container = document.getElementById('cyber-house-viewport');
+  if (!container || typeof THREE === 'undefined') return;
 
-  // Smooth Auto-Rotation Loop (30 FPS ticker)
-  setInterval(() => {
+  const width = container.clientWidth || 1000;
+  const height = 620;
+
+  // 1. Scene & Camera Setup
+  threeScene = new THREE.Scene();
+  threeScene.background = null;
+
+  threeCamera = new THREE.PerspectiveCamera(38, width / height, 0.1, 1000);
+  threeCamera.position.set(0, 3.2, 22);
+  threeCamera.lookAt(0, -0.5, 0);
+
+  // 2. WebGL Renderer
+  threeRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
+  threeRenderer.setSize(width, height);
+  threeRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  threeRenderer.shadowMap.enabled = true;
+  threeRenderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+  container.innerHTML = '';
+  container.appendChild(threeRenderer.domElement);
+
+  // 3. Studio Lighting Rig
+  const ambientLight = new THREE.AmbientLight(0x404054, 1.4);
+  threeScene.add(ambientLight);
+
+  const keyLight = new THREE.DirectionalLight(0xffffff, 2.4);
+  keyLight.position.set(14, 20, 16);
+  keyLight.castShadow = true;
+  keyLight.shadow.mapSize.width = 2048;
+  keyLight.shadow.mapSize.height = 2048;
+  threeScene.add(keyLight);
+
+  const fillLight = new THREE.DirectionalLight(0xffd60a, 1.2);
+  fillLight.position.set(-14, 10, -12);
+  threeScene.add(fillLight);
+
+  const entranceLight = new THREE.PointLight(0xffedd5, 3.2, 10);
+  entranceLight.position.set(-2.0, -0.8, 4.4);
+  threeScene.add(entranceLight);
+
+  const garageLight = new THREE.PointLight(0xf97316, 2.6, 10);
+  garageLight.position.set(3.2, -0.8, 4.4);
+  threeScene.add(garageLight);
+
+  // 4. Master 3D House Group
+  houseGroup = new THREE.Group();
+  threeScene.add(houseGroup);
+
+  // 5. PBR Materials
+  const matteConcreteMat = new THREE.MeshStandardMaterial({ color: 0x0d0c12, roughness: 0.82, metalness: 0.15 });
+  const aluminumMat = new THREE.MeshStandardMaterial({ color: 0x27272a, roughness: 0.35, metalness: 0.85 });
+  const glassMat = new THREE.MeshPhysicalMaterial({
+    color: 0x0f172a,
+    transparent: true,
+    opacity: 0.45,
+    roughness: 0.1,
+    metalness: 0.9,
+    clearcoat: 1.0
+  });
+  const goldGlowMat = new THREE.MeshStandardMaterial({ color: 0xffd60a, roughness: 0.2, metalness: 0.9, emissive: 0xffd60a, emissiveIntensity: 0.35 });
+
+  // 6. Dynamic Slate Canvas Texture
+  const slateCanvas = document.createElement('canvas');
+  slateCanvas.width = 1024;
+  slateCanvas.height = 768;
+  const ctx = slateCanvas.getContext('2d');
+
+  ctx.fillStyle = '#0a090e';
+  ctx.fillRect(0, 0, 1024, 768);
+
+  ctx.fillStyle = '#f8fafc';
+  ctx.font = 'italic bold 38px Montserrat, sans-serif';
+  ctx.fillText('SCENE', 60, 80);
+  ctx.fillText('TAKE', 420, 80);
+  ctx.fillText('ROLL', 780, 80);
+
+  ctx.fillStyle = '#ffd60a';
+  ctx.font = 'bold 48px Montserrat, sans-serif';
+  ctx.fillText('01', 60, 140);
+  ctx.fillText('02', 420, 140);
+  ctx.fillText('8K', 780, 140);
+
+  ctx.strokeStyle = '#ffffff';
+  ctx.lineWidth = 4;
+  ctx.beginPath();
+  ctx.moveTo(40, 175); ctx.lineTo(984, 175);
+  ctx.moveTo(40, 310); ctx.lineTo(984, 310);
+  ctx.moveTo(40, 440); ctx.lineTo(984, 440);
+  ctx.moveTo(40, 570); ctx.lineTo(984, 570);
+  ctx.stroke();
+
+  ctx.fillStyle = '#f8fafc';
+  ctx.font = 'bold 30px Montserrat, sans-serif';
+  ctx.fillText('DATE  2026.07.30', 60, 245);
+  ctx.fillText('SOUND  NEURAL AI', 580, 245);
+
+  ctx.fillText('PROD.CO.  IMMERSIO SUPREMA', 60, 375);
+  ctx.fillText('DIRECTOR  ADVANCED AGENTIC CREW', 60, 505);
+  ctx.fillText('CAMERAMAN  LOST BOYS VFX LABS', 60, 635);
+
+  const slateTexture = new THREE.CanvasTexture(slateCanvas);
+  const slateMat = new THREE.MeshStandardMaterial({ map: slateTexture, roughness: 0.6, metalness: 0.1 });
+
+  // 7. Solid Watertight House Geometry (Single Solid Connected Building)
+  const houseMainBox = new THREE.Mesh(new THREE.BoxGeometry(11, 7.2, 7), matteConcreteMat);
+  houseMainBox.castShadow = true;
+  houseMainBox.receiveShadow = true;
+  houseGroup.add(houseMainBox);
+
+  // Front Facade Slate Panel
+  const frontSlateMesh = new THREE.Mesh(new THREE.PlaneGeometry(10.8, 7.0), slateMat);
+  frontSlateMesh.position.set(0, 0, 3.52);
+  houseGroup.add(frontSlateMesh);
+
+  // Left 2-Story Glass Window Wall
+  const glassWallMesh = new THREE.Mesh(new THREE.BoxGeometry(0.2, 6.8, 6.8), glassMat);
+  glassWallMesh.position.set(-5.51, 0, 0);
+  houseGroup.add(glassWallMesh);
+
+  // 8. Hinged Top Clapstick Roof Structure (Attached with Metal Bracket & Bolts)
+  const clapstickCanvas = document.createElement('canvas');
+  clapstickCanvas.width = 512;
+  clapstickCanvas.height = 64;
+  const cctx = clapstickCanvas.getContext('2d');
+  cctx.fillStyle = '#09090b';
+  cctx.fillRect(0, 0, 512, 64);
+  cctx.fillStyle = '#f8fafc';
+  for (let i = 0; i < 8; i++) {
+    cctx.beginPath();
+    cctx.moveTo(i * 70 + 20, 0);
+    cctx.lineTo(i * 70 + 60, 0);
+    cctx.lineTo(i * 70 + 30, 64);
+    cctx.lineTo(i * 70 - 10, 64);
+    cctx.fill();
+  }
+  const clapstickTex = new THREE.CanvasTexture(clapstickCanvas);
+  clapstickTex.wrapS = THREE.RepeatWrapping;
+  clapstickTex.repeat.set(2, 1);
+  const clapstickMat = new THREE.MeshStandardMaterial({ map: clapstickTex, roughness: 0.4, metalness: 0.3 });
+
+  // Fixed Base Eave Stick
+  const fixedStick = new THREE.Mesh(new THREE.BoxGeometry(11.2, 1.2, 1.2), clapstickMat);
+  fixedStick.position.set(0, 4.0, 3.2);
+  houseGroup.add(fixedStick);
+
+  // Angled Top Open Clapstick
+  const topStick = new THREE.Mesh(new THREE.BoxGeometry(11.2, 1.2, 1.2), clapstickMat);
+  topStick.position.set(0.6, 5.2, 3.2);
+  topStick.rotation.z = -0.26;
+  houseGroup.add(topStick);
+
+  // Metal Corner Hinge Bracket & 3 Stainless Bolts
+  const hingePlate = new THREE.Mesh(new THREE.BoxGeometry(1.2, 2.2, 1.4), aluminumMat);
+  hingePlate.position.set(-5.2, 4.5, 3.2);
+  houseGroup.add(hingePlate);
+
+  const boltGeo = new THREE.CylinderGeometry(0.12, 0.12, 1.5, 16);
+  const boltMat = new THREE.MeshStandardMaterial({ color: 0xe2e8f0, roughness: 0.2, metalness: 0.9 });
+
+  const b1 = new THREE.Mesh(boltGeo, boltMat); b1.rotation.x = Math.PI / 2; b1.position.set(-5.4, 5.0, 3.2); houseGroup.add(b1);
+  const b2 = new THREE.Mesh(boltGeo, boltMat); b2.rotation.x = Math.PI / 2; b2.position.set(-5.0, 5.0, 3.2); houseGroup.add(b2);
+  const b3 = new THREE.Mesh(boltGeo, boltMat); b3.rotation.x = Math.PI / 2; b3.position.set(-5.2, 4.0, 3.2); houseGroup.add(b3);
+
+  // 9. Recessed Entrance Structure
+  const recessedNook = new THREE.Mesh(new THREE.BoxGeometry(2.4, 3.2, 2.0), matteConcreteMat);
+  recessedNook.position.set(-2.0, -2.0, 3.2);
+  houseGroup.add(recessedNook);
+
+  const glassDoor = new THREE.Mesh(new THREE.PlaneGeometry(1.2, 2.6), glassMat);
+  glassDoor.position.set(-2.0, -2.0, 4.21);
+  houseGroup.add(glassDoor);
+
+  // 10. Integrated Luxury Garage
+  const garageBox = new THREE.Mesh(new THREE.BoxGeometry(4.2, 3.2, 2.0), aluminumMat);
+  garageBox.position.set(3.2, -2.0, 3.2);
+  houseGroup.add(garageBox);
+
+  // 11. Pedestal Turntable Base
+  const pedestalBase = new THREE.Mesh(new THREE.CylinderGeometry(8.5, 9.0, 0.6, 64), aluminumMat);
+  pedestalBase.position.set(0, -4.0, 0);
+  houseGroup.add(pedestalBase);
+
+  const glowRing = new THREE.Mesh(new THREE.TorusGeometry(8.2, 0.08, 16, 100), goldGlowMat);
+  glowRing.rotation.x = Math.PI / 2;
+  glowRing.position.set(0, -3.6, 0);
+  houseGroup.add(glowRing);
+
+  // 12. Render & Mouse Drag Event Loop
+  function animateThree() {
+    requestAnimationFrame(animateThree);
+
     if (houseAutoRotate && !isDraggingHouse) {
-      houseRotationY += 0.35;
-      houseModel.style.transform = `rotateX(-10deg) rotateY(${houseRotationY}deg)`;
-      updateHouseNavTabs(houseRotationY);
+      targetHouseRotationY += 0.005;
     }
-  }, 30);
 
-  // Mouse & Touch Drag 3D Rotation Logic
+    currentHouseRotationY += (targetHouseRotationY - currentHouseRotationY) * 0.1;
+    houseGroup.rotation.y = currentHouseRotationY;
+
+    const angleDeg = ((currentHouseRotationY * 180 / Math.PI) % 360 + 360) % 360;
+    updateHouseNavTabs(angleDeg);
+
+    threeRenderer.render(threeScene, threeCamera);
+  }
+
+  animateThree();
+
+  // Pointer Drag 3D Rotation Controls
   function onPointerDown(e) {
     isDraggingHouse = true;
     startX = e.clientX || (e.touches && e.touches[0].clientX);
-    previousRotationY = houseRotationY;
+    previousRotationY = targetHouseRotationY;
   }
 
   function onPointerMove(e) {
     if (!isDraggingHouse) return;
     const currentX = e.clientX || (e.touches && e.touches[0].clientX);
     const deltaX = currentX - startX;
-    houseRotationY = previousRotationY + deltaX * 0.55;
-    houseModel.style.transform = `rotateX(-10deg) rotateY(${houseRotationY}deg)`;
-    updateHouseNavTabs(houseRotationY);
+    targetHouseRotationY = previousRotationY + deltaX * 0.008;
   }
 
   function onPointerUp() {
-    if (isDraggingHouse) {
-      isDraggingHouse = false;
-    }
+    isDraggingHouse = false;
   }
 
-  viewport.addEventListener('mousedown', onPointerDown);
+  container.addEventListener('mousedown', onPointerDown);
   window.addEventListener('mousemove', onPointerMove);
   window.addEventListener('mouseup', onPointerUp);
 
-  viewport.addEventListener('touchstart', onPointerDown, { passive: true });
+  container.addEventListener('touchstart', onPointerDown, { passive: true });
   window.addEventListener('touchmove', onPointerMove, { passive: true });
   window.addEventListener('touchend', onPointerUp);
+
+  window.addEventListener('resize', () => {
+    if (!container) return;
+    const w = container.clientWidth || 1000;
+    const h = 620;
+    threeCamera.aspect = w / h;
+    threeCamera.updateProjectionMatrix();
+    threeRenderer.setSize(w, h);
+  });
 }
