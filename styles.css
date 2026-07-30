@@ -385,7 +385,7 @@ body.vfx-body {
   background: var(--burkina-yellow);
 }
 
-/* Apple Hero Content - Transparent Card with Ultra-Thick Visible 3D Edges */
+/* Apple Hero Content - Straight Transparent Card with 32px Heavy 3D Extrusion Wall Thickness */
 .apple-hero-content {
   position: relative;
   z-index: 5;
@@ -400,12 +400,12 @@ body.vfx-body {
   border-top: 3px solid rgba(255, 255, 255, 0.75);
   border-left: 3px solid rgba(255, 255, 255, 0.55);
   transform-style: preserve-3d;
-  transform: perspective(1000px) rotateY(-6deg) rotateX(3deg) translateZ(60px);
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(60px);
   transition: transform 0.4s var(--ease-apple), box-shadow 0.4s var(--ease-apple), background 0.4s ease;
   box-shadow:
     /* Top edge rim light stroke */
     0 0 0 1px rgba(255, 255, 255, 0.3),
-    /* 35px Ultra-Thick 3D Extrusion Wall (Clearly Visible 3D Edge Depth) */
+    /* 32px Visible Solid 3D Extrusion Wall Depth (Thickness from the edges) */
     -1px 1px 0 rgba(255, 255, 255, 0.7),
     -2px 2px 0 rgba(255, 255, 255, 0.5),
     -3px 3px 0 #4a4a5b,
@@ -427,10 +427,10 @@ body.vfx-body {
     -22px 22px 0 #060608,
     -25px 25px 0 #050507,
     -28px 28px 0 #040405,
-    -31px 31px 0 #020203,
-    -35px 35px 0 #010102,
-    /* Deep atmospheric cast shadow behind the thick 3D block */
-    -45px 50px 110px rgba(0, 0, 0, 0.99),
+    -30px 30px 0 #020203,
+    -32px 32px 0 #010102,
+    /* Deep atmospheric drop shadow behind the thick 3D slab */
+    -40px 45px 100px rgba(0, 0, 0, 0.99),
     0 15px 40px rgba(0, 0, 0, 0.85),
     0 0 60px rgba(255, 255, 255, 0.12),
     /* Specular glass reflection & inner bevel highlights */
@@ -440,7 +440,7 @@ body.vfx-body {
 
 .apple-hero-content:hover {
   background: rgba(10, 10, 15, 0.36);
-  transform: perspective(1000px) rotateY(-3deg) rotateX(2deg) translateZ(85px);
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(85px);
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.4),
     -1px 1px 0 rgba(255, 255, 255, 0.8),
@@ -457,9 +457,9 @@ body.vfx-body {
     -24px 24px 0 #060609,
     -27px 27px 0 #040406,
     -30px 30px 0 #020203,
-    -35px 35px 0 #010102,
-    -40px 40px 0 #000001,
-    -55px 60px 130px rgba(0, 0, 0, 0.99),
+    -33px 33px 0 #010102,
+    -36px 36px 0 #000001,
+    -50px 55px 120px rgba(0, 0, 0, 0.99),
     0 20px 50px rgba(0, 0, 0, 0.9),
     0 0 80px rgba(255, 255, 255, 0.2),
     inset 0 2.5px 4px rgba(255, 255, 255, 0.75),
