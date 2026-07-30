@@ -863,17 +863,69 @@ body.vfx-body {
 }
 
 .apple-pure-white-bg .apple-pro-card {
-  background: #f5f5f9 !important;
-  border: 1.5px solid rgba(0, 0, 0, 0.08) !important;
-  border-top: 2.5px solid rgba(217, 119, 6, 0.6) !important;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06) !important;
+  background: linear-gradient(145deg, #ffffff 0%, #f4f5f9 100%) !important;
+  border: 1.5px solid rgba(217, 119, 6, 0.35) !important;
+  border-top: 2px solid #d97706 !important;
+  border-left: 2px solid #059669 !important;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(25px);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.05),
+    /* 16px Solid 3D Extrusion Wall Thickness */
+    -1px 1px 0 #ffffff,
+    -2px 2px 0 #d97706,
+    -3px 3px 0 #c26900,
+    -4px 4px 0 #a35600,
+    -5px 5px 0 #059669,
+    -6px 6px 0 #047857,
+    -7px 7px 0 #065f46,
+    -8px 8px 0 #c2c6d2,
+    -10px 10px 0 #a5acbd,
+    -12px 12px 0 #8992a6,
+    -16px 20px 45px rgba(0, 0, 0, 0.14),
+    0 0 30px rgba(217, 119, 6, 0.15),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.8) !important;
 }
 
 .apple-pure-white-bg .apple-pro-card:hover {
   background: #ffffff !important;
-  border-color: #34c759 !important;
-  border-top-color: #ffcc00 !important;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12), 0 0 30px rgba(255, 204, 0, 0.25) !important;
+  border-color: #059669 !important;
+  border-top-color: #d97706 !important;
+  transform: translateY(-20px) translateZ(80px) scale(1.03) !important;
+  box-shadow:
+    0 0 0 1.5px #059669,
+    -1px 1px 0 #ffffff,
+    -2px 2px 0 #d97706,
+    -3px 3px 0 #c26900,
+    -4px 4px 0 #059669,
+    -6px 6px 0 #047857,
+    -8px 8px 0 #065f46,
+    -10px 10px 0 #a5acbd,
+    -12px 12px 0 #8992a6,
+    -16px 16px 0 #6e778d,
+    -22px 28px 60px rgba(0, 0, 0, 0.22),
+    0 0 45px rgba(5, 150, 105, 0.35),
+    inset 0 2px 3px rgba(255, 255, 255, 0.9) !important;
+}
+
+.apple-pro-card .card-num-badge,
+.apple-pro-card .pro-card-title,
+.apple-pro-card .pro-card-desc {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateZ(0px);
+}
+
+.apple-pro-card:hover .card-num-badge {
+  transform: translateZ(40px);
+}
+
+.apple-pro-card:hover .pro-card-title {
+  transform: translateZ(30px);
+}
+
+.apple-pro-card:hover .pro-card-desc {
+  transform: translateZ(20px);
 }
 
 .apple-pure-white-bg .card-num-badge {
