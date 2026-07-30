@@ -887,9 +887,8 @@ body.vfx-body {
   color: #424245 !important;
 }
 
-.apple-pure-white-bg .apple-pro-card,
-.training-card,
-.apple-dark-bg .training-card {
+/* Pure White Background Cards for Section 2 (About Our Studio) */
+.apple-pure-white-bg .apple-pro-card {
   background: linear-gradient(145deg, #ffffff 0%, #fafbfc 100%) !important;
   border: 1.5px solid rgba(217, 119, 6, 0.35) !important;
   border-top: 2.5px solid rgba(230, 57, 70, 0.85) !important;
@@ -912,15 +911,13 @@ body.vfx-body {
     -10px 10px 0 #a8b4cb,
     -14px 18px 45px rgba(0, 0, 0, 0.12),
     /* Soft Smooth Luminous Burkina Flag Multi-Color Glow Halo */
-    0 -8px 30px rgba(230, 57, 70, 0.22),  /* Soft Crimson Red Glow */
-    0 0 40px rgba(217, 119, 6, 0.28),     /* Soft Burkina Gold Glow */
-    0 12px 35px rgba(5, 150, 105, 0.22),  /* Soft Emerald Green Glow */
+    0 -8px 30px rgba(230, 57, 70, 0.22),
+    0 0 40px rgba(217, 119, 6, 0.28),
+    0 12px 35px rgba(5, 150, 105, 0.22),
     inset 0 1.5px 2px rgba(255, 255, 255, 0.9) !important;
 }
 
-.apple-pure-white-bg .apple-pro-card:hover,
-.training-card:hover,
-.apple-dark-bg .training-card:hover {
+.apple-pure-white-bg .apple-pro-card:hover {
   background: #ffffff !important;
   border-color: #059669 !important;
   border-top-color: #e63946 !important;
@@ -933,11 +930,135 @@ body.vfx-body {
     -6px 6px 0 #d0d5e3,
     -8px 8px 0 #bec5d8,
     -12px 16px 50px rgba(0, 0, 0, 0.18),
-    /* Expanded Luminous Soft Burkina Glow Halo on Hover */
-    0 -12px 45px rgba(230, 57, 70, 0.4),  /* Expanded Crimson Red Glow */
-    0 0 60px rgba(217, 119, 6, 0.45),     /* Expanded Burkina Gold Glow */
-    0 18px 50px rgba(5, 150, 105, 0.4),   /* Expanded Emerald Green Glow */
+    0 -12px 45px rgba(230, 57, 70, 0.4),
+    0 0 60px rgba(217, 119, 6, 0.45),
+    0 18px 50px rgba(5, 150, 105, 0.4),
     inset 0 2px 4px rgba(255, 255, 255, 0.95) !important;
+}
+
+.apple-pure-white-bg .card-num-badge { color: #d97706 !important; }
+.apple-pure-white-bg .pro-card-title { color: #1d1d1f !important; text-shadow: none !important; }
+.apple-pure-white-bg .pro-card-desc { color: #424245 !important; }
+
+/* Section 5 ("VFX, AI & Spatial Tech Training") Cards - Blended Dark Atmosphere & High Contrast Text */
+.training-card,
+.apple-dark-bg .training-card {
+  background: linear-gradient(145deg, rgba(22, 18, 30, 0.88) 0%, rgba(10, 16, 14, 0.94) 100%) !important;
+  backdrop-filter: blur(28px) !important;
+  -webkit-backdrop-filter: blur(28px) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+  border-top: 2.5px solid rgba(255, 255, 255, 0.65) !important;
+  border-left: 2.5px solid rgba(245, 158, 11, 0.75) !important;
+  border-right: 1.5px solid rgba(5, 150, 105, 0.6) !important;
+  border-bottom: 1.5px solid rgba(230, 57, 70, 0.5) !important;
+  border-radius: 24px;
+  padding: 3rem 2.4rem;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(20px);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.15),
+    -1px 1px 0 rgba(255, 255, 255, 0.4),
+    -2px 2px 0 #252332,
+    -3px 3px 0 #1e1c2a,
+    -4px 4px 0 #181622,
+    -5px 5px 0 #13111b,
+    -6px 6px 0 #0e0c15,
+    -8px 8px 0 #09080e,
+    -14px 22px 55px rgba(0, 0, 0, 0.92),
+    0 -8px 32px rgba(230, 57, 70, 0.28),
+    0 0 45px rgba(245, 158, 11, 0.35),
+    0 15px 40px rgba(5, 150, 105, 0.28),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.45) !important;
+  transition: var(--transition-apple-slow);
+}
+
+.training-card:hover,
+.apple-dark-bg .training-card:hover {
+  background: linear-gradient(145deg, rgba(30, 24, 40, 0.96) 0%, rgba(14, 22, 18, 0.98) 100%) !important;
+  border-color: #ffd60a !important;
+  border-top-color: #ffffff !important;
+  transform: translateY(-18px) translateZ(75px) scale(1.03) !important;
+  box-shadow:
+    0 0 0 1.5px #ffd60a,
+    -1px 1px 0 #ffffff,
+    -2px 2px 0 #3a384b,
+    -4px 4px 0 #2a2838,
+    -6px 6px 0 #1c1b26,
+    -8px 8px 0 #12111a,
+    -12px 18px 65px rgba(0, 0, 0, 0.98),
+    0 -12px 48px rgba(230, 57, 70, 0.45),
+    0 0 65px rgba(245, 158, 11, 0.5),
+    0 18px 55px rgba(5, 150, 105, 0.45),
+    inset 0 2px 4px rgba(255, 255, 255, 0.6) !important;
+}
+
+/* 100% Readability & Visibility Typography for Training Cards */
+.training-card .card-badge {
+  color: #ffd60a !important;
+  font-weight: 900 !important;
+  font-size: 0.68rem !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  margin-bottom: 12px !important;
+  display: block !important;
+  text-shadow: 0 0 14px rgba(255, 214, 10, 0.45) !important;
+}
+
+.training-card .pro-card-title {
+  color: #ffffff !important;
+  font-weight: 900 !important;
+  font-size: 1.4rem !important;
+  line-height: 1.25 !important;
+  margin-bottom: 12px !important;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.85) !important;
+}
+
+.training-card .pro-card-desc {
+  color: #e4e4ec !important;
+  font-weight: 400 !important;
+  font-size: 0.96rem !important;
+  line-height: 1.65 !important;
+  margin-bottom: 22px !important;
+  text-shadow: none !important;
+}
+
+.training-card .apple-list li {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  margin-bottom: 9px !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6) !important;
+}
+
+.training-card .apple-list li i {
+  color: #ffd60a !important;
+  font-weight: 900 !important;
+  margin-right: 8px !important;
+}
+
+.training-card .duration {
+  color: #c0c0cc !important;
+  font-weight: 800 !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 1.5px !important;
+}
+
+.training-card .apple-btn-secondary-sm {
+  background: var(--burkina-gradient) !important;
+  color: #000000 !important;
+  border: 1px solid #ffd60a !important;
+  font-weight: 900 !important;
+  padding: 9px 22px !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.35) !important;
+}
+
+.training-card .apple-btn-secondary-sm:hover {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 6px 25px rgba(255, 255, 255, 0.5) !important;
 }
 
 .apple-pro-card .card-num-badge,
