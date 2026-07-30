@@ -400,6 +400,45 @@ function initCardHoverSoundEffects() {
 }
 
 /* --------------------------------------------------------------------------
+   8.1 INLINE LOCAL CARD VIDEO PLAYER (Plays showreelone.mp4 inside card box)
+   -------------------------------------------------------------------------- */
+function playCardLocalVideo(cardElement, videoSrc) {
+  if (!cardElement) return;
+
+  const imgContainer = cardElement.querySelector('.work-img-container');
+  if (!imgContainer) return;
+
+  if (typeof playUICardClickSound === 'function') playUICardClickSound();
+
+  // If video is already playing inside this card, return
+  if (imgContainer.querySelector('.inline-card-video')) return;
+
+  // Create HTML5 video element
+  const video = document.createElement('video');
+  video.className = 'inline-card-video';
+  video.src = videoSrc || 'showreelone.mp4';
+  video.autoplay = true;
+  video.controls = true;
+  video.playsInline = true;
+  video.style.cssText = 'position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 20px; z-index: 10;';
+
+  // Create close button
+  const closeBtn = document.createElement('button');
+  closeBtn.className = 'close-inline-video-btn';
+  closeBtn.innerHTML = '<i class="fas fa-times"></i> Close Video';
+  closeBtn.onclick = function(e) {
+    e.stopPropagation();
+    video.pause();
+    video.remove();
+    closeBtn.remove();
+  };
+
+  imgContainer.style.position = 'relative';
+  imgContainer.appendChild(video);
+  imgContainer.appendChild(closeBtn);
+}
+
+/* --------------------------------------------------------------------------
    9. PHOTOREALISTIC WEBGL THREE.JS 3D CLAPPERBOARD ARCHITECTURAL HOUSE ENGINE
    -------------------------------------------------------------------------- */
 let threeScene, threeCamera, threeRenderer, houseGroup;
