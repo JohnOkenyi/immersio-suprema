@@ -384,7 +384,7 @@ body.vfx-body {
   background: var(--burkina-yellow);
 }
 
-/* Apple Hero Content - Compact Transparent 3D Extruded Glass Card */
+/* Apple Hero Content - Straight Transparent Card with Heavy 3D Extrusion Thickness */
 .apple-hero-content {
   position: relative;
   z-index: 5;
@@ -395,38 +395,67 @@ body.vfx-body {
   background: rgba(10, 10, 15, 0.28);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  border-top: 1.5px solid rgba(255, 255, 255, 0.5);
+  border: 1.5px solid rgba(255, 255, 255, 0.32);
+  border-top: 2px solid rgba(255, 255, 255, 0.6);
+  border-left: 2px solid rgba(255, 255, 255, 0.45);
   transform-style: preserve-3d;
-  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(35px);
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(60px);
   transition: transform 0.4s var(--ease-apple), box-shadow 0.4s var(--ease-apple), background 0.4s ease;
   box-shadow:
+    /* Top edge rim light stroke */
     0 0 0 1px rgba(255, 255, 255, 0.2),
-    0 2px 0 rgba(255, 255, 255, 0.12),
-    0 4px 0 rgba(255, 255, 255, 0.08),
-    0 6px 0 rgba(0, 0, 0, 0.35),
-    0 8px 0 rgba(0, 0, 0, 0.45),
-    0 10px 0 rgba(0, 0, 0, 0.55),
-    0 12px 0 rgba(0, 0, 0, 0.65),
-    0 20px 50px rgba(0, 0, 0, 0.75),
-    0 0 35px rgba(255, 255, 255, 0.08),
-    inset 0 1.5px 2px rgba(255, 255, 255, 0.45),
+    /* 22px Heavy Solid 3D Extrusion Wall Thickness (Visible 3D Slab Depth) */
+    -1px 1px 0 rgba(255, 255, 255, 0.4),
+    -2px 2px 0 #3a3a48,
+    -3px 3px 0 #333340,
+    -4px 4px 0 #2c2c38,
+    -5px 5px 0 #262630,
+    -6px 6px 0 #202028,
+    -7px 7px 0 #1b1b22,
+    -8px 8px 0 #17171c,
+    -9px 9px 0 #131317,
+    -10px 10px 0 #101014,
+    -11px 11px 0 #0d0d11,
+    -12px 12px 0 #0a0a0d,
+    -13px 13px 0 #08080a,
+    -14px 14px 0 #060608,
+    -15px 15px 0 #050507,
+    -16px 16px 0 #040405,
+    -18px 18px 0 #030304,
+    -20px 20px 0 #020203,
+    -22px 22px 0 #010102,
+    /* Deep atmospheric drop shadow behind the thick 3D slab */
+    -35px 40px 90px rgba(0, 0, 0, 0.98),
+    0 15px 40px rgba(0, 0, 0, 0.85),
+    0 0 50px rgba(255, 255, 255, 0.1),
+    /* Specular glass reflection & inner bevel highlights */
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.5),
     inset 0 -2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .apple-hero-content:hover {
-  background: rgba(10, 10, 15, 0.38);
-  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(50px) scale(1.015);
+  background: rgba(10, 10, 15, 0.36);
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(90px);
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.3),
-    0 3px 0 rgba(255, 255, 255, 0.18),
-    0 6px 0 rgba(255, 255, 255, 0.1),
-    0 9px 0 rgba(0, 0, 0, 0.4),
-    0 12px 0 rgba(0, 0, 0, 0.5),
-    0 15px 0 rgba(0, 0, 0, 0.6),
-    0 25px 65px rgba(0, 0, 0, 0.85),
-    0 0 50px rgba(255, 255, 255, 0.15),
-    inset 0 2px 3px rgba(255, 255, 255, 0.6),
+    -1px 1px 0 rgba(255, 255, 255, 0.5),
+    -3px 3px 0 #424252,
+    -5px 5px 0 #363644,
+    -7px 7px 0 #2d2d38,
+    -9px 9px 0 #24242e,
+    -11px 11px 0 #1d1d26,
+    -13px 13px 0 #17171e,
+    -15px 15px 0 #121217,
+    -17px 17px 0 #0e0e12,
+    -19px 19px 0 #0a0a0d,
+    -21px 21px 0 #070709,
+    -23px 23px 0 #040406,
+    -25px 25px 0 #020203,
+    -27px 27px 0 #010102,
+    -42px 48px 110px rgba(0, 0, 0, 0.99),
+    0 20px 50px rgba(0, 0, 0, 0.9),
+    0 0 70px rgba(255, 255, 255, 0.18),
+    inset 0 2px 3px rgba(255, 255, 255, 0.65),
     inset 0 -3px 10px rgba(0, 0, 0, 0.6);
 }
 
