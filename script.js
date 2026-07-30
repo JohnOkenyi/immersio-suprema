@@ -449,16 +449,16 @@ function initCyberHouseEngine() {
   const container = document.getElementById('cyber-house-viewport');
   if (!container || typeof THREE === 'undefined') return;
 
-  const width = container.clientWidth || 1100;
-  const height = 740;
+  const width = container.clientWidth || 1050;
+  const height = 560;
 
-  // 1. Scene & Camera Setup (Positioned for zero top/bottom clipping)
+  // 1. Scene & Camera Setup (Calibrated for tight, high-impact UI/UX centering)
   threeScene = new THREE.Scene();
   threeScene.background = null;
 
-  threeCamera = new THREE.PerspectiveCamera(40, width / height, 0.1, 1000);
-  threeCamera.position.set(0, 1.2, 27);
-  threeCamera.lookAt(0, 0.6, 0);
+  threeCamera = new THREE.PerspectiveCamera(36, width / height, 0.1, 1000);
+  threeCamera.position.set(0, 0.8, 22.5);
+  threeCamera.lookAt(0, 0.3, 0);
 
   // 2. WebGL Renderer with Logarithmic Depth Buffer to Eliminate Z-Fighting Flicker
   threeRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, logarithmicDepthBuffer: true, powerPreference: 'high-performance' });
@@ -733,8 +733,8 @@ function initCyberHouseEngine() {
 
   window.addEventListener('resize', () => {
     if (!container) return;
-    const w = container.clientWidth || 1100;
-    const h = 740;
+    const w = container.clientWidth || 1050;
+    const h = 560;
     threeCamera.aspect = w / h;
     threeCamera.updateProjectionMatrix();
     threeRenderer.setSize(w, h);

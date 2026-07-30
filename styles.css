@@ -1511,7 +1511,7 @@ body.vfx-body {
    ========================================================================== */
 .cyber-house-stage-wrapper {
   width: 100%;
-  margin-top: 2.5rem;
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1521,8 +1521,8 @@ body.vfx-body {
 
 .cyber-house-viewport-container {
   width: 100%;
-  max-width: 1200px;
-  height: 740px;
+  max-width: 1050px;
+  height: 560px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1531,6 +1531,11 @@ body.vfx-body {
   user-select: none;
   cursor: grab;
   overflow: visible;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: radial-gradient(circle at center, rgba(30, 27, 45, 0.5) 0%, rgba(13, 12, 18, 0.8) 100%);
+  border-radius: 28px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
 }
 
 .cyber-house-viewport-container:active {
