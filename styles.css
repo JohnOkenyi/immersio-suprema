@@ -941,6 +941,26 @@ body.vfx-body {
   color: #52525a !important;
 }
 
+.apple-pure-white-bg .apple-sandbox-container {
+  background: linear-gradient(145deg, #ffffff 0%, #f8f9fd 100%) !important;
+  border: 1.5px solid rgba(217, 119, 6, 0.28) !important;
+  border-top: 2.5px solid rgba(230, 57, 70, 0.65) !important;
+  border-left: 2.5px solid rgba(5, 150, 105, 0.65) !important;
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.08),
+    0 0 35px rgba(217, 119, 6, 0.12) !important;
+}
+
+.apple-pure-white-bg .ctrl-header-title {
+  color: #1d1d1f !important;
+}
+
+.apple-pure-white-bg .slider-meta label,
+.apple-pure-white-bg .slider-meta span {
+  color: #333336 !important;
+  font-weight: 700;
+}
+
 .apple-header-block {
   max-width: 700px;
   margin-bottom: 4.5rem;
