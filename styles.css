@@ -645,32 +645,99 @@ body.vfx-body {
   border-color: var(--burkina-yellow);
 }
 
-/* Apple Hero Bottom Cards Strip */
+/* Apple Hero Bottom Cards Strip - Wavy 3D Extrusion Format */
 .apple-hero-cards-strip {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  bottom: 2.2rem;
+  left: 4%;
+  width: 92%;
+  max-width: 1400px;
   z-index: 10;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  background: rgba(10, 10, 12, 0.85);
-  backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(255, 214, 10, 0.2);
+  gap: 1.2rem;
+  background: transparent;
+  backdrop-filter: none;
+  border: none;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  padding-bottom: 1rem;
 }
 
+/* Individual 3D Extruded Floating Wave Cards */
 .apple-strip-card {
-  padding: 1.5rem 1.8rem;
-  border-right: 1px solid var(--border-apple-subtle);
+  padding: 1.4rem 1.4rem;
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(16, 16, 22, 0.88) 0%, rgba(8, 8, 12, 0.95) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-top: 2px solid rgba(255, 255, 255, 0.55);
+  border-left: 2px solid rgba(255, 255, 255, 0.38);
   display: flex;
   align-items: flex-start;
-  gap: 14px;
+  gap: 12px;
   cursor: pointer;
-  transition: var(--transition-apple-slow);
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, background 0.4s ease, border-color 0.4s ease;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.15),
+    /* 16px Solid 3D Extrusion Wall Thickness */
+    -1px 1px 0 rgba(255, 255, 255, 0.5),
+    -2px 2px 0 #282834,
+    -3px 3px 0 #22222e,
+    -4px 4px 0 #1c1c26,
+    -5px 5px 0 #171720,
+    -6px 6px 0 #12121a,
+    -7px 7px 0 #0e0e14,
+    -8px 8px 0 #09090f,
+    -10px 10px 0 #050508,
+    -12px 12px 0 #020204,
+    -16px 20px 45px rgba(0, 0, 0, 0.92),
+    0 0 30px rgba(255, 255, 255, 0.08),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.45);
 }
 
+/* Wavy Staggered Height Offsets Forming the Wave Curve */
+.apple-strip-card:nth-child(1) {
+  transform: translateY(0px) rotateZ(-1.2deg) translateZ(30px);
+}
+
+.apple-strip-card:nth-child(2) {
+  transform: translateY(-24px) rotateZ(1deg) translateZ(45px);
+}
+
+.apple-strip-card:nth-child(3) {
+  transform: translateY(10px) rotateZ(-0.8deg) translateZ(20px);
+}
+
+.apple-strip-card:nth-child(4) {
+  transform: translateY(-20px) rotateZ(1.2deg) translateZ(40px);
+}
+
+.apple-strip-card:nth-child(5) {
+  transform: translateY(4px) rotateZ(-1deg) translateZ(32px);
+}
+
+/* 3D Extrusion Pop-Out Hover State */
 .apple-strip-card:hover {
-  background: rgba(255, 214, 10, 0.08);
+  background: rgba(22, 22, 30, 0.96);
+  border-color: var(--burkina-yellow);
+  border-top-color: #ffffff;
+  transform: translateY(-34px) translateZ(70px) scale(1.04) !important;
+  box-shadow:
+    0 0 0 1.5px var(--burkina-yellow),
+    -1px 1px 0 #ffffff,
+    -2px 2px 0 #ffd60a,
+    -4px 4px 0 #b38f00,
+    -6px 6px 0 #665200,
+    -8px 8px 0 #30303a,
+    -10px 10px 0 #1e1e26,
+    -13px 13px 0 #121218,
+    -16px 16px 0 #060608,
+    -22px 28px 65px rgba(0, 0, 0, 0.98),
+    0 0 45px rgba(255, 214, 10, 0.35),
+    inset 0 2px 3px rgba(255, 255, 255, 0.7);
 }
 
 .card-step-num {
@@ -1077,8 +1144,8 @@ body.vfx-body {
 @media (max-width: 1200px) {
   .vfx-nav-menu { display: none; }
   .apple-headline { font-size: 4rem; }
-  .apple-hero-cards-strip { grid-template-columns: repeat(3, 1fr); }
-  .apple-strip-card:nth-child(4), .apple-strip-card:nth-child(5) { display: none; }
+  .apple-hero-cards-strip { grid-template-columns: repeat(3, 1fr); bottom: 1.5rem; gap: 1rem; }
+  .apple-strip-card:nth-child(4), .apple-strip-card:nth-child(5) { display: flex; }
   .apple-sandbox-container { grid-template-columns: 1fr; }
 }
 
@@ -1091,7 +1158,8 @@ body.vfx-body {
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
   }
   .apple-headline { font-size: 3.2rem; }
-  .apple-hero-cards-strip { grid-template-columns: 1fr; }
+  .apple-hero-cards-strip { position: relative; bottom: auto; left: auto; width: 100%; grid-template-columns: 1fr; margin-top: 2rem; }
+  .apple-strip-card { transform: none !important; }
   .apple-grid-3col, .apple-portfolio-grid, .apple-footer-inner { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .apple-form-card.centered-form { padding: 2.5rem 1.5rem; }
