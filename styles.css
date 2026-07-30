@@ -890,29 +890,29 @@ body.vfx-body {
 .apple-pure-white-bg .apple-pro-card {
   background: linear-gradient(145deg, #ffffff 0%, #fafbfc 100%) !important;
   border: 1.5px solid rgba(217, 119, 6, 0.35) !important;
-  border-top: 2.5px solid #e63946 !important;
-  border-left: 2.5px solid #059669 !important;
-  border-right: 1.5px solid #d97706 !important;
-  border-bottom: 1.5px solid #059669 !important;
+  border-top: 2.5px solid rgba(230, 57, 70, 0.85) !important;
+  border-left: 2.5px solid rgba(5, 150, 105, 0.85) !important;
+  border-right: 1.5px solid rgba(217, 119, 6, 0.5) !important;
+  border-bottom: 1.5px solid rgba(5, 150, 105, 0.5) !important;
   transform-style: preserve-3d;
   perspective: 1000px;
   transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(20px);
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.9),
-    /* 100% Burkina Faso Flag 3D Extrusion Wall Steps (Red Top, Gold Center, Green Base) */
+    /* Smooth Clean 3D Extrusion Depth */
     -1px 1px 0 #ffffff,
-    -2px 2px 0 #fcd5ce, /* Soft Burkina Red */
-    -3px 3px 0 #f87171, /* Burkina Crimson Red */
-    -4px 4px 0 #e63946, /* Solid Crimson Red */
-    -5px 5px 0 #fde68a, /* Soft Gold */
-    -6px 6px 0 #d97706, /* Solid Gold */
-    -7px 7px 0 #b45309, /* Deep Gold Shading */
-    -8px 8px 0 #6ee7b7, /* Soft Mint Green */
-    -10px 10px 0 #059669, /* Solid Emerald Green */
-    -12px 12px 0 #047857, /* Deep Emerald Base */
-    -16px 20px 45px rgba(0, 0, 0, 0.15),
-    0 0 35px rgba(230, 57, 70, 0.15),
-    0 0 45px rgba(5, 150, 105, 0.15),
+    -2px 2px 0 #f4f5fa,
+    -3px 3px 0 #e8ebf5,
+    -4px 4px 0 #dce0ee,
+    -5px 5px 0 #d0d6e6,
+    -6px 6px 0 #c4ccde,
+    -8px 8px 0 #b6c0d4,
+    -10px 10px 0 #a8b4cb,
+    -14px 18px 45px rgba(0, 0, 0, 0.12),
+    /* Soft Smooth Luminous Burkina Flag Multi-Color Glow Halo */
+    0 -8px 30px rgba(230, 57, 70, 0.22),  /* Soft Crimson Red Glow */
+    0 0 40px rgba(217, 119, 6, 0.28),     /* Soft Burkina Gold Glow */
+    0 12px 35px rgba(5, 150, 105, 0.22),  /* Soft Emerald Green Glow */
     inset 0 1.5px 2px rgba(255, 255, 255, 0.9) !important;
 }
 
@@ -924,15 +924,15 @@ body.vfx-body {
   box-shadow:
     0 0 0 1.5px #d97706,
     -1px 1px 0 #ffffff,
-    -2px 2px 0 #f87171,
-    -4px 4px 0 #e63946,
-    -6px 6px 0 #f59e0b,
-    -8px 8px 0 #d97706,
-    -10px 10px 0 #059669,
-    -12px 12px 0 #047857,
-    -16px 20px 55px rgba(0, 0, 0, 0.22),
-    0 0 50px rgba(230, 57, 70, 0.35),
-    0 0 60px rgba(5, 150, 105, 0.35),
+    -2px 2px 0 #f6f7fb,
+    -4px 4px 0 #e2e5ef,
+    -6px 6px 0 #d0d5e3,
+    -8px 8px 0 #bec5d8,
+    -12px 16px 50px rgba(0, 0, 0, 0.18),
+    /* Expanded Luminous Soft Burkina Glow Halo on Hover */
+    0 -12px 45px rgba(230, 57, 70, 0.4),  /* Expanded Crimson Red Glow */
+    0 0 60px rgba(217, 119, 6, 0.45),     /* Expanded Burkina Gold Glow */
+    0 18px 50px rgba(5, 150, 105, 0.4),   /* Expanded Emerald Green Glow */
     inset 0 2px 4px rgba(255, 255, 255, 0.95) !important;
 }
 
