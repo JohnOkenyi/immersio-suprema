@@ -2481,3 +2481,149 @@ body.vfx-body {
   color: #000;
   transform: scale(1.06);
 }
+
+/* ==========================================================================
+   PDF SLIDE EXACT MASTER FOOTER DESIGN
+   ========================================================================== */
+.immersio-pdf-master-footer {
+  background: #000000;
+  color: #ffffff;
+  padding: 4.5rem 4% 3rem 4%;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-family: var(--font-vfx-ui);
+}
+
+.pdf-footer-inner-container {
+  max-width: 1350px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.pdf-footer-header-block {
+  margin-bottom: 2.5rem;
+}
+
+.pdf-footer-main-title {
+  font-family: var(--font-vfx-ui);
+  font-size: 2.6rem;
+  font-weight: 900;
+  letter-spacing: 14px;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
+}
+
+.pdf-footer-sub-title {
+  font-family: var(--font-vfx-ui);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 6px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.pdf-footer-banner-frame {
+  width: 100%;
+  max-width: 1280px;
+  height: 420px;
+  overflow: hidden;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 3rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+}
+
+.pdf-footer-banner-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9) contrast(1.1);
+  transition: transform 0.8s ease;
+}
+
+.pdf-footer-banner-frame:hover img {
+  transform: scale(1.03);
+}
+
+.pdf-footer-headline-block {
+  margin-bottom: 2.2rem;
+  padding: 0 1rem;
+}
+
+.pdf-footer-headline {
+  font-family: var(--font-vfx-ui);
+  font-size: 1.15rem;
+  font-weight: 900;
+  line-height: 1.95;
+  letter-spacing: 4px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.pdf-footer-bullets-block {
+  margin-bottom: 3.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.pdf-footer-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.pdf-footer-bullets li {
+  font-family: var(--font-vfx-ui);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #e2e8f0;
+  text-transform: uppercase;
+  position: relative;
+  padding-left: 20px;
+}
+
+.pdf-footer-bullets li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.pdf-footer-contact-bar {
+  width: 100%;
+  padding-top: 1.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gold-contact-text {
+  font-family: var(--font-vfx-ui);
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 5px;
+  color: #ffd60a;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(255, 214, 10, 0.4);
+}
+
+@media (max-width: 900px) {
+  .pdf-footer-main-title { font-size: 1.6rem; letter-spacing: 6px; }
+  .pdf-footer-sub-title { font-size: 0.82rem; letter-spacing: 3px; }
+  .pdf-footer-banner-frame { height: 260px; }
+  .pdf-footer-headline { font-size: 0.88rem; letter-spacing: 2px; line-height: 1.7; }
+  .pdf-footer-bullets li { font-size: 0.72rem; letter-spacing: 1.5px; }
+  .gold-contact-text { font-size: 0.78rem; letter-spacing: 2px; line-height: 1.6; }
+}
