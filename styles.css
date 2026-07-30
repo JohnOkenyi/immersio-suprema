@@ -547,6 +547,29 @@ body.vfx-body {
   letter-spacing: -0.025em;
   color: var(--apple-pure-white);
   margin-bottom: 1.2rem;
+  transform: translateZ(0px);
+  text-shadow: none;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), text-shadow 0.6s ease;
+  cursor: pointer;
+}
+
+/* Hovering over headline or card extrudes letters UP in 3D like growing from flat surface */
+.apple-headline:hover,
+.apple-hero-content:hover .apple-headline {
+  transform: translateZ(95px) scale(1.04);
+  text-shadow:
+    0 1px 0 #ffffff,
+    0 2px 0 #e6e6e6,
+    0 3px 0 #cccccc,
+    0 4px 0 #b3b3b3,
+    0 5px 0 #999999,
+    0 6px 0 #808080,
+    0 7px 0 #666666,
+    0 8px 0 #4d4d4d,
+    0 9px 0 #333333,
+    0 10px 0 #1a1a1a,
+    0 12px 0 #0d0d0d,
+    0 25px 50px rgba(0, 0, 0, 0.95);
 }
 
 .apple-subheadline {
@@ -557,6 +580,20 @@ body.vfx-body {
   max-width: 480px;
   margin-bottom: 1.8rem;
   font-weight: 300;
+  transform: translateZ(0px);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), text-shadow 0.6s ease, color 0.3s ease;
+}
+
+.apple-subheadline:hover,
+.apple-hero-content:hover .apple-subheadline {
+  transform: translateZ(60px);
+  color: #ffffff;
+  text-shadow:
+    0 1px 0 #cccccc,
+    0 2px 0 #aaaaaa,
+    0 3px 0 #888888,
+    0 4px 0 #666666,
+    0 15px 30px rgba(0, 0, 0, 0.9);
 }
 
 .apple-hero-buttons {
