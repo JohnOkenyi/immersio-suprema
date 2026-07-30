@@ -698,25 +698,25 @@ body.vfx-body {
     inset 0 1.5px 2px rgba(255, 255, 255, 0.45);
 }
 
-/* Wavy Staggered Height Offsets Forming the Wave Curve */
+/* Wavy Staggered Height Offsets Forming the Wave Curve (Straight Facing Cards) */
 .apple-strip-card:nth-child(1) {
-  transform: translateY(0px) rotateZ(-1.2deg) translateZ(30px);
+  transform: translateY(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(30px);
 }
 
 .apple-strip-card:nth-child(2) {
-  transform: translateY(-24px) rotateZ(1deg) translateZ(45px);
+  transform: translateY(-28px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(45px);
 }
 
 .apple-strip-card:nth-child(3) {
-  transform: translateY(10px) rotateZ(-0.8deg) translateZ(20px);
+  transform: translateY(12px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(20px);
 }
 
 .apple-strip-card:nth-child(4) {
-  transform: translateY(-20px) rotateZ(1.2deg) translateZ(40px);
+  transform: translateY(-24px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(40px);
 }
 
 .apple-strip-card:nth-child(5) {
-  transform: translateY(4px) rotateZ(-1deg) translateZ(32px);
+  transform: translateY(4px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(32px);
 }
 
 /* 3D Extrusion Pop-Out Hover State */
