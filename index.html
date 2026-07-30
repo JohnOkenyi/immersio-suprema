@@ -390,82 +390,117 @@
         </p>
       </div>
 
-      <!-- INTERACTIVE 3D ROTATING CYBER CAMPUS HOUSE STAGE -->
+      <!-- PROPER 3D ANIMATED ROTATING HOUSE STAGE -->
       <div class="cyber-house-stage-wrapper">
         <div class="cyber-house-viewport-container" id="cyber-house-viewport">
           
-          <!-- 3D Pedestal Stage Ring -->
+          <!-- 3D Turntable Pedestal Stage Base -->
           <div class="cyber-house-stage-pedestal">
             <div class="pedestal-glow-ring"></div>
-            <div class="pedestal-track-label"><i class="fas fa-mouse-pointer"></i> DRAG TO ROTATE 3D CAMPUS • SCROLL TO ZOOM • CLICK ROOM WINGS FOR SECTOR DETAILS</div>
+            <div class="pedestal-track-label"><i class="fas fa-mouse-pointer"></i> DRAG TO ROTATE 3D HOUSE • CLICK ROOM WINDOWS TO EXPLORE SECTORS</div>
           </div>
 
-          <!-- The 3D Cyber House Structure -->
+          <!-- THE 3D ANIMATED PROPER HOUSE MODEL -->
           <div class="cyber-house-3d-model" id="cyber-house-model">
             
-            <!-- Roof Complex -->
+            <!-- Roof & Chimney Structure -->
             <div class="house-roof-structure">
+              <!-- Animated Chimney with Smoke -->
+              <div class="house-chimney">
+                <div class="chimney-smoke smoke-1"></div>
+                <div class="chimney-smoke smoke-2"></div>
+                <div class="chimney-smoke smoke-3"></div>
+              </div>
+
+              <!-- Gabled Pitch Roof Front Triangular Gable Peak -->
+              <div class="roof-gable-front">
+                <div class="roof-gable-triangle">
+                  <span class="house-address-badge"><i class="fas fa-home"></i> IMMERSIO HOUSE</span>
+                </div>
+              </div>
+
+              <!-- Pitch Roof Left Slope -->
               <div class="house-roof-face house-roof-left">
-                <div class="roof-solar-pattern"></div>
-                <span class="roof-badge">IMMERSIO ACADEMY</span>
+                <div class="shingle-pattern"></div>
               </div>
+
+              <!-- Pitch Roof Right Slope -->
               <div class="house-roof-face house-roof-right">
-                <div class="roof-solar-pattern"></div>
+                <div class="shingle-pattern"></div>
               </div>
+
+              <!-- Gold Ridge Beams -->
               <div class="house-roof-ridge"></div>
             </div>
 
-            <!-- Main Building Core & 4 Sector Room Wings -->
+            <!-- Main House Body Structure -->
             <div class="house-body-structure">
               
-              <!-- FRONT ROOM WING: UNIVERSITIES & ACADEMIES -->
-              <div class="house-wall house-wall-front house-room-wing" data-angle="0">
-                <div class="room-window-glass">
-                  <span class="room-sector-tag"><i class="fas fa-university"></i> ACADEMIC WING</span>
-                  <h3 class="room-title">Universities & Film Schools</h3>
-                  <p class="room-desc">Turnkey accredited degree curricula, faculty workshops, and student capstone mentorship worldwide.</p>
-                  <div class="room-stats-pill">
-                    <span><i class="fas fa-graduation-cap"></i> 50+ INSTITUTES</span>
-                    <button class="room-action-btn" onclick="openCinemaModal('ACADEMIC TRAINING SERVICES', 'Turnkey Curriculum & Guest Workshops for Universities')">Explore Wing</button>
+              <!-- FRONT FACADE WALL & PORCH (STUDIO VFX & VIRTUAL PRODUCTION) -->
+              <div class="house-wall house-wall-front" data-angle="0">
+                <!-- Front Door & Porch Light -->
+                <div class="house-porch-entrance">
+                  <div class="porch-lantern"></div>
+                  <div class="house-door">
+                    <div class="door-knob"></div>
+                    <span class="door-tag">MAIN STUDIO ENTRY</span>
+                  </div>
+                </div>
+                <!-- Main Living Room Window (Studio VFX & ICVFX) -->
+                <div class="house-window-frame room-front-window">
+                  <div class="window-interior-light">
+                    <div class="animated-vfx-screen"></div>
+                  </div>
+                  <div class="window-content-overlay">
+                    <span class="room-tag"><i class="fas fa-film"></i> MAIN STUDIO LIVING ROOM</span>
+                    <h3 class="room-title">Studio VFX & Virtual Production</h3>
+                    <p class="room-desc">Custom on-site masterclasses for Hollywood VFX studios, ICVFX LED walls, and Houdini physics.</p>
+                    <button class="room-explore-btn" onclick="openCinemaModal('STUDIO VFX TRAINING', 'Custom On-Site Masterclasses for Hollywood Studios')">Enter Studio Room</button>
                   </div>
                 </div>
               </div>
 
-              <!-- RIGHT ROOM WING: GOVERNMENT & DEFENSE -->
-              <div class="house-wall house-wall-right house-room-wing" data-angle="90">
-                <div class="room-window-glass">
-                  <span class="room-sector-tag"><i class="fas fa-shield-alt"></i> DEFENSE COMPLEX</span>
-                  <h3 class="room-title">Government & Corporate</h3>
-                  <p class="room-desc">Tactical VR flight combat, industrial digital twin machinery drills, and biometric stress telemetry.</p>
-                  <div class="room-stats-pill">
-                    <span><i class="fas fa-fighter-jet"></i> MILITARY ACCREDITED</span>
-                    <button class="room-action-btn" onclick="openCinemaModal('DEFENSE & ENTERPRISE TRAINING', 'Accredited Simulation Training for Government & Industry')">Explore Wing</button>
+              <!-- RIGHT FACADE WALL (UNIVERSITIES & ACADEMIC WING) -->
+              <div class="house-wall house-wall-right" data-angle="90">
+                <div class="house-window-frame room-right-window">
+                  <div class="window-interior-light academic-glow">
+                    <div class="animated-hologram-grid"></div>
+                  </div>
+                  <div class="window-content-overlay">
+                    <span class="room-tag"><i class="fas fa-university"></i> ACADEMIC STUDY & LABS</span>
+                    <h3 class="room-title">Universities & Film Schools</h3>
+                    <p class="room-desc">Turnkey degree modules, faculty certification programs, and student capstone mentorship.</p>
+                    <button class="room-explore-btn" onclick="openCinemaModal('ACADEMIC TRAINING', 'Turnkey Curriculum & Workshops for Universities')">Enter Academic Wing</button>
                   </div>
                 </div>
               </div>
 
-              <!-- LEFT ROOM WING: HOLLYWOOD STUDIO VFX -->
-              <div class="house-wall house-wall-left house-room-wing" data-angle="-90">
-                <div class="room-window-glass">
-                  <span class="room-sector-tag"><i class="fas fa-film"></i> STUDIO PRODUCTION</span>
-                  <h3 class="room-title">Studio VFX & Virtual Production</h3>
-                  <p class="room-desc">Custom on-site masterclasses for Hollywood VFX studios, ICVFX LED walls, and Houdini fluid dynamics.</p>
-                  <div class="room-stats-pill">
-                    <span><i class="fas fa-video"></i> 8K ICVFX STAGES</span>
-                    <button class="room-action-btn" onclick="openCinemaModal('STUDIO VFX TRAINING', 'Custom On-Site Training for Film Studios & Agencies')">Explore Wing</button>
+              <!-- LEFT FACADE WALL (GOVERNMENT & DEFENSE COMPLEX) -->
+              <div class="house-wall house-wall-left" data-angle="-90">
+                <div class="house-window-frame room-left-window">
+                  <div class="window-interior-light defense-glow">
+                    <div class="animated-radar-sweep"></div>
+                  </div>
+                  <div class="window-content-overlay">
+                    <span class="room-tag"><i class="fas fa-shield-alt"></i> TACTICAL DEFENSE HANGAR</span>
+                    <h3 class="room-title">Government & Defense SIM</h3>
+                    <p class="room-desc">Tactical VR flight combat, industrial digital twin machinery, and biometric telemetry.</p>
+                    <button class="room-explore-btn" onclick="openCinemaModal('DEFENSE SIMULATION', 'Accredited Simulation Training for Government')">Enter Defense Hangar</button>
                   </div>
                 </div>
               </div>
 
-              <!-- BACK ROOM WING: AI NEURAL GRAPHICS LAB -->
-              <div class="house-wall house-wall-back house-room-wing" data-angle="180">
-                <div class="room-window-glass">
-                  <span class="room-sector-tag"><i class="fas fa-brain"></i> AI & GAUSSIAN LAB</span>
-                  <h3 class="room-title">Neural Graphics & AI Lab</h3>
-                  <p class="room-desc">NeRF 3D Gaussian Splatting, real-time AI ray tracing at 120fps, and autonomous character synthesis.</p>
-                  <div class="room-stats-pill">
-                    <span><i class="fas fa-microchip"></i> UNREAL ENGINE 5.4</span>
-                    <button class="room-action-btn" onclick="openCinemaModal('NEURAL AI GRAPHICS LAB', 'Real-Time NeRF Gaussian Splatting & AI Pipelines')">Explore Lab</button>
+              <!-- BACK FACADE WALL (AI NEURAL GRAPHICS LAB) -->
+              <div class="house-wall house-wall-back" data-angle="180">
+                <div class="house-window-frame room-back-window">
+                  <div class="window-interior-light ai-glow">
+                    <div class="animated-matrix-rain"></div>
+                  </div>
+                  <div class="window-content-overlay">
+                    <span class="room-tag"><i class="fas fa-brain"></i> NEURAL AI GRAPHICS SUITE</span>
+                    <h3 class="room-title">Neural AI & Gaussian Lab</h3>
+                    <p class="room-desc">NeRF 3D Gaussian Splatting, 120fps AI ray tracing, and MetaHuman autonomous characters.</p>
+                    <button class="room-explore-btn" onclick="openCinemaModal('NEURAL AI LAB', 'Real-Time NeRF Gaussian Splatting & AI Pipelines')">Enter AI Suite</button>
                   </div>
                 </div>
               </div>
@@ -474,12 +509,12 @@
 
           </div>
 
-          <!-- Interactive Control Navigation Pills -->
+          <!-- Interactive Room Selector Buttons beneath House Stage -->
           <div class="cyber-house-nav-bar">
-            <button class="house-nav-tab active" onclick="rotateHouseToAngle(0)"><i class="fas fa-university"></i> Academic Wing</button>
-            <button class="house-nav-tab" onclick="rotateHouseToAngle(-90)"><i class="fas fa-film"></i> Studio Production</button>
-            <button class="house-nav-tab" onclick="rotateHouseToAngle(90)"><i class="fas fa-shield-alt"></i> Defense Complex</button>
-            <button class="house-nav-tab" onclick="rotateHouseToAngle(180)"><i class="fas fa-brain"></i> AI Neural Lab</button>
+            <button class="house-nav-tab active" onclick="rotateHouseToAngle(0)"><i class="fas fa-home"></i> Front Studio Entry</button>
+            <button class="house-nav-tab" onclick="rotateHouseToAngle(90)"><i class="fas fa-university"></i> Academic Study</button>
+            <button class="house-nav-tab" onclick="rotateHouseToAngle(-90)"><i class="fas fa-shield-alt"></i> Defense Hangar</button>
+            <button class="house-nav-tab" onclick="rotateHouseToAngle(180)"><i class="fas fa-brain"></i> AI Neural Suite</button>
             <button class="house-nav-tab auto-rotate-btn active" id="house-autorotate-toggle" onclick="toggleHouseAutoRotate()"><i class="fas fa-sync-alt fa-spin"></i> Auto-Rotate: ON</button>
           </div>
 
