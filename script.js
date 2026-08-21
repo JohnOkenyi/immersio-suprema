@@ -503,6 +503,12 @@ function setLanguage(lang) {
 
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Force page scroll restoration to top on load
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.scrollTo(0, 0);
+
   initCustomCursor();
   initMenuDrawer();
   initMobileAppLogic();
