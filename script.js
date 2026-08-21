@@ -954,59 +954,98 @@ function initBackgroundVideo() {
    -------------------------------------------------------------------------- */
 function initInteractiveSandbox() {
   const focalSlider = document.getElementById('range-focal');
-  const lightSlider = document.getElementById('range-light');
-  const sandSlider = document.getElementById('range-sand');
+  const exposureSlider = document.getElementById('range-exposure');
+  const chromaticSlider = document.getElementById('range-chromatic');
+  const noiseSlider = document.getElementById('range-noise');
+  const vignetteSlider = document.getElementById('range-vignette');
 
   const valFocal = document.getElementById('val-focal');
-  const valLight = document.getElementById('val-light');
-  const valSand = document.getElementById('val-sand');
+  const valExposure = document.getElementById('val-exposure');
+  const valChromatic = document.getElementById('val-chromatic');
+  const valNoise = document.getElementById('val-noise');
+  const valVignette = document.getElementById('val-vignette');
 
-  const labelFocalNum = document.getElementById('label-focal-num');
-  const labelLightNum = document.getElementById('label-light-num');
-  const labelSandNum = document.getElementById('label-sand-num');
-
-  const sandboxVideo = document.getElementById('sandbox-video-viewport');
+  const sandboxVideo = document.getElementById('sandbox-viewport-video');
   const btnReset = document.getElementById('btn-reset-sandbox');
+  const viewportFrame = document.querySelector('.apple-viewport-frame');
+
+  // Insert procedural overlays inside viewport frame
+  let noiseOverlay = null;
+  let vignetteOverlay = null;
+
+  if (viewportFrame) {
+    noiseOverlay = viewportFrame.querySelector('.sandbox-noise-overlay');
+    if (!noiseOverlay) {
+      noiseOverlay = document.createElement('div');
+      noiseOverlay.className = 'sandbox-noise-overlay';
+      viewportFrame.appendChild(noiseOverlay);
+    }
+    vignetteOverlay = viewportFrame.querySelector('.sandbox-vignette-overlay');
+    if (!vignetteOverlay) {
+      vignetteOverlay = document.createElement('div');
+      vignetteOverlay.className = 'sandbox-vignette-overlay';
+      viewportFrame.appendChild(vignetteOverlay);
+    }
+  }
 
   function updateViewport() {
     if (!sandboxVideo) return;
 
-    const focal = focalSlider ? focalSlider.value : 50;
-    const light = lightSlider ? lightSlider.value : 80;
-    const sand = sandSlider ? sandSlider.value : 25;
+    const focal = focalSlider ? parseInt(focalSlider.value) : 35;
+    const exposure = exposureSlider ? parseFloat(exposureSlider.value) : 1.0;
+    const chromatic = chromaticSlider ? parseInt(chromaticSlider.value) : 0;
+    const noise = noiseSlider ? parseFloat(noiseSlider.value) : 0.05;
+    const vignette = vignetteSlider ? parseFloat(vignetteSlider.value) : 0.3;
 
+    // Update text labels
     if (valFocal) valFocal.textContent = `${focal}mm`;
-    if (labelFocalNum) labelFocalNum.textContent = `${focal}mm`;
+    if (valExposure) valExposure.textContent = exposure.toFixed(1);
+    if (valChromatic) valChromatic.textContent = `${chromatic}px`;
+    if (valNoise) valNoise.textContent = noise.toFixed(2);
+    if (valVignette) valVignette.textContent = vignette.toFixed(2);
 
-    if (valLight) valLight.textContent = `${light}%`;
-    if (labelLightNum) labelLightNum.textContent = `${light}%`;
+    // Apply overlays opacity
+    if (noiseOverlay) noiseOverlay.style.opacity = noise;
+    if (vignetteOverlay) vignetteOverlay.style.opacity = vignette;
 
-    if (valSand) valSand.textContent = `${sand}%`;
-    if (labelSandNum) labelSandNum.textContent = `${sand}%`;
+    // Apply focal zoom (scale)
+    // At 35mm, scale is 1.0. At 200mm, zoom in to 2.5x. At 18mm, zoom out to 0.85x.
+    const scaleVal = 1 + (focal - 35) / 165 * 1.5;
+    sandboxVideo.style.transform = `scale(${scaleVal})`;
 
-    const brightnessVal = light / 80;
-    const blurVal = (105 - focal) / 25;
-    const sepiaVal = sand / 100;
-
-    sandboxVideo.style.filter = `brightness(${brightnessVal}) blur(${blurVal}px) sepia(${sepiaVal * 0.3})`;
+    // Apply WebGL Exposure & Chromatic effects via CSS filters
+    const brightnessVal = exposure;
+    const blurVal = chromatic * 0.4;
+    const hueVal = chromatic * 1.5;
+    sandboxVideo.style.filter = `brightness(${brightnessVal}) blur(${blurVal}px) hue-rotate(${hueVal}deg)`;
   }
 
+  // Play sandbox video if present
   if (sandboxVideo) {
     sandboxVideo.play().catch(() => {});
   }
 
+  // Bind input events
   if (focalSlider) focalSlider.addEventListener('input', updateViewport);
-  if (lightSlider) lightSlider.addEventListener('input', updateViewport);
-  if (sandSlider) sandSlider.addEventListener('input', updateViewport);
+  if (exposureSlider) exposureSlider.addEventListener('input', updateViewport);
+  if (chromaticSlider) chromaticSlider.addEventListener('input', updateViewport);
+  if (noiseSlider) noiseSlider.addEventListener('input', updateViewport);
+  if (vignetteSlider) vignetteSlider.addEventListener('input', updateViewport);
 
+  // Bind reset button
   if (btnReset) {
     btnReset.addEventListener('click', () => {
-      if (focalSlider) focalSlider.value = 50;
-      if (lightSlider) lightSlider.value = 80;
-      if (sandSlider) sandSlider.value = 25;
+      if (focalSlider) focalSlider.value = 35;
+      if (exposureSlider) exposureSlider.value = 1.0;
+      if (chromaticSlider) chromaticSlider.value = 0;
+      if (noiseSlider) noiseSlider.value = 0.05;
+      if (vignetteSlider) vignetteSlider.value = 0.3;
       updateViewport();
     });
   }
+
+  // Run once to initialize
+  updateViewport();
 }
 
 /* --------------------------------------------------------------------------
