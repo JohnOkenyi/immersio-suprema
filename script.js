@@ -369,30 +369,45 @@ function drawSlateCanvas(canvas, titleText, descText, themeColor, lang) {
 
   // 6. Description Typography (Ultra-Bold, high visibility for low-vision/elderly)
   ctx.fillStyle = '#ffffff'; 
+  ctx.strokeStyle = '#ffffff';
+  ctx.lineWidth = 4;
+  ctx.lineJoin = 'round';
+  ctx.miterLimit = 2;
+
   ctx.shadowColor = 'rgba(0, 0, 0, 0.98)';
-  ctx.shadowBlur = 28;
+  ctx.shadowBlur = 24;
   ctx.shadowOffsetX = 3;
   ctx.shadowOffsetY = 6;
-  ctx.font = '900 70px "Inter", "Segoe UI", sans-serif';
+  ctx.font = '900 76px "Montserrat", "Arial Black", sans-serif';
   
   const words = descText.split(' ');
   let line = '';
   let y = 610;
-  const lineHeight = 125;
+  const lineHeight = 135;
   const maxWidth = 1800;
 
   for (let n = 0; n < words.length; n++) {
     const testLine = line + words[n] + ' ';
     const metrics = ctx.measureText(testLine);
     if (metrics.width > maxWidth && n > 0) {
+      // Draw standard text with shadow
+      ctx.shadowColor = 'rgba(0, 0, 0, 0.98)';
       ctx.fillText(line, 120, y);
+      // Disable shadow for stroke to prevent double-blur/fuzziness
+      ctx.shadowColor = 'transparent';
+      ctx.strokeText(line, 120, y);
+
       line = words[n] + ' ';
       y += lineHeight; 
     } else {
       line = testLine;
     }
   }
+  // Draw last line
+  ctx.shadowColor = 'rgba(0, 0, 0, 0.98)';
   ctx.fillText(line, 120, y);
+  ctx.shadowColor = 'transparent';
+  ctx.strokeText(line, 120, y);
 }
 
 // 6. Clean Slate Canvas Texture Generator (Global Scope)
