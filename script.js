@@ -523,8 +523,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initCardHoverSoundEffects();
   initCyberHouseEngine();
   
-  // Set default view on load
-  switchDivision('vfx');
+  // Set default view on load (prevent initial scroll)
+  switchDivision('vfx', true);
   
   const savedLang = localStorage.getItem('vfx_lang') || 'fr';
   setLanguage(savedLang);
@@ -690,7 +690,7 @@ function handleMenuDivisionClick(divisionName) {
 /* --------------------------------------------------------------------------
    2.5 DNEG DYNAMIC DIVISION HERO SWITCHER
    -------------------------------------------------------------------------- */
-function switchDivision(divisionName) {
+function switchDivision(divisionName, preventScroll = false) {
   currentCategoryFilter = divisionName;
 
   // 1. Update Showcase Hero Banner text & video
@@ -748,8 +748,10 @@ function switchDivision(divisionName) {
   // 3. Apply Sony Poster Grid filter logic
   applyMosaicFilters();
   
-  // 4. Scroll smoothly to showcase section
-  scrollToSection('showcase');
+  // 4. Scroll smoothly to showcase section (only if not initial load)
+  if (!preventScroll) {
+    scrollToSection('showcase');
+  }
 }
 
 /* --------------------------------------------------------------------------
