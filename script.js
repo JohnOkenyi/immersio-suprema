@@ -258,6 +258,169 @@ const translations = {
   }
 };
 
+// Helper to draw text and designs on the slate canvas
+function drawSlateCanvas(canvas, titleText, descText, themeColor, lang) {
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // 1. Premium deep obsidian-violet-dark gradient background
+  const grad = ctx.createLinearGradient(0, 0, 0, 1536);
+  grad.addColorStop(0, '#07060a');
+  grad.addColorStop(0.5, '#0e0d13');
+  grad.addColorStop(1, '#050407');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, 2048, 1536);
+
+  // 2. High-Tech Cyber Dot Grid Background
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.02)';
+  for (let x = 80; x < 2048 - 80; x += 100) {
+    for (let y = 80; y < 1536 - 80; y += 100) {
+      ctx.fillRect(x, y, 4, 4);
+    }
+  }
+
+  // 3. Neon glowing borders
+  ctx.shadowColor = themeColor;
+  ctx.shadowBlur = 30;
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.03)';
+  ctx.lineWidth = 4;
+  ctx.strokeRect(60, 60, 1928, 1416);
+
+  ctx.shadowBlur = 0; // reset shadow for performance
+
+  // Inner thin border
+  ctx.strokeStyle = themeColor + '33';
+  ctx.lineWidth = 2;
+  ctx.strokeRect(76, 76, 1896, 1384);
+
+  // Tech corner brackets
+  ctx.strokeStyle = themeColor;
+  ctx.lineWidth = 8;
+  const bracketLen = 60;
+  // Top-Left corner
+  ctx.beginPath();
+  ctx.moveTo(76 + bracketLen, 76); ctx.lineTo(76, 76); ctx.lineTo(76, 76 + bracketLen);
+  ctx.stroke();
+  // Top-Right corner
+  ctx.beginPath();
+  ctx.moveTo(1972 - bracketLen, 76); ctx.lineTo(1972, 76); ctx.lineTo(1972, 76 + bracketLen);
+  ctx.stroke();
+  // Bottom-Left corner
+  ctx.beginPath();
+  ctx.moveTo(76 + bracketLen, 1460); ctx.lineTo(76, 1460); ctx.lineTo(76, 1460 - bracketLen);
+  ctx.stroke();
+  // Bottom-Right corner
+  ctx.beginPath();
+  ctx.moveTo(1972 - bracketLen, 1460); ctx.lineTo(1972, 1460); ctx.lineTo(1972, 1460 - bracketLen);
+  ctx.stroke();
+
+  // 4. Pill badge for the section category
+  ctx.fillStyle = themeColor + '14';
+  ctx.beginPath();
+  if (typeof ctx.roundRect === 'function') {
+    ctx.roundRect(120, 120, 960, 112, 56);
+  } else {
+    ctx.rect(120, 120, 960, 112);
+  }
+  ctx.fill();
+
+  ctx.strokeStyle = themeColor + '77';
+  ctx.lineWidth = 4;
+  ctx.stroke();
+
+  // Badge text inside pill
+  ctx.fillStyle = themeColor;
+  ctx.font = '900 36px "Inter", "Segoe UI", sans-serif';
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'middle';
+  const badgeLabel = lang === 'fr' ? 'PROGRAMME & SERVICE OFFERT' : 'PROGRAM & SERVICE OFFERED';
+  ctx.fillText(badgeLabel, 190, 176);
+
+  // Decorative tiny LED square inside pill
+  ctx.fillStyle = themeColor;
+  ctx.fillRect(160, 168, 16, 16);
+
+  // 5. Main Title Typography
+  ctx.fillStyle = '#ffffff';
+  ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+  ctx.shadowBlur = 32;
+  ctx.shadowOffsetX = 4;
+  ctx.shadowOffsetY = 8;
+
+  ctx.font = '900 92px "Montserrat", "Helvetica Neue", sans-serif';
+  ctx.textBaseline = 'top';
+  ctx.fillText(titleText, 120, 390);
+
+  // Reset shadow
+  ctx.shadowBlur = 0;
+  ctx.shadowOffsetX = 0;
+  ctx.shadowOffsetY = 0;
+
+  // Thin elegant separator line with glowing gradient
+  const lineGrad = ctx.createLinearGradient(120, 0, 1928, 0);
+  lineGrad.addColorStop(0, themeColor);
+  lineGrad.addColorStop(0.5, 'rgba(255, 255, 255, 0.2)');
+  lineGrad.addColorStop(1, themeColor);
+  ctx.strokeStyle = lineGrad;
+  ctx.lineWidth = 4;
+  ctx.beginPath();
+  ctx.moveTo(120, 520); ctx.lineTo(1928, 520);
+  ctx.stroke();
+
+  // 6. Description Typography (Ultra-Bold, high visibility for low-vision/elderly)
+  ctx.fillStyle = '#ffffff'; 
+  ctx.shadowColor = 'rgba(0, 0, 0, 0.98)';
+  ctx.shadowBlur = 28;
+  ctx.shadowOffsetX = 3;
+  ctx.shadowOffsetY = 6;
+  ctx.font = '900 70px "Inter", "Segoe UI", sans-serif';
+  
+  const words = descText.split(' ');
+  let line = '';
+  let y = 610;
+  const lineHeight = 125;
+  const maxWidth = 1800;
+
+  for (let n = 0; n < words.length; n++) {
+    const testLine = line + words[n] + ' ';
+    const metrics = ctx.measureText(testLine);
+    if (metrics.width > maxWidth && n > 0) {
+      ctx.fillText(line, 120, y);
+      line = words[n] + ' ';
+      y += lineHeight; 
+    } else {
+      line = testLine;
+    }
+  }
+  ctx.fillText(line, 120, y);
+}
+
+// 6. Clean Slate Canvas Texture Generator (Global Scope)
+function createSlateMaterial(titleKey, descKey, themeColor) {
+  const canvas = document.createElement('canvas');
+  canvas.width = 2048;
+  canvas.height = 1536;
+  
+  const titleText = translations[currentLanguage][titleKey];
+  const descText = translations[currentLanguage][descKey];
+  drawSlateCanvas(canvas, titleText, descText, themeColor, currentLanguage);
+
+  const texture = new THREE.CanvasTexture(canvas);
+  const material = new THREE.MeshStandardMaterial({ map: texture, roughness: 0.95, metalness: 0.02 });
+  material.userData = { canvas: canvas, texture: texture, themeColor: themeColor, titleKey: titleKey, descKey: descKey };
+  return material;
+}
+
+// In-place texture updater to ensure instant updates without material leak/flicker
+function updateSlateTexture(mesh, lang) {
+  if (!mesh || !mesh.material || !mesh.material.userData || !mesh.material.userData.canvas) return;
+  const { canvas, texture, themeColor, titleKey, descKey } = mesh.material.userData;
+  const titleText = translations[lang][titleKey];
+  const descText = translations[lang][descKey];
+  drawSlateCanvas(canvas, titleText, descText, themeColor, lang);
+  texture.needsUpdate = true;
+}
+
 function setLanguage(lang) {
   currentLanguage = lang;
   localStorage.setItem('vfx_lang', lang);
@@ -311,10 +474,10 @@ function setLanguage(lang) {
 
   // Re-draw clapperboard house canvas textures if Three.js initialized
   if (typeof frontSlateMesh !== 'undefined' && frontSlateMesh) {
-    frontSlateMesh.material = createSlateMaterial(translations[lang].house_wall_front_title, translations[lang].house_wall_front_desc, '#ff625a');
-    rightSlateMesh.material = createSlateMaterial(translations[lang].house_wall_right_title, translations[lang].house_wall_right_desc, '#00f2fe');
-    backSlateMesh.material = createSlateMaterial(translations[lang].house_wall_back_title, translations[lang].house_wall_back_desc, '#bf5af2');
-    leftSlateMesh.material = createSlateMaterial(translations[lang].house_wall_left_title, translations[lang].house_wall_left_desc, '#ff9f0a');
+    updateSlateTexture(frontSlateMesh, lang);
+    updateSlateTexture(rightSlateMesh, lang);
+    updateSlateTexture(backSlateMesh, lang);
+    updateSlateTexture(leftSlateMesh, lang);
   }
 }
 
@@ -1228,153 +1391,11 @@ function initCyberHouseEngine() {
   });
   const goldGlowMat = new THREE.MeshStandardMaterial({ color: 0xff625a, roughness: 0.1, metalness: 0.9, emissive: 0xff625a, emissiveIntensity: 1.2 });
 
-  // 6. Clean Slate Canvas Texture Generator with resolution doubling and neon HUD style
-  function createSlateMaterial(titleText, descText, themeColor) {
-    const canvas = document.createElement('canvas');
-    canvas.width = 2048;
-    canvas.height = 1536;
-    const ctx = canvas.getContext('2d');
-
-    // 1. Premium deep obsidian-violet-dark gradient background
-    const grad = ctx.createLinearGradient(0, 0, 0, 1536);
-    grad.addColorStop(0, '#07060a');
-    grad.addColorStop(0.5, '#0e0d13');
-    grad.addColorStop(1, '#050407');
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, 2048, 1536);
-
-    // 2. High-Tech Cyber Dot Grid Background
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.02)';
-    for (let x = 80; x < 2048 - 80; x += 100) {
-      for (let y = 80; y < 1536 - 80; y += 100) {
-        ctx.fillRect(x, y, 4, 4);
-      }
-    }
-
-    // 3. Neon glowing borders
-    ctx.shadowColor = themeColor;
-    ctx.shadowBlur = 30;
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.03)';
-    ctx.lineWidth = 4;
-    ctx.strokeRect(60, 60, 1928, 1416);
-
-    ctx.shadowBlur = 0; // reset shadow for performance
-
-    // Inner thin border
-    ctx.strokeStyle = themeColor + '33';
-    ctx.lineWidth = 2;
-    ctx.strokeRect(76, 76, 1896, 1384);
-
-    // Tech corner brackets
-    ctx.strokeStyle = themeColor;
-    ctx.lineWidth = 8;
-    const bracketLen = 60;
-    // Top-Left corner
-    ctx.beginPath();
-    ctx.moveTo(76 + bracketLen, 76); ctx.lineTo(76, 76); ctx.lineTo(76, 76 + bracketLen);
-    ctx.stroke();
-    // Top-Right corner
-    ctx.beginPath();
-    ctx.moveTo(1972 - bracketLen, 76); ctx.lineTo(1972, 76); ctx.lineTo(1972, 76 + bracketLen);
-    ctx.stroke();
-    // Bottom-Left corner
-    ctx.beginPath();
-    ctx.moveTo(76 + bracketLen, 1460); ctx.lineTo(76, 1460); ctx.lineTo(76, 1460 - bracketLen);
-    ctx.stroke();
-    // Bottom-Right corner
-    ctx.beginPath();
-    ctx.moveTo(1972 - bracketLen, 1460); ctx.lineTo(1972, 1460); ctx.lineTo(1972, 1460 - bracketLen);
-    ctx.stroke();
-
-    // 4. Pill badge for the section category
-    ctx.fillStyle = themeColor + '14';
-    ctx.beginPath();
-    if (typeof ctx.roundRect === 'function') {
-      ctx.roundRect(120, 120, 960, 112, 56);
-    } else {
-      ctx.rect(120, 120, 960, 112);
-    }
-    ctx.fill();
-
-    ctx.strokeStyle = themeColor + '77';
-    ctx.lineWidth = 4;
-    ctx.stroke();
-
-    // Badge text inside pill
-    ctx.fillStyle = themeColor;
-    ctx.font = '900 36px "Inter", "Segoe UI", sans-serif';
-    ctx.textAlign = 'left';
-    ctx.textBaseline = 'middle';
-    const badgeLabel = currentLanguage === 'fr' ? 'PROGRAMME & SERVICE OFFERT' : 'PROGRAM & SERVICE OFFERED';
-    ctx.fillText(badgeLabel, 190, 176);
-
-    // Decorative tiny LED square inside pill
-    ctx.fillStyle = themeColor;
-    ctx.fillRect(160, 168, 16, 16);
-
-    // 5. Main Title Typography (Outfit font pairing, crisp white)
-    ctx.fillStyle = '#ffffff';
-    ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
-    ctx.shadowBlur = 32;
-    ctx.shadowOffsetX = 4;
-    ctx.shadowOffsetY = 8;
-
-    ctx.font = '900 92px "Montserrat", "Helvetica Neue", sans-serif';
-    ctx.textBaseline = 'top';
-    ctx.fillText(titleText, 120, 390);
-
-    // Reset shadow
-    ctx.shadowBlur = 0;
-    ctx.shadowOffsetX = 0;
-    ctx.shadowOffsetY = 0;
-
-    // Thin elegant separator line with glowing gradient
-    const lineGrad = ctx.createLinearGradient(120, 0, 1928, 0);
-    lineGrad.addColorStop(0, themeColor);
-    lineGrad.addColorStop(0.5, 'rgba(255, 255, 255, 0.2)');
-    lineGrad.addColorStop(1, themeColor);
-    ctx.strokeStyle = lineGrad;
-    ctx.lineWidth = 4;
-    ctx.beginPath();
-    ctx.moveTo(120, 520); ctx.lineTo(1928, 520);
-    ctx.stroke();
-
-    // 6. Description Typography (spaced lines, soft grey DNEG palette)
-    ctx.fillStyle = '#f8fafc';
-    ctx.shadowColor = 'rgba(0, 0, 0, 0.95)';
-    ctx.shadowBlur = 24;
-    ctx.shadowOffsetX = 2;
-    ctx.shadowOffsetY = 4;
-    ctx.font = 'bold 58px "Inter", "Segoe UI", sans-serif';
-    
-    const words = descText.split(' ');
-    let line = '';
-    let y = 620;
-    const lineHeight = 110;
-    const maxWidth = 1800;
-
-    for (let n = 0; n < words.length; n++) {
-      const testLine = line + words[n] + ' ';
-      const metrics = ctx.measureText(testLine);
-      if (metrics.width > maxWidth && n > 0) {
-        ctx.fillText(line, 120, y);
-        line = words[n] + ' ';
-        y += lineHeight; 
-      } else {
-        line = testLine;
-      }
-    }
-    ctx.fillText(line, 120, y);
-
-    const texture = new THREE.CanvasTexture(canvas);
-    return new THREE.MeshStandardMaterial({ map: texture, roughness: 0.95, metalness: 0.02 });
-  }
-
   // Generate 4 Facade Materials for Each Surface Face (Cleaned & Focused)
-  const frontMat = createSlateMaterial(translations[currentLanguage].house_wall_front_title, translations[currentLanguage].house_wall_front_desc, '#ff625a');
-  const rightMat = createSlateMaterial(translations[currentLanguage].house_wall_right_title, translations[currentLanguage].house_wall_right_desc, '#00f2fe');
-  const backMat = createSlateMaterial(translations[currentLanguage].house_wall_back_title, translations[currentLanguage].house_wall_back_desc, '#bf5af2');
-  const leftMat = createSlateMaterial(translations[currentLanguage].house_wall_left_title, translations[currentLanguage].house_wall_left_desc, '#ff9f0a');
+  const frontMat = createSlateMaterial('house_wall_front_title', 'house_wall_front_desc', '#ff625a');
+  const rightMat = createSlateMaterial('house_wall_right_title', 'house_wall_right_desc', '#00f2fe');
+  const backMat = createSlateMaterial('house_wall_back_title', 'house_wall_back_desc', '#bf5af2');
+  const leftMat = createSlateMaterial('house_wall_left_title', 'house_wall_left_desc', '#ff9f0a');
 
   // 7. Solid Watertight House Geometry (Single Solid Flush Box Architecture)
   const houseMainBox = new THREE.Mesh(new THREE.BoxGeometry(11, 7.2, 7), matteConcreteMat);
