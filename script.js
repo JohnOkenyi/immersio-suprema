@@ -1202,12 +1202,12 @@ function initCyberHouseEngine() {
   fillLight.position.set(-14, 10, -12);
   threeScene.add(fillLight);
 
-  const entranceLight = new THREE.PointLight(0xffedd5, 3.2, 10);
-  entranceLight.position.set(-2.0, -0.8, 4.4);
+  const entranceLight = new THREE.PointLight(0xffedd5, 1.2, 12);
+  entranceLight.position.set(-3.0, -2.5, 6.0);
   threeScene.add(entranceLight);
 
-  const garageLight = new THREE.PointLight(0xf97316, 2.6, 10);
-  garageLight.position.set(3.2, -0.8, 4.4);
+  const garageLight = new THREE.PointLight(0xf97316, 1.0, 12);
+  garageLight.position.set(3.0, -2.5, 6.0);
   threeScene.add(garageLight);
 
   // 4. Master 3D House Group
@@ -1367,7 +1367,7 @@ function initCyberHouseEngine() {
     ctx.fillText(line, 120, y);
 
     const texture = new THREE.CanvasTexture(canvas);
-    return new THREE.MeshStandardMaterial({ map: texture, roughness: 0.25, metalness: 0.15 });
+    return new THREE.MeshStandardMaterial({ map: texture, roughness: 0.95, metalness: 0.02 });
   }
 
   // Generate 4 Facade Materials for Each Surface Face (Cleaned & Focused)
