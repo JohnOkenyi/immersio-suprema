@@ -1165,6 +1165,9 @@ function getUIAudioContext() {
 // Crisp Sci-Fi Game UI Menu Hover Selection Sound (Pitch Sweep 750Hz -> 1350Hz)
 function playUICardHoverSound() {
   try {
+    const heroVideo = document.getElementById('hero-video');
+    if (heroVideo && heroVideo.muted) return;
+
     const ctx = getUIAudioContext();
     if (!ctx) return;
 
@@ -1192,6 +1195,9 @@ function playUICardHoverSound() {
 // Crisp Sci-Fi Game Selection Click Sound (Pitch Sweep 1300Hz -> 650Hz)
 function playUICardClickSound() {
   try {
+    const heroVideo = document.getElementById('hero-video');
+    if (heroVideo && heroVideo.muted) return;
+
     const ctx = getUIAudioContext();
     if (!ctx) return;
 
