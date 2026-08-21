@@ -712,7 +712,7 @@ function switchDivision(divisionName, preventScroll = false) {
     simulation: {
       title: 'IMMERSIO SIMULATION',
       subtitle: 'MISSION-READY FIDELITY IN REAL-TIME.',
-      video: 'showreel 2.mp4'
+      video: 'showreel_2.mp4'
     },
     art: {
       title: 'IMMERSIO ART',
@@ -722,7 +722,7 @@ function switchDivision(divisionName, preventScroll = false) {
     technology: {
       title: 'IMMERSIO TECHNOLOGY',
       subtitle: 'THE ENGINE POWERING THE FUTURE OF STORYTELLING.',
-      video: 'showreel 2.mp4'
+      video: 'showreel_2.mp4'
     }
   };
   
