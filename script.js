@@ -340,12 +340,12 @@ function drawSlateCanvas(canvas, titleText, descText, themeColor, lang, isNarrow
   // 5. Main Title Typography
   ctx.fillStyle = '#ffffff';
   ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
-  ctx.shadowBlur = 32;
-  ctx.shadowOffsetX = 4;
-  ctx.shadowOffsetY = 8;
+  ctx.shadowBlur = 24;
+  ctx.shadowOffsetX = 3;
+  ctx.shadowOffsetY = 6;
 
   const titleSize = isNarrow ? 66 : 92;
-  ctx.font = `900 ${titleSize}px "Montserrat", "Arial Black", sans-serif`;
+  ctx.font = `700 ${titleSize}px "Montserrat", "Inter", "Segoe UI", sans-serif`;
   ctx.textBaseline = 'top';
   ctx.fillText(titleText, 120, 390);
 
@@ -365,23 +365,18 @@ function drawSlateCanvas(canvas, titleText, descText, themeColor, lang, isNarrow
   ctx.moveTo(120, 520); ctx.lineTo(w - 120, 520);
   ctx.stroke();
 
-  // 6. Description Typography (Ultra-Bold, high visibility for low-vision/elderly)
+  // 6. Description Typography (Clean, highly visible sans-serif)
   ctx.fillStyle = '#ffffff'; 
-  ctx.strokeStyle = '#ffffff';
-  ctx.lineWidth = 4;
-  ctx.lineJoin = 'round';
-  ctx.miterLimit = 2;
-
-  ctx.shadowColor = 'rgba(0, 0, 0, 0.98)';
-  ctx.shadowBlur = 24;
-  ctx.shadowOffsetX = 3;
-  ctx.shadowOffsetY = 6;
+  ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+  ctx.shadowBlur = 18;
+  ctx.shadowOffsetX = 2;
+  ctx.shadowOffsetY = 4;
   
-  const descSize = isNarrow ? 64 : 76;
-  const lineHeight = isNarrow ? 115 : 135;
+  const descSize = isNarrow ? 56 : 68;
+  const lineHeight = isNarrow ? 95 : 120;
   const maxWidth = w - 240;
 
-  ctx.font = `900 ${descSize}px "Montserrat", "Arial Black", sans-serif`;
+  ctx.font = `700 ${descSize}px "Montserrat", "Inter", "Segoe UI", sans-serif`;
   
   const words = descText.split(' ');
   let line = '';
@@ -391,24 +386,14 @@ function drawSlateCanvas(canvas, titleText, descText, themeColor, lang, isNarrow
     const testLine = line + words[n] + ' ';
     const metrics = ctx.measureText(testLine);
     if (metrics.width > maxWidth && n > 0) {
-      // Draw standard text with shadow
-      ctx.shadowColor = 'rgba(0, 0, 0, 0.98)';
       ctx.fillText(line, 120, y);
-      // Disable shadow for stroke to prevent double-blur/fuzziness
-      ctx.shadowColor = 'transparent';
-      ctx.strokeText(line, 120, y);
-
       line = words[n] + ' ';
       y += lineHeight; 
     } else {
       line = testLine;
     }
   }
-  // Draw last line
-  ctx.shadowColor = 'rgba(0, 0, 0, 0.98)';
   ctx.fillText(line, 120, y);
-  ctx.shadowColor = 'transparent';
-  ctx.strokeText(line, 120, y);
 }
 
 // 6. Clean Slate Canvas Texture Generator (Global Scope)
