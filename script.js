@@ -1,8 +1,329 @@
 /* ==========================================================================
-   IMMERSIO SUPREMA - LOST BOYS VFX CAMPUS INTERACTIVE ENGINE
+   IMMERSIO SUPREMA - DNEG & DIGITAL DOMAIN INTERACTIVITY ENGINE
    ========================================================================== */
 
+let currentCategoryFilter = 'vfx'; // Default selected category
+
+let currentLanguage = 'fr';
+let frontSlateMesh, rightSlateMesh, backSlateMesh, leftSlateMesh;
+
+const translations = {
+  fr: {
+    brand_subtitle: "CENTRE D'INNOVATION IMMERSIF",
+    nav_home: "Accueil",
+    nav_studio: "À Propos",
+    nav_showcase: "Galerie",
+    nav_technology: "Bac à sable",
+    nav_training: "Académie",
+    nav_contact: "Contact",
+    apply_now: "S'inscrire",
+    hero_subtitle: "CENTRE D'INNOVATION IMMERSIF",
+    watch_showreel: "Voir la bande-démo",
+    explore_studio: "Découvrir le studio",
+    featured_work: "TRAVAUX VEDETTES",
+    quote_transform: "TRANSFORMER LE DIVERTISSEMENT",
+    quote_tech: "TECHNOLOGIE AVANT-GARDISTE",
+    quote_innov: "PROMOUVOIR L'INNOVATION",
+    studio_kicker: "Pôle d'Innovation Créatif",
+    studio_title: "Qui sommes-nous",
+    studio_desc: "Nous fusionnons art cinématographique et technologies immersives en temps réel. Notre studio conçoit des moteurs de rendu de pointe, des simulateurs interactifs de haute fidélité et des formations certifiées pour les plus grands studios mondiaux.",
+    cap1_title: "Effets Visuels Cinématographiques",
+    cap1_desc: "Pipelines de production virtuelle avec intégration d'écrans LED volumétriques haute fidélité, mise en scène Unreal Engine 5.4 et jumeaux numériques d'acteurs en temps réel.",
+    cap2_title: "Solutions d'IA Neuronale",
+    cap2_desc: "Modèles graphiques d'apprentissage automatique, NeRFs en temps réel, Gaussian Splatting et pipelines de rendu neuronal pour des mondes interactifs photoréalistes.",
+    cap3_title: "Simulation de Défense",
+    cap3_desc: "Logiciel de répétition de mission, simulations de vol tactique, tableaux de bord de télémétrie biométrique et environnements d'entraînement synthétiques multi-utilisateurs.",
+    cap4_title: "Production Virtuelle",
+    cap4_desc: "Conception de configurations de scènes LED, étalonnage de caméras, systèmes d'éclairage, programmes universitaires clés en main et formations certifiées.",
+    division_subtitle: "REPOUSSER LES LIMITES DES EFFETS VISUELS.",
+    watch_our_showreel: "REGARDER NOTRE BANDE-DÉMO",
+    showcase_kicker: "Archives Vidéo Interactives",
+    showcase_title: "Explorez nos réalisations",
+    filter_projects: "FILTRER LES PROJETS",
+    filter_titles: "FILTRER LES TITRES",
+    filter_search_placeholder: "Filtrer par nom...",
+    filter_avail: "Disponibilité",
+    avail_soon: "Bientôt disponible",
+    avail_theaters: "En salles",
+    avail_released: "Sortie publique",
+    avail_realtime: "Temps réel",
+    avail_volumetric: "Volumétrique",
+    filter_tech: "Technologies",
+    tech_unreal: "Unreal Engine 5.4",
+    tech_gaussian: "Gaussian Splatting",
+    tech_nerf: "NeRF",
+    tech_houdini: "Houdini Fluides",
+    tech_defensesim: "Sim de défense",
+    clear_filters: "Effacer les filtres",
+    card_desc_netflix: "Disponible sur Netflix",
+    card_desc_restricted: "En production • Accès restreint",
+    card_desc_visionos: "Disponible sur Apple VisionOS",
+    card_desc_sony: "Disponible en 4K UHD, Blu-ray & Digital",
+    card_desc_abc: "Le mercredi à 22h sur ABC",
+    card_desc_dvd: "Disponible en DVD et Digital",
+    card_desc_doc: "Saison 2 sur Fox / Saison 1 sur Netflix",
+    card_desc_hulu: "Disponible sur Hulu",
+    partners_title: "ENTREPRISES UTILISANT NOS LOGICIELS 3D",
+    sandbox_kicker: "Paramètres Temps Réel",
+    sandbox_title: "Bac à Sable Graphique",
+    sandbox_desc: "Ajustez les curseurs ci-dessous pour modifier dynamiquement les paramètres de rendu 3D du simulateur en temps réel.",
+    sandbox_controls: "CONTRÔLES DE RENDU",
+    ctrl_focal: "Distance focale",
+    ctrl_exposure: "Limite d'exposition",
+    ctrl_chromatic: "Décalage chromatique",
+    ctrl_noise: "Densité de bruit",
+    ctrl_vignette: "Profondeur de vignette",
+    engine_status: "Statut du pipeline actif",
+    status_normal: "ACTIF / NORMAL",
+    reset_sandbox: "Réinitialiser le simulateur",
+    academy_kicker: "Formations & Inscriptions",
+    academy_title: "Académie VFX & Diplômes",
+    academy_desc: "Rejoignez nos programmes académiques accrédités et préparez-vous aux métiers du cinéma et du temps réel. Explorez les façades du studio interactif ci-dessous pour découvrir nos programmes de formation.",
+    academy_controls: "Navigation Studio",
+    tab_front: "Plateaux Cinéma & TV",
+    tab_garage: "Jeux & Temps Réel",
+    tab_rear: "Programmes Académiques",
+    tab_glass: "Simulations Tactiques",
+    awards_kicker: "Reconnaissance Honorifique",
+    awards_title: "Prix & Récompenses",
+    awards_desc: "Reconnaissance internationale des contributions de nos équipes créatives et technologiques au cinéma et à l'innovation logicielle.",
+    award1_title: "Oscar du mérite scientifique et technique",
+    award1_sub: "Contribution significative au processus cinématographique",
+    award1_desc: "Notre équipe R&D a reçu un prix de l'Académie des arts et des sciences du cinéma pour nos outils de simulation anatomique et d'acteurs virtuels.",
+    award2_title: "Prix d'excellence DevOps",
+    award2_sub: "Application réussie des méthodologies cloud-natives",
+    award2_desc: "DNEG et Red Hat ont remporté le prix Computing DevOps Excellence pour l'orchestration fluide de fermes de rendu distribuées sur cloud privé hybride.",
+    news_kicker: "Dernières Actualités",
+    news_title: "Expansion de l'IA chez Immersio & Fusion Metaphysic",
+    news_desc: "Immersio Suprema a annoncé l'acquisition de Metaphysic pour accélérer le développement d'outils d'IA générative et de jumeaux numériques photoréalistes en temps réel.",
+    read_press: "Lire le communiqué",
+    contact_kicker: "Devenez Partenaire",
+    contact_title: "Lancer Votre Projet",
+    contact_desc: "Discutez avec nos ingénieurs pour concevoir des simulateurs sur-mesure ou planifier des formations.",
+    form_title: "Proposition de projet",
+    label_name: "Nom complet",
+    placeholder_name: "Votre Nom...",
+    label_email: "Adresse email",
+    placeholder_email: "Votre Email...",
+    label_industry: "Secteur d'activité",
+    opt_vfx: "Cinéma, VFX & Animation",
+    opt_sim: "Défense & Simulation",
+    opt_tech: "Logiciel personnalisé",
+    opt_training: "Programmes académiques",
+    label_budget: "Budget prévisionnel",
+    opt_budget1: "Moins de 50k$",
+    opt_budget2: "50k$ - 250k$",
+    opt_budget3: "250k$ - 1M$",
+    opt_budget4: "Plus d'un million $ (Entreprise)",
+    label_details: "Détails du projet",
+    placeholder_details: "Parlez-nous de votre projet ou de vos besoins de formation...",
+    submit_btn: "SOUMETTRE LA PROPOSITION",
+    footer_desc: "Collectif d'ingénierie visuelle immersive. Mondes virtuels haut de gamme, ML graphique et pipelines de simulation pour équipes visionnaires.",
+    footer_nav: "Navigation",
+    footer_caps: "Expertises",
+    footer_accred: "Accréditation",
+    drawer_accred: "Collectif Membre Accrédité de la VES",
+    house_wall_front_title: "STUDIOS DE CINÉMA & TV",
+    house_wall_front_desc: "Formations accréditées et masterclasses spécialisées sur site et en ligne : Production virtuelle LED ICVFX, physique des fluides Houdini, Unreal Engine 5.4 et capture de mouvement.",
+    house_wall_right_title: "STUDIOS DE JEUX & D'ANIMATION",
+    house_wall_right_desc: "Formations accréditées et masterclasses spécialisées sur site et en ligne : Pipelines de jeux AAA, shaders temps réel, art procédural, rigging MetaHuman et Unreal Engine C++.",
+    house_wall_back_title: "UNIVERSITÉS & ÉCOLES DE CINÉMA",
+    house_wall_back_desc: "Formations accréditées et masterclasses spécialisées sur site et en ligne : Diplômes clés en main, certification de facultés, campus de production virtuelle et mentorat de projets.",
+    house_wall_left_title: "DÉFENSE & ORGANISMES PUBLICS",
+    house_wall_left_desc: "Formations accréditées et masterclasses spécialisées sur site et en ligne : Simulation tactique de vol de combat VR, jumeaux numériques aérospatiaux, télémétrie biométrique et exercices de mission."
+  },
+  en: {
+    brand_subtitle: "IMMERSIVE INNOVATION CENTER",
+    nav_home: "Home",
+    nav_studio: "About us",
+    nav_showcase: "Showcase",
+    nav_technology: "Sandbox",
+    nav_training: "Academy & Admissions",
+    nav_contact: "Contact",
+    apply_now: "Apply Now",
+    hero_subtitle: "IMMERSIVE INNOVATION CENTER",
+    watch_showreel: "Watch Showreel",
+    explore_studio: "Explore Studio",
+    featured_work: "FEATURED WORK",
+    quote_transform: "TRANSFORMING ENTERTAINMENT",
+    quote_tech: "PIONEERING TECHNOLOGY",
+    quote_innov: "FOSTERING INNOVATION",
+    studio_kicker: "Creative Innovation Hub",
+    studio_title: "Who We Are",
+    studio_desc: "We merge cinematic art with real-time immersive technologies. Our studio builds cutting-edge rendering engines, high-fidelity interactive simulators, and certified training programs for top global studios.",
+    cap1_title: "Cinematic VFX",
+    cap1_desc: "Virtual Production pipelines with high-fidelity LED volume wall integration, Unreal Engine 5.4 staging, and real-time actor digital twins.",
+    cap2_title: "AI Neural Solutions",
+    cap2_desc: "Machine learning graphic models, real-time NeRFs, Gaussian Splatting, and neural rendering pipelines for photorealistic interactive worlds.",
+    cap3_title: "Defense Simulation",
+    cap3_desc: "Mission rehearsal software, tactical flight simulations, biometric telemetry dashboards, and multi-user synthetic training environments.",
+    cap4_title: "Virtual Production",
+    cap4_desc: "LED Stage setup design, camera calibration, lighting rigs, academic degree curricula, and certified training programs.",
+    division_subtitle: "FURTHERING THE ART OF VISUAL EFFECTS.",
+    watch_our_showreel: "WATCH OUR SHOWREEL",
+    showcase_kicker: "Interactive Video Archive",
+    showcase_title: "Explore Our Titles",
+    filter_projects: "FILTER PROJECTS",
+    filter_titles: "FILTER TITLES",
+    filter_search_placeholder: "Filter By Name...",
+    filter_avail: "Availability",
+    avail_soon: "Coming Soon",
+    avail_theaters: "In Theaters",
+    avail_released: "Released",
+    avail_realtime: "Real-Time",
+    avail_volumetric: "Volumetric",
+    filter_tech: "Tech Stack",
+    tech_unreal: "Unreal Engine 5.4",
+    tech_gaussian: "Gaussian Splatting",
+    tech_nerf: "NeRF",
+    tech_houdini: "Houdini Fluid",
+    tech_defensesim: "Defense Sim",
+    clear_filters: "Clear Filters",
+    card_desc_netflix: "Now Streaming on Netflix",
+    card_desc_restricted: "In Production • Restricted Access",
+    card_desc_visionos: "Released on Apple VisionOS",
+    card_desc_sony: "Get it Now on 4K UHD, Blu-ray & Digital",
+    card_desc_abc: "Wednesdays 10/9c on ABC",
+    card_desc_dvd: "Get it Now on DVD and Digital",
+    card_desc_doc: "Watch Season 2 on Fox / Season 1 on Netflix",
+    card_desc_hulu: "Now Streaming on Hulu",
+    partners_title: "COMPANIES USING 3D SOFTWARES",
+    sandbox_kicker: "Real-time Parameters",
+    sandbox_title: "Graphics Sandbox",
+    sandbox_desc: "Adjust the sliders below to dynamically modify the 3D rendering parameters of the simulator in real time.",
+    sandbox_controls: "RENDER CONTROLS",
+    ctrl_focal: "Focal Length",
+    ctrl_exposure: "Exposure Limit",
+    ctrl_chromatic: "Chromatic Shift",
+    ctrl_noise: "Noise Density",
+    ctrl_vignette: "Vignette Depth",
+    engine_status: "Active Pipeline Status",
+    status_normal: "NORMAL",
+    reset_sandbox: "Reset Simulator",
+    academy_kicker: "Training & Admissions",
+    academy_title: "VFX Academy & Degrees",
+    academy_desc: "Join our accredited academic programs and prepare for careers in cinema and real-time environments. Explore the facades of the interactive studio below to discover our training programs.",
+    academy_controls: "Studio Navigation",
+    tab_front: "Cinema & TV Stages",
+    tab_garage: "Games & Real-Time Lab",
+    tab_rear: "Academic Programs",
+    tab_glass: "Tactical Simulations",
+    awards_kicker: "Honorary Recognition",
+    awards_title: "Awards & Milestones",
+    awards_desc: "International recognition of the contributions of our creative and technological teams to cinema and software innovation.",
+    award1_title: "Scientific and Technical Academy Award",
+    award1_sub: "Significant contribution to cinema processes",
+    award1_desc: "Our R&D team received a Technical Achievement Award from the Academy of Motion Picture Arts and Sciences for our custom anatomical simulation and virtual actor toolsets.",
+    award2_title: "DevOps Excellence Award",
+    award2_sub: "Successful application of cloud-native methodologies",
+    award2_desc: "DNEG and Red Hat won the Computing DevOps Excellence award for orchestrating distributed rendering farms seamlessly on private hybrid cloud architectures.",
+    news_kicker: "Breaking Industry News",
+    news_title: "Immersio AI Expansion & Metaphysic Integration",
+    news_desc: "Immersio Suprema announced the acquisition of Metaphysic to accelerate the development of generative AI tools and photorealistic real-time digital twins.",
+    read_press: "Read Press Release",
+    contact_kicker: "Partner with Us",
+    contact_title: "Start Your Project",
+    contact_desc: "Talk with our engineers to design custom simulators or schedule training programs.",
+    form_title: "Project Proposal",
+    label_name: "Name",
+    placeholder_name: "Your Name...",
+    label_email: "Email",
+    placeholder_email: "Your Email...",
+    label_industry: "Industry",
+    opt_vfx: "Film VFX & Animation",
+    opt_sim: "Defense & Simulation",
+    opt_tech: "Custom Software",
+    opt_training: "Academic Degrees",
+    label_budget: "Budget Range",
+    opt_budget1: "Under $50k",
+    opt_budget2: "$50k - $250k",
+    opt_budget3: "$250k - $1M",
+    opt_budget4: "$1M+ Enterprise",
+    label_details: "Project details",
+    placeholder_details: "Tell us about your project or training needs...",
+    submit_btn: "SUBMIT PROPOSAL",
+    footer_desc: "Collective of immersive visual engineering. Premium virtual worlds, graphical ML, and simulator pipelines for visionary teams.",
+    footer_nav: "Navigation",
+    footer_caps: "Capabilities",
+    footer_accred: "Accreditation",
+    drawer_accred: "VES Accredited Member Collective",
+    house_wall_front_title: "FILM & TELEVISION STUDIOS",
+    house_wall_front_desc: "Industry-accredited training & specialized masterclasses delivered on-site & online: ICVFX LED Wall Virtual Production, Houdini Fluid Physics, Unreal Engine 5.4, and Motion Capture.",
+    house_wall_right_title: "ANIMATION & GAME DEV STUDIOS",
+    house_wall_right_desc: "Industry-accredited training & specialized masterclasses delivered on-site & online: AAA Game Pipelines, Real-Time Shaders, Procedural Art, MetaHuman Rigging, and C++ Unreal Engine.",
+    house_wall_back_title: "UNIVERSITIES & FILM SCHOOLS",
+    house_wall_back_desc: "Industry-accredited training & specialized masterclasses delivered on-site & online: Turnkey Degree Curricula, Faculty Certification Programs, Virtual Production Campus Setup, and Student Capstone Mentorship.",
+    house_wall_left_title: "DEFENSE & GOVERNMENT AGENCIES",
+    house_wall_left_desc: "Industry-accredited training & specialized masterclasses delivered on-site & online: Tactical VR Combat Flight Simulation, Aerospace Machinery Digital Twins, Biometric Telemetry, and Mission Rehearsal."
+  }
+};
+
+function setLanguage(lang) {
+  currentLanguage = lang;
+  localStorage.setItem('vfx_lang', lang);
+  
+  // Highlight active option in all lang switchers
+  document.querySelectorAll('.lang-switcher').forEach(switcher => {
+    switcher.querySelectorAll('.lang-option').forEach(opt => {
+      opt.classList.remove('active');
+    });
+    const frOption = switcher.querySelector('#lang-fr') || switcher.querySelector('#drawer-lang-fr');
+    const enOption = switcher.querySelector('#lang-en') || switcher.querySelector('#drawer-lang-en');
+    if (lang === 'fr' && frOption) frOption.classList.add('active');
+    if (lang === 'en' && enOption) enOption.classList.add('active');
+  });
+
+  // Dual switchers active state sync
+  const frBtn = document.getElementById('lang-fr');
+  const enBtn = document.getElementById('lang-en');
+  const frDrawer = document.getElementById('drawer-lang-fr');
+  const enDrawer = document.getElementById('drawer-lang-en');
+  if (lang === 'fr') {
+    if (frBtn) frBtn.classList.add('active');
+    if (frDrawer) frDrawer.classList.add('active');
+    if (enBtn) enBtn.classList.remove('active');
+    if (enDrawer) enDrawer.classList.remove('active');
+  } else {
+    if (enBtn) enBtn.classList.add('active');
+    if (enDrawer) enDrawer.classList.add('active');
+    if (frBtn) frBtn.classList.remove('active');
+    if (frDrawer) frDrawer.classList.remove('active');
+  }
+
+  // Update translation key elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      el.classList.remove('i18n-fade');
+      void el.offsetWidth;
+      el.classList.add('i18n-fade');
+      el.textContent = translations[lang][key];
+    }
+  });
+
+  // Update placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (translations[lang] && translations[lang][key]) {
+      el.setAttribute('placeholder', translations[lang][key]);
+    }
+  });
+
+  // Re-draw clapperboard house canvas textures if Three.js initialized
+  if (typeof frontSlateMesh !== 'undefined' && frontSlateMesh) {
+    frontSlateMesh.material = createSlateMaterial(translations[lang].house_wall_front_title, translations[lang].house_wall_front_desc, '#ff625a');
+    rightSlateMesh.material = createSlateMaterial(translations[lang].house_wall_right_title, translations[lang].house_wall_right_desc, '#00f2fe');
+    backSlateMesh.material = createSlateMaterial(translations[lang].house_wall_back_title, translations[lang].house_wall_back_desc, '#bf5af2');
+    leftSlateMesh.material = createSlateMaterial(translations[lang].house_wall_left_title, translations[lang].house_wall_left_desc, '#ff9f0a');
+  }
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
+  initCustomCursor();
+  initMenuDrawer();
+  initMobileAppLogic();
+  initMosaicFilters();
   initVFXNavbar();
   initBackgroundVideo();
   initInteractiveSandbox();
@@ -12,31 +333,379 @@ document.addEventListener('DOMContentLoaded', () => {
   initHero3DCard();
   initCardHoverSoundEffects();
   initCyberHouseEngine();
+  
+  // Set default view on load
+  switchDivision('vfx');
+  
+  const savedLang = localStorage.getItem('vfx_lang') || 'fr';
+  setLanguage(savedLang);
 });
 
 /* --------------------------------------------------------------------------
-   1. NAVBAR & SCROLL EFFECTS
+   0. NAVIGATION SCROLL HELPER
+   -------------------------------------------------------------------------- */
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+/* --------------------------------------------------------------------------
+   0.5 MOBILE APP-LIKE BEHAVIORS & HOOKS
+   -------------------------------------------------------------------------- */
+function initMobileAppLogic() {
+  // Mobile Bottom Sheet Drawer Toggle
+  const openFilterBtn = document.getElementById('open-filter-btn');
+  const closeFilterBtn = document.getElementById('close-filter-btn');
+  const filterSheet = document.getElementById('mobile-filter-sheet');
+  const resetBtnMobile = document.getElementById('btn-reset-filters-mobile');
+
+  if (openFilterBtn && filterSheet) {
+    openFilterBtn.addEventListener('click', () => {
+      filterSheet.classList.add('open');
+    });
+  }
+
+  if (closeFilterBtn && filterSheet) {
+    closeFilterBtn.addEventListener('click', () => {
+      filterSheet.classList.remove('open');
+    });
+  }
+
+  if (resetBtnMobile && filterSheet) {
+    resetBtnMobile.addEventListener('click', () => {
+      filterSheet.classList.remove('open');
+    });
+  }
+
+  // Mobile Bottom Tab Navigation Clicks
+  const tabItems = document.querySelectorAll('.mobile-tab-item');
+  tabItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = item.getAttribute('href').substring(1);
+      scrollToSection(targetId);
+      
+      // Update active state manually on click
+      tabItems.forEach(t => t.classList.remove('active'));
+      item.classList.add('active');
+    });
+  });
+
+  // IntersectionObserver to sync tab states automatically as user scrolls
+  const sections = ['home', 'studio', 'showcase', 'technology', 'contact'].map(id => document.getElementById(id)).filter(el => el !== null);
+  
+  if ('IntersectionObserver' in window && sections.length > 0) {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-40% 0px -40% 0px', // Trigger near center screen
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.getAttribute('id');
+          tabItems.forEach(t => {
+            if (t.getAttribute('href') === `#${sectionId}`) {
+              t.classList.add('active');
+            } else {
+              t.classList.remove('active');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
+  }
+}
+
+/* --------------------------------------------------------------------------
+   1. CUSTOM CURSOR TRAILING EFFECT
+   -------------------------------------------------------------------------- */
+function initCustomCursor() {
+  const cursor = document.getElementById('custom-cursor');
+  if (!cursor) return;
+
+  // Disable custom cursor on mobile or touch devices
+  if ('ontouchstart' in window || navigator.maxTouchPoints > 0 || window.innerWidth <= 768) {
+    cursor.style.display = 'none';
+    return;
+  }
+
+  let mouseX = 0, mouseY = 0;
+  let cursorX = 0, cursorY = 0;
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  function animateCursor() {
+    let dx = mouseX - cursorX;
+    let dy = mouseY - cursorY;
+    cursorX += dx * 0.15;
+    cursorY += dy * 0.15;
+    cursor.style.left = `${cursorX}px`;
+    cursor.style.top = `${cursorY}px`;
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+
+  const hoverTargets = 'a, button, select, input, textarea, .apple-work-card, .dneg-text-capability, .dneg-award-card, .house-nav-tab, .slate-cell, .slate-text-line, .division-watch-showreel-box, .hero-scroll-indicator';
+  
+  document.addEventListener('mouseover', (e) => {
+    if (e.target.closest(hoverTargets)) {
+      cursor.classList.add('hover');
+    }
+  });
+
+  document.addEventListener('mouseout', (e) => {
+    if (e.target.closest(hoverTargets)) {
+      cursor.classList.remove('hover');
+    }
+  });
+}
+
+/* --------------------------------------------------------------------------
+   2. MOBILE/FULL-SCREEN NAV DRAWER OVERLAY
+   -------------------------------------------------------------------------- */
+function initMenuDrawer() {
+  const burgerBtn = document.getElementById('burger-menu-btn');
+  const drawer = document.getElementById('menu-drawer');
+  
+  if (burgerBtn && drawer) {
+    burgerBtn.addEventListener('click', () => {
+      burgerBtn.classList.toggle('active');
+      drawer.classList.toggle('open');
+    });
+  }
+}
+
+function toggleMenuDrawer() {
+  const burgerBtn = document.getElementById('burger-menu-btn');
+  const drawer = document.getElementById('menu-drawer');
+  if (burgerBtn && drawer) {
+    burgerBtn.classList.remove('active');
+    drawer.classList.remove('open');
+  }
+}
+
+function handleMenuDivisionClick(divisionName) {
+  toggleMenuDrawer();
+  switchDivision(divisionName);
+}
+
+/* --------------------------------------------------------------------------
+   2.5 DNEG DYNAMIC DIVISION HERO SWITCHER
+   -------------------------------------------------------------------------- */
+function switchDivision(divisionName) {
+  currentCategoryFilter = divisionName;
+
+  // 1. Update Showcase Hero Banner text & video
+  const heroTitle = document.getElementById('division-hero-title');
+  const heroSubtitle = document.getElementById('division-hero-subtitle');
+  const heroVideo = document.getElementById('division-hero-video-player');
+  
+  const data = {
+    vfx: {
+      title: 'IMMERSIO VFX',
+      subtitle: 'FURTHERING THE ART OF VISUAL EFFECTS.',
+      video: 'showreelone.mp4'
+    },
+    animation: {
+      title: 'IMMERSIO ANIMATION',
+      subtitle: 'FURTHERING THE ART OF ANIMATION.',
+      video: 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreelone.mp4'
+    },
+    simulation: {
+      title: 'IMMERSIO SIMULATION',
+      subtitle: 'MISSION-READY FIDELITY IN REAL-TIME.',
+      video: 'showreel 2.mp4'
+    },
+    art: {
+      title: 'IMMERSIO ART',
+      subtitle: 'EXPLORING NEURAL GRAPHICS AND DIGITAL AESTHETICS.',
+      video: 'showreelone.mp4'
+    },
+    technology: {
+      title: 'IMMERSIO TECHNOLOGY',
+      subtitle: 'THE ENGINE POWERING THE FUTURE OF STORYTELLING.',
+      video: 'showreel 2.mp4'
+    }
+  };
+  
+  const info = data[divisionName] || data.vfx;
+  if (heroTitle) heroTitle.textContent = info.title;
+  if (heroSubtitle) heroSubtitle.textContent = info.subtitle;
+  if (heroVideo) {
+    heroVideo.src = info.video;
+    heroVideo.currentTime = 0;
+    heroVideo.play().catch(() => {});
+  }
+  
+  // 2. Set active state on standard filter buttons if visible
+  const filterButtons = document.querySelectorAll('.apple-filter-btn');
+  filterButtons.forEach(btn => {
+    if (btn.getAttribute('data-filter') === divisionName) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+  
+  // 3. Apply Sony Poster Grid filter logic
+  applyMosaicFilters();
+  
+  // 4. Scroll smoothly to showcase section
+  scrollToSection('showcase');
+}
+
+/* --------------------------------------------------------------------------
+   2.8 SONY PICTURES POSTERS FILTER SYSTEM
+   -------------------------------------------------------------------------- */
+function initMosaicFilters() {
+  const searchInput = document.getElementById('poster-search');
+  const searchInputMobile = document.getElementById('poster-search-mobile');
+  const checkboxes = document.querySelectorAll('.filter-checkbox');
+  const resetBtn = document.getElementById('btn-reset-filters');
+  const resetBtnMobile = document.getElementById('btn-reset-filters-mobile');
+  
+  if (searchInput) {
+    searchInput.addEventListener('input', applyMosaicFilters);
+  }
+  if (searchInputMobile) {
+    searchInputMobile.addEventListener('input', applyMosaicFilters);
+  }
+  
+  checkboxes.forEach(cb => {
+    cb.addEventListener('change', applyMosaicFilters);
+  });
+  
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      if (searchInput) searchInput.value = '';
+      if (searchInputMobile) searchInputMobile.value = '';
+      checkboxes.forEach(cb => cb.checked = false);
+      switchDivision('vfx');
+    });
+  }
+  if (resetBtnMobile) {
+    resetBtnMobile.addEventListener('click', () => {
+      if (searchInput) searchInput.value = '';
+      if (searchInputMobile) searchInputMobile.value = '';
+      checkboxes.forEach(cb => cb.checked = false);
+      switchDivision('vfx');
+    });
+  }
+}
+
+function applyMosaicFilters() {
+  const searchInput = document.getElementById('poster-search');
+  const searchInputMobile = document.getElementById('poster-search-mobile');
+  let searchQuery = '';
+  if (window.innerWidth <= 768 && searchInputMobile) {
+    searchQuery = searchInputMobile.value.toLowerCase().trim();
+  } else if (searchInput) {
+    searchQuery = searchInput.value.toLowerCase().trim();
+  }
+  
+  const checkboxes = document.querySelectorAll('.filter-checkbox');
+  const activeAvailabilities = [];
+  const activeTechs = [];
+  
+  checkboxes.forEach(cb => {
+    if (cb.checked) {
+      if (cb.getAttribute('data-type') === 'availability') {
+        activeAvailabilities.push(cb.value);
+      } else if (cb.getAttribute('data-type') === 'tech') {
+        activeTechs.push(cb.value);
+      }
+    }
+  });
+  
+  const cards = document.querySelectorAll('#poster-grid .apple-work-card');
+  
+  cards.forEach(card => {
+    const title = card.querySelector('.work-title').textContent.toLowerCase();
+    const desc = card.querySelector('.work-desc').textContent.toLowerCase();
+    const category = card.getAttribute('data-category');
+    const availability = card.getAttribute('data-availability');
+    const tech = card.getAttribute('data-tech');
+    
+    // Category match
+    const matchesCategory = (currentCategoryFilter === 'all' || category === currentCategoryFilter);
+    
+    // Name search match
+    const matchesSearch = title.includes(searchQuery) || desc.includes(searchQuery);
+    
+    // Availability checkbox match
+    const matchesAvailability = (activeAvailabilities.length === 0 || activeAvailabilities.includes(availability));
+    
+    // Tech stack checkbox match
+    const matchesTech = (activeTechs.length === 0 || activeTechs.includes(tech));
+    
+    if (matchesCategory && matchesSearch && matchesAvailability && matchesTech) {
+      card.style.display = 'block';
+      setTimeout(() => {
+        card.style.opacity = '1';
+        card.style.transform = 'scale(1)';
+      }, 50);
+    } else {
+      card.style.opacity = '0';
+      card.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        card.style.display = 'none';
+      }, 300);
+    }
+  });
+}
+
+/* --------------------------------------------------------------------------
+   3. ADAPTIVE NAVBAR WITH SCROLL DETECTION & SECTION THEMING
    -------------------------------------------------------------------------- */
 function initVFXNavbar() {
   const navbar = document.getElementById('main-navbar');
   const navLinks = document.querySelectorAll('.vfx-nav-link');
   const sections = document.querySelectorAll('section');
+  
+  let lastScrollY = window.scrollY;
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      navbar.classList.add('scrolled');
+    const currentScrollY = window.scrollY;
+    
+    if (currentScrollY > 90) {
+      if (currentScrollY > lastScrollY) {
+        navbar.classList.add('scrolling-down');
+        navbar.classList.remove('scrolling-up');
+      } else {
+        navbar.classList.remove('scrolling-down');
+        navbar.classList.add('scrolling-up');
+      }
     } else {
-      navbar.classList.remove('scrolled');
+      navbar.classList.remove('scrolling-down');
+      navbar.classList.remove('scrolling-up');
     }
+    
+    lastScrollY = currentScrollY;
 
     let currentSectionId = '';
     sections.forEach(section => {
       const sectionTop = section.offsetTop - 120;
       const sectionHeight = section.clientHeight;
-      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+      if (currentScrollY >= sectionTop && currentScrollY < sectionTop + sectionHeight) {
         currentSectionId = section.getAttribute('id');
       }
     });
+
+    const lightSections = ['studio', 'technology', 'contact'];
+    if (lightSections.includes(currentSectionId)) {
+      navbar.classList.add('light-section');
+    } else {
+      navbar.classList.remove('light-section');
+    }
 
     navLinks.forEach(link => {
       link.classList.remove('active');
@@ -48,16 +717,7 @@ function initVFXNavbar() {
   });
 }
 
-function scrollToSection(id) {
-  const target = document.getElementById(id);
-  if (target) {
-    target.scrollIntoView({ behavior: 'smooth' });
-  }
-}
 
-/* --------------------------------------------------------------------------
-   2. HERO VIDEO & MEDIA CONTROLS (OPTIMIZED 60FPS SMOOTH PLAYBACK)
-   -------------------------------------------------------------------------- */
 function initBackgroundVideo() {
   const heroVideo = document.getElementById('hero-video');
   const soundToggleBtn = document.getElementById('sound-toggle');
@@ -366,7 +1026,7 @@ function playUICardClickSound() {
 function initCardHoverSoundEffects() {
   // Target all interactive cards and elements across the website
   const cardSelectors = [
-    '.apple-pro-card',
+    '.apple-pro-card', '.dneg-text-capability', '.dneg-award-card', '.drawer-main-link', '.secondary-link-item', '.hero-scroll-indicator', '.dneg-text-capability', '.dneg-award-card', '.drawer-main-link', '.secondary-link-item', '.hero-scroll-indicator', '.dneg-text-capability', '.dneg-award-card', '.drawer-main-link', '.secondary-link-item', '.hero-scroll-indicator', '.dneg-text-capability', '.dneg-award-card', '.drawer-main-link', '.secondary-link-item', '.hero-scroll-indicator', '.dneg-text-capability', '.dneg-award-card', '.drawer-main-link', '.secondary-link-item', '.hero-scroll-indicator', '.dneg-text-capability', '.dneg-award-card', '.drawer-main-link', '.secondary-link-item', '.drawer-main-link', '.secondary-link-item', '.dneg-award-card', '.drawer-main-link', '.secondary-link-item', '.dneg-award-card', '.dneg-award-card', '.dneg-news-container', '.dneg-award-card', '.dneg-news-container',
     '.apple-strip-card',
     '.training-card',
     '.apple-work-card',
@@ -474,18 +1134,32 @@ function toggleHouseAutoRotate() {
 
 function updateHouseNavTabs(angleDeg) {
   const tabs = document.querySelectorAll('.house-nav-tab:not(.auto-rotate-btn)');
-  tabs.forEach(tab => tab.classList.remove('active'));
-
   const normalized = ((angleDeg % 360) + 360) % 360;
+  
+  let activeIndex = 0;
   if (normalized >= 315 || normalized < 45) {
-    if (tabs[0]) tabs[0].classList.add('active');
+    activeIndex = 0;
   } else if (normalized >= 45 && normalized < 135) {
-    if (tabs[2]) tabs[2].classList.add('active');
+    activeIndex = 1;
   } else if (normalized >= 135 && normalized < 225) {
-    if (tabs[3]) tabs[3].classList.add('active');
+    activeIndex = 2;
   } else if (normalized >= 225 && normalized < 315) {
-    if (tabs[1]) tabs[1].classList.add('active');
+    activeIndex = 3;
   }
+
+  tabs.forEach((tab, index) => {
+    if (index === activeIndex) {
+      tab.classList.add('active');
+      const colors = ['#ff625a', '#00f2fe', '#bf5af2', '#ff9f0a'];
+      const activeColor = colors[activeIndex];
+      tab.style.setProperty('--active-accent-color', activeColor);
+      tab.style.setProperty('--active-shadow-glow', `0 0 16px ${activeColor}dd`);
+    } else {
+      tab.classList.remove('active');
+      tab.style.removeProperty('--active-accent-color');
+      tab.style.removeProperty('--active-shadow-glow');
+    }
+  });
 }
 
 function initCyberHouseEngine() {
@@ -524,7 +1198,7 @@ function initCyberHouseEngine() {
   keyLight.shadow.mapSize.height = 2048;
   threeScene.add(keyLight);
 
-  const fillLight = new THREE.DirectionalLight(0xffd60a, 1.2);
+  const fillLight = new THREE.DirectionalLight(0xff625a, 0.8);
   fillLight.position.set(-14, 10, -12);
   threeScene.add(fillLight);
 
@@ -542,102 +1216,165 @@ function initCyberHouseEngine() {
   threeScene.add(houseGroup);
 
   // 5. PBR Materials
-  const matteConcreteMat = new THREE.MeshStandardMaterial({ color: 0x0d0c12, roughness: 0.82, metalness: 0.15 });
-  const aluminumMat = new THREE.MeshStandardMaterial({ color: 0x27272a, roughness: 0.35, metalness: 0.85 });
+  const matteConcreteMat = new THREE.MeshStandardMaterial({ color: 0x0c0b11, roughness: 0.18, metalness: 0.95 });
+  const aluminumMat = new THREE.MeshStandardMaterial({ color: 0x1f1d24, roughness: 0.25, metalness: 0.92 });
   const glassMat = new THREE.MeshPhysicalMaterial({
-    color: 0x0f172a,
+    color: 0x070b19,
     transparent: true,
-    opacity: 0.45,
-    roughness: 0.1,
-    metalness: 0.9,
+    opacity: 0.55,
+    roughness: 0.08,
+    metalness: 0.95,
     clearcoat: 1.0
   });
-  const goldGlowMat = new THREE.MeshStandardMaterial({ color: 0xffd60a, roughness: 0.2, metalness: 0.9, emissive: 0xffd60a, emissiveIntensity: 0.35 });
+  const goldGlowMat = new THREE.MeshStandardMaterial({ color: 0xff625a, roughness: 0.1, metalness: 0.9, emissive: 0xff625a, emissiveIntensity: 1.2 });
 
-  // 6. Clean Slate Canvas Texture Generator (Removed SCENE/TAKE/ROLL top header & PROD.CO/DIRECTOR footer per user request)
-  function createSlateMaterial(titleText, descText) {
+  // 6. Clean Slate Canvas Texture Generator with resolution doubling and neon HUD style
+  function createSlateMaterial(titleText, descText, themeColor) {
     const canvas = document.createElement('canvas');
-    canvas.width = 1024;
-    canvas.height = 768;
+    canvas.width = 2048;
+    canvas.height = 1536;
     const ctx = canvas.getContext('2d');
 
-    // Matte Black Slate Facade Background
-    ctx.fillStyle = '#0a090e';
-    ctx.fillRect(0, 0, 1024, 768);
+    // 1. Premium deep obsidian-violet-dark gradient background
+    const grad = ctx.createLinearGradient(0, 0, 0, 1536);
+    grad.addColorStop(0, '#07060a');
+    grad.addColorStop(0.5, '#0e0d13');
+    grad.addColorStop(1, '#050407');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, 2048, 1536);
 
-    // Outer Slate Border Accent
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.25)';
-    ctx.lineWidth = 6;
-    ctx.strokeRect(20, 20, 984, 728);
+    // 2. High-Tech Cyber Dot Grid Background
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.02)';
+    for (let x = 80; x < 2048 - 80; x += 100) {
+      for (let y = 80; y < 1536 - 80; y += 100) {
+        ctx.fillRect(x, y, 4, 4);
+      }
+    }
 
-    // Target Industry Service Badge
-    ctx.fillStyle = '#ffd60a';
-    ctx.font = 'bold 36px Montserrat, sans-serif';
-    ctx.fillText('PROGRAM & SERVICE OFFERED:', 60, 110);
+    // 3. Neon glowing borders
+    ctx.shadowColor = themeColor;
+    ctx.shadowBlur = 30;
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.03)';
+    ctx.lineWidth = 4;
+    ctx.strokeRect(60, 60, 1928, 1416);
 
-    // Divider Line under Badge
-    ctx.strokeStyle = '#ffd60a';
+    ctx.shadowBlur = 0; // reset shadow for performance
+
+    // Inner thin border
+    ctx.strokeStyle = themeColor + '33';
+    ctx.lineWidth = 2;
+    ctx.strokeRect(76, 76, 1896, 1384);
+
+    // Tech corner brackets
+    ctx.strokeStyle = themeColor;
+    ctx.lineWidth = 8;
+    const bracketLen = 60;
+    // Top-Left corner
+    ctx.beginPath();
+    ctx.moveTo(76 + bracketLen, 76); ctx.lineTo(76, 76); ctx.lineTo(76, 76 + bracketLen);
+    ctx.stroke();
+    // Top-Right corner
+    ctx.beginPath();
+    ctx.moveTo(1972 - bracketLen, 76); ctx.lineTo(1972, 76); ctx.lineTo(1972, 76 + bracketLen);
+    ctx.stroke();
+    // Bottom-Left corner
+    ctx.beginPath();
+    ctx.moveTo(76 + bracketLen, 1460); ctx.lineTo(76, 1460); ctx.lineTo(76, 1460 - bracketLen);
+    ctx.stroke();
+    // Bottom-Right corner
+    ctx.beginPath();
+    ctx.moveTo(1972 - bracketLen, 1460); ctx.lineTo(1972, 1460); ctx.lineTo(1972, 1460 - bracketLen);
+    ctx.stroke();
+
+    // 4. Pill badge for the section category
+    ctx.fillStyle = themeColor + '14';
+    ctx.beginPath();
+    if (typeof ctx.roundRect === 'function') {
+      ctx.roundRect(120, 120, 960, 112, 56);
+    } else {
+      ctx.rect(120, 120, 960, 112);
+    }
+    ctx.fill();
+
+    ctx.strokeStyle = themeColor + '77';
+    ctx.lineWidth = 4;
+    ctx.stroke();
+
+    // Badge text inside pill
+    ctx.fillStyle = themeColor;
+    ctx.font = '900 36px "Inter", "Segoe UI", sans-serif';
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'middle';
+    const badgeLabel = currentLanguage === 'fr' ? 'PROGRAMME & SERVICE OFFERT' : 'PROGRAM & SERVICE OFFERED';
+    ctx.fillText(badgeLabel, 190, 176);
+
+    // Decorative tiny LED square inside pill
+    ctx.fillStyle = themeColor;
+    ctx.fillRect(160, 168, 16, 16);
+
+    // 5. Main Title Typography (Outfit font pairing, crisp white)
+    ctx.fillStyle = '#ffffff';
+    ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+    ctx.shadowBlur = 32;
+    ctx.shadowOffsetX = 4;
+    ctx.shadowOffsetY = 8;
+
+    ctx.font = '900 92px "Montserrat", "Helvetica Neue", sans-serif';
+    ctx.textBaseline = 'top';
+    ctx.fillText(titleText, 120, 390);
+
+    // Reset shadow
+    ctx.shadowBlur = 0;
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = 0;
+
+    // Thin elegant separator line with glowing gradient
+    const lineGrad = ctx.createLinearGradient(120, 0, 1928, 0);
+    lineGrad.addColorStop(0, themeColor);
+    lineGrad.addColorStop(0.5, 'rgba(255, 255, 255, 0.2)');
+    lineGrad.addColorStop(1, themeColor);
+    ctx.strokeStyle = lineGrad;
     ctx.lineWidth = 4;
     ctx.beginPath();
-    ctx.moveTo(60, 135); ctx.lineTo(964, 135);
+    ctx.moveTo(120, 520); ctx.lineTo(1928, 520);
     ctx.stroke();
 
-    // Main Industry Title (Big, Bold, White)
-    ctx.fillStyle = '#ffffff';
-    ctx.font = 'bold 52px Montserrat, sans-serif';
-    ctx.fillText(titleText, 60, 215);
-
-    // Secondary White Divider Line
-    ctx.strokeStyle = '#ffffff';
-    ctx.lineWidth = 3;
-    ctx.beginPath();
-    ctx.moveTo(60, 250); ctx.lineTo(964, 250);
-    ctx.stroke();
-
-    // Detailed Service Description Text (Large, Legible 36px Font)
-    ctx.fillStyle = '#e2e8f0';
-    ctx.font = '36px Inter, sans-serif';
+    // 6. Description Typography (spaced lines, soft grey DNEG palette)
+    ctx.fillStyle = '#f8fafc';
+    ctx.shadowColor = 'rgba(0, 0, 0, 0.95)';
+    ctx.shadowBlur = 24;
+    ctx.shadowOffsetX = 2;
+    ctx.shadowOffsetY = 4;
+    ctx.font = 'bold 58px "Inter", "Segoe UI", sans-serif';
     
     const words = descText.split(' ');
     let line = '';
-    let y = 330;
+    let y = 620;
+    const lineHeight = 110;
+    const maxWidth = 1800;
+
     for (let n = 0; n < words.length; n++) {
       const testLine = line + words[n] + ' ';
       const metrics = ctx.measureText(testLine);
-      if (metrics.width > 880 && n > 0) {
-        ctx.fillText(line, 60, y);
+      if (metrics.width > maxWidth && n > 0) {
+        ctx.fillText(line, 120, y);
         line = words[n] + ' ';
-        y += 52;
+        y += lineHeight; 
       } else {
         line = testLine;
       }
     }
-    ctx.fillText(line, 60, y);
+    ctx.fillText(line, 120, y);
 
     const texture = new THREE.CanvasTexture(canvas);
-    return new THREE.MeshStandardMaterial({ map: texture, roughness: 0.5, metalness: 0.1 });
+    return new THREE.MeshStandardMaterial({ map: texture, roughness: 0.25, metalness: 0.15 });
   }
 
   // Generate 4 Facade Materials for Each Surface Face (Cleaned & Focused)
-  const frontMat = createSlateMaterial(
-    'FILM & TELEVISION STUDIOS',
-    'Industry-accredited training & specialized masterclasses delivered on-site & online: ICVFX LED Wall Virtual Production, Houdini Fluid Physics, Unreal Engine 5.4, and Motion Capture.'
-  );
-
-  const rightMat = createSlateMaterial(
-    'ANIMATION & GAME DEV STUDIOS',
-    'Industry-accredited training & specialized masterclasses delivered on-site & online: AAA Game Pipelines, Real-Time Shaders, Procedural Art, MetaHuman Rigging, and C++ Unreal Engine.'
-  );
-
-  const backMat = createSlateMaterial(
-    'UNIVERSITIES & FILM SCHOOLS',
-    'Industry-accredited training & specialized masterclasses delivered on-site & online: Turnkey Degree Curricula, Faculty Certification Programs, Virtual Production Campus Setup, and Student Capstone Mentorship.'
-  );
-
-  const leftMat = createSlateMaterial(
-    'DEFENSE & GOVERNMENT AGENCIES',
-    'Industry-accredited training & specialized masterclasses delivered on-site & online: Tactical VR Combat Flight Simulation, Aerospace Machinery Digital Twins, Biometric Telemetry, and Mission Rehearsal.'
-  );
+  const frontMat = createSlateMaterial(translations[currentLanguage].house_wall_front_title, translations[currentLanguage].house_wall_front_desc, '#ff625a');
+  const rightMat = createSlateMaterial(translations[currentLanguage].house_wall_right_title, translations[currentLanguage].house_wall_right_desc, '#00f2fe');
+  const backMat = createSlateMaterial(translations[currentLanguage].house_wall_back_title, translations[currentLanguage].house_wall_back_desc, '#bf5af2');
+  const leftMat = createSlateMaterial(translations[currentLanguage].house_wall_left_title, translations[currentLanguage].house_wall_left_desc, '#ff9f0a');
 
   // 7. Solid Watertight House Geometry (Single Solid Flush Box Architecture)
   const houseMainBox = new THREE.Mesh(new THREE.BoxGeometry(11, 7.2, 7), matteConcreteMat);
@@ -646,24 +1383,24 @@ function initCyberHouseEngine() {
   houseGroup.add(houseMainBox);
 
   // Front Slate Surface Facade (0°)
-  const frontSlateMesh = new THREE.Mesh(new THREE.PlaneGeometry(10.8, 7.0), frontMat);
+  frontSlateMesh = new THREE.Mesh(new THREE.PlaneGeometry(10.8, 7.0), frontMat);
   frontSlateMesh.position.set(0, 0, 3.52);
   houseGroup.add(frontSlateMesh);
 
   // Right Slate Surface Facade (90°)
-  const rightSlateMesh = new THREE.Mesh(new THREE.PlaneGeometry(6.8, 7.0), rightMat);
+  rightSlateMesh = new THREE.Mesh(new THREE.PlaneGeometry(6.8, 7.0), rightMat);
   rightSlateMesh.rotation.y = Math.PI / 2;
   rightSlateMesh.position.set(5.52, 0, 0);
   houseGroup.add(rightSlateMesh);
 
   // Back Slate Surface Facade (180°)
-  const backSlateMesh = new THREE.Mesh(new THREE.PlaneGeometry(10.8, 7.0), backMat);
+  backSlateMesh = new THREE.Mesh(new THREE.PlaneGeometry(10.8, 7.0), backMat);
   backSlateMesh.rotation.y = Math.PI;
   backSlateMesh.position.set(0, 0, -3.52);
   houseGroup.add(backSlateMesh);
 
   // Left Slate Surface Facade (-90°)
-  const leftSlateMesh = new THREE.Mesh(new THREE.PlaneGeometry(6.8, 7.0), leftMat);
+  leftSlateMesh = new THREE.Mesh(new THREE.PlaneGeometry(6.8, 7.0), leftMat);
   leftSlateMesh.rotation.y = -Math.PI / 2;
   leftSlateMesh.position.set(-5.52, 0, 0);
   houseGroup.add(leftSlateMesh);
@@ -713,7 +1450,7 @@ function initCyberHouseEngine() {
   houseGroup.add(hingePlate);
 
   const boltGeo = new THREE.CylinderGeometry(0.12, 0.12, 1.5, 16);
-  const boltMat = new THREE.MeshStandardMaterial({ color: 0xe2e8f0, roughness: 0.2, metalness: 0.9 });
+  const boltMat = new THREE.MeshStandardMaterial({ color: 0xff625a, roughness: 0.1, metalness: 0.9 });
 
   const b1 = new THREE.Mesh(boltGeo, boltMat); b1.rotation.x = Math.PI / 2; b1.position.set(-5.4, 5.0, 3.2); houseGroup.add(b1);
   const b2 = new THREE.Mesh(boltGeo, boltMat); b2.rotation.x = Math.PI / 2; b2.position.set(-5.0, 5.0, 3.2); houseGroup.add(b2);
@@ -729,6 +1466,58 @@ function initCyberHouseEngine() {
   glowRing.position.set(0, -3.6, 0);
   houseGroup.add(glowRing);
 
+  // 10. Cyber Particle System (floating particles around box)
+  const particleCount = 120;
+  const particleGeo = new THREE.BufferGeometry();
+  const positions = new Float32Array(particleCount * 3);
+  const speeds = [];
+
+  for (let i = 0; i < particleCount; i++) {
+    const angle = Math.random() * Math.PI * 2;
+    const radius = 6 + Math.random() * 8;
+    const x = Math.cos(angle) * radius;
+    const y = -3.5 + Math.random() * 10;
+    const z = Math.sin(angle) * radius;
+    positions[i * 3] = x;
+    positions[i * 3 + 1] = y;
+    positions[i * 3 + 2] = z;
+
+    speeds.push({
+      y: 0.015 + Math.random() * 0.02,
+      angleSpeed: 0.002 + Math.random() * 0.004,
+      radius: radius,
+      angle: angle,
+      amplitude: 0.2 + Math.random() * 0.3,
+      phase: Math.random() * Math.PI * 2
+    });
+  }
+
+  particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+  const pCanvas = document.createElement('canvas');
+  pCanvas.width = 16;
+  pCanvas.height = 16;
+  const pCtx = pCanvas.getContext('2d');
+  const pGrad = pCtx.createRadialGradient(8, 8, 0, 8, 8, 8);
+  pGrad.addColorStop(0, 'rgba(255, 255, 255, 1)');
+  pGrad.addColorStop(0.3, 'rgba(255, 98, 90, 0.8)');
+  pGrad.addColorStop(1, 'rgba(255, 98, 90, 0)');
+  pCtx.fillStyle = pGrad;
+  pCtx.fillRect(0, 0, 16, 16);
+  const pTexture = new THREE.CanvasTexture(pCanvas);
+
+  const particleMat = new THREE.PointsMaterial({
+    size: 0.35,
+    map: pTexture,
+    transparent: true,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+    opacity: 0.85
+  });
+
+  const particleSystem = new THREE.Points(particleGeo, particleMat);
+  threeScene.add(particleSystem);
+
   // 12. Render & Mouse Drag Event Loop
   function animateThree() {
     requestAnimationFrame(animateThree);
@@ -739,6 +1528,28 @@ function initCyberHouseEngine() {
 
     currentHouseRotationY += (targetHouseRotationY - currentHouseRotationY) * 0.1;
     houseGroup.rotation.y = currentHouseRotationY;
+
+    // Pulsate glow ring
+    if (glowRing && glowRing.material) {
+      glowRing.material.emissiveIntensity = 0.8 + Math.sin(Date.now() * 0.0025) * 0.4;
+    }
+
+    // Animate particles
+    if (particleGeo) {
+      const posArr = particleGeo.attributes.position.array;
+      for (let i = 0; i < particleCount; i++) {
+        const speed = speeds[i];
+        speed.angle += speed.angleSpeed;
+        posArr[i * 3 + 1] += speed.y;
+        if (posArr[i * 3 + 1] > 6) {
+          posArr[i * 3 + 1] = -3.5;
+        }
+        posArr[i * 3] = Math.cos(speed.angle) * speed.radius;
+        posArr[i * 3 + 2] = Math.sin(speed.angle) * speed.radius;
+        posArr[i * 3] += Math.sin(Date.now() * 0.001 + speed.phase) * speed.amplitude * 0.1;
+      }
+      particleGeo.attributes.position.needsUpdate = true;
+    }
 
     const angleDeg = ((currentHouseRotationY * 180 / Math.PI) % 360 + 360) % 360;
     updateHouseNavTabs(angleDeg);

@@ -1,203 +1,204 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IMMERSIO SUPREMA | Centre d'Innovation Immersif</title>
-  <meta name="description" content="Pioneering next-gen worlds, photorealistic VFX, defense-grade VR simulation, and spatial AI architecture for Hollywood feature films, global brands, and governments.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Immersio Suprema | Centre d'Innovation Immersif</title>
   
-  <!-- Premium Modern Fonts (Inter & Montserrat + Serif Accents) -->
+  <!-- Modern Typography & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@500;600;700;800;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- FontAwesome Line Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Inter:wght@400;500;600;700&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <!-- Three.js 3D Engine CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- Custom Application Stylesheet -->
+  <link rel="stylesheet" href="styles.css?v=20260820_v4">
   
-  <!-- Main Stylesheet (Cache-Busted for Immediate Mobile Update) -->
-  <link rel="stylesheet" href="styles.css?v=20260730_v2000">
+  <!-- Three.js and OrbitControls for the 3D rotating clapperboard house -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body class="vfx-body">
 
-  <!-- TOP LOST BOYS VFX STYLE NAVIGATION BAR -->
+  <!-- Trailing Cursor (Hidden on touch screens) -->
+  <div class="custom-cursor" id="custom-cursor"></div>
+
+  <!-- ADAPTIVE BRAND HEADER (DNEG NAVBAR MECHANICS) -->
   <header class="vfx-navbar" id="main-navbar">
     <div class="vfx-nav-container">
       
+      <!-- Brand Logo / Wordmark (Enlarged Circular Glassmorphic Emblem) -->
       <a href="#home" class="vfx-brand-wrapper">
         <div class="vfx-logo-badge">
-          <img src="logo.png" alt="Immersio Suprema Logo" class="vfx-logo-img">
+          <img src="logo.png" class="vfx-logo-img" alt="Immersio Logo">
         </div>
         <div class="vfx-brand-text">
           <span class="vfx-brand-title">IMMERSIO SUPREMA</span>
-          <span class="vfx-brand-sub">CENTRE D'INNOVATION IMMERSIF</span>
+          <span class="vfx-brand-sub" data-i18n="brand_subtitle">CENTRE D'INNOVATION IMMERSIF</span>
         </div>
       </a>
-
+      
+      <!-- Center Desktop Navigation Links -->
       <nav class="vfx-menu-wrapper">
         <ul class="vfx-nav-menu">
-          <li><a href="#home" class="vfx-nav-link active">HOME</a></li>
-          <li><a href="#contact" class="vfx-nav-link">APPLY</a></li>
-          <li class="vfx-dropdown">
-            <a href="#training" class="vfx-nav-link">PROGRAMS <i class="fas fa-caret-down nav-caret"></i></a>
-          </li>
-          <li><a href="#training" class="vfx-nav-link">ADMISSIONS</a></li>
-          <li><a href="#contact" class="vfx-nav-link">CONTACT</a></li>
-          <li><a href="#studio" class="vfx-nav-link">ABOUT</a></li>
-          <li><a href="#showcase" class="vfx-nav-link">EXPERIENCE</a></li>
+          <li><a href="#home" class="vfx-nav-link active" data-i18n="nav_home">Home</a></li>
+          <li><a href="#studio" class="vfx-nav-link" data-i18n="nav_studio">About us</a></li>
+          <li><a href="#showcase" class="vfx-nav-link" data-i18n="nav_showcase">Showcase</a></li>
+          <li><a href="#technology" class="vfx-nav-link" data-i18n="nav_technology">Sandbox</a></li>
+          <li><a href="#training" class="vfx-nav-link" data-i18n="nav_training">Academy & Admissions</a></li>
+          <li><a href="#contact" class="vfx-nav-link" data-i18n="nav_contact">Contact</a></li>
         </ul>
       </nav>
-
+      
+      <!-- Right Header Actions (Sound, Apply button, and Language switcher) -->
       <div class="vfx-nav-actions">
-        <button class="vfx-icon-btn" id="sound-toggle" title="Toggle Cinema Audio">
+        <!-- Bilingual switcher -->
+        <div class="lang-switcher">
+          <span class="lang-option active" id="lang-fr" onclick="setLanguage('fr')">FR</span>
+          <span class="lang-divider">/</span>
+          <span class="lang-option" id="lang-en" onclick="setLanguage('en')">EN</span>
+        </div>
+
+        <button class="vfx-icon-btn" id="sound-toggle" aria-label="Toggle sound">
           <i class="fas fa-volume-mute" id="sound-icon"></i>
         </button>
-
-        <a href="#contact" class="vfx-btn-pill-apply">
-          <span>APPLY NOW</span>
-        </a>
+        
+        <a href="#contact" class="vfx-btn-pill-apply" data-i18n="apply_now">Apply Now</a>
+        
+        <!-- Burger menu trigger button for mobile -->
+        <button class="burger-menu-btn" id="burger-menu-btn" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
 
     </div>
   </header>
 
-  <!-- MAIN HERO SECTION (Keynote Video Experience) -->
-  <section id="home" class="apple-hero-section">
+  <!-- DNEG-STYLE FULL-SCREEN MENU OVERLAY -->
+  <div class="menu-drawer" id="menu-drawer">
+    <div class="lens-burst-glow"></div>
+    <div class="lens-burst-flare"></div>
     
-    <!-- Background Autoplay Video Layer (Smooth 60fps Hardware Accelerated) -->
-    <div class="apple-hero-video-container">
-      <video id="hero-video" class="apple-hero-video" autoplay loop muted playsinline preload="auto" disablePictureInPicture poster="logo.png">
+    <div class="menu-drawer-container">
+      <div class="drawer-col-left">
+        <!-- Search wrapper with drawer language selector inside -->
+        <div class="drawer-search-box">
+          <div class="lang-switcher drawer-lang-switch">
+            <span class="lang-option active" id="drawer-lang-fr" onclick="setLanguage('fr')">FR</span>
+            <span class="lang-divider">/</span>
+            <span class="lang-option" id="drawer-lang-en" onclick="setLanguage('en')">EN</span>
+          </div>
+        </div>
+        
+        <ul class="drawer-secondary-links">
+          <li><a href="#home" class="secondary-link-item" onclick="toggleMenuDrawer()"><span class="link-prefix">01.</span> <span data-i18n="nav_home">Home</span></a></li>
+          <li><a href="#studio" class="secondary-link-item" onclick="toggleMenuDrawer()"><span class="link-prefix">02.</span> <span data-i18n="nav_studio">About us</span></a></li>
+          <li><a href="#showcase" class="secondary-link-item" onclick="toggleMenuDrawer()"><span class="link-prefix">03.</span> <span data-i18n="nav_showcase">Showcase</span></a></li>
+          <li><a href="#technology" class="secondary-link-item" onclick="toggleMenuDrawer()"><span class="link-prefix">04.</span> <span data-i18n="nav_technology">Sandbox</span></a></li>
+          <li><a href="#training" class="secondary-link-item" onclick="toggleMenuDrawer()"><span class="link-prefix">05.</span> <span data-i18n="nav_training">Academy & Admissions</span></a></li>
+          <li><a href="#contact" class="secondary-link-item" onclick="toggleMenuDrawer()"><span class="link-prefix">06.</span> <span data-i18n="nav_contact">Contact</span></a></li>
+        </ul>
+        
+        <div class="drawer-contact-info">
+          <p>cto-office@immersio.com</p>
+          <p data-i18n="drawer_accred">VES Accredited Member Collective</p>
+        </div>
+      </div>
+      
+      <div class="drawer-col-right">
+        <ul class="drawer-main-links">
+          <li><a href="javascript:void(0)" class="drawer-main-link" onclick="handleMenuDivisionClick('vfx')"><span>IMMERSIO VFX</span></a></li>
+          <li><a href="javascript:void(0)" class="drawer-main-link" onclick="handleMenuDivisionClick('animation')"><span>IMMERSIO ANIMATION</span></a></li>
+          <li><a href="javascript:void(0)" class="drawer-main-link" onclick="handleMenuDivisionClick('simulation')"><span>IMMERSIO SIMULATION</span></a></li>
+          <li><a href="javascript:void(0)" class="drawer-main-link" onclick="handleMenuDivisionClick('art')"><span>IMMERSIO ART</span></a></li>
+          <li><a href="javascript:void(0)" class="drawer-main-link" onclick="handleMenuDivisionClick('technology')"><span>IMMERSIO TECHNOLOGY</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: HERO VIEWPORT (DIGITAL DOMAIN STYLE FULL SCREEN VIDEO BACKDROP) -->
+  <section class="digital-domain-hero" id="home">
+    <div class="hero-video-backdrop">
+      <video id="hero-video" autoplay loop muted playsinline>
         <source src="showreel 2.mp4" type="video/mp4">
-        <source src="https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4" type="video/mp4">
       </video>
-      <div class="apple-video-vignette"></div>
     </div>
-
-    <!-- Hero Right HUD: Media Controls -->
-    <div class="apple-right-hud">
-      <div class="apple-media-ctrls">
-        <button class="apple-ctrl-pill" id="sound-toggle-hero" title="Toggle Audio">
-          <i class="fas fa-volume-mute" id="sound-icon-hero"></i>
-        </button>
-        <button class="apple-ctrl-pill" id="video-play-toggle" title="Play/Pause Video">
-          <i class="fas fa-pause" id="play-icon"></i>
-        </button>
+    <div class="hero-video-overlay-tint"></div>
+    
+    <div class="hero-overlay-content">
+      <h1 class="hero-brand-title">IMMERSIO SUPREMA</h1>
+      <p class="hero-brand-subtitle" data-i18n="hero_subtitle">CENTRE D'INNOVATION IMMERSIF</p>
+      
+      <div class="hero-action-buttons">
+        <a href="#showcase" class="ms-btn black" data-i18n="watch_showreel"><i class="fas fa-play"></i> Watch Showreel</a>
+        <a href="#studio" class="ms-btn secondary" data-i18n="explore_studio">Explore Studio</a>
       </div>
     </div>
-
-    <!-- Hero Content Center/Left -->
-    <div class="apple-hero-content">
-      <div class="apple-eyebrow">
-        <span class="apple-eyebrow-tag">WE ARCHITECT</span>
-      </div>
-
-      <h1 class="apple-headline">
-        Next-Gen Worlds.<br>
-        <span class="apple-headline-gradient">Real Impact.</span>
-      </h1>
-
-      <p class="apple-subheadline">
-        We combine world-class VFX, AI, and immersive technologies to create cinematic experiences, intelligent simulations, and measurable results for visionary brands and governments.
-      </p>
-
-      <div class="apple-hero-buttons">
-        <button class="apple-btn-white-pill" id="showreel-trigger" onclick="openCinemaModal('IMMERSIO SUPREMA MASTER SHOWREEL', '2024 Visual Effects & AI Reel')">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
-          <span>Watch Showreel 2024</span>
-        </button>
-
-        <a href="#showcase" class="apple-btn-glass-pill">
-          <span>Explore Our Work</span>
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-
-    <!-- Hero Bottom Feature Cards Strip -->
-    <div class="apple-hero-cards-strip">
-      <div class="apple-strip-card" onclick="scrollToSection('showcase')">
-        <span class="card-step-num">01</span>
-        <div>
-          <h4 class="card-step-title">CINEMATIC VFX</h4>
-          <p class="card-step-desc">Photo-real worlds brought to life.</p>
-        </div>
-      </div>
-
-      <div class="apple-strip-card" onclick="scrollToSection('showcase')">
-        <span class="card-step-num">02</span>
-        <div>
-          <h4 class="card-step-title">AI SOLUTIONS</h4>
-          <p class="card-step-desc">Intelligent pipelines for complex worlds.</p>
-        </div>
-      </div>
-
-      <div class="apple-strip-card" onclick="scrollToSection('technology')">
-        <span class="card-step-num">03</span>
-        <div>
-          <h4 class="card-step-title">DEFENSE SIM</h4>
-          <p class="card-step-desc">Mission-ready real-time fidelity.</p>
-        </div>
-      </div>
-
-      <div class="apple-strip-card" onclick="scrollToSection('training')">
-        <span class="card-step-num">04</span>
-        <div>
-          <h4 class="card-step-title">VIRTUAL PRODUCTION</h4>
-          <p class="card-step-desc">End-to-end LED wall stages.</p>
-        </div>
-      </div>
-
-      <div class="apple-strip-card action-strip-card" onclick="scrollToSection('showcase')">
-        <span>View All Work</span>
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M7 17L17 7M17 7H7M17 7V17"/>
-        </svg>
-      </div>
-    </div>
-
+    
+    <!-- Centered Scroll down indicator with bounce chevron -->
+    <a href="#studio" class="hero-scroll-indicator">
+      <span class="scroll-lbl" data-i18n="featured_work">FEATURED WORK</span>
+      <i class="fas fa-chevron-down scroll-arrow-icon"></i>
+    </a>
   </section>
 
-  <!-- SECTION 2: MOVIES & STUDIO PHILOSOPHY (ABOUT) -->
-  <section id="studio" class="apple-section apple-pure-white-bg">
+  <!-- DIGITAL DOMAIN STYLE TAGLINE STRIP -->
+  <div class="hero-quote-bar">
+    <div class="quote-bar-container">
+      <span data-i18n="quote_transform">TRANSFORMER LE DIVERTISSEMENT</span>
+      <span class="quote-separator">+</span>
+      <span data-i18n="quote_tech">TECHNOLOGIE AVANT-GARDISTE</span>
+      <span class="quote-separator">+</span>
+      <span data-i18n="quote_innov">PROMOUVOIR L'INNOVATION</span>
+    </div>
+  </div>
+
+  <!-- SECTION 2: ABOUT US / STUDIO (WARM BEIGE DNEG THEME - NO BORDER TEXT GRID) -->
+  <section class="apple-section apple-pure-white-bg" id="studio">
     <div class="apple-section-container">
       
       <div class="apple-header-block">
-        <span class="apple-kicker">Creative Technology & Architecture</span>
-        <h2 class="apple-section-title">About Our Studio & Cinema Worlds</h2>
-        <p class="apple-section-desc">
-          Immersio Suprema is an ultra-high-end visual engineering collective. We build photorealistic synthetic environments, custom AI neural graphics, and real-time defense simulators for the world's most demanding creators.
+        <span class="apple-kicker" data-i18n="studio_kicker">Creative Innovation Hub</span>
+        <h2 class="apple-section-title" data-i18n="studio_title">Who We Are</h2>
+        <p class="apple-section-desc" data-i18n="studio_desc">
+          Nous fusionnons art cinématographique et technologies immersives en temps réel. Notre studio conçoit des moteurs de rendu de pointe, des simulateurs interactifs de haute fidélité et des formations certifiées pour les plus grands studios mondiaux.
         </p>
       </div>
-
-      <div class="apple-grid-3col">
+      
+      <!-- Asymmetric borderless text column grid representing capabilities -->
+      <div class="apple-grid-4col">
         
-        <div class="apple-pro-card">
-          <span class="card-num-badge">01</span>
-          <h3 class="pro-card-title">Photorealistic VFX</h3>
-          <p class="pro-card-desc">
-            Hollywood-grade creature animation, complex fluid physics, macro atmospheric renders, and full volumetric world synthesis built for 8K projection.
+        <div class="dneg-text-capability">
+          <span class="card-num-badge">01 / vfx</span>
+          <h3 class="pro-card-title" data-i18n="cap1_title">Cinematic VFX</h3>
+          <p class="pro-card-desc" data-i18n="cap1_desc">
+            Virtual Production pipelines with high-fidelity LED volume wall integration, Unreal Engine 5.4 staging, and real-time actor digital twins.
           </p>
         </div>
 
-        <div class="apple-pro-card">
-          <span class="card-num-badge">02</span>
-          <h3 class="pro-card-title">Generative AI Pipelines</h3>
-          <p class="pro-card-desc">
-            NeRF 3D Gaussian splatting, custom neural asset generation, autonomous character behaviors, and real-time AI ray tracing at 120fps.
+        <div class="dneg-text-capability">
+          <span class="card-num-badge">02 / ai</span>
+          <h3 class="pro-card-title" data-i18n="cap2_title">AI Neural Solutions</h3>
+          <p class="pro-card-desc" data-i18n="cap2_desc">
+            Machine learning graphic models, real-time NeRFs, Gaussian Splatting, and neural rendering pipelines for photorealistic interactive worlds.
           </p>
         </div>
 
-        <div class="apple-pro-card">
-          <span class="card-num-badge">03</span>
-          <h3 class="pro-card-title">Defense Simulation</h3>
-          <p class="pro-card-desc">
-            Zero-latency multi-agent tactical combat environments, flight physics integration, and biometric telemetry for government agencies.
+        <div class="dneg-text-capability">
+          <span class="card-num-badge">03 / sim</span>
+          <h3 class="pro-card-title" data-i18n="cap3_title">Defense Simulation</h3>
+          <p class="pro-card-desc" data-i18n="cap3_desc">
+            Mission rehearsal software, tactical flight simulations, biometric telemetry dashboards, and multi-user synthetic training environments.
+          </p>
+        </div>
+
+        <div class="dneg-text-capability">
+          <span class="card-num-badge">04 / vp</span>
+          <h3 class="pro-card-title" data-i18n="cap4_title">Virtual Production</h3>
+          <p class="pro-card-desc" data-i18n="cap4_desc">
+            LED Stage setup design, camera calibration, lighting rigs, academic degree curricula, and certified training programs.
           </p>
         </div>
 
@@ -206,171 +207,446 @@
     </div>
   </section>
 
-  <!-- SECTION 3: SHOWCASE (EXPERIENCE) -->
-  <section id="showcase" class="apple-section apple-dark-bg">
-    <div class="vfx-ambient-glow orb-cyan"></div>
-    <div class="apple-section-container" style="position: relative; z-index: 2;">
+  <!-- SECTION 3: DNEG WORK OVERVIEW HERO LANDING & SONY MOSAIC ARCHIVE -->
+  <section class="apple-section apple-dark-bg" id="showcase" style="padding-top: 0;">
+    
+    <!-- 1. Interactive Division Landing Banner -->
+    <div class="division-hero-banner">
+      <div class="division-hero-video-container">
+        <video id="division-hero-video-player" autoplay loop muted playsinline>
+          <source src="showreelone.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="division-video-overlay"></div>
       
+      <div class="division-hero-overlay-content">
+        <h2 class="division-hero-title" id="division-hero-title">IMMERSIO VFX</h2>
+        <p class="division-hero-subtitle" id="division-hero-subtitle" data-i18n="division_subtitle">FURTHERING THE ART OF VISUAL EFFECTS.</p>
+        
+        <div class="division-watch-showreel-box" onclick="openCinemaModal('IMMERSIO SHOWREEL', 'Featuring highlights from our Cinematic, Simulation, and Neural Graphics pipelines')">
+          <div class="division-play-btn">
+            <i class="fas fa-play"></i>
+          </div>
+          <span class="division-play-lbl" data-i18n="watch_our_showreel">WATCH OUR SHOWREEL</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. MOSAIC LAYOUT HEADER -->
+    <div class="apple-section-container" style="margin-top: 80px;">
       <div class="apple-header-flex">
         <div>
-          <span class="apple-kicker">VFX Showcase & Productions</span>
-          <h2 class="apple-section-title">Experience Our Works</h2>
+          <span class="apple-kicker" data-i18n="showcase_kicker">Interactive Video Archive</span>
+          <h2 class="apple-section-title" data-i18n="showcase_title">Explore Our Titles</h2>
         </div>
 
-        <div class="apple-filter-pills">
-          <button class="apple-filter-btn active" data-filter="all">All Works</button>
-          <button class="apple-filter-btn" data-filter="vfx">Cinematic VFX</button>
-          <button class="apple-filter-btn" data-filter="brand">Brand Specs</button>
-          <button class="apple-filter-btn" data-filter="sim">Defense Sim</button>
+        <div class="apple-filter-pills" style="display: none;">
+          <button class="apple-filter-btn active" data-filter="all">All</button>
+          <button class="apple-filter-btn" data-filter="vfx">VFX</button>
+          <button class="apple-filter-btn" data-filter="animation">Animation</button>
+          <button class="apple-filter-btn" data-filter="simulation">Simulation</button>
+          <button class="apple-filter-btn" data-filter="art">Art</button>
+          <button class="apple-filter-btn" data-filter="technology">Technology</button>
         </div>
       </div>
 
-      <div class="apple-portfolio-grid">
+      <!-- 3. SONY PICTURES POSTERS STYLE MOSAIC LAYOUT (Left Sidebar Filter & Right Posters Grid) -->
+      <div class="dneg-poster-layout">
         
-        <!-- Item 1 -->
-        <div class="apple-work-card" data-category="brand" onclick="playCardLocalVideo(this, 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreelone.mp4')">
-          <div class="work-img-container">
-            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85" alt="Porsche VR">
-            <div class="work-hover-overlay">
-              <div class="apple-play-badge">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </div>
-              <span class="apple-tag">8K RAW • REAL-TIME</span>
+        <!-- Mobile Trigger Bar for Filters -->
+        <div class="mobile-filter-bar">
+          <button class="mobile-filter-btn-trigger" id="open-filter-btn">
+            <i class="fas fa-filter"></i> <span data-i18n="filter_projects">FILTRER LES PROJETS</span>
+          </button>
+        </div>
+        
+        <!-- Sidebar Filter controls (Sony layout) -->
+        <div class="poster-sidebar">
+          <div class="filter-group-box">
+            <h4 class="sidebar-filter-title" data-i18n="filter_titles">FILTER TITLES</h4>
+            <div class="search-input-wrapper">
+              <input type="text" id="poster-search" placeholder="Filter By Name..." data-i18n-placeholder="filter_search_placeholder">
+              <i class="fas fa-search search-icon-input"></i>
             </div>
           </div>
-          <div class="work-meta-box">
-            <span class="work-client">PORSCHE MOTORS</span>
-            <h3 class="work-title">Neon Dunes 911 VR</h3>
-            <p class="work-desc">Interactive photorealistic ray-traced simulator through sandstorm terrain.</p>
-          </div>
-        </div>
-
-        <!-- Item 2 -->
-        <div class="apple-work-card" data-category="vfx" onclick="playCardLocalVideo(this, 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreelone.mp4')">
-          <div class="work-img-container">
-            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=85" alt="Sci-Fi VFX">
-            <div class="work-hover-overlay">
-              <div class="apple-play-badge">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </div>
-              <span class="apple-tag">HOLLYWOOD FEATURE</span>
+          
+          <div class="filter-group-box">
+            <h4 class="sidebar-filter-title" data-i18n="filter_avail">Availability</h4>
+            <div class="checkbox-list">
+              <label class="custom-checkbox-label">
+                <input type="checkbox" class="filter-checkbox" data-type="availability" value="coming-soon">
+                <span data-i18n="avail_soon">Coming Soon</span>
+              </label>
+              <label class="custom-checkbox-label">
+                <input type="checkbox" class="filter-checkbox" data-type="availability" value="in-theaters">
+                <span data-i18n="avail_theaters">In Theaters</span>
+              </label>
+              <label class="custom-checkbox-label">
+                <input type="checkbox" class="filter-checkbox" data-type="availability" value="released">
+                <span data-i18n="avail_released">Released</span>
+              </label>
+              <label class="custom-checkbox-label">
+                <input type="checkbox" class="filter-checkbox" data-type="availability" value="real-time">
+                <span data-i18n="avail_realtime">Real-Time</span>
+              </label>
+              <label class="custom-checkbox-label">
+                <input type="checkbox" class="filter-checkbox" data-type="availability" value="volumetric">
+                <span data-i18n="avail_volumetric">Volumetric</span>
+              </label>
             </div>
           </div>
-          <div class="work-meta-box">
-            <span class="work-client">UNIVERSAL PICTURES</span>
-            <h3 class="work-title">Chronos: Rise of Titans</h3>
-            <p class="work-desc">240 photorealistic VFX shots including water fluid dynamics and procedural destruction.</p>
-          </div>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="apple-work-card" data-category="sim" onclick="playCardLocalVideo(this, 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreelone.mp4')">
-          <div class="work-img-container">
-            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=85" alt="Defense Sim">
-            <div class="work-hover-overlay">
-              <div class="apple-play-badge">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </div>
-              <span class="apple-tag">DEFENSE GRADE</span>
+          
+          <div class="filter-group-box">
+            <h4 class="sidebar-filter-title" data-i18n="filter_tech">Tech Stack</h4>
+            <div class="checkbox-list">
+              <label class="custom-checkbox-label">
+                <input type="checkbox" class="filter-checkbox" data-type="tech" value="unreal">
+                <span data-i18n="tech_unreal">Unreal Engine 5.4</span>
+              </label>
+              <label class="custom-checkbox-label">
+                <input type="checkbox" class="filter-checkbox" data-type="tech" value="gaussian">
+                <span data-i18n="tech_gaussian">Gaussian Splatting</span>
+              </label>
+              <label class="custom-checkbox-label">
+                <input type="checkbox" class="filter-checkbox" data-type="tech" value="nerf">
+                <span data-i18n="tech_nerf">NeRF</span>
+              </label>
+              <label class="custom-checkbox-label">
+                <input type="checkbox" class="filter-checkbox" data-type="tech" value="houdini">
+                <span data-i18n="tech_houdini">Houdini Fluid</span>
+              </label>
+              <label class="custom-checkbox-label">
+                <input type="checkbox" class="filter-checkbox" data-type="tech" value="defensesim">
+                <span data-i18n="tech_defensesim">Defense Sim</span>
+              </label>
             </div>
           </div>
-          <div class="work-meta-box">
-            <span class="work-client">GOVERNMENT DEFENSE AGENCY</span>
-            <h3 class="work-title">Aerospace Swarm Sim</h3>
-            <p class="work-desc">Networked multi-user tactical jet flight simulator with biometric telemetry.</p>
-          </div>
+          
+          <button class="reset-filter-btn" id="btn-reset-filters">
+            <i class="fas fa-sync-alt"></i> <span data-i18n="clear_filters">Clear Filters</span>
+          </button>
         </div>
-
-        <!-- Item 4 -->
-        <div class="apple-work-card" data-category="brand" onclick="playCardLocalVideo(this, 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreelone.mp4')">
-          <div class="work-img-container">
-            <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=1200&q=85" alt="Spatial AI">
-            <div class="work-hover-overlay">
-              <div class="apple-play-badge">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
+        
+        <!-- Right: Mosaic Poster Cards Grid -->
+        <div class="poster-grid" id="poster-grid">
+          
+          <!-- Card 1 -->
+          <div class="apple-work-card" data-category="simulation" data-availability="real-time" data-tech="unreal" onclick="playCardLocalVideo(this, 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreelone.mp4')">
+            <div class="work-img-container">
+              <img src="picture1.jpeg" alt="Porsche VR">
+              <div class="work-hover-overlay">
+                <div class="apple-play-badge"><i class="fas fa-play"></i></div>
+                <span class="apple-tag">8K RAW • REAL-TIME</span>
               </div>
-              <span class="apple-tag">VISION PRO OS</span>
+            </div>
+            <div class="work-meta-box">
+              <span class="work-client">PORSCHE MOTORS</span>
+              <h3 class="work-title">Neon Dunes 911 VR</h3>
+              <p class="work-desc" data-i18n="card_desc_netflix">Now Streaming on Netflix</p>
             </div>
           </div>
-          <div class="work-meta-box">
-            <span class="work-client">APPLE SPATIAL</span>
-            <h3 class="work-title">Neural Voxel VR</h3>
-            <p class="work-desc">Volumetric spatial video streaming application with real-time gesture tracking.</p>
-          </div>
-        </div>
 
+          <!-- Card 2 -->
+          <div class="apple-work-card" data-category="vfx" data-availability="released" data-tech="houdini" onclick="playCardLocalVideo(this, 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreelone.mp4')">
+            <div class="work-img-container">
+              <img src="picture2.jpeg" alt="Sci-Fi VFX">
+              <div class="work-hover-overlay">
+                <div class="apple-play-badge"><i class="fas fa-play"></i></div>
+                <span class="apple-tag">HOLLYWOOD FEATURE</span>
+              </div>
+            </div>
+            <div class="work-meta-box">
+              <span class="work-client">UNIVERSAL PICTURES</span>
+              <h3 class="work-title">Chronos: Rise of Titans</h3>
+              <p class="work-desc" data-i18n="card_desc_netflix">Now Streaming on Netflix</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="apple-work-card" data-category="simulation" data-availability="in-production" data-tech="defensesim" onclick="playCardLocalVideo(this, 'showreel 2.mp4')">
+            <div class="work-img-container">
+              <img src="picture1.jpeg" alt="Defense Sim">
+              <div class="work-hover-overlay">
+                <div class="apple-play-badge"><i class="fas fa-play"></i></div>
+                <span class="apple-tag">DEFENSE GRADE</span>
+              </div>
+            </div>
+            <div class="work-meta-box">
+              <span class="work-client">GOVERNMENT DEFENSE AGENCY</span>
+              <h3 class="work-title">Aerospace Swarm Sim</h3>
+              <p class="work-desc" data-i18n="card_desc_restricted">In Production • Restricted Access</p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="apple-work-card" data-category="art" data-availability="volumetric" data-tech="gaussian" onclick="playCardLocalVideo(this, 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreelone.mp4')">
+            <div class="work-img-container">
+              <img src="picture2.jpeg" alt="Spatial AI">
+              <div class="work-hover-overlay">
+                <div class="apple-play-badge"><i class="fas fa-play"></i></div>
+                <span class="apple-tag">VISION PRO OS</span>
+              </div>
+            </div>
+            <div class="work-meta-box">
+              <span class="work-client">APPLE SPATIAL</span>
+              <h3 class="work-title">Neural Voxel VR</h3>
+              <p class="work-desc" data-i18n="card_desc_visionos">Released on Apple VisionOS</p>
+            </div>
+          </div>
+          
+          <!-- Card 5 -->
+          <div class="apple-work-card" data-category="vfx" data-availability="released" data-tech="unreal" onclick="playCardLocalVideo(this, 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreelone.mp4')">
+            <div class="work-img-container">
+              <img src="picture1.jpeg" alt="Lord of the Flies">
+              <div class="work-hover-overlay">
+                <div class="apple-play-badge"><i class="fas fa-play"></i></div>
+                <span class="apple-tag">NETFLIX ORIGINAL</span>
+              </div>
+            </div>
+            <div class="work-meta-box">
+              <span class="work-client">NETFLIX</span>
+              <h3 class="work-title">Lord of the Flies</h3>
+              <p class="work-desc" data-i18n="card_desc_netflix">Now Streaming on Netflix</p>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="apple-work-card" data-category="vfx" data-availability="released" data-tech="houdini" onclick="playCardLocalVideo(this, 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreelone.mp4')">
+            <div class="work-img-container">
+              <img src="picture2.jpeg" alt="Bone Temple">
+              <div class="work-hover-overlay">
+                <div class="apple-play-badge"><i class="fas fa-play"></i></div>
+                <span class="apple-tag">SONY CINEMATIC</span>
+              </div>
+            </div>
+            <div class="work-meta-box">
+              <span class="work-client">SONY PICTURES</span>
+              <h3 class="work-title">28 Years Later: The Bone Temple</h3>
+              <p class="work-desc" data-i18n="card_desc_sony">Get it Now on 4K UHD, Blu-ray & Digital</p>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="apple-work-card" data-category="art" data-availability="real-time" data-tech="nerf" onclick="playCardLocalVideo(this, 'showreel 2.mp4')">
+            <div class="work-img-container">
+              <img src="picture1.jpeg" alt="Shark Tank">
+              <div class="work-hover-overlay">
+                <div class="apple-play-badge"><i class="fas fa-play"></i></div>
+                <span class="apple-tag">TV EXPERIENCES</span>
+              </div>
+            </div>
+            <div class="work-meta-box">
+              <span class="work-client">ABC NETWORKS</span>
+              <h3 class="work-title">Shark Tank VR</h3>
+              <p class="work-desc" data-i18n="card_desc_abc">Wednesdays 10/9c on ABC</p>
+            </div>
+          </div>
+
+          <!-- Card 8 -->
+          <div class="apple-work-card" data-category="art" data-availability="released" data-tech="gaussian" onclick="playCardLocalVideo(this, 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreelone.mp4')">
+            <div class="work-img-container">
+              <img src="picture2.jpeg" alt="Private Life">
+              <div class="work-hover-overlay">
+                <div class="apple-play-badge"><i class="fas fa-play"></i></div>
+                <span class="apple-tag">BRITBOX EXCLUSIVE</span>
+              </div>
+            </div>
+            <div class="work-meta-box">
+              <span class="work-client">BRITBOX</span>
+              <h3 class="work-title">A Private Life</h3>
+              <p class="work-desc" data-i18n="card_desc_dvd">Get it Now on DVD and Digital</p>
+            </div>
+          </div>
+
+          <!-- Card 9 -->
+          <div class="apple-work-card" data-category="animation" data-availability="coming-soon" data-tech="unreal" onclick="playCardLocalVideo(this, 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreelone.mp4')">
+            <div class="work-img-container">
+              <img src="picture1.jpeg" alt="Doc">
+              <div class="work-hover-overlay">
+                <div class="apple-play-badge"><i class="fas fa-play"></i></div>
+                <span class="apple-tag">FOX COMEDY</span>
+              </div>
+            </div>
+            <div class="work-meta-box">
+              <span class="work-client">FOX FOX</span>
+              <h3 class="work-title">DOC</h3>
+              <p class="work-desc" data-i18n="card_desc_doc">Watch Season 2 on Fox / Season 1 on Netflix</p>
+            </div>
+          </div>
+
+          <!-- Card 10 -->
+          <div class="apple-work-card" data-category="animation" data-availability="released" data-tech="unreal" onclick="playCardLocalVideo(this, 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreelone.mp4')">
+            <div class="work-img-container">
+              <img src="picture2.jpeg" alt="Universal Basic Guys">
+              <div class="work-hover-overlay">
+                <div class="apple-play-badge"><i class="fas fa-play"></i></div>
+                <span class="apple-tag">HULU ORIGINAL</span>
+              </div>
+            </div>
+            <div class="work-meta-box">
+              <span class="work-client">FOX ANIMATION</span>
+              <h3 class="work-title">Universal Basic Guys</h3>
+              <p class="work-desc" data-i18n="card_desc_hulu">Now Streaming on Hulu</p>
+            </div>
+          </div>
+
+        </div>
       </div>
 
     </div>
   </section>
 
-  <!-- SECTION 4: INTERACTIVE REAL-TIME SIMULATION SANDBOX -->
-  <section id="technology" class="apple-section apple-pure-white-bg">
+  <!-- DNEG SCREENSHOT PARTNER LOGO GRID (COMPANIES USING 3D SOFTWARES) -->
+  <section class="apple-section apple-dark-bg" style="padding-top: 40px; padding-bottom: 90px; border-top: 1px solid rgba(255,255,255,0.03);">
+    <div class="apple-section-container centered-header">
+      <h3 class="dneg-partners-title" data-i18n="partners_title">COMPANIES USING 3D SOFTWARES</h3>
+      
+      <div class="dneg-partners-logo-grid">
+        <div class="dneg-logo-item" title="A24"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="20" font-weight="900" text-anchor="middle">A24</text></svg></div>
+        <div class="dneg-logo-item" title="Amazon"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="16" font-weight="900" text-anchor="middle">AMAZON</text></svg></div>
+        <div class="dneg-logo-item" title="Disney"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="17" font-weight="800" text-anchor="middle">DISNEY</text></svg></div>
+        <div class="dneg-logo-item" title="Marvel"><svg viewBox="0 0 100 30"><rect x="15" y="5" width="70" height="20" fill="var(--dneg-coral)"/><text x="50%" y="60%" fill="#141414" font-family="var(--font-display)" font-size="15" font-weight="900" text-anchor="middle">MARVEL</text></svg></div>
+        <div class="dneg-logo-item" title="Netflix"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="16" font-weight="900" text-anchor="middle">NETFLIX</text></svg></div>
+        <div class="dneg-logo-item" title="Sony"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="15" font-weight="600" text-anchor="middle">SONY</text></svg></div>
+        <div class="dneg-logo-item" title="Paramount"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="14" font-weight="800" text-anchor="middle">PARAMOUNT</text></svg></div>
+        <div class="dneg-logo-item" title="StudioCanal"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="11" font-weight="700" letter-spacing="0.1em" text-anchor="middle">STUDIOCANAL</text></svg></div>
+        <div class="dneg-logo-item" title="20th Century"><svg viewBox="0 0 100 30"><text x="50%" y="45%" fill="currentColor" font-family="var(--font-display)" font-size="11" font-weight="900" text-anchor="middle">20TH</text><text x="50%" y="80%" fill="currentColor" font-family="var(--font-display)" font-size="10" font-weight="900" text-anchor="middle">CENTURY</text></svg></div>
+        <div class="dneg-logo-item" title="Universal"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="11" font-weight="700" letter-spacing="0.15em" text-anchor="middle">UNIVERSAL</text></svg></div>
+        <div class="dneg-logo-item" title="Warner Bros"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="16" font-weight="800" text-anchor="middle">WARNER BROS</text></svg></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: INTERACTIVE RENDER ENGINE SANDBOX (PURE BLACK THEME) -->
+  <section class="apple-section apple-dark-bg" id="technology" style="background-color: var(--bg-pure-black); border-top: 1px solid rgba(255, 255, 255, 0.03);">
     <div class="apple-section-container">
       
-      <div class="apple-header-block">
-        <span class="apple-kicker">Proprietary Render Engine</span>
-        <h2 class="apple-section-title">Interactive Graphics Simulator</h2>
-        <p class="apple-section-desc">
-          Experience our real-time viewport parameters directly in browser. Adjust camera optics, volumetric sandstorm density, and lighting intensity.
+      <div class="apple-header-block centered-header">
+        <span class="apple-kicker" data-i18n="sandbox_kicker">Real-time Parameters</span>
+        <h2 class="apple-section-title" data-i18n="sandbox_title">Graphics Sandbox</h2>
+        <p class="apple-section-desc" data-i18n="sandbox_desc">
+          Ajustez les curseurs ci-dessous pour modifier dynamiquement les paramètres de rendu 3D du simulateur en temps réel.
         </p>
       </div>
 
       <div class="apple-sandbox-container">
-        
+        <!-- Left: Interactive Video Viewport Frame -->
         <div class="apple-viewport-frame">
-          <video id="sandbox-video-viewport" class="apple-viewport-video" autoplay loop muted playsinline preload="auto" disablePictureInPicture>
-            <source src="https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4" type="video/mp4">
+          <video class="apple-viewport-video" id="sandbox-viewport-video" autoplay loop muted playsinline>
             <source src="showreel 2.mp4" type="video/mp4">
           </video>
-
+          
+          <!-- Virtual HUD Overlay -->
           <div class="apple-hud-pill">
-            <div><span class="hud-lbl">CAM FOCAL:</span> <strong id="val-focal">50mm</strong></div>
-            <div><span class="hud-lbl">LIGHTING:</span> <strong id="val-light">80%</strong></div>
-            <div><span class="hud-lbl">SANDSTORM:</span> <strong id="val-sand">25%</strong></div>
-            <div><span class="hud-lbl">FPS:</span> <strong style="color:#0071e3;">120 FPS</strong></div>
+            <div><span class="hud-lbl">RES:</span> 7680x4320</div>
+            <div><span class="hud-lbl">API:</span> Vulkan Core</div>
+            <div><span class="hud-lbl">LAT:</span> 1.2ms</div>
           </div>
         </div>
 
-        <div class="apple-controls-box">
-          <h4 class="ctrl-header-title">REAL-TIME PARAMETERS</h4>
-          
-          <div class="apple-slider-group">
-            <div class="slider-meta">
-              <label>Camera Optics (Focal Length)</label>
-              <span id="label-focal-num">50mm</span>
-            </div>
-            <input type="range" id="range-focal" min="14" max="105" value="50" class="apple-range">
+        <!-- Right: Modern Slate-themed Controls Card -->
+        <div class="apple-controls-box dneg-dark-controls-box">
+          <div class="ctrl-header-row">
+            <h3 class="ctrl-header-title" data-i18n="sandbox_controls">RENDER CONTROLS</h3>
           </div>
 
-          <div class="apple-slider-group">
-            <div class="slider-meta">
-              <label>Lighting Key Intensity</label>
-              <span id="label-light-num">80%</span>
+          <div class="ctrl-sliders-list">
+            
+            <div class="apple-slider-group">
+              <div class="slider-meta">
+                <span data-i18n="ctrl_focal">Focal Length</span>
+                <span id="val-focal">35mm</span>
+              </div>
+              <input type="range" class="apple-range" id="range-focal" min="18" max="200" value="35">
             </div>
-            <input type="range" id="range-light" min="0" max="100" value="80" class="apple-range">
-          </div>
 
-          <div class="apple-slider-group">
-            <div class="slider-meta">
-              <label>Volumetric Sandstorm Density</label>
-              <span id="label-sand-num">25%</span>
+            <div class="apple-slider-group">
+              <div class="slider-meta">
+                <span data-i18n="ctrl_exposure">Exposure Limit</span>
+                <span id="val-exposure">1.0</span>
+              </div>
+              <input type="range" class="apple-range" id="range-exposure" min="0.2" max="3.0" step="0.1" value="1.0">
             </div>
-            <input type="range" id="range-sand" min="0" max="100" value="25" class="apple-range">
+
+            <div class="apple-slider-group">
+              <div class="slider-meta">
+                <span data-i18n="ctrl_chromatic">Chromatic Shift</span>
+                <span id="val-chromatic">0px</span>
+              </div>
+              <input type="range" class="apple-range" id="range-chromatic" min="0" max="15" value="0">
+            </div>
+
+            <div class="apple-slider-group">
+              <div class="slider-meta">
+                <span data-i18n="ctrl_noise">Noise Density</span>
+                <span id="val-noise">0.05</span>
+              </div>
+              <input type="range" class="apple-range" id="range-noise" min="0" max="0.3" step="0.01" value="0.05">
+            </div>
+
+            <div class="apple-slider-group">
+              <div class="slider-meta">
+                <span data-i18n="ctrl_vignette">Vignette Depth</span>
+                <span id="val-vignette">0.3</span>
+              </div>
+              <input type="range" class="apple-range" id="range-vignette" min="0" max="1.0" step="0.05" value="0.3">
+            </div>
+
           </div>
 
           <div class="sandbox-ctrl-footer">
-            <span class="status-txt"><i class="fas fa-microchip"></i> UNREAL ENGINE 5.4 LIVE VIEWPORT</span>
-            <button class="apple-btn-white-pill" style="width: 100%; justify-content: center;" onclick="resetSandbox()">
-              <i class="fas fa-undo"></i> Reset Parameters
+            <span class="status-txt">
+              <i class="fas fa-microchip"></i> <span data-i18n="engine_status">Active Pipeline Status</span>: <strong class="gold-txt" data-i18n="status_normal">NORMAL</strong>
+            </span>
+            <button class="reset-filter-btn" id="btn-reset-sandbox" style="width: 100%;" data-i18n="reset_sandbox">Reset Simulator</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 5: REALISTIC 3D ROTATING CLAPPERBOARD HOUSE (BEIGE THEME) -->
+  <section class="apple-section apple-pure-white-bg" id="training">
+    <div class="apple-section-container">
+      
+      <div class="apple-header-block">
+        <span class="apple-kicker" data-i18n="academy_kicker">Training & Admissions</span>
+        <h2 class="apple-section-title" data-i18n="academy_title">VFX Academy & Degrees</h2>
+        <p class="apple-section-desc" data-i18n="academy_desc">
+          Rejoignez nos programmes académiques accrédités et préparez-vous aux métiers du cinéma et du temps réel. Explorez les façades du studio interactif ci-dessous pour découvrir nos programmes de formation.
+        </p>
+      </div>
+
+      <!-- Real-Time 3D Viewport Box -->
+      <div class="apple-sandbox-container" style="align-items: center;">
+        
+        <!-- WebGL Canvas Box Container -->
+        <div class="apple-viewport-frame" id="cyber-house-viewport" style="background-color: #0c0b0f; border-color: rgba(255,255,255,0.04);">
+          <!-- WebGL Canvas injected dynamically by script.js -->
+        </div>
+
+        <!-- 3D Control Elevation Navigation Tabs -->
+        <div class="apple-controls-box" style="background-color: var(--bg-dark); border-color: rgba(255, 255, 255, 0.05);">
+          <span class="apple-kicker" style="margin-bottom: 20px;" data-i18n="academy_controls">Studio Navigation</span>
+          
+          <div class="checkbox-list" style="gap: 15px;">
+            <button class="reset-filter-btn house-nav-tab active" onclick="rotateHouseToAngle(0)">
+              <i class="fas fa-film"></i> <span data-i18n="tab_front">Cinema & TV Stages</span>
+            </button>
+            <button class="reset-filter-btn house-nav-tab" onclick="rotateHouseToAngle(90)">
+              <i class="fas fa-gamepad"></i> <span data-i18n="tab_garage">Games & Real-Time Lab</span>
+            </button>
+            <button class="reset-filter-btn house-nav-tab" onclick="rotateHouseToAngle(180)">
+              <i class="fas fa-graduation-cap"></i> <span data-i18n="tab_rear">Academic Programs</span>
+            </button>
+            <button class="reset-filter-btn house-nav-tab" onclick="rotateHouseToAngle(-90)">
+              <i class="fas fa-shield-alt"></i> <span data-i18n="tab_glass">Tactical Simulations</span>
+            </button>
+            
+            <button class="vfx-btn-submit-red auto-rotate-btn" id="house-autorotate-toggle" onclick="toggleHouseAutoRotate()" style="margin-top: 15px;">
+              <i class="fas fa-sync-alt fa-spin"></i> Auto-Rotate: ON
             </button>
           </div>
         </div>
@@ -380,267 +656,130 @@
     </div>
   </section>
 
-  <!-- SECTION 5: GLOBAL VFX & SPATIAL TECH TRAINING SERVICES -->
-  <section id="training" class="apple-section apple-dark-bg">
-    <div class="vfx-ambient-glow orb-gold"></div>
-    <div class="apple-section-container" style="position: relative; z-index: 2;">
+  <!-- SECTION 6: DNEG AWARDS & DISTINCTIONS (DARK SLATE BACKGROUND) -->
+  <section class="dneg-awards-section">
+    <div class="apple-section-container">
       
       <div class="apple-header-block centered-header">
-        <span class="apple-kicker">Global Educational & Enterprise Training Services</span>
-        <h2 class="apple-section-title">VFX, AI & Spatial Tech Training</h2>
-        <p class="apple-section-desc">
-          Industry-accredited training services and specialized masterclasses delivered on-site at Film & Animation Studios, Universities & Film Schools, Defense Academies, and Enterprise Tech Labs worldwide.
+        <span class="apple-kicker" data-i18n="awards_kicker">Honorary Recognition</span>
+        <h2 class="apple-section-title" data-i18n="awards_title">Awards & Milestones</h2>
+        <p class="apple-section-desc" data-i18n="awards_desc">
+          Reconnaissance internationale des contributions de nos équipes créatives et technologiques au cinéma et à l'innovation logicielle.
         </p>
       </div>
 
-      <!-- 100% ACCURATE PHOTOREALISTIC 3D CLAPPERBOARD ARCHITECTURAL HOUSE STAGE -->
-      <div class="cyber-house-stage-wrapper">
-        <div class="cyber-house-viewport-container" id="cyber-house-viewport">
-          
-          <!-- Pure Black Studio Pedestal Base -->
-          <div class="cyber-house-stage-pedestal">
-            <div class="pedestal-glow-ring"></div>
-            <!-- Orbiting 3D Interactive Hotspots on Studio Pedestal -->
-            <div class="pedestal-sector-labels">
-              <span class="orbit-label label-front" onclick="rotateHouseToAngle(0)">FRONT ELEVATION • MAIN SLATE</span>
-              <span class="orbit-label label-right" onclick="rotateHouseToAngle(90)">GARAGE & RECESSED ENTRY</span>
-              <span class="orbit-label label-back" onclick="rotateHouseToAngle(180)">REAR ARCHITECTURAL WING</span>
-              <span class="orbit-label label-left" onclick="rotateHouseToAngle(-90)">FLOOR-TO-CEILING TINTED GLASS</span>
-            </div>
-            <div class="pedestal-track-label">DRAG TO ROTATE 360° ARCHITECTURAL MODEL • CLICK SLATE SECTORS FOR INTERIOR DETAILS</div>
+      <div class="dneg-awards-grid">
+        
+        <!-- Award 1 -->
+        <div class="dneg-award-card">
+          <div class="award-img-wrapper">
+            <img src="picture1.jpeg" alt="Immersio Virtual Production Stage">
           </div>
-
-          <!-- THE 100% ACCURATE 3D CLAPPERBOARD ARCHITECTURAL HOUSE MODEL -->
-          <div class="cyber-house-3d-model exact-clapper-house" id="cyber-house-model">
-            
-            <!-- TOP HINGED CLAPSTICK (Separate Object with Hardware Bolts & Integrated LED Strip) -->
-            <div class="photo-clapper-hinge-assembly">
-              <!-- Metallic Hinge Mounting Bracket with 3 Heavy Stainless Steel Bolts -->
-              <div class="hinge-hardware-bracket">
-                <div class="hinge-bolt bolt-top-left"></div>
-                <div class="hinge-bolt bolt-top-right"></div>
-                <div class="hinge-bolt bolt-bottom"></div>
-              </div>
-
-              <!-- Top Angled Open Clapstick Stick -->
-              <div class="photo-clapstick-angled">
-                <div class="clapstick-stripe stripe-1"></div>
-                <div class="clapstick-stripe stripe-2"></div>
-                <div class="clapstick-stripe stripe-3"></div>
-                <div class="clapstick-stripe stripe-4"></div>
-                <!-- Bottom Edge Linear LED Light Bar (Warm 3000K Glow) -->
-                <div class="clapstick-led-strip"></div>
-              </div>
-
-              <!-- Fixed Eave Base Clapstick Stick -->
-              <div class="photo-clapstick-fixed">
-                <div class="clapstick-stripe stripe-1"></div>
-                <div class="clapstick-stripe stripe-2"></div>
-                <div class="clapstick-stripe stripe-3"></div>
-                <div class="clapstick-stripe stripe-4"></div>
-              </div>
+          <div class="award-content">
+            <div class="award-header-row">
+              <h3 class="award-title" data-i18n="award1_title">Scientific and Technical Academy Award</h3>
+              <span class="award-number">01</span>
             </div>
+            <p class="award-subtitle" data-i18n="award1_sub">Significant contribution to cinema processes</p>
+            <p class="award-description" data-i18n="award1_desc">
+              Our R&D team received a Technical Achievement Award from the Academy of Motion Picture Arts and Sciences for our custom anatomical simulation and virtual actor toolsets.
+            </p>
+          </div>
+        </div>
 
-            <!-- MAIN ARCHITECTURAL HOUSE BODY & 4 ELEVATION FACADES -->
-            <div class="house-body-structure photo-house-body">
-              
-              <!-- FRONT ELEVATION: MATTE BLACK SLATE & ENGRAVED TYPOGRAPHY (0°) -->
-              <div class="house-wall house-wall-front photo-wall-front" data-angle="0">
-                
-                <!-- Main Matte Concrete Clapperboard Slate Face -->
-                <div class="photo-slate-facade">
-                  
-                  <!-- Top Grid Row: SCENE | TAKE | ROLL -->
-                  <div class="slate-grid-row top-row">
-                    <div class="slate-cell" onclick="openCinemaModal('STUDIO VFX & SCENE DIRECTION', 'On-Site Virtual Production Masterclasses & Houdini Pipelines')">
-                      <span class="slate-label">SCENE</span>
-                      <span class="slate-value-glow">01</span>
-                    </div>
-                    <div class="slate-cell" onclick="openCinemaModal('ACADEMIC & UNIVERSITY TAKES', 'Turnkey Degree Curricula & Accredited Workshops')">
-                      <span class="slate-label">TAKE</span>
-                      <span class="slate-value-glow">02</span>
-                    </div>
-                    <div class="slate-cell" onclick="openCinemaModal('DEFENSE & TACTICAL ROLLS', 'Tactical VR Combat Drills & Biometric Telemetry')">
-                      <span class="slate-label">ROLL</span>
-                      <span class="slate-value-glow">8K</span>
-                    </div>
-                  </div>
-
-                  <div class="slate-divider-line"></div>
-
-                  <!-- Middle & Bottom Grid Rows: DATE, PROD.CO., DIRECTOR, CAMERAMAN, SOUND -->
-                  <div class="slate-list-rows">
-                    <div class="slate-text-line" onclick="openCinemaModal('NEURAL AI GRAPHICS & GAUSSIAN LAB', 'Real-Time NeRF 3D Gaussian Splatting & 120fps AI Ray Tracing')">
-                      <span class="slate-label">DATE</span>
-                      <span class="slate-inline-val">2026.07.30</span>
-                      <span class="slate-right-box"><span class="slate-label">SOUND</span> <span class="gold-txt">NEURAL AI</span></span>
-                    </div>
-                    <div class="slate-divider-line"></div>
-
-                    <div class="slate-text-line" onclick="openCinemaModal('STUDIO PRODUCTIONS', 'Hollywood Feature Films & Global Commercial VFX')">
-                      <span class="slate-label">PROD.CO.</span>
-                      <span class="slate-inline-val">IMMERSIO SUPREMA</span>
-                    </div>
-                    <div class="slate-divider-line"></div>
-
-                    <div class="slate-text-line" onclick="openCinemaModal('VISIONARY DIRECTORS MASTERCLASS', 'Virtual Production & MetaHuman Character Calibration')">
-                      <span class="slate-label">DIRECTOR</span>
-                      <span class="slate-inline-val">ADVANCED AGENTIC CREW</span>
-                    </div>
-                    <div class="slate-divider-line"></div>
-
-                    <div class="slate-text-line" onclick="openCinemaModal('CINEMATOGRAPHY & LIGHTING', 'LED Wall Stage Calibration & Unreal Engine 5.4')">
-                      <span class="slate-label">CAMERAMAN</span>
-                      <span class="slate-inline-val">LOST BOYS VFX LABS</span>
-                    </div>
-                  </div>
-
-                </div>
-
-                <!-- Recessed Architectural Entrance Structure -->
-                <div class="recessed-entrance-structure">
-                  <div class="entrance-roof-led"></div>
-                  <div class="entrance-inner-nook">
-                    <div class="entrance-warm-downlight"></div>
-                    <div class="architectural-glass-door">
-                      <div class="vertical-door-handle"></div>
-                    </div>
-                  </div>
-                  <div class="entrance-concrete-steps">
-                    <div class="step-led-strip"></div>
-                  </div>
-                </div>
-
-                <!-- Integrated Luxury Garage Structure -->
-                <div class="integrated-garage-structure">
-                  <div class="garage-header-fascia">
-                    <div class="garage-downlight-bar">
-                      <span class="spot-light spot-1"></span>
-                      <span class="spot-light spot-2"></span>
-                      <span class="spot-light spot-3"></span>
-                      <span class="spot-light spot-4"></span>
-                    </div>
-                  </div>
-                  <div class="garage-sectional-door">
-                    <div class="garage-panel panel-1"></div>
-                    <div class="garage-panel panel-2"></div>
-                    <div class="garage-panel panel-3"></div>
-                    <div class="garage-panel panel-4"></div>
-                  </div>
-                </div>
-
-              </div>
-
-              <!-- LEFT ELEVATION: FLOOR-TO-CEILING TINTED GLASS & WARM INTERIOR (90°) -->
-              <div class="house-wall house-wall-left photo-wall-left" data-angle="-90">
-                <div class="glass-façade-container">
-                  <!-- Upper Floor Tinted Window -->
-                  <div class="glass-floor upper-floor">
-                    <div class="glass-warm-interior">
-                      <div class="interior-lounge-light"></div>
-                      <span class="glass-room-tag">EXECUTIVE VFX SUITE</span>
-                    </div>
-                  </div>
-                  <!-- Lower Floor Tinted Window -->
-                  <div class="glass-floor lower-floor">
-                    <div class="glass-warm-interior">
-                      <div class="interior-dining-light"></div>
-                      <span class="glass-room-tag">SPATIAL AI SIMULATION LAB</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- RIGHT ELEVATION: RECESSED ENTRY & GARAGE PROFILE (90°) -->
-              <div class="house-wall house-wall-right photo-wall-right" data-angle="90">
-                <div class="right-profile-concrete">
-                  <div class="concrete-panel-lines"></div>
-                  <div class="side-accent-led"></div>
-                  <div class="side-window-tinted">
-                    <span class="glass-room-tag">DIRECTOR'S CONTROL DECK</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- REAR ELEVATION: MATTE CONCRETE & LINEAR LED ARCHITECTURE (180°) -->
-              <div class="house-wall house-wall-back photo-wall-back" data-angle="180">
-                <div class="rear-facade-concrete">
-                  <div class="rear-linear-light-bar"></div>
-                  <div class="rear-glass-atrium">
-                    <div class="atrium-warm-glow"></div>
-                    <span class="glass-room-tag">NEURAL GRAPHICS SERVER ROOM</span>
-                  </div>
-                </div>
-              </div>
-
+        <!-- Award 2 -->
+        <div class="dneg-award-card">
+          <div class="award-img-wrapper">
+            <img src="picture2.jpeg" alt="Immersio Post-Production Suite">
+          </div>
+          <div class="award-content">
+            <div class="award-header-row">
+              <h3 class="award-title" data-i18n="award2_title">DevOps Excellence Award</h3>
+              <span class="award-number">02</span>
             </div>
-
+            <p class="award-subtitle" data-i18n="award2_sub">Successful application of cloud-native methodologies</p>
+            <p class="award-description" data-i18n="award2_desc">
+              DNEG and Red Hat won the Computing DevOps Excellence award for orchestrating distributed rendering farms seamlessly on private hybrid cloud architectures.
+            </p>
           </div>
+        </div>
 
-          <!-- Interactive Architectural Elevation Tabs -->
-          <div class="cyber-house-nav-bar">
-            <button class="house-nav-tab active" onclick="rotateHouseToAngle(0)"><i class="fas fa-camera"></i> Front Slate Elevation</button>
-            <button class="house-nav-tab" onclick="rotateHouseToAngle(-90)"><i class="fas fa-building"></i> Floor-to-Ceiling Glass</button>
-            <button class="house-nav-tab" onclick="rotateHouseToAngle(90)"><i class="fas fa-door-open"></i> Garage & Recessed Entry</button>
-            <button class="house-nav-tab" onclick="rotateHouseToAngle(180)"><i class="fas fa-microchip"></i> Rear Neural Atrium</button>
-            <button class="house-nav-tab auto-rotate-btn active" id="house-autorotate-toggle" onclick="toggleHouseAutoRotate()"><i class="fas fa-sync-alt fa-spin"></i> Auto-Rotate: ON</button>
-          </div>
+      </div>
 
+      <!-- Featured News Block -->
+      <div class="dneg-news-container">
+        <div class="news-visual">
+          <img src="picture2.jpeg" alt="Immersio AI Post-Production Facility">
+        </div>
+        <div class="news-info">
+          <span class="apple-kicker" data-i18n="news_kicker">Breaking Industry News</span>
+          <h3 class="news-title" data-i18n="news_title">Immersio AI Expansion & Metaphysic Integration</h3>
+          <p class="news-desc" data-i18n="news_desc">
+            Immersio Suprema a annoncé l'acquisition de Metaphysic pour accélérer le développement d'outils d'IA générative et de jumeaux numériques photoréalistes en temps réel.
+          </p>
+          <a href="#contact" class="ms-btn black" data-i18n="read_press">Read Press Release</a>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- SECTION 6: ADMISSIONS & DIRECT TRANSMISSION (APPLY & CONTACT) -->
-  <section id="contact" class="apple-section apple-pure-white-bg">
+  <!-- SECTION 7: APPLICATION CONTACT FORM & LIGHTBOX MODAL (BEIGE BACKGROUND) -->
+  <section class="apple-section apple-pure-white-bg" id="contact">
     <div class="apple-section-container">
       
       <div class="apple-header-block centered-header">
-        <span class="apple-kicker">Admissions & Direct Transmission</span>
-        <h2 class="apple-section-title">Apply & Contact Studio</h2>
-        <p class="apple-section-desc">
-          Submit your application or commission inquiry for Hollywood feature films, defense contracts, and global brand partnerships.
+        <span class="apple-kicker" data-i18n="contact_kicker">Partner with Us</span>
+        <h2 class="apple-section-title" data-i18n="contact_title">Start Your Project</h2>
+        <p class="apple-section-desc" data-i18n="contact_desc">
+          Discutez avec nos ingénieurs pour concevoir des simulateurs sur-mesure ou planifier des formations.
         </p>
       </div>
 
       <div class="apple-contact-centered-wrapper">
-        <div class="apple-form-card centered-form">
-          <h3 class="form-title">Application & Contact Form</h3>
+        <div class="apple-form-card">
+          <h3 class="form-title" data-i18n="form_title">Project Proposal</h3>
           
-          <form id="proposal-form">
+          <form id="proposal-form" onsubmit="handleFormSubmit(event)">
             <div class="form-row">
               <div class="field-box">
-                <label>Full Name</label>
-                <input type="text" placeholder="Lord Alexander Vance" required>
+                <label for="form-name" data-i18n="label_name">Name</label>
+                <input type="text" id="form-name" placeholder="Your Name..." data-i18n-placeholder="placeholder_name" required>
               </div>
               <div class="field-box">
-                <label>Official Email</label>
-                <input type="email" placeholder="vance@studio.com" required>
+                <label for="form-email" data-i18n="label_email">Email</label>
+                <input type="email" id="form-email" placeholder="Your Email..." data-i18n-placeholder="placeholder_email" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field-box">
+                <label for="form-industry" data-i18n="label_industry">Industry</label>
+                <select id="form-industry">
+                  <option value="vfx" data-i18n="opt_vfx">Film VFX & Animation</option>
+                  <option value="simulation" data-i18n="opt_sim">Defense & Simulation</option>
+                  <option value="technology" data-i18n="opt_tech">Custom Software</option>
+                  <option value="training" data-i18n="opt_training">Academic Degrees</option>
+                </select>
+              </div>
+              <div class="field-box">
+                <label for="form-budget" data-i18n="label_budget">Budget Range</label>
+                <select id="form-budget">
+                  <option value="tier-1" data-i18n="opt_budget1">Under $50k</option>
+                  <option value="tier-2" data-i18n="opt_budget2">$50k - $250k</option>
+                  <option value="tier-3" data-i18n="opt_budget3">$250k - $1M</option>
+                  <option value="tier-4" data-i18n="opt_budget4">$1M+ Enterprise</option>
+                </select>
               </div>
             </div>
 
             <div class="field-box">
-              <label>Inquiry Type</label>
-              <select required>
-                <option value="">Select Category of Service...</option>
-                <option value="vfx-film">VFX Production for Movies & TV Series</option>
-                <option value="animation">3D Animation, CGI & Game Asset Production</option>
-                <option value="music-commercial">Music Video VFX & Commercial Production</option>
-                <option value="training-onsite">On-Site & Online Training Services / Masterclasses</option>
-              </select>
+              <label for="form-details" data-i18n="label_details">Project details</label>
+              <textarea id="form-details" rows="5" placeholder="Tell us about your project or training needs..." data-i18n-placeholder="placeholder_details" required></textarea>
             </div>
 
-            <div class="field-box">
-              <label>Application Details & Specifications</label>
-              <textarea rows="4" placeholder="Detail your background, target deliverables, or project timeline..." required></textarea>
-            </div>
-
-            <button type="submit" class="vfx-btn-submit-red full-width">
-              <span>SUBMIT APPLICATION</span>
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
+            <button type="submit" class="vfx-btn-submit-red">
+              <span data-i18n="submit_btn">SUBMIT PROPOSAL</span> <i class="fas fa-paper-plane"></i>
             </button>
           </form>
         </div>
@@ -649,59 +788,53 @@
     </div>
   </section>
 
-  <!-- FULLSCREEN CINEMA SHOWCASE LIGHTBOX MODAL -->
+  <!-- CINEMATIC VIDEO LIGHTBOX MODAL -->
   <div class="cinema-modal-backdrop" id="cinema-modal">
     <div class="cinema-modal-wrapper">
-      <button class="cinema-modal-close" id="modal-close-btn" title="Close Lightbox">
-        <i class="fas fa-times"></i>
-      </button>
-      
-      <div class="cinema-modal-content">
-        <div class="cinema-video-frame">
-          <video id="modal-video-player" controls playsinline poster="logo.png">
-            <source src="showreel 2.mp4" type="video/mp4">
-            <source src="https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreel%202.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="cinema-modal-details">
-          <h3 id="modal-project-title" class="modal-title">IMMERSIO SUPREMA SHOWCASE</h3>
-          <p id="modal-project-desc" class="modal-desc">Visual Effects breakdown & technical simulation specifications.</p>
-        </div>
+      <button class="cinema-modal-close" onclick="closeCinemaModal()"><i class="fas fa-times"></i></button>
+      <div class="cinema-video-frame">
+        <video id="cinema-modal-video" controls autoplay>
+          <source src="showreelone.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="cinema-modal-details">
+        <h3 class="modal-title" id="cinema-modal-title">PRODUCTION SHOWREEL</h3>
+        <p class="modal-desc" id="cinema-modal-desc">Immersio Cinema and Pipeline Engineering</p>
       </div>
     </div>
   </div>
 
-  <!-- LOST BOYS VFX STYLE FOOTER -->
+  <!-- APPLICATION FOOTER (PURE BLACK BRANDING) -->
   <footer class="apple-footer">
     <div class="apple-footer-inner">
       
       <div class="footer-col-brand">
-        <div class="vfx-brand-wrapper">
-          <div class="vfx-logo-badge" style="width:36px; height:36px; min-width:36px;">
-            <img src="logo.png" alt="Logo" class="vfx-logo-img">
+        <!-- Logo emblem inside footer -->
+        <a href="#home" class="vfx-brand-wrapper" style="margin-bottom: 20px;">
+          <div class="vfx-logo-badge" style="width: 40px; height: 40px;">
+            <img src="logo.png" class="vfx-logo-img" alt="Immersio Logo" style="filter: invert(1);">
           </div>
-          <span class="vfx-brand-title" style="font-size:1rem;">IMMERSIO SUPREMA</span>
-        </div>
-        <p class="footer-desc">
-          Centre d'Innovation Immersif. Architecting photorealistic synthetic worlds, defense-grade virtual simulators, and spatial AI pipelines for visionary creators worldwide.
+          <span class="vfx-brand-title">IMMERSIO SUPREMA</span>
+        </a>
+        <p class="footer-desc" data-i18n="footer_desc">
+          Collective of immersive visual engineering. Premium virtual worlds, graphical ML, and simulator pipelines for visionary teams.
         </p>
       </div>
 
       <div class="footer-col">
-        <h4>Navigation</h4>
+        <h4 data-i18n="footer_nav">Navigation</h4>
         <ul>
           <li><a href="#home">HOME</a></li>
-          <li><a href="#contact">APPLY</a></li>
-          <li><a href="#training">PROGRAMS</a></li>
-          <li><a href="#training">ADMISSIONS</a></li>
-          <li><a href="#contact">CONTACT</a></li>
           <li><a href="#studio">ABOUT</a></li>
           <li><a href="#showcase">EXPERIENCE</a></li>
+          <li><a href="#technology">SANDBOX</a></li>
+          <li><a href="#training">ACADEMY</a></li>
+          <li><a href="#contact">CONTACT</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4>Capabilities</h4>
+        <h4 data-i18n="footer_caps">Capabilities</h4>
         <ul>
           <li><a href="#studio">Feature Film VFX</a></li>
           <li><a href="#showcase">Brand VR Configurator</a></li>
@@ -711,21 +844,120 @@
       </div>
 
       <div class="footer-col">
-        <h4>Accreditation</h4>
-        <p class="meta-txt">Government & Military Accredited</p>
-        <p class="meta-txt">Unreal Engine 5 Enterprise Partner</p>
-        <p class="meta-txt">VES Member Studio</p>
+        <h4 data-i18n="footer_accred">Accreditation</h4>
+        <p class="meta-txt">VES Member Collective</p>
+        <p class="meta-txt">Unreal Engine Enterprise Partner</p>
+        <p class="meta-txt">ISO 27001 Certified Security</p>
       </div>
 
     </div>
 
     <div class="apple-footer-bottom">
       <div>&copy; 2026 IMMERSIO SUPREMA. Centre d'Innovation Immersif. All Rights Reserved.</div>
-      <div>VFX Campus & Digital Innovation Engine.</div>
+      <div>VFX Campus & Digital Innovation Engine. Built like DNEG.</div>
     </div>
   </footer>
 
-  <!-- Main Interactive JavaScript File (Cache-Busted for Immediate Mobile Update) -->
-  <script src="script.js?v=20260730_v2000"></script>
+  <!-- MOBILE BOTTOM TAB BAR NAVIGATION -->
+  <div class="mobile-tab-bar" id="mobile-tab-bar">
+    <a href="#home" class="mobile-tab-item active" data-tab="home">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </a>
+    <a href="#studio" class="mobile-tab-item" data-tab="studio">
+      <i class="fas fa-info-circle"></i>
+      <span>Studio</span>
+    </a>
+    <a href="#showcase" class="mobile-tab-item" data-tab="showcase">
+      <i class="fas fa-film"></i>
+      <span>Showcase</span>
+    </a>
+    <a href="#technology" class="mobile-tab-item" data-tab="technology">
+      <i class="fas fa-sliders-h"></i>
+      <span>Sandbox</span>
+    </a>
+    <a href="#contact" class="mobile-tab-item" data-tab="contact">
+      <i class="fas fa-envelope"></i>
+      <span>Contact</span>
+    </a>
+  </div>
+
+  <!-- MOBILE COLLAPSIBLE BOTTOM FILTER SHEET -->
+  <div class="mobile-filter-sheet" id="mobile-filter-sheet">
+    <div class="filter-sheet-header">
+      <h3>Filtrer les projets</h3>
+      <button class="filter-sheet-close" id="close-filter-btn">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="filter-sheet-body">
+      <div class="filter-group-box">
+        <h4 class="sidebar-filter-title">Recherche</h4>
+        <div class="search-input-wrapper">
+          <input type="text" id="poster-search-mobile" placeholder="Filter By Name...">
+          <i class="fas fa-search search-icon-input"></i>
+        </div>
+      </div>
+      
+      <div class="filter-group-box">
+        <h4 class="sidebar-filter-title">Availability</h4>
+        <div class="checkbox-list">
+          <label class="custom-checkbox-label">
+            <input type="checkbox" class="filter-checkbox" data-type="availability" value="coming-soon">
+            <span>Coming Soon</span>
+          </label>
+          <label class="custom-checkbox-label">
+            <input type="checkbox" class="filter-checkbox" data-type="availability" value="in-theaters">
+            <span>In Theaters</span>
+          </label>
+          <label class="custom-checkbox-label">
+            <input type="checkbox" class="filter-checkbox" data-type="availability" value="released">
+            <span>Released</span>
+          </label>
+          <label class="custom-checkbox-label">
+            <input type="checkbox" class="filter-checkbox" data-type="availability" value="real-time">
+            <span>Real-Time</span>
+          </label>
+          <label class="custom-checkbox-label">
+            <input type="checkbox" class="filter-checkbox" data-type="availability" value="volumetric">
+            <span>Volumetric</span>
+          </label>
+        </div>
+      </div>
+      
+      <div class="filter-group-box">
+        <h4 class="sidebar-filter-title">Tech Stack</h4>
+        <div class="checkbox-list">
+          <label class="custom-checkbox-label">
+            <input type="checkbox" class="filter-checkbox" data-type="tech" value="unreal">
+            <span>Unreal Engine 5.4</span>
+          </label>
+          <label class="custom-checkbox-label">
+            <input type="checkbox" class="filter-checkbox" data-type="tech" value="gaussian">
+            <span>Gaussian Splatting</span>
+          </label>
+          <label class="custom-checkbox-label">
+            <input type="checkbox" class="filter-checkbox" data-type="tech" value="nerf">
+            <span>NeRF</span>
+          </label>
+          <label class="custom-checkbox-label">
+            <input type="checkbox" class="filter-checkbox" data-type="tech" value="houdini">
+            <span>Houdini Fluid</span>
+          </label>
+          <label class="custom-checkbox-label">
+            <input type="checkbox" class="filter-checkbox" data-type="tech" value="defensesim">
+            <span>Defense Sim</span>
+          </label>
+        </div>
+      </div>
+      
+      <button class="reset-filter-btn" id="btn-reset-filters-mobile" style="margin-top: 15px;">
+        <i class="fas fa-sync-alt"></i> Clear Filters
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Logic JavaScript File -->
+  <script src="script.js?v=20260820_v4"></script>
 </body>
 </html>
