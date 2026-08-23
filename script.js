@@ -133,7 +133,7 @@ const translations = {
     house_wall_left_desc: "Formations accréditées et masterclasses spécialisées sur site et en ligne : Simulation tactique de vol de combat VR, jumeaux numériques aérospatiaux, télémétrie biométrique et exercices de mission.",
     
     // ---------------- WHY JOIN US & AMBITION ----------------
-    nav_why: "Pourquoi nous ?",
+    nav_why: "Tech Créative",
     why_join_kicker: "POURQUOI MAINTENANT ?",
     why_join_title: "Pourquoi nous rejoindre ?",
     why_join_sub1: "FAIRE ÉVOLUER L'EXPRESSION DE MARQUE À LA HAUTEUR DE L'AMBITION",
@@ -218,11 +218,53 @@ const translations = {
     challenge_kicker: "LE DÉFI DES 12 MOIS",
     challenge_title: "Plus que du simple contenu",
     challenge_desc: "À la fin des 12 mois, l'entreprise ne disposera pas simplement d'une série de contenus produits au fil des campagnes. Elle disposera progressivement de :",
+    challenge_title1: "Territoire de marque",
     challenge_bullet1: "UN TERRITOIRE DE MARQUE AUDIOVISUEL COHÉRENT",
+    challenge_title2: "Signature de marque",
     challenge_bullet2: "UNE SIGNATURE DE MARQUE DISTINCTIVE ET RECONNAISSABLE",
+    challenge_title3: "Bibliothèque d'actifs",
     challenge_bullet3: "UNE BIBLIOTHÈQUE D'ACTIFS DE CONTENU RÉUTILISABLES",
+    challenge_title4: "Base de connaissances",
     challenge_bullet4: "UNE BASE DE CONNAISSANCES POUR AMÉLIORER LES FUTURES COMMUNICATIONS",
     challenge_obj: "L'objectif est de transformer chaque campagne en une brique de construction pour une marque plus forte, plus cohérente et plus reconnaissable dans le temps, avant même que le logo n'apparaisse.",
+    
+    // Homogeneous Ambition Columns
+    ambition_title1: "Plus vivante",
+    ambition_desc1: "De l'imagerie statique à une expérience de marque dynamique, animée et continue.",
+    ambition_title2: "Plus narrative",
+    ambition_desc2: "De simples campagnes publicitaires isolées vers une plateforme narrative intégrée.",
+    ambition_title3: "Plus émotionnelle",
+    ambition_desc3: "De la simple diffusion de messages publicitaires vers des émotions de marque durables.",
+    ambition_title4: "Plus mémorable",
+    ambition_desc4: "D'une communication commerciale ponctuelle vers un actif de marque mémorable.",
+
+    // Homogeneous Sony VFX Expertise Columns
+    exp_title1: "Production audiovisuelle",
+    exp_desc1: "Mise en œuvre des standards internationaux de production, de réalisation et de storytelling.",
+    exp_title2: "Supervision technique",
+    exp_desc2: "Supervision des pipelines d'effets visuels 3D, étalonnage couleur et intégrations complexes.",
+    exp_title3: "Effets visuels 2D/3D",
+    exp_desc3: "Storytelling visuel exigeant et direction artistique de niveau hollywoodien.",
+    exp_title4: "Intelligence artificielle",
+    exp_desc4: "Évaluation avancée et supervision technique pour l'entraînement de modèles d'IA générative.",
+
+    // Homogeneous Differentiation Columns
+    diff_title1: "Campagnes stratégiques",
+    diff_desc1: "Le programme annuel s'articule autour de campagnes stratégiques d'envergure.",
+    diff_title2: "Film signature",
+    diff_desc2: "Création d'un film de signature corporate pour porter l'identité de marque.",
+    diff_title3: "Production TV",
+    diff_desc3: "Création de contenus et d'émissions spécifiquement adaptés pour la télévision.",
+    diff_title4: "Réseaux sociaux",
+    diff_desc4: "Adaptation de formats courts et engagement continu sur les plateformes numériques.",
+
+    // Homogeneous Timeline Columns
+    time_title1: "Campagne active",
+    time_desc1: "Diffusion sur le marché, collecte des métriques de performance et retours d'apprentissage.",
+    time_title2: "Campagne suivante",
+    time_desc2: "Développement du concept créatif, planification stratégique et pré-production active.",
+    time_title3: "Production continue",
+    time_desc3: "Un flux parallèle qui élimine les temps morts et assure une capacité constante de sortie.",
     diff_kicker: "DIFFÉRENCIATION",
     diff_title: "L'Espace de Différenciation",
     diff_team: "UNE ÉQUIPE COMPLÈTE DE PRÉ-PRODUCTION, PRODUCTION ET POST-PRODUCTION.",
@@ -378,7 +420,7 @@ const translations = {
     house_wall_left_desc: "Industry-accredited training & specialized masterclasses delivered on-site & online: Tactical VR Combat Flight Simulation, Aerospace Machinery Digital Twins, Biometric Telemetry, and Mission Rehearsal.",
     
     // ---------------- WHY JOIN US & AMBITION ----------------
-    nav_why: "Why Us",
+    nav_why: "Creative Tech",
     why_join_kicker: "WHY JOIN US NOW?",
     why_join_title: "Why Join Us Now?",
     why_join_sub1: "EVOLVING THE BRAND EXPRESSION TO MATCH THE AMBITION",
@@ -463,11 +505,53 @@ const translations = {
     challenge_kicker: "THE 12-MONTH CHALLENGE",
     challenge_title: "More Than Simple Content",
     challenge_desc: "At the end of the 12 months, the company would not simply have a series of content pieces produced throughout the campaigns. It would progressively have:",
+    challenge_title1: "Brand Territory",
     challenge_bullet1: "A COHERENT AUDIOVISUAL BRAND TERRITORY",
+    challenge_title2: "Brand Signature",
     challenge_bullet2: "A DISTINCTIVE AND RECOGNIZABLE BRAND SIGNATURE",
+    challenge_title3: "Asset Library",
     challenge_bullet3: "A REUSABLE CONTENT ASSET LIBRARY",
+    challenge_title4: "Knowledge Base",
     challenge_bullet4: "A KNOWLEDGE BASE TO INFORM AND IMPROVE FUTURE COMMUNICATIONS",
     challenge_obj: "The objective is to transform each campaign into a building block for a stronger, more consistent, and more recognizable brand over time even before the logo appears.",
+
+    // Homogeneous Ambition Columns
+    ambition_title1: "More Vibrant",
+    ambition_desc1: "From static imagery to a dynamic, animated, and continuous brand experience.",
+    ambition_title2: "More Narrative",
+    ambition_desc2: "From simple ad campaigns to an integrated narrative brand platform.",
+    ambition_title3: "More Emotional",
+    ambition_desc3: "From simple image broadcasting to deep and lasting emotional resonance.",
+    ambition_title4: "More Memorable",
+    ambition_desc4: "From one-off commercial communication to a memorable brand asset.",
+
+    // Homogeneous Sony VFX Expertise Columns
+    exp_title1: "Audiovisual Production",
+    exp_desc1: "Implementing world-class standards of production, direction, and storytelling.",
+    exp_title2: "Technical Supervision",
+    exp_desc2: "Supervising 3D visual effects pipelines, color grading, and complex integrations.",
+    exp_title3: "2D/3D Visual Effects",
+    exp_desc3: "Demanding visual storytelling and Hollywood-grade art direction.",
+    exp_title4: "Artificial Intelligence",
+    exp_desc4: "Advanced evaluation and technical supervision for generative AI model training.",
+
+    // Homogeneous Differentiation Columns
+    diff_title1: "Strategic Campaigns",
+    diff_desc1: "The annual program is structured around high-impact strategic campaigns.",
+    diff_title2: "Signature Film",
+    diff_desc2: "Creation of a flagship corporate signature film to establish brand identity.",
+    diff_title3: "TV Production",
+    diff_desc3: "Creating custom television content and programming adapted for broadcast.",
+    diff_title4: "Social Media",
+    diff_desc4: "Short-form content adaptations and ongoing digital platform engagement.",
+
+    // Homogeneous Timeline Columns
+    time_title1: "Active Campaign",
+    time_desc1: "Distribution in market, performance measurement, and learning accumulation.",
+    time_title2: "Next Campaign",
+    time_desc2: "Creative concept development, strategic planning, and active pre-production.",
+    time_title3: "Continuous Flow",
+    time_desc3: "Parallel scheduling eliminates production gaps, ensuring constant content output.",
     diff_kicker: "DIFFERENTIATION",
     diff_title: "The Space for Differentiation",
     diff_team: "A COMPLETE PRE-PRODUCTION, PRODUCTION AND POST-PRODUCTION TEAM.",
@@ -1371,7 +1455,7 @@ function initProposalForm() {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const submitBtn = form.querySelector('.vfx-btn-submit-red');
+    const submitBtn = form.querySelector('.vfx-btn-submit-blue');
     const originalText = submitBtn.innerHTML;
 
     submitBtn.innerHTML = '<span>TRANSMITTING APPLICATION...</span>';
@@ -1513,7 +1597,7 @@ function initCardHoverSoundEffects() {
     '.apple-btn-white-pill',
     '.apple-btn-glass-pill',
     '.apple-btn-secondary-sm',
-    '.vfx-btn-submit-red',
+    '.vfx-btn-submit-blue',
     '.apple-filter-btn',
     '.vfx-nav-link'
   ].join(', ');
@@ -1628,7 +1712,7 @@ function updateHouseNavTabs(angleDeg) {
   tabs.forEach((tab, index) => {
     if (index === activeIndex) {
       tab.classList.add('active');
-      const colors = ['#ff625a', '#00f2fe', '#bf5af2', '#ff9f0a'];
+      const colors = ['#0071e3', '#00f2fe', '#bf5af2', '#ff9f0a'];
       const activeColor = colors[activeIndex];
       tab.style.setProperty('--active-accent-color', activeColor);
       tab.style.setProperty('--active-shadow-glow', `0 0 16px ${activeColor}dd`);
@@ -1707,7 +1791,7 @@ function initCyberHouseEngine() {
   const goldGlowMat = new THREE.MeshStandardMaterial({ color: 0xff625a, roughness: 0.1, metalness: 0.9, emissive: 0xff625a, emissiveIntensity: 1.2 });
 
   // Generate 4 Facade Materials for Each Surface Face (Cleaned & Focused)
-  const frontMat = createSlateMaterial('house_wall_front_title', 'house_wall_front_desc', '#ff625a', 'front');
+  const frontMat = createSlateMaterial('house_wall_front_title', 'house_wall_front_desc', '#0071e3', 'front');
   const rightMat = createSlateMaterial('house_wall_right_title', 'house_wall_right_desc', '#00f2fe', 'right');
   const backMat = createSlateMaterial('house_wall_back_title', 'house_wall_back_desc', '#bf5af2', 'back');
   const leftMat = createSlateMaterial('house_wall_left_title', 'house_wall_left_desc', '#ff9f0a', 'left');
@@ -1836,8 +1920,8 @@ function initCyberHouseEngine() {
   const pCtx = pCanvas.getContext('2d');
   const pGrad = pCtx.createRadialGradient(8, 8, 0, 8, 8, 8);
   pGrad.addColorStop(0, 'rgba(255, 255, 255, 1)');
-  pGrad.addColorStop(0.3, 'rgba(255, 98, 90, 0.8)');
-  pGrad.addColorStop(1, 'rgba(255, 98, 90, 0)');
+  pGrad.addColorStop(0.3, 'rgba(0, 113, 227, 0.8)');
+  pGrad.addColorStop(1, 'rgba(0, 113, 227, 0)');
   pCtx.fillStyle = pGrad;
   pCtx.fillRect(0, 0, 16, 16);
   const pTexture = new THREE.CanvasTexture(pCanvas);
