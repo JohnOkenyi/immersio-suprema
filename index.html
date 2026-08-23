@@ -578,10 +578,107 @@
     
     <!-- 1. Interactive Division Landing Banner -->
     <div class="division-hero-banner">
-      <div class="division-hero-video-container">
-        <video id="division-hero-video-player" autoplay loop muted playsinline>
-          <source src="showreelone.mp4" type="video/mp4">
-        </video>
+      <!-- Dynamic Collage Grid Background -->
+      <div class="division-collage-grid" id="division-collage-bg">
+        <!-- Cell 1: Loop Video -->
+        <div class="collage-cell video-cell">
+          <video autoplay loop muted playsinline class="collage-video-el">
+            <source src="showreelone.mp4" type="video/mp4">
+          </video>
+          <div class="collage-cell-overlay"></div>
+        </div>
+        <!-- Cell 2: Still + Houdini Viewport Overlay -->
+        <div class="collage-cell image-cell" style="background-image: url('picture1.jpeg');" id="collage-cell-2">
+          <div class="collage-cell-overlay"></div>
+          <svg class="tech-overlay houdini-overlay" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <!-- Houdini Axis Handle -->
+            <path d="M 10 90 L 25 90 M 10 90 L 10 75 M 10 90 L 17 83" stroke="#0071e3" stroke-width="0.8" fill="none"/>
+            <text x="27" y="91" fill="#0071e3" font-size="3" font-family="monospace">X</text>
+            <text x="9" y="72" fill="#0071e3" font-size="3" font-family="monospace">Y</text>
+            <text x="19" y="81" fill="#0071e3" font-size="3" font-family="monospace">Z</text>
+            <!-- Viewport Info -->
+            <text x="8" y="15" fill="rgba(255,255,255,0.35)" font-size="3.5" font-family="monospace">persp1</text>
+            <text x="80" y="15" fill="rgba(255,255,255,0.35)" font-size="3.5" font-family="monospace">no cam</text>
+            <!-- Grid lines -->
+            <line x1="10" y1="50" x2="90" y2="50" stroke="rgba(0, 113, 227, 0.15)" stroke-width="0.3" />
+            <line x1="50" y1="10" x2="50" y2="90" stroke="rgba(0, 113, 227, 0.15)" stroke-width="0.3" />
+            <circle cx="50" cy="50" r="30" stroke="rgba(0, 113, 227, 0.1)" stroke-width="0.3" fill="none" />
+            <circle cx="50" cy="50" r="15" stroke="rgba(0, 113, 227, 0.05)" stroke-width="0.3" fill="none" />
+          </svg>
+        </div>
+        <!-- Cell 3: Loop Video -->
+        <div class="collage-cell video-cell">
+          <video autoplay loop muted playsinline class="collage-video-el" style="object-position: bottom;">
+            <source src="showreel_2.mp4" type="video/mp4">
+          </video>
+          <div class="collage-cell-overlay"></div>
+        </div>
+        <!-- Cell 4: Still + Nuke Compositing Tree -->
+        <div class="collage-cell image-cell" style="background-image: url('picture2.jpeg');" id="collage-cell-4">
+          <div class="collage-cell-overlay"></div>
+          <!-- Animated Nuke Node Graph -->
+          <svg class="tech-overlay nuke-overlay" viewBox="0 0 100 100">
+            <!-- Node links with data pulse -->
+            <path d="M 20 20 Q 50 35 50 50" stroke="#0071e3" stroke-width="0.8" fill="none" stroke-dasharray="2,2" class="nuke-pulse-line"/>
+            <path d="M 80 20 Q 50 35 50 50" stroke="#0071e3" stroke-width="0.8" fill="none" stroke-dasharray="2,2" class="nuke-pulse-line"/>
+            <path d="M 50 58 L 50 80" stroke="#0071e3" stroke-width="0.8" fill="none" stroke-dasharray="2,2" class="nuke-pulse-line"/>
+            <!-- Nodes -->
+            <rect x="10" y="12" width="20" height="8" rx="1.5" fill="#1e1e24" stroke="rgba(0,113,227,0.6)" stroke-width="0.5"/>
+            <text x="14" y="17.5" fill="#fff" font-size="3" font-family="monospace">Read1 (VFX)</text>
+            
+            <rect x="70" y="12" width="20" height="8" rx="1.5" fill="#1e1e24" stroke="rgba(0,113,227,0.6)" stroke-width="0.5"/>
+            <text x="74" y="17.5" fill="#fff" font-size="3" font-family="monospace">Read2 (BG)</text>
+            
+            <rect x="40" y="50" width="20" height="8" rx="1.5" fill="#2d1f1f" stroke="#0071e3" stroke-width="0.6"/>
+            <text x="44" y="55.5" fill="#fff" font-size="3" font-family="monospace">Merge (Over)</text>
+            
+            <rect x="40" y="80" width="20" height="8" rx="1.5" fill="#1e1e24" stroke="rgba(0,113,227,0.6)" stroke-width="0.5"/>
+            <text x="45" y="85.5" fill="#fff" font-size="3" font-family="monospace">Write1</text>
+          </svg>
+        </div>
+        <!-- Cell 5: Center transparent slot (text overlays sit here) -->
+        <div class="collage-cell center-empty-cell">
+          <div class="collage-cell-overlay" style="background: rgba(12, 11, 15, 0.85);"></div>
+        </div>
+        <!-- Cell 6: Depth Map pass -->
+        <div class="collage-cell image-cell depth-map-cell" style="background-image: url('picture1.jpeg');" id="collage-cell-6">
+          <div class="collage-cell-overlay"></div>
+          <svg class="tech-overlay depth-overlay" viewBox="0 0 100 100">
+            <text x="8" y="15" fill="rgba(255,255,255,0.4)" font-size="3.5" font-family="monospace">Z-Depth Pass</text>
+            <rect x="8" y="80" width="30" height="4" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+            <text x="8" y="76" fill="rgba(255,255,255,0.3)" font-size="2.5" font-family="monospace">0.1m - 100m</text>
+          </svg>
+        </div>
+        <!-- Cell 7: Loop Video -->
+        <div class="collage-cell video-cell">
+          <video autoplay loop muted playsinline class="collage-video-el" style="object-position: center;">
+            <source src="showreelone.mp4" type="video/mp4">
+          </video>
+          <div class="collage-cell-overlay"></div>
+        </div>
+        <!-- Cell 8: Volumetric Bounding Box sim -->
+        <div class="collage-cell image-cell" style="background-image: url('picture2.jpeg');" id="collage-cell-8">
+          <div class="collage-cell-overlay"></div>
+          <svg class="tech-overlay volume-overlay" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <!-- 3D wireframe box -->
+            <path d="M 25 30 L 75 30 L 75 70 L 25 70 Z" stroke="rgba(0,113,227,0.5)" stroke-width="0.5" fill="none"/>
+            <path d="M 35 20 L 85 20 L 85 60 L 35 60 Z" stroke="rgba(0,113,227,0.25)" stroke-width="0.5" fill="none"/>
+            <line x1="25" y1="30" x2="35" y2="20" stroke="rgba(0,113,227,0.4)" stroke-width="0.5"/>
+            <line x1="75" y1="30" x2="85" y2="20" stroke="rgba(0,113,227,0.4)" stroke-width="0.5"/>
+            <line x1="75" y1="70" x2="85" y2="60" stroke="rgba(0,113,227,0.4)" stroke-width="0.5"/>
+            <line x1="25" y1="70" x2="35" y2="60" stroke="rgba(0,113,227,0.4)" stroke-width="0.5"/>
+            <!-- Volume Stats -->
+            <text x="8" y="15" fill="rgba(255,255,255,0.4)" font-size="3.5" font-family="monospace">Volume Sim</text>
+            <text x="8" y="21" fill="#0071e3" font-size="2.5" font-family="monospace">Voxel Size: 0.08m</text>
+          </svg>
+        </div>
+        <!-- Cell 9: Loop Video -->
+        <div class="collage-cell video-cell">
+          <video autoplay loop muted playsinline class="collage-video-el" style="object-position: top;">
+            <source src="showreel_2.mp4" type="video/mp4">
+          </video>
+          <div class="collage-cell-overlay"></div>
+        </div>
       </div>
       <div class="division-video-overlay"></div>
       

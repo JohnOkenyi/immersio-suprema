@@ -1139,6 +1139,12 @@ function switchDivision(divisionName, preventScroll = false) {
       setTimeout(() => { posterView.style.opacity = '1'; }, 50);
     }
   }
+
+  // 2.7 Update division-collage-grid class state
+  const collageBg = document.getElementById('division-collage-bg');
+  if (collageBg) {
+    collageBg.className = `division-collage-grid division-${divisionName}`;
+  }
   
   // 3. Apply Sony Poster Grid filter logic
   applyMosaicFilters();

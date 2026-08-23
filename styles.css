@@ -4753,6 +4753,141 @@ html, body {
   transition: all 0.3s ease;
 }
 
+/* --------------------------------------------------------------------------
+   9. SHOWCASE HERO DIVISION COLLAGE GRID
+   -------------------------------------------------------------------------- */
+.division-collage-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.collage-cell {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.collage-cell.video-cell .collage-video-el {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.collage-cell.image-cell {
+  background-size: cover;
+  background-position: center;
+  /* Ken Burns panning effect on backgrounds */
+  animation: collageKenBurns 20s ease-in-out infinite alternate;
+}
+
+/* Delay animations on cells for stagger */
+#collage-cell-2 { animation-delay: 0s; }
+#collage-cell-4 { animation-delay: 3s; }
+#collage-cell-6 { animation-delay: 6s; }
+#collage-cell-8 { animation-delay: 9s; }
+
+@keyframes collageKenBurns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.06) translate(0.5%, 0.5%); }
+}
+
+.collage-cell-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(12, 11, 15, 0.4);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* SVG Tech HUD graphics overlays */
+.tech-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+  font-family: monospace;
+}
+
+/* Nuke flow pulse animation */
+.nuke-pulse-line {
+  stroke-dasharray: 4, 4;
+  animation: nukeFlowPulse 8s linear infinite;
+}
+
+@keyframes nukeFlowPulse {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+/* Depth-map colorization using pure CSS filters */
+.depth-map-cell {
+  filter: contrast(1.4) saturate(2.5) hue-rotate(180deg) invert(0.1);
+}
+
+/* Hover cells focus */
+.collage-cell:hover .collage-cell-overlay {
+  background: rgba(12, 11, 15, 0.15);
+}
+
+.collage-cell:hover .tech-overlay {
+  opacity: 1;
+}
+
+/* Responsive Stack for Collage on mobile */
+@media (max-width: 768px) {
+  /* Hide columns 2 and 3 on small screen, and only show a 3-row list of high-impact visual banners */
+  .division-collage-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .collage-cell:nth-child(even) {
+    display: none; /* Hide even cells to show only 3 high-impact cells */
+  }
+  .collage-cell.center-empty-cell {
+    grid-row: 2;
+    display: block !important;
+  }
+}
+
+/* Department Collage Custom Overlay States */
+.division-collage-grid.division-art .tech-overlay {
+  display: none !important;
+}
+
+.division-collage-grid.division-art .image-cell {
+  filter: grayscale(0.2) contrast(1.15) sepia(0.25);
+}
+
+.division-collage-grid.division-technology .depth-map-cell {
+  filter: contrast(1.5) hue-rotate(90deg) brightness(0.95);
+}
+
+.division-collage-grid.division-technology .houdini-overlay line {
+  stroke: rgba(0, 242, 254, 0.35) !important;
+}
+
+.division-collage-grid.division-animation .tech-overlay {
+  filter: hue-rotate(45deg);
+}
+
+
+
 
 
 
