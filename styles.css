@@ -4066,3 +4066,392 @@ html, body {
     gap: 20px;
   }
 }
+
+/* --------------------------------------------------------------------------
+   6. 12-MONTH CHALLENGE, STRATEGIC PARTNERSHIP & TIMELINE STYLES
+   -------------------------------------------------------------------------- */
+.challenge-box-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.challenge-info-pane {
+  display: flex;
+  flex-direction: column;
+}
+
+.challenge-box-title {
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.challenge-box-p {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.7;
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+
+.challenge-obj-banner {
+  background: rgba(255, 98, 90, 0.04);
+  border-left: 3px solid var(--dneg-coral);
+  border-radius: 0 8px 8px 0;
+  padding: 18px 25px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: #fff;
+  line-height: 1.6;
+  border-top: 1px solid rgba(255, 98, 90, 0.05);
+  border-right: 1px solid rgba(255, 98, 90, 0.02);
+  border-bottom: 1px solid rgba(255, 98, 90, 0.02);
+}
+
+.challenge-cards-pane {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.challenge-asset-card {
+  background: rgba(12, 11, 15, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  padding: 20px 25px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.challenge-asset-card:hover {
+  transform: translateX(6px);
+  border-color: rgba(0, 242, 254, 0.35);
+  background: rgba(0, 242, 254, 0.015);
+  box-shadow: 0 10px 25px rgba(0, 242, 254, 0.03);
+}
+
+.challenge-asset-card i {
+  font-size: 1.5rem;
+  color: #00f2fe;
+  filter: drop-shadow(0 0 5px rgba(0, 242, 254, 0.3));
+  flex-shrink: 0;
+}
+
+.challenge-asset-card span {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+}
+
+/* Partnership Scope Columns */
+.partnership-layout-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+}
+
+.partnership-pillars-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.pillar-block {
+  background: rgba(12, 11, 15, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  padding: 20px 25px;
+  transition: all 0.3s ease;
+}
+
+.pillar-block:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 98, 90, 0.18);
+  background: rgba(255, 98, 90, 0.015);
+}
+
+.pillar-title {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-transform: uppercase;
+}
+
+.pillar-title i {
+  color: var(--dneg-coral);
+  font-size: 0.95rem;
+}
+
+.pillar-desc {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Space for differentiation */
+.diff-highlight-card {
+  background: linear-gradient(135deg, rgba(255, 98, 90, 0.1) 0%, rgba(12, 11, 15, 0.7) 100%);
+  border: 1px solid rgba(255, 98, 90, 0.25);
+  border-radius: 12px;
+  padding: 25px 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.diff-highlight-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(255, 98, 90, 0.12);
+  border-color: rgba(255, 98, 90, 0.4);
+}
+
+.diff-highlight-card i {
+  font-size: 2.2rem;
+  color: var(--dneg-coral);
+  filter: drop-shadow(0 0 8px rgba(255, 98, 90, 0.35));
+  flex-shrink: 0;
+}
+
+.diff-highlight-card h4 {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.05em;
+  line-height: 1.45;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.diff-content-card {
+  background: rgba(12, 11, 15, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.diff-program-txt {
+  font-size: 1.05rem;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.45;
+}
+
+.diff-includes-header {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.diff-campaign-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.diff-campaign-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.05em;
+}
+
+.diff-campaign-list li i {
+  color: #00f2fe;
+  font-size: 0.85rem;
+  filter: drop-shadow(0 0 5px rgba(0, 242, 254, 0.3));
+}
+
+.diff-results-clause {
+  margin-top: 25px;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.35);
+  line-height: 1.5;
+  font-style: italic;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 15px;
+}
+
+/* Timeline visual tracks */
+.timeline-editor-container {
+  background: rgba(12, 11, 15, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  padding: 30px 25px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.timeline-ruler {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 5px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 10px;
+  padding-left: 205px;
+}
+
+.ruler-tick {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.timeline-track {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.track-label {
+  width: 185px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.track-block {
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  position: relative;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.track-block.coral-track {
+  background: linear-gradient(90deg, rgba(255, 98, 90, 0.22) 0%, rgba(255, 98, 90, 0.06) 100%);
+  border: 1px solid rgba(255, 98, 90, 0.45);
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 98, 90, 0.3);
+}
+
+.track-block.cyan-track {
+  background: linear-gradient(90deg, rgba(0, 242, 254, 0.18) 0%, rgba(0, 242, 254, 0.04) 100%);
+  border: 1px solid rgba(0, 242, 254, 0.35);
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 242, 254, 0.25);
+}
+
+.timeline-track:hover .track-block {
+  transform: scale(1.003);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.03);
+}
+
+.timeline-loop-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  padding-top: 15px;
+}
+
+.timeline-loop-indicator i {
+  font-size: 0.78rem;
+  color: var(--dneg-coral);
+}
+
+/* Responsive timeline overrides */
+@media (max-width: 1024px) {
+  .timeline-ruler {
+    padding-left: 0;
+  }
+  
+  .track-label {
+    width: auto;
+    margin-bottom: 5px;
+  }
+  
+  .timeline-track {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .track-block {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .challenge-box-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .partnership-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .timeline-ruler {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-editor-container {
+    padding: 20px 15px;
+  }
+  
+  .track-block {
+    font-size: 0.7rem;
+    padding: 0 10px;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
