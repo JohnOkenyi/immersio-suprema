@@ -1089,7 +1089,7 @@ function switchDivision(divisionName, preventScroll = false) {
       video: 'showreelone.mp4'
     },
     technology: {
-      title: 'IMMERSIO TECHNOLOGY',
+      title: 'IMMERSIO TECH',
       subtitle: 'THE ENGINE POWERING THE FUTURE OF STORYTELLING.',
       video: 'showreel_2.mp4'
     }
