@@ -863,22 +863,159 @@
   </section>
 
   <!-- DNEG SCREENSHOT PARTNER LOGO GRID (COMPANIES USING 3D SOFTWARES) -->
-  <section class="apple-section apple-dark-bg" style="padding-top: 40px; padding-bottom: 90px; border-top: 1px solid rgba(255,255,255,0.03);">
+  <section class="apple-section apple-dark-bg" style="padding-top: 60px; padding-bottom: 90px; border-top: 1px solid rgba(255,255,255,0.03);">
     <div class="apple-section-container centered-header">
       <h3 class="dneg-partners-title" data-i18n="partners_title">COMPANIES USING 3D SOFTWARES</h3>
       
-      <div class="dneg-partners-logo-grid">
-        <div class="dneg-logo-item" title="A24"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="20" font-weight="900" text-anchor="middle">A24</text></svg></div>
-        <div class="dneg-logo-item" title="Amazon"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="16" font-weight="900" text-anchor="middle">AMAZON</text></svg></div>
-        <div class="dneg-logo-item" title="Disney"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="17" font-weight="800" text-anchor="middle">DISNEY</text></svg></div>
-        <div class="dneg-logo-item" title="Marvel"><svg viewBox="0 0 100 30"><rect x="15" y="5" width="70" height="20" fill="var(--dneg-coral)"/><text x="50%" y="60%" fill="#141414" font-family="var(--font-display)" font-size="15" font-weight="900" text-anchor="middle">MARVEL</text></svg></div>
-        <div class="dneg-logo-item" title="Netflix"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="16" font-weight="900" text-anchor="middle">NETFLIX</text></svg></div>
-        <div class="dneg-logo-item" title="Sony"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="15" font-weight="600" text-anchor="middle">SONY</text></svg></div>
-        <div class="dneg-logo-item" title="Paramount"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="14" font-weight="800" text-anchor="middle">PARAMOUNT</text></svg></div>
-        <div class="dneg-logo-item" title="StudioCanal"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="11" font-weight="700" letter-spacing="0.1em" text-anchor="middle">STUDIOCANAL</text></svg></div>
-        <div class="dneg-logo-item" title="20th Century"><svg viewBox="0 0 100 30"><text x="50%" y="45%" fill="currentColor" font-family="var(--font-display)" font-size="11" font-weight="900" text-anchor="middle">20TH</text><text x="50%" y="80%" fill="currentColor" font-family="var(--font-display)" font-size="10" font-weight="900" text-anchor="middle">CENTURY</text></svg></div>
-        <div class="dneg-logo-item" title="Universal"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="11" font-weight="700" letter-spacing="0.15em" text-anchor="middle">UNIVERSAL</text></svg></div>
-        <div class="dneg-logo-item" title="Warner Bros"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="16" font-weight="800" text-anchor="middle">WARNER BROS</text></svg></div>
+      <!-- Category Tabs Selector -->
+      <div class="logo-tabs-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 30px; margin-bottom: 40px; max-width: 1000px; margin-left: auto; margin-right: auto;">
+        <button class="logo-tab-btn active" onclick="filterLogos('films', this)" data-category="films">Films</button>
+        <button class="logo-tab-btn" onclick="filterLogos('games', this)" data-category="games">Games</button>
+        <button class="logo-tab-btn" onclick="filterLogos('automotive', this)" data-category="automotive">Automotive</button>
+        <button class="logo-tab-btn" onclick="filterLogos('aerospace', this)" data-category="aerospace">Aerospace</button>
+        <button class="logo-tab-btn" onclick="filterLogos('architecture', this)" data-category="architecture">Architecture</button>
+        <button class="logo-tab-btn" onclick="filterLogos('furniture', this)" data-category="furniture">Furniture & Interior</button>
+        <button class="logo-tab-btn" onclick="filterLogos('industrial', this)" data-category="industrial">Industrial & Engineering</button>
+        <button class="logo-tab-btn" onclick="filterLogos('footwear', this)" data-category="footwear">Footwear</button>
+        <button class="logo-tab-btn" onclick="filterLogos('jewelry', this)" data-category="jewelry">Jewelry</button>
+        <button class="logo-tab-btn" onclick="filterLogos('product', this)" data-category="product">Product Design</button>
+        <button class="logo-tab-btn" onclick="filterLogos('robotics', this)" data-category="robotics">Robotics & AI</button>
+      </div>
+
+      <div class="dneg-partners-logo-grid" id="functional-logo-grid">
+        
+        <!-- Films Category -->
+        <div class="dneg-logo-item" data-category="films" title="Industrial Light & Magic"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="12" font-weight="900" text-anchor="middle">I L M</text></svg></div>
+        <div class="dneg-logo-item" data-category="films" title="Weta FX"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="12" font-weight="800" letter-spacing="0.05em" text-anchor="middle">WETA FX</text></svg></div>
+        <div class="dneg-logo-item" data-category="films" title="DNEG"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="14" font-weight="900" letter-spacing="0.1em" text-anchor="middle">DNEG</text></svg></div>
+        <div class="dneg-logo-item" data-category="films" title="Framestore"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="11" font-weight="700" letter-spacing="0.05em" text-anchor="middle">FRAMESTORE</text></svg></div>
+        <div class="dneg-logo-item" data-category="films" title="Sony Pictures Imageworks"><svg viewBox="0 0 100 30"><text x="50%" y="45%" fill="currentColor" font-family="var(--font-serif)" font-size="9" font-weight="800" text-anchor="middle">SONY PICTURES</text><text x="50%" y="80%" fill="currentColor" font-family="var(--font-body)" font-size="7" font-weight="600" letter-spacing="0.1em" text-anchor="middle">IMAGEWORKS</text></svg></div>
+        <div class="dneg-logo-item" data-category="films" title="Digital Domain"><svg viewBox="0 0 100 30"><text x="50%" y="45%" fill="currentColor" font-family="var(--font-display)" font-size="10" font-weight="900" text-anchor="middle">DIGITAL</text><text x="50%" y="80%" fill="currentColor" font-family="var(--font-display)" font-size="9" font-weight="900" letter-spacing="0.05em" text-anchor="middle">DOMAIN</text></svg></div>
+        <div class="dneg-logo-item" data-category="films" title="Cinesite"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="12" font-weight="800" letter-spacing="0.05em" text-anchor="middle">Cinesite</text></svg></div>
+        <div class="dneg-logo-item" data-category="films" title="Image Engine"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="11" font-weight="700" letter-spacing="0.1em" text-anchor="middle">IMAGE ENGINE</text></svg></div>
+        <div class="dneg-logo-item" data-category="films" title="Crafty Apes"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="12" font-weight="700" text-anchor="middle">CRAFTY APES</text></svg></div>
+        <div class="dneg-logo-item" data-category="films" title="Ingenuity Studios"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="11" font-weight="800" text-anchor="middle">INGENUITY</text></svg></div>
+        <div class="dneg-logo-item" data-category="films" title="Cosa VFX"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="12" font-weight="800" letter-spacing="0.05em" text-anchor="middle">CoSA VFX</text></svg></div>
+        <div class="dneg-logo-item" data-category="films" title="Zoic Studios"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="13" font-weight="900" text-anchor="middle">ZOIC</text></svg></div>
+        <div class="dneg-logo-item" data-category="films" title="Ghost VFX"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="13" font-weight="900" letter-spacing="0.05em" text-anchor="middle">GHOST</text></svg></div>
+        <div class="dneg-logo-item" data-category="films" title="Rising Sun Pictures"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="11" font-weight="800" text-anchor="middle">RISING SUN</text></svg></div>
+        <div class="dneg-logo-item" data-category="films" title="Important Looking Pirates"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="12" font-weight="700" text-anchor="middle">I.L.P.</text></svg></div>
+        <div class="dneg-logo-item" data-category="films" title="Barnstorm VFX"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="11" font-weight="800" text-anchor="middle">BARNSTORM</text></svg></div>
+        <div class="dneg-logo-item" data-category="films" title="The Third Floor"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="10" font-weight="800" letter-spacing="0.05em" text-anchor="middle">THE THIRD FLOOR</text></svg></div>
+        <div class="dneg-logo-item" data-category="films" title="Disney Animation"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="15" font-weight="900" text-anchor="middle">DISNEY</text></svg></div>
+        <div class="dneg-logo-item" data-category="films" title="Pixar"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="16" font-weight="900" letter-spacing="0.1em" text-anchor="middle">PIXAR</text></svg></div>
+        <div class="dneg-logo-item" data-category="films" title="DreamWorks Animation"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="11" font-weight="800" letter-spacing="0.05em" text-anchor="middle">DREAMWORKS</text></svg></div>
+
+        <!-- Games Category -->
+        <div class="dneg-logo-item" data-category="games" title="Ubisoft" style="display:none;"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="14" font-weight="800" text-anchor="middle">UBISOFT</text></svg></div>
+        <div class="dneg-logo-item" data-category="games" title="SEGA" style="display:none;"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="16" font-weight="900" letter-spacing="0.05em" text-anchor="middle">SEGA</text></svg></div>
+        <div class="dneg-logo-item" data-category="games" title="Blizzard Entertainment" style="display:none;"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="13" font-weight="800" letter-spacing="0.05em" text-anchor="middle">BLIZZARD</text></svg></div>
+        <div class="dneg-logo-item" data-category="games" title="Electronic Arts" style="display:none;"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="15" font-weight="900" text-anchor="middle">EA</text></svg></div>
+        <div class="dneg-logo-item" data-category="games" title="Epic Games" style="display:none;"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="13" font-weight="900" text-anchor="middle">EPIC GAMES</text></svg></div>
+        <div class="dneg-logo-item" data-category="games" title="Embark Studios" style="display:none;"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="12" font-weight="800" text-anchor="middle">EMBARK</text></svg></div>
+        <div class="dneg-logo-item" data-category="games" title="Naughty Dog" style="display:none;"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="12" font-weight="800" text-anchor="middle">NAUGHTY DOG</text></svg></div>
+        <div class="dneg-logo-item" data-category="games" title="Guerrilla Games" style="display:none;"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="11" font-weight="800" text-anchor="middle">GUERRILLA</text></svg></div>
+        <div class="dneg-logo-item" data-category="games" title="Rockstar Games" style="display:none;"><svg viewBox="0 0 100 30"><text x="50%" y="65%" fill="currentColor" font-family="var(--font-display)" font-size="16" font-weight="900" text-anchor="middle">ROCKSTAR</text></svg></div>
+        <div class="dneg-logo-item" data-category="games" title="CD PROJEKT RED" style="display:none;"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="10" font-weight="800" text-anchor="middle">CD PROJEKT RED</text></svg></div>
+
+        <!-- Automotive Category -->
+        <div class="dneg-logo-item" data-category="automotive" style="display:none;" title="General Motors"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="17" font-weight="900" text-anchor="middle">GM</text></svg></div>
+        <div class="dneg-logo-item" data-category="automotive" style="display:none;" title="Ford"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="15" font-weight="900" font-style="italic" text-anchor="middle">Ford</text></svg></div>
+        <div class="dneg-logo-item" data-category="automotive" style="display:none;" title="Toyota"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="14" font-weight="800" letter-spacing="0.08em" text-anchor="middle">TOYOTA</text></svg></div>
+        <div class="dneg-logo-item" data-category="automotive" style="display:none;" title="BMW"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="15" font-weight="900" letter-spacing="0.1em" text-anchor="middle">BMW</text></svg></div>
+        <div class="dneg-logo-item" data-category="automotive" style="display:none;" title="Mercedes-Benz"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="11" font-weight="600" letter-spacing="0.05em" text-anchor="middle">MERCEDES</text></svg></div>
+        <div class="dneg-logo-item" data-category="automotive" style="display:none;" title="Volvo Cars"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="13" font-weight="800" letter-spacing="0.15em" text-anchor="middle">VOLVO</text></svg></div>
+        <div class="dneg-logo-item" data-category="automotive" style="display:none;" title="Citroën"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="13" font-weight="800" text-anchor="middle">CITROËN</text></svg></div>
+        <div class="dneg-logo-item" data-category="automotive" style="display:none;" title="Porsche"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="12" font-weight="800" letter-spacing="0.08em" text-anchor="middle">PORSCHE</text></svg></div>
+        <div class="dneg-logo-item" data-category="automotive" style="display:none;" title="Tesla"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="14" font-weight="900" letter-spacing="0.05em" text-anchor="middle">TESLA</text></svg></div>
+        <div class="dneg-logo-item" data-category="automotive" style="display:none;" title="Renault"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="13" font-weight="800" letter-spacing="0.05em" text-anchor="middle">RENAULT</text></svg></div>
+
+        <!-- Aerospace Category -->
+        <div class="dneg-logo-item" data-category="aerospace" style="display:none;" title="Airbus"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="14" font-weight="900" letter-spacing="0.05em" text-anchor="middle">AIRBUS</text></svg></div>
+        <div class="dneg-logo-item" data-category="aerospace" style="display:none;" title="Boeing"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="14" font-weight="900" font-style="italic" text-anchor="middle">BOEING</text></svg></div>
+        <div class="dneg-logo-item" data-category="aerospace" style="display:none;" title="Safran"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="13" font-weight="800" text-anchor="middle">SAFRAN</text></svg></div>
+        <div class="dneg-logo-item" data-category="aerospace" style="display:none;" title="Dassault Aviation"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="11" font-weight="800" letter-spacing="0.05em" text-anchor="middle">DASSAULT</text></svg></div>
+        <div class="dneg-logo-item" data-category="aerospace" style="display:none;" title="Rolls-Royce"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="11" font-weight="800" letter-spacing="0.08em" text-anchor="middle">ROLLS-ROYCE</text></svg></div>
+
+        <!-- Architecture Category -->
+        <div class="dneg-logo-item" data-category="architecture" style="display:none;" title="Foster + Partners"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="10" font-weight="800" text-anchor="middle">FOSTER + PARTNERS</text></svg></div>
+        <div class="dneg-logo-item" data-category="architecture" style="display:none;" title="Populous"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="13" font-weight="900" text-anchor="middle">POPULOUS</text></svg></div>
+        <div class="dneg-logo-item" data-category="architecture" style="display:none;" title="Zaha Hadid Architects"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="9" font-weight="800" text-anchor="middle">ZAHA HADID</text></svg></div>
+        <div class="dneg-logo-item" data-category="architecture" style="display:none;" title="BIG"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="17" font-weight="900" text-anchor="middle">BIG</text></svg></div>
+        <div class="dneg-logo-item" data-category="architecture" style="display:none;" title="Heatherwick Studio"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="10" font-weight="700" letter-spacing="0.05em" text-anchor="middle">HEATHERWICK</text></svg></div>
+        <div class="dneg-logo-item" data-category="architecture" style="display:none;" title="Arup"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="14" font-weight="900" letter-spacing="0.05em" text-anchor="middle">ARUP</text></svg></div>
+        <div class="dneg-logo-item" data-category="architecture" style="display:none;" title="AECOM"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="15" font-weight="900" text-anchor="middle">AECOM</text></svg></div>
+        <div class="dneg-logo-item" data-category="architecture" style="display:none;" title="Jacobs"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="13" font-weight="800" text-anchor="middle">JACOBS</text></svg></div>
+        <div class="dneg-logo-item" data-category="architecture" style="display:none;" title="Arcadis"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="13" font-weight="800" text-anchor="middle">ARCADIS</text></svg></div>
+        <div class="dneg-logo-item" data-category="architecture" style="display:none;" title="SOM"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="14" font-weight="800" text-anchor="middle">S O M</text></svg></div>
+
+        <!-- Furniture Category -->
+        <div class="dneg-logo-item" data-category="furniture" style="display:none;" title="IKEA"><svg viewBox="0 0 100 30"><rect x="15" y="5" width="70" height="20" fill="#0055ff"/><ellipse cx="50" cy="15" rx="30" ry="9" fill="#f3ff00"/><text x="50%" y="60%" fill="#0055ff" font-family="var(--font-display)" font-size="11" font-weight="900" text-anchor="middle">IKEA</text></svg></div>
+        <div class="dneg-logo-item" data-category="furniture" style="display:none;" title="Herman Miller"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="11" font-weight="800" text-anchor="middle">HERMAN MILLER</text></svg></div>
+        <div class="dneg-logo-item" data-category="furniture" style="display:none;" title="Steelcase"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="12" font-weight="800" text-anchor="middle">Steelcase</text></svg></div>
+        <div class="dneg-logo-item" data-category="furniture" style="display:none;" title="Vitra"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="14" font-weight="800" text-anchor="middle">vitra.</text></svg></div>
+        <div class="dneg-logo-item" data-category="furniture" style="display:none;" title="Knoll"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="15" font-weight="900" text-anchor="middle">Knoll</text></svg></div>
+        <div class="dneg-logo-item" data-category="furniture" style="display:none;" title="Kartell"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="13" font-weight="900" letter-spacing="0.05em" text-anchor="middle">Kartell</text></svg></div>
+        <div class="dneg-logo-item" data-category="furniture" style="display:none;" title="B&B Italia"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="11" font-weight="800" letter-spacing="0.1em" text-anchor="middle">B&B ITALIA</text></svg></div>
+        <div class="dneg-logo-item" data-category="furniture" style="display:none;" title="Cassina"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="13" font-weight="800" text-anchor="middle">Cassina</text></svg></div>
+        <div class="dneg-logo-item" data-category="furniture" style="display:none;" title="Ligne Roset"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="11" font-weight="800" text-anchor="middle">ligne roset</text></svg></div>
+        <div class="dneg-logo-item" data-category="furniture" style="display:none;" title="Muuto"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="13" font-weight="800" letter-spacing="0.05em" text-anchor="middle">MUUTO</text></svg></div>
+
+        <!-- Industrial Category -->
+        <div class="dneg-logo-item" data-category="industrial" style="display:none;" title="Siemens"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="14" font-weight="900" text-anchor="middle">SIEMENS</text></svg></div>
+        <div class="dneg-logo-item" data-category="industrial" style="display:none;" title="Bosch"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="14" font-weight="900" font-style="italic" text-anchor="middle">BOSCH</text></svg></div>
+        <div class="dneg-logo-item" data-category="industrial" style="display:none;" title="ABB"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="18" font-weight="900" letter-spacing="0.05em" text-anchor="middle">ABB</text></svg></div>
+        <div class="dneg-logo-item" data-category="industrial" style="display:none;" title="Schneider Electric"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="10" font-weight="800" text-anchor="middle">SCHNEIDER</text></svg></div>
+        <div class="dneg-logo-item" data-category="industrial" style="display:none;" title="Caterpillar"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="13" font-weight="900" text-anchor="middle">CAT</text></svg></div>
+        <div class="dneg-logo-item" data-category="industrial" style="display:none;" title="John Deere"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="11" font-weight="800" text-anchor="middle">JOHN DEERE</text></svg></div>
+        <div class="dneg-logo-item" data-category="industrial" style="display:none;" title="Bismuth Consultancy"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="11" font-weight="800" letter-spacing="0.05em" text-anchor="middle">BISMUTH</text></svg></div>
+        <div class="dneg-logo-item" data-category="industrial" style="display:none;" title="Q3D Studios"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="13" font-weight="800" text-anchor="middle">Q3D</text></svg></div>
+        <div class="dneg-logo-item" data-category="industrial" style="display:none;" title="Gear Productions"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="12" font-weight="700" text-anchor="middle">GEAR PROD</text></svg></div>
+        <div class="dneg-logo-item" data-category="industrial" style="display:none;" title="Ocean Infinity"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="10" font-weight="800" text-anchor="middle">OCEAN INFINITY</text></svg></div>
+
+        <!-- Footwear Category -->
+        <div class="dneg-logo-item" data-category="footwear" style="display:none;" title="Brooks Running"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="13" font-weight="900" font-style="italic" text-anchor="middle">BROOKS</text></svg></div>
+        <div class="dneg-logo-item" data-category="footwear" style="display:none;" title="Nike"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="16" font-weight="900" letter-spacing="0.05em" text-anchor="middle">NIKE</text></svg></div>
+        <div class="dneg-logo-item" data-category="footwear" style="display:none;" title="PUMA"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="15" font-weight="900" letter-spacing="0.1em" text-anchor="middle">PUMA</text></svg></div>
+        <div class="dneg-logo-item" data-category="footwear" style="display:none;" title="FILA"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="17" font-weight="900" letter-spacing="0.05em" text-anchor="middle">FILA</text></svg></div>
+        <div class="dneg-logo-item" data-category="footwear" style="display:none;" title="Balenciaga"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="11" font-weight="800" letter-spacing="0.1em" text-anchor="middle">BALENCIAGA</text></svg></div>
+
+        <!-- Jewelry Category -->
+        <div class="dneg-logo-item" data-category="jewelry" style="display:none;" title="Cartier"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="15" font-weight="500" font-style="italic" text-anchor="middle">Cartier</text></svg></div>
+        <div class="dneg-logo-item" data-category="jewelry" style="display:none;" title="Tiffany & Co."><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="11" font-weight="800" letter-spacing="0.05em" text-anchor="middle">TIFFANY & CO.</text></svg></div>
+        <div class="dneg-logo-item" data-category="jewelry" style="display:none;" title="Van Cleef & Arpels"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="9" font-weight="700" text-anchor="middle">VAN CLEEF & ARPELS</text></svg></div>
+        <div class="dneg-logo-item" data-category="jewelry" style="display:none;" title="Bulgari"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="12" font-weight="800" letter-spacing="0.15em" text-anchor="middle">BVLGARI</text></svg></div>
+        <div class="dneg-logo-item" data-category="jewelry" style="display:none;" title="Chaumet"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="12" font-weight="700" letter-spacing="0.05em" text-anchor="middle">CHAUMET</text></svg></div>
+        <div class="dneg-logo-item" data-category="jewelry" style="display:none;" title="Boucheron"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="11" font-weight="800" letter-spacing="0.05em" text-anchor="middle">BOUCHERON</text></svg></div>
+        <div class="dneg-logo-item" data-category="jewelry" style="display:none;" title="Harry Winston"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="10" font-weight="800" text-anchor="middle">HARRY WINSTON</text></svg></div>
+        <div class="dneg-logo-item" data-category="jewelry" style="display:none;" title="Chopard"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="12" font-weight="700" font-style="italic" text-anchor="middle">Chopard</text></svg></div>
+        <div class="dneg-logo-item" data-category="jewelry" style="display:none;" title="Rolex"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="13" font-weight="800" letter-spacing="0.08em" text-anchor="middle">ROLEX</text></svg></div>
+        <div class="dneg-logo-item" data-category="jewelry" style="display:none;" title="Piaget"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="13" font-weight="800" letter-spacing="0.05em" text-anchor="middle">PIAGET</text></svg></div>
+
+        <!-- Product Design Category -->
+        <div class="dneg-logo-item" data-category="product" style="display:none;" title="Apple"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="14" font-weight="800" text-anchor="middle">APPLE</text></svg></div>
+        <div class="dneg-logo-item" data-category="product" style="display:none;" title="Samsung"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="14" font-weight="900" letter-spacing="0.02em" text-anchor="middle">SAMSUNG</text></svg></div>
+        <div class="dneg-logo-item" data-category="product" style="display:none;" title="Sony"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="15" font-weight="600" letter-spacing="0.05em" text-anchor="middle">SONY</text></svg></div>
+        <div class="dneg-logo-item" data-category="product" style="display:none;" title="Dyson"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="15" font-weight="900" text-anchor="middle">dyson</text></svg></div>
+        <div class="dneg-logo-item" data-category="product" style="display:none;" title="Microsoft"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="12" font-weight="800" text-anchor="middle">Microsoft</text></svg></div>
+        <div class="dneg-logo-item" data-category="product" style="display:none;" title="Dell"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="15" font-weight="900" text-anchor="middle">DELL</text></svg></div>
+        <div class="dneg-logo-item" data-category="product" style="display:none;" title="HP"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="16" font-weight="900" text-anchor="middle">hp</text></svg></div>
+        <div class="dneg-logo-item" data-category="product" style="display:none;" title="Lenovo"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="13" font-weight="800" text-anchor="middle">lenovo</text></svg></div>
+        <div class="dneg-logo-item" data-category="product" style="display:none;" title="Logitech"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="13" font-weight="800" text-anchor="middle">logitech</text></svg></div>
+        <div class="dneg-logo-item" data-category="product" style="display:none;" title="Bose"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="15" font-weight="900" letter-spacing="0.05em" text-anchor="middle">BOSE</text></svg></div>
+        <div class="dneg-logo-item" data-category="product" style="display:none;" title="Sonos"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="14" font-weight="800" letter-spacing="0.1em" text-anchor="middle">SONOS</text></svg></div>
+        <div class="dneg-logo-item" data-category="product" style="display:none;" title="Bang & Olufsen"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="10" font-weight="800" text-anchor="middle">BANG & OLUFSEN</text></svg></div>
+        <div class="dneg-logo-item" data-category="product" style="display:none;" title="Philips"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="13" font-weight="800" letter-spacing="0.05em" text-anchor="middle">PHILIPS</text></svg></div>
+        <div class="dneg-logo-item" data-category="product" style="display:none;" title="Panasonic"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="12" font-weight="900" letter-spacing="0.05em" text-anchor="middle">Panasonic</text></svg></div>
+        <div class="dneg-logo-item" data-category="product" style="display:none;" title="Canon"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-serif)" font-size="14" font-weight="900" letter-spacing="0.02em" text-anchor="middle">Canon</text></svg></div>
+
+        <!-- Robotics & AI Category -->
+        <div class="dneg-logo-item" data-category="robotics" style="display:none;" title="NVIDIA"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="14" font-weight="900" letter-spacing="0.05em" text-anchor="middle">NVIDIA</text></svg></div>
+        <div class="dneg-logo-item" data-category="robotics" style="display:none;" title="Waymo"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="14" font-weight="800" text-anchor="middle">waymo</text></svg></div>
+        <div class="dneg-logo-item" data-category="robotics" style="display:none;" title="Nuro"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-display)" font-size="15" font-weight="900" text-anchor="middle">nuro</text></svg></div>
+        <div class="dneg-logo-item" data-category="robotics" style="display:none;" title="Zoox"><svg viewBox="0 0 100 30"><text x="50%" y="60%" fill="currentColor" font-family="var(--font-body)" font-size="17" font-weight="900" letter-spacing="0.05em" text-anchor="middle">zoox</text></svg></div>
+        <div class="dneg-logo-item" data-category="robotics" style="display:none;" title="Amazon Robotics"><svg viewBox="0 0 100 30"><text x="50%" y="45%" fill="currentColor" font-family="var(--font-display)" font-size="11" font-weight="900" text-anchor="middle">AMAZON</text><text x="50%" y="80%" fill="currentColor" font-family="var(--font-body)" font-size="8" font-weight="700" letter-spacing="0.05em" text-anchor="middle">ROBOTICS</text></svg></div>
+
       </div>
     </div>
   </section>
@@ -1019,45 +1156,133 @@
 
       </div>
 
+      <!-- VFX Curriculum Grid Section (Grouped by Disciplines) -->
+      <div class="curriculum-wrapper" style="margin-top: 80px; border-top: 1px solid rgba(0,0,0,0.06); padding-top: 60px;">
+        <div class="apple-header-block centered-header">
+          <span class="apple-kicker" data-i18n="curriculum_kicker">CORE TECHNICAL DISCIPLINES</span>
+          <h2 class="apple-section-title" data-i18n="curriculum_title" style="color: var(--bg-dark);">Our Curriculum</h2>
+          <p class="apple-section-desc" data-i18n="curriculum_desc" style="max-width: 850px; margin-left: auto; margin-right: auto;">
+            Explore the core technical VFX disciplines taught at our academy. Click on any render to expand it in full screen.
+          </p>
+        </div>
+
+        <div class="apple-grid-3col" style="margin-top: 50px;">
+          
+          <!-- Card 1: Pyro FX -->
+          <div class="dneg-text-capability" style="border-top: 2px solid var(--bg-dark); padding-top: 25px;">
+            <div class="curriculum-image-frame">
+              <img src="media__1787505548155.png" class="curriculum-active-img" id="curr-img-pyro" onclick="openLightbox(this.src)" alt="Pyro FX">
+              <div class="curriculum-image-dots">
+                <span class="curr-dot active" onclick="swapCurrImage('pyro', 'media__1787505548155.png', this)"></span>
+                <span class="curr-dot" onclick="swapCurrImage('pyro', 'picture1.jpeg', this)"></span>
+                <span class="curr-dot" onclick="swapCurrImage('pyro', 'picture2.jpeg', this)"></span>
+              </div>
+            </div>
+            <span class="card-num-badge">01 / pyro</span>
+            <h3 class="pro-card-title" data-i18n="curr_pyro_title" style="color: var(--bg-dark);">PYRO FX - FIRE / SMOKE</h3>
+            <p class="pro-card-desc" data-i18n="curr_pyro_desc" style="color: rgba(0,0,0,0.55); font-size: 0.8rem; line-height: 1.6; margin-top: 10px;">
+              feu, flammes, fumée, explosions, fireballs, shockwaves, fumée en traînée, bâtiments en feu, bougies, torches, feux de camp, explosions gaz/carburant/poussière, propagation du feu, feu/fumée volumétriques, feu coloré/magique/stylisé, braises, cendres, distorsion thermique, fumée secondaire, explosions procédurales
+            </p>
+          </div>
+
+          <!-- Card 2: Particles -->
+          <div class="dneg-text-capability" style="border-top: 2px solid var(--bg-dark); padding-top: 25px;">
+            <div class="curriculum-image-frame">
+              <img src="media__1787505591672.png" class="curriculum-active-img" id="curr-img-particles" onclick="openLightbox(this.src)" alt="Particles">
+              <div class="curriculum-image-dots">
+                <span class="curr-dot active" onclick="swapCurrImage('particles', 'media__1787505591672.png', this)"></span>
+                <span class="curr-dot" onclick="swapCurrImage('particles', 'picture2.jpeg', this)"></span>
+                <span class="curr-dot" onclick="swapCurrImage('particles', 'picture1.jpeg', this)"></span>
+              </div>
+            </div>
+            <span class="card-num-badge">02 / particles</span>
+            <h3 class="pro-card-title" data-i18n="curr_part_title" style="color: var(--bg-dark);">PARTICLES - SAND / DUST</h3>
+            <p class="pro-card-desc" data-i18n="curr_part_desc" style="color: rgba(0,0,0,0.55); font-size: 0.8rem; line-height: 1.6; margin-top: 10px;">
+              Simulation de sable, poussière, poudre, cendres, farine, particules type neige, dunes, explosions de sable, empreintes, sable poussé par le vent, objets enterrés, effondrement de sable, simulation granulaire, tempêtes de poussière/sable
+            </p>
+          </div>
+
+          <!-- Card 3: Clouds -->
+          <div class="dneg-text-capability" style="border-top: 2px solid var(--bg-dark); padding-top: 25px;">
+            <div class="curriculum-image-frame">
+              <img src="media__1787505618994.png" class="curriculum-active-img" id="curr-img-clouds" onclick="openLightbox(this.src)" alt="Clouds">
+              <div class="curriculum-image-dots">
+                <span class="curr-dot active" onclick="swapCurrImage('clouds', 'media__1787505618994.png', this)"></span>
+                <span class="curr-dot" onclick="swapCurrImage('clouds', 'picture1.jpeg', this)"></span>
+                <span class="curr-dot" onclick="swapCurrImage('clouds', 'picture2.jpeg', this)"></span>
+              </div>
+            </div>
+            <span class="card-num-badge">03 / clouds</span>
+            <h3 class="pro-card-title" data-i18n="curr_cloud_title" style="color: var(--bg-dark);">CLOUDS - VOLUMETRICS</h3>
+            <p class="pro-card-desc" data-i18n="curr_cloud_desc" style="color: rgba(0,0,0,0.55); font-size: 0.8rem; line-height: 1.6; margin-top: 10px;">
+              Nuages, nuages d'orage, brouillard, brume, fumée, poussière, explosions volumétriques, volumes atmosphériques, god rays, formations nuageuses, ciel procédural, environnement volumétrique, vent, tornades, météo volumétrique, effets atmosphériques
+            </p>
+          </div>
+
+          <!-- Card 4: Destruction -->
+          <div class="dneg-text-capability" style="border-top: 2px solid var(--bg-dark); padding-top: 25px; margin-top: 40px;">
+            <div class="curriculum-image-frame">
+              <img src="picture1.jpeg" class="curriculum-active-img" id="curr-img-destruct" onclick="openLightbox(this.src)" alt="Destruction">
+              <div class="curriculum-image-dots">
+                <span class="curr-dot active" onclick="swapCurrImage('destruct', 'picture1.jpeg', this)"></span>
+                <span class="curr-dot" onclick="swapCurrImage('destruct', 'picture2.jpeg', this)"></span>
+                <span class="curr-dot" onclick="swapCurrImage('destruct', 'media__1787505548155.png', this)"></span>
+              </div>
+            </div>
+            <span class="card-num-badge">04 / rigid-body</span>
+            <h3 class="pro-card-title" data-i18n="curr_dest_title" style="color: var(--bg-dark);">DESTRUCTION - RIGID BODY</h3>
+            <p class="pro-card-desc" data-i18n="curr_dest_desc" style="color: rgba(0,0,0,0.55); font-size: 0.8rem; line-height: 1.6; margin-top: 10px;">
+              Destruction de bâtiments, effondrement de ponts, débris, verre brisé, fractures de bois, impacts de balles, crashs de voitures, fissures de béton, simulation de métal tordu, démolition procédurale
+            </p>
+          </div>
+
+          <!-- Card 5: Fluids -->
+          <div class="dneg-text-capability" style="border-top: 2px solid var(--bg-dark); padding-top: 25px; margin-top: 40px;">
+            <div class="curriculum-image-frame">
+              <img src="picture2.jpeg" class="curriculum-active-img" id="curr-img-fluids" onclick="openLightbox(this.src)" alt="Fluids">
+              <div class="curriculum-image-dots">
+                <span class="curr-dot active" onclick="swapCurrImage('fluids', 'picture2.jpeg', this)"></span>
+                <span class="curr-dot" onclick="swapCurrImage('fluids', 'picture1.jpeg', this)"></span>
+                <span class="curr-dot" onclick="swapCurrImage('fluids', 'media__1787505591672.png', this)"></span>
+              </div>
+            </div>
+            <span class="card-num-badge">05 / fluids</span>
+            <h3 class="pro-card-title" data-i18n="curr_fluid_title" style="color: var(--bg-dark);">FLUIDS - LIQUIDS</h3>
+            <p class="pro-card-desc" data-i18n="curr_fluid_desc" style="color: rgba(0,0,0,0.55); font-size: 0.8rem; line-height: 1.6; margin-top: 10px;">
+              Simulation d'eau, éclaboussures, mousse d'eau, bulles, liquides visqueux (miel, chocolat), écoulement de lave, jet d'eau haute pression, simulations de vagues, physique des fluides réaliste
+            </p>
+          </div>
+
+          <!-- Card 6: Oceans -->
+          <div class="dneg-text-capability" style="border-top: 2px solid var(--bg-dark); padding-top: 25px; margin-top: 40px;">
+            <div class="curriculum-image-frame">
+              <img src="media__1787505618994.png" class="curriculum-active-img" id="curr-img-oceans" onclick="openLightbox(this.src)" alt="Oceans">
+              <div class="curriculum-image-dots">
+                <span class="curr-dot active" onclick="swapCurrImage('oceans', 'media__1787505618994.png', this)"></span>
+                <span class="curr-dot" onclick="swapCurrImage('oceans', 'picture2.jpeg', this)"></span>
+                <span class="curr-dot" onclick="swapCurrImage('oceans', 'picture1.jpeg', this)"></span>
+              </div>
+            </div>
+            <span class="card-num-badge">06 / oceans</span>
+            <h3 class="pro-card-title" data-i18n="curr_ocean_title" style="color: var(--bg-dark);">OCEANS - WATER EFFECTS</h3>
+            <p class="pro-card-desc" data-i18n="curr_ocean_desc" style="color: rgba(0,0,0,0.55); font-size: 0.8rem; line-height: 1.6; margin-top: 10px;">
+              Simulations de haute mer, houle, navires bravant la tempête, vagues côtières, écume de mer, embruns, interaction eau-vent, environnement océanique réaliste
+            </p>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- SECTION 5.5: VALUE CHAIN & 10-STEP CONTINUOUS CYCLE (DARK MATRIX GRID) -->
-  <section class="apple-section apple-dark-bg" id="value-chain" style="border-top: 1px solid rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.03); padding-top: 80px; padding-bottom: 80px;">
-    <div class="apple-section-container">
-      
-      <div class="apple-header-block centered-header">
-        <span class="apple-kicker" data-i18n="why_suprema_kicker">WHY IMMERSIO SUPREMA?</span>
-        <h2 class="apple-section-title" data-i18n="why_suprema_title">Building a Brand's Audiovisual Capability</h2>
-        <p class="apple-section-desc" data-i18n="why_suprema_text1">
-          An agency produces content. Immersio Suprema builds a brand’s audiovisual capability.
-        </p>
-      </div>
+  <!-- Fullscreen Glassmorphic Lightbox Overlay -->
+  <div class="vfx-lightbox" id="vfx-lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close-btn"><i class="fas fa-times"></i></span>
+    <img src="" class="lightbox-content" id="lightbox-img" onclick="event.stopPropagation()">
+  </div>
 
-      <!-- The Challenge Block -->
-      <div class="challenge-block-wrapper" style="margin-top: 50px; margin-bottom: 50px;">
-        <div class="challenge-box-grid">
-          <!-- Left info -->
-          <div class="challenge-info-pane">
-            <span class="apple-kicker" data-i18n="challenge_kicker">THE 12-MONTH CHALLENGE</span>
-            <h3 class="challenge-box-title" data-i18n="challenge_title">More Than Simple Content</h3>
-            <p class="challenge-box-p" data-i18n="challenge_desc">At the end of the 12 months, the company would not simply have a series of content pieces produced throughout the campaigns. It would progressively have:</p>
-            <div class="challenge-obj-banner" data-i18n="challenge_obj">The objective is to transform each campaign into a building block for a stronger, more consistent, and more recognizable brand over time even before the logo appears.</div>
-          </div>
-          <!-- Right cards (the 4 progressive assets) -->
-          <div class="challenge-cards-pane">
-            <div class="challenge-asset-card">
-              <i class="fas fa-network-wired"></i>
-              <span data-i18n="challenge_bullet1">A COHERENT AUDIOVISUAL BRAND TERRITORY</span>
-            </div>
-            <div class="challenge-asset-card">
-              <i class="fas fa-signature"></i>
-              <span data-i18n="challenge_bullet2">A DISTINCTIVE AND RECOGNIZABLE BRAND SIGNATURE</span>
-            </div>
-            <div class="challenge-asset-card">
-              <i class="fas fa-photo-video"></i>
-              <span data-i18n="challenge_bullet3">A REUSABLE CONTENT ASSET LIBRARY</span>
-            </div>
+
   <!-- SECTION 6: DNEG AWARDS & DISTINCTIONS (DARK SLATE BACKGROUND) -->
   <section class="dneg-awards-section">
     <div class="apple-section-container">

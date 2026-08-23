@@ -78,6 +78,21 @@ const translations = {
     reset_sandbox: "Réinitialiser le simulateur",
     academy_kicker: "Formations & Inscriptions",
     academy_title: "Académie VFX & Diplômes",
+    curriculum_kicker: "DISCIPLINES TECHNIQUES FONDAMENTALES",
+    curriculum_title: "Notre Programme",
+    curriculum_desc: "Explorez les disciplines techniques de pointe enseignées au sein de notre académie. Cliquez sur un rendu pour l'agrandir en plein écran.",
+    curr_pyro_title: "PYRO FX - FEU / FUMÉE",
+    curr_pyro_desc: "feu, flammes, fumée, explosions, fireballs, shockwaves, fumée en traînée, bâtiments en feu, bougies, torches, feux de camp, explosions gaz/carburant/poussière, propagation du feu, feu/fumée volumétriques, feu coloré/magique/stylisé, braises, cendres, distorsion thermique, fumée secondaire, explosions procédurales",
+    curr_part_title: "PARTICULES - SABLE / POUSSIÈRE",
+    curr_part_desc: "Simulation de sable, poussière, poudre, cendres, farine, particules type neige, dunes, explosions de sable, empreintes, sable poussé par le vent, objets enterrés, effondrement de sable, simulation granulaire, tempêtes de poussière/sable",
+    curr_cloud_title: "NUAGES - NUAGES ET SABLE",
+    curr_cloud_desc: "Nuages, nuages d'orage, brouillard, brume, fumée, poussière, explosions volumétriques, volumes atmosphériques, god rays, formations nuageuses, ciel procédural, environnement volumétrique, vent, tornades, météo volumétrique, effets atmosphériques",
+    curr_dest_title: "DESTRUCTION - CORPS RIGIDES",
+    curr_dest_desc: "Destruction de bâtiments, effondrement de ponts, débris, verre brisé, fractures de bois, impacts de balles, crashs de voitures, fissures de béton, simulation de métal tordu, démolition procédurale",
+    curr_fluid_title: "FLUIDES - EFFETS DE LIQUIDES",
+    curr_fluid_desc: "Simulation d'eau, éclaboussures, mousse d'eau, bulles, liquides visqueux (miel, chocolat), écoulement de lave, jet d'eau haute pression, simulations de vagues, physique des fluides réaliste",
+    curr_ocean_title: "OCÉANS - DYNAMIQUE DES FLUIDES",
+    curr_ocean_desc: "Simulations de haute mer, houle, navires bravant la tempête, vagues côtières, écume de mer, embruns, interaction eau-vent, environnement océanique réaliste",
     academy_desc: "Rejoignez nos programmes académiques accrédités et préparez-vous aux métiers du cinéma et du temps réel. Explorez les façades du studio interactif ci-dessous pour découvrir nos programmes de formation.",
     academy_controls: "Navigation Studio",
     tab_front: "Plateaux Cinéma & TV",
@@ -365,6 +380,21 @@ const translations = {
     reset_sandbox: "Reset Simulator",
     academy_kicker: "Training & Admissions",
     academy_title: "VFX Academy & Degrees",
+    curriculum_kicker: "CORE TECHNICAL DISCIPLINES",
+    curriculum_title: "Our Curriculum",
+    curriculum_desc: "Explore the core technical VFX disciplines taught at our academy. Click on any render to expand it in full screen.",
+    curr_pyro_title: "PYRO FX - FIRE / SMOKE",
+    curr_pyro_desc: "fire, flames, smoke, explosions, fireballs, shockwaves, trailing smoke, burning buildings, candles, torches, campfires, gas/fuel/dust explosions, fire propagation, volumetric fire/smoke, colored/magic/stylized fire, embers, ash, thermal distortion, secondary smoke, procedural explosions",
+    curr_part_title: "PARTICLES - SAND / DUST",
+    curr_part_desc: "Simulation of sand, dust, powder, ash, flour, snow-type particles, dunes, sand explosions, footprints, wind-blown sand, buried objects, sand collapse, granular simulation, dust/sand storms",
+    curr_cloud_title: "CLOUDS - VOLUMETRICS",
+    curr_cloud_desc: "Clouds, storm clouds, fog, haze, mist, smoke, dust, volumetric explosions, atmospheric volumes, god rays, cloud formations, procedural sky, volumetric environment, wind, tornadoes, volumetric weather, atmospheric effects",
+    curr_dest_title: "DESTRUCTION - RIGID BODY",
+    curr_dest_desc: "Building destruction, bridge collapse, debris, shattered glass, wood fractures, bullet impacts, car crashes, concrete cracks, twisted metal simulation, procedural demolition",
+    curr_fluid_title: "FLUIDS - LIQUIDS",
+    curr_fluid_desc: "Water simulation, splashes, water foam, bubbles, viscous liquids (honey, chocolate), lava flow, high-pressure water jet, wave simulations, realistic fluid physics",
+    curr_ocean_title: "OCEANS - WATER EFFECTS",
+    curr_ocean_desc: "Deep sea simulations, swell, ships braving the storm, coastal waves, sea foam, spray, wind-water interaction, realistic ocean environment",
     academy_desc: "Join our accredited academic programs and prepare for careers in cinema and real-time environments. Explore the facades of the interactive studio below to discover our training programs.",
     academy_controls: "Studio Navigation",
     tab_front: "Cinema & TV Stages",
@@ -2015,3 +2045,74 @@ function initCyberHouseEngine() {
     threeRenderer.setSize(w, h);
   });
 }
+
+// --------------------------------------------------------
+// CATEGORIZED LOGO GRID FILTER
+// --------------------------------------------------------
+function filterLogos(category, btnElement) {
+  // Update active pill state
+  const buttons = document.querySelectorAll('.logo-tab-btn');
+  buttons.forEach(btn => btn.classList.remove('active'));
+  if (btnElement) {
+    btnElement.classList.add('active');
+  }
+
+  // Hide/Show logos by category
+  const logoItems = document.querySelectorAll('#functional-logo-grid .dneg-logo-item');
+  logoItems.forEach(item => {
+    if (item.getAttribute('data-category') === category) {
+      item.style.display = 'flex';
+      item.style.opacity = '0';
+      setTimeout(() => {
+        item.style.opacity = '1';
+      }, 50);
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+
+// --------------------------------------------------------
+// CURRICULUM IMAGE DOT SWITCHER
+// --------------------------------------------------------
+function swapCurrImage(cardId, src, dotElement) {
+  // Find active image element
+  const activeImg = document.getElementById(`curr-img-${cardId}`);
+  if (activeImg) {
+    activeImg.style.opacity = '0.3';
+    setTimeout(() => {
+      activeImg.src = src;
+      activeImg.style.opacity = '1';
+    }, 150);
+  }
+
+  // Update dots active state
+  if (dotElement) {
+    const parent = dotElement.parentNode;
+    const dots = parent.querySelectorAll('.curr-dot');
+    dots.forEach(d => d.classList.remove('active'));
+    dotElement.classList.add('active');
+  }
+}
+
+// --------------------------------------------------------
+// FULLSCREEN LIGHTBOX WINDOW CONTROLS
+// --------------------------------------------------------
+function openLightbox(src) {
+  const lightbox = document.getElementById('vfx-lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  if (lightbox && lightboxImg) {
+    lightboxImg.src = src;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Lock main scroll
+  }
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById('vfx-lightbox');
+  if (lightbox) {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = ''; // Unlock scroll
+  }
+}
+
