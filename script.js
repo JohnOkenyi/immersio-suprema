@@ -306,9 +306,15 @@ const translations = {
     continuous_title: "Capacité de production continue",
     continuous_desc: "Le modèle permet de préparer la campagne suivante pendant que la campagne en cours est diffusée et mesurée, évitant ainsi toute rupture de production.",
     continuous_track_a: "CAMPAGNE SUR LE MARCHÉ",
-    continuous_track_a_desc: "DIFFUSION → MESURE → APPRENTISSAGE",
     continuous_track_b: "CAMPAGNE SUIVANTE",
-    continuous_track_b_desc: "DÉVELOPPEMENT DU CONCEPT → PRÉ-PRODUCTION"
+    continuous_track_b_desc: "DÉVELOPPEMENT DU CONCEPT → PRÉ-PRODUCTION",
+    art_concept_text: "Le département Concept Art d'Immersio se situe au sommet du design cinématographique, unissant art et collaboration pour créer des récits visuels tissés à la main. Immersio Art fonctionne comme un atelier indépendant ou dans le cadre de l'offre globale d'effets visuels d'Immersio. Des créatures aux personnages, des costumes aux accessoires, et des véhicules aux environnements, nous travaillons sur tout le spectre de la narration cinématographique. Notre équipe Immersio Art est fière de collaborer avec les réalisateurs et cinéastes les plus visionnaires de l'industrie, dont l'ambition et la clarté d'intention élèvent continuellement notre savoir-faire. Ces collaborations nous incitent à innover, affiner et élargir les frontières du design, renforçant notre réputation de partenaire créatif de confiance à la pointe du domaine.",
+    art_role_head: "Responsable mondial du design",
+    art_role_producer: "Productrice mondiale d'art",
+    art_role_director: "Directeur artistique",
+    art_impossible_title: "Prêt à repousser les limites de l'impossible ?",
+    art_impossible_desc: "Prenez contact avec notre équipe de conception artistique pour concevoir votre prochain univers.",
+    contact_art_team: "Contacter l'équipe artistique"
   },
   en: {
     brand_subtitle: "IMMERSIVE INNOVATION CENTER",
@@ -606,11 +612,15 @@ const translations = {
     scope5_desc: "Identifying the content, formats, messages, and approaches that generate the greatest relevance and impact, while analyzing audience reactions to continuously improve subsequent campaigns.",
     continuous_kicker: "CONTINUOUS FLUX",
     continuous_title: "Continuous Production Capacity",
-    continuous_desc: "The model makes it possible to prepare the next campaign while the current campaign is being distributed and measured, avoiding production gaps and maintaining continuous production capacity.",
-    continuous_track_a: "CAMPAIGN IN MARKET",
-    continuous_track_a_desc: "DISTRIBUTION → MEASUREMENT → LEARNING",
     continuous_track_b: "NEXT CAMPAIGN",
-    continuous_track_b_desc: "CONCEPT DEVELOPMENT → PRE-PRODUCTION"
+    continuous_track_b_desc: "CONCEPT DEVELOPMENT → PRE-PRODUCTION",
+    art_concept_text: "Immersio’s Concept Art department stands at the pinnacle of motion picture design, uniting artistry with collaboration to create handwoven visual narratives. Immersio Art operates as a standalone atelier or as part of Immersio’s wider visual effects offering. From creatures to characters, costumes to props, and vehicles to environments, we work across the full spectrum of cinematic storytelling. Our Immersio Art team is proud to collaborate with the industry’s most visionary directors and filmmakers, whose ambition and clarity of purpose continually elevates our craft. These collaborations challenge us to innovate, refine and expand the possibilities of design, reinforcing our reputation as a trusted creative partner at the forefront of the field.",
+    art_role_head: "Global Head of Art",
+    art_role_producer: "Global Art Producer",
+    art_role_director: "Art Director",
+    art_impossible_title: "Ready to Start with Impossible?",
+    art_impossible_desc: "Get in touch with our concept design team to build your next visual project.",
+    contact_art_team: "Contact the Art team"
   }
 };
 
@@ -1072,7 +1082,7 @@ function switchDivision(divisionName, preventScroll = false) {
     },
     art: {
       title: 'IMMERSIO ART',
-      subtitle: 'EXPLORING NEURAL GRAPHICS AND DIGITAL AESTHETICS.',
+      subtitle: 'WHERE WORLDS BEGIN',
       video: 'showreelone.mp4'
     },
     technology: {
@@ -1100,6 +1110,35 @@ function switchDivision(divisionName, preventScroll = false) {
       btn.classList.remove('active');
     }
   });
+
+  // 2.5 Update floating switcher active button state
+  const divButtons = document.querySelectorAll('.div-switch-btn');
+  divButtons.forEach(btn => {
+    if (btn.getAttribute('data-div') === divisionName) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+
+  // 2.6 Toggle DNEG Art department vs standard posters grid
+  const posterView = document.getElementById('showcase-poster-view');
+  const artView = document.getElementById('showcase-art-view');
+  if (divisionName === 'art') {
+    if (posterView) posterView.style.display = 'none';
+    if (artView) {
+      artView.style.display = 'block';
+      artView.style.opacity = '0';
+      setTimeout(() => { artView.style.opacity = '1'; }, 50);
+    }
+  } else {
+    if (artView) artView.style.display = 'none';
+    if (posterView) {
+      posterView.style.display = 'block';
+      posterView.style.opacity = '0';
+      setTimeout(() => { posterView.style.opacity = '1'; }, 50);
+    }
+  }
   
   // 3. Apply Sony Poster Grid filter logic
   applyMosaicFilters();

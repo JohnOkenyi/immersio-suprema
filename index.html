@@ -589,17 +589,27 @@
         <h2 class="division-hero-title" id="division-hero-title">IMMERSIO VFX</h2>
         <p class="division-hero-subtitle" id="division-hero-subtitle" data-i18n="division_subtitle">FURTHERING THE ART OF VISUAL EFFECTS.</p>
         
-        <div class="division-watch-showreel-box" onclick="openCinemaModal('IMMERSIO SHOWREEL', 'Featuring highlights from our Cinematic, Simulation, and Neural Graphics pipelines')">
+        <div class="division-watch-showreel-box" onclick="openCinemaModal('IMMERSIO SHOWREEL', 'Featuring highlights from our Cinematic, Simulation, and Neural Graphics pipelines')" style="margin-bottom: 25px;">
           <div class="division-play-btn">
             <i class="fas fa-play"></i>
           </div>
           <span class="division-play-lbl" data-i18n="watch_our_showreel">WATCH OUR SHOWREEL</span>
         </div>
+
+        <!-- Floating Division Switcher pills inside Hero Banner -->
+        <div class="division-switcher-row">
+          <button class="div-switch-btn active" onclick="switchDivision('vfx', false)" data-div="vfx">VFX</button>
+          <button class="div-switch-btn" onclick="switchDivision('animation', false)" data-div="animation">Animation</button>
+          <button class="div-switch-btn" onclick="switchDivision('simulation', false)" data-div="simulation">Simulation</button>
+          <button class="div-switch-btn" onclick="switchDivision('art', false)" data-div="art">Art</button>
+          <button class="div-switch-btn" onclick="switchDivision('technology', false)" data-div="technology">Technology</button>
+        </div>
       </div>
     </div>
 
     <!-- 2. MOSAIC LAYOUT HEADER -->
-    <div class="apple-section-container" style="margin-top: 80px;">
+    <div id="showcase-poster-view">
+      <div class="apple-section-container" style="margin-top: 80px;">
       <div class="apple-header-flex">
         <div>
           <span class="apple-kicker" data-i18n="showcase_kicker">Interactive Video Archive</span>
@@ -857,6 +867,101 @@
           </div>
 
         </div>
+      </div>
+    </div> <!-- Close showcase-poster-view -->
+
+    <!-- DNEG ART PAGE TEMPLATE (Visible only when ART is selected) -->
+    <div class="apple-section-container" id="showcase-art-view" style="display: none; margin-top: 80px; transition: opacity 0.4s ease;">
+      
+      <!-- Concept Design Description Block -->
+      <div class="art-concept-design-section" style="margin-bottom: 60px;">
+        <div class="art-concept-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start;">
+          <div class="art-concept-left">
+            <span class="apple-kicker">CONCEPT DESIGN</span>
+            <h2 class="art-concept-title" style="color: #fff; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin-top: 10px;">WHERE WORLDS BEGIN</h2>
+          </div>
+          <div class="art-concept-right">
+            <p class="art-concept-text" data-i18n="art_concept_text" style="color: rgba(255,255,255,0.7); font-size: 1.05rem; line-height: 1.7; font-weight: 500; margin: 0;">
+              Immersio’s Concept Art department stands at the pinnacle of motion picture design, uniting artistry with collaboration to create handwoven visual narratives. Immersio Art operates as a standalone atelier or as part of Immersio’s wider visual effects offering. From creatures to characters, costumes to props, and vehicles to environments, we work across the full spectrum of cinematic storytelling. Our Immersio Art team is proud to collaborate with the industry’s most visionary directors and filmmakers, whose ambition and clarity of purpose continually elevates our craft. These collaborations challenge us to innovate, refine and expand the possibilities of design, reinforcing our reputation as a trusted creative partner at the forefront of the field.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Concept Art Showcase Carousel -->
+      <div class="art-showcase-carousel-section" style="margin-top: 60px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 60px;">
+        <h3 class="sidebar-filter-title" style="margin-bottom: 30px; font-size: 0.8rem; letter-spacing: 0.15em; color: rgba(255,255,255,0.4);">FEATURED DESIGN CATEGORIES</h3>
+        
+        <div class="apple-grid-3col">
+          <!-- Env / Worlds -->
+          <div class="art-showcase-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04); border-radius: 12px; padding: 24px; transition: all 0.3s;">
+            <div class="curriculum-image-frame" style="margin-bottom: 18px;">
+              <img src="picture1.jpeg" onclick="openLightbox(this.src)" class="curriculum-active-img" alt="Environments">
+            </div>
+            <h4 class="art-card-title" style="color: #fff; font-size: 1rem; font-weight: 800; margin-bottom: 8px;">ENVIRONMENTS & WORLDS</h4>
+            <p class="art-card-desc" style="color: rgba(255,255,255,0.5); font-size: 0.8rem; line-height: 1.5; margin: 0;">Atmospheric settings, sci-fi cities, and historical landscapes designed for virtual production.</p>
+          </div>
+          <!-- Creatures -->
+          <div class="art-showcase-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04); border-radius: 12px; padding: 24px; transition: all 0.3s;">
+            <div class="curriculum-image-frame" style="margin-bottom: 18px;">
+              <img src="picture2.jpeg" onclick="openLightbox(this.src)" class="curriculum-active-img" alt="Creatures">
+            </div>
+            <h4 class="art-card-title" style="color: #fff; font-size: 1rem; font-weight: 800; margin-bottom: 8px;">CREATURES & CHARACTERS</h4>
+            <p class="art-card-desc" style="color: rgba(255,255,255,0.5); font-size: 0.8rem; line-height: 1.5; margin: 0;">Anatomical simulation, digital actors, and fantastical creature designs.</p>
+          </div>
+          <!-- Vehicles -->
+          <div class="art-showcase-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04); border-radius: 12px; padding: 24px; transition: all 0.3s;">
+            <div class="curriculum-image-frame" style="margin-bottom: 18px;">
+              <img src="picture1.jpeg" onclick="openLightbox(this.src)" class="curriculum-active-img" alt="Vehicles">
+            </div>
+            <h4 class="art-card-title" style="color: #fff; font-size: 1rem; font-weight: 800; margin-bottom: 8px;">VEHICLES & PROPS</h4>
+            <p class="art-card-desc" style="color: rgba(255,255,255,0.5); font-size: 0.8rem; line-height: 1.5; margin: 0;">Mechanical engineering designs, futuristic space crafts, and high-fidelity props.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Meet the Art Team Block -->
+      <div class="art-team-section" style="margin-top: 80px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 60px;">
+        <div class="apple-header-block centered-header" style="margin-bottom: 40px;">
+          <span class="apple-kicker">COLLABORATORS</span>
+          <h2 class="apple-section-title" style="color: #fff;">Meet the Art Team</h2>
+        </div>
+
+        <div class="apple-grid-3col">
+          <!-- Member 1 -->
+          <div class="art-team-card" style="text-align: center; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04); border-radius: 12px; padding: 30px 20px;">
+            <div class="art-member-avatar-box" style="width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, rgba(0, 113, 227, 0.2) 0%, rgba(0, 242, 254, 0.2) 100%); border: 1px solid rgba(0, 113, 227, 0.4); display: flex; align-items: center; justify-content: center; margin: 0 auto 15px auto;">
+              <span style="font-size: 1.5rem; font-weight: 800; color: #fff; font-family: var(--font-display);">RB</span>
+            </div>
+            <h4 class="art-member-name" style="color: #fff; font-size: 1.1rem; font-weight: 800; margin-bottom: 5px;">Ravi Bansal</h4>
+            <p class="art-member-role" data-i18n="art_role_head" style="color: rgba(255,255,255,0.4); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Global Head of Art</p>
+          </div>
+          <!-- Member 2 -->
+          <div class="art-team-card" style="text-align: center; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04); border-radius: 12px; padding: 30px 20px;">
+            <div class="art-member-avatar-box" style="width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, rgba(0, 113, 227, 0.2) 0%, rgba(0, 242, 254, 0.2) 100%); border: 1px solid rgba(0, 113, 227, 0.4); display: flex; align-items: center; justify-content: center; margin: 0 auto 15px auto;">
+              <span style="font-size: 1.5rem; font-weight: 800; color: #fff; font-family: var(--font-display);">JF</span>
+            </div>
+            <h4 class="art-member-name" style="color: #fff; font-size: 1.1rem; font-weight: 800; margin-bottom: 5px;">Jessica Fernandes</h4>
+            <p class="art-member-role" data-i18n="art_role_producer" style="color: rgba(255,255,255,0.4); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Global Art Producer</p>
+          </div>
+          <!-- Member 3 -->
+          <div class="art-team-card" style="text-align: center; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04); border-radius: 12px; padding: 30px 20px;">
+            <div class="art-member-avatar-box" style="width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, rgba(0, 113, 227, 0.2) 0%, rgba(0, 242, 254, 0.2) 100%); border: 1px solid rgba(0, 113, 227, 0.4); display: flex; align-items: center; justify-content: center; margin: 0 auto 15px auto;">
+              <span style="font-size: 1.5rem; font-weight: 800; color: #fff; font-family: var(--font-display);">MS</span>
+            </div>
+            <h4 class="art-member-name" style="color: #fff; font-size: 1.1rem; font-weight: 800; margin-bottom: 5px;">Marc Simonetti</h4>
+            <p class="art-member-role" data-i18n="art_role_director" style="color: rgba(255,255,255,0.4); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Art Director</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Get In Touch Block -->
+      <div class="art-contact-banner" style="margin-top: 80px; background: linear-gradient(135deg, rgba(0, 113, 227, 0.08) 0%, rgba(255, 255, 255, 0.01) 100%); border: 1px solid rgba(0, 113, 227, 0.2); border-radius: 12px; padding: 50px 30px; text-align: center;">
+        <h3 style="font-size: 1.6rem; font-weight: 800; color: #fff; margin-bottom: 10px;" data-i18n="art_impossible_title">Ready to Start with Impossible?</h3>
+        <p style="color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-bottom: 25px; letter-spacing: 0.02em;" data-i18n="art_impossible_desc">Get in touch with our concept design team to build your next visual project.</p>
+        <a href="mailto:art@immersio-suprema.com" class="vfx-btn-submit-blue" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+          <i class="fas fa-envelope"></i> <span data-i18n="contact_art_team">Contact the Art team</span>
+        </a>
       </div>
 
     </div>
