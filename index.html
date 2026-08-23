@@ -1359,8 +1359,9 @@
       </div>
 
       <!-- VFX Curriculum Grid Section (Grouped by Disciplines) -->
+      <!-- VFX Houdini 12-Menu Carousel Section -->
       <div class="curriculum-wrapper" style="margin-top: 80px; border-top: 1px solid rgba(0,0,0,0.06); padding-top: 60px;">
-        <div class="apple-header-block centered-header">
+        <div class="apple-header-block centered-header" style="margin-bottom: 40px;">
           <span class="apple-kicker" data-i18n="curriculum_kicker">CORE TECHNICAL DISCIPLINES</span>
           <h2 class="apple-section-title" data-i18n="curriculum_title" style="color: var(--bg-dark);">Our Curriculum</h2>
           <p class="apple-section-desc" data-i18n="curriculum_desc" style="max-width: 850px; margin-left: auto; margin-right: auto;">
@@ -1368,105 +1369,102 @@
           </p>
         </div>
 
-        <div class="apple-grid-3col" style="margin-top: 50px;">
-          
-          <!-- Card 1: Pyro FX -->
-          <div class="dneg-text-capability" style="border-top: 2px solid var(--bg-dark); padding-top: 25px;">
-            <div class="curriculum-image-frame">
-              <img src="picture1.jpeg" class="curriculum-active-img" id="curr-img-pyro" onclick="openLightbox(this.src)" alt="Pyro FX">
-              <div class="curriculum-image-dots">
-                <span class="curr-dot active" onclick="swapCurrImage('pyro', 'picture1.jpeg', this)"></span>
-                <span class="curr-dot" onclick="swapCurrImage('pyro', 'picture2.jpeg', this)"></span>
-              </div>
-            </div>
-            <span class="card-num-badge">01 / pyro</span>
-            <h3 class="pro-card-title" data-i18n="curr_pyro_title" style="color: var(--bg-dark);">PYRO FX - FIRE / SMOKE</h3>
-            <p class="pro-card-desc" data-i18n="curr_pyro_desc" style="color: rgba(0,0,0,0.55); font-size: 0.8rem; line-height: 1.6; margin-top: 10px;">
-              feu, flammes, fumée, explosions, fireballs, shockwaves, fumée en traînée, bâtiments en feu, bougies, torches, feux de camp, explosions gaz/carburant/poussière, propagation du feu, feu/fumée volumétriques, feu coloré/magique/stylisé, braises, cendres, distorsion thermique, fumée secondaire, explosions procédurales
-            </p>
+        <!-- 1. The 12 horizontal blue lines representing the Houdini menus -->
+        <div class="houdini-tabs-container">
+          <div class="houdini-tab-indicator-bar active" onclick="switchHoudiniCarousel(0)" id="h-tab-0">
+            <span class="hud-num">01</span>
+            <span class="hud-label">FIRE / SMOKE</span>
+            <div class="hud-blue-line"></div>
           </div>
-
-          <!-- Card 2: Particles -->
-          <div class="dneg-text-capability" style="border-top: 2px solid var(--bg-dark); padding-top: 25px;">
-            <div class="curriculum-image-frame">
-              <img src="picture2.jpeg" class="curriculum-active-img" id="curr-img-particles" onclick="openLightbox(this.src)" alt="Particles">
-              <div class="curriculum-image-dots">
-                <span class="curr-dot active" onclick="swapCurrImage('particles', 'picture2.jpeg', this)"></span>
-                <span class="curr-dot" onclick="swapCurrImage('particles', 'picture1.jpeg', this)"></span>
-              </div>
-            </div>
-            <span class="card-num-badge">02 / particles</span>
-            <h3 class="pro-card-title" data-i18n="curr_part_title" style="color: var(--bg-dark);">PARTICLES - SAND / DUST</h3>
-            <p class="pro-card-desc" data-i18n="curr_part_desc" style="color: rgba(0,0,0,0.55); font-size: 0.8rem; line-height: 1.6; margin-top: 10px;">
-              Simulation de sable, poussière, poudre, cendres, farine, particules type neige, dunes, explosions de sable, empreintes, sable poussé par le vent, objets enterrés, effondrement de sable, simulation granulaire, tempêtes de poussière/sable
-            </p>
+          <div class="houdini-tab-indicator-bar" onclick="switchHoudiniCarousel(1)" id="h-tab-1">
+            <span class="hud-num">02</span>
+            <span class="hud-label">Sand / Dust</span>
+            <div class="hud-blue-line"></div>
           </div>
-
-          <!-- Card 3: Clouds -->
-          <div class="dneg-text-capability" style="border-top: 2px solid var(--bg-dark); padding-top: 25px;">
-            <div class="curriculum-image-frame">
-              <img src="picture1.jpeg" class="curriculum-active-img" id="curr-img-clouds" onclick="openLightbox(this.src)" alt="Clouds">
-              <div class="curriculum-image-dots">
-                <span class="curr-dot active" onclick="swapCurrImage('clouds', 'picture1.jpeg', this)"></span>
-                <span class="curr-dot" onclick="swapCurrImage('clouds', 'picture2.jpeg', this)"></span>
-              </div>
-            </div>
-            <span class="card-num-badge">03 / clouds</span>
-            <h3 class="pro-card-title" data-i18n="curr_cloud_title" style="color: var(--bg-dark);">CLOUDS - VOLUMETRICS</h3>
-            <p class="pro-card-desc" data-i18n="curr_cloud_desc" style="color: rgba(0,0,0,0.55); font-size: 0.8rem; line-height: 1.6; margin-top: 10px;">
-              Nuages, nuages d'orage, brouillard, brume, fumée, poussière, explosions volumétriques, volumes atmosphériques, god rays, formations nuageuses, ciel procédural, environnement volumétrique, vent, tornades, météo volumétrique, effets atmosphériques
-            </p>
+          <div class="houdini-tab-indicator-bar" onclick="switchHoudiniCarousel(2)" id="h-tab-2">
+            <span class="hud-num">03</span>
+            <span class="hud-label">Clouds / Volumetrics</span>
+            <div class="hud-blue-line"></div>
           </div>
-
-          <!-- Card 4: Destruction -->
-          <div class="dneg-text-capability" style="border-top: 2px solid var(--bg-dark); padding-top: 25px; margin-top: 40px;">
-            <div class="curriculum-image-frame">
-              <img src="picture1.jpeg" class="curriculum-active-img" id="curr-img-destruct" onclick="openLightbox(this.src)" alt="Destruction">
-              <div class="curriculum-image-dots">
-                <span class="curr-dot active" onclick="swapCurrImage('destruct', 'picture1.jpeg', this)"></span>
-                <span class="curr-dot" onclick="swapCurrImage('destruct', 'picture2.jpeg', this)"></span>
-              </div>
-            </div>
-            <span class="card-num-badge">04 / rigid-body</span>
-            <h3 class="pro-card-title" data-i18n="curr_dest_title" style="color: var(--bg-dark);">DESTRUCTION - RIGID BODY</h3>
-            <p class="pro-card-desc" data-i18n="curr_dest_desc" style="color: rgba(0,0,0,0.55); font-size: 0.8rem; line-height: 1.6; margin-top: 10px;">
-              Destruction de bâtiments, effondrement de ponts, débris, verre brisé, fractures de bois, impacts de balles, crashs de voitures, fissures de béton, simulation de métal tordu, démolition procédurale
-            </p>
+          <div class="houdini-tab-indicator-bar" onclick="switchHoudiniCarousel(3)" id="h-tab-3">
+            <span class="hud-num">04</span>
+            <span class="hud-label">DESTRUCTION</span>
+            <div class="hud-blue-line"></div>
           </div>
-
-          <!-- Card 5: Fluids -->
-          <div class="dneg-text-capability" style="border-top: 2px solid var(--bg-dark); padding-top: 25px; margin-top: 40px;">
-            <div class="curriculum-image-frame">
-              <img src="picture2.jpeg" class="curriculum-active-img" id="curr-img-fluids" onclick="openLightbox(this.src)" alt="Fluids">
-              <div class="curriculum-image-dots">
-                <span class="curr-dot active" onclick="swapCurrImage('fluids', 'picture2.jpeg', this)"></span>
-                <span class="curr-dot" onclick="swapCurrImage('fluids', 'picture1.jpeg', this)"></span>
-              </div>
-            </div>
-            <span class="card-num-badge">05 / fluids</span>
-            <h3 class="pro-card-title" data-i18n="curr_fluid_title" style="color: var(--bg-dark);">FLUIDS - LIQUIDS</h3>
-            <p class="pro-card-desc" data-i18n="curr_fluid_desc" style="color: rgba(0,0,0,0.55); font-size: 0.8rem; line-height: 1.6; margin-top: 10px;">
-              Simulation d'eau, éclaboussures, mousse d'eau, bulles, liquides visqueux (miel, chocolat), écoulement de lave, jet d'eau haute pression, simulations de vagues, physique des fluides réaliste
-            </p>
+          <div class="houdini-tab-indicator-bar" onclick="switchHoudiniCarousel(4)" id="h-tab-4">
+            <span class="hud-num">05</span>
+            <span class="hud-label">Liquids / Fluids</span>
+            <div class="hud-blue-line"></div>
           </div>
-
-          <!-- Card 6: Oceans -->
-          <div class="dneg-text-capability" style="border-top: 2px solid var(--bg-dark); padding-top: 25px; margin-top: 40px;">
-            <div class="curriculum-image-frame">
-              <img src="picture2.jpeg" class="curriculum-active-img" id="curr-img-oceans" onclick="openLightbox(this.src)" alt="Oceans">
-              <div class="curriculum-image-dots">
-                <span class="curr-dot active" onclick="swapCurrImage('oceans', 'picture2.jpeg', this)"></span>
-                <span class="curr-dot" onclick="swapCurrImage('oceans', 'picture1.jpeg', this)"></span>
-              </div>
-            </div>
-            <span class="card-num-badge">06 / oceans</span>
-            <h3 class="pro-card-title" data-i18n="curr_ocean_title" style="color: var(--bg-dark);">OCEANS - WATER EFFECTS</h3>
-            <p class="pro-card-desc" data-i18n="curr_ocean_desc" style="color: rgba(0,0,0,0.55); font-size: 0.8rem; line-height: 1.6; margin-top: 10px;">
-              Simulations de haute mer, houle, navires bravant la tempête, vagues côtières, écume de mer, embruns, interaction eau-vent, environnement océanique réaliste
-            </p>
+          <div class="houdini-tab-indicator-bar" onclick="switchHoudiniCarousel(5)" id="h-tab-5">
+            <span class="hud-num">06</span>
+            <span class="hud-label">Ocean</span>
+            <div class="hud-blue-line"></div>
           </div>
-
+          <div class="houdini-tab-indicator-bar" onclick="switchHoudiniCarousel(6)" id="h-tab-6">
+            <span class="hud-num">07</span>
+            <span class="hud-label">Cloth / Soft Bodies</span>
+            <div class="hud-blue-line"></div>
+          </div>
+          <div class="houdini-tab-indicator-bar" onclick="switchHoudiniCarousel(7)" id="h-tab-7">
+            <span class="hud-num">08</span>
+            <span class="hud-label">Hair / Fur / Feathers</span>
+            <div class="hud-blue-line"></div>
+          </div>
+          <div class="houdini-tab-indicator-bar" onclick="switchHoudiniCarousel(8)" id="h-tab-8">
+            <span class="hud-num">09</span>
+            <span class="hud-label">Crowd</span>
+            <div class="hud-blue-line"></div>
+          </div>
+          <div class="houdini-tab-indicator-bar" onclick="switchHoudiniCarousel(9)" id="h-tab-9">
+            <span class="hud-num">10</span>
+            <span class="hud-label">Particles</span>
+            <div class="hud-blue-line"></div>
+          </div>
+          <div class="houdini-tab-indicator-bar" onclick="switchHoudiniCarousel(10)" id="h-tab-10">
+            <span class="hud-num">11</span>
+            <span class="hud-label">Lightning / Energy</span>
+            <div class="hud-blue-line"></div>
+          </div>
+          <div class="houdini-tab-indicator-bar" onclick="switchHoudiniCarousel(11)" id="h-tab-11">
+            <span class="hud-num">12</span>
+            <span class="hud-label">Growth</span>
+            <div class="hud-blue-line"></div>
+          </div>
         </div>
+
+        <!-- 2. The 2-column dynamic carousel panel -->
+        <div class="houdini-carousel-viewport" style="margin-top: 50px;">
+          <div class="houdini-carousel-grid">
+            
+            <!-- Left Column: Title & Description -->
+            <div class="h-carousel-left-panel">
+              <span class="card-num-badge" id="h-carousel-badge">MENU 01 / 12</span>
+              <h3 class="h-carousel-title" id="h-carousel-title" style="color: var(--bg-dark); font-size: 1.8rem; font-weight: 800; font-family: var(--font-display); letter-spacing: -0.01em; margin-bottom: 20px; line-height: 1.2;">
+                1. FIRE / SMOKE / EXPLOSION
+              </h3>
+              <p class="h-carousel-desc" id="h-carousel-desc" style="color: rgba(0,0,0,0.65); font-size: 0.95rem; line-height: 1.8; font-weight: 500;">
+                Fire, flames, smoke, explosions, fireballs, shockwaves, smoke trails, burning buildings or objects, candles, torches, campfires, gas/fuel/dust explosions, fire spreading, volumetric fire/smoke, colored/magical/stylized fire, embers, ash, heat distortion, secondary smoke, procedural explosions.
+              </p>
+            </div>
+
+            <!-- Right Column: Render Frame + Underneath navigation -->
+            <div class="h-carousel-right-panel">
+              <div class="curriculum-image-frame" style="height: 380px;">
+                <img src="first 1.jpeg" class="curriculum-active-img" id="h-carousel-img" onclick="openLightbox(this.src)" alt="Curriculum Render" style="cursor: zoom-in;">
+              </div>
+              
+              <!-- PREV and NEXT buttons located UNDER the picture (unlike DNEG which places them above) -->
+              <div class="h-carousel-navigation-row">
+                <button class="h-nav-btn prev-btn" onclick="prevHoudiniCarousel()"><i class="fas fa-chevron-left"></i> PREV</button>
+                <span class="h-nav-counter" id="h-carousel-counter">1 - 12</span>
+                <button class="h-nav-btn next-btn" onclick="nextHoudiniCarousel()">NEXT <i class="fas fa-chevron-right"></i></button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
 
     </div>

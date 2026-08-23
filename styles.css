@@ -4886,6 +4886,165 @@ html, body {
   filter: hue-rotate(45deg);
 }
 
+/* --------------------------------------------------------------------------
+   10. HOUDINI 12-MENU CURRICULUM CAROUSEL
+   -------------------------------------------------------------------------- */
+.houdini-tabs-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 10px 5px 15px 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+.houdini-tabs-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar Chrome/Safari */
+}
+
+.houdini-tab-indicator-bar {
+  flex: 1;
+  min-width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.hud-num {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.35);
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.hud-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.45);
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.hud-blue-line {
+  height: 3px;
+  width: 100%;
+  border-radius: 10px;
+  background: transparent;
+  margin-top: 8px;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.houdini-tab-indicator-bar:hover .hud-label {
+  color: #111;
+}
+
+.houdini-tab-indicator-bar:hover .hud-blue-line {
+  background: rgba(0, 113, 227, 0.25);
+}
+
+.houdini-tab-indicator-bar.active .hud-label {
+  color: var(--dneg-coral); /* Tech blue */
+}
+
+.houdini-tab-indicator-bar.active .hud-num {
+  color: var(--dneg-coral);
+}
+
+.houdini-tab-indicator-bar.active .hud-blue-line {
+  background: var(--dneg-coral);
+  box-shadow: 0 2px 8px rgba(0, 113, 227, 0.4);
+}
+
+/* 2-Column Carousel Viewport */
+.houdini-carousel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.h-carousel-left-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.h-carousel-title, .h-carousel-desc, #h-carousel-img {
+  transition: opacity 0.2s ease;
+}
+
+.h-carousel-right-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.h-carousel-navigation-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+  padding: 0 4px;
+}
+
+.h-nav-btn {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: #111;
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.h-nav-btn:hover {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+  transform: translateY(-1px);
+}
+
+.h-nav-counter {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.45);
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+}
+
+/* Mobile responsive carousel stacking */
+@media (max-width: 900px) {
+  .houdini-carousel-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .h-carousel-left-panel {
+    order: 2; /* Text goes under the picture on mobile for visual focus */
+  }
+  .h-carousel-right-panel {
+    order: 1;
+  }
+  .curriculum-image-frame {
+    height: 250px !important;
+  }
+}
+
+
 
 
 
