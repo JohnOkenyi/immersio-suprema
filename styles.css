@@ -4,18 +4,18 @@
 
 :root {
   /* DNEG BRAND THEME PALETTE */
-  --bg-light: #fbfbf0;      /* Warm beige canvas backdrop */
+  --bg-light: #ffffff;      /* Pure white canvas backdrop */
   --bg-dark: #2a2830;       /* Dark slate Film Noir backdrop */
   --bg-pure-black: #141414; /* Pure black backdrop for modals and focus elements */
   --color-text-dark: #2a2830;
-  --color-text-light: #fbfbf0;
+  --color-text-light: #ffffff;
   
   --dneg-coral: #0071e3;    /* Custom coral red highlight */
   --dneg-coral-glow: rgba(0, 113, 227, 0.4);
   --dneg-yellow: #f3ff00;
   
-  --dneg-grey-01: #f1f0e6;
-  --dneg-grey-02: #dcdbd3;
+  --dneg-grey-01: #f9f9f9;
+  --dneg-grey-02: #e5e5e5;
   --dneg-grey-03: #bcbcb6;
   --dneg-grey-04: #7e7d7d;
   --dneg-grey-05: #3f3d43;
