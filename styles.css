@@ -715,8 +715,8 @@ body.vfx-body {
 }
 
 .apple-pure-white-bg {
-  background-color: var(--bg-light);
-  color: var(--color-text-dark);
+  background-color: var(--bg-pure-black);
+  color: var(--color-text-light);
 }
 
 .apple-dark-bg {
@@ -807,7 +807,7 @@ body.vfx-body {
 
 .dneg-text-capability {
   background: transparent;
-  border-top: 2px solid var(--color-text-dark);
+  border-top: 2px solid var(--dneg-coral);
   padding: 30px 0;
   display: flex;
   flex-direction: column;
@@ -1498,11 +1498,11 @@ body.vfx-body {
 }
 
 .apple-form-card {
-  background: var(--bg-light);
-  border: 1px solid rgba(42, 40, 48, 0.05);
+  background: #1c1b22;
+  border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 24px;
   padding: 50px;
-  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.5);
 }
 
 .form-title {
@@ -1511,7 +1511,7 @@ body.vfx-body {
   font-weight: 800;
   text-transform: uppercase;
   margin-bottom: 35px;
-  color: var(--bg-dark);
+  color: var(--color-text-light);
   letter-spacing: -0.01em;
 }
 
@@ -1531,7 +1531,7 @@ body.vfx-body {
   font-size: 0.76rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--bg-dark);
+  color: var(--color-text-light);
   margin-bottom: 6px;
   letter-spacing: 0.05em;
   opacity: 0.8;
@@ -1539,13 +1539,13 @@ body.vfx-body {
 
 .field-box input, .field-box select, .field-box textarea {
   border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   background: transparent;
   padding: 12px 0px;
   border-radius: 0px;
   font-family: var(--font-body);
   font-size: 1rem;
-  color: var(--bg-dark);
+  color: var(--color-text-light);
   outline: none;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -5014,7 +5014,7 @@ html, body {
 .hud-num {
   font-size: 0.65rem;
   font-weight: 600;
-  color: rgba(0, 0, 0, 0.35);
+  color: rgba(255, 255, 255, 0.4);
   font-family: var(--font-display);
   letter-spacing: 0.05em;
   margin-bottom: 4px;
@@ -5023,7 +5023,7 @@ html, body {
 .hud-label {
   font-size: 0.72rem;
   font-weight: 800;
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(255, 255, 255, 0.6);
   font-family: var(--font-display);
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -5034,14 +5034,14 @@ html, body {
 .hud-blue-line {
   height: 2px;
   width: 100%;
-  background: rgba(0, 0, 0, 0.04);
+  background: rgba(255, 255, 255, 0.1);
   margin-top: 8px;
   transform: scaleX(0.2);
   transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .houdini-tab-indicator-bar:hover .hud-label {
-  color: #111;
+  color: #fff;
 }
 
 .houdini-tab-indicator-bar:hover .hud-blue-line {
@@ -5095,9 +5095,9 @@ html, body {
 }
 
 .h-nav-btn {
-  background: rgba(0, 0, 0, 0.02);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  color: #111;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
   padding: 8px 20px;
   border-radius: 100px;
   font-size: 0.74rem;
@@ -5112,16 +5112,16 @@ html, body {
 }
 
 .h-nav-btn:hover {
-  background: #111;
-  color: #fff;
-  border-color: #111;
+  background: var(--dneg-coral);
+  color: var(--bg-dark);
+  border-color: var(--dneg-coral);
   transform: translateY(-1px);
 }
 
 .h-nav-counter {
   font-size: 0.82rem;
   font-weight: 800;
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(255, 255, 255, 0.5);
   font-family: var(--font-display);
   letter-spacing: 0.05em;
 }
@@ -5167,7 +5167,7 @@ html, body {
   display: flex;
   gap: 30px;
   padding-bottom: 40px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 .program-list-item:last-child {
   border-bottom: none;
@@ -5192,7 +5192,7 @@ html, body {
   font-family: var(--font-display);
   font-size: 1.35rem;
   font-weight: 800;
-  color: var(--bg-dark);
+  color: var(--color-text-light);
   margin: 0;
   line-height: 1.25;
 }
@@ -5201,7 +5201,7 @@ html, body {
   font-family: var(--font-body);
   font-size: 0.95rem;
   line-height: 1.65;
-  color: #4a4a52;
+  color: rgba(255, 255, 255, 0.7);
   margin: 0;
 }
 
@@ -5220,8 +5220,8 @@ html, body {
   font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: #71717a;
-  background: #f4f4f5;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.05);
   padding: 4px 10px;
   border-radius: 4px;
   letter-spacing: 0.05em;
@@ -5237,6 +5237,103 @@ html, body {
     position: static;
   }
 }
+
+/* Sub-carousel inside curriculum image frame */
+.curriculum-image-frame {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  background-color: #0c0b0f;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.curriculum-slider-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.curriculum-slider-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.curriculum-slider-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: zoom-in;
+  transition: transform 0.5s ease;
+}
+
+.curriculum-slider-slide img:hover {
+  transform: scale(1.03);
+}
+
+.curriculum-sub-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(12, 11, 15, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.curriculum-sub-arrow:hover {
+  background: var(--dneg-coral);
+  border-color: var(--dneg-coral);
+  color: var(--bg-dark);
+  box-shadow: 0 0 15px var(--dneg-coral-glow);
+}
+
+.curriculum-sub-arrow.prev {
+  left: 20px;
+}
+
+.curriculum-sub-arrow.next {
+  right: 20px;
+}
+
+.curriculum-sub-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.curriculum-sub-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.curriculum-sub-dot.active {
+  background: var(--dneg-coral);
+  transform: scale(1.25);
+  box-shadow: 0 0 8px var(--dneg-coral);
+}
+
 
 
 

@@ -2011,62 +2011,62 @@ const houdiniCurriculumEN = [
   {
     title: "1. FIRE / SMOKE",
     text: "Fire, flames, smoke, explosions, fireballs, shockwaves, smoke trails, burning buildings or objects, candles, torches, campfires, gas/fuel/dust explosions, fire spreading, volumetric fire/smoke, colored/magical/stylized fire, embers, ash, heat distortion, secondary smoke, procedural explosions.",
-    image: "first 1.jpeg"
+    images: ["first 1.jpeg", "thirthinth.jpeg", "33.jpeg"]
   },
   {
     title: "2. SAND / DUST",
     text: "Sand simulation, grains, dust, powder, ash, flour, snow-like particles, sand dunes, sand explosions, footprints, wind-driven sand, buried objects, sand collapse.",
-    image: "second.jpeg"
+    images: ["second.jpeg", "25th.jpeg", "26th.jpeg"]
   },
   {
     title: "3. CLOUDS / VOLUMETRICS",
     text: "Clouds, fog, mist, wind, smoke, dust, volumetric explosions, atmospheric volumes, god rays, tornadoes, volumetric weather, atmospheric effects.",
-    image: "third.jpeg"
+    images: ["third.jpeg", "27th.jpeg", "28th.jpeg"]
   },
   {
     title: "4. DESTRUCTION",
     text: "Building destruction, wall destruction, concrete destruction, glass destruction, wood destruction, metal destruction, vehicle destruction, bridge destruction, tower destruction, rock destruction, statue destruction, object destruction, car collisions, bullet impacts, explosions, falling objects, character impacts, earthquakes, meteor impacts, giant creature impacts, superhero landings.",
-    image: "forth.jpeg"
+    images: ["forth.jpeg", "30th.jpeg", "34.jpeg"]
   },
   {
     title: "5. LIQUIDS / FLUIDS",
     text: "Water, rainwater, splashes, pouring liquids, container filling, wine, milk, oil, mud, lava, slime, goo, melting materials, foam, bubbles, spray, droplets, underwater effects, fluid-object interaction.",
-    image: "fifth.jpeg"
+    images: ["fifth.jpeg", "29th.jpeg", "35.jpeg"]
   },
   {
     title: "6. OCEAN",
     text: "Ocean, waterfall, river, hurricane, small and large waves, breaking waves, ocean storms, tsunamis, coastal flooding, boat wakes, boat-water interaction, object interaction, underwater turbulence, foam, spray, whitewater, ocean displacement.",
-    image: "sixth.jpeg"
+    images: ["sixth.jpeg", "31th.jpeg"]
   },
   {
     title: "7. CLOTH / SOFT BODIES",
     text: "Clothing, flags, curtains, sheets, blankets, fabric, rubber, soft objects, inflatable objects, balloons, deformation, tearing, stitching, wrapping, character interaction.",
-    image: "seventh.jpeg"
+    images: ["seventh.jpeg", "32nd.jpeg"]
   },
   {
     title: "8. HAIR / FUR / FEATHERS",
     text: "Human hair, animal fur, feathers, grooming, procedural hair, dynamics, wind, collisions, hairstyling, character grooming, fur deformation, simulation.",
-    image: "eighth.jpeg"
+    images: ["eighth.jpeg"]
   },
   {
     title: "9. CROWD",
     text: "Procedural large-scale agents with specific behavior and reactions. It can be: human, animals, insects etc.",
-    image: "ninth.jpeg"
+    images: ["ninth.jpeg"]
   },
   {
     title: "10. PARTICLES",
     text: "Sparks, dust, debris, splinters, glass fragments, shards, rain, snow, ash, embers, smoke particles, magical/energy particles, fireflies, swarms, insects, birds, sand, gravel, leaves, confetti, particle trails, forces, collisions, characters turning to dust, dissolving objects, disintegrating buildings, particle disintegration, ash/sand/digital/organic transitions.",
-    image: "10th.jpeg"
+    images: ["10th.jpeg", "fivethinth.jpeg", "sixthiinth.jpeg"]
   },
   {
     title: "11. LIGHTNING / ENERGY",
     text: "Lightning, electrical arcs, sparks, Tesla coils, energy beams, plasma, electric fields, energy trails, procedural electricity, electrical explosions, lightning storms.",
-    image: "eleventh.jpeg"
+    images: ["eleventh.jpeg", "seventh17.jpeg"]
   },
   {
     title: "12. GROWTH",
     text: "Buildings growing automatically, plants, vines, crystals, cities assembling, dissolving objects, organic/fractal growth, procedural transformation, surface growth, cracking, aging, corrosion.",
-    image: "thevth.jpeg"
+    images: ["thevth.jpeg", "fortheenth.jpeg", "18th.jpeg", "19th.jpeg", "20th.jpeg", "21th.jpeg", "22nd.jpeg", "23rd.jpeg", "24th.jpeg"]
   }
 ];
 
@@ -2074,64 +2074,152 @@ const houdiniCurriculumFR = [
   {
     title: "1. FEU / FUMÉE",
     text: "Feu, flammes, fumée, explosions, fireballs, shockwaves, traînées de fumée, bâtiments ou objets en feu, bougies, torches, feux de camp, explosions gaz/carburant/poussière, propagation du feu, feu/fumée volumétriques, feu coloré/magique/stylisé, braises, cendres, distorsion thermique, fumée secondaire, explosions procédurales.",
-    image: "first 1.jpeg"
+    images: ["first 1.jpeg", "thirthinth.jpeg", "33.jpeg"]
   },
   {
     title: "2. SABLE / POUSSIÈRE",
     text: "Simulation de sable, grains, poussière, poudre, cendres, farine, particules de type neige, dunes de sable, explosions de sable, empreintes de pas, sable poussé par le vent, objets enterrés, effondrement de sable.",
-    image: "second.jpeg"
+    images: ["second.jpeg", "25th.jpeg", "26th.jpeg"]
   },
   {
     title: "3. NUAGES / VOLUMÉTRIE",
     text: "Nuages, brouillard, brume, vent, fumée, poussière, explosions volumétriques, volumes atmosphériques, rayons divins, tornades, météo volumétrique, effets atmosphériques.",
-    image: "third.jpeg"
+    images: ["third.jpeg", "27th.jpeg", "28th.jpeg"]
   },
   {
     title: "4. DESTRUCTION",
     text: "Destruction de bâtiments, destruction de murs, destruction de béton, destruction de verre, destruction de bois, destruction de métaux, destruction de véhicules, destruction de ponts, destruction de tours, destruction de roches, destruction de statues, destruction d'objets, collisions de voitures, impacts de balles, explosions, chutes d'objets, impacts de personnages, tremblements de terre, impacts de météores, impacts de créatures géantes, atterrissages de super-héros.",
-    image: "forth.jpeg"
+    images: ["forth.jpeg", "30th.jpeg", "34.jpeg"]
   },
   {
-    title: "5. LIQUIDES / FLUIDES",
+    title: "5. LIQUIDS / FLUIDES",
     text: "Eau, eau de pluie, éclaboussures, versement de liquides, remplissage de récipients, vin, lait, huile, boue, lave, bave, matière gluante, matériaux en fusion, mousse, bulles, spray, gouttelettes, effets sous-marins, interaction fluide-objet.",
-    image: "fifth.jpeg"
+    images: ["fifth.jpeg", "29th.jpeg", "35.jpeg"]
   },
   {
     title: "6. OCÉAN",
     text: "Océan, cascade, rivière, ouragan, petites et grandes vagues, vagues déferlantes, tempêtes océaniques, tsunamis, inondations côtières, sillages de bateaux, interaction bateau-eau, interaction avec les objets, turbulences sous-marines, mousse, spray, écume, déplacement océanique.",
-    image: "sixth.jpeg"
+    images: ["sixth.jpeg", "31th.jpeg"]
   },
   {
     title: "7. TISSU / CORPS SOUPLES",
     text: "Vêtements, drapeaux, rideaux, draps, couvertures, tissu, caoutchouc, objets souples, objets gonflables, ballons, déformation, déchirure, couture, emballage, interaction avec les personnages.",
-    image: "seventh.jpeg"
+    images: ["seventh.jpeg", "32nd.jpeg"]
   },
   {
     title: "8. CHEVEUX / FOURRURE / PLUMES",
     text: "Cheveux humains, fourrure animale, plumes, toilettage, cheveux procéduraux, dynamique, vent, collisions, coiffure, toilettage de personnages, déformation de la fourrure, simulation.",
-    image: "eighth.jpeg"
+    images: ["eighth.jpeg"]
   },
   {
     title: "9. FOULE",
     text: "Agents procéduraux à grande échelle avec des comportements et des réactions spécifiques. Il peut s'agir d'humains, d'animaux, d'insects, etc.",
-    image: "ninth.jpeg"
+    images: ["ninth.jpeg"]
   },
   {
     title: "10. PARTICULES",
     text: "Étincelles, poussière, débris, éclats, fragments de verre, tessons, pluie, neige, cendres, braises, particules de fumée, particules magiques/d'énergie, lucioles, essaims, insectes, oiseaux, sable, gravier, feuilles, confettis, traînées de particules, forces, collisions, personnages se transformant en poussière, dissolution d'objets, désintégration de bâtiments, désintégration de particules, transitions cendres/sable/digitales/organiques.",
-    image: "10th.jpeg"
+    images: ["10th.jpeg", "fivethinth.jpeg", "sixthiinth.jpeg"]
   },
   {
     title: "11. FOUDRE / ÉNERGIE",
     text: "Foudre, arcs électriques, étincelles, bobines Tesla, faisceaux d'énergie, plasma, champs électriques, traînées d'énergie, électricité procédurale, explosions électriques, tempêtes de foudre.",
-    image: "eleventh.jpeg"
+    images: ["eleventh.jpeg", "seventh17.jpeg"]
   },
   {
     title: "12. CROISSANCE",
     text: "Bâtiments qui poussent automatiquement, plantes, vignes, cristaux, villes qui s'assemblent, objets qui se dissolvent, croissance organique/fractale, transformation procédurale, croissance de surface, fissuration, vieillissement, corrosion.",
-    image: "thevth.jpeg"
+    images: ["thevth.jpeg", "fortheenth.jpeg", "18th.jpeg", "19th.jpeg", "20th.jpeg", "21th.jpeg", "22nd.jpeg", "23rd.jpeg", "24th.jpeg"]
   }
 ];
+
+let currentSubImageIndex = 0;
+let autoSlideInterval = null;
+
+function renderSubCarousel(images) {
+  const trackEl = document.getElementById('curriculum-slider-track');
+  const dotsContainer = document.getElementById('curriculum-sub-dots');
+  if (!trackEl || !dotsContainer) return;
+  
+  trackEl.innerHTML = '';
+  dotsContainer.innerHTML = '';
+  currentSubImageIndex = 0;
+  
+  images.forEach((imgSrc, idx) => {
+    const slide = document.createElement('div');
+    slide.className = 'curriculum-slider-slide';
+    
+    const img = document.createElement('img');
+    img.src = imgSrc;
+    img.alt = `Render slide ${idx + 1}`;
+    img.onclick = () => openLightbox(imgSrc);
+    
+    slide.appendChild(img);
+    trackEl.appendChild(slide);
+    
+    const dot = document.createElement('div');
+    dot.className = `curriculum-sub-dot ${idx === 0 ? 'active' : ''}`;
+    dot.onclick = (e) => {
+      e.stopPropagation();
+      goToSubImage(idx);
+    };
+    dotsContainer.appendChild(dot);
+  });
+  
+  trackEl.style.transform = `translateX(0%)`;
+  
+  // Only show navigation arrows if there is more than 1 image
+  const arrows = document.querySelectorAll('.curriculum-sub-arrow');
+  arrows.forEach(arrow => {
+    if (images.length > 1) {
+      arrow.style.display = 'flex';
+    } else {
+      arrow.style.display = 'none';
+    }
+  });
+  
+  startAutoSlide(images.length);
+}
+
+function goToSubImage(idx) {
+  const trackEl = document.getElementById('curriculum-slider-track');
+  const dots = document.querySelectorAll('.curriculum-sub-dot');
+  if (!trackEl || dots.length === 0) return;
+  
+  const slideCount = dots.length;
+  if (idx < 0) idx = slideCount - 1;
+  if (idx >= slideCount) idx = 0;
+  
+  currentSubImageIndex = idx;
+  trackEl.style.transform = `translateX(-${idx * 100}%)`;
+  
+  dots.forEach((dot, dIdx) => {
+    if (dIdx === idx) {
+      dot.classList.add('active');
+    } else {
+      dot.classList.remove('active');
+    }
+  });
+}
+
+function prevSubImage(event) {
+  if (event) event.stopPropagation();
+  goToSubImage(currentSubImageIndex - 1);
+}
+
+function nextSubImage(event) {
+  if (event) event.stopPropagation();
+  goToSubImage(currentSubImageIndex + 1);
+}
+
+function startAutoSlide(slideCount) {
+  if (autoSlideInterval) clearInterval(autoSlideInterval);
+  if (slideCount <= 1) return;
+  
+  autoSlideInterval = setInterval(() => {
+    goToSubImage(currentSubImageIndex + 1);
+  }, 4000);
+}
 
 function switchHoudiniCarousel(index) {
   if (index < 0) index = 11;
@@ -2145,25 +2233,25 @@ function switchHoudiniCarousel(index) {
   
   const titleEl = document.getElementById('h-carousel-title');
   const descEl = document.getElementById('h-carousel-desc');
-  const imgEl = document.getElementById('h-carousel-img');
+  const trackEl = document.getElementById('curriculum-slider-track');
   const badgeEl = document.getElementById('h-carousel-badge');
   const counterEl = document.getElementById('h-carousel-counter');
   
   if (titleEl) {
     titleEl.style.opacity = '0.3';
     descEl.style.opacity = '0.3';
-    imgEl.style.opacity = '0.3';
+    if (trackEl) trackEl.style.opacity = '0.3';
     
     setTimeout(() => {
       titleEl.textContent = item.title;
       descEl.textContent = item.text;
-      imgEl.src = item.image;
+      renderSubCarousel(item.images);
       badgeEl.textContent = `MENU ${(index + 1).toString().padStart(2, '0')} / 12`;
       counterEl.textContent = `${index + 1} - 12`;
       
       titleEl.style.opacity = '1';
       descEl.style.opacity = '1';
-      imgEl.style.opacity = '1';
+      if (trackEl) trackEl.style.opacity = '1';
     }, 150);
   }
   
@@ -2171,7 +2259,6 @@ function switchHoudiniCarousel(index) {
   indicatorBars.forEach((bar, idx) => {
     if (idx === index) {
       bar.classList.add('active');
-      // Scroll into view if needed
       bar.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     } else {
       bar.classList.remove('active');
