@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Immersio Suprema | Centre d'Innovation Immersif</title>
   
-  <!-- Modern Typography & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Inter:wght@400;500;600;700&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Custom Application Stylesheet -->
@@ -78,9 +77,6 @@
 
   <!-- DNEG-STYLE FULL-SCREEN MENU OVERLAY -->
   <div class="menu-drawer" id="menu-drawer">
-    <div class="lens-burst-glow"></div>
-    <div class="lens-burst-flare"></div>
-    
     <div class="menu-drawer-container">
       <div class="drawer-col-left">
         <!-- Search wrapper with drawer language selector inside -->
@@ -94,8 +90,8 @@
         
         <ul class="drawer-secondary-links">
           <li><a href="#home" class="secondary-link-item" onclick="toggleMenuDrawer()"><span class="link-prefix">01.</span> <span data-i18n="nav_home">Home</span></a></li>
-          <li><a href="#studio-challenge" class="secondary-link-item" onclick="toggleMenuDrawer()"><span class="link-prefix">02.</span> <span data-i18n="nav_why">Creative Tech</span></a></li>
-          <li><a href="#studio" class="secondary-link-item" onclick="toggleMenuDrawer()"><span class="link-prefix">03.</span> <span data-i18n="nav_studio">About us</span></a></li>
+          <li><a href="#studio" class="secondary-link-item" onclick="toggleMenuDrawer()"><span class="link-prefix">02.</span> <span data-i18n="nav_studio">About us</span></a></li>
+          <li><a href="#strategic-program" class="secondary-link-item" onclick="toggleMenuDrawer()"><span class="link-prefix">03.</span> <span data-i18n="nav_why">Creative Tech</span></a></li>
           <li><a href="#showcase" class="secondary-link-item" onclick="toggleMenuDrawer()"><span class="link-prefix">04.</span> <span data-i18n="nav_showcase">Showcase</span></a></li>
           <li><a href="#technology" class="secondary-link-item" onclick="toggleMenuDrawer()"><span class="link-prefix">05.</span> <span data-i18n="nav_technology">Sandbox</span></a></li>
           <li><a href="#training" class="secondary-link-item" onclick="toggleMenuDrawer()"><span class="link-prefix">06.</span> <span data-i18n="nav_training">Academy & Admissions</span></a></li>
@@ -110,11 +106,9 @@
       
       <div class="drawer-col-right">
         <ul class="drawer-main-links">
-          <li><a href="javascript:void(0)" class="drawer-main-link" onclick="handleMenuDivisionClick('vfx')"><span>IMMERSIO VFX</span></a></li>
-          <li><a href="javascript:void(0)" class="drawer-main-link" onclick="handleMenuDivisionClick('animation')"><span>IMMERSIO ANIMATION</span></a></li>
-          <li><a href="javascript:void(0)" class="drawer-main-link" onclick="handleMenuDivisionClick('simulation')"><span>IMMERSIO SIMULATION</span></a></li>
-          <li><a href="javascript:void(0)" class="drawer-main-link" onclick="handleMenuDivisionClick('art')"><span>IMMERSIO ART</span></a></li>
-          <li><a href="javascript:void(0)" class="drawer-main-link" onclick="handleMenuDivisionClick('technology')"><span>IMMERSIO TECH</span></a></li>
+          <li><a href="javascript:void(0)" class="drawer-main-link" onclick="handleMenuDivisionClick('vfx')"><span>IMMERSIO ADVERTISING</span></a></li>
+          <li><a href="javascript:void(0)" class="drawer-main-link" onclick="handleMenuDivisionClick('animation')"><span>IMMERSIO FILMS</span></a></li>
+          <li><a href="javascript:void(0)" class="drawer-main-link" onclick="handleMenuDivisionClick('simulation')"><span>IMMERSIO SCIENCE</span></a></li>
         </ul>
       </div>
     </div>
@@ -157,418 +151,297 @@
     </div>
   </div>
 
-  <!-- SECTION 2: ABOUT US / STUDIO (WARM BEIGE DNEG THEME - NO BORDER TEXT GRID) -->
+  <!-- SECTION 2: WHO WE ARE & OUR EXPERTISE (FIRST PART) -->
   <section class="apple-section apple-pure-white-bg" id="studio">
     <div class="apple-section-container">
       
-      <div class="apple-header-block">
-        <span class="apple-kicker" data-i18n="studio_kicker">Creative Innovation Hub</span>
-        <h2 class="apple-section-title" data-i18n="studio_title">Who We Are</h2>
-        <p class="apple-section-desc" data-i18n="studio_desc">
-          Nous fusionnons art cinématographique et technologies immersives en temps réel. Notre studio conçoit des moteurs de rendu de pointe, des simulateurs interactifs de haute fidélité et des formations certifiées pour les plus grands studios mondiaux.
-        </p>
-      </div>
-      
-      <!-- Asymmetric borderless text column grid representing capabilities -->
-      <div class="apple-grid-4col">
+      <!-- Asymmetric 2-column split block for company profile -->
+      <div class="program-overview-layout">
         
-        <div class="dneg-text-capability">
-          <span class="card-num-badge">01 / vfx</span>
-          <h3 class="pro-card-title" data-i18n="cap1_title">Cinematic VFX</h3>
-          <p class="pro-card-desc" data-i18n="cap1_desc">
-            Virtual Production pipelines with high-fidelity LED volume wall integration, Unreal Engine 5.4 staging, and real-time actor digital twins.
-          </p>
-        </div>
-
-        <div class="dneg-text-capability">
-          <span class="card-num-badge">02 / ai</span>
-          <h3 class="pro-card-title" data-i18n="cap2_title">AI Neural Solutions</h3>
-          <p class="pro-card-desc" data-i18n="cap2_desc">
-            Machine learning graphic models, real-time NeRFs, Gaussian Splatting, and neural rendering pipelines for photorealistic interactive worlds.
-          </p>
-        </div>
-
-        <div class="dneg-text-capability">
-          <span class="card-num-badge">03 / sim</span>
-          <h3 class="pro-card-title" data-i18n="cap3_title">Defense Simulation</h3>
-          <p class="pro-card-desc" data-i18n="cap3_desc">
-            Mission rehearsal software, tactical flight simulations, biometric telemetry dashboards, and multi-user synthetic training environments.
-          </p>
-        </div>
-
-        <div class="dneg-text-capability">
-          <span class="card-num-badge">04 / vp</span>
-          <h3 class="pro-card-title" data-i18n="cap4_title">Virtual Production</h3>
-          <p class="pro-card-desc" data-i18n="cap4_desc">
-            LED Stage setup design, camera calibration, lighting rigs, academic degree curricula, and certified training programs.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- Sub-block 1: The 12-Month Challenge (Who We Are style) -->
-      <div class="studio-sub-block" id="studio-challenge" style="margin-top: 80px; border-top: 1px solid rgba(42, 40, 48, 0.08); padding-top: 60px;">
-        <div class="apple-header-block">
-          <span class="apple-kicker" data-i18n="challenge_kicker">THE 12-MONTH CHALLENGE</span>
-          <h2 class="apple-section-title" data-i18n="challenge_title">More Than Simple Content</h2>
-          <p class="apple-section-desc" data-i18n="challenge_desc" style="max-width: 850px;">
-            At the end of the 12 months, the company would not simply have a series of content pieces produced throughout the campaigns. The objective is to transform each campaign into a building block for a stronger, more consistent, and more recognizable brand over time even before the logo appears.
-          </p>
-        </div>
-
-        <div class="apple-grid-4col" style="margin-top: 40px;">
-          <div class="dneg-text-capability">
-            <span class="card-num-badge">01 / territory</span>
-            <h3 class="pro-card-title" data-i18n="challenge_title1">Brand Territory</h3>
-            <p class="pro-card-desc" data-i18n="challenge_bullet1">
-              A COHERENT AUDIOVISUAL BRAND TERRITORY
+        <!-- Left: Who We Are & Credentials narrative -->
+        <div class="program-intro-col">
+          <span class="apple-kicker" data-i18n="hero_tagline_title">Cinematic Expertise. Immersive Innovation.</span>
+          <h2 class="apple-section-title" data-i18n="remember_title" style="margin-bottom: 25px;">WE CREATE EXPERIENCES WORTH REMEMBERING</h2>
+          
+          <div class="about-narrative-stack" style="display: flex; flex-direction: column; gap: 20px;">
+            <p class="about-p lead" data-i18n="remember_p1">
+              We merge cinematic art with real-time immersive technologies to create experiences that push the boundaries of storytelling.
             </p>
-          </div>
-
-          <div class="dneg-text-capability">
-            <span class="card-num-badge">02 / signature</span>
-            <h3 class="pro-card-title" data-i18n="challenge_title2">Brand Signature</h3>
-            <p class="pro-card-desc" data-i18n="challenge_bullet2">
-              A DISTINCTIVE AND RECOGNIZABLE BRAND SIGNATURE
+            <p class="about-p" data-i18n="remember_p2">
+              Our studio develops cutting-edge rendering engines, high-fidelity interactive simulators, and certified training programs for leading studios and organisations worldwide.
             </p>
-          </div>
-
-          <div class="dneg-text-capability">
-            <span class="card-num-badge">03 / library</span>
-            <h3 class="pro-card-title" data-i18n="challenge_title3">Asset Library</h3>
-            <p class="pro-card-desc" data-i18n="challenge_bullet3">
-              A REUSABLE CONTENT ASSET LIBRARY
+            <p class="about-p" data-i18n="remember_p3">
+              Our expertise is grounded in some of the most demanding environments in the global entertainment industry. The CEO has worked as Technical Director in 3D Effects at Sony Pictures Imageworks, contributing to the feature animation film, Spider-Man: Across the Spider-Verse, an Academy Award-nominated film.
             </p>
-          </div>
-
-          <div class="dneg-text-capability">
-            <span class="card-num-badge">04 / knowledge</span>
-            <h3 class="pro-card-title" data-i18n="challenge_title4">Knowledge Base</h3>
-            <p class="pro-card-desc" data-i18n="challenge_bullet4">
-              A KNOWLEDGE BASE TO INFORM AND IMPROVE FUTURE COMMUNICATIONS
+            <p class="about-p" data-i18n="remember_p4">
+              Her experience spans technical direction, visual storytelling, audiovisual technologies, production, and 2D/3D visual effects, alongside emerging fields such as artificial intelligence and the evaluation of content used to train AI models for leading American companies.
             </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sub-block 2: Evolving Brand Expression & Ambition (Who We Are style) -->
-      <div class="studio-sub-block" id="studio-ambition" style="margin-top: 80px; border-top: 1px solid rgba(42, 40, 48, 0.08); padding-top: 60px;">
-        <div class="apple-header-block">
-          <span class="apple-kicker" data-i18n="why_join_kicker">WHY JOIN US NOW?</span>
-          <h2 class="apple-section-title" data-i18n="why_join_title">Why Join Us Now?</h2>
-          <p class="apple-section-desc" data-i18n="why_join_text1" style="max-width: 850px;">
-            As a company consolidates its growth and strengthens its presence across the continent, a new chapter is emerging: EVOLVE THE BRAND EXPRESSION TO MATCH THE AMBITION. The challenge is no longer simply about visibility. It is about building a brand expression that is:
-          </p>
-        </div>
-
-        <div class="apple-grid-4col" style="margin-top: 40px;">
-          <div class="dneg-text-capability">
-            <span class="card-num-badge">01 / vibrant</span>
-            <h3 class="pro-card-title" data-i18n="ambition_title1">More Vibrant</h3>
-            <p class="pro-card-desc" data-i18n="ambition_desc1">
-              From static imagery to a dynamic, animated, and continuous brand experience.
-            </p>
-          </div>
-
-          <div class="dneg-text-capability">
-            <span class="card-num-badge">02 / narrative</span>
-            <h3 class="pro-card-title" data-i18n="ambition_title2">More Narrative</h3>
-            <p class="pro-card-desc" data-i18n="ambition_desc2">
-              From simple ad campaigns to an integrated narrative brand platform.
-            </p>
-          </div>
-
-          <div class="dneg-text-capability">
-            <span class="card-num-badge">03 / emotional</span>
-            <h3 class="pro-card-title" data-i18n="ambition_title3">More Emotional</h3>
-            <p class="pro-card-desc" data-i18n="ambition_desc3">
-              From simple image broadcasting to deep and lasting emotional resonance.
-            </p>
-          </div>
-
-          <div class="dneg-text-capability">
-            <span class="card-num-badge">04 / memorable</span>
-            <h3 class="pro-card-title" data-i18n="ambition_title4">More Memorable</h3>
-            <p class="pro-card-desc" data-i18n="ambition_desc4">
-              From one-off commercial communication to a memorable brand asset.
+            <p class="about-p" data-i18n="remember_p5">
+              From award-calibre cinema to next-generation immersive technology, we turn technical excellence into experiences that captivate, train, and inspire.
             </p>
           </div>
         </div>
 
-        <!-- Cinema storytelling split elements inside the light container -->
-        <div class="ambition-details-grid" style="margin-top: 50px; border-top: 1px solid rgba(42, 40, 48, 0.04); padding-top: 40px;">
-          <div class="ambition-card" style="background: rgba(0,0,0,0.015); border-color: rgba(0,0,0,0.05); padding: 30px;">
-            <h4 data-i18n="ambition_campaign_text" style="color: var(--bg-dark); font-weight: 700; margin-bottom: 20px;">Every campaign we create is built around:</h4>
-            <div class="ambition-tags-container">
-              <span class="ambition-tag" style="background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.06); color: var(--bg-dark);">ART DIRECTION</span>
-              <span class="ambition-tag" style="background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.06); color: var(--bg-dark);">NARRATIVE CODES</span>
-              <span class="ambition-tag" style="background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.06); color: var(--bg-dark);">IMAGE QUALITY</span>
-              <span class="ambition-tag" style="background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.06); color: var(--bg-dark);">SONIC IDENTITY</span>
-              <span class="ambition-tag" style="background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.06); color: var(--bg-dark);">CONTINUITY</span>
-            </div>
-          </div>
-
-          <div class="ambition-card" style="background: rgba(204, 164, 59, 0.03); border: 1px solid rgba(204, 164, 59, 0.15); padding: 30px; box-shadow: 0 10px 30px rgba(204,164,59,0.02);">
-            <h4 data-i18n="ambition_sub_title" style="color: var(--dneg-coral); font-weight: 800; margin-bottom: 15px;">THE AMBITION:</h4>
-            <p class="ambition-bold-p" data-i18n="ambition_sub_text" style="color: var(--bg-dark); font-weight: 700; font-size: 1.05rem; line-height: 1.55; margin: 0;">
-              NO LONGER SIMPLY COMMUNICATE WHAT A COMPANY DOES, BUT TELL THE STORY OF WHAT A COMPANY IS BUILDING.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sub-block 3: International Expertise & World-Class VFX Leadership (Who We Are style) -->
-      <div class="studio-sub-block" id="studio-expertise" style="margin-top: 80px; border-top: 1px solid rgba(42, 40, 48, 0.08); padding-top: 60px;">
-        <div class="why-join-split reverse-split">
-          <!-- Left: Credentials Badge (Beige/White Glass Style) -->
-          <div class="expertise-badge-block">
-            <div class="spider-badge-wrapper" style="background: rgba(255, 255, 255, 0.85); border-color: rgba(0, 0, 0, 0.08); box-shadow: 0 20px 45px rgba(0, 0, 0, 0.06);">
-              <div class="spider-badge-glow" style="background: radial-gradient(circle at 50% 50%, rgba(204, 164, 59, 0.08) 0%, transparent 60%);"></div>
-              <div class="spider-badge-inner">
-                <div class="spider-badge-title" style="color: rgba(0, 0, 0, 0.45); font-weight: 700; letter-spacing: 0.12em;">SONY PICTURES</div>
-                <div class="spider-badge-subtitle" style="color: var(--bg-dark); font-weight: 800; letter-spacing: 0.08em;">IMAGEWORKS</div>
-                <div class="spider-divider" style="background: rgba(0,0,0,0.15);"></div>
-                <div class="spider-movie" style="color: var(--bg-dark); font-weight: 800;">SPIDER-MAN</div>
-                <div class="spider-movie-sub" style="color: var(--dneg-coral); font-weight: 800;">ACROSS THE SPIDER-VERSE</div>
-                <div class="spider-award" style="background: rgba(204, 164, 59, 0.06); color: var(--bg-dark); border-color: rgba(204, 164, 59, 0.15); font-weight: 700;"><i class="fas fa-award"></i> ACADEMY AWARD NOMINEE</div>
-                <div class="spider-role" style="color: rgba(0, 0, 0, 0.45); font-weight: 700;">TECHNICAL DIRECTOR</div>
+        <!-- Right: 3 Expertise Cards -->
+        <div class="program-list-col">
+          <h3 class="sidebar-filter-title" data-i18n="expertise_title_static" style="margin-bottom: 20px;">OUR EXPERTISE</h3>
+          
+          <!-- Expertise 1: Cinematic Production -->
+          <div class="program-list-item">
+            <div class="program-item-number">01</div>
+            <div class="program-item-content">
+              <span class="program-meta-badge" data-i18n="exp1_kicker" style="margin-bottom: 10px;">01 / CINEMATIC PRODUCTION</span>
+              <h4 class="program-item-title" data-i18n="exp1_title" style="font-size: 1.2rem; margin-bottom: 8px;">Cinematic Shots</h4>
+              <p class="program-item-desc" data-i18n="exp1_desc" style="margin-bottom: 8px;">
+                From audiovisual production and direction to Hollywood-grade 2D/3D visual effects, we combine creative storytelling with technical precision.
+              </p>
+              <p class="program-item-desc" data-i18n="exp1_sub" style="font-size: 0.85rem; color: #71717a; margin-bottom: 12px;">
+                Our expertise spans complex VFX pipelines, color grading, art direction, and high-fidelity visual integration.
+              </p>
+              <div class="program-meta-details">
+                <span class="program-meta-badge"><i class="fas fa-film"></i> <span data-i18n="exp1_footer">Pre production. Production. Post Production.</span></span>
               </div>
             </div>
           </div>
 
-          <!-- Right Content: The capability grids -->
-          <div class="why-join-content-block">
-            <span class="apple-kicker" data-i18n="expertise_kicker">INTERNATIONAL EXPERTISE</span>
-            <h2 class="apple-section-title" data-i18n="expertise_title" style="margin-bottom: 25px; color: var(--bg-dark);">International Expertise in Visual Storytelling</h2>
-            
-            <p class="why-join-p dark-txt" data-i18n="expertise_text1" style="font-weight: 600; font-size: 1.12rem; line-height: 1.6;">
-              The CEO and President of Immersio Suprema has notably served as Technical Director in 3D Effects at Sony Pictures Imageworks, including work on Spider-Man: Across the Spider-Verse, an Academy Award-nominated production.
-            </p>
-            <p class="why-join-p dark-txt" data-i18n="expertise_text2">
-              Immersio Suprema draws on expertise developed within demanding international environments, spanning technical supervision, visual storytelling, production, audiovisual technologies, and 2D/3D visual effects.
-            </p>
-            <p class="why-join-p dark-txt" data-i18n="expertise_text3">
-              This expertise also includes work involving artificial intelligence and the evaluation of content used to train AI models for american companies.
-            </p>
-          </div>
-        </div>
-
-        <!-- 4-Column Grid for Sony VFX Transfers (Who We Are style) -->
-        <div class="apple-grid-4col" style="margin-top: 50px; border-top: 1px solid rgba(42, 40, 48, 0.04); padding-top: 40px;">
-          <div class="dneg-text-capability">
-            <span class="card-num-badge">01 / production</span>
-            <h3 class="pro-card-title" data-i18n="exp_title1">Audiovisual Production</h3>
-            <p class="pro-card-desc" data-i18n="exp_desc1">
-              Implementing world-class standards of production, direction, and storytelling.
-            </p>
-          </div>
-
-          <div class="dneg-text-capability">
-            <span class="card-num-badge">02 / supervision</span>
-            <h3 class="pro-card-title" data-i18n="exp_title2">Technical Supervision</h3>
-            <p class="pro-card-desc" data-i18n="exp_desc2">
-              Supervising 3D visual effects pipelines, color grading, and complex integrations.
-            </p>
-          </div>
-
-          <div class="dneg-text-capability">
-            <span class="card-num-badge">03 / vfx</span>
-            <h3 class="pro-card-title" data-i18n="exp_title3">2D/3D Visual Effects</h3>
-            <p class="pro-card-desc" data-i18n="exp_desc3">
-              Demanding visual storytelling and Hollywood-grade art direction.
-            </p>
-          </div>
-
-          <div class="dneg-text-capability">
-            <span class="card-num-badge">04 / ai</span>
-            <h3 class="pro-card-title" data-i18n="exp_title4">Artificial Intelligence</h3>
-            <p class="pro-card-desc" data-i18n="exp_desc4">
-              Advanced evaluation and technical supervision for generative AI model training.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sub-block 4: Strategic Partnership (Who We Are style) -->
-      <div class="studio-sub-block" id="studio-partner" style="margin-top: 80px; border-top: 1px solid rgba(42, 40, 48, 0.08); padding-top: 60px;">
-        <div class="apple-header-block">
-          <span class="apple-kicker" data-i18n="partner_scope_kicker">OUR PARTNERSHIP PROGRAM</span>
-          <h2 class="apple-section-title" data-i18n="partner_scope_title">A Strategic Audiovisual Program</h2>
-          <p class="apple-section-desc" data-i18n="why_suprema_text1" style="max-width: 850px;">
-            An agency produces content. Immersio Suprema builds a brand’s audiovisual capability.
-          </p>
-        </div>
-
-        <div class="studio-grid-5col" style="margin-top: 40px;">
-          <div class="dneg-text-capability">
-            <span class="card-num-badge">01 / strategy</span>
-            <h3 class="pro-card-title" data-i18n="scope1_title">STRATEGY AND ADVISORY</h3>
-            <p class="pro-card-desc" data-i18n="scope1_desc">
-              Audiovisual strategy, consulting and support, creative direction, narrative territories, coordination, and program management.
-            </p>
-          </div>
-
-          <div class="dneg-text-capability">
-            <span class="card-num-badge">02 / creative</span>
-            <h3 class="pro-card-title" data-i18n="scope2_title">CREATIVE & PRODUCTION</h3>
-            <p class="pro-card-desc" data-i18n="scope2_desc">
-              Campaign concepts, pre-production, production and directing, advanced post-production, adaptations, and content variations.
-            </p>
-          </div>
-
-          <div class="dneg-text-capability">
-            <span class="card-num-badge">03 / tech</span>
-            <h3 class="pro-card-title" data-i18n="scope3_title">TECHNOLOGY AND EXPERTISE</h3>
-            <p class="pro-card-desc" data-i18n="scope3_desc">
-              2D, 3D, VFX, AI when relevant, and advanced production technologies.
-            </p>
-          </div>
-
-          <div class="dneg-text-capability">
-            <span class="card-num-badge">04 / deployment</span>
-            <h3 class="pro-card-title" data-i18n="scope4_title">DISTRIBUTION & DEPLOYMENT</h3>
-            <p class="pro-card-desc" data-i18n="scope4_desc">
-              TV distribution included subject to conditions, content preparation and adaptation, and social media content creation.
-            </p>
-          </div>
-
-          <div class="dneg-text-capability">
-            <span class="card-num-badge">05 / metrics</span>
-            <h3 class="pro-card-title" data-i18n="scope5_title">MEASUREMENT & OPTIMIZE</h3>
-            <p class="pro-card-desc" data-i18n="scope5_desc">
-              Identifying the content, formats, messages, and approaches that generate the greatest relevance and impact.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sub-block 5: Space for Differentiation & Deliverables (Who We Are style) -->
-      <div class="studio-sub-block" id="studio-differentiation" style="margin-top: 80px; border-top: 1px solid rgba(42, 40, 48, 0.08); padding-top: 60px;">
-        <div class="apple-header-block">
-          <span class="apple-kicker" data-i18n="diff_kicker">DIFFERENTIATION</span>
-          <h2 class="apple-section-title" data-i18n="diff_title">The Space for Differentiation</h2>
-          <p class="apple-section-desc" data-i18n="diff_team" style="max-width: 850px; font-weight: 700; color: var(--bg-dark);">
-            A COMPLETE PRE-PRODUCTION, PRODUCTION AND POST-PRODUCTION TEAM.
-          </p>
-        </div>
-
-        <div class="apple-grid-4col" style="margin-top: 40px;">
-          <div class="dneg-text-capability">
-            <span class="card-num-badge">01 / campaign</span>
-            <h3 class="pro-card-title" data-i18n="diff_title1">Strategic Campaigns</h3>
-            <p class="pro-card-desc" data-i18n="diff_desc1">
-              The annual program is structured around strategic campaigns.
-            </p>
-          </div>
-
-          <div class="dneg-text-capability">
-            <span class="card-num-badge">02 / film</span>
-            <h3 class="pro-card-title" data-i18n="diff_title2">Corporate Film</h3>
-            <p class="pro-card-desc" data-i18n="diff_desc2">
-              Each campaign includes a corporate signature film to establish visual identity.
-            </p>
-          </div>
-
-          <div class="dneg-text-capability">
-            <span class="card-num-badge">03 / tv</span>
-            <h3 class="pro-card-title" data-i18n="diff_title3">TV Production</h3>
-            <p class="pro-card-desc" data-i18n="diff_desc3">
-              Advanced television content creation and program formatting.
-            </p>
-          </div>
-
-          <div class="dneg-text-capability">
-            <span class="card-num-badge">04 / social</span>
-            <h3 class="pro-card-title" data-i18n="diff_title4">Social Media</h3>
-            <p class="pro-card-desc" data-i18n="diff_desc4">
-              Ongoing content variations optimized for digital and social environments.
-            </p>
-          </div>
-        </div>
-
-        <div class="diff-results-clause" style="color: rgba(0,0,0,0.45); border-color: rgba(0,0,0,0.08); margin-top: 40px;" data-i18n="diff_results_note">
-          Distribution and commercial results depend, among other factors, on the media plan, target audiences, timing, approvals, and the data available.
-        </div>
-      </div>
-
-      <!-- Sub-block 6: Continuous Capacity & Timeline -->
-      <div class="studio-sub-block" id="studio-timeline" style="margin-top: 80px; border-top: 1px solid rgba(42, 40, 48, 0.08); padding-top: 60px;">
-        <div class="apple-header-block">
-          <span class="apple-kicker" data-i18n="continuous_kicker">CONTINUOUS FLUX</span>
-          <h2 class="apple-section-title" data-i18n="continuous_title">Continuous Production Capacity</h2>
-          <p class="apple-section-desc" data-i18n="continuous_desc" style="max-width: 850px;">
-            The model makes it possible to prepare the next campaign while the current campaign is being distributed and measured, avoiding production gaps.
-          </p>
-        </div>
-
-        <!-- 3-Column Explanation (Who We Are style) -->
-        <div class="apple-grid-3col" style="margin-top: 40px;">
-          <div class="dneg-text-capability">
-            <span class="card-num-badge">01 / distribution</span>
-            <h3 class="pro-card-title" data-i18n="time_title1">Active Campaign</h3>
-            <p class="pro-card-desc" data-i18n="time_desc1">
-              Distribution in market, performance measurement, and learning accumulation.
-            </p>
-          </div>
-
-          <div class="dneg-text-capability">
-            <span class="card-num-badge">02 / design</span>
-            <h3 class="pro-card-title" data-i18n="time_title2">Next Campaign</h3>
-            <p class="pro-card-desc" data-i18n="time_desc2">
-              Creative concept development, strategic planning, and active pre-production.
-            </p>
-          </div>
-
-          <div class="dneg-text-capability">
-            <span class="card-num-badge">03 / loop</span>
-            <h3 class="pro-card-title" data-i18n="time_title3">Continuous Capacity</h3>
-            <p class="pro-card-desc" data-i18n="time_desc3">
-              Parallel scheduling eliminates production gaps, ensuring constant content output.
-            </p>
-          </div>
-        </div>
-
-        <!-- Light-theme Timeline visual tracks -->
-        <div class="timeline-editor-container" style="background: rgba(255,255,255,0.85); border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 15px 35px rgba(0,0,0,0.04); margin-top: 40px;">
-          <!-- Timeline ruler header -->
-          <div class="timeline-ruler" style="border-bottom: 1px solid rgba(0,0,0,0.06);">
-            <div class="ruler-tick" style="color: rgba(0,0,0,0.4);">M1</div>
-            <div class="ruler-tick" style="color: rgba(0,0,0,0.4);">M2</div>
-            <div class="ruler-tick" style="color: rgba(0,0,0,0.4);">M3</div>
-            <div class="ruler-tick" style="color: rgba(0,0,0,0.4);">M4</div>
-            <div class="ruler-tick" style="color: rgba(0,0,0,0.4);">M5</div>
-            <div class="ruler-tick" style="color: rgba(0,0,0,0.4);">M6</div>
-            <div class="ruler-tick" style="color: rgba(0,0,0,0.4);">M7</div>
-            <div class="ruler-tick" style="color: rgba(0,0,0,0.4);">M8</div>
-            <div class="ruler-tick" style="color: rgba(0,0,0,0.4);">M9</div>
-            <div class="ruler-tick" style="color: rgba(0,0,0,0.4);">M10</div>
-            <div class="ruler-tick" style="color: rgba(0,0,0,0.4);">M11</div>
-            <div class="ruler-tick" style="color: rgba(0,0,0,0.4);">M12</div>
-          </div>
-          
-          <!-- Track 1: Campaign in Market -->
-          <div class="timeline-track">
-            <div class="track-label" style="color: rgba(0,0,0,0.6);" data-i18n="continuous_track_a">CAMPAIGN IN MARKET</div>
-            <div class="track-block blue-track" style="color: var(--bg-dark); font-weight: 800;">
-              <span data-i18n="continuous_track_a_desc">DISTRIBUTION → MEASUREMENT → LEARNING</span>
+          <!-- Expertise 2: Immersive Technologies -->
+          <div class="program-list-item">
+            <div class="program-item-number">02</div>
+            <div class="program-item-content">
+              <span class="program-meta-badge" data-i18n="exp2_kicker" style="margin-bottom: 10px;">02 / IMMERSIVE TECHNOLOGIES</span>
+              <h4 class="program-item-title" data-i18n="exp2_title" style="font-size: 1.2rem; margin-bottom: 8px;">Immersive Systems & Interactive Experiences</h4>
+              <p class="program-item-desc" data-i18n="exp2_desc" style="margin-bottom: 8px;">
+                We transform cinematic worlds into interactive, real-time experiences through advanced rendering, simulation, digital twins, and immersive technologies.
+              </p>
+              <p class="program-item-desc" data-i18n="exp2_sub" style="font-size: 0.85rem; color: #71717a; margin-bottom: 12px;">
+                From interactive environments to high-fidelity simulators, we engineer systems that bring together visual storytelling, real-time computation, and human interaction.
+              </p>
+              <div class="program-meta-details">
+                <span class="program-meta-badge"><i class="fas fa-vr-cardboard"></i> <span data-i18n="exp2_footer">Cinematic worlds. Real-time intelligence. Immersive experiences.</span></span>
+              </div>
             </div>
           </div>
-          
-          <!-- Track 2: Next Campaign -->
-          <div class="timeline-track">
-            <div class="track-label" style="color: rgba(0,0,0,0.6);" data-i18n="continuous_track_b">NEXT CAMPAIGN</div>
-            <div class="track-block cyan-track" style="color: var(--bg-dark); font-weight: 800;">
-              <span data-i18n="continuous_track_b_desc">CONCEPT DEVELOPMENT → PRE-PRODUCTION</span>
+
+          <!-- Expertise 3: AI Technologies -->
+          <div class="program-list-item">
+            <div class="program-item-number">03</div>
+            <div class="program-item-content">
+              <span class="program-meta-badge" data-i18n="exp3_kicker" style="margin-bottom: 10px;">03 / AI TECHNOLOGIES</span>
+              <h4 class="program-item-title" data-i18n="exp3_title" style="font-size: 1.2rem; margin-bottom: 8px;">AI Solutions</h4>
+              <p class="program-item-desc" data-i18n="exp3_desc" style="margin-bottom: 8px;">
+                We develop and supervise advanced AI-driven visual technologies for photorealistic interactive worlds.
+              </p>
+              <p class="program-item-desc" data-i18n="exp3_sub" style="font-size: 0.85rem; color: #71717a; margin-bottom: 12px;">
+                Our expertise also extends to the technical evaluation and supervision of generative AI model training, helping transform emerging technologies into production-ready solutions.
+              </p>
+              <div class="program-meta-details">
+                <span class="program-meta-badge"><i class="fas fa-brain"></i> <span data-i18n="exp3_footer">Where artificial intelligence meets visual reality.</span></span>
+              </div>
             </div>
           </div>
-          
-          <!-- Loop indicator -->
-          <div class="timeline-loop-indicator" style="border-top: 1px solid rgba(0,0,0,0.06); color: rgba(0,0,0,0.4);">
-            <i class="fas fa-sync-alt fa-spin"></i>
-            <span data-i18n="why_suprema_cycle">UN CYCLE CONTINU</span>
-          </div>
+
         </div>
       </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2.5: A STRATEGIC AUDIOVISUAL PROGRAM (SECOND PART) -->
+  <section class="apple-section apple-pure-white-bg" id="strategic-program" style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 80px;">
+    <div class="apple-section-container">
+      
+      <div class="program-overview-layout">
+        
+        <!-- Left: Sticky Title and Kicker -->
+        <div class="program-intro-col">
+          <span class="apple-kicker" data-i18n="strategic_kicker">A STRATEGIC AUDIOVISUAL PROGRAM</span>
+          <h2 class="apple-section-title" data-i18n="strategic_title" style="font-size: 1.9rem; line-height: 1.25; margin-bottom: 25px; text-transform: uppercase;">
+            AN AGENCY PRODUCES CONTENT. IMMERSIO SUPREMA BUILDS A BRAND'S AUDIOVISUAL CAPABILITY.
+          </h2>
+          
+          <div class="about-narrative-stack" style="display: flex; flex-direction: column; gap: 20px;">
+            <p class="about-p lead" data-i18n="strategic_p1">
+              We don't approach audiovisual communication as a series of isolated campaigns.
+            </p>
+            <p class="about-p" data-i18n="strategic_p2">
+              We build long-term audiovisual ecosystems that connect strategy, creativity, production, technology, distribution, measurement, and continuous learning into one integrated program.
+            </p>
+            <p class="about-p" data-i18n="strategic_p3">
+              Every campaign becomes more than content. It becomes an asset, a learning, and a building block for what comes next.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: 6 Strategic Program Steps -->
+        <div class="program-list-col">
+          
+          <!-- Step 1: Strategy -->
+          <div class="program-list-item">
+            <div class="program-item-number">01</div>
+            <div class="program-item-content">
+              <span class="program-meta-badge" data-i18n="prog1_kicker" style="margin-bottom: 8px;">01 / STRATEGY</span>
+              <h4 class="program-item-title" data-i18n="prog1_title" style="font-size: 1.15rem; margin-bottom: 6px;">STRATEGY & ADVISORY</h4>
+              <p class="program-item-desc" data-i18n="prog1_desc" style="margin-bottom: 10px;">
+                Audiovisual strategy, consulting and support, creative direction, narrative territories, coordination, and program management.
+              </p>
+              <div class="program-meta-details">
+                <span class="program-meta-badge"><i class="fas fa-map-signs"></i> <span data-i18n="prog1_footer">One strategy. One narrative. One direction.</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Creative -->
+          <div class="program-list-item">
+            <div class="program-item-number">02</div>
+            <div class="program-item-content">
+              <span class="program-meta-badge" data-i18n="prog2_kicker" style="margin-bottom: 8px;">02 / CREATIVE</span>
+              <h4 class="program-item-title" data-i18n="prog2_title" style="font-size: 1.15rem; margin-bottom: 6px;">CREATIVE & PRODUCTION</h4>
+              <p class="program-item-desc" data-i18n="prog2_desc" style="margin-bottom: 10px;">
+                Campaign concepts, pre-production, production and directing, advanced post-production, adaptations, and content variations.
+              </p>
+              <div class="program-meta-details">
+                <span class="program-meta-badge"><i class="fas fa-paint-brush"></i> <span data-i18n="prog2_footer">One idea. Infinite expressions.</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Tech -->
+          <div class="program-list-item">
+            <div class="program-item-number">03</div>
+            <div class="program-item-content">
+              <span class="program-meta-badge" data-i18n="prog3_kicker" style="margin-bottom: 8px;">03 / TECH</span>
+              <h4 class="program-item-title" data-i18n="prog3_title" style="font-size: 1.15rem; margin-bottom: 6px;">TECHNOLOGY & EXPERTISE</h4>
+              <p class="program-item-desc" data-i18n="prog3_desc" style="margin-bottom: 10px;">
+                We use 2D, 3D, VFX, AI when relevant, and advanced production technologies to expand what is creatively possible.
+              </p>
+              <div class="program-meta-details">
+                <span class="program-meta-badge"><i class="fas fa-microchip"></i> <span data-i18n="prog3_footer">Technology becomes the creative advantage.</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4: Deployment -->
+          <div class="program-list-item">
+            <div class="program-item-number">04</div>
+            <div class="program-item-content">
+              <span class="program-meta-badge" data-i18n="prog4_kicker" style="margin-bottom: 8px;">04 / DEPLOYMENT</span>
+              <h4 class="program-item-title" data-i18n="prog4_title" style="font-size: 1.15rem; margin-bottom: 6px;">DISTRIBUTION & DEPLOYMENT</h4>
+              <p class="program-item-desc" data-i18n="prog4_desc" style="margin-bottom: 10px;">
+                We prepare and adapt content for TV, social media, digital platforms, and different formats and distribution environments.
+              </p>
+              <div class="program-meta-details">
+                <span class="program-meta-badge"><i class="fas fa-share-alt"></i> <span data-i18n="prog4_footer">One story. Every screen.</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 5: Metrics -->
+          <div class="program-list-item">
+            <div class="program-item-number">05</div>
+            <div class="program-item-content">
+              <span class="program-meta-badge" data-i18n="prog5_kicker" style="margin-bottom: 8px;">05 / METRICS</span>
+              <h4 class="program-item-title" data-i18n="prog5_title" style="font-size: 1.15rem; margin-bottom: 6px;">MEASUREMENT & OPTIMIZATION</h4>
+              <p class="program-item-desc" data-i18n="prog5_desc" style="margin-bottom: 10px;">
+                We identify the content, formats, messages, and approaches that generate the greatest relevance and impact, while analysing audience reactions and performance.
+              </p>
+              <div class="program-meta-details">
+                <span class="program-meta-badge"><i class="fas fa-chart-line"></i> <span data-i18n="prog5_footer">These insights continuously inform what comes next. Every campaign generates a signal.</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 6: Capitalization -->
+          <div class="program-list-item">
+            <div class="program-item-number">06</div>
+            <div class="program-item-content">
+              <span class="program-meta-badge" data-i18n="prog6_kicker" style="margin-bottom: 8px;">06 / CAPITALIZATION</span>
+              <h4 class="program-item-title" data-i18n="prog6_title" style="font-size: 1.15rem; margin-bottom: 6px;">BUILDING ON WHAT WE CREATE</h4>
+              <p class="program-item-desc" data-i18n="prog6_desc" style="margin-bottom: 10px;">
+                We build an evolving audiovisual asset library, while capturing creative codes, narrative principles, production knowledge, and learnings from every campaign.
+              </p>
+              <p class="program-item-desc" data-i18n="prog6_footer" style="font-size: 0.85rem; color: #71717a; margin-bottom: 12px;">
+                Over time, content, performance data, audience reactions, and creative learnings become a growing body of knowledge that informs what to create, how to create it, and where to take it next. The brand doesn't start from zero each time. The more we create, the smarter the system becomes.
+              </p>
+            </div>
+          </div>
+
+          <h4 data-i18n="strategic_footer" style="color: var(--dneg-coral); font-weight: 800; text-align: center; margin-top: 30px; letter-spacing: 0.05em;">
+            WE DON'T JUST MAKE CONTENT. WE ENGINEER EXPERIENCES.
+          </h4>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2.7: EVOLVING THE BRAND EXPERIENCE (THIRD PART) -->
+  <!-- SECTION 2.7: EVOLVING THE BRAND EXPERIENCE (THIRD PART) -->
+  <section class="apple-section apple-pure-white-bg" id="brand-experience" style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 80px; padding-bottom: 80px;">
+    <div class="apple-section-container">
+      
+      <div class="apple-header-block" style="margin-bottom: 50px;">
+        <span class="apple-kicker" data-i18n="brand_exp_kicker">EVOLVE THE BRAND EXPERIENCE.</span>
+        <h2 class="apple-section-title" data-i18n="brand_exp_title" style="font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em;">
+          FROM CONTENT TO CULTURE. FROM CAMPAIGNS TO EXPERIENCES.
+        </h2>
+      </div>
+
+      <!-- Asymmetric borderless grid for the 4 pillars of brand experience -->
+      <div class="apple-grid-4col">
+        
+        <!-- Pillar 1: Vibrant -->
+        <div class="dneg-text-capability">
+          <span class="card-num-badge" data-i18n="be1_kicker">01 / VIBRANT</span>
+          <h3 class="pro-card-title" data-i18n="be1_title" style="margin-bottom: 10px;">More Vibrant</h3>
+          <p class="pro-card-desc" data-i18n="be1_desc" style="margin-bottom: 15px;">
+            From static imagery to dynamic, animated, living brand experiences that continuously evolve.
+          </p>
+          <p class="pro-card-desc" data-i18n="be1_footer" style="font-size: 0.78rem; font-weight: 600; color: var(--dneg-coral);">
+            More movement. More energy. More life.
+          </p>
+        </div>
+
+        <!-- Pillar 2: Narrative -->
+        <div class="dneg-text-capability">
+          <span class="card-num-badge" data-i18n="be2_kicker">02 / NARRATIVE</span>
+          <h3 class="pro-card-title" data-i18n="be2_title" style="margin-bottom: 10px;">More Narrative</h3>
+          <p class="pro-card-desc" data-i18n="be2_desc" style="margin-bottom: 15px;">
+            From isolated campaigns to a unified narrative ecosystem where every experience contributes to the bigger story.
+          </p>
+          <p class="pro-card-desc" data-i18n="be2_footer" style="font-size: 0.78rem; font-weight: 600; color: var(--dneg-coral);">
+            One vision. Multiple experiences. One story.
+          </p>
+        </div>
+
+        <!-- Pillar 3: Emotional -->
+        <div class="dneg-text-capability">
+          <span class="card-num-badge" data-i18n="be3_kicker">03 / EMOTIONAL</span>
+          <h3 class="pro-card-title" data-i18n="be3_title" style="margin-bottom: 10px;">More Emotional</h3>
+          <p class="pro-card-desc" data-i18n="be3_desc" style="margin-bottom: 15px;">
+            From simply communicating a message to creating experiences that people feel, remember, and connect with.
+          </p>
+          <p class="pro-card-desc" data-i18n="be3_footer" style="font-size: 0.78rem; font-weight: 600; color: var(--dneg-coral);">
+            Less broadcasting. More connection.
+          </p>
+        </div>
+
+        <!-- Pillar 4: Memorable -->
+        <div class="dneg-text-capability">
+          <span class="card-num-badge" data-i18n="be4_kicker">04 / MEMORABLE</span>
+          <h3 class="pro-card-title" data-i18n="be4_title" style="margin-bottom: 10px;">More Memorable</h3>
+          <p class="pro-card-desc" data-i18n="be4_desc" style="margin-bottom: 15px;">
+            From one-off commercial communication to lasting experiences that become part of the brand itself.
+          </p>
+          <p class="pro-card-desc" data-i18n="be4_footer" style="font-size: 0.78rem; font-weight: 600; color: var(--dneg-coral);">
+            Not just seen. Experienced. Remembered.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
 
     </div>
   </section>
@@ -947,14 +820,14 @@
     <div class="apple-section-container" id="showcase-art-view" style="display: none; margin-top: 80px; transition: opacity 0.4s ease;">
       
       <!-- Concept Design Description Block -->
-      <div class="art-concept-design-section" style="margin-bottom: 60px;">
-        <div class="art-concept-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start;">
+      <div class="art-concept-design-section">
+        <div class="art-concept-grid">
           <div class="art-concept-left">
             <span class="apple-kicker">CONCEPT DESIGN</span>
-            <h2 class="art-concept-title" style="color: #fff; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin-top: 10px;">WHERE WORLDS BEGIN</h2>
+            <h2 class="art-concept-title">WHERE WORLDS BEGIN</h2>
           </div>
           <div class="art-concept-right">
-            <p class="art-concept-text" data-i18n="art_concept_text" style="color: rgba(255,255,255,0.7); font-size: 1.05rem; line-height: 1.7; font-weight: 500; margin: 0;">
+            <p class="art-concept-text" data-i18n="art_concept_text">
               Immersio’s Concept Art department stands at the pinnacle of motion picture design, uniting artistry with collaboration to create handwoven visual narratives. Immersio Art operates as a standalone atelier or as part of Immersio’s wider visual effects offering. From creatures to characters, costumes to props, and vehicles to environments, we work across the full spectrum of cinematic storytelling. Our Immersio Art team is proud to collaborate with the industry’s most visionary directors and filmmakers, whose ambition and clarity of purpose continually elevates our craft. These collaborations challenge us to innovate, refine and expand the possibilities of design, reinforcing our reputation as a trusted creative partner at the forefront of the field.
             </p>
           </div>
@@ -962,79 +835,131 @@
       </div>
 
       <!-- Concept Art Showcase Carousel -->
-      <div class="art-showcase-carousel-section" style="margin-top: 60px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 60px;">
-        <h3 class="sidebar-filter-title" style="margin-bottom: 30px; font-size: 0.8rem; letter-spacing: 0.15em; color: rgba(255,255,255,0.4);">FEATURED DESIGN CATEGORIES</h3>
+      <div class="art-showcase-carousel-section">
+        <div class="art-carousel-header">
+          <h3 class="sidebar-filter-title" data-i18n="featured_design_categories">FEATURED DESIGN CATEGORIES</h3>
+          <div class="art-carousel-controls">
+            <button class="art-carousel-btn prev" onclick="prevArtSlide()" aria-label="Previous Slide"><i class="fas fa-chevron-left"></i></button>
+            <span class="art-carousel-counter" id="art-carousel-counter">1 - 6</span>
+            <button class="art-carousel-btn next" onclick="nextArtSlide()" aria-label="Next Slide"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
         
-        <div class="apple-grid-3col">
-          <!-- Env / Worlds -->
-          <div class="art-showcase-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04); border-radius: 12px; padding: 24px; transition: all 0.3s;">
-            <div class="curriculum-image-frame" style="margin-bottom: 18px;">
-              <img src="picture1.jpeg" onclick="openLightbox(this.src)" class="curriculum-active-img" alt="Environments">
+        <div class="art-carousel-viewport">
+          <div class="art-carousel-track" id="art-carousel-track">
+            <!-- Slide 1: Env / Worlds -->
+            <div class="art-showcase-card">
+              <div class="curriculum-image-frame">
+                <img src="picture1.jpeg" onclick="openLightbox(this.src)" class="curriculum-active-img" alt="Environments">
+              </div>
+              <h4 class="art-card-title" data-i18n="art_card1_title">ENVIRONMENTS & WORLDS</h4>
+              <p class="art-card-desc" data-i18n="art_card1_desc">Atmospheric settings, sci-fi cities, and historical landscapes designed for virtual production.</p>
             </div>
-            <h4 class="art-card-title" style="color: #fff; font-size: 1rem; font-weight: 800; margin-bottom: 8px;">ENVIRONMENTS & WORLDS</h4>
-            <p class="art-card-desc" style="color: rgba(255,255,255,0.5); font-size: 0.8rem; line-height: 1.5; margin: 0;">Atmospheric settings, sci-fi cities, and historical landscapes designed for virtual production.</p>
-          </div>
-          <!-- Creatures -->
-          <div class="art-showcase-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04); border-radius: 12px; padding: 24px; transition: all 0.3s;">
-            <div class="curriculum-image-frame" style="margin-bottom: 18px;">
-              <img src="picture2.jpeg" onclick="openLightbox(this.src)" class="curriculum-active-img" alt="Creatures">
+            <!-- Slide 2: Creatures -->
+            <div class="art-showcase-card">
+              <div class="curriculum-image-frame">
+                <img src="picture2.jpeg" onclick="openLightbox(this.src)" class="curriculum-active-img" alt="Creatures">
+              </div>
+              <h4 class="art-card-title" data-i18n="art_card2_title">CREATURES & CHARACTERS</h4>
+              <p class="art-card-desc" data-i18n="art_card2_desc">Anatomical simulation, digital actors, and fantastical creature designs.</p>
             </div>
-            <h4 class="art-card-title" style="color: #fff; font-size: 1rem; font-weight: 800; margin-bottom: 8px;">CREATURES & CHARACTERS</h4>
-            <p class="art-card-desc" style="color: rgba(255,255,255,0.5); font-size: 0.8rem; line-height: 1.5; margin: 0;">Anatomical simulation, digital actors, and fantastical creature designs.</p>
-          </div>
-          <!-- Vehicles -->
-          <div class="art-showcase-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04); border-radius: 12px; padding: 24px; transition: all 0.3s;">
-            <div class="curriculum-image-frame" style="margin-bottom: 18px;">
-              <img src="picture1.jpeg" onclick="openLightbox(this.src)" class="curriculum-active-img" alt="Vehicles">
+            <!-- Slide 3: Vehicles -->
+            <div class="art-showcase-card">
+              <div class="curriculum-image-frame">
+                <img src="picture1.jpeg" onclick="openLightbox(this.src)" class="curriculum-active-img" alt="Vehicles">
+              </div>
+              <h4 class="art-card-title" data-i18n="art_card3_title">VEHICLES & PROPS</h4>
+              <p class="art-card-desc" data-i18n="art_card3_desc">Mechanical engineering designs, futuristic space crafts, and high-fidelity props.</p>
             </div>
-            <h4 class="art-card-title" style="color: #fff; font-size: 1rem; font-weight: 800; margin-bottom: 8px;">VEHICLES & PROPS</h4>
-            <p class="art-card-desc" style="color: rgba(255,255,255,0.5); font-size: 0.8rem; line-height: 1.5; margin: 0;">Mechanical engineering designs, futuristic space crafts, and high-fidelity props.</p>
+            <!-- Slide 4: Costume -->
+            <div class="art-showcase-card">
+              <div class="curriculum-image-frame">
+                <img src="picture2.jpeg" onclick="openLightbox(this.src)" class="curriculum-active-img" alt="Costumes">
+              </div>
+              <h4 class="art-card-title" data-i18n="art_card4_title">COSTUME DESIGN</h4>
+              <p class="art-card-desc" data-i18n="art_card4_desc">Intricate costume development and dynamic textile simulations for cinematic characters.</p>
+            </div>
+            <!-- Slide 5: Matte Painting -->
+            <div class="art-showcase-card">
+              <div class="curriculum-image-frame">
+                <img src="picture1.jpeg" onclick="openLightbox(this.src)" class="curriculum-active-img" alt="Matte Painting">
+              </div>
+              <h4 class="art-card-title" data-i18n="art_card5_title">MATTE PAINTING & BACKGROUNDS</h4>
+              <p class="art-card-desc" data-i18n="art_card5_desc">Photorealistic digital paintings and set extensions to blend reality with imagination.</p>
+            </div>
+            <!-- Slide 6: Keyframe -->
+            <div class="art-showcase-card">
+              <div class="curriculum-image-frame">
+                <img src="picture2.jpeg" onclick="openLightbox(this.src)" class="curriculum-active-img" alt="Keyframe Art">
+              </div>
+              <h4 class="art-card-title" data-i18n="art_card6_title">KEYFRAME ART & STORYBOARDS</h4>
+              <p class="art-card-desc" data-i18n="art_card6_desc">Cinematic compositions and storyboards outlining lighting, mood, and visual narratives.</p>
+            </div>
           </div>
+        </div>
+
+        <!-- Dot indicators -->
+        <div class="art-carousel-dots" id="art-carousel-dots">
+          <span class="art-dot active" onclick="jumpToArtSlide(0)"></span>
+          <span class="art-dot" onclick="jumpToArtSlide(1)"></span>
+          <span class="art-dot" onclick="jumpToArtSlide(2)"></span>
+          <span class="art-dot" onclick="jumpToArtSlide(3)"></span>
+          <span class="art-dot" onclick="jumpToArtSlide(4)"></span>
+          <span class="art-dot" onclick="jumpToArtSlide(5)"></span>
         </div>
       </div>
 
       <!-- Meet the Art Team Block -->
-      <div class="art-team-section" style="margin-top: 80px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 60px;">
-        <div class="apple-header-block centered-header" style="margin-bottom: 40px;">
+      <div class="art-team-section">
+        <div class="apple-header-block centered-header">
           <span class="apple-kicker">COLLABORATORS</span>
-          <h2 class="apple-section-title" style="color: #fff;">Meet the Art Team</h2>
+          <h2 class="apple-section-title">Meet the Art Team</h2>
         </div>
 
-        <div class="apple-grid-3col">
+        <div class="art-team-grid">
           <!-- Member 1 -->
-          <div class="art-team-card" style="text-align: center; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04); border-radius: 12px; padding: 30px 20px;">
-            <div class="art-member-avatar-box" style="width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, rgba(204, 164, 59, 0.2) 0%, rgba(0, 242, 254, 0.2) 100%); border: 1px solid rgba(204, 164, 59, 0.4); display: flex; align-items: center; justify-content: center; margin: 0 auto 15px auto;">
-              <span style="font-size: 1.5rem; font-weight: 800; color: #fff; font-family: var(--font-display);">RB</span>
+          <div class="art-team-card">
+            <div class="art-member-avatar-box">
+              <span class="art-avatar-initials">RB</span>
             </div>
-            <h4 class="art-member-name" style="color: #fff; font-size: 1.1rem; font-weight: 800; margin-bottom: 5px;">Ravi Bansal</h4>
-            <p class="art-member-role" data-i18n="art_role_head" style="color: rgba(255,255,255,0.4); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Global Head of Art</p>
+            <div class="art-member-info">
+              <h4 class="art-member-name">Ravi Bansal</h4>
+              <p class="art-member-role" data-i18n="art_role_head">Global Head of Art</p>
+            </div>
           </div>
           <!-- Member 2 -->
-          <div class="art-team-card" style="text-align: center; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04); border-radius: 12px; padding: 30px 20px;">
-            <div class="art-member-avatar-box" style="width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, rgba(204, 164, 59, 0.2) 0%, rgba(0, 242, 254, 0.2) 100%); border: 1px solid rgba(204, 164, 59, 0.4); display: flex; align-items: center; justify-content: center; margin: 0 auto 15px auto;">
-              <span style="font-size: 1.5rem; font-weight: 800; color: #fff; font-family: var(--font-display);">JF</span>
+          <div class="art-team-card">
+            <div class="art-member-avatar-box">
+              <span class="art-avatar-initials">JF</span>
             </div>
-            <h4 class="art-member-name" style="color: #fff; font-size: 1.1rem; font-weight: 800; margin-bottom: 5px;">Jessica Fernandes</h4>
-            <p class="art-member-role" data-i18n="art_role_producer" style="color: rgba(255,255,255,0.4); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Global Art Producer</p>
+            <div class="art-member-info">
+              <h4 class="art-member-name">Jessica Fernandes</h4>
+              <p class="art-member-role" data-i18n="art_role_producer">Global Art Producer</p>
+            </div>
           </div>
           <!-- Member 3 -->
-          <div class="art-team-card" style="text-align: center; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04); border-radius: 12px; padding: 30px 20px;">
-            <div class="art-member-avatar-box" style="width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, rgba(204, 164, 59, 0.2) 0%, rgba(0, 242, 254, 0.2) 100%); border: 1px solid rgba(204, 164, 59, 0.4); display: flex; align-items: center; justify-content: center; margin: 0 auto 15px auto;">
-              <span style="font-size: 1.5rem; font-weight: 800; color: #fff; font-family: var(--font-display);">MS</span>
+          <div class="art-team-card">
+            <div class="art-member-avatar-box">
+              <span class="art-avatar-initials">MS</span>
             </div>
-            <h4 class="art-member-name" style="color: #fff; font-size: 1.1rem; font-weight: 800; margin-bottom: 5px;">Marc Simonetti</h4>
-            <p class="art-member-role" data-i18n="art_role_director" style="color: rgba(255,255,255,0.4); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Art Director</p>
+            <div class="art-member-info">
+              <h4 class="art-member-name">Marc Simonetti</h4>
+              <p class="art-member-role" data-i18n="art_role_director">Art Director</p>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Get In Touch Block -->
-      <div class="art-contact-banner" style="margin-top: 80px; background: linear-gradient(135deg, rgba(204, 164, 59, 0.08) 0%, rgba(255, 255, 255, 0.01) 100%); border: 1px solid rgba(204, 164, 59, 0.2); border-radius: 12px; padding: 50px 30px; text-align: center;">
-        <h3 style="font-size: 1.6rem; font-weight: 800; color: #fff; margin-bottom: 10px;" data-i18n="art_impossible_title">Ready to Start with Impossible?</h3>
-        <p style="color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-bottom: 25px; letter-spacing: 0.02em;" data-i18n="art_impossible_desc">Get in touch with our concept design team to build your next visual project.</p>
-        <a href="mailto:art@immersio-suprema.com" class="vfx-btn-submit-blue" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
-          <i class="fas fa-envelope"></i> <span data-i18n="contact_art_team">Contact the Art team</span>
-        </a>
+      <div class="art-contact-banner">
+        <div class="art-contact-overlay"></div>
+        <div class="art-contact-content">
+          <h3 data-i18n="art_impossible_title">Ready to Start with Impossible?</h3>
+          <p data-i18n="art_impossible_desc">Get in touch with our concept design team to build your next visual project.</p>
+          <a href="mailto:art@immersio-suprema.com" class="art-btn-submit">
+            <i class="fas fa-envelope"></i> <span data-i18n="contact_art_team">Contact the Art team</span>
+          </a>
+        </div>
       </div>
 
     </div>
@@ -1292,54 +1217,86 @@
   <section class="apple-section apple-pure-white-bg" id="training">
     <div class="apple-section-container">
       
-      <div class="apple-header-block">
-        <span class="apple-kicker" data-i18n="academy_kicker">Training & Admissions</span>
-        <h2 class="apple-section-title" data-i18n="academy_title">VFX Academy & Degrees</h2>
-        <p class="apple-section-desc" data-i18n="academy_desc">
-          Rejoignez nos programmes académiques accrédités et préparez-vous aux métiers du cinéma et du temps réel. Explorez les façades du studio interactif ci-dessous pour découvrir nos programmes de formation.
-        </p>
-      </div>
-
-      <!-- Real-Time 3D Viewport Box -->
-      <div class="apple-sandbox-container" style="align-items: center;">
+      <!-- Static Program Tracks Grid -->
+      <div class="program-overview-layout">
         
-        <!-- WebGL Canvas Box Container -->
-        <div class="apple-viewport-frame" id="cyber-house-viewport" style="background-color: #0c0b0f; border-color: rgba(255,255,255,0.04);">
-          <!-- WebGL Canvas injected dynamically by script.js -->
+        <!-- Left: Static text block -->
+        <div class="program-intro-col">
+          <span class="apple-kicker" data-i18n="academy_kicker">WHAT YOU WILL LEARN</span>
+          <h2 class="apple-section-title" data-i18n="academy_title" style="margin-bottom: 25px;">Our Training Programs</h2>
+          <p class="apple-section-desc" data-i18n="academy_desc" style="margin-bottom: 20px;">
+            Explore our distinct training tracks, from visual effects and game development to academic partnerships and professional simulation.
+          </p>
         </div>
 
-        <!-- 3D Control Elevation Navigation Tabs -->
-        <div class="apple-controls-box" style="background-color: var(--bg-dark); border-color: rgba(255, 255, 255, 0.05);">
-          <span class="apple-kicker" style="margin-bottom: 20px;" data-i18n="academy_controls">Studio Navigation</span>
+        <!-- Right: 4 static tracks -->
+        <div class="program-list-col">
           
-          <div class="checkbox-list" style="gap: 15px;">
-            <button class="reset-filter-btn house-nav-tab active" onclick="rotateHouseToAngle(0)">
-              <i class="fas fa-film"></i> <span data-i18n="tab_front">Cinema & TV Stages</span>
-            </button>
-            <button class="reset-filter-btn house-nav-tab" onclick="rotateHouseToAngle(90)">
-              <i class="fas fa-gamepad"></i> <span data-i18n="tab_garage">Games & Real-Time Lab</span>
-            </button>
-            <button class="reset-filter-btn house-nav-tab" onclick="rotateHouseToAngle(180)">
-              <i class="fas fa-graduation-cap"></i> <span data-i18n="tab_rear">Academic Programs</span>
-            </button>
-            <button class="reset-filter-btn house-nav-tab" onclick="rotateHouseToAngle(-90)">
-              <i class="fas fa-shield-alt"></i> <span data-i18n="tab_glass">Tactical Simulations</span>
-            </button>
-            
-            <button class="vfx-btn-submit-blue auto-rotate-btn" id="house-autorotate-toggle" onclick="toggleHouseAutoRotate()" style="margin-top: 15px;">
-              <i class="fas fa-sync-alt fa-spin"></i> Auto-Rotate: ON
-            </button>
+          <!-- Track 1: Cinema & TV Stages -->
+          <div class="program-list-item">
+            <div class="program-item-number">01</div>
+            <div class="program-item-content">
+              <h4 class="program-item-title" data-i18n="house_wall_front_title">Cinema & TV Stages</h4>
+              <p class="program-item-desc" data-i18n="house_wall_front_desc">
+                Industry-accredited training & specialized masterclasses delivered on-site & online: ICVFX LED Wall Virtual Production, Houdini Fluid Physics, Unreal Engine 5.4, and Motion Capture.
+              </p>
+              <div class="program-meta-details">
+                <span class="program-meta-badge"><i class="fas fa-film"></i> <span data-i18n="track1_meta">Software: Unreal Engine 5.4, Houdini, MoCap tools</span></span>
+              </div>
+            </div>
           </div>
-        </div>
 
+          <!-- Track 2: Games & Real-Time Lab -->
+          <div class="program-list-item">
+            <div class="program-item-number">02</div>
+            <div class="program-item-content">
+              <h4 class="program-item-title" data-i18n="house_wall_right_title">Games & Real-Time Lab</h4>
+              <p class="program-item-desc" data-i18n="house_wall_right_desc">
+                Industry-accredited training & specialized masterclasses delivered on-site & online: AAA Game Pipelines, Real-Time Shaders, Procedural Art, MetaHuman Rigging, and C++ Unreal Engine.
+              </p>
+              <div class="program-meta-details">
+                <span class="program-meta-badge"><i class="fas fa-gamepad"></i> <span data-i18n="track2_meta">Software: Unreal Engine C++, HLSL Shaders, MetaHuman Creator</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Track 3: Academic Programs -->
+          <div class="program-list-item">
+            <div class="program-item-number">03</div>
+            <div class="program-item-content">
+              <h4 class="program-item-title" data-i18n="house_wall_back_title">Academic Programs</h4>
+              <p class="program-item-desc" data-i18n="house_wall_back_desc">
+                Industry-accredited training & specialized masterclasses delivered on-site & online: Turnkey Degree Curricula, Faculty Certification Programs, Virtual Production Campus Setup, and Student Capstone Mentorship.
+              </p>
+              <div class="program-meta-details">
+                <span class="program-meta-badge"><i class="fas fa-graduation-cap"></i> <span data-i18n="track3_meta">Delivery: Turnkey degree integration, faculty certification</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Track 4: Tactical Simulations -->
+          <div class="program-list-item">
+            <div class="program-item-number">04</div>
+            <div class="program-item-content">
+              <h4 class="program-item-title" data-i18n="house_wall_left_title">Tactical Simulations</h4>
+              <p class="program-item-desc" data-i18n="house_wall_left_desc">
+                Industry-accredited training & specialized masterclasses delivered on-site & online: Tactical VR Combat Flight Simulation, Aerospace Machinery Digital Twins, Biometric Telemetry, and Mission Rehearsal.
+              </p>
+              <div class="program-meta-details">
+                <span class="program-meta-badge"><i class="fas fa-shield-alt"></i> <span data-i18n="track4_meta">Focus: Virtual combat, flight simulation, digital twin engineering</span></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
 
       <!-- VFX Curriculum Grid Section (Grouped by Disciplines) -->
       <!-- VFX Houdini 12-Menu Carousel Section -->
-      <div class="curriculum-wrapper" style="margin-top: 80px; border-top: 1px solid rgba(0,0,0,0.06); padding-top: 60px;">
+      <div class="curriculum-wrapper" style="margin-top: 80px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 60px;">
         <div class="apple-header-block centered-header" style="margin-bottom: 40px;">
           <span class="apple-kicker" data-i18n="curriculum_kicker">CORE TECHNICAL DISCIPLINES</span>
-          <h2 class="apple-section-title" data-i18n="curriculum_title" style="color: var(--bg-dark);">Our Curriculum</h2>
+          <h2 class="apple-section-title" data-i18n="curriculum_title">Our Curriculum</h2>
           <p class="apple-section-desc" data-i18n="curriculum_desc" style="max-width: 850px; margin-left: auto; margin-right: auto;">
             Explore the core technical VFX disciplines taught at our academy. Click on any render to expand it in full screen.
           </p>
@@ -1416,10 +1373,10 @@
             <!-- Left Column: Title & Description -->
             <div class="h-carousel-left-panel">
               <span class="card-num-badge" id="h-carousel-badge">MENU 01 / 12</span>
-              <h3 class="h-carousel-title" id="h-carousel-title" style="color: var(--bg-dark); font-size: 1.8rem; font-weight: 800; font-family: var(--font-display); letter-spacing: -0.01em; margin-bottom: 20px; line-height: 1.2;">
+              <h3 class="h-carousel-title" id="h-carousel-title" style="color: var(--color-text-light); font-size: 1.8rem; font-weight: 800; font-family: var(--font-display); letter-spacing: -0.01em; margin-bottom: 20px; line-height: 1.2;">
                 1. FIRE / SMOKE / EXPLOSION
               </h3>
-              <p class="h-carousel-desc" id="h-carousel-desc" style="color: rgba(0,0,0,0.65); font-size: 0.95rem; line-height: 1.8; font-weight: 500;">
+              <p class="h-carousel-desc" id="h-carousel-desc" style="color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.8; font-weight: 500;">
                 Fire, flames, smoke, explosions, fireballs, shockwaves, smoke trails, burning buildings or objects, candles, torches, campfires, gas/fuel/dust explosions, fire spreading, volumetric fire/smoke, colored/magical/stylized fire, embers, ash, heat distortion, secondary smoke, procedural explosions.
               </p>
             </div>

@@ -76,8 +76,8 @@ const translations = {
     engine_status: "Statut du pipeline actif",
     status_normal: "ACTIF / NORMAL",
     reset_sandbox: "Réinitialiser le simulateur",
-    academy_kicker: "Formations & Inscriptions",
-    academy_title: "Académie VFX & Diplômes",
+    academy_kicker: "CE QUE VOUS ALLEZ APPRENDRE",
+    academy_title: "Nos Programmes de Formation",
     curriculum_kicker: "DISCIPLINES TECHNIQUES FONDAMENTALES",
     curriculum_title: "Notre Programme",
     curriculum_desc: "Explorez les disciplines techniques de pointe enseignées au sein de notre académie. Cliquez sur un rendu pour l'agrandir en plein écran.",
@@ -93,7 +93,7 @@ const translations = {
     curr_fluid_desc: "Simulation d'eau, éclaboussures, mousse d'eau, bulles, liquides visqueux (miel, chocolat), écoulement de lave, jet d'eau haute pression, simulations de vagues, physique des fluides réaliste",
     curr_ocean_title: "OCÉANS - DYNAMIQUE DES FLUIDES",
     curr_ocean_desc: "Simulations de haute mer, houle, navires bravant la tempête, vagues côtières, écume de mer, embruns, interaction eau-vent, environnement océanique réaliste",
-    academy_desc: "Rejoignez nos programmes académiques accrédités et préparez-vous aux métiers du cinéma et du temps réel. Explorez les façades du studio interactif ci-dessous pour découvrir nos programmes de formation.",
+    academy_desc: "Explorez nos différents parcours de formation, des effets visuels et du jeu vidéo aux partenariats académiques et à la simulation professionnelle.",
     academy_controls: "Navigation Studio",
     tab_front: "Plateaux Cinéma & TV",
     tab_garage: "Jeux & Temps Réel",
@@ -148,173 +148,104 @@ const translations = {
     house_wall_left_desc: "Formations accréditées et masterclasses spécialisées sur site et en ligne : Simulation tactique de vol de combat VR, jumeaux numériques aérospatiaux, télémétrie biométrique et exercices de mission.",
     
     // ---------------- WHY JOIN US & AMBITION ----------------
-    nav_why: "Tech Créative",
-    why_join_kicker: "POURQUOI MAINTENANT ?",
-    why_join_title: "Pourquoi nous rejoindre ?",
-    why_join_sub1: "FAIRE ÉVOLUER L'EXPRESSION DE MARQUE À LA HAUTEUR DE L'AMBITION",
-    why_join_text1: "À mesure qu'une entreprise consolide sa croissance et renforce sa présence sur le continent, un nouveau chapitre se dessine : FAIRE ÉVOLUER L'EXPRESSION DE MARQUE À LA HAUTEUR DE L'AMBITION.",
-    why_join_text2: "L'enjeu n'est plus uniquement la visibilité. Il s'agit de construire une expression de marque qui est :",
-    why_join_vibrant: "PLUS VIVANTE",
-    why_join_narrative: "PLUS NARRATIVE",
-    why_join_emotional: "PLUS ÉMOTIONNELLE",
-    why_join_memorable: "PLUS MÉMORABLE",
-    why_join_text3: "La photographie permet de représenter. La vidéo permet de donner vie. Le cinéma permet de :",
-    why_join_cinema_stories: "RACONTER DES HISTOIRES",
-    why_join_cinema_emotion: "CRÉER DE L'ÉMOTION",
-    why_join_cinema_memory: "BÂTIR LA MÉMOIRE",
-    why_join_text4: "L'opportunité consiste donc à faire évoluer progressivement l'entreprise :",
-    why_join_evolution: "DE L'IMAGERIE STATIQUE → À L'EXPÉRIENCE AUDIOVISUELLE",
-    ambition_kicker: "AMBITION & EXPRESSION DE MARQUE",
-    ambition_title: "Notre Ambition",
-    ambition_bullet1: "DE L'IMAGE À L'EXPÉRIENCE",
-    ambition_bullet2: "DE LA CAMPAGNE À LA PLATEFORME DE MARQUE",
-    ambition_bullet3: "DU CONTENU À LA MÉMOIRE",
-    ambition_bullet4: "DE LA COMMUNICATION À LA MARQUE",
-    ambition_campaign_text: "Chaque campagne que nous créons est construite autour de :",
-    ambition_campaign_bullets: "DIRECTION ARTISTIQUE → CODES NARRATIFS → QUALITÉ D'IMAGE → IDENTITÉ SONORE → CONTINUITÉ",
-    ambition_sub_title: "L'AMBITION :",
-    ambition_sub_text: "NE PLUS SEULEMENT COMMUNIQUER SUR CE QU'UNE ENTREPRISE FAIT, MAIS RACONTER L'HISTOIRE DE CE QU'ELLE CONSTRUIT.",
-    
-    // ---------------- WHY IMMERSIO SUPREMA & VISION/VALUE ----------------
-    why_suprema_kicker: "POURQUOI IMMERSIO SUPREMA ?",
-    why_suprema_title: "Bâtir votre puissance audiovisuelle",
-    why_suprema_text1: "Une agence produit du contenu. Immersio Suprema bâtit la capacité audiovisuelle d'une marque.",
-    why_suprema_chain: "LA CHAÎNE IMMERSIO SUPREMA :",
-    why_suprema_chain_text: "INTELLIGENCE + STRATÉGIE + CRÉATIVITÉ + PRODUCTION + TECHNOLOGIE + DISTRIBUTION + PERFORMANCE",
-    why_suprema_cycle: "UN CYCLE CONTINU :",
-    why_suprema_cycle_text: "PENSER → CONCEVOIR → PRODUIRE → DISTRIBUER → MESURER → APPRENDRE → OPTIMISER",
-    why_suprema_text2: "Chaque campagne devient ainsi une nouvelle étape dans la construction du territoire de marque audiovisuel de l'entreprise.",
-    vision_title: "Vision et Valeur",
-    vision_desc: "Bâtir une plateforme audiovisuelle de marque capable de transformer les campagnes de communication en expressions cohérentes de l'univers d'une entreprise.",
-    vision_bullet1: "Une marque qui raconte des histoires.",
-    vision_bullet2: "Une marque qui émeut.",
-    vision_bullet3: "Une marque qui inspire confiance.",
-    vision_bullet4: "Une marque qui est instantanément reconnaissable.",
-    vision_bullet5: "Une marque qui résiste à l'épreuve du temps.",
-
-    // ---------------- INTERNATIONAL EXPERTISE ----------------
-    expertise_kicker: "EXPERTISE INTERNATIONALE",
-    expertise_title: "Direction VFX de classe mondiale",
-    expertise_text1: "Le PDG et Président d'Immersio Suprema a notamment officié en tant que Directeur Technique en effets 3D chez Sony Pictures Imageworks, travaillant notamment sur Spider-Man: Across the Spider-Verse, production nommée aux Oscars.",
-    expertise_text2: "Immersio Suprema s'appuie sur une expertise développée au sein d'environnements internationaux exigeants, couvrant la supervision technique, le storytelling visuel, la production, les technologies audiovisuelles et les effets visuels 2D/3D.",
-    expertise_text3: "Cette expertise inclut également des travaux impliquant l'intelligence artificielle et l'évaluation de contenus utilisés pour entraîner des modèles d'IA pour des entreprises américaines.",
-    expertise_transfer: "EXPERTISE DIRECTEMENT TRANSFÉRABLE :",
-    expertise_transfer_bullets: "PRODUCTION AUDIOVISUELLE → SUPERVISION TECHNIQUE → EFFETS VISUELS 2D/3D → INTELLIGENCE ARTIFICIELLE",
-    expertise_objective: "L'objectif est d'intégrer des standards internationaux de production, de storytelling, de technologie et de qualité visuelle dans un univers de marque profondément africain, humain et distinctif.",
-    expertise_brings_title: "Cette expérience apporte :",
-    expertise_brings_bullets: "MÉTHODES → STANDARDS INTERNATIONAUX → UNE CULTURE DE L'EXCELLENCE",
-    expertise_translates_title: "Elle se traduit par :",
-    expertise_translates_bullets: "RIGUEUR → STORYTELLING → DIRECTION ARTISTIQUE → MAÎTRISE TECHNIQUE",
-
-    // ---------------- VALUE CHAIN (10 STEPS) ----------------
-    value_chain_kicker: "CHAÎNE DE VALEUR COMPLÈTE",
-    value_chain_title: "Notre cycle opérationnel de 12 mois",
-    step1_title: "1. INTELLIGENCE",
-    step1_desc: "Analyser les enjeux commerciaux, les audiences, les comportements, les tendances et les opportunités.",
-    step2_title: "2. STRATÉGIE",
-    step2_desc: "Définir les objectifs de chaque campagne et son rôle dans la construction de la marque.",
-    step3_title: "3. CRÉATIVITÉ",
-    step3_desc: "Développer des idées, des concepts, des univers visuels et des territoires narratifs.",
-    step4_title: "4. PRODUCTION",
-    step4_desc: "Transformer les concepts en contenus audiovisuels avec un niveau de qualité cinématographique.",
-    step5_title: "5. POST-PRODUCTION",
-    step5_desc: "Finaliser chaque actif via le montage, le sound design, l'étalonnage, l'animation 2D/3D, les effets visuels, le compositing, le sous-titrage et les exports finaux.",
-    step6_title: "6. DISTRIBUTION",
-    step6_desc: "Préparer et adapter les contenus aux différents formats, supports, plateformes et environnements de diffusion.",
-    step7_title: "7. MESURE",
-    step7_desc: "Identifier les contenus, les formats, les messages et les approches qui génèrent le plus d'impact.",
-    step8_title: "8. CAPITALISATION",
-    step8_desc: "Bâtir une bibliothèque d'actifs audiovisuels et capitaliser sur les codes créatifs, ainsi que sur les enseignements de chaque campagne.",
-    step9_title: "9. OPTIMISATION",
-    step9_desc: "Utiliser les données de performance et les réactions des audiences pour améliorer en continu les campagnes suivantes.",
-    step10_desc: "Assurer la coordination stratégique, créative, technique et opérationnelle sur tout le cycle de 12 mois.",
-    
-    // ---------------- CHALLENGE & DIFF & PARTNERSHIP ----------------
-    challenge_kicker: "LE DÉFI DES 12 MOIS",
-    challenge_title: "Plus que du simple contenu",
-    challenge_desc: "À la fin des 12 mois, l'entreprise ne disposera pas simplement d'une série de contenus produits au fil des campagnes. Elle disposera progressivement de :",
-    challenge_title1: "Territoire de marque",
-    challenge_bullet1: "UN TERRITOIRE DE MARQUE AUDIOVISUEL COHÉRENT",
-    challenge_title2: "Signature de marque",
-    challenge_bullet2: "UNE SIGNATURE DE MARQUE DISTINCTIVE ET RECONNAISSABLE",
-    challenge_title3: "Bibliothèque d'actifs",
-    challenge_bullet3: "UNE BIBLIOTHÈQUE D'ACTIFS DE CONTENU RÉUTILISABLES",
-    challenge_title4: "Base de connaissances",
-    challenge_bullet4: "UNE BASE DE CONNAISSANCES POUR AMÉLIORER LES FUTURES COMMUNICATIONS",
-    challenge_obj: "L'objectif est de transformer chaque campagne en une brique de construction pour une marque plus forte, plus cohérente et plus reconnaissable dans le temps, avant même que le logo n'apparaisse.",
-    
-    // Homogeneous Ambition Columns
-    ambition_title1: "Plus vivante",
-    ambition_desc1: "De l'imagerie statique à une expérience de marque dynamique, animée et continue.",
-    ambition_title2: "Plus narrative",
-    ambition_desc2: "De simples campagnes publicitaires isolées vers une plateforme narrative intégrée.",
-    ambition_title3: "Plus émotionnelle",
-    ambition_desc3: "De la simple diffusion de messages publicitaires vers des émotions de marque durables.",
-    ambition_title4: "Plus mémorable",
-    ambition_desc4: "D'une communication commerciale ponctuelle vers un actif de marque mémorable.",
-
-    // Homogeneous Sony VFX Expertise Columns
-    exp_title1: "Production audiovisuelle",
-    exp_desc1: "Mise en œuvre des standards internationaux de production, de réalisation et de storytelling.",
-    exp_title2: "Supervision technique",
-    exp_desc2: "Supervision des pipelines d'effets visuels 3D, étalonnage couleur et intégrations complexes.",
-    exp_title3: "Effets visuels 2D/3D",
-    exp_desc3: "Storytelling visuel exigeant et direction artistique de niveau hollywoodien.",
-    exp_title4: "Intelligence artificielle",
-    exp_desc4: "Évaluation avancée et supervision technique pour l'entraînement de modèles d'IA générative.",
-
-    // Homogeneous Differentiation Columns
-    diff_title1: "Campagnes stratégiques",
-    diff_desc1: "Le programme annuel s'articule autour de campagnes stratégiques d'envergure.",
-    diff_title2: "Film signature",
-    diff_desc2: "Création d'un film de signature corporate pour porter l'identité de marque.",
-    diff_title3: "Production TV",
-    diff_desc3: "Création de contenus et d'émissions spécifiquement adaptés pour la télévision.",
-    diff_title4: "Réseaux sociaux",
-    diff_desc4: "Adaptation de formats courts et engagement continu sur les plateformes numériques.",
-
-    // Homogeneous Timeline Columns
-    time_title1: "Campagne active",
-    time_desc1: "Diffusion sur le marché, collecte des métriques de performance et retours d'apprentissage.",
-    time_title2: "Campagne suivante",
-    time_desc2: "Développement du concept créatif, planification stratégique et pré-production active.",
-    time_title3: "Production continue",
-    time_desc3: "Un flux parallèle qui élimine les temps morts et assure une capacité constante de sortie.",
-    diff_kicker: "DIFFÉRENCIATION",
-    diff_title: "L'Espace de Différenciation",
-    diff_team: "UNE ÉQUIPE COMPLÈTE DE PRÉ-PRODUCTION, PRODUCTION ET POST-PRODUCTION.",
-    diff_program: "Le programme annuel est structuré autour de campagnes stratégiques.",
-    diff_campaign_includes: "Chaque campagne comprend :",
-    diff_inc1: "FILM DE SIGNATURE CORPORATIVE",
-    diff_inc2: "CRÉATION DE CONTENU TV",
-    diff_inc3: "CRÉATION DE CONTENU POUR LES RÉSEAUX SOCIAUX",
-    diff_support: "Le programme assure un volume structuré de contenu, une capacité de production et un soutien stratégique continu.",
-    diff_results_note: "Les résultats de distribution et commerciaux dépendent, entre autres facteurs, du plan média, des audiences cibles, du timing, des approbations et des données disponibles.",
-    partner_scope_kicker: "NOTRE PROGRAMME PARTENARIAT",
-    partner_scope_title: "Un programme stratégique complet",
-    scope1_title: "STRATÉGIE ET CONSEIL",
-    scope1_desc: "Stratégie audiovisuelle, conseil et accompagnement, direction artistique, territoires narratifs, coordination et gestion de programme.",
-    scope2_title: "CRÉATION & PRODUCTION",
-    scope2_desc: "Concepts de campagne, pré-production, production et réalisation, post-production avancée, adaptations et déclinaisons de contenu.",
-    scope3_title: "TECHNOLOGIE ET EXPERTISE",
-    scope3_desc: "2D, 3D, VFX, IA si pertinente, et technologies de production avancées.",
-    scope4_title: "DIFFUSION & DÉPLOIEMENT",
-    scope4_desc: "Diffusion TV incluse sous conditions, préparation et adaptation de contenu, création et adaptation de contenu pour réseaux sociaux.",
-    scope5_title: "MESURE ET OPTIMISATION",
-    scope5_desc: "Identifier les contenus, formats, messages et approches qui génèrent le plus de pertinence et d'impact, tout en analysant les réactions pour améliorer les campagnes suivantes.",
-    continuous_kicker: "PAS DE RUPTURE DE FLUX",
-    continuous_title: "Capacité de production continue",
-    continuous_desc: "Le modèle permet de préparer la campagne suivante pendant que la campagne en cours est diffusée et mesurée, évitant ainsi toute rupture de production.",
-    continuous_track_a: "CAMPAGNE SUR LE MARCHÉ",
-    continuous_track_b: "CAMPAGNE SUIVANTE",
-    continuous_track_b_desc: "DÉVELOPPEMENT DU CONCEPT → PRÉ-PRODUCTION",
+        nav_why: "Tech Créative",
+    hero_tagline_title: "Expertise Cinématographique. Innovation Immersive.",
+    hero_tagline_desc: "Nous fusionnons l'art cinématographique et les technologies immersives pour créer des expériences qui repoussent les limites de la narration.",
+    remember_title: "NOUS CRÉONS DES EXPÉRIENCES DIGNES DE MÉMOIRE",
+    remember_p1: "Nous fusionnons l'art cinématographique avec les technologies immersives en temps réel pour créer des expériences qui repoussent les limites de la narration.",
+    remember_p2: "Notre studio développe des moteurs de rendu de pointe, des simulateurs interactifs de haute fidélité et des programmes de formation certifiés pour les principaux studios et organisations du monde entier.",
+    remember_p3: "Notre expertise est ancrée dans certains des environnements les plus exigeants de l'industrie mondiale du divertissement. La présidente a travaillé comme directrice technique des effets 3D chez Sony Pictures Imageworks, contribuant au film d'animation, Spider-Man: Across the Spider-Verse, nommé aux Oscars.",
+    remember_p4: "Son expérience englobe la direction technique, la narration visuelle, les technologies audiovisuelles, la production et les effets visuels 2D/3D, ainsi que des domaines émergents tels que l'intelligence artificielle et l'évaluation de contenus utilisés pour entraîner des modèles d'IA pour de grandes entreprises américaines.",
+    remember_p5: "Du cinéma primé aux technologies immersives de nouvelle génération, nous transformons l'excellence technique en expériences qui captivent, forment et inspirent.",
+    expertise_title_static: "NOTRE EXPERTISE",
+    exp1_kicker: "01 / PRODUCTION CINÉMATOGRAPHIQUE",
+    exp1_title: "Prises de Vue Cinématographiques",
+    exp1_desc: "De la production et réalisation audiovisuelle aux effets visuels 2D/3D de calibre hollywoodien, nous combinons narration créative et précision technique.",
+    exp1_sub: "Notre expertise englobe les pipelines VFX complexes, l'étalonnage des couleurs, la direction artistique et l'intégration visuelle haute fidélité.",
+    exp1_footer: "Pré-production. Production. Post-production.",
+    exp2_kicker: "02 / TECHNOLOGIES IMMERSIVES",
+    exp2_title: "Systèmes Immersifs & Expériences Interactives",
+    exp2_desc: "Nous transformons les univers cinématographiques en expériences interactives en temps réel grâce au rendu avancé, à la simulation, aux jumeaux numériques et aux technologies immersives.",
+    exp2_sub: "Des environnements interactifs aux simulateurs haute fidélité, nous concevons des systèmes qui associent narration visuelle, calcul en temps réel et interaction humaine.",
+    exp2_footer: "Mondes cinématographiques. Intelligence en temps réel. Expériences immersives.",
+    exp3_kicker: "03 / TECHNOLOGIES D'IA",
+    exp3_title: "Solutions d'IA",
+    exp3_desc: "Nous développons et supervisons des technologies visuelles avancées basées sur l'IA pour des mondes interactifs photoréalistes.",
+    exp3_sub: "Notre expertise s'étend également à l'évaluation technique et à la supervision de l'entraînement de modèles d'IA générative, transformant les technologies émergentes en solutions prêtes pour la production.",
+    exp3_footer: "Là où l'intelligence artificielle rencontre la réalité visuelle.",
+    strategic_kicker: "UN PROGRAMME AUDIOVISUEL STRATÉGIQUE",
+    strategic_title: "UNE AGENCE PRODUIT DU CONTENU. IMMERSIO SUPREMA DÉVELOPPE LA CAPACITÉ AUDIOVISUELLE D'UNE MARQUE.",
+    strategic_p1: "Nous n'abordons pas la communication audiovisuelle comme une série de campagnes isolées.",
+    strategic_p2: "Nous bâtissons des écosystèmes audiovisuels à long terme qui relient stratégie, créativité, production, technologie, distribution, mesure et apprentissage continu en un programme intégré unique.",
+    strategic_p3: "Chaque campagne devient plus qu'un simple contenu. Elle devient un actif, un apprentissage et une brique de base pour la suite.",
+    prog1_kicker: "01 / STRATÉGIE",
+    prog1_title: "STRATÉGIE & CONSEIL",
+    prog1_desc: "Stratégie audiovisuelle, conseil et accompagnement, direction créative, territoires narratifs, coordination et gestion de programme.",
+    prog1_footer: "Une stratégie. Une narration. Une direction.",
+    prog2_kicker: "02 / CRÉATIVITÉ",
+    prog2_title: "CREATION & PRODUCTION",
+    prog2_desc: "Concepts de campagne, pré-production, production et réalisation, post-production avancée, adaptations et déclinaisons de contenu.",
+    prog2_footer: "Une idée. Expressions infinies.",
+    prog3_kicker: "03 / TECHNOLOGIE",
+    prog3_title: "TECHNOLOGIE & EXPERTISE",
+    prog3_desc: "Nous utilisons la 2D, la 3D, les VFX, l'IA quand c'est pertinent, et des technologies de production avancées pour élargir le champ des possibles créatifs.",
+    prog3_footer: "La technologie devient l'avantage créatif.",
+    prog4_kicker: "04 / DÉPLOIEMENT",
+    prog4_title: "DISTRIBUTION & DÉPLOIEMENT",
+    prog4_desc: "Nous préparons et adaptons le contenu pour la TV, les réseaux sociaux, les plateformes numériques, et différents formats et environnements de distribution.",
+    prog4_footer: "Une histoire. Chaque écran.",
+    prog5_kicker: "05 / MESURES",
+    prog5_title: "MESURE & OPTIMISATION",
+    prog5_desc: "Nous identifions les contenus, formats, messages et approches qui génèrent la plus grande pertinence et le plus grand impact, tout en analysant les réactions du public et les performances.",
+    prog5_footer: "Ces analyses alimentent en continu les étapes suivantes. Chaque campagne génère un signal.",
+    prog6_kicker: "06 / CAPITALISATION",
+    prog6_title: "BÂTIR SUR CE QUE NOUS CRÉONS",
+    prog6_desc: "Nous constituons une bibliothèque d'actifs audiovisuels évolutive, tout en capturant les codes créatifs, les principes narratifs, le savoir-faire de production et les apprentissages de chaque campagne.",
+    prog6_footer: "Au fil du temps, le contenu, les données de performance, les réactions du public et les apprentissages créatifs forment une base de connaissances croissante qui oriente les futures créations. La marque ne repart jamais de zéro. Plus nous créons, plus le système devient intelligent.",
+    strategic_footer: "NOUS NE FAISONS PAS SEULEMENT DU CONTENU. NOUS CONCEVONS DES EXPÉRIENCES.",
+    brand_exp_kicker: "ÉVOLUER L'EXPÉRIENCE DE MARQUE.",
+    brand_exp_title: "DU CONTENU À LA CULTURE. DES CAMPAGNES AUX EXPÉRIENCES.",
+    be1_kicker: "01 / VIBRANT",
+    be1_title: "Plus Vibrant",
+    be1_desc: "De l'imagerie statique à des expériences de marque dynamiques, animées et vivantes qui évoluent en permanence.",
+    be1_footer: "Plus de mouvement. Plus d'énergie. Plus de vie.",
+    be2_kicker: "02 / NARRATIF",
+    be2_title: "Plus Narratif",
+    be2_desc: "Des campagnes isolées à un écosystème narratif unifié où chaque expérience contribue à l'histoire globale.",
+    be2_footer: "Une vision. Expériences multiples. Une histoire.",
+    be3_kicker: "03 / ÉMOTIONNEL",
+    be3_title: "Plus Émotionnel",
+    be3_desc: "De la simple communication d'un message à la création d'expériences que les gens ressentent, retiennent et auxquelles ils s'identifient.",
+    be3_footer: "Moins de diffusion. Plus de connexion.",
+    be4_kicker: "04 / MÉMORABLE",
+    be4_title: "Plus Mémorable",
+    be4_desc: "De la communication commerciale ponctuelle à des expériences durables qui s'intègrent à la marque elle-même.",
+    be4_footer: "Pas seulement vu. Vécu. Retenu.",
     art_concept_text: "Le département Concept Art d'Immersio se situe au sommet du design cinématographique, unissant art et collaboration pour créer des récits visuels tissés à la main. Immersio Art fonctionne comme un atelier indépendant ou dans le cadre de l'offre globale d'effets visuels d'Immersio. Des créatures aux personnages, des costumes aux accessoires, et des véhicules aux environnements, nous travaillons sur tout le spectre de la narration cinématographique. Notre équipe Immersio Art est fière de collaborer avec les réalisateurs et cinéastes les plus visionnaires de l'industrie, dont l'ambition et la clarté d'intention élèvent continuellement notre savoir-faire. Ces collaborations nous incitent à innover, affiner et élargir les frontières du design, renforçant notre réputation de partenaire créatif de confiance à la pointe du domaine.",
     art_role_head: "Responsable mondial du design",
     art_role_producer: "Productrice mondiale d'art",
     art_role_director: "Directeur artistique",
     art_impossible_title: "Prêt à repousser les limites de l'impossible ?",
     art_impossible_desc: "Prenez contact avec notre équipe de conception artistique pour concevoir votre prochain univers.",
-    contact_art_team: "Contacter l'équipe artistique"
+    contact_art_team: "Contacter l'équipe artistique",
+    featured_design_categories: "CATÉGORIES DE DESIGN VEDETTES",
+    art_card1_title: "ENVIRONNEMENTS & MONDES",
+    art_card1_desc: "Décors atmosphériques, cités de science-fiction et paysages historiques conçus pour la production virtuelle.",
+    art_card2_title: "CRÉATURES & PERSONNAGES",
+    art_card2_desc: "Simulation anatomique, acteurs numériques et conceptions de créatures fantastiques.",
+    art_card3_title: "VÉHICULES & ACCESSOIRES",
+    art_card3_desc: "Modèles d'ingénierie mécanique, vaisseaux spatiaux futuristes et accessoires de haute fidélité.",
+    art_card4_title: "DESIGN DE COSTUMES",
+    art_card4_desc: "Conception de costumes complexes et simulations de textiles dynamiques pour des personnages de calibre cinéma.",
+    art_card5_title: "MATTE PAINTING & DÉCORS",
+    art_card5_desc: "Peintures numériques photoréalistes et extensions de décors pour fusionner réalité et imaginaire.",
+    art_card6_title: "ART DE DESSIN-CLÉ & SCÉNARIOS",
+    art_card6_desc: "Compositions cinématographiques et storyboards pour définir l'ambiance et la narration visuelle.",
+    track1_meta: "Logiciels : Unreal Engine 5.4, Houdini, Outils MoCap",
+    track2_meta: "Logiciels : Unreal Engine C++, Shaders HLSL, MetaHuman",
+    track3_meta: "Format : Diplômes clés en main, certification de facultés",
+    track4_meta: "Spécialité : Combat virtuel, simulation de vol, jumeaux numériques"
+
   },
   en: {
     brand_subtitle: "IMMERSIVE INNOVATION CENTER",
@@ -384,8 +315,8 @@ const translations = {
     engine_status: "Active Pipeline Status",
     status_normal: "NORMAL",
     reset_sandbox: "Reset Simulator",
-    academy_kicker: "Training & Admissions",
-    academy_title: "VFX Academy & Degrees",
+    academy_kicker: "WHAT YOU WILL LEARN",
+    academy_title: "Our Training Programs",
     curriculum_kicker: "CORE TECHNICAL DISCIPLINES",
     curriculum_title: "Our Curriculum",
     curriculum_desc: "Explore the core technical VFX disciplines taught at our academy. Click on any render to expand it in full screen.",
@@ -401,7 +332,7 @@ const translations = {
     curr_fluid_desc: "Water simulation, splashes, water foam, bubbles, viscous liquids (honey, chocolate), lava flow, high-pressure water jet, wave simulations, realistic fluid physics",
     curr_ocean_title: "OCEANS - WATER EFFECTS",
     curr_ocean_desc: "Deep sea simulations, swell, ships braving the storm, coastal waves, sea foam, spray, wind-water interaction, realistic ocean environment",
-    academy_desc: "Join our accredited academic programs and prepare for careers in cinema and real-time environments. Explore the facades of the interactive studio below to discover our training programs.",
+    academy_desc: "Explore our distinct training tracks, from visual effects and game development to academic partnerships and professional simulation.",
     academy_controls: "Studio Navigation",
     tab_front: "Cinema & TV Stages",
     tab_garage: "Games & Real-Time Lab",
@@ -456,171 +387,104 @@ const translations = {
     house_wall_left_desc: "Industry-accredited training & specialized masterclasses delivered on-site & online: Tactical VR Combat Flight Simulation, Aerospace Machinery Digital Twins, Biometric Telemetry, and Mission Rehearsal.",
     
     // ---------------- WHY JOIN US & AMBITION ----------------
-    nav_why: "Creative Tech",
-    why_join_kicker: "WHY JOIN US NOW?",
-    why_join_title: "Why Join Us Now?",
-    why_join_sub1: "EVOLVING THE BRAND EXPRESSION TO MATCH THE AMBITION",
-    why_join_text1: "As a company consolidates its growth and strengthens its presence across the continent, a new chapter is emerging: EVOLVE THE BRAND EXPRESSION TO MATCH THE AMBITION.",
-    why_join_text2: "The challenge is no longer simply about visibility. It is about building a brand expression that is:",
-    why_join_vibrant: "MORE VIBRANT",
-    why_join_narrative: "MORE NARRATIVE",
-    why_join_emotional: "MORE EMOTIONAL",
-    why_join_memorable: "MORE MEMORABLE",
-    why_join_text3: "Photography allows us to represent. Video allows us to bring things to life. Cinema allows us to:",
-    why_join_cinema_stories: "TELL STORIES",
-    why_join_cinema_emotion: "CREATE EMOTION",
-    why_join_cinema_memory: "BUILD MEMORY",
-    why_join_text4: "The opportunity, therefore, is to progressively evolve the company:",
-    why_join_evolution: "FROM STATIC IMAGERY → TO AN AUDIOVISUAL EXPERIENCE",
-    ambition_kicker: "AMBITION & BRAND EXPRESSION",
-    ambition_title: "Our Ambition",
-    ambition_bullet1: "FROM IMAGE TO EXPERIENCE",
-    ambition_bullet2: "FROM CAMPAIGN TO BRAND PLATFORM",
-    ambition_bullet3: "FROM CONTENT TO MEMORY",
-    ambition_bullet4: "FROM COMMUNICATION TO BRAND",
-    ambition_campaign_text: "Every campaign we create is built around:",
-    ambition_campaign_bullets: "ART DIRECTION → NARRATIVE CODES → IMAGE QUALITY → SONIC IDENTITY → CONTINUITY",
-    ambition_sub_title: "THE AMBITION:",
-    ambition_sub_text: "NO LONGER SIMPLY COMMUNICATE WHAT A COMPANY DOES, BUT TELL THE STORY OF WHAT A COMPANY IS BUILDING.",
-    
-    // ---------------- WHY IMMERSIO SUPREMA & VISION/VALUE ----------------
-    why_suprema_kicker: "WHY IMMERSIO SUPREMA?",
-    why_suprema_title: "Building your audiovisual capability",
-    why_suprema_text1: "An agency produces content. Immersio Suprema builds a brand’s audiovisual capability.",
-    why_suprema_chain: "THE IMMERSIO SUPREMA CHAIN:",
-    why_suprema_chain_text: "INTELLIGENCE + STRATEGY + CREATIVE + PRODUCTION + TECHNOLOGY + DISTRIBUTION + PERFORMANCE",
-    why_suprema_cycle: "A CONTINUOUS CYCLE:",
-    why_suprema_cycle_text: "THINK → DESIGN → PRODUCE → DISTRIBUTE → MEASURE → LEARN → OPTIMIZE",
-    why_suprema_text2: "Each campaign therefore becomes a new step in building the company’s audiovisual brand territory.",
-    vision_title: "Vision and Value",
-    vision_desc: "Build a brand audiovisual platform capable of transforming communication campaigns into coherent expressions of a company’s universe.",
-    vision_bullet1: "A brand that tells stories.",
-    vision_bullet2: "A brand that moves people.",
-    vision_bullet3: "A brand that inspires trust.",
-    vision_bullet4: "A brand that is instantly recognizable.",
-    vision_bullet5: "A brand that stands the test of time.",
-
-    // ---------------- INTERNATIONAL EXPERTISE ----------------
-    expertise_kicker: "INTERNATIONAL EXPERTISE",
-    expertise_title: "World-Class VFX Leadership",
-    expertise_text1: "The CEO and President of Immersio Suprema has notably served as Technical Director in 3D Effects at Sony Pictures Imageworks, including work on Spider-Man: Across the Spider-Verse, an Academy Award-nominated production.",
-    expertise_text2: "Immersio Suprema draws on expertise developed within demanding international environments, spanning technical supervision, visual storytelling, production, audiovisual technologies, and 2D/3D visual effects.",
-    expertise_text3: "This expertise also includes work involving artificial intelligence and the evaluation of content used to train AI models for american companies.",
-    expertise_transfer: "DIRECTLY TRANSFERABLE EXPERTISE:",
-    expertise_transfer_bullets: "AUDIOVISUAL PRODUCTION → TECHNICAL SUPERVISION → 2D/3D VISUAL EFFECTS → ARTIFICIAL INTELLIGENCE",
-    expertise_objective: "The objective is to bring international standards of production, storytelling, technology, and visual quality into a deeply African, human, and distinctive brand universe.",
-    expertise_brings_title: "This experience brings:",
-    expertise_brings_bullets: "METHODS → INTERNATIONAL STANDARDS → A CULTURE OF EXCELLENCE",
-    expertise_translates_title: "It translates into:",
-    expertise_translates_bullets: "RIGOR → STORYTELLING → ART DIRECTION → TECHNICAL MASTERY",
-
-    // ---------------- VALUE CHAIN (10 STEPS) ----------------
-    value_chain_kicker: "COMPLETE VALUE CHAIN",
-    value_chain_title: "Our continuous 12-month operational cycle",
-    step1_title: "1. INTELLIGENCE",
-    step1_desc: "Analyze business challenges, audiences, behaviors, trends, and opportunities.",
-    step2_title: "2. STRATEGY",
-    step2_desc: "Define the objectives of each campaign and its role in building the brand.",
-    step3_title: "3. CREATIVE",
-    step3_desc: "Develop ideas, concepts, visual worlds, and narrative territories.",
-    step4_title: "4. PRODUCTION",
-    step4_desc: "Transform concepts into audiovisual content with a cinematic level of quality.",
-    step5_title: "5. POST-PRODUCTION",
-    step5_desc: "Finalize every asset through editing, sound design, color grading, 2D/3D animation, 2D/3D visual effects, compositing, subtitles, and final exports.",
-    step6_title: "6. DISTRIBUTION",
-    step6_desc: "Prepare and adapt content to different formats, media, platforms, and distribution environments.",
-    step7_title: "7. MEASUREMENT",
-    step7_desc: "Identify the content, formats, messages, and approaches that generate the greatest relevance and impact.",
-    step8_title: "8. CAPITALIZATION",
-    step8_desc: "Build an audiovisual asset library and capitalize on creative and narrative codes, as well as learnings from each campaign.",
-    step9_title: "9. OPTIMIZATION",
-    step9_desc: "Use performance data and audience reactions to continuously improve subsequent campaigns.",
-    step10_desc: "Ensure strategic, creative, technical, and operational coordination across the full 12-month cycle.",
-    
-    // ---------------- CHALLENGE & DIFF & PARTNERSHIP ----------------
-    challenge_kicker: "THE 12-MONTH CHALLENGE",
-    challenge_title: "More Than Simple Content",
-    challenge_desc: "At the end of the 12 months, the company would not simply have a series of content pieces produced throughout the campaigns. It would progressively have:",
-    challenge_title1: "Brand Territory",
-    challenge_bullet1: "A COHERENT AUDIOVISUAL BRAND TERRITORY",
-    challenge_title2: "Brand Signature",
-    challenge_bullet2: "A DISTINCTIVE AND RECOGNIZABLE BRAND SIGNATURE",
-    challenge_title3: "Asset Library",
-    challenge_bullet3: "A REUSABLE CONTENT ASSET LIBRARY",
-    challenge_title4: "Knowledge Base",
-    challenge_bullet4: "A KNOWLEDGE BASE TO INFORM AND IMPROVE FUTURE COMMUNICATIONS",
-    challenge_obj: "The objective is to transform each campaign into a building block for a stronger, more consistent, and more recognizable brand over time even before the logo appears.",
-
-    // Homogeneous Ambition Columns
-    ambition_title1: "More Vibrant",
-    ambition_desc1: "From static imagery to a dynamic, animated, and continuous brand experience.",
-    ambition_title2: "More Narrative",
-    ambition_desc2: "From simple ad campaigns to an integrated narrative brand platform.",
-    ambition_title3: "More Emotional",
-    ambition_desc3: "From simple image broadcasting to deep and lasting emotional resonance.",
-    ambition_title4: "More Memorable",
-    ambition_desc4: "From one-off commercial communication to a memorable brand asset.",
-
-    // Homogeneous Sony VFX Expertise Columns
-    exp_title1: "Audiovisual Production",
-    exp_desc1: "Implementing world-class standards of production, direction, and storytelling.",
-    exp_title2: "Technical Supervision",
-    exp_desc2: "Supervising 3D visual effects pipelines, color grading, and complex integrations.",
-    exp_title3: "2D/3D Visual Effects",
-    exp_desc3: "Demanding visual storytelling and Hollywood-grade art direction.",
-    exp_title4: "Artificial Intelligence",
-    exp_desc4: "Advanced evaluation and technical supervision for generative AI model training.",
-
-    // Homogeneous Differentiation Columns
-    diff_title1: "Strategic Campaigns",
-    diff_desc1: "The annual program is structured around high-impact strategic campaigns.",
-    diff_title2: "Signature Film",
-    diff_desc2: "Creation of a flagship corporate signature film to establish brand identity.",
-    diff_title3: "TV Production",
-    diff_desc3: "Creating custom television content and programming adapted for broadcast.",
-    diff_title4: "Social Media",
-    diff_desc4: "Short-form content adaptations and ongoing digital platform engagement.",
-
-    // Homogeneous Timeline Columns
-    time_title1: "Active Campaign",
-    time_desc1: "Distribution in market, performance measurement, and learning accumulation.",
-    time_title2: "Next Campaign",
-    time_desc2: "Creative concept development, strategic planning, and active pre-production.",
-    time_title3: "Continuous Flow",
-    time_desc3: "Parallel scheduling eliminates production gaps, ensuring constant content output.",
-    diff_kicker: "DIFFERENTIATION",
-    diff_title: "The Space for Differentiation",
-    diff_team: "A COMPLETE PRE-PRODUCTION, PRODUCTION AND POST-PRODUCTION TEAM.",
-    diff_program: "The annual program is structured around strategic campaigns.",
-    diff_campaign_includes: "Each campaign includes:",
-    diff_inc1: "CORPORATE SIGNATURE FILM",
-    diff_inc2: "TV CONTENT CREATION",
-    diff_inc3: "SOCIAL MEDIA CONTENT CREATION",
-    diff_support: "The program ensures a structured volume of content, production capacity, and ongoing strategic support.",
-    diff_results_note: "Distribution and commercial results depend, among other factors, on the media plan, target audiences, timing, approvals, and the data available.",
-    partner_scope_kicker: "OUR PARTNERSHIP PROGRAM",
-    partner_scope_title: "A Strategic Audiovisual Program",
-    scope1_title: "STRATEGY AND ADVISORY",
-    scope1_desc: "Audiovisual strategy, consulting and support, creative direction, narrative territories, coordination, and program management.",
-    scope2_title: "CREATIVE & PRODUCTION",
-    scope2_desc: "Campaign concepts, pre-production, production and directing, advanced post-production, adaptations, and content variations.",
-    scope3_title: "TECHNOLOGY AND EXPERTISE",
-    scope3_desc: "2D, 3D, VFX, AI when relevant, and advanced production technologies.",
-    scope4_title: "DISTRIBUTION & DEPLOYMENT",
-    scope4_desc: "TV distribution included subject to conditions, content preparation and adaptation, and social media content creation and adaptation.",
-    scope5_title: "MEASUREMENT AND OPTIMIZATION",
-    scope5_desc: "Identifying the content, formats, messages, and approaches that generate the greatest relevance and impact, while analyzing audience reactions to continuously improve subsequent campaigns.",
-    continuous_kicker: "CONTINUOUS FLUX",
-    continuous_title: "Continuous Production Capacity",
-    continuous_track_b: "NEXT CAMPAIGN",
-    continuous_track_b_desc: "CONCEPT DEVELOPMENT → PRE-PRODUCTION",
+        nav_why: "Creative Tech",
+    hero_tagline_title: "Cinematic Expertise. Immersive Innovation.",
+    hero_tagline_desc: "We merge cinematic art with immersive technologies to create experiences that push the boundaries of storytelling.",
+    remember_title: "WE CREATE EXPERIENCES WORTH REMEMBERING",
+    remember_p1: "We merge cinematic art with real-time immersive technologies to create experiences that push the boundaries of storytelling.",
+    remember_p2: "Our studio develops cutting-edge rendering engines, high-fidelity interactive simulators, and certified training programs for leading studios and organisations worldwide.",
+    remember_p3: "Our expertise is grounded in some of the most demanding environments in the global entertainment industry. The CEO has worked as Technical Director in 3D Effects at Sony Pictures Imageworks, contributing to the feature animation film, Spider-Man: Across the Spider-Verse, an Academy Award-nominated film.",
+    remember_p4: "Her experience spans technical direction, visual storytelling, audiovisual technologies, production, and 2D/3D visual effects, alongside emerging fields such as artificial intelligence and the evaluation of content used to train AI models for leading American companies.",
+    remember_p5: "From award-calibre cinema to next-generation immersive technology, we turn technical excellence into experiences that captivate, train, and inspire.",
+    expertise_title_static: "OUR EXPERTISE",
+    exp1_kicker: "01 / CINEMATIC PRODUCTION",
+    exp1_title: "Cinematic Shots",
+    exp1_desc: "From audiovisual production and direction to Hollywood-grade 2D/3D visual effects, we combine creative storytelling with technical precision.",
+    exp1_sub: "Our expertise spans complex VFX pipelines, color grading, art direction, and high-fidelity visual integration.",
+    exp1_footer: "Pre production. Production. Post Production.",
+    exp2_kicker: "02 / IMMERSIVE TECHNOLOGIES",
+    exp2_title: "Immersive Systems & Interactive Experiences",
+    exp2_desc: "We transform cinematic worlds into interactive, real-time experiences through advanced rendering, simulation, digital twins, and immersive technologies.",
+    exp2_sub: "From interactive environments to high-fidelity simulators, we engineer systems that bring together visual storytelling, real-time computation, and human interaction.",
+    exp2_footer: "Cinematic worlds. Real-time intelligence. Immersive experiences.",
+    exp3_kicker: "03 / AI TECHNOLOGIES",
+    exp3_title: "AI Solutions",
+    exp3_desc: "We develop and supervise advanced AI-driven visual technologies for photorealistic interactive worlds.",
+    exp3_sub: "Our expertise also extends to the technical evaluation and supervision of generative AI model training, helping transform emerging technologies into production-ready solutions.",
+    exp3_footer: "Where artificial intelligence meets visual reality.",
+    strategic_kicker: "A STRATEGIC AUDIOVISUAL PROGRAM",
+    strategic_title: "AN AGENCY PRODUCES CONTENT. IMMERSIO SUPREMA BUILDS A BRAND'S AUDIOVISUAL CAPABILITY.",
+    strategic_p1: "We don't approach audiovisual communication as a series of isolated campaigns.",
+    strategic_p2: "We build long-term audiovisual ecosystems that connect strategy, creativity, production, technology, distribution, measurement, and continuous learning into one integrated program.",
+    strategic_p3: "Every campaign becomes more than content. It becomes an asset, a learning, and a building block for what comes next.",
+    prog1_kicker: "01 / STRATEGY",
+    prog1_title: "STRATEGY & ADVISORY",
+    prog1_desc: "Audiovisual strategy, consulting and support, creative direction, narrative territories, coordination, and program management.",
+    prog1_footer: "One strategy. One narrative. One direction.",
+    prog2_kicker: "02 / CREATIVE",
+    prog2_title: "CREATIVE & PRODUCTION",
+    prog2_desc: "Campaign concepts, pre-production, production and directing, advanced post-production, adaptations, and content variations.",
+    prog2_footer: "One idea. Infinite expressions.",
+    prog3_kicker: "03 / TECH",
+    prog3_title: "TECHNOLOGY & EXPERTISE",
+    prog3_desc: "We use 2D, 3D, VFX, AI when relevant, and advanced production technologies to expand what is creatively possible.",
+    prog3_footer: "Technology becomes the creative advantage.",
+    prog4_kicker: "04 / DEPLOYMENT",
+    prog4_title: "DISTRIBUTION & DEPLOYMENT",
+    prog4_desc: "We prepare and adapt content for TV, social media, digital platforms, and different formats and distribution environments.",
+    prog4_footer: "One story. Every screen.",
+    prog5_kicker: "05 / METRICS",
+    prog5_title: "MEASUREMENT & OPTIMIZATION",
+    prog5_desc: "We identify the content, formats, messages, and approaches that generate the greatest relevance and impact, while analysing audience reactions and performance.",
+    prog5_footer: "These insights continuously inform what comes next. Every campaign generates a signal.",
+    prog6_kicker: "06 / CAPITALIZATION",
+    prog6_title: "BUILDING ON WHAT WE CREATE",
+    prog6_desc: "We build an evolving audiovisual asset library, while capturing creative codes, narrative principles, production knowledge, and learnings from every campaign.",
+    prog6_footer: "Over time, content, performance data, audience reactions, and creative learnings become a growing body of knowledge that informs what to create, how to create it, and where to take it next. The brand doesn't start from zero each time. The more we create, the smarter the system becomes.",
+    strategic_footer: "WE DON'T JUST MAKE CONTENT. WE ENGINEER EXPERIENCES.",
+    brand_exp_kicker: "EVOLVE THE BRAND EXPERIENCE.",
+    brand_exp_title: "FROM CONTENT TO CULTURE. FROM CAMPAIGNS TO EXPERIENCES.",
+    be1_kicker: "01 / VIBRANT",
+    be1_title: "More Vibrant",
+    be1_desc: "From static imagery to dynamic, animated, living brand experiences that continuously evolve.",
+    be1_footer: "More movement. More energy. More life.",
+    be2_kicker: "02 / NARRATIVE",
+    be2_title: "More Narrative",
+    be2_desc: "From isolated campaigns to a unified narrative ecosystem where every experience contributes to the bigger story.",
+    be2_footer: "One vision. Multiple experiences. One story.",
+    be3_kicker: "03 / EMOTIONAL",
+    be3_title: "More Emotional",
+    be3_desc: "From simply communicating a message to creating experiences that people feel, remember, and connect with.",
+    be3_footer: "Less broadcasting. More connection.",
+    be4_kicker: "04 / MEMORABLE",
+    be4_title: "More Memorable",
+    be4_desc: "From one-off commercial communication to lasting experiences that become part of the brand itself.",
+    be4_footer: "Not just seen. Experienced. Remembered.",
     art_concept_text: "Immersio’s Concept Art department stands at the pinnacle of motion picture design, uniting artistry with collaboration to create handwoven visual narratives. Immersio Art operates as a standalone atelier or as part of Immersio’s wider visual effects offering. From creatures to characters, costumes to props, and vehicles to environments, we work across the full spectrum of cinematic storytelling. Our Immersio Art team is proud to collaborate with the industry’s most visionary directors and filmmakers, whose ambition and clarity of purpose continually elevates our craft. These collaborations challenge us to innovate, refine and expand the possibilities of design, reinforcing our reputation as a trusted creative partner at the forefront of the field.",
     art_role_head: "Global Head of Art",
     art_role_producer: "Global Art Producer",
     art_role_director: "Art Director",
     art_impossible_title: "Ready to Start with Impossible?",
     art_impossible_desc: "Get in touch with our concept design team to build your next visual project.",
-    contact_art_team: "Contact the Art team"
+    contact_art_team: "Contact the Art team",
+    featured_design_categories: "FEATURED DESIGN CATEGORIES",
+    art_card1_title: "ENVIRONMENTS & WORLDS",
+    art_card1_desc: "Atmospheric settings, sci-fi cities, and historical landscapes designed for virtual production.",
+    art_card2_title: "CREATURES & CHARACTERS",
+    art_card2_desc: "Anatomical simulation, digital actors, and fantastical creature designs.",
+    art_card3_title: "VEHICLES & PROPS",
+    art_card3_desc: "Mechanical engineering designs, futuristic space crafts, and high-fidelity props.",
+    art_card4_title: "COSTUME DESIGN",
+    art_card4_desc: "Intricate costume development and dynamic textile simulations for cinematic characters.",
+    art_card5_title: "MATTE PAINTING & BACKGROUNDS",
+    art_card5_desc: "Photorealistic digital paintings and set extensions to blend reality with imagination.",
+    art_card6_title: "KEYFRAME ART & STORYBOARDS",
+    art_card6_desc: "Cinematic compositions and storyboards outlining lighting, mood, and visual narratives.",
+    track1_meta: "Software: Unreal Engine 5.4, Houdini, MoCap tools",
+    track2_meta: "Software: Unreal Engine C++, HLSL Shaders, MetaHuman Creator",
+    track3_meta: "Delivery: Turnkey degree integration, faculty certification",
+    track4_meta: "Focus: Virtual combat, flight simulation, digital twin engineering"
+
   }
 };
 
@@ -890,7 +754,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initProposalForm();
   initHero3DCard();
   initCardHoverSoundEffects();
-  initCyberHouseEngine();
+  // initCyberHouseEngine();
   
   // Set default view on load (prevent initial scroll)
   switchDivision('vfx', true);
@@ -1132,7 +996,10 @@ function switchDivision(divisionName, preventScroll = false) {
     if (artView) {
       artView.style.display = 'block';
       artView.style.opacity = '0';
-      setTimeout(() => { artView.style.opacity = '1'; }, 50);
+      setTimeout(() => { 
+        artView.style.opacity = '1'; 
+        updateArtSlider();
+      }, 50);
     }
   } else {
     if (artView) artView.style.display = 'none';
@@ -1295,7 +1162,7 @@ function initVFXNavbar() {
       }
     });
 
-    const lightSections = ['studio', 'technology', 'contact'];
+    const lightSections = [];
     if (lightSections.includes(currentSectionId)) {
       navbar.classList.add('light-section');
     } else {
@@ -2348,4 +2215,95 @@ function prevHoudiniCarousel() {
 function nextHoudiniCarousel() {
   switchHoudiniCarousel(currentHoudiniIndex + 1);
 }
+
+// --------------------------------------------------------
+// DNEG ART PORTFOLIO CAROUSEL INTERACTIVITY
+// --------------------------------------------------------
+let currentArtIndex = 0;
+const totalArtSlides = 6;
+
+function updateArtSlider() {
+  const track = document.getElementById('art-carousel-track');
+  const counter = document.getElementById('art-carousel-counter');
+  const dots = document.querySelectorAll('.art-dot');
+
+  if (!track) return;
+
+  let cardWidthPercentage = 100;
+  if (window.innerWidth >= 1024) {
+    cardWidthPercentage = 33.333; // 3 items visible
+  } else if (window.innerWidth >= 768) {
+    cardWidthPercentage = 50; // 2 items visible
+  }
+
+  let maxIndex = totalArtSlides - 1;
+  if (window.innerWidth >= 1024) {
+    maxIndex = totalArtSlides - 3;
+  } else if (window.innerWidth >= 768) {
+    maxIndex = totalArtSlides - 2;
+  }
+  
+  if (currentArtIndex > maxIndex) {
+    currentArtIndex = maxIndex;
+  }
+  if (currentArtIndex < 0) {
+    currentArtIndex = 0;
+  }
+
+  const offset = currentArtIndex * cardWidthPercentage;
+  track.style.transform = `translateX(-${offset}%)`;
+
+  if (counter) {
+    counter.textContent = `${currentArtIndex + 1} - ${totalArtSlides}`;
+  }
+
+  dots.forEach((dot, idx) => {
+    if (idx === currentArtIndex) {
+      dot.classList.add('active');
+    } else {
+      dot.classList.remove('active');
+    }
+  });
+}
+
+function prevArtSlide() {
+  currentArtIndex--;
+  if (currentArtIndex < 0) {
+    // Calculate max wrap index based on screen size
+    let maxWrap = totalArtSlides - 1;
+    if (window.innerWidth >= 1024) {
+      maxWrap = totalArtSlides - 3;
+    } else if (window.innerWidth >= 768) {
+      maxWrap = totalArtSlides - 2;
+    }
+    currentArtIndex = maxWrap;
+  }
+  updateArtSlider();
+}
+
+function nextArtSlide() {
+  currentArtIndex++;
+  let maxWrap = totalArtSlides - 1;
+  if (window.innerWidth >= 1024) {
+    maxWrap = totalArtSlides - 3;
+  } else if (window.innerWidth >= 768) {
+    maxWrap = totalArtSlides - 2;
+  }
+  if (currentArtIndex > maxWrap) {
+    currentArtIndex = 0;
+  }
+  updateArtSlider();
+}
+
+function jumpToArtSlide(index) {
+  currentArtIndex = index;
+  updateArtSlider();
+}
+
+// Add window resize handler to keep track aligned
+window.addEventListener('resize', () => {
+  if (typeof currentCategoryFilter !== 'undefined' && currentCategoryFilter === 'art') {
+    updateArtSlider();
+  }
+});
 
