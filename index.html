@@ -744,53 +744,29 @@
           </div>
           
           <div class="filter-group-box">
-            <h4 class="sidebar-filter-title" data-i18n="filter_avail">Availability</h4>
+            <h4 class="sidebar-filter-title" data-i18n="filter_avail">Project Status</h4>
             <div class="checkbox-list">
+              <label class="custom-checkbox-label">
+                <input type="checkbox" class="filter-checkbox" data-type="availability" value="released">
+                <span data-i18n="avail_released">Released Projects</span>
+              </label>
               <label class="custom-checkbox-label">
                 <input type="checkbox" class="filter-checkbox" data-type="availability" value="coming-soon">
                 <span data-i18n="avail_soon">Coming Soon</span>
-              </label>
-              <label class="custom-checkbox-label">
-                <input type="checkbox" class="filter-checkbox" data-type="availability" value="in-theaters">
-                <span data-i18n="avail_theaters">In Theaters</span>
-              </label>
-              <label class="custom-checkbox-label">
-                <input type="checkbox" class="filter-checkbox" data-type="availability" value="released">
-                <span data-i18n="avail_released">Released</span>
-              </label>
-              <label class="custom-checkbox-label">
-                <input type="checkbox" class="filter-checkbox" data-type="availability" value="real-time">
-                <span data-i18n="avail_realtime">Real-Time</span>
-              </label>
-              <label class="custom-checkbox-label">
-                <input type="checkbox" class="filter-checkbox" data-type="availability" value="volumetric">
-                <span data-i18n="avail_volumetric">Volumetric</span>
               </label>
             </div>
           </div>
           
           <div class="filter-group-box">
-            <h4 class="sidebar-filter-title" data-i18n="filter_tech">Tech Stack</h4>
+            <h4 class="sidebar-filter-title" data-i18n="filter_tech">Software / Tool</h4>
             <div class="checkbox-list">
               <label class="custom-checkbox-label">
                 <input type="checkbox" class="filter-checkbox" data-type="tech" value="unreal">
-                <span data-i18n="tech_unreal">Unreal Engine 5.4</span>
-              </label>
-              <label class="custom-checkbox-label">
-                <input type="checkbox" class="filter-checkbox" data-type="tech" value="gaussian">
-                <span data-i18n="tech_gaussian">Gaussian Splatting</span>
-              </label>
-              <label class="custom-checkbox-label">
-                <input type="checkbox" class="filter-checkbox" data-type="tech" value="nerf">
-                <span data-i18n="tech_nerf">NeRF</span>
+                <span data-i18n="tech_unreal">Unreal Engine</span>
               </label>
               <label class="custom-checkbox-label">
                 <input type="checkbox" class="filter-checkbox" data-type="tech" value="houdini">
-                <span data-i18n="tech_houdini">Houdini Fluid</span>
-              </label>
-              <label class="custom-checkbox-label">
-                <input type="checkbox" class="filter-checkbox" data-type="tech" value="defensesim">
-                <span data-i18n="tech_defensesim">Defense Sim</span>
+                <span data-i18n="tech_houdini">Houdini</span>
               </label>
             </div>
           </div>
@@ -804,12 +780,12 @@
         <div class="poster-grid" id="poster-grid">
           
           <!-- Card 1 -->
-          <div class="apple-work-card" data-category="simulation" data-availability="real-time" data-tech="unreal" onclick="playCardLocalVideo(this, 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreelone.mp4')">
+          <div class="apple-work-card" data-category="simulation" data-availability="released" data-tech="unreal" onclick="playCardLocalVideo(this, 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreelone.mp4')">
             <div class="work-img-container">
               <img src="picture1.jpeg" alt="Porsche VR">
               <div class="work-hover-overlay">
                 <div class="apple-play-badge"><i class="fas fa-play"></i></div>
-                <span class="apple-tag">8K RAW • REAL-TIME</span>
+                <span class="apple-tag">REAL-TIME</span>
               </div>
             </div>
             <div class="work-meta-box">
@@ -825,7 +801,7 @@
               <img src="picture2.jpeg" alt="Sci-Fi VFX">
               <div class="work-hover-overlay">
                 <div class="apple-play-badge"><i class="fas fa-play"></i></div>
-                <span class="apple-tag">HOLLYWOOD FEATURE</span>
+                <span class="apple-tag">FEATURE FILM</span>
               </div>
             </div>
             <div class="work-meta-box">
@@ -836,12 +812,12 @@
           </div>
 
           <!-- Card 3 -->
-          <div class="apple-work-card" data-category="simulation" data-availability="in-production" data-tech="defensesim" onclick="playCardLocalVideo(this, 'showreel_2.mp4')">
+          <div class="apple-work-card" data-category="simulation" data-availability="coming-soon" data-tech="unreal" onclick="playCardLocalVideo(this, 'showreel_2.mp4')">
             <div class="work-img-container">
               <img src="picture1.jpeg" alt="Defense Sim">
               <div class="work-hover-overlay">
                 <div class="apple-play-badge"><i class="fas fa-play"></i></div>
-                <span class="apple-tag">DEFENSE GRADE</span>
+                <span class="apple-tag">3D SIMULATION</span>
               </div>
             </div>
             <div class="work-meta-box">
@@ -852,12 +828,12 @@
           </div>
 
           <!-- Card 4 -->
-          <div class="apple-work-card" data-category="art" data-availability="volumetric" data-tech="gaussian" onclick="playCardLocalVideo(this, 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreelone.mp4')">
+          <div class="apple-work-card" data-category="art" data-availability="released" data-tech="unreal" onclick="playCardLocalVideo(this, 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreelone.mp4')">
             <div class="work-img-container">
               <img src="picture2.jpeg" alt="Spatial AI">
               <div class="work-hover-overlay">
                 <div class="apple-play-badge"><i class="fas fa-play"></i></div>
-                <span class="apple-tag">VISION PRO OS</span>
+                <span class="apple-tag">CONCEPT ART</span>
               </div>
             </div>
             <div class="work-meta-box">
@@ -873,7 +849,7 @@
               <img src="picture1.jpeg" alt="Lord of the Flies">
               <div class="work-hover-overlay">
                 <div class="apple-play-badge"><i class="fas fa-play"></i></div>
-                <span class="apple-tag">NETFLIX ORIGINAL</span>
+                <span class="apple-tag">VFX SERIES</span>
               </div>
             </div>
             <div class="work-meta-box">
@@ -889,7 +865,7 @@
               <img src="picture2.jpeg" alt="Bone Temple">
               <div class="work-hover-overlay">
                 <div class="apple-play-badge"><i class="fas fa-play"></i></div>
-                <span class="apple-tag">SONY CINEMATIC</span>
+                <span class="apple-tag">VFX CINEMATIC</span>
               </div>
             </div>
             <div class="work-meta-box">
@@ -900,12 +876,12 @@
           </div>
 
           <!-- Card 7 -->
-          <div class="apple-work-card" data-category="art" data-availability="real-time" data-tech="nerf" onclick="playCardLocalVideo(this, 'showreel_2.mp4')">
+          <div class="apple-work-card" data-category="art" data-availability="released" data-tech="unreal" onclick="playCardLocalVideo(this, 'showreel_2.mp4')">
             <div class="work-img-container">
               <img src="picture1.jpeg" alt="Shark Tank">
               <div class="work-hover-overlay">
                 <div class="apple-play-badge"><i class="fas fa-play"></i></div>
-                <span class="apple-tag">TV EXPERIENCES</span>
+                <span class="apple-tag">VFX WORKSHOP</span>
               </div>
             </div>
             <div class="work-meta-box">
@@ -916,12 +892,12 @@
           </div>
 
           <!-- Card 8 -->
-          <div class="apple-work-card" data-category="art" data-availability="released" data-tech="gaussian" onclick="playCardLocalVideo(this, 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreelone.mp4')">
+          <div class="apple-work-card" data-category="art" data-availability="released" data-tech="houdini" onclick="playCardLocalVideo(this, 'https://raw.githubusercontent.com/JohnOkenyi/immersio-suprema/main/showreelone.mp4')">
             <div class="work-img-container">
               <img src="picture2.jpeg" alt="Private Life">
               <div class="work-hover-overlay">
                 <div class="apple-play-badge"><i class="fas fa-play"></i></div>
-                <span class="apple-tag">BRITBOX EXCLUSIVE</span>
+                <span class="apple-tag">CONCEPT DESIGN</span>
               </div>
             </div>
             <div class="work-meta-box">
@@ -937,7 +913,7 @@
               <img src="picture1.jpeg" alt="Doc">
               <div class="work-hover-overlay">
                 <div class="apple-play-badge"><i class="fas fa-play"></i></div>
-                <span class="apple-tag">FOX COMEDY</span>
+                <span class="apple-tag">ANIMATION CO-PROD</span>
               </div>
             </div>
             <div class="work-meta-box">
@@ -953,7 +929,7 @@
               <img src="picture2.jpeg" alt="Universal Basic Guys">
               <div class="work-hover-overlay">
                 <div class="apple-play-badge"><i class="fas fa-play"></i></div>
-                <span class="apple-tag">HULU ORIGINAL</span>
+                <span class="apple-tag">ANIMATION SERIES</span>
               </div>
             </div>
             <div class="work-meta-box">
@@ -1721,53 +1697,29 @@
       </div>
       
       <div class="filter-group-box">
-        <h4 class="sidebar-filter-title">Availability</h4>
+        <h4 class="sidebar-filter-title">Project Status</h4>
         <div class="checkbox-list">
+          <label class="custom-checkbox-label">
+            <input type="checkbox" class="filter-checkbox" data-type="availability" value="released">
+            <span>Released Projects</span>
+          </label>
           <label class="custom-checkbox-label">
             <input type="checkbox" class="filter-checkbox" data-type="availability" value="coming-soon">
             <span>Coming Soon</span>
-          </label>
-          <label class="custom-checkbox-label">
-            <input type="checkbox" class="filter-checkbox" data-type="availability" value="in-theaters">
-            <span>In Theaters</span>
-          </label>
-          <label class="custom-checkbox-label">
-            <input type="checkbox" class="filter-checkbox" data-type="availability" value="released">
-            <span>Released</span>
-          </label>
-          <label class="custom-checkbox-label">
-            <input type="checkbox" class="filter-checkbox" data-type="availability" value="real-time">
-            <span>Real-Time</span>
-          </label>
-          <label class="custom-checkbox-label">
-            <input type="checkbox" class="filter-checkbox" data-type="availability" value="volumetric">
-            <span>Volumetric</span>
           </label>
         </div>
       </div>
       
       <div class="filter-group-box">
-        <h4 class="sidebar-filter-title">Tech Stack</h4>
+        <h4 class="sidebar-filter-title">Software / Tool</h4>
         <div class="checkbox-list">
           <label class="custom-checkbox-label">
             <input type="checkbox" class="filter-checkbox" data-type="tech" value="unreal">
-            <span>Unreal Engine 5.4</span>
-          </label>
-          <label class="custom-checkbox-label">
-            <input type="checkbox" class="filter-checkbox" data-type="tech" value="gaussian">
-            <span>Gaussian Splatting</span>
-          </label>
-          <label class="custom-checkbox-label">
-            <input type="checkbox" class="filter-checkbox" data-type="tech" value="nerf">
-            <span>NeRF</span>
+            <span>Unreal Engine</span>
           </label>
           <label class="custom-checkbox-label">
             <input type="checkbox" class="filter-checkbox" data-type="tech" value="houdini">
-            <span>Houdini Fluid</span>
-          </label>
-          <label class="custom-checkbox-label">
-            <input type="checkbox" class="filter-checkbox" data-type="tech" value="defensesim">
-            <span>Defense Sim</span>
+            <span>Houdini</span>
           </label>
         </div>
       </div>
