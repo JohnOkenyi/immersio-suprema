@@ -734,9 +734,16 @@ body.vfx-body {
   z-index: 1;
 }
 
+/* Specific Light blueprint grid overlay for White Sections */
+.apple-pure-white-bg::before {
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px) !important;
+}
+
 .apple-pure-white-bg {
-  background: var(--bg-pure-black) !important;
-  color: var(--color-text-light);
+  background: #ffffff !important;
+  color: #1d1d1f;
 }
 
 .apple-dark-bg {
@@ -5734,6 +5741,234 @@ html, body {
   background: rgba(255, 255, 255, 0.02);
   border-color: var(--vfx-cyan);
   transform: translateY(-4px);
+}
+
+/* --------------------------------------------------------
+   LIGHT THEME INTERIOR STYLING OVERRIDES
+   -------------------------------------------------------- */
+
+/* Section header overrides */
+.apple-pure-white-bg .apple-section-title {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
+  text-fill-color: initial !important;
+  color: #1d1d1f !important;
+}
+
+.apple-pure-white-bg .apple-kicker {
+  color: var(--dneg-coral) !important;
+}
+
+/* About Section Pedigree (Light Theme) */
+.apple-pure-white-bg .pedigree-card {
+  background: #ffffff !important;
+  border: 1px solid #ebdcc5 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
+}
+
+.apple-pure-white-bg .pedigree-card:hover {
+  background: #ffffff !important;
+  border-color: var(--dneg-coral) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+}
+
+.apple-pure-white-bg .pedigree-num {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
+  text-fill-color: initial !important;
+  color: var(--dneg-coral) !important;
+}
+
+.apple-pure-white-bg .pedigree-label {
+  color: #4a5568 !important;
+}
+
+/* About Expertise Items (Light Theme) */
+.apple-pure-white-bg .program-list-col .program-list-item {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
+}
+
+.apple-pure-white-bg .program-list-col .program-list-item:hover {
+  background: #ffffff !important;
+  border-color: var(--dneg-coral) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+}
+
+.apple-pure-white-bg .program-item-title {
+  color: #1d1d1f !important;
+}
+
+.apple-pure-white-bg .program-item-desc {
+  color: #4a5568 !important;
+}
+
+.apple-pure-white-bg .program-meta-badge {
+  background: #f7f9fb !important;
+  color: #4a5568 !important;
+  border: 1px solid #e2e8f0;
+}
+
+/* Strategic Program Pipeline (Light Theme) */
+.apple-pure-white-bg .hud-step-node {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
+}
+
+.apple-pure-white-bg .hud-step-node:hover {
+  background: #ffffff !important;
+  border-color: var(--dneg-coral) !important;
+}
+
+.apple-pure-white-bg .hud-step-node.active {
+  background: #fffdf5 !important;
+  border-color: var(--dneg-coral) !important;
+  border-left: 3px solid var(--dneg-coral) !important;
+  box-shadow: 0 4px 20px rgba(255, 167, 0, 0.08) !important;
+}
+
+.apple-pure-white-bg .hud-step-node .step-name {
+  color: #1d1d1f !important;
+}
+
+.apple-pure-white-bg .hud-step-node.active .step-name {
+  color: var(--dneg-coral) !important;
+}
+
+.apple-pure-white-bg .hud-step-node .step-kicker {
+  color: #718096 !important;
+}
+
+.apple-pure-white-bg .hud-step-node .step-chevron {
+  color: #718096 !important;
+}
+
+.apple-pure-white-bg .hud-step-node.active .step-chevron {
+  color: var(--dneg-coral) !important;
+}
+
+.apple-pure-white-bg .hud-console-screen {
+  background: #ffffff !important;
+  border: 1px solid #ebdcc5 !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03) !important;
+}
+
+.apple-pure-white-bg .console-header {
+  border-bottom: 1px solid #f0e6d2 !important;
+}
+
+.apple-pure-white-bg .status-lbl {
+  color: #718096 !important;
+}
+
+.apple-pure-white-bg .console-id-stamp {
+  color: var(--dneg-coral) !important;
+}
+
+.apple-pure-white-bg .console-stage-title {
+  color: #1d1d1f !important;
+}
+
+.apple-pure-white-bg .console-stage-text {
+  color: #4a5568 !important;
+}
+
+.apple-pure-white-bg .diagnostic-card {
+  background: #faf7f2 !important;
+  border: 1px solid #ebdcc5 !important;
+}
+
+.apple-pure-white-bg .diag-label {
+  color: #718096 !important;
+}
+
+.apple-pure-white-bg .diag-val {
+  color: #1d1d1f !important;
+}
+
+.apple-pure-white-bg .console-footer {
+  border-top: 1px solid #f0e6d2 !important;
+  color: #718096 !important;
+}
+
+/* Brand Experience (Light Theme) */
+.apple-pure-white-bg .dneg-text-capability {
+  background: #ffffff !important;
+  border: 1px solid #ebdcc5 !important;
+  border-top: 3px solid var(--dneg-coral) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
+}
+
+.apple-pure-white-bg .dneg-text-capability:hover {
+  background: #ffffff !important;
+  border-color: var(--dneg-coral) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+}
+
+.apple-pure-white-bg .pro-card-title {
+  color: #1d1d1f !important;
+}
+
+.apple-pure-white-bg .pro-card-desc {
+  color: #4a5568 !important;
+}
+
+.apple-pure-white-bg .card-num-badge {
+  background: #f7f9fb !important;
+  color: #4a5568 !important;
+  border: 1px solid #e2e8f0;
+}
+
+/* Contact Form Section (Light Theme) */
+#contact {
+  background: #ffffff !important;
+}
+
+#contact .vfx-form-card {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03) !important;
+}
+
+#contact .form-title {
+  color: #1d1d1f !important;
+}
+
+#contact .form-subtitle {
+  color: #4a5568 !important;
+}
+
+#contact label {
+  color: #1d1d1f !important;
+}
+
+#contact .vfx-input,
+#contact .vfx-textarea {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #1d1d1f !important;
+}
+
+#contact .vfx-input:focus,
+#contact .vfx-textarea:focus {
+  border-color: var(--dneg-coral) !important;
+  box-shadow: 0 0 10px rgba(255, 167, 0, 0.1) !important;
+}
+
+#contact .submit-btn {
+  background: var(--dneg-coral) !important;
+  color: #ffffff !important;
+}
+
+#contact .submit-btn:hover {
+  background: #e59700 !important;
+  transform: scale(1.03);
 }
 
 
