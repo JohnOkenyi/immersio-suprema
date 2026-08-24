@@ -2407,10 +2407,6 @@ function selectHudStep(index) {
   const integrationEl = document.getElementById('diag-integration');
   const platformsEl = document.getElementById('diag-platforms');
   const complexityEl = document.getElementById('diag-complexity');
-  const mVal1 = document.getElementById('meter-val-1');
-  const mVal2 = document.getElementById('meter-val-2');
-  const mFill1 = document.getElementById('meter-fill-1');
-  const mFill2 = document.getElementById('meter-fill-2');
 
   if (stampEl) stampEl.textContent = data.stamp;
   if (titleEl) titleEl.textContent = data.title;
@@ -2419,11 +2415,6 @@ function selectHudStep(index) {
   if (integrationEl) integrationEl.textContent = data.integration;
   if (platformsEl) platformsEl.textContent = data.platforms;
   if (complexityEl) complexityEl.textContent = data.complexity;
-  
-  if (mVal1) mVal1.textContent = data.meter1;
-  if (mVal2) mVal2.textContent = data.meter2;
-  if (mFill1) mFill1.style.width = data.meter1;
-  if (mFill2) mFill2.style.width = data.meter2;
 }
 
 
