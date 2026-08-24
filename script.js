@@ -1790,7 +1790,7 @@ function updateHouseNavTabs(angleDeg) {
   tabs.forEach((tab, index) => {
     if (index === activeIndex) {
       tab.classList.add('active');
-      const colors = ['#0071e3', '#00f2fe', '#bf5af2', '#ff9f0a'];
+      const colors = ['#cca43b', '#ffdf7a', '#bf5af2', '#ff9f0a'];
       const activeColor = colors[activeIndex];
       tab.style.setProperty('--active-accent-color', activeColor);
       tab.style.setProperty('--active-shadow-glow', `0 0 16px ${activeColor}dd`);
@@ -1869,8 +1869,8 @@ function initCyberHouseEngine() {
   const goldGlowMat = new THREE.MeshStandardMaterial({ color: 0xff625a, roughness: 0.1, metalness: 0.9, emissive: 0xff625a, emissiveIntensity: 1.2 });
 
   // Generate 4 Facade Materials for Each Surface Face (Cleaned & Focused)
-  const frontMat = createSlateMaterial('house_wall_front_title', 'house_wall_front_desc', '#0071e3', 'front');
-  const rightMat = createSlateMaterial('house_wall_right_title', 'house_wall_right_desc', '#00f2fe', 'right');
+  const frontMat = createSlateMaterial('house_wall_front_title', 'house_wall_front_desc', '#cca43b', 'front');
+  const rightMat = createSlateMaterial('house_wall_right_title', 'house_wall_right_desc', '#ffdf7a', 'right');
   const backMat = createSlateMaterial('house_wall_back_title', 'house_wall_back_desc', '#bf5af2', 'back');
   const leftMat = createSlateMaterial('house_wall_left_title', 'house_wall_left_desc', '#ff9f0a', 'left');
 
@@ -1998,8 +1998,8 @@ function initCyberHouseEngine() {
   const pCtx = pCanvas.getContext('2d');
   const pGrad = pCtx.createRadialGradient(8, 8, 0, 8, 8, 8);
   pGrad.addColorStop(0, 'rgba(255, 255, 255, 1)');
-  pGrad.addColorStop(0.3, 'rgba(0, 113, 227, 0.8)');
-  pGrad.addColorStop(1, 'rgba(0, 113, 227, 0)');
+  pGrad.addColorStop(0.3, 'rgba(204, 164, 59, 0.8)');
+  pGrad.addColorStop(1, 'rgba(204, 164, 59, 0)');
   pCtx.fillStyle = pGrad;
   pCtx.fillRect(0, 0, 16, 16);
   const pTexture = new THREE.CanvasTexture(pCanvas);
@@ -2171,12 +2171,12 @@ let currentHoudiniIndex = 0;
 
 const houdiniCurriculumEN = [
   {
-    title: "1. FIRE / SMOKE / EXPLOSION",
+    title: "1. FIRE / SMOKE",
     text: "Fire, flames, smoke, explosions, fireballs, shockwaves, smoke trails, burning buildings or objects, candles, torches, campfires, gas/fuel/dust explosions, fire spreading, volumetric fire/smoke, colored/magical/stylized fire, embers, ash, heat distortion, secondary smoke, procedural explosions.",
     image: "first 1.jpeg"
   },
   {
-    title: "2. GRAINS / DUST",
+    title: "2. SAND / DUST",
     text: "Sand simulation, grains, dust, powder, ash, flour, snow-like particles, sand dunes, sand explosions, footprints, wind-driven sand, buried objects, sand collapse.",
     image: "second.jpeg"
   },
@@ -2191,12 +2191,12 @@ const houdiniCurriculumEN = [
     image: "forth.jpeg"
   },
   {
-    title: "5. SMALL SCALE LIQUIDS",
+    title: "5. LIQUIDS / FLUIDS",
     text: "Water, rainwater, splashes, pouring liquids, container filling, wine, milk, oil, mud, lava, slime, goo, melting materials, foam, bubbles, spray, droplets, underwater effects, fluid-object interaction.",
     image: "fifth.jpeg"
   },
   {
-    title: "6. LARGE SCALE LIQUIDS",
+    title: "6. OCEAN",
     text: "Ocean, waterfall, river, hurricane, small and large waves, breaking waves, ocean storms, tsunamis, coastal flooding, boat wakes, boat-water interaction, object interaction, underwater turbulence, foam, spray, whitewater, ocean displacement.",
     image: "sixth.jpeg"
   },
@@ -2226,7 +2226,7 @@ const houdiniCurriculumEN = [
     image: "eleventh.jpeg"
   },
   {
-    title: "12. PROCEDURAL GROWTH",
+    title: "12. GROWTH",
     text: "Buildings growing automatically, plants, vines, crystals, cities assembling, dissolving objects, organic/fractal growth, procedural transformation, surface growth, cracking, aging, corrosion.",
     image: "thevth.jpeg"
   }
@@ -2234,12 +2234,12 @@ const houdiniCurriculumEN = [
 
 const houdiniCurriculumFR = [
   {
-    title: "1. FEU / FUMÉE / EXPLOSION",
+    title: "1. FEU / FUMÉE",
     text: "Feu, flammes, fumée, explosions, fireballs, shockwaves, traînées de fumée, bâtiments ou objets en feu, bougies, torches, feux de camp, explosions gaz/carburant/poussière, propagation du feu, feu/fumée volumétriques, feu coloré/magique/stylisé, braises, cendres, distorsion thermique, fumée secondaire, explosions procédurales.",
     image: "first 1.jpeg"
   },
   {
-    title: "2. GRAINS / POUSSIÈRE",
+    title: "2. SABLE / POUSSIÈRE",
     text: "Simulation de sable, grains, poussière, poudre, cendres, farine, particules de type neige, dunes de sable, explosions de sable, empreintes de pas, sable poussé par le vent, objets enterrés, effondrement de sable.",
     image: "second.jpeg"
   },
@@ -2254,12 +2254,12 @@ const houdiniCurriculumFR = [
     image: "forth.jpeg"
   },
   {
-    title: "5. LIQUIDES À PETITE ÉCHELLE",
+    title: "5. LIQUIDES / FLUIDES",
     text: "Eau, eau de pluie, éclaboussures, versement de liquides, remplissage de récipients, vin, lait, huile, boue, lave, bave, matière gluante, matériaux en fusion, mousse, bulles, spray, gouttelettes, effets sous-marins, interaction fluide-objet.",
     image: "fifth.jpeg"
   },
   {
-    title: "6. LIQUIDES À GRANDE ÉCHELLE",
+    title: "6. OCÉAN",
     text: "Océan, cascade, rivière, ouragan, petites et grandes vagues, vagues déferlantes, tempêtes océaniques, tsunamis, inondations côtières, sillages de bateaux, interaction bateau-eau, interaction avec les objets, turbulences sous-marines, mousse, spray, écume, déplacement océanique.",
     image: "sixth.jpeg"
   },
@@ -2289,7 +2289,7 @@ const houdiniCurriculumFR = [
     image: "eleventh.jpeg"
   },
   {
-    title: "12. CROISSANCE PROCÉDURALE",
+    title: "12. CROISSANCE",
     text: "Bâtiments qui poussent automatiquement, plantes, vignes, cristaux, villes qui s'assemblent, objets qui se dissolvent, croissance organique/fractale, transformation procédurale, croissance de surface, fissuration, vieillissement, corrosion.",
     image: "thevth.jpeg"
   }
