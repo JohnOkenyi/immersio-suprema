@@ -5666,7 +5666,7 @@ html, body {
 }
 
 /* --------------------------------------------------------
-   APPLE LIGHT THEME SYSTEM OVERRIDES
+   APPLE LIGHT THEME SYSTEM OVERRIDES (DESIGNER PALETTE MIX)
    -------------------------------------------------------- */
 
 /* Section header overrides */
@@ -5682,7 +5682,7 @@ html, body {
 
 /* About / Credentials Section Light Upgrades */
 #studio {
-  background-color: #ffffff !important;
+  background-color: #f7f9fb !important; /* Cool Alabaster-Ice */
 }
 
 #studio .about-p {
@@ -5691,17 +5691,19 @@ html, body {
 
 #studio .sidebar-filter-title {
   color: #1d1d1f !important;
-  border-bottom: 2px solid #e8e8ed;
+  border-bottom: 2px solid #e2e8f0;
 }
 
 #studio .pedigree-card {
-  background: #f5f5f7 !important;
-  border: 1px solid #e8e8ed !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
 }
 
 #studio .pedigree-card:hover {
-  background: #f0f0f2 !important;
+  background: #ffffff !important;
   border-color: var(--dneg-coral) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
 }
 
 #studio .pedigree-num {
@@ -5709,17 +5711,19 @@ html, body {
 }
 
 #studio .pedigree-label {
-  color: #515154 !important;
+  color: #4a5568 !important;
 }
 
 #studio .program-list-item {
   background: #ffffff !important;
-  border: 1px solid #e8e8ed !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
 }
 
 #studio .program-list-item:hover {
-  background: #fbfbfd !important;
+  background: #ffffff !important;
   border-color: var(--dneg-coral) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
 }
 
 #studio .program-item-title {
@@ -5727,34 +5731,36 @@ html, body {
 }
 
 #studio .program-item-desc {
-  color: #515154 !important;
+  color: #4a5568 !important;
 }
 
 #studio .program-meta-badge {
-  background: #f5f5f7 !important;
-  color: #515154 !important;
-  border: 1px solid #e8e8ed;
+  background: #f7f9fb !important;
+  color: #4a5568 !important;
+  border: 1px solid #e2e8f0;
 }
 
 /* Strategic Program Pipeline Section Light Upgrades */
 #strategic-program {
-  background-color: #f5f5f7 !important;
-  border-top: 1px solid #e8e8ed !important;
+  background-color: #faf7f2 !important; /* Warm Linen-Sand */
+  border-top: 1px solid #ebdcc5 !important;
 }
 
 #strategic-program .hud-step-node {
   background: #ffffff !important;
-  border: 1px solid #d2d2d7 !important;
+  border: 1px solid #ebdcc5 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
 }
 
 #strategic-program .hud-step-node:hover {
-  background: #fbfbfd !important;
+  background: #fffdf9 !important;
   border-color: var(--dneg-coral) !important;
 }
 
 #strategic-program .hud-step-node.active {
-  background: #fffdf5 !important;
+  background: #fffbf0 !important;
   border-color: var(--dneg-coral) !important;
+  box-shadow: 0 4px 20px rgba(204, 164, 59, 0.1) !important;
 }
 
 #strategic-program .hud-step-node .step-name {
@@ -5766,11 +5772,11 @@ html, body {
 }
 
 #strategic-program .hud-step-node .step-kicker {
-  color: #86868b !important;
+  color: #718096 !important;
 }
 
 #strategic-program .hud-step-node .step-chevron {
-  color: #86868b !important;
+  color: #718096 !important;
 }
 
 #strategic-program .hud-step-node.active .step-chevron {
@@ -5779,15 +5785,16 @@ html, body {
 
 #strategic-program .hud-console-screen {
   background: #ffffff !important;
-  border: 1px solid #d2d2d7 !important;
+  border: 1px solid #ebdcc5 !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03) !important;
 }
 
 #strategic-program .console-header {
-  border-bottom: 1px solid #e8e8ed !important;
+  border-bottom: 1px solid #f0e6d2 !important;
 }
 
 #strategic-program .status-lbl {
-  color: #86868b !important;
+  color: #718096 !important;
 }
 
 #strategic-program .console-stage-title {
@@ -5795,16 +5802,16 @@ html, body {
 }
 
 #strategic-program .console-stage-text {
-  color: #424245 !important;
+  color: #4a5568 !important;
 }
 
 #strategic-program .diagnostic-card {
-  background: #f5f5f7 !important;
-  border: 1px solid #e8e8ed !important;
+  background: #faf7f2 !important;
+  border: 1px solid #ebdcc5 !important;
 }
 
 #strategic-program .diag-label {
-  color: #86868b !important;
+  color: #718096 !important;
 }
 
 #strategic-program .diag-val {
@@ -5812,24 +5819,27 @@ html, body {
 }
 
 #strategic-program .console-footer {
-  border-top: 1px solid #e8e8ed !important;
-  color: #86868b !important;
+  border-top: 1px solid #f0e6d2 !important;
+  color: #718096 !important;
 }
 
 /* Brand Experience Section Light Upgrades */
 #brand-experience {
-  background-color: #ffffff !important;
-  border-top: 1px solid #e8e8ed !important;
+  background-color: #f0f3f6 !important; /* Cool Slate-Mist */
+  border-top: 1px solid #cbd5e1 !important;
 }
 
 #brand-experience .dneg-text-capability {
-  background: #f5f5f7 !important;
-  border: 1px solid #e8e8ed !important;
-  border-top: 2px solid var(--dneg-coral) !important;
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-top: 3px solid var(--dneg-coral) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
 }
 
 #brand-experience .dneg-text-capability:hover {
-  background: #f0f0f2 !important;
+  background: #ffffff !important;
+  border-color: var(--dneg-coral) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
 }
 
 #brand-experience .pro-card-title {
@@ -5837,13 +5847,13 @@ html, body {
 }
 
 #brand-experience .pro-card-desc {
-  color: #424245 !important;
+  color: #4a5568 !important;
 }
 
 #brand-experience .card-num-badge {
-  background: #ffffff !important;
-  color: #515154 !important;
-  border: 1px solid #d2d2d7;
+  background: #f0f3f6 !important;
+  color: #4a5568 !important;
+  border: 1px solid #cbd5e1;
 }
 
 /* Division Showcase Banner Overrides (Keep Dark) */
@@ -5857,8 +5867,8 @@ html, body {
 }
 
 #showcase-poster-view {
-  background-color: #f5f5f7 !important;
-  border-top: 1px solid #e8e8ed;
+  background-color: #faf7f2 !important;
+  border-top: 1px solid #ebdcc5;
   color: #1d1d1f !important;
 }
 
@@ -5868,8 +5878,8 @@ html, body {
 
 /* Curriculum Section Light Upgrades */
 #training {
-  background-color: #ffffff !important;
-  border-top: 1px solid #e8e8ed !important;
+  background-color: #faf9f6 !important; /* Warm Pearl-Cream */
+  border-top: 1px solid #e2e8f0 !important;
 }
 
 #training .h-carousel-title {
@@ -5877,27 +5887,29 @@ html, body {
 }
 
 #training .h-carousel-desc {
-  color: #424245 !important;
+  color: #4a5568 !important;
 }
 
 #training .h-carousel-left-panel .card-num-badge {
-  background: #f5f5f7 !important;
-  color: #515154 !important;
-  border: 1px solid #d2d2d7;
+  background: #ffffff !important;
+  color: #4a5568 !important;
+  border: 1px solid #cbd5e1;
 }
 
 #training .sim-spec-card {
-  background: #f5f5f7 !important;
-  border: 1px solid #e8e8ed !important;
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01) !important;
 }
 
 #training .sim-spec-card:hover {
-  background: #f0f0f2 !important;
+  background: #ffffff !important;
   border-color: var(--dneg-coral) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.03) !important;
 }
 
 #training .spec-label {
-  color: #86868b !important;
+  color: #718096 !important;
 }
 
 #training .spec-value {
@@ -5910,8 +5922,8 @@ html, body {
 
 #training .prev-btn,
 #training .next-btn {
-  background: #f5f5f7 !important;
-  border: 1px solid #d2d2d7 !important;
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
   color: #1d1d1f !important;
 }
 
@@ -5923,9 +5935,9 @@ html, body {
 }
 
 #training .h-carousel-tab-indicators .houdini-tab-indicator-bar {
-  background: #e8e8ed !important;
-  color: #86868b !important;
-  border: 1px solid #d2d2d7;
+  background: #ffffff !important;
+  color: #4a5568 !important;
+  border: 1px solid #cbd5e1;
 }
 
 #training .h-carousel-tab-indicators .houdini-tab-indicator-bar.active {
@@ -5934,19 +5946,19 @@ html, body {
   color: #ffffff !important;
 }
 
-/* Logo Grid Section (Line 904) Light Upgrades */
+/* Logo Grid Section Light Upgrades */
 .dneg-partners-title {
   color: #1d1d1f !important;
 }
 
 .logo-tab-btn {
   background: #ffffff !important;
-  border: 1px solid #d2d2d7 !important;
+  border: 1px solid #cbd5e1 !important;
   color: #1d1d1f !important;
 }
 
 .logo-tab-btn:hover {
-  background: #f5f5f7 !important;
+  background: #f0f3f6 !important;
 }
 
 .logo-tab-btn.active {
@@ -5966,14 +5978,14 @@ html, body {
 
 /* Contact Form Section Light Upgrades */
 #contact {
-  background-color: #ffffff !important;
-  border-top: 1px solid #e8e8ed !important;
+  background-color: #eef2f6 !important; /* Cool Steel-Ice */
+  border-top: 1px solid #cbd5e1 !important;
 }
 
 #contact .vfx-form-card {
-  background: #f5f5f7 !important;
-  border: 1px solid #e8e8ed !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03) !important;
 }
 
 #contact .form-title {
@@ -5981,7 +5993,7 @@ html, body {
 }
 
 #contact .form-subtitle {
-  color: #515154 !important;
+  color: #4a5568 !important;
 }
 
 #contact label {
@@ -5991,7 +6003,7 @@ html, body {
 #contact .vfx-input,
 #contact .vfx-textarea {
   background: #ffffff !important;
-  border: 1px solid #d2d2d7 !important;
+  border: 1px solid #cbd5e1 !important;
   color: #1d1d1f !important;
 }
 
@@ -6012,13 +6024,13 @@ html, body {
 
 /* Footer Section Light Upgrades */
 .apple-footer {
-  background: #f5f5f7 !important;
-  border-top: 1px solid #e8e8ed !important;
+  background: #f5f7fa !important; /* Sleek Cool Silver-Grey */
+  border-top: 1px solid #cbd5e1 !important;
 }
 
 .apple-footer-bottom {
-  border-top: 1px solid #d2d2d7 !important;
-  color: #86868b !important;
+  border-top: 1px solid #cbd5e1 !important;
+  color: #718096 !important;
 }
 
 .apple-footer .footer-col-title {
@@ -6026,7 +6038,7 @@ html, body {
 }
 
 .apple-footer .footer-link {
-  color: #515154 !important;
+  color: #4a5568 !important;
 }
 
 .apple-footer .footer-link:hover {
