@@ -2011,62 +2011,74 @@ const houdiniCurriculumEN = [
   {
     title: "1. FIRE / SMOKE",
     text: "Fire, flames, smoke, explosions, fireballs, shockwaves, smoke trails, burning buildings or objects, candles, torches, campfires, gas/fuel/dust explosions, fire spreading, volumetric fire/smoke, colored/magical/stylized fire, embers, ash, heat distortion, secondary smoke, procedural explosions.",
-    images: ["first 1.jpeg", "thirthinth.jpeg", "33.jpeg"]
+    images: ["first 1.jpeg", "thirthinth.jpeg", "33.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "Sparse Pyro Solver", particles: "4.8 Million", time: "3.2s / Frame" }
   },
   {
     title: "2. SAND / DUST",
     text: "Sand simulation, grains, dust, powder, ash, flour, snow-like particles, sand dunes, sand explosions, footprints, wind-driven sand, buried objects, sand collapse.",
-    images: ["second.jpeg", "25th.jpeg", "26th.jpeg"]
+    images: ["second.jpeg", "25th.jpeg", "26th.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "Grain/Vellum Solver", particles: "12.5 Million", time: "5.8s / Frame" }
   },
   {
     title: "3. CLOUDS / VOLUMETRICS",
     text: "Clouds, fog, mist, wind, smoke, dust, volumetric explosions, atmospheric volumes, god rays, tornadoes, volumetric weather, atmospheric effects.",
-    images: ["third.jpeg", "27th.jpeg", "28th.jpeg"]
+    images: ["third.jpeg", "27th.jpeg", "28th.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "Pyro/Cloud VDB Solver", particles: "Voxel Dim: 512^3", time: "8.4s / Frame" }
   },
   {
     title: "4. DESTRUCTION",
     text: "Building destruction, wall destruction, concrete destruction, glass destruction, wood destruction, metal destruction, vehicle destruction, bridge destruction, tower destruction, rock destruction, statue destruction, object destruction, car collisions, bullet impacts, explosions, falling objects, character impacts, earthquakes, meteor impacts, giant creature impacts, superhero landings.",
-    images: ["forth.jpeg", "30th.jpeg", "34.jpeg"]
+    images: ["forth.jpeg", "30th.jpeg", "34.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "RBD Bullet Physics", particles: "Fractures: 45,000", time: "2.1s / Frame" }
   },
   {
     title: "5. LIQUIDS / FLUIDS",
     text: "Water, rainwater, splashes, pouring liquids, container filling, wine, milk, oil, mud, lava, slime, goo, melting materials, foam, bubbles, spray, droplets, underwater effects, fluid-object interaction.",
-    images: ["fifth.jpeg", "29th.jpeg", "35.jpeg"]
+    images: ["fifth.jpeg", "29th.jpeg", "35.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "FLIP Fluid Solver", particles: "9.2 Million", time: "11.5s / Frame" }
   },
   {
     title: "6. OCEAN",
     text: "Ocean, waterfall, river, hurricane, small and large waves, breaking waves, ocean storms, tsunamis, coastal flooding, boat wakes, boat-water interaction, object interaction, underwater turbulence, foam, spray, whitewater, ocean displacement.",
-    images: ["sixth.jpeg", "31th.jpeg"]
+    images: ["sixth.jpeg", "31th.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "Ocean Toolkit / FLIP", particles: "Spectrum Resol: 10", time: "6.2s / Frame" }
   },
   {
     title: "7. CLOTH / SOFT BODIES",
     text: "Clothing, flags, curtains, sheets, blankets, fabric, rubber, soft objects, inflatable objects, balloons, deformation, tearing, stitching, wrapping, character interaction.",
-    images: ["seventh.jpeg", "32nd.jpeg"]
+    images: ["seventh.jpeg", "32nd.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "Vellum Cloth Solver", particles: "Stitches: 250,000", time: "1.8s / Frame" }
   },
   {
     title: "8. HAIR / FUR / FEATHERS",
     text: "Human hair, animal fur, feathers, grooming, procedural hair, dynamics, wind, collisions, hairstyling, character grooming, fur deformation, simulation.",
-    images: ["eighth.jpeg"]
+    images: ["eighth.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "Guide Groom / Hair Sim", particles: "Strands: 350,000", time: "4.5s / Frame" }
   },
   {
     title: "9. CROWD",
     text: "Procedural large-scale agents with specific behavior and reactions. It can be: human, animals, insects etc.",
-    images: ["ninth.jpeg"]
+    images: ["ninth.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "Crowd State Agent Solver", particles: "Agents: 2,500", time: "0.9s / Frame" }
   },
   {
     title: "10. PARTICLES",
     text: "Sparks, dust, debris, splinters, glass fragments, shards, rain, snow, ash, embers, smoke particles, magical/energy particles, fireflies, swarms, insects, birds, sand, gravel, leaves, confetti, particle trails, forces, collisions, characters turning to dust, dissolving objects, disintegrating buildings, particle disintegration, ash/sand/digital/organic transitions.",
-    images: ["10th.jpeg", "fivethinth.jpeg", "sixthiinth.jpeg"]
+    images: ["10th.jpeg", "fivethinth.jpeg", "sixthiinth.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "POP Particle Engine", particles: "32.0 Million", time: "2.5s / Frame" }
   },
   {
     title: "11. LIGHTNING / ENERGY",
     text: "Lightning, electrical arcs, sparks, Tesla coils, energy beams, plasma, electric fields, energy trails, procedural electricity, electrical explosions, lightning storms.",
-    images: ["eleventh.jpeg", "seventh17.jpeg"]
+    images: ["eleventh.jpeg", "seventh17.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "POP/VEX Lightning Solver", particles: "Arcs: 120", time: "1.2s / Frame" }
   },
   {
     title: "12. GROWTH",
     text: "Buildings growing automatically, plants, vines, crystals, cities assembling, dissolving objects, organic/fractal growth, procedural transformation, surface growth, cracking, aging, corrosion.",
-    images: ["thevth.jpeg", "fortheenth.jpeg", "18th.jpeg", "19th.jpeg", "20th.jpeg", "21th.jpeg", "22nd.jpeg", "23rd.jpeg", "24th.jpeg"]
+    images: ["thevth.jpeg", "fortheenth.jpeg", "18th.jpeg", "19th.jpeg", "20th.jpeg", "21th.jpeg", "22nd.jpeg", "23rd.jpeg", "24th.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "Shortest Path Growth VEX", particles: "Voxel Dim: 256^3", time: "3.8s / Frame" }
   }
 ];
 
@@ -2074,62 +2086,74 @@ const houdiniCurriculumFR = [
   {
     title: "1. FEU / FUMÉE",
     text: "Feu, flammes, fumée, explosions, fireballs, shockwaves, traînées de fumée, bâtiments ou objets en feu, bougies, torches, feux de camp, explosions gaz/carburant/poussière, propagation du feu, feu/fumée volumétriques, feu coloré/magique/stylisé, braises, cendres, distorsion thermique, fumée secondaire, explosions procédurales.",
-    images: ["first 1.jpeg", "thirthinth.jpeg", "33.jpeg"]
+    images: ["first 1.jpeg", "thirthinth.jpeg", "33.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "Sparse Pyro Solver", particles: "4.8 Millions", time: "3.2s / Frame" }
   },
   {
     title: "2. SABLE / POUSSIÈRE",
     text: "Simulation de sable, grains, poussière, poudre, cendres, farine, particules de type neige, dunes de sable, explosions de sable, empreintes de pas, sable poussé par le vent, objets enterrés, effondrement de sable.",
-    images: ["second.jpeg", "25th.jpeg", "26th.jpeg"]
+    images: ["second.jpeg", "25th.jpeg", "26th.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "Grain/Vellum Solver", particles: "12.5 Millions", time: "5.8s / Frame" }
   },
   {
     title: "3. NUAGES / VOLUMÉTRIE",
     text: "Nuages, brouillard, brume, vent, fumée, poussière, explosions volumétriques, volumes atmosphériques, rayons divins, tornades, météo volumétrique, effets atmosphériques.",
-    images: ["third.jpeg", "27th.jpeg", "28th.jpeg"]
+    images: ["third.jpeg", "27th.jpeg", "28th.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "Pyro/Cloud VDB Solver", particles: "Voxel Dim: 512^3", time: "8.4s / Frame" }
   },
   {
     title: "4. DESTRUCTION",
     text: "Destruction de bâtiments, destruction de murs, destruction de béton, destruction de verre, destruction de bois, destruction de métaux, destruction de véhicules, destruction de ponts, destruction de tours, destruction de roches, destruction de statues, destruction d'objets, collisions de voitures, impacts de balles, explosions, chutes d'objets, impacts de personnages, tremblements de terre, impacts de météores, impacts de créatures géantes, atterrissages de super-héros.",
-    images: ["forth.jpeg", "30th.jpeg", "34.jpeg"]
+    images: ["forth.jpeg", "30th.jpeg", "34.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "RBD Bullet Physics", particles: "Fractures: 45 000", time: "2.1s / Frame" }
   },
   {
     title: "5. LIQUIDS / FLUIDES",
     text: "Eau, eau de pluie, éclaboussures, versement de liquides, remplissage de récipients, vin, lait, huile, boue, lave, bave, matière gluante, matériaux en fusion, mousse, bulles, spray, gouttelettes, effets sous-marins, interaction fluide-objet.",
-    images: ["fifth.jpeg", "29th.jpeg", "35.jpeg"]
+    images: ["fifth.jpeg", "29th.jpeg", "35.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "FLIP Fluid Solver", particles: "9.2 Millions", time: "11.5s / Frame" }
   },
   {
     title: "6. OCÉAN",
     text: "Océan, cascade, rivière, ouragan, petites et grandes vagues, vagues déferlantes, tempêtes océaniques, tsunamis, inondations côtières, sillages de bateaux, interaction bateau-eau, interaction avec les objets, turbulences sous-marines, mousse, spray, écume, déplacement océanique.",
-    images: ["sixth.jpeg", "31th.jpeg"]
+    images: ["sixth.jpeg", "31th.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "Ocean Toolkit / FLIP", particles: "Spectrum Resol: 10", time: "6.2s / Frame" }
   },
   {
     title: "7. TISSU / CORPS SOUPLES",
     text: "Vêtements, drapeaux, rideaux, draps, couvertures, tissu, caoutchouc, objets souples, objets gonflables, ballons, déformation, déchirure, couture, emballage, interaction avec les personnages.",
-    images: ["seventh.jpeg", "32nd.jpeg"]
+    images: ["seventh.jpeg", "32nd.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "Vellum Cloth Solver", particles: "Stitches: 250 000", time: "1.8s / Frame" }
   },
   {
     title: "8. CHEVEUX / FOURRURE / PLUMES",
     text: "Cheveux humains, fourrure animale, plumes, toilettage, cheveux procéduraux, dynamique, vent, collisions, coiffure, toilettage de personnages, déformation de la fourrure, simulation.",
-    images: ["eighth.jpeg"]
+    images: ["eighth.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "Guide Groom / Hair Sim", particles: "Strands: 350 000", time: "4.5s / Frame" }
   },
   {
     title: "9. FOULE",
     text: "Agents procéduraux à grande échelle avec des comportements et des réactions spécifiques. Il peut s'agir d'humains, d'animaux, d'insects, etc.",
-    images: ["ninth.jpeg"]
+    images: ["ninth.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "Crowd State Agent Solver", particles: "Agents: 2 500", time: "0.9s / Frame" }
   },
   {
     title: "10. PARTICULES",
     text: "Étincelles, poussière, débris, éclats, fragments de verre, tessons, pluie, neige, cendres, braises, particules de fumée, particules magiques/d'énergie, lucioles, essaims, insectes, oiseaux, sable, gravier, feuilles, confettis, traînées de particules, forces, collisions, personnages se transformant en poussière, dissolution d'objets, désintégration de bâtiments, désintégration de particules, transitions cendres/sable/digitales/organiques.",
-    images: ["10th.jpeg", "fivethinth.jpeg", "sixthiinth.jpeg"]
+    images: ["10th.jpeg", "fivethinth.jpeg", "sixthiinth.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "POP Particle Engine", particles: "32.0 Millions", time: "2.5s / Frame" }
   },
   {
     title: "11. FOUDRE / ÉNERGIE",
     text: "Foudre, arcs électriques, étincelles, bobines Tesla, faisceaux d'énergie, plasma, champs électriques, traînées d'énergie, électricité procédurale, explosions électriques, tempêtes de foudre.",
-    images: ["eleventh.jpeg", "seventh17.jpeg"]
+    images: ["eleventh.jpeg", "seventh17.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "POP/VEX Lightning Solver", particles: "Arcs: 120", time: "1.2s / Frame" }
   },
   {
     title: "12. CROISSANCE",
     text: "Bâtiments qui poussent automatiquement, plantes, vignes, cristaux, villes qui s'assemblent, objets qui se dissolvent, croissance organique/fractale, transformation procédurale, croissance de surface, fissuration, vieillissement, corrosion.",
-    images: ["thevth.jpeg", "fortheenth.jpeg", "18th.jpeg", "19th.jpeg", "20th.jpeg", "21th.jpeg", "22nd.jpeg", "23rd.jpeg", "24th.jpeg"]
+    images: ["thevth.jpeg", "fortheenth.jpeg", "18th.jpeg", "19th.jpeg", "20th.jpeg", "21th.jpeg", "22nd.jpeg", "23rd.jpeg", "24th.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "Shortest Path Growth VEX", particles: "Voxel Dim: 256^3", time: "3.8s / Frame" }
   }
 ];
 
@@ -2242,16 +2266,33 @@ function switchHoudiniCarousel(index) {
     descEl.style.opacity = '0.3';
     if (trackEl) trackEl.style.opacity = '0.3';
     
+    // Fade out stats elements
+    const specElements = ['sim-software', 'sim-engine', 'sim-particles', 'sim-rendertime'].map(id => document.getElementById(id));
+    specElements.forEach(el => { if (el) el.style.opacity = '0.3'; });
+    
     setTimeout(() => {
       titleEl.textContent = item.title;
       descEl.textContent = item.text;
       renderSubCarousel(item.images);
+      
+      // Update simulation specs dashboard
+      const specSoft = document.getElementById('sim-software');
+      const specEng = document.getElementById('sim-engine');
+      const specPart = document.getElementById('sim-particles');
+      const specTime = document.getElementById('sim-rendertime');
+      
+      if (specSoft && item.specs) specSoft.textContent = item.specs.software;
+      if (specEng && item.specs) specEng.textContent = item.specs.engine;
+      if (specPart && item.specs) specPart.textContent = item.specs.particles;
+      if (specTime && item.specs) specTime.textContent = item.specs.time;
+      
       badgeEl.textContent = `MENU ${(index + 1).toString().padStart(2, '0')} / 12`;
       counterEl.textContent = `${index + 1} - 12`;
       
       titleEl.style.opacity = '1';
       descEl.style.opacity = '1';
       if (trackEl) trackEl.style.opacity = '1';
+      specElements.forEach(el => { if (el) el.style.opacity = '1'; });
     }, 150);
   }
   
@@ -2273,4 +2314,116 @@ function prevHoudiniCarousel() {
 function nextHoudiniCarousel() {
   switchHoudiniCarousel(currentHoudiniIndex + 1);
 }
+
+/* --------------------------------------------------------
+   PIPELINE HUD STEPS SELECTOR ENGINE
+   -------------------------------------------------------- */
+const pipelineStepsData = [
+  {
+    stamp: "STAGE // 01",
+    title: "STRATEGY & ADVISORY",
+    text: "Audiovisual strategy, consulting and support, creative direction, narrative territories, coordination, and program management.",
+    core: "NARRATIVE ENGINE",
+    integration: "GLOBAL STAGE 01",
+    platforms: "FCP, UNREAL STAGE, HOUDINI",
+    complexity: "OPTIMAL // LEVEL 04",
+    meter1: "98%",
+    meter2: "92%"
+  },
+  {
+    stamp: "STAGE // 02",
+    title: "CREATIVE & PRODUCTION",
+    text: "Campaign concepts, pre-production, production and directing, advanced post-production, adaptations, and content variations.",
+    core: "CREATIVE DIRECTORY",
+    integration: "VIRTUAL CAMERA STACK",
+    platforms: "UNREAL STAGE, NUKE Studio",
+    complexity: "CRITICAL // LEVEL 08",
+    meter1: "95%",
+    meter2: "96%"
+  },
+  {
+    stamp: "STAGE // 03",
+    title: "TECHNOLOGY & VFX",
+    text: "We use 2D, 3D, VFX, AI when relevant, and advanced production technologies to expand what is creatively possible.",
+    core: "COMPUTATIONAL VFX",
+    integration: "DISTR RENDERING MATRIX",
+    platforms: "HOUDINI 20.5, PYRO SPARSE",
+    complexity: "EXTREME // LEVEL 10",
+    meter1: "99%",
+    meter2: "88%"
+  },
+  {
+    stamp: "STAGE // 04",
+    title: "DISTRIBUTION & DEPLOYMENT",
+    text: "We prepare and adapt content for TV, social media, digital platforms, and different formats and distribution environments.",
+    core: "DISTRIBUTION CORE",
+    integration: "HYBRID CLOUD FRAMEWORK",
+    platforms: "REDHAT CLOUD, DOCKER",
+    complexity: "OPTIMAL // LEVEL 05",
+    meter1: "94%",
+    meter2: "97%"
+  },
+  {
+    stamp: "STAGE // 05",
+    title: "MEASUREMENT & METRICS",
+    text: "We identify the content, formats, messages, and approaches that generate the greatest relevance and impact, while analysing audience reactions and performance.",
+    core: "ANALYTICS ENGINE",
+    integration: "BIOMETRIC TELEMETRY",
+    platforms: "CUSTOM STATS, PYTHON",
+    complexity: "MODERATE // LEVEL 06",
+    meter1: "91%",
+    meter2: "94%"
+  },
+  {
+    stamp: "STAGE // 06",
+    title: "BUILDING ASSETS",
+    text: "We build an evolving audiovisual asset library, while capturing creative codes, narrative principles, production knowledge, and learnings from every campaign.",
+    core: "ASSET LIBRARY MATRIX",
+    integration: "PERSISTENT DB CLUSTER",
+    platforms: "METADATA LEDGER, PG",
+    complexity: "OPTIMAL // LEVEL 03",
+    meter1: "97%",
+    meter2: "95%"
+  }
+];
+
+function selectHudStep(index) {
+  const stepNodes = document.querySelectorAll('.hud-step-node');
+  stepNodes.forEach((node, idx) => {
+    if (idx === index) {
+      node.classList.add('active');
+    } else {
+      node.classList.remove('active');
+    }
+  });
+
+  const data = pipelineStepsData[index];
+  if (!data) return;
+
+  const stampEl = document.getElementById('console-stage-stamp');
+  const titleEl = document.getElementById('console-stage-title');
+  const textEl = document.getElementById('console-stage-text');
+  const coreEl = document.getElementById('diag-core');
+  const integrationEl = document.getElementById('diag-integration');
+  const platformsEl = document.getElementById('diag-platforms');
+  const complexityEl = document.getElementById('diag-complexity');
+  const mVal1 = document.getElementById('meter-val-1');
+  const mVal2 = document.getElementById('meter-val-2');
+  const mFill1 = document.getElementById('meter-fill-1');
+  const mFill2 = document.getElementById('meter-fill-2');
+
+  if (stampEl) stampEl.textContent = data.stamp;
+  if (titleEl) titleEl.textContent = data.title;
+  if (textEl) textEl.textContent = data.text;
+  if (coreEl) coreEl.textContent = data.core;
+  if (integrationEl) integrationEl.textContent = data.integration;
+  if (platformsEl) platformsEl.textContent = data.platforms;
+  if (complexityEl) complexityEl.textContent = data.complexity;
+  
+  if (mVal1) mVal1.textContent = data.meter1;
+  if (mVal2) mVal2.textContent = data.meter2;
+  if (mFill1) mFill1.style.width = data.meter1;
+  if (mFill2) mFill2.style.width = data.meter2;
+}
+
 
