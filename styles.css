@@ -84,10 +84,10 @@ body.vfx-body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-dark);
+  background: var(--dneg-grey-01);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--dneg-grey-04);
+  background: var(--dneg-grey-02);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -152,13 +152,17 @@ body.vfx-body {
 .vfx-navbar.scrolling-up {
   transform: translateY(0);
   height: 80px;
-  background: rgba(42, 40, 48, 0.96);
+  background: rgba(0, 0, 0, 0.72) !important;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .vfx-navbar.scrolling-up.light-section {
-  background: rgba(251, 251, 240, 0.96);
-  border-bottom: 1px solid rgba(42, 40, 48, 0.08);
+  background: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .vfx-nav-container {
@@ -5027,7 +5031,7 @@ html, body {
 .hud-num {
   font-size: 0.65rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--dneg-grey-02);
   font-family: var(--font-display);
   letter-spacing: 0.05em;
   margin-bottom: 4px;
@@ -5036,7 +5040,7 @@ html, body {
 .hud-label {
   font-size: 0.72rem;
   font-weight: 800;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--color-text-dark);
   font-family: var(--font-display);
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -5047,33 +5051,33 @@ html, body {
 .hud-blue-line {
   height: 2px;
   width: 100%;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--dneg-grey-03);
   margin-top: 8px;
   transform: scaleX(0.2);
   transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .houdini-tab-indicator-bar:hover .hud-label {
-  color: #fff;
+  color: var(--dneg-coral);
 }
 
 .houdini-tab-indicator-bar:hover .hud-blue-line {
-  background: var(--vfx-cyan);
+  background: var(--dneg-coral);
   transform: scaleX(0.6);
 }
 
 .houdini-tab-indicator-bar.active .hud-label {
-  color: var(--vfx-cyan);
+  color: var(--dneg-coral);
 }
 
 .houdini-tab-indicator-bar.active .hud-num {
-  color: var(--vfx-cyan);
+  color: var(--dneg-coral);
 }
 
 .houdini-tab-indicator-bar.active .hud-blue-line {
-  background: linear-gradient(90deg, var(--vfx-cyan), var(--dneg-coral));
+  background: var(--dneg-coral);
   transform: scaleX(1);
-  box-shadow: 0 0 10px var(--vfx-cyan-glow);
+  box-shadow: 0 0 10px var(--dneg-coral-glow);
 }
 
 /* 2-Column Carousel Viewport */
@@ -5108,9 +5112,9 @@ html, body {
 }
 
 .h-nav-btn {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #fff;
+  background: #ffffff;
+  border: 1px solid var(--dneg-grey-03);
+  color: var(--color-text-dark);
   padding: 8px 20px;
   border-radius: 100px;
   font-size: 0.74rem;
@@ -5118,23 +5122,24 @@ html, body {
   font-family: var(--font-display);
   letter-spacing: 0.05em;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
 }
 
 .h-nav-btn:hover {
-  background: var(--dneg-coral);
-  color: var(--bg-dark);
-  border-color: var(--dneg-coral);
+  background: var(--color-text-dark);
+  color: #ffffff;
+  border-color: var(--color-text-dark);
   transform: translateY(-1px);
 }
 
 .h-nav-counter {
   font-size: 0.82rem;
   font-weight: 800;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--dneg-grey-02);
   font-family: var(--font-display);
   letter-spacing: 0.05em;
 }
@@ -5927,6 +5932,112 @@ html, body {
   border-color: var(--color-text-dark) !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* --------------------------------------------------------
+   GLOBAL LUXURIOUS LIGHT THEME OVERRIDES (APPLE AESTHETIC)
+   -------------------------------------------------------- */
+
+.apple-dark-bg, 
+.dneg-awards-section {
+  background-color: var(--dneg-grey-01) !important;
+  color: var(--color-text-dark) !important;
+}
+
+.apple-dark-bg .apple-section-title,
+.dneg-awards-section .apple-section-title {
+  color: var(--color-text-dark) !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
+  text-fill-color: initial !important;
+}
+
+.apple-dark-bg .apple-kicker,
+.dneg-awards-section .apple-kicker {
+  color: var(--dneg-coral) !important;
+}
+
+/* Showcase Grid / Work Card Overrides */
+.apple-dark-bg .work-title {
+  color: var(--color-text-dark) !important;
+}
+
+.apple-dark-bg .work-desc {
+  color: var(--dneg-grey-02) !important;
+}
+
+.apple-dark-bg .work-img-container {
+  border: 1px solid var(--dneg-grey-03) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
+}
+
+.apple-dark-bg .apple-work-card:hover .work-img-container {
+  border-color: var(--dneg-coral) !important;
+  box-shadow: 0 10px 30px rgba(204, 164, 59, 0.08) !important;
+}
+
+/* Division Hero Banner Overlay */
+.apple-dark-bg .division-hero-banner {
+  border: 1px solid var(--dneg-grey-03) !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02) !important;
+}
+
+/* Awards Cards Overrides */
+.dneg-awards-section .dneg-award-card {
+  background: #ffffff !important;
+  border: 1px solid var(--dneg-grey-03) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
+}
+
+.dneg-awards-section .dneg-award-card:hover {
+  border-color: var(--dneg-coral) !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.05) !important;
+  transform: translateY(-2px) !important;
+}
+
+.dneg-awards-section .award-title {
+  color: var(--color-text-dark) !important;
+}
+
+.dneg-awards-section .award-subtitle {
+  color: var(--dneg-grey-02) !important;
+}
+
+.dneg-awards-section .award-description {
+  color: #4a5568 !important;
+}
+
+/* Footer Light Theme Overrides */
+.apple-footer {
+  background-color: var(--dneg-grey-01) !important;
+  color: var(--color-text-dark) !important;
+  border-top: 1px solid var(--dneg-grey-03) !important;
+}
+
+.apple-footer .footer-col h4 {
+  color: var(--color-text-dark) !important;
+}
+
+.apple-footer .footer-col ul a {
+  color: var(--dneg-grey-02) !important;
+}
+
+.apple-footer .footer-col ul a:hover {
+  color: var(--dneg-coral) !important;
+}
+
+.apple-footer .footer-col-brand .footer-desc {
+  color: var(--dneg-grey-02) !important;
+}
+
+.apple-footer-bottom {
+  border-top: 1px solid var(--dneg-grey-03) !important;
+  color: var(--dneg-grey-02) !important;
 }
 
 
