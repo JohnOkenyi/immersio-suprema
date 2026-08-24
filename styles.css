@@ -3,25 +3,25 @@
    ========================================================================== */
 
 :root {
-  /* WORLD-CLASS MINIMALIST PORTFOLIO PALETTE (PURE BLACK & PURE WHITE) */
+  /* LUXURIOUS APPLE DESIGN SYSTEM PALETTE */
   --bg-light: #ffffff;
-  --bg-dark: #000000;       /* Solid Weta / Framestore pure black */
+  --bg-dark: #000000;       /* Solid velvet black */
   --bg-pure-black: #000000; /* Pure void black */
-  --color-text-dark: #000000;
+  --color-text-dark: #1d1d1f; /* Apple Black */
   --color-text-light: #ffffff;
   
-  --dneg-coral: #cca43b;    /* Subtle gold brand accent */
-  --dneg-coral-glow: rgba(204, 164, 59, 0.2);
-  --vfx-cyan: #ffffff;      
-  --vfx-cyan-glow: rgba(255, 255, 255, 0.1);
-  --vfx-violet: #8e8e93;    /* Neutral grey */
-  --dneg-yellow: #ffffff;
+  --dneg-coral: #cca43b;    /* Premium Apple Bronze-Gold */
+  --dneg-coral-glow: rgba(204, 164, 59, 0.25);
+  --vfx-cyan: #cca43b;      
+  --vfx-cyan-glow: rgba(204, 164, 59, 0.15);
+  --vfx-violet: #86868b;    /* Apple Gray */
+  --dneg-yellow: #cca43b;
   
-  --dneg-grey-01: #161617;  /* High-end slate grey for card backings */
-  --dneg-grey-02: #2c2c2e;  /* Border grey */
-  --dneg-grey-03: #8e8e93;  /* Muted text grey */
-  --dneg-grey-04: #c7c7cc;
-  --dneg-grey-05: #1c1c1e;
+  --dneg-grey-01: #f5f5f7;  /* Apple Off-White Surface */
+  --dneg-grey-02: #86868b;  /* Apple Gray Secondary Text */
+  --dneg-grey-03: #d2d2d7;  /* Apple Faint Border Gray */
+  --dneg-grey-04: #e5e5e7;
+  --dneg-grey-05: #1c1c1e;  /* Apple Dark Card Surface */
 
   /* Typography Pairing */
   --font-display: 'Outfit', 'Montserrat', sans-serif;
@@ -725,8 +725,8 @@ body.vfx-body {
 }
 
 .apple-pure-white-bg {
-  background-color: #ffffff !important;
-  color: #111111;
+  background-color: var(--dneg-grey-01) !important;
+  color: var(--color-text-dark);
 }
 
 .apple-dark-bg {
@@ -5703,7 +5703,8 @@ html, body {
 /* About Section Pedigree (Light Theme) */
 .apple-pure-white-bg .pedigree-card {
   background: #ffffff !important;
-  border: 1px solid #ebdcc5 !important;
+  border: 1px solid var(--dneg-grey-03) !important;
+  border-radius: 16px !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
 }
 
@@ -5711,6 +5712,7 @@ html, body {
   background: #ffffff !important;
   border-color: var(--dneg-coral) !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+  transform: translateY(-2px) !important;
 }
 
 .apple-pure-white-bg .pedigree-num {
@@ -5723,13 +5725,14 @@ html, body {
 }
 
 .apple-pure-white-bg .pedigree-label {
-  color: #4a5568 !important;
+  color: var(--dneg-grey-02) !important;
 }
 
 /* About Expertise Items (Light Theme) */
 .apple-pure-white-bg .program-list-col .program-list-item {
   background: #ffffff !important;
-  border: 1px solid #e2e8f0 !important;
+  border: 1px solid var(--dneg-grey-03) !important;
+  border-radius: 20px !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
 }
 
@@ -5737,10 +5740,11 @@ html, body {
   background: #ffffff !important;
   border-color: var(--dneg-coral) !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+  transform: translateY(-2px) !important;
 }
 
 .apple-pure-white-bg .program-item-title {
-  color: #1d1d1f !important;
+  color: var(--color-text-dark) !important;
 }
 
 .apple-pure-white-bg .program-item-desc {
@@ -5756,24 +5760,26 @@ html, body {
 /* Strategic Program Pipeline (Light Theme) */
 .apple-pure-white-bg .hud-step-node {
   background: #ffffff !important;
-  border: 1px solid #e2e8f0 !important;
+  border: 1px solid var(--dneg-grey-03) !important;
+  border-radius: 16px !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
 }
 
 .apple-pure-white-bg .hud-step-node:hover {
   background: #ffffff !important;
   border-color: var(--dneg-coral) !important;
+  transform: translateY(-2px) !important;
 }
 
 .apple-pure-white-bg .hud-step-node.active {
-  background: #fffdf5 !important;
+  background: #ffffff !important;
   border-color: var(--dneg-coral) !important;
-  border-left: 3px solid var(--dneg-coral) !important;
-  box-shadow: 0 4px 20px rgba(255, 167, 0, 0.08) !important;
+  border-left: 4px solid var(--dneg-coral) !important;
+  box-shadow: 0 10px 30px rgba(204, 164, 59, 0.06) !important;
 }
 
 .apple-pure-white-bg .hud-step-node .step-name {
-  color: #1d1d1f !important;
+  color: var(--color-text-dark) !important;
 }
 
 .apple-pure-white-bg .hud-step-node.active .step-name {
@@ -5781,11 +5787,11 @@ html, body {
 }
 
 .apple-pure-white-bg .hud-step-node .step-kicker {
-  color: #718096 !important;
+  color: var(--dneg-grey-02) !important;
 }
 
 .apple-pure-white-bg .hud-step-node .step-chevron {
-  color: #718096 !important;
+  color: var(--dneg-grey-02) !important;
 }
 
 .apple-pure-white-bg .hud-step-node.active .step-chevron {
@@ -5794,16 +5800,17 @@ html, body {
 
 .apple-pure-white-bg .hud-console-screen {
   background: #ffffff !important;
-  border: 1px solid #ebdcc5 !important;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03) !important;
+  border: 1px solid var(--dneg-grey-03) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03) !important;
 }
 
 .apple-pure-white-bg .console-header {
-  border-bottom: 1px solid #f0e6d2 !important;
+  border-bottom: 1px solid var(--dneg-grey-03) !important;
 }
 
 .apple-pure-white-bg .status-lbl {
-  color: #718096 !important;
+  color: var(--dneg-grey-02) !important;
 }
 
 .apple-pure-white-bg .console-id-stamp {
@@ -5811,7 +5818,7 @@ html, body {
 }
 
 .apple-pure-white-bg .console-stage-title {
-  color: #1d1d1f !important;
+  color: var(--color-text-dark) !important;
 }
 
 .apple-pure-white-bg .console-stage-text {
@@ -5819,39 +5826,41 @@ html, body {
 }
 
 .apple-pure-white-bg .diagnostic-card {
-  background: #faf7f2 !important;
-  border: 1px solid #ebdcc5 !important;
+  background: var(--dneg-grey-01) !important;
+  border: none !important;
+  border-radius: 12px !important;
 }
 
 .apple-pure-white-bg .diag-label {
-  color: #718096 !important;
+  color: var(--dneg-grey-02) !important;
 }
 
 .apple-pure-white-bg .diag-val {
-  color: #1d1d1f !important;
+  color: var(--color-text-dark) !important;
 }
 
 .apple-pure-white-bg .console-footer {
-  border-top: 1px solid #f0e6d2 !important;
-  color: #718096 !important;
+  border-top: 1px solid var(--dneg-grey-03) !important;
+  color: var(--dneg-grey-02) !important;
 }
 
 /* Brand Experience (Light Theme) */
 .apple-pure-white-bg .dneg-text-capability {
   background: #ffffff !important;
-  border: 1px solid #ebdcc5 !important;
-  border-top: 3px solid var(--dneg-coral) !important;
+  border: 1px solid var(--dneg-grey-03) !important;
+  border-top: 4px solid var(--dneg-coral) !important;
+  border-radius: 18px !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
 }
 
 .apple-pure-white-bg .dneg-text-capability:hover {
   background: #ffffff !important;
   border-color: var(--dneg-coral) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.05) !important;
 }
 
 .apple-pure-white-bg .pro-card-title {
-  color: #1d1d1f !important;
+  color: var(--color-text-dark) !important;
 }
 
 .apple-pure-white-bg .pro-card-desc {
@@ -5859,58 +5868,63 @@ html, body {
 }
 
 .apple-pure-white-bg .card-num-badge {
-  background: #f7f9fb !important;
-  color: #4a5568 !important;
-  border: 1px solid #e2e8f0;
+  background: var(--dneg-grey-01) !important;
+  color: var(--dneg-grey-02) !important;
+  border: 1px solid var(--dneg-grey-03) !important;
 }
 
 /* Contact Form Section (Light Theme) */
 #contact {
-  background: #ffffff !important;
+  background: var(--dneg-grey-01) !important;
 }
 
 #contact .vfx-form-card {
-  background: #f8fafc !important;
-  border: 1px solid #e2e8f0 !important;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03) !important;
+  background: #ffffff !important;
+  border: 1px solid var(--dneg-grey-03) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 10px 45px rgba(0, 0, 0, 0.03) !important;
 }
 
 #contact .form-title {
-  color: #1d1d1f !important;
+  color: var(--color-text-dark) !important;
 }
 
 #contact .form-subtitle {
-  color: #4a5568 !important;
+  color: var(--dneg-grey-02) !important;
 }
 
 #contact label {
-  color: #1d1d1f !important;
+  color: var(--color-text-dark) !important;
 }
 
 #contact .vfx-input,
 #contact .vfx-textarea {
-  background: #ffffff !important;
-  border: 1px solid #cbd5e1 !important;
-  color: #1d1d1f !important;
+  background: var(--dneg-grey-01) !important;
+  border: 1px solid var(--dneg-grey-03) !important;
+  border-radius: 12px !important;
+  color: var(--color-text-dark) !important;
+  transition: all 0.3s ease;
 }
 
 #contact .vfx-input:focus,
 #contact .vfx-textarea:focus {
   border-color: var(--dneg-coral) !important;
-  box-shadow: 0 0 10px rgba(255, 167, 0, 0.1) !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 12px rgba(204, 164, 59, 0.15) !important;
 }
 
 #contact .submit-btn {
-  background-color: #000000 !important;
+  background-color: var(--color-text-dark) !important;
   color: #ffffff !important;
-  border: 1px solid #000000 !important;
+  border: 1px solid var(--color-text-dark) !important;
+  border-radius: 12px !important;
   transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) !important;
 }
 
 #contact .submit-btn:hover {
   background-color: #ffffff !important;
-  color: #000000 !important;
-  border-color: #000000 !important;
+  color: var(--color-text-dark) !important;
+  border-color: var(--color-text-dark) !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
 }
