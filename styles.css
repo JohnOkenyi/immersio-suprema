@@ -3,22 +3,22 @@
    ========================================================================== */
 
 :root {
-  /* DNEG BRAND THEME PALETTE - VIBRANT CINEMATIC TEAL & ORANGE */
+  /* LOST BOYS MATTE CHARCOAL BACKGROUND PALETTE */
   --bg-light: #ffffff;
-  --bg-dark: #0a0913;       /* Deep space obsidian midnight */
-  --bg-pure-black: #050407; /* Pure void black for maximum contrast */
+  --bg-dark: #111111;       /* Lost Boys matte charcoal black */
+  --bg-pure-black: #161616; /* Slightly lighter card charcoal */
   --color-text-dark: #1e1e24;
   --color-text-light: #ffffff;
   
-  --dneg-coral: #ffa700;    /* Cinematic Sunset Orange-Gold (Brighter, vibrant) */
+  --dneg-coral: #ffa700;    /* Cinematic Sunset Orange-Gold */
   --dneg-coral-glow: rgba(255, 167, 0, 0.4);
-  --vfx-cyan: #00f0ff;      /* Electric Aurora Cyan (Studied contrast) */
+  --vfx-cyan: #00f0ff;      /* Electric Aurora Cyan */
   --vfx-cyan-glow: rgba(0, 240, 255, 0.4);
   --vfx-violet: #8b5cf6;    /* Deep space ultraviolet */
   --dneg-yellow: #f3ff00;
   
-  --dneg-grey-01: #16141f;  /* Matte obsidian grey */
-  --dneg-grey-02: #242230;
+  --dneg-grey-01: #1c1c1c;  /* Matte slate card background */
+  --dneg-grey-02: #242424;
   --dneg-grey-03: #94a3b8;  /* Crisp slate text grey */
   --dneg-grey-04: #64748b;
   --dneg-grey-05: #0f172a;
