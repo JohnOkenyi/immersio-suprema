@@ -228,19 +228,6 @@ const translations = {
     art_impossible_title: "Prêt à repousser les limites de l'impossible ?",
     art_impossible_desc: "Prenez contact avec notre équipe de conception artistique pour concevoir votre prochain univers.",
     contact_art_team: "Contacter l'équipe artistique",
-    featured_design_categories: "CATÉGORIES DE DESIGN VEDETTES",
-    art_card1_title: "ENVIRONNEMENTS & MONDES",
-    art_card1_desc: "Décors atmosphériques, cités de science-fiction et paysages historiques conçus pour la production virtuelle.",
-    art_card2_title: "CRÉATURES & PERSONNAGES",
-    art_card2_desc: "Simulation anatomique, acteurs numériques et conceptions de créatures fantastiques.",
-    art_card3_title: "VÉHICULES & ACCESSOIRES",
-    art_card3_desc: "Modèles d'ingénierie mécanique, vaisseaux spatiaux futuristes et accessoires de haute fidélité.",
-    art_card4_title: "DESIGN DE COSTUMES",
-    art_card4_desc: "Conception de costumes complexes et simulations de textiles dynamiques pour des personnages de calibre cinéma.",
-    art_card5_title: "MATTE PAINTING & DÉCORS",
-    art_card5_desc: "Peintures numériques photoréalistes et extensions de décors pour fusionner réalité et imaginaire.",
-    art_card6_title: "ART DE DESSIN-CLÉ & SCÉNARIOS",
-    art_card6_desc: "Compositions cinématographiques et storyboards pour définir l'ambiance et la narration visuelle.",
     track1_meta: "Logiciels : Unreal Engine 5.4, Houdini, Outils MoCap",
     track2_meta: "Logiciels : Unreal Engine C++, Shaders HLSL, MetaHuman",
     track3_meta: "Format : Diplômes clés en main, certification de facultés",
@@ -467,19 +454,6 @@ const translations = {
     art_impossible_title: "Ready to Start with Impossible?",
     art_impossible_desc: "Get in touch with our concept design team to build your next visual project.",
     contact_art_team: "Contact the Art team",
-    featured_design_categories: "FEATURED DESIGN CATEGORIES",
-    art_card1_title: "ENVIRONMENTS & WORLDS",
-    art_card1_desc: "Atmospheric settings, sci-fi cities, and historical landscapes designed for virtual production.",
-    art_card2_title: "CREATURES & CHARACTERS",
-    art_card2_desc: "Anatomical simulation, digital actors, and fantastical creature designs.",
-    art_card3_title: "VEHICLES & PROPS",
-    art_card3_desc: "Mechanical engineering designs, futuristic space crafts, and high-fidelity props.",
-    art_card4_title: "COSTUME DESIGN",
-    art_card4_desc: "Intricate costume development and dynamic textile simulations for cinematic characters.",
-    art_card5_title: "MATTE PAINTING & BACKGROUNDS",
-    art_card5_desc: "Photorealistic digital paintings and set extensions to blend reality with imagination.",
-    art_card6_title: "KEYFRAME ART & STORYBOARDS",
-    art_card6_desc: "Cinematic compositions and storyboards outlining lighting, mood, and visual narratives.",
     track1_meta: "Software: Unreal Engine 5.4, Houdini, MoCap tools",
     track2_meta: "Software: Unreal Engine C++, HLSL Shaders, MetaHuman Creator",
     track3_meta: "Delivery: Turnkey degree integration, faculty certification",
@@ -996,10 +970,7 @@ function switchDivision(divisionName, preventScroll = false) {
     if (artView) {
       artView.style.display = 'block';
       artView.style.opacity = '0';
-      setTimeout(() => { 
-        artView.style.opacity = '1'; 
-        updateArtSlider();
-      }, 50);
+      setTimeout(() => { artView.style.opacity = '1'; }, 50);
     }
   } else {
     if (artView) artView.style.display = 'none';
@@ -1162,7 +1133,7 @@ function initVFXNavbar() {
       }
     });
 
-    const lightSections = [];
+    const lightSections = ['studio', 'technology', 'contact'];
     if (lightSections.includes(currentSectionId)) {
       navbar.classList.add('light-section');
     } else {
@@ -2215,95 +2186,4 @@ function prevHoudiniCarousel() {
 function nextHoudiniCarousel() {
   switchHoudiniCarousel(currentHoudiniIndex + 1);
 }
-
-// --------------------------------------------------------
-// DNEG ART PORTFOLIO CAROUSEL INTERACTIVITY
-// --------------------------------------------------------
-let currentArtIndex = 0;
-const totalArtSlides = 6;
-
-function updateArtSlider() {
-  const track = document.getElementById('art-carousel-track');
-  const counter = document.getElementById('art-carousel-counter');
-  const dots = document.querySelectorAll('.art-dot');
-
-  if (!track) return;
-
-  let cardWidthPercentage = 100;
-  if (window.innerWidth >= 1024) {
-    cardWidthPercentage = 33.333; // 3 items visible
-  } else if (window.innerWidth >= 768) {
-    cardWidthPercentage = 50; // 2 items visible
-  }
-
-  let maxIndex = totalArtSlides - 1;
-  if (window.innerWidth >= 1024) {
-    maxIndex = totalArtSlides - 3;
-  } else if (window.innerWidth >= 768) {
-    maxIndex = totalArtSlides - 2;
-  }
-  
-  if (currentArtIndex > maxIndex) {
-    currentArtIndex = maxIndex;
-  }
-  if (currentArtIndex < 0) {
-    currentArtIndex = 0;
-  }
-
-  const offset = currentArtIndex * cardWidthPercentage;
-  track.style.transform = `translateX(-${offset}%)`;
-
-  if (counter) {
-    counter.textContent = `${currentArtIndex + 1} - ${totalArtSlides}`;
-  }
-
-  dots.forEach((dot, idx) => {
-    if (idx === currentArtIndex) {
-      dot.classList.add('active');
-    } else {
-      dot.classList.remove('active');
-    }
-  });
-}
-
-function prevArtSlide() {
-  currentArtIndex--;
-  if (currentArtIndex < 0) {
-    // Calculate max wrap index based on screen size
-    let maxWrap = totalArtSlides - 1;
-    if (window.innerWidth >= 1024) {
-      maxWrap = totalArtSlides - 3;
-    } else if (window.innerWidth >= 768) {
-      maxWrap = totalArtSlides - 2;
-    }
-    currentArtIndex = maxWrap;
-  }
-  updateArtSlider();
-}
-
-function nextArtSlide() {
-  currentArtIndex++;
-  let maxWrap = totalArtSlides - 1;
-  if (window.innerWidth >= 1024) {
-    maxWrap = totalArtSlides - 3;
-  } else if (window.innerWidth >= 768) {
-    maxWrap = totalArtSlides - 2;
-  }
-  if (currentArtIndex > maxWrap) {
-    currentArtIndex = 0;
-  }
-  updateArtSlider();
-}
-
-function jumpToArtSlide(index) {
-  currentArtIndex = index;
-  updateArtSlider();
-}
-
-// Add window resize handler to keep track aligned
-window.addEventListener('resize', () => {
-  if (typeof currentCategoryFilter !== 'undefined' && currentCategoryFilter === 'art') {
-    updateArtSlider();
-  }
-});
 

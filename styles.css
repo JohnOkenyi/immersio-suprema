@@ -4,21 +4,21 @@
 
 :root {
   /* DNEG BRAND THEME PALETTE */
-  --bg-light: #111113;      /* Deep dark slate backdrop */
-  --bg-dark: #08080a;       /* Pitch black backdrop for main canvas */
-  --bg-pure-black: #000000; /* Pure black backdrop for modals and focus elements */
-  --color-text-dark: #f5f5f7; /* High contrast light grey/white for dark theme */
+  --bg-light: #ffffff;      /* Pure white canvas backdrop */
+  --bg-dark: #2a2830;       /* Dark slate Film Noir backdrop */
+  --bg-pure-black: #141414; /* Pure black backdrop for modals and focus elements */
+  --color-text-dark: #2a2830;
   --color-text-light: #ffffff;
   
-  --dneg-coral: #cca43b;    /* Custom elegant warm gold highlight */
+  --dneg-coral: #cca43b;    /* Custom coral red highlight */
   --dneg-coral-glow: rgba(204, 164, 59, 0.4);
   --dneg-yellow: #f3ff00;
   
-  --dneg-grey-01: #1a1a1c;
-  --dneg-grey-02: #242427;
-  --dneg-grey-03: #3f3f46;
-  --dneg-grey-04: #a1a1aa;
-  --dneg-grey-05: #f4f4f5;
+  --dneg-grey-01: #f9f9f9;
+  --dneg-grey-02: #e5e5e5;
+  --dneg-grey-03: #bcbcb6;
+  --dneg-grey-04: #7e7d7d;
+  --dneg-grey-05: #3f3d43;
 
   /* Typography Pairing */
   --font-display: 'Outfit', 'Montserrat', sans-serif;
@@ -149,10 +149,13 @@ body.vfx-body {
 .vfx-navbar.scrolling-up {
   transform: translateY(0);
   height: 80px;
-  background: rgba(8, 8, 10, 0.92);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(42, 40, 48, 0.96);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.vfx-navbar.scrolling-up.light-section {
+  background: rgba(251, 251, 240, 0.96);
+  border-bottom: 1px solid rgba(42, 40, 48, 0.08);
 }
 
 .vfx-nav-container {
@@ -4814,339 +4817,37 @@ html, body {
   box-shadow: 0 4px 15px rgba(204, 164, 59, 0.4);
 }
 
-/* Immersio Art Department Styles - DNEG Inspired Layout */
-.about-p {
-  font-size: 0.98rem;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.65);
-  margin-bottom: 15px;
-}
-.about-p.lead {
-  font-size: 1.12rem;
-  line-height: 1.6;
-  font-weight: 600;
-  color: var(--color-text-light);
-}
-
-.art-concept-design-section {
-  margin-bottom: 80px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  padding-bottom: 50px;
-}
-.art-concept-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 60px;
-  align-items: flex-start;
-}
-.art-concept-left {
-  display: flex;
-  flex-direction: column;
-}
-.art-concept-title {
-  color: #fff;
-  font-size: 3rem;
-  font-weight: 900;
-  font-family: var(--font-display);
-  letter-spacing: -0.03em;
-  line-height: 1.0;
-  margin-top: 15px;
-  text-transform: uppercase;
-}
-.art-concept-text {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 1.05rem;
-  line-height: 1.75;
-  font-weight: 400;
-  margin: 0;
-}
-
-.art-showcase-carousel-section {
-  margin-top: 60px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  padding-bottom: 80px;
-  overflow: hidden;
-}
-.art-carousel-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-}
-.art-carousel-controls {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-.art-carousel-btn {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s var(--ease-standard);
-}
-.art-carousel-btn:hover {
-  background: var(--dneg-coral);
-  border-color: var(--dneg-coral);
-  box-shadow: 0 0 15px rgba(204, 164, 59, 0.4);
-  transform: scale(1.05);
-}
-.art-carousel-counter {
-  font-family: var(--font-display);
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.5);
-  min-width: 45px;
-  text-align: center;
-}
-.art-carousel-viewport {
-  width: 100%;
-  overflow: hidden;
-  padding: 10px 0;
-}
-.art-carousel-track {
-  display: flex;
-  gap: 30px;
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-  width: 100%;
-}
-.art-showcase-card {
-  flex: 0 0 calc(33.333% - 20px);
-  background: rgba(255, 255, 255, 0.015);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  border-radius: 16px;
-  padding: 24px;
-  transition: all 0.4s var(--ease-standard);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-.art-showcase-card:hover {
-  background: rgba(255, 255, 255, 0.03);
-  border-color: rgba(204, 164, 59, 0.3);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-  transform: translateY(-5px);
-}
-.art-card-title {
-  color: #fff;
-  font-size: 1.1rem;
-  font-weight: 800;
-  font-family: var(--font-display);
-  letter-spacing: -0.01em;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
-.art-card-desc {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.85rem;
-  line-height: 1.6;
-  margin: 0;
-}
-.art-carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 40px;
-}
-.art-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
-  cursor: pointer;
-  transition: all 0.3s;
-}
-.art-dot.active {
-  background: var(--dneg-coral);
-  transform: scale(1.3);
-  box-shadow: 0 0 8px var(--dneg-coral);
-}
-
-.art-team-section {
-  margin-top: 80px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  padding-bottom: 80px;
-}
-.art-team-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-.art-team-card {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  background: rgba(255, 255, 255, 0.015);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  border-radius: 16px;
-  padding: 30px;
-  transition: all 0.4s var(--ease-standard);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-.art-team-card:hover {
-  background: rgba(255, 255, 255, 0.035);
-  border-color: rgba(204, 164, 59, 0.3);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-  transform: translateY(-4px);
-}
-.art-member-avatar-box {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(204, 164, 59, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%);
-  border: 1px solid rgba(204, 164, 59, 0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: all 0.4s var(--ease-standard);
-}
-.art-team-card:hover .art-member-avatar-box {
-  border-color: var(--dneg-coral);
-  box-shadow: 0 0 20px rgba(204, 164, 59, 0.4);
-  transform: scale(1.05) rotate(5deg);
-}
-.art-avatar-initials {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #fff;
-  font-family: var(--font-display);
-  letter-spacing: -0.02em;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-}
-.art-member-info {
-  display: flex;
-  flex-direction: column;
-}
-.art-member-name {
-  color: #fff;
-  font-size: 1.25rem;
-  font-weight: 800;
-  font-family: var(--font-display);
-  margin-bottom: 5px;
-}
-.art-member-role {
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin: 0;
-}
-
-.art-contact-banner {
-  margin-top: 80px;
-  position: relative;
-  background: linear-gradient(135deg, rgba(204, 164, 59, 0.06) 0%, rgba(255, 255, 255, 0.005) 100%);
-  border: 1px solid rgba(204, 164, 59, 0.15);
-  border-radius: 20px;
-  padding: 60px 40px;
-  text-align: center;
-  overflow: hidden;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.art-contact-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center, rgba(204, 164, 59, 0.05) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 1;
-}
-.art-contact-content {
-  position: relative;
-  z-index: 2;
-  max-width: 700px;
-}
-.art-contact-content h3 {
-  font-size: 2.2rem;
-  font-weight: 900;
-  color: #fff;
-  font-family: var(--font-display);
-  letter-spacing: -0.02em;
-  margin-bottom: 12px;
-}
-.art-contact-content p {
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 0.95rem;
-  margin-bottom: 30px;
-  line-height: 1.6;
-}
-.art-btn-submit {
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--color-text-light);
-  color: var(--bg-dark);
-  border: 1px solid var(--color-text-light);
-  padding: 16px 36px;
-  border-radius: 100px;
-  font-family: var(--font-display);
-  font-size: 0.9rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.4s var(--ease-dneg);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-.art-btn-submit:hover {
-  background: var(--dneg-coral);
-  color: #fff;
-  border-color: var(--dneg-coral);
-  box-shadow: 0 0 25px rgba(204, 164, 59, 0.5);
-  transform: translateY(-2px);
-}
-
-@media (max-width: 1023px) {
-  .art-showcase-card {
-    flex: 0 0 calc(50% - 15px);
-  }
-}
-
-@media (max-width: 991px) {
+/* Immersio Art Department Grid Responsiveness */
+@media (max-width: 768px) {
   .art-concept-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
   }
   .art-concept-title {
-    font-size: 2.2rem;
-  }
-  .art-team-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    font-size: 1.8rem !important;
   }
 }
 
-@media (max-width: 767px) {
-  .art-showcase-card {
-    flex: 0 0 100%;
-  }
-  .art-carousel-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-  }
-  .art-contact-content h3 {
-    font-size: 1.7rem;
-  }
-  .art-contact-banner {
-    padding: 40px 20px;
-  }
+.art-showcase-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(204, 164, 59, 0.2) !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.art-team-card:hover {
+  border-color: rgba(204, 164, 59, 0.2) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.art-team-card:hover .art-member-avatar-box {
+  transform: scale(1.05);
+  border-color: rgba(204, 164, 59, 0.8) !important;
+  box-shadow: 0 0 15px rgba(204, 164, 59, 0.3);
+}
+
+.art-member-avatar-box {
+  transition: all 0.3s ease;
 }
 
 /* --------------------------------------------------------------------------
