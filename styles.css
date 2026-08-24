@@ -3,25 +3,25 @@
    ========================================================================== */
 
 :root {
-  /* LOST BOYS MATTE CHARCOAL BACKGROUND PALETTE */
+  /* WORLD-CLASS MINIMALIST PORTFOLIO PALETTE (PURE BLACK & PURE WHITE) */
   --bg-light: #ffffff;
-  --bg-dark: #111111;       /* Lost Boys matte charcoal black */
-  --bg-pure-black: #161616; /* Slightly lighter card charcoal */
-  --color-text-dark: #1e1e24;
+  --bg-dark: #000000;       /* Solid Weta / Framestore pure black */
+  --bg-pure-black: #000000; /* Pure void black */
+  --color-text-dark: #000000;
   --color-text-light: #ffffff;
   
-  --dneg-coral: #ffa700;    /* Cinematic Sunset Orange-Gold */
-  --dneg-coral-glow: rgba(255, 167, 0, 0.4);
-  --vfx-cyan: #00f0ff;      /* Electric Aurora Cyan */
-  --vfx-cyan-glow: rgba(0, 240, 255, 0.4);
-  --vfx-violet: #8b5cf6;    /* Deep space ultraviolet */
-  --dneg-yellow: #f3ff00;
+  --dneg-coral: #cca43b;    /* Subtle gold brand accent */
+  --dneg-coral-glow: rgba(204, 164, 59, 0.2);
+  --vfx-cyan: #ffffff;      
+  --vfx-cyan-glow: rgba(255, 255, 255, 0.1);
+  --vfx-violet: #8e8e93;    /* Neutral grey */
+  --dneg-yellow: #ffffff;
   
-  --dneg-grey-01: #1c1c1c;  /* Matte slate card background */
-  --dneg-grey-02: #242424;
-  --dneg-grey-03: #94a3b8;  /* Crisp slate text grey */
-  --dneg-grey-04: #64748b;
-  --dneg-grey-05: #0f172a;
+  --dneg-grey-01: #161617;  /* High-end slate grey for card backings */
+  --dneg-grey-02: #2c2c2e;  /* Border grey */
+  --dneg-grey-03: #8e8e93;  /* Muted text grey */
+  --dneg-grey-04: #c7c7cc;
+  --dneg-grey-05: #1c1c1e;
 
   /* Typography Pairing */
   --font-display: 'Outfit', 'Montserrat', sans-serif;
@@ -34,9 +34,9 @@
   
   /* Compatibility mappings */
   --burkina-red: var(--dneg-coral);
-  --burkina-yellow: var(--vfx-cyan);
+  --burkina-yellow: #ffffff;
   --burkina-green: var(--vfx-violet);
-  --apple-cyan: var(--vfx-cyan);
+  --apple-cyan: #ffffff;
   --bg-space-black: var(--bg-dark);
   --bg-vfx-charcoal: var(--bg-pure-black);
   --apple-white: var(--color-text-light);
@@ -331,19 +331,26 @@ body.vfx-body {
   border-radius: 100px;
   text-decoration: none;
   letter-spacing: 0.05em;
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .vfx-navbar.scrolling-up.light-section .vfx-btn-pill-apply {
-  border-color: var(--bg-dark);
-  color: var(--bg-dark);
+  border-color: #000000;
+  color: #000000;
+}
+
+.vfx-navbar.scrolling-up.light-section .vfx-btn-pill-apply:hover {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+  color: #ffffff !important;
 }
 
 .vfx-btn-pill-apply:hover {
-  background-color: var(--dneg-coral);
-  border-color: var(--dneg-coral) !important;
-  color: var(--bg-dark) !important;
-  transform: scale(1.04);
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #000000 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
 }
 
 /* Burger Button for Mobile Drawer Navigation */
@@ -717,78 +724,14 @@ body.vfx-body {
   overflow: hidden;
 }
 
-/* 3D Viewport Grid Overlay for all section backgrounds */
-.apple-pure-white-bg::before,
-.apple-dark-bg::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-  background-size: 100px 100px;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Specific Light blueprint grid overlay for White Sections */
-.apple-pure-white-bg::before {
-  background-image: 
-    linear-gradient(to right, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px) !important;
-}
-
 .apple-pure-white-bg {
-  background: #ffffff !important;
-  color: #1d1d1f;
+  background-color: #ffffff !important;
+  color: #111111;
 }
 
 .apple-dark-bg {
-  background: var(--bg-dark) !important;
+  background-color: var(--bg-dark) !important;
   color: var(--color-text-light);
-}
-
-/* Drifting Volumetric Aurora 1 (Cyan/Teal) */
-.apple-pure-white-bg::after {
-  content: '';
-  position: absolute;
-  width: 700px;
-  height: 700px;
-  top: -150px;
-  left: -150px;
-  background: radial-gradient(circle, rgba(0, 240, 255, 0.05) 0%, rgba(139, 92, 246, 0.03) 45%, transparent 70%);
-  filter: blur(80px);
-  pointer-events: none;
-  z-index: 0;
-  animation: floatAurora1 25s ease-in-out infinite alternate;
-}
-
-/* Drifting Volumetric Aurora 2 (Orange/Amber) */
-.apple-dark-bg::after {
-  content: '';
-  position: absolute;
-  width: 700px;
-  height: 700px;
-  bottom: -150px;
-  right: -150px;
-  background: radial-gradient(circle, rgba(255, 167, 0, 0.03) 0%, rgba(139, 92, 246, 0.02) 45%, transparent 70%);
-  filter: blur(80px);
-  pointer-events: none;
-  z-index: 0;
-  animation: floatAurora2 30s ease-in-out infinite alternate;
-}
-
-@keyframes floatAurora1 {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(150px, 80px) scale(1.3); }
-}
-
-@keyframes floatAurora2 {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(-120px, -90px) scale(1.25); }
 }
 
 .apple-section-container {
@@ -827,11 +770,7 @@ body.vfx-body {
   letter-spacing: -0.03em;
   text-transform: uppercase;
   margin-bottom: 24px;
-  background: linear-gradient(135deg, #ffffff 30%, var(--vfx-cyan) 75%, var(--dneg-coral) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
+  color: var(--color-text-light);
 }
 
 .apple-section-title.scribble-under {
@@ -5962,13 +5901,18 @@ html, body {
 }
 
 #contact .submit-btn {
-  background: var(--dneg-coral) !important;
+  background-color: #000000 !important;
   color: #ffffff !important;
+  border: 1px solid #000000 !important;
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) !important;
 }
 
 #contact .submit-btn:hover {
-  background: #e59700 !important;
-  transform: scale(1.03);
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
 }
 
 
