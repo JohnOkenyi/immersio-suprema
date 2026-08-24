@@ -3,22 +3,25 @@
    ========================================================================== */
 
 :root {
-  /* DNEG BRAND THEME PALETTE */
-  --bg-light: #ffffff;      /* Pure white canvas backdrop */
-  --bg-dark: #2a2830;       /* Dark slate Film Noir backdrop */
-  --bg-pure-black: #141414; /* Pure black backdrop for modals and focus elements */
-  --color-text-dark: #2a2830;
+  /* DNEG BRAND THEME PALETTE - VIBRANT CINEMATIC TEAL & ORANGE */
+  --bg-light: #ffffff;
+  --bg-dark: #0a0913;       /* Deep space obsidian midnight */
+  --bg-pure-black: #050407; /* Pure void black for maximum contrast */
+  --color-text-dark: #1e1e24;
   --color-text-light: #ffffff;
   
-  --dneg-coral: #cca43b;    /* Custom coral red highlight */
-  --dneg-coral-glow: rgba(204, 164, 59, 0.4);
+  --dneg-coral: #ffa700;    /* Cinematic Sunset Orange-Gold (Brighter, vibrant) */
+  --dneg-coral-glow: rgba(255, 167, 0, 0.4);
+  --vfx-cyan: #00f0ff;      /* Electric Aurora Cyan (Studied contrast) */
+  --vfx-cyan-glow: rgba(0, 240, 255, 0.4);
+  --vfx-violet: #8b5cf6;    /* Deep space ultraviolet */
   --dneg-yellow: #f3ff00;
   
-  --dneg-grey-01: #f9f9f9;
-  --dneg-grey-02: #e5e5e5;
-  --dneg-grey-03: #bcbcb6;
-  --dneg-grey-04: #7e7d7d;
-  --dneg-grey-05: #3f3d43;
+  --dneg-grey-01: #16141f;  /* Matte obsidian grey */
+  --dneg-grey-02: #242230;
+  --dneg-grey-03: #94a3b8;  /* Crisp slate text grey */
+  --dneg-grey-04: #64748b;
+  --dneg-grey-05: #0f172a;
 
   /* Typography Pairing */
   --font-display: 'Outfit', 'Montserrat', sans-serif;
@@ -29,11 +32,11 @@
   --ease-dneg: cubic-bezier(0.8, 0, 0, 1);
   --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1);
   
-  /* Compatibility mappings for the 3D Clapperboard house */
+  /* Compatibility mappings */
   --burkina-red: var(--dneg-coral);
-  --burkina-yellow: var(--dneg-coral);
-  --burkina-green: var(--dneg-grey-04);
-  --apple-cyan: var(--dneg-coral);
+  --burkina-yellow: var(--vfx-cyan);
+  --burkina-green: var(--vfx-violet);
+  --apple-cyan: var(--vfx-cyan);
   --bg-space-black: var(--bg-dark);
   --bg-vfx-charcoal: var(--bg-pure-black);
   --apple-white: var(--color-text-light);
@@ -715,12 +718,16 @@ body.vfx-body {
 }
 
 .apple-pure-white-bg {
-  background-color: var(--bg-pure-black);
+  background: radial-gradient(circle at 10% 20%, rgba(0, 240, 255, 0.04) 0%, transparent 45%),
+              radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.04) 0%, transparent 45%),
+              var(--bg-pure-black) !important;
   color: var(--color-text-light);
 }
 
 .apple-dark-bg {
-  background-color: var(--bg-dark);
+  background: radial-gradient(circle at 90% 10%, rgba(255, 167, 0, 0.03) 0%, transparent 45%),
+              radial-gradient(circle at 10% 90%, rgba(0, 240, 255, 0.03) 0%, transparent 45%),
+              var(--bg-dark) !important;
   color: var(--color-text-light);
 }
 
@@ -743,10 +750,9 @@ body.vfx-body {
 
 .apple-kicker {
   display: block;
-  font-family: var(--font-serif);
-  font-size: 1.15rem;
-  font-style: italic;
-  font-weight: 500;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
   color: var(--dneg-coral);
   text-transform: none;
   letter-spacing: 0.02em;
@@ -757,10 +763,15 @@ body.vfx-body {
   font-family: var(--font-display);
   font-size: 3.6rem;
   font-weight: 900;
-  line-height: 0.9;
+  line-height: 1.0;
   letter-spacing: -0.03em;
   text-transform: uppercase;
   margin-bottom: 24px;
+  background: linear-gradient(135deg, #ffffff 30%, var(--vfx-cyan) 75%, var(--dneg-coral) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 .apple-section-title.scribble-under {
@@ -5048,22 +5059,22 @@ html, body {
 }
 
 .houdini-tab-indicator-bar:hover .hud-blue-line {
-  background: rgba(204, 164, 59, 0.3);
+  background: var(--vfx-cyan);
   transform: scaleX(0.6);
 }
 
 .houdini-tab-indicator-bar.active .hud-label {
-  color: var(--dneg-coral);
+  color: var(--vfx-cyan);
 }
 
 .houdini-tab-indicator-bar.active .hud-num {
-  color: var(--dneg-coral);
+  color: var(--vfx-cyan);
 }
 
 .houdini-tab-indicator-bar.active .hud-blue-line {
-  background: var(--dneg-coral);
+  background: linear-gradient(90deg, var(--vfx-cyan), var(--dneg-coral));
   transform: scaleX(1);
-  box-shadow: 0 1px 6px rgba(204, 164, 59, 0.3);
+  box-shadow: 0 0 10px var(--vfx-cyan-glow);
 }
 
 /* 2-Column Carousel Viewport */
@@ -5334,7 +5345,7 @@ html, body {
 .curriculum-sub-dot.active {
   background: var(--dneg-coral);
   transform: scale(1.25);
-  box-shadow: 0 0 8px var(--dneg-coral);
+  box-shadow: 0 0 10px var(--vfx-cyan-glow);
 }
 
 /* --------------------------------------------------------
@@ -5376,7 +5387,11 @@ html, body {
   font-family: var(--font-display);
   font-size: 1.4rem;
   font-weight: 800;
-  color: #fff;
+  background: linear-gradient(135deg, #ffffff 40%, var(--dneg-coral) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
   letter-spacing: -0.01em;
   margin-bottom: 12px;
 }
@@ -5384,7 +5399,7 @@ html, body {
 .pedigree-label {
   font-size: 0.78rem;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.65);
   font-weight: 400;
 }
 
@@ -5401,7 +5416,7 @@ html, body {
 
 .program-list-col .program-list-item:hover {
   background: rgba(255, 255, 255, 0.02);
-  border-color: rgba(204, 164, 59, 0.3);
+  border-color: var(--vfx-cyan);
   transform: translateY(-4px);
 }
 
@@ -5442,20 +5457,23 @@ html, body {
 
 .hud-step-node:hover {
   background: rgba(255, 255, 255, 0.025);
-  border-color: rgba(204, 164, 59, 0.2);
+  border-color: rgba(0, 240, 255, 0.3);
   transform: translateX(4px);
 }
 
 .hud-step-node.active {
-  background: rgba(204, 164, 59, 0.04);
-  border-color: var(--dneg-coral);
+  background: rgba(0, 240, 255, 0.02);
+  border-color: transparent;
+  border-left: 3px solid var(--vfx-cyan) !important;
+  box-shadow: 0 4px 20px rgba(0, 240, 255, 0.12) !important;
 }
 
 .step-num {
   font-family: var(--font-display);
   font-size: 1.3rem;
   font-weight: 800;
-  color: var(--dneg-coral);
+  color: var(--vfx-cyan);
+  text-shadow: 0 0 8px var(--vfx-cyan-glow);
 }
 
 .step-lbl-wrapper {
@@ -5488,7 +5506,7 @@ html, body {
 }
 
 .hud-step-node.active .step-chevron {
-  color: var(--dneg-coral);
+  color: var(--vfx-cyan);
   transform: translateX(3px);
 }
 
@@ -5498,7 +5516,7 @@ html, body {
 }
 
 .hud-console-screen {
-  background: #0d0c10;
+  background: #0c0b0f;
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 12px;
   padding: 40px;
@@ -5527,7 +5545,7 @@ html, body {
 .console-id-stamp {
   font-family: monospace;
   font-size: 0.68rem;
-  color: var(--dneg-coral);
+  color: var(--vfx-cyan);
   letter-spacing: 0.05em;
 }
 
@@ -5588,7 +5606,7 @@ html, body {
   font-family: monospace;
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--dneg-coral);
+  color: var(--vfx-cyan);
 }
 
 .console-footer {
@@ -5630,7 +5648,7 @@ html, body {
 
 .sim-spec-card:hover {
   background: rgba(255, 255, 255, 0.025);
-  border-color: rgba(204, 164, 59, 0.2);
+  border-color: var(--vfx-cyan);
 }
 
 .spec-label {
@@ -5645,7 +5663,7 @@ html, body {
   font-family: monospace;
   font-size: 0.84rem;
   font-weight: 600;
-  color: var(--dneg-coral);
+  color: var(--vfx-cyan);
 }
 
 /* Brand Experience Pillars */
@@ -5661,15 +5679,9 @@ html, body {
 
 #brand-experience .apple-grid-4col .dneg-text-capability:hover {
   background: rgba(255, 255, 255, 0.02);
-  border-color: rgba(204, 164, 59, 0.2);
+  border-color: var(--vfx-cyan);
   transform: translateY(-4px);
 }
-
-
-
-
-
-
 
 
 
