@@ -3,28 +3,28 @@
    ========================================================================== */
 
 :root {
-  /* LUXURIOUS APPLE DESIGN SYSTEM PALETTE */
-  --bg-light: #ffffff;
-  --bg-dark: #000000;       /* Solid velvet black */
+  /* FRAMESTORE CINEMATIC DESIGN SYSTEM PALETTE */
+  --bg-light: #02050b;
+  --bg-dark: #02050b;       /* Deep obsidian black */
   --bg-pure-black: #000000; /* Pure void black */
-  --color-text-dark: #1d1d1f; /* Apple Black */
+  --color-text-dark: #ffffff;
   --color-text-light: #ffffff;
   
-  --dneg-coral: #cca43b;    /* Premium Apple Bronze-Gold */
+  --dneg-coral: #cca43b;    /* Premium Accent Gold */
   --dneg-coral-glow: rgba(204, 164, 59, 0.25);
   --vfx-cyan: #cca43b;      
   --vfx-cyan-glow: rgba(204, 164, 59, 0.15);
-  --vfx-violet: #86868b;    /* Apple Gray */
+  --vfx-violet: #86868b;
   --dneg-yellow: #cca43b;
   
-  --dneg-grey-01: #f5f5f7;  /* Apple Off-White Surface */
-  --dneg-grey-02: #86868b;  /* Apple Gray Secondary Text */
-  --dneg-grey-03: #d2d2d7;  /* Apple Faint Border Gray */
-  --dneg-grey-04: #e5e5e7;
-  --dneg-grey-05: #1c1c1e;  /* Apple Dark Card Surface */
+  --dneg-grey-01: #0e1117;  /* Dark Card Surface */
+  --dneg-grey-02: #86868b;  /* Secondary Gray Text */
+  --dneg-grey-03: rgba(255, 255, 255, 0.08); /* Faint Border Gray */
+  --dneg-grey-04: rgba(255, 255, 255, 0.12);
+  --dneg-grey-05: #14171f;
 
   /* Typography Pairing */
-  --font-display: 'Outfit', 'Montserrat', sans-serif;
+  --font-display: 'Barlow Condensed', 'Outfit', sans-serif;
   --font-serif: 'Cormorant Garamond', 'Cinzel', serif;
   --font-body: 'Inter', sans-serif;
 
@@ -5700,13 +5700,16 @@ html, body {
    -------------------------------------------------------- */
 
 /* Section header overrides */
+/* Framestore Dark Theme Overrides */
+.apple-pure-white-bg,
 .apple-pure-white-bg#studio {
-  background-color: #ffffff !important; /* Page background is pure white */
+  background-color: #02050b !important; /* Framestore obsidian dark */
   background-image: 
-    radial-gradient(circle at 85% 15%, rgba(204, 164, 59, 0.03) 0%, transparent 60%),
-    linear-gradient(to right, rgba(0, 0, 0, 0.015) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.015) 1px, transparent 1px) !important;
+    radial-gradient(circle at 85% 15%, rgba(204, 164, 59, 0.05) 0%, transparent 60%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px) !important;
   background-size: 100% 100%, 60px 60px, 60px 60px !important;
+  color: #ffffff !important;
   position: relative;
 }
 
@@ -5716,28 +5719,28 @@ html, body {
   -webkit-text-fill-color: initial !important;
   background-clip: initial !important;
   text-fill-color: initial !important;
-  color: #1d1d1f !important; /* Apple primary text */
+  color: #ffffff !important; /* Framestore white title */
   font-family: var(--font-display) !important;
-  font-weight: 800 !important;
-  letter-spacing: -0.025em !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.15em !important;
   line-height: 1.15 !important;
   margin-top: 15px !important;
   margin-bottom: 25px !important;
 }
 
 .apple-pure-white-bg .apple-kicker {
-  color: #cca43b !important; /* Gold kicker text */
-  background: linear-gradient(135deg, #fdfbf7 0%, #f7f2e8 100%) !important; /* Warm kicker background */
-  border: 1px solid #ebdcc5 !important; /* Warm gold/sand border */
+  color: #cca43b !important; /* Gold brand accent */
+  background: rgba(204, 164, 59, 0.08) !important;
+  border: 1px solid rgba(204, 164, 59, 0.2) !important;
   border-radius: 100px !important;
   padding: 6px 16px !important;
   font-size: 0.72rem !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.08em !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
   text-transform: uppercase !important;
   display: inline-block !important;
   margin-bottom: 5px !important;
-  box-shadow: 0 2px 8px rgba(204, 164, 59, 0.02) !important;
 }
 
 .apple-pure-white-bg .luxury-serif-italic {
@@ -5760,33 +5763,33 @@ html, body {
   font-size: 1.15rem !important;
   line-height: 1.6 !important;
   font-weight: 600 !important;
-  color: #1d1d1f !important;
+  color: #ffffff !important;
 }
 
 .apple-pure-white-bg .about-narrative-stack .about-p:last-child {
   font-size: 0.98rem !important;
   line-height: 1.65 !important;
-  color: #515154 !important; /* Warm secondary text color */
+  color: #86868b !important;
   margin-bottom: 20px !important;
 }
 
-/* About Section Pedigree (Light Theme) */
+/* About Section Pedigree (Framestore Dark Theme) */
 .apple-pure-white-bg .pedigree-card {
-  background: linear-gradient(135deg, #fdfbf7 0%, #f7f2e8 100%) !important; /* Luxury warm champagne gradient card */
-  border: 1px solid #ebdcc5 !important; /* Warm sand/gold border */
-  border-top: 4px solid #cca43b !important; /* Gold luxury top bar */
-  border-radius: 20px !important;
+  background: #0e1117 !important; /* Dark obsidian card */
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-top: 3px solid #cca43b !important;
+  border-radius: 12px !important;
   padding: 28px 20px !important;
-  box-shadow: 0 8px 30px rgba(204, 164, 59, 0.03) !important; /* Soft, warm golden shadow */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
   position: relative;
   overflow: hidden;
 }
 
 .apple-pure-white-bg .pedigree-card:hover {
-  background: linear-gradient(135deg, #ffffff 0%, #faf3e5 100%) !important;
-  border-color: #cca43b !important;
-  box-shadow: 0 20px 40px rgba(204, 164, 59, 0.08) !important;
+  background: #141822 !important;
+  border-color: rgba(204, 164, 59, 0.4) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8) !important;
   transform: translateY(-5px) !important;
 }
 
@@ -5794,7 +5797,7 @@ html, body {
   font-size: 1.35rem !important;
   color: #cca43b !important;
   margin-bottom: 12px !important;
-  opacity: 0.85 !important;
+  opacity: 0.9 !important;
   transition: all 0.3s ease !important;
 }
 
@@ -5809,23 +5812,23 @@ html, body {
   -webkit-text-fill-color: initial !important;
   background-clip: initial !important;
   text-fill-color: initial !important;
-  color: #1d1d1f !important; /* Highly visible text */
+  color: #ffffff !important; /* Framestore white text */
   font-family: var(--font-display) !important;
   font-size: 1.35rem !important;
-  font-weight: 800 !important;
-  letter-spacing: -0.01em !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
   margin-bottom: 8px !important;
   display: block !important;
 }
 
 .apple-pure-white-bg .pedigree-label {
-  color: #4e483f !important; /* Warm dark gray-brown for excellent readability */
+  color: #86868b !important;
   font-family: var(--font-body) !important;
   font-size: 0.76rem !important;
   line-height: 1.45 !important;
 }
 
-/* About Expertise Items (Light Theme) */
+/* About Expertise Items (Framestore Dark Theme) */
 .apple-pure-white-bg .program-list-col {
   position: relative;
 }
@@ -5837,7 +5840,7 @@ html, body {
   top: 40px;
   bottom: 40px;
   width: 1px;
-  background: linear-gradient(to bottom, rgba(204, 164, 59, 0.25) 0%, rgba(204, 164, 59, 0.05) 100%);
+  background: linear-gradient(to bottom, rgba(204, 164, 59, 0.35) 0%, rgba(204, 164, 59, 0.05) 100%);
   z-index: 1;
 }
 
@@ -5850,11 +5853,11 @@ html, body {
 .apple-pure-white-bg .program-list-col .program-list-item {
   display: flex !important;
   gap: 30px !important;
-  background: linear-gradient(135deg, #fdfbf7 0%, #f7f2e8 100%) !important; /* Warm champagne gradient card, contrasting with pure white background */
-  border: 1px solid #ebdcc5 !important; /* Warm sand/gold border */
-  border-radius: 24px !important;
+  background: #0e1117 !important; /* Dark obsidian card background */
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 16px !important;
   padding: 35px !important;
-  box-shadow: 0 8px 30px rgba(204, 164, 59, 0.03) !important; /* Soft, warm golden shadow */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
   position: relative;
   z-index: 2;
@@ -5862,9 +5865,9 @@ html, body {
 }
 
 .apple-pure-white-bg .program-list-col .program-list-item:hover {
-  background: linear-gradient(135deg, #ffffff 0%, #faf3e5 100%) !important;
-  border-color: #cca43b !important;
-  box-shadow: 0 20px 40px rgba(204, 164, 59, 0.08) !important;
+  background: #141822 !important;
+  border-color: rgba(204, 164, 59, 0.4) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8) !important;
   transform: translateY(-5px) !important;
 }
 
@@ -5874,16 +5877,15 @@ html, body {
   width: 50px !important;
   height: 50px !important;
   border-radius: 50% !important;
-  background: #ffffff !important;
-  border: 1.5px solid rgba(204, 164, 59, 0.2) !important;
+  background: #080a0f !important;
+  border: 1.5px solid rgba(204, 164, 59, 0.3) !important;
   color: #cca43b !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   font-family: var(--font-display) !important;
   font-size: 1.15rem !important;
-  font-weight: 800 !important;
-  box-shadow: 0 4px 10px rgba(204, 164, 59, 0.02) !important;
+  font-weight: 700 !important;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
   position: relative;
   z-index: 3;
@@ -5891,28 +5893,30 @@ html, body {
 
 .apple-pure-white-bg .program-list-item:hover .program-item-number {
   background: #cca43b !important;
-  color: #ffffff !important;
+  color: #000000 !important;
   border-color: #cca43b !important;
-  box-shadow: 0 0 15px rgba(204, 164, 59, 0.25) !important;
+  box-shadow: 0 0 15px rgba(204, 164, 59, 0.4) !important;
   transform: scale(1.1) !important;
 }
 
 .apple-pure-white-bg .program-item-kicker {
-  font-family: var(--font-body) !important;
-  font-size: 0.72rem !important;
+  font-family: var(--font-display) !important;
+  font-size: 0.76rem !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
   color: #cca43b !important;
-  letter-spacing: 0.1em !important;
+  letter-spacing: 0.15em !important;
   display: block !important;
   margin-bottom: 8px !important;
 }
 
 .apple-pure-white-bg .program-item-title {
-  color: #1d1d1f !important; /* Apple primary text */
+  color: #ffffff !important;
   font-family: var(--font-display) !important;
-  font-size: 1.3rem !important;
-  font-weight: 800 !important;
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
   margin-top: 2px !important;
   margin-bottom: 8px !important;
   line-height: 1.25 !important;
@@ -5924,21 +5928,21 @@ html, body {
 }
 
 .apple-pure-white-bg .program-item-desc {
-  color: #4e483f !important; /* Warm dark gray-brown body for readability */
+  color: #86868b !important;
   font-size: 0.94rem !important;
   line-height: 1.6 !important;
   margin-bottom: 12px !important;
 }
 
 .apple-pure-white-bg .program-meta-badge {
-  background: #f5efe6 !important; /* Warm sand badge background */
-  color: #8c7b65 !important; /* Warm gold-gray text */
-  border: 1px solid #ebdcc5 !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  color: #86868b !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
   border-radius: 100px !important;
   padding: 6px 16px !important;
   font-size: 0.72rem !important;
   font-weight: 600 !important;
-  letter-spacing: 0.05em !important;
+  letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -5947,9 +5951,9 @@ html, body {
 }
 
 .apple-pure-white-bg .program-list-item:hover .program-meta-badge {
-  background: #ebdcc5 !important;
-  color: #2c251b !important;
-  border-color: #cca43b !important;
+  background: rgba(204, 164, 59, 0.12) !important;
+  color: #ffffff !important;
+  border-color: rgba(204, 164, 59, 0.3) !important;
 }
 
 /* Floating interactive line on card left side */
@@ -6477,6 +6481,65 @@ html, body {
   flex: 0 1 auto !important;
   min-width: 120px !important;
   padding: 8px 12px !important;
+}
+
+/* FRAMESTORE GLOBAL OFFICES GRID */
+.framestore-offices-grid {
+  margin-bottom: 60px;
+}
+
+.framestore-offices-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--dneg-coral);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.offices-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.office-card {
+  background: #0e1117;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 24px 20px;
+  transition: all 0.3s ease;
+}
+
+.office-card:hover {
+  background: #141822;
+  border-color: rgba(204, 164, 59, 0.4);
+  transform: translateY(-3px);
+}
+
+.office-city {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.office-address {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--dneg-grey-02);
+  margin-bottom: 10px;
+}
+
+.office-tel {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--dneg-coral);
 }
 
 

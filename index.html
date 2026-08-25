@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Immersio Suprema | Centre d'Innovation Immersif</title>
+  <title>Immersio Suprema | Framestore Visual Effects & Innovation Studio</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Cinzel:wght@600;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Custom Application Stylesheet -->
@@ -40,11 +40,11 @@
       <nav class="vfx-menu-wrapper">
         <ul class="vfx-nav-menu">
           <li><a href="#home" class="vfx-nav-link active" data-i18n="nav_home">Home</a></li>
-          <li><a href="#studio-challenge" class="vfx-nav-link" data-i18n="nav_why">Creative Tech</a></li>
-          <li><a href="#studio" class="vfx-nav-link" data-i18n="nav_studio">About us</a></li>
-          <li><a href="#showcase" class="vfx-nav-link" data-i18n="nav_showcase">Showcase</a></li>
-          <li><a href="#technology" class="vfx-nav-link" data-i18n="nav_technology">Sandbox</a></li>
-          <li><a href="#training" class="vfx-nav-link" data-i18n="nav_training">Academy & Admissions</a></li>
+          <li><a href="#showcase" class="vfx-nav-link" data-i18n="nav_showcase">Work</a></li>
+          <li><a href="#studio" class="vfx-nav-link" data-i18n="nav_studio">About</a></li>
+          <li><a href="#strategic-program" class="vfx-nav-link" data-i18n="nav_why">Capabilities</a></li>
+          <li><a href="#technology" class="vfx-nav-link" data-i18n="nav_technology">Labs</a></li>
+          <li><a href="#training" class="vfx-nav-link" data-i18n="nav_training">Academy</a></li>
           <li><a href="#contact" class="vfx-nav-link" data-i18n="nav_contact">Contact</a></li>
         </ul>
       </nav>
@@ -150,6 +150,193 @@
       <span data-i18n="quote_innov">PROMOUVOIR L'INNOVATION</span>
     </div>
   </div>
+
+  <!-- SECTION 3: DNEG WORK OVERVIEW HERO LANDING & SONY MOSAIC ARCHIVE -->
+  <section class="apple-section apple-dark-bg" id="showcase" style="padding-top: 0;">
+    
+    <!-- 1. Interactive Division Landing Banner -->
+    <div class="division-hero-banner">
+      <!-- Dynamic Collage Grid Background -->
+      <div class="division-collage-grid" id="division-collage-bg">
+        <!-- Cell 1: Loop Video -->
+        <div class="collage-cell video-cell">
+          <video autoplay loop muted playsinline class="collage-video-el">
+            <source src="showreelone.mp4" type="video/mp4">
+          </video>
+          <div class="collage-cell-overlay"></div>
+        </div>
+        <!-- Cell 2: Still + Houdini Viewport Overlay -->
+        <div class="collage-cell image-cell" style="background-image: url('picture1.jpeg');" id="collage-cell-2">
+          <div class="collage-cell-overlay"></div>
+          <svg class="tech-overlay houdini-overlay" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <!-- Houdini Axis Handle -->
+            <path d="M 10 90 L 25 90 M 10 90 L 10 75 M 10 90 L 17 83" stroke="#cca43b" stroke-width="0.8" fill="none"/>
+            <text x="27" y="91" fill="#cca43b" font-size="3" font-family="monospace">X</text>
+            <text x="9" y="72" fill="#cca43b" font-size="3" font-family="monospace">Y</text>
+            <text x="19" y="81" fill="#cca43b" font-size="3" font-family="monospace">Z</text>
+            <!-- Viewport Info -->
+            <text x="8" y="15" fill="rgba(255,255,255,0.35)" font-size="3.5" font-family="monospace">persp1</text>
+            <text x="80" y="15" fill="rgba(255,255,255,0.35)" font-size="3.5" font-family="monospace">no cam</text>
+            <!-- Grid lines -->
+            <line x1="10" y1="50" x2="90" y2="50" stroke="rgba(204, 164, 59, 0.15)" stroke-width="0.3" />
+            <line x1="50" y1="10" x2="50" y2="90" stroke="rgba(204, 164, 59, 0.15)" stroke-width="0.3" />
+            <circle cx="50" cy="50" r="30" stroke="rgba(204, 164, 59, 0.1)" stroke-width="0.3" fill="none" />
+            <circle cx="50" cy="50" r="15" stroke="rgba(204, 164, 59, 0.05)" stroke-width="0.3" fill="none" />
+          </svg>
+        </div>
+        <!-- Cell 3: Loop Video -->
+        <div class="collage-cell video-cell">
+          <video autoplay loop muted playsinline class="collage-video-el" style="object-position: bottom;">
+            <source src="showreel_2.mp4" type="video/mp4">
+          </video>
+          <div class="collage-cell-overlay"></div>
+        </div>
+        <!-- Cell 4: Still + Nuke Compositing Tree -->
+        <div class="collage-cell image-cell" style="background-image: url('picture2.jpeg');" id="collage-cell-4">
+          <div class="collage-cell-overlay"></div>
+          <!-- Animated Nuke Node Graph -->
+          <svg class="tech-overlay nuke-overlay" viewBox="0 0 100 100">
+            <!-- Node links with data pulse -->
+            <path d="M 20 20 Q 50 35 50 50" stroke="#cca43b" stroke-width="0.8" fill="none" stroke-dasharray="2,2" class="nuke-pulse-line"/>
+            <path d="M 80 20 Q 50 35 50 50" stroke="#cca43b" stroke-width="0.8" fill="none" stroke-dasharray="2,2" class="nuke-pulse-line"/>
+            <path d="M 50 58 L 50 80" stroke="#cca43b" stroke-width="0.8" fill="none" stroke-dasharray="2,2" class="nuke-pulse-line"/>
+            <!-- Nodes -->
+            <rect x="10" y="12" width="20" height="8" rx="1.5" fill="#1e1e24" stroke="rgba(204,164,59,0.6)" stroke-width="0.5"/>
+            <text x="14" y="17.5" fill="#fff" font-size="3" font-family="monospace">Read1 (VFX)</text>
+            
+            <rect x="70" y="12" width="20" height="8" rx="1.5" fill="#1e1e24" stroke="rgba(204,164,59,0.6)" stroke-width="0.5"/>
+            <text x="74" y="17.5" fill="#fff" font-size="3" font-family="monospace">Read2 (BG)</text>
+            
+            <rect x="40" y="50" width="20" height="8" rx="1.5" fill="#2d1f1f" stroke="#cca43b" stroke-width="0.6"/>
+            <text x="44" y="55.5" fill="#fff" font-size="3" font-family="monospace">Merge (Over)</text>
+            
+            <rect x="40" y="80" width="20" height="8" rx="1.5" fill="#1e1e24" stroke="rgba(204,164,59,0.6)" stroke-width="0.5"/>
+            <text x="45" y="85.5" fill="#fff" font-size="3" font-family="monospace">Write1</text>
+          </svg>
+        </div>
+        <!-- Cell 5: Center transparent slot (text overlays sit here) -->
+        <div class="collage-cell center-empty-cell">
+          <div class="collage-cell-overlay" style="background: rgba(12, 11, 15, 0.85);"></div>
+        </div>
+        <!-- Cell 6: Depth Map pass -->
+        <div class="collage-cell image-cell depth-map-cell" style="background-image: url('picture1.jpeg');" id="collage-cell-6">
+          <div class="collage-cell-overlay"></div>
+          <svg class="tech-overlay depth-overlay" viewBox="0 0 100 100">
+            <text x="8" y="15" fill="rgba(255,255,255,0.4)" font-size="3.5" font-family="monospace">Z-Depth Pass</text>
+            <rect x="8" y="80" width="30" height="4" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+            <text x="8" y="76" fill="rgba(255,255,255,0.3)" font-size="2.5" font-family="monospace">0.1m - 100m</text>
+          </svg>
+        </div>
+        <!-- Cell 7: Loop Video -->
+        <div class="collage-cell video-cell">
+          <video autoplay loop muted playsinline class="collage-video-el" style="object-position: center;">
+            <source src="showreelone.mp4" type="video/mp4">
+          </video>
+          <div class="collage-cell-overlay"></div>
+        </div>
+        <!-- Cell 8: Wireframe mesh pass -->
+        <div class="collage-cell image-cell wireframe-cell" style="background-image: url('picture2.jpeg');" id="collage-cell-8">
+          <div class="collage-cell-overlay"></div>
+          <svg class="tech-overlay wire-overlay" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path d="M 0 0 L 100 100 M 100 0 L 0 100 M 50 0 L 50 100 M 0 50 L 100 50" stroke="rgba(204,164,59,0.25)" stroke-width="0.4" stroke-dasharray="1,1"/>
+            <polygon points="20,20 80,20 60,80 40,80" stroke="#cca43b" stroke-width="0.5" fill="none"/>
+            <circle cx="50" cy="50" r="2" fill="#cca43b"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Content Overlay Container inside division banner -->
+      <div class="division-banner-content">
+        <span class="division-kicker" data-i18n="div_kicker">IMMERSIO STUDIOS WORK</span>
+        <h2 class="division-title" id="div-hero-title">FEATURED PRODUCTIONS</h2>
+        <p class="division-desc" id="div-hero-desc" data-i18n="div_desc">Discover our global award-winning portfolio spanning Feature Film VFX, Immersive Experiences, and Next-Gen Advertising.</p>
+
+        <!-- Division Filter Pills -->
+        <div class="division-pills-row">
+          <button class="div-pill-btn active" onclick="switchDivision('vfx', this)">
+            <i class="fas fa-film"></i> <span data-i18n="tab_vfx">VFX & Films</span>
+          </button>
+          <button class="div-pill-btn" onclick="switchDivision('animation', this)">
+            <i class="fas fa-vr-cardboard"></i> <span data-i18n="tab_anim">Immersive</span>
+          </button>
+          <button class="div-pill-btn" onclick="switchDivision('simulation', this)">
+            <i class="fas fa-microchip"></i> <span data-i18n="tab_sim">Advertising</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Sony Style Mosaic Archive Grid -->
+    <div class="apple-section-container" style="padding-top: 60px;">
+      <div class="apple-header-block centered-header">
+        <span class="apple-kicker" data-i18n="mosaic_kicker">Selected Works</span>
+        <h2 class="apple-section-title" data-i18n="mosaic_title">PRODUCTION REEL</h2>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="mosaic-filter-row">
+        <button class="mosaic-filter-btn active" onclick="filterMosaic('all', this)" data-i18n="filter_all">All Projects</button>
+        <button class="mosaic-filter-btn" onclick="filterMosaic('film', this)" data-i18n="filter_film">Feature Film</button>
+        <button class="mosaic-filter-btn" onclick="filterMosaic('episodic', this)" data-i18n="filter_episodic">Episodic</button>
+        <button class="mosaic-filter-btn" onclick="filterMosaic('commercials', this)" data-i18n="filter_commercials">Commercials</button>
+      </div>
+
+      <!-- Masonry Grid -->
+      <div class="sony-mosaic-grid" id="mosaic-grid">
+        <!-- Item 1: Large Featured Video -->
+        <div class="mosaic-item mosaic-large" data-cat="film">
+          <div class="mosaic-card">
+            <video class="mosaic-video-bg" autoplay loop muted playsinline>
+              <source src="showreelone.mp4" type="video/mp4">
+            </video>
+            <div class="mosaic-overlay">
+              <span class="mosaic-tag">FEATURE FILM</span>
+              <h3 class="mosaic-project-title">AVATAR: THE WAY OF WATER</h3>
+              <p class="mosaic-client">20th Century Studios / Lightstorm</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2: Image Card -->
+        <div class="mosaic-item mosaic-medium" data-cat="film">
+          <div class="mosaic-card">
+            <img src="picture1.jpeg" alt="Dune Part Two" class="mosaic-img-bg">
+            <div class="mosaic-overlay">
+              <span class="mosaic-tag">VFX & ENVIRONMENTS</span>
+              <h3 class="mosaic-project-title">DUNE: PART TWO</h3>
+              <p class="mosaic-client">Legendary Entertainment / Warner Bros</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3: Image Card -->
+        <div class="mosaic-item mosaic-small" data-cat="episodic">
+          <div class="mosaic-card">
+            <img src="picture2.jpeg" alt="The Last of Us" class="mosaic-img-bg">
+            <div class="mosaic-overlay">
+              <span class="mosaic-tag">EPISODIC</span>
+              <h3 class="mosaic-project-title">THE LAST OF US</h3>
+              <p class="mosaic-client">HBO Original</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4: Video Card -->
+        <div class="mosaic-item mosaic-medium" data-cat="commercials">
+          <div class="mosaic-card">
+            <video class="mosaic-video-bg" autoplay loop muted playsinline>
+              <source src="showreel_2.mp4" type="video/mp4">
+            </video>
+            <div class="mosaic-overlay">
+              <span class="mosaic-tag">COMMERCIAL</span>
+              <h3 class="mosaic-project-title">APPLE VISION PRO SHOWCASE</h3>
+              <p class="mosaic-client">Apple Inc.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- SECTION 2: WHO WE ARE & OUR EXPERTISE (FIRST PART) -->
   <section class="apple-section apple-pure-white-bg" id="studio">
@@ -1493,6 +1680,46 @@
         <p class="apple-section-desc" data-i18n="contact_desc">
           Discutez avec nos ingénieurs pour concevoir des simulateurs sur-mesure ou planifier des formations.
         </p>
+      <!-- Framestore Global Offices Locations Grid -->
+      <div class="framestore-offices-grid">
+        <h3 class="framestore-offices-title">GLOBAL STUDIOS</h3>
+        <div class="offices-cards-container">
+          <div class="office-card">
+            <h4 class="office-city">LONDON</h4>
+            <p class="office-address">28 Chancery Lane<br>London WC2A 1LB<br>United Kingdom</p>
+            <span class="office-tel">+44 (0)20 7344 8000</span>
+          </div>
+          <div class="office-card">
+            <h4 class="office-city">MONTRÉAL</h4>
+            <p class="office-address">5455 De Gaspé Ave #800<br>Montréal, QC H2T 3B3<br>Canada</p>
+            <span class="office-tel">+1 514 845 2828</span>
+          </div>
+          <div class="office-card">
+            <h4 class="office-city">NEW YORK</h4>
+            <p class="office-address">12 W 21st St, 9th Floor<br>New York, NY 10010<br>United States</p>
+            <span class="office-tel">+1 212 905 1100</span>
+          </div>
+          <div class="office-card">
+            <h4 class="office-city">LOS ANGELES</h4>
+            <p class="office-address">8616 Washington Blvd<br>Culver City, CA 90232<br>United States</p>
+            <span class="office-tel">+1 310 996 9300</span>
+          </div>
+          <div class="office-card">
+            <h4 class="office-city">CHICAGO</h4>
+            <p class="office-address">220 N Green St, 4th Floor<br>Chicago, IL 60607<br>United States</p>
+            <span class="office-tel">+1 312 800 6800</span>
+          </div>
+          <div class="office-card">
+            <h4 class="office-city">MUMBAI</h4>
+            <p class="office-address">Nesco IT Park, Bldg 4<br>Goregaon East, Mumbai 400063<br>India</p>
+            <span class="office-tel">+91 22 6828 7700</span>
+          </div>
+          <div class="office-card">
+            <h4 class="office-city">PARIS</h4>
+            <p class="office-address">14 Rue de la Paix<br>75002 Paris<br>France</p>
+            <span class="office-tel">+33 1 89 16 40 00</span>
+          </div>
+        </div>
       </div>
 
       <div class="apple-contact-centered-wrapper">
