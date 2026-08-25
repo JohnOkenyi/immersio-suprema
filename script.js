@@ -2683,85 +2683,85 @@ const nukeCurriculumEN = [
   {
     title: "1. PIPELINE",
     text: "Project organization, folder structure, naming conventions, file management, formats, import/export, element preparation and workflow organization.",
-    images: ["picture1.jpeg"],
+    images: ["25th.jpeg", "26th.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "Disk Cache Pipeline", particles: "Nodes: 12", time: "0.2s / Frame" }
   },
   {
     title: "2. ROTOSCOPY / MASKING / CLEANUP / MATTE EXTRACTION",
     text: "Rotoscoping, masking, matte extraction, unwanted element removal, cables, objects, people, technical equipment, reconstruction of removed areas, cleanup and shot restoration.",
-    images: ["picture2.jpeg"],
+    images: ["27th.jpeg", "28th.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "RotoPaint / Inpaint", particles: "Shapes: 48", time: "1.5s / Frame" }
   },
   {
     title: "3. COLOR CORRECTION",
     text: "Color correction, exposure, contrast, saturation, changing the color of an element and harmonizing different elements within the shot.",
-    images: ["picture1.jpeg"],
+    images: ["29th.jpeg", "30th.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "OCIO Color Engine", particles: "Grade Nodes", time: "0.1s / Frame" }
   },
   {
     title: "4. LIGHTING / RELIGHTING",
     text: "Light modification, creation of light sources, relighting, shadows, interactive lighting and adapting elements to the lighting of the shot.",
-    images: ["picture2.jpeg"],
+    images: ["31th.jpeg", "32nd.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "Nuke 3D Relight Shader", particles: "Light Nodes: 4", time: "0.8s / Frame" }
   },
   {
     title: "5. IMAGE RESTORATION / RECONSTRUCTION",
     text: "Image restoration, artifact removal, area reconstruction, correction of shooting defects, image repair and detail recovery.",
-    images: ["picture1.jpeg"],
+    images: ["33.jpeg", "34.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "F_DeNoise / Clean", particles: "Repair Factor: 98%", time: "1.1s / Frame" }
   },
   {
     title: "6. TRACKING / CAMERA TRACKING",
     text: "2D tracking, surface tracking, camera tracking, motion analysis, stabilization and integrating elements into the movement of the shot.",
-    images: ["picture2.jpeg"],
+    images: ["35.jpeg", "first 1.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "3D Camera Tracker", particles: "Solve Error: 0.45px", time: "2.4s / Frame" }
   },
   {
     title: "7. MATTE PAINTING / SET EXTENSION / CAMERA PROJECTION",
     text: "Matte painting, set extension, environment replacement or expansion, camera projection, 2D, 2.5D and 3D environments.",
-    images: ["picture1.jpeg"],
+    images: ["second.jpeg", "third.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "3D Projector Node", particles: "Projection Layers: 8", time: "0.9s / Frame" }
   },
   {
     title: "8. SKY REPLACEMENT",
     text: "Sky replacement, mood creation, cloud integration, lighting and atmospheric adaptation.",
-    images: ["picture2.jpeg"],
+    images: ["forth.jpeg", "fifth.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "Sky Matte / Keyer", particles: "Atmospheric Blends", time: "0.4s / Frame" }
   },
   {
     title: "9. KEYING",
     text: "Green and blue screen removal, subject extraction, matte creation and integration of new backgrounds and environments.",
-    images: ["picture1.jpeg"],
+    images: ["sixth.jpeg", "seventh.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "Keylight / Primatte", particles: "Fine Details: 99%", time: "0.6s / Frame" }
   },
   {
     title: "10. SCREEN REPLACEMENT",
     text: "Screen replacement, interfaces, panels, displays, phones, monitors and digital surfaces.",
-    images: ["picture2.jpeg"],
+    images: ["eighth.jpeg", "ninth.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "CornerPin 2D", particles: "Track Points: 4", time: "0.3s / Frame" }
   },
   {
     title: "11. CG INTEGRATION",
     text: "Integration of 3D elements, characters, objects, vegetation, buildings, vehicles, creatures and effects generated in Houdini or other 3D software.",
-    images: ["picture1.jpeg"],
+    images: ["10th.jpeg", "eleventh.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "ScanlineRender / Deep", particles: "AOVs / Light Paths", time: "1.8s / Frame" }
   },
   {
     title: "12. DEEP COMPOSITING",
     text: "Depth-based compositing, Deep data management, integration of 2D and 3D elements in space, interactions across different depth levels, occlusion management and integration of complex effects.",
-    images: ["picture2.jpeg"],
+    images: ["thevth.jpeg", "thirthinth.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "Deep Merge / Deep Read", particles: "Deep Samples: 16", time: "3.5s / Frame" }
   },
   {
     title: "13. MOTION BLUR / DEPTH / Z-DEPTH",
     text: "Motion blur, depth of field, Z-depth, depth management, blur, spatial integration and motion consistency.",
-    images: ["picture1.jpeg"],
+    images: ["fortheenth.jpeg", "fivethinth.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "ZDefocus / VectorGenerator", particles: "Depth Layers", time: "1.2s / Frame" }
   },
   {
     title: "14. ATMOSPHERICS / VOLUMETRICS",
     text: "Fog, mist, dust, smoke, rain, snow, atmospherics, god rays, volumetrics and environmental effects.",
-    images: ["picture2.jpeg"],
+    images: ["sixthiinth.jpeg", "seventh17.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "VolumeRays / Merge", particles: "Scattering samples", time: "1.4s / Frame" }
   }
 ];
@@ -2770,85 +2770,85 @@ const nukeCurriculumFR = [
   {
     title: "1. PIPELINE",
     text: "Organisation du projet, structure des dossiers, conventions de nommage, gestion des fichiers, formats, import/export, préparation des éléments et organisation du workflow.",
-    images: ["picture1.jpeg"],
+    images: ["25th.jpeg", "26th.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "Disk Cache Pipeline", particles: "Noeuds: 12", time: "0.2s / Frame" }
   },
   {
     title: "2. ROTOSCOPIE / MASQUAGE / NETTOYAGE / EXTRACTION DE MATTE",
     text: "Rotoscopie, masquage, extraction de matte, suppression d'éléments indésirables, câbles, objets, personnes, matériel technique, reconstruction des zones supprimées, nettoyage et restauration des plans.",
-    images: ["picture2.jpeg"],
+    images: ["27th.jpeg", "28th.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "RotoPaint / Inpaint", particles: "Formes: 48", time: "1.5s / Frame" }
   },
   {
     title: "3. CORRECTION DES COULEURS",
     text: "Correction des couleurs, exposition, contraste, saturation, changement de couleur d'un élément et harmonisation des différents éléments dans le plan.",
-    images: ["picture1.jpeg"],
+    images: ["29th.jpeg", "30th.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "OCIO Color Engine", particles: "Grade Nodes", time: "0.1s / Frame" }
   },
   {
     title: "4. ÉCLAIRAGE / RECONSTRUCTION DE LUMIÈRE (RELIGHTING)",
     text: "Modification de la lumière, création de sources lumineuses, ré-éclairage, ombres, éclairage interactif et adaptation des éléments à l'éclairage de la prise de vue.",
-    images: ["picture2.jpeg"],
+    images: ["31th.jpeg", "32nd.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "Nuke 3D Relight Shader", particles: "Light Nodes: 4", time: "0.8s / Frame" }
   },
   {
     title: "5. RESTAURATION D'IMAGE / RECONSTRUCTION",
     text: "Restauration d'image, suppression d'artéfacts, reconstruction de zones, correction des défauts de prise de vue, réparation d'image et récupération de détails.",
-    images: ["picture1.jpeg"],
+    images: ["33.jpeg", "34.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "F_DeNoise / Clean", particles: "Repair Factor: 98%", time: "1.1s / Frame" }
   },
   {
     title: "6. TRACKING / TRACKING DE CAMÉRA",
     text: "Suivi 2D, suivi de surface, suivi de caméra 3D, analyse du mouvement, stabilisation et intégration d'éléments dans le mouvement de la prise de vue.",
-    images: ["picture2.jpeg"],
+    images: ["35.jpeg", "first 1.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "3D Camera Tracker", particles: "Erreur: 0.45px", time: "2.4s / Frame" }
   },
   {
     title: "7. MATTE PAINTING / EXTENSION DE DÉCOR / PROJECTION DE CAMÉRA",
     text: "Matte painting, extension de décor, remplacement ou expansion de l'environnement, projection de caméra, environnements 2D, 2.5D et 3D.",
-    images: ["picture1.jpeg"],
+    images: ["second.jpeg", "third.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "3D Projector Node", particles: "Couches Proj: 8", time: "0.9s / Frame" }
   },
   {
     title: "8. REMPLACEMENT DU CIEL",
     text: "Remplacement du ciel, création d'ambiances, intégration de nuages, adaptation de la lumière et de l'atmosphère.",
-    images: ["picture2.jpeg"],
+    images: ["forth.jpeg", "fifth.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "Sky Matte / Keyer", particles: "Mélanges Atmos", time: "0.4s / Frame" }
   },
   {
     title: "9. INCRUSTATION / KEYING",
     text: "Suppression des écrans verts et bleus, extraction de sujets, création de mattes et intégration de nouveaux arrière-plans et environnements.",
-    images: ["picture1.jpeg"],
+    images: ["sixth.jpeg", "seventh.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "Keylight / Primatte", particles: "Détails: 99%", time: "0.6s / Frame" }
   },
   {
     title: "10. REMPLACEMENT D'ÉCRAN",
     text: "Remplacement d'écran, interfaces, panneaux, affichages, téléphones, moniteurs et surfaces numériques.",
-    images: ["picture2.jpeg"],
+    images: ["eighth.jpeg", "ninth.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "CornerPin 2D", particles: "Points Suivi: 4", time: "0.3s / Frame" }
   },
   {
     title: "11. INTÉGRATION CG",
     text: "Intégration d'éléments 3D, personnages, objets, végétation, bâtiments, véhicules, créatures et effets générés dans Houdini ou d'autres logiciels 3D.",
-    images: ["picture1.jpeg"],
+    images: ["10th.jpeg", "eleventh.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "ScanlineRender / Deep", particles: "AOVs / Light Paths", time: "1.8s / Frame" }
   },
   {
     title: "12. COMPOSITING PROFOND (DEEP COMPOSITING)",
     text: "Compositing basé sur la profondeur, gestion des données Deep, intégration d'éléments 2D et 3D dans l'espace, interactions à différents niveaux de profondeur, gestion de l'occlusion et intégration d'effets complexes.",
-    images: ["picture2.jpeg"],
+    images: ["thevth.jpeg", "thirthinth.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "Deep Merge / Deep Read", particles: "Deep Samples: 16", time: "3.5s / Frame" }
   },
   {
     title: "13. FLOU DE MOUVEMENT / PROFONDEUR / DEPTH Z",
     text: "Flou de mouvement, profondeur de champ, Z-depth, gestion de la profondeur, flou, intégration spatiale et cohérence du mouvement.",
-    images: ["picture1.jpeg"],
+    images: ["fortheenth.jpeg", "fivethinth.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "ZDefocus / VectorGenerator", particles: "Couches Prof.", time: "1.2s / Frame" }
   },
   {
     title: "14. ATMOSPHERIQUE / VOLUMETRIQUE",
     text: "Brouillard, brume, poussière, fumée, pluie, neige, effets atmosphériques, rayons divins, volumétrie et effets environnementaux.",
-    images: ["picture2.jpeg"],
+    images: ["sixthiinth.jpeg", "seventh17.jpeg"],
     specs: { software: "Nuke Studio 15.0", engine: "VolumeRays / Merge", particles: "Échantillons", time: "1.4s / Frame" }
   }
 ];
