@@ -231,8 +231,52 @@ const translations = {
     track1_meta: "Logiciels : Unreal Engine 5.4, Houdini, Outils MoCap",
     track2_meta: "Logiciels : Unreal Engine C++, Shaders HLSL, MetaHuman",
     track3_meta: "Format : Diplômes clés en main, certification de facultés",
-    track4_meta: "Spécialité : Combat virtuel, simulation de vol, jumeaux numériques"
-
+    track4_meta: "Spécialité : Combat virtuel, simulation de vol, jumeaux numériques",
+    
+    // Training programs keys
+    training_intro_title: "NOS PROGRAMMES DE FORMATION EN TECHNOLOGIE",
+    training_intro_p1: "De l'idée à l'image. De la découverte à la création. De la science à l'innovation.",
+    training_intro_p2: "Entrez dans les coulisses des technologies qui donnent vie aux films, aux mondes numériques, aux simulations scientifiques et aux innovations de demain.",
+    training_intro_p3: "Explorez les effets visuels 2D, la 3D, le compositing et l'intelligence artificielle. Découvrez comment ces technologies sont utilisées pour créer, simuler, visualiser et comprendre des phénomènes complexes dans les secteurs de la création, des sciences et des technologies.",
+    training_intro_p4: "Apprenez à analyser et comprendre les images, expérimentez de nouvelles façons de créer et développez une solide culture numérique, nourrie par la créativité, la curiosité scientifique et l'esprit critique.",
+    training_intro_p5: "Découvrez comment la technologie transforme notre façon de raconter des histoires, de concevoir, de simuler, de rechercher et de comprendre le monde.",
+    training_intro_p6: "Élargissez vos perspectives. Développez vos compétences. Imaginez votre avenir.",
+    training_discover_title: "DÉCOUVREZ NOS PROGRAMMES DE TECHNOLOGIES NUMÉRIQUES",
+    
+    track1_card_title: "01 — DÉCOUVERTE DES TECHNOLOGIES NUMÉRIQUES 2D & 3D ET DE L'INTELLIGENCE ARTIFICIELLE",
+    track1_card_badges: "Découverte · Non-intensif · 2D & 3D · Regard critique · 18 ans et plus",
+    track1_card_desc: "Découvrez les technologies numériques qui transforment les industries créatives, scientifiques et technologiques d'aujourd'hui. Explorez la 2D, la 3D, l'intelligence artificielle, les effets visuels, l'animation, le compositing et la création numérique, tout en découvrant les métiers et opportunités professionnelles associés.",
+    discover_program_btn: "Découvrir le programme →",
+    explore_btn: "Explorer →",
+    specialize_btn: "Se spécialiser →",
+    
+    track2_card_title: "02 — SPÉCIALISATION EN EFFETS 3D ET COMPOSITING",
+    track2_card_badges: "Spécialisation · Intensif · Effets procéduraux · Compositing · 18 ans et plus",
+    track2_card_desc: "Apprenez à créer des effets naturels, physiques et magiques avec Houdini, puis intégrez-les et finalisez-les dans Nuke. Du développement de concept et de la simulation à l'intégration dans des prises de vue réelles et à la finition finale de l'image.",
+    
+    track1_details_title: "DÉCOUVERTE DES TECHNOLOGIES NUMÉRIQUES 2D & 3D ET DE L'INTELLIGENCE ARTIFICIELLE",
+    track1_details_subtitle: "Une immersion dans le monde des technologies numériques",
+    track1_p1: "Ce programme offre une introduction immersive aux technologies numériques 2D et 3D et à l'intelligence artificielle, proposée comme activité parascolaire en français et en anglais.",
+    track1_p2: "Le programme vise à stimuler la curiosité, développer les compétences et la culture numériques, renforcer l'esprit critique et élargir les perspectives d'avenir des participants.",
+    track1_p3: "Il cherche également à favoriser une meilleure compréhension de l'influence des images, des technologies numériques et de l'intelligence artificielle sur la société, tout en contribuant au développement du Burkina Faso et en renforçant sa reconnaissance nationale et internationale.",
+    track1_p4: "Grâce à une approche accessible, progressive et orientée vers la découverte, les participants explorent comment les films, les effets visuels, les jeux vidéo, l'imagerie 3D, les environnements numériques, les simulations scientifiques et de nombreux autres types de contenu sont créés et utilisés dans les industries créatives, scientifiques et technologiques.",
+    track1_p5: "Ils découvrent également comment l'intelligence artificielle transforme les processus de création, de production, d'analyse et de recherche.",
+    track1_p6: "L'objectif est d'aider chaque participant à identifier progressivement les domaines qui correspondent le mieux à ses intérêts, ses talents et ses ambitions.",
+    
+    target_audience_lbl: "Public Cible",
+    target_audience_1: "Étudiants et adultes âgés de 18 ans et plus",
+    target_audience_2: "Professionnels désireux de découvrir ou de développer leurs compétences numériques",
+    
+    excellence_lbl: "Une expérience d'apprentissage axée sur l'excellence",
+    excellence_desc: "Les cours sont dispensés par une équipe de professionnels burkinabè, qualifiés et diplômés de grandes universités du Burkina Faso, du Canada et du Royaume-Uni.",
+    excellence_p1: "2 heures de cours en ligne par semaine",
+    excellence_p2: "Horaires adaptés à la disponibilité des participants",
+    excellence_p3: "Cours proposés en français et en anglais",
+    excellence_p4: "Une approche accessible, progressive et orientée vers la découverte",
+    
+    ambition_lbl: "Notre Ambition",
+    ambition_desc: "Contribuer à développer une nouvelle génération de créateurs, d'innovateurs et de professionnels du numérique capables de comprendre, d'utiliser et d'explorer les technologies numériques et l'intelligence artificielle.",
+    ambition_sub_desc: "À travers ce programme d'initiation, nous visons à donner aux participants les premiers outils pour imaginer, créer, expérimenter et construire leur avenir, tout en contribuant au développement de l'Afrique et à sa présence croissante dans les industries créatives, scientifiques et technologiques internationales."
   },
   en: {
     brand_subtitle: "IMMERSIVE INNOVATION CENTER",
@@ -457,7 +501,52 @@ const translations = {
     track1_meta: "Software: Unreal Engine 5.4, Houdini, MoCap tools",
     track2_meta: "Software: Unreal Engine C++, HLSL Shaders, MetaHuman Creator",
     track3_meta: "Delivery: Turnkey degree integration, faculty certification",
-    track4_meta: "Focus: Virtual combat, flight simulation, digital twin engineering"
+    track4_meta: "Focus: Virtual combat, flight simulation, digital twin engineering",
+    
+    // Training programs keys
+    training_intro_title: "OUR TECHNOLOGY TRAINING PROGRAMS",
+    training_intro_p1: "From idea to image. From discovery to creation. From science to innovation.",
+    training_intro_p2: "Step behind the scenes of the technologies that bring films, digital worlds, scientific simulations and tomorrow’s innovations to life.",
+    training_intro_p3: "Explore 2D visual effects, 3D, compositing and artificial intelligence. Discover how these technologies can be used to create, simulate, visualize and understand complex phenomena across the creative, scientific and technology industries.",
+    training_intro_p4: "Learn to analyze and understand images, experiment with new ways of creating and develop strong digital literacy, fueled by creativity, scientific curiosity and critical thinking.",
+    training_intro_p5: "Discover how technology is transforming the way we tell stories, design, simulate, research and understand the world.",
+    training_intro_p6: "Broaden your perspective. Develop your skills. Imagine your future.",
+    training_discover_title: "DISCOVER OUR DIGITAL TECHNOLOGY PROGRAMS",
+    
+    track1_card_title: "01 — DISCOVERING 2D & 3D DIGITAL TECHNOLOGIES AND ARTIFICIAL INTELLIGENCE",
+    track1_card_badges: "Discovery · Non-intensive · 2D & 3D . Critical perspective . Ages 18+",
+    track1_card_desc: "Discover the digital technologies transforming today’s creative, scientific and technology industries. Explore 2D, 3D, artificial intelligence, visual effects, animation, compositing and digital creation, while discovering related careers and professional opportunities.",
+    discover_program_btn: "Discover the program →",
+    explore_btn: "Explore →",
+    specialize_btn: "Specialize →",
+    
+    track2_card_title: "02 — SPECIALIZATION IN 3D EFFECTS AND COMPOSITING",
+    track2_card_badges: "Specialization · Intensive . Procedural Effects · Compositing . Ages 18 +",
+    track2_card_desc: "Learn how to create natural, physical and magical effects with Houdini, then integrate and finalize them in Nuke. From concept development and simulation to integration into live-action footage and final image finishing.",
+    
+    track1_details_title: "DISCOVERING 2D & 3D DIGITAL TECHNOLOGIES AND ARTIFICIAL INTELLIGENCE",
+    track1_details_subtitle: "An Immersion into the World of Digital Technologies",
+    track1_p1: "This program offers an immersive introduction to 2D and 3D digital technologies and artificial intelligence, offered as an extracurricular activity in both French and English.",
+    track1_p2: "The program aims to stimulate curiosity, develop digital skills and literacy, strengthen critical thinking and broaden participants’ future perspectives.",
+    track1_p3: "It also seeks to foster a better understanding of the influence of images, digital technologies and artificial intelligence on society, while contributing to the development of Burkina Faso and strengthening its national and international recognition.",
+    track1_p4: "Through an accessible, progressive and discovery-oriented approach, participants explore how films, visual effects, video games, 3D imagery, digital environments, scientific simulations and many other types of content are created and used across the creative, scientific and technology industries.",
+    track1_p5: "They also discover how artificial intelligence is transforming creative, production, analytical and research processes.",
+    track1_p6: "The goal is to help each participant gradually identify the fields that best match their interests, talents and ambitions.",
+    
+    target_audience_lbl: "Target Audience",
+    target_audience_1: "Students and adults aged 18 and over",
+    target_audience_2: "Professionals wishing to discover or develop their digital skills",
+    
+    excellence_lbl: "An Excellence-Oriented Learning Experience",
+    excellence_desc: "Courses are delivered by a team of Burkinabè professionals, qualified and graduated from leading universities in Burkina Faso, Canada and the United Kingdom.",
+    excellence_p1: "2-hour online classes per week",
+    excellence_p2: "Schedules adapted to participants’ availability",
+    excellence_p3: "Courses offered in French and English",
+    excellence_p4: "An accessible, progressive and discovery-oriented approach",
+    
+    ambition_lbl: "Our Ambition",
+    ambition_desc: "To help develop a new generation of digital creators, innovators and professionals capable of understanding, using and exploring digital technologies and artificial intelligence.",
+    ambition_sub_desc: "Through this introductory program, we aim to give participants the first tools to imagine, create, experiment and build their future, while contributing to the development of Africa and its growing presence in the international creative, scientific and technology industries."
 
   }
 };
@@ -732,6 +821,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Set default view on load (prevent initial scroll)
   switchDivision('vfx', true);
+  selectTrainingTrack('track1');
   
   const savedLang = localStorage.getItem('vfx_lang') || 'fr';
   setLanguage(savedLang);
@@ -2003,80 +2093,76 @@ function closeLightbox() {
 }
 
 // --------------------------------------------------------
-// HOUDINI 12-MENU CURRICULUM DATASET & CAROUSEL SWITCHER
+// HOUDINI & NUKE CURRICULUM DATASET & CAROUSEL SWITCHER
 // --------------------------------------------------------
-let currentHoudiniIndex = 0;
+let currentTrainingTrack = 'track1';
+let activeSoftwareTrack = 'houdini';
+let currentCurriculumIndex = 0;
 
 const houdiniCurriculumEN = [
   {
-    title: "1. FIRE / SMOKE",
-    text: "Fire, flames, smoke, explosions, fireballs, shockwaves, smoke trails, burning buildings or objects, candles, torches, campfires, gas/fuel/dust explosions, fire spreading, volumetric fire/smoke, colored/magical/stylized fire, embers, ash, heat distortion, secondary smoke, procedural explosions.",
+    title: "1. CLOUD / SMOKE / FIRE / EXPLOSION",
+    text: "Clouds, fog, mist, wind, god rays, atmospheric effects, fire, flames, smoke, explosions, fireballs, shockwaves, smoke trails, burning buildings or objects, candles, torches, campfires, gas, fuel or dust explosions, fire propagation, volumetric fire and smoke, colored, magical or stylized fire, embers, ashes, heat distortion, secondary smoke, procedural explosions, magical smoke, magical fire, energy explosions.",
     images: ["first 1.jpeg", "thirthinth.jpeg", "33.jpeg"],
     specs: { software: "Houdini 20.5", engine: "Sparse Pyro Solver", particles: "4.8 Million", time: "3.2s / Frame" }
   },
   {
-    title: "2. SAND / DUST",
-    text: "Sand simulation, grains, dust, powder, ash, flour, snow-like particles, sand dunes, sand explosions, footprints, wind-driven sand, buried objects, sand collapse.",
-    images: ["second.jpeg", "25th.jpeg", "26th.jpeg"],
-    specs: { software: "Houdini 20.5", engine: "Grain/Vellum Solver", particles: "12.5 Million", time: "5.8s / Frame" }
-  },
-  {
-    title: "3. CLOUDS / VOLUMETRICS",
-    text: "Clouds, fog, mist, wind, smoke, dust, volumetric explosions, atmospheric volumes, god rays, tornadoes, volumetric weather, atmospheric effects.",
-    images: ["third.jpeg", "27th.jpeg", "28th.jpeg"],
-    specs: { software: "Houdini 20.5", engine: "Pyro/Cloud VDB Solver", particles: "Voxel Dim: 512^3", time: "8.4s / Frame" }
-  },
-  {
-    title: "4. DESTRUCTION",
-    text: "Building destruction, wall destruction, concrete destruction, glass destruction, wood destruction, metal destruction, vehicle destruction, bridge destruction, tower destruction, rock destruction, statue destruction, object destruction, car collisions, bullet impacts, explosions, falling objects, character impacts, earthquakes, meteor impacts, giant creature impacts, superhero landings.",
-    images: ["forth.jpeg", "30th.jpeg", "34.jpeg"],
-    specs: { software: "Houdini 20.5", engine: "RBD Bullet Physics", particles: "Fractures: 45,000", time: "2.1s / Frame" }
-  },
-  {
-    title: "5. LIQUIDS / FLUIDS",
-    text: "Water, rainwater, splashes, pouring liquids, container filling, wine, milk, oil, mud, lava, slime, goo, melting materials, foam, bubbles, spray, droplets, underwater effects, fluid-object interaction.",
-    images: ["fifth.jpeg", "29th.jpeg", "35.jpeg"],
-    specs: { software: "Houdini 20.5", engine: "FLIP Fluid Solver", particles: "9.2 Million", time: "11.5s / Frame" }
-  },
-  {
-    title: "6. OCEAN",
-    text: "Ocean, waterfall, river, hurricane, small and large waves, breaking waves, ocean storms, tsunamis, coastal flooding, boat wakes, boat-water interaction, object interaction, underwater turbulence, foam, spray, whitewater, ocean displacement.",
-    images: ["sixth.jpeg", "31th.jpeg"],
-    specs: { software: "Houdini 20.5", engine: "Ocean Toolkit / FLIP", particles: "Spectrum Resol: 10", time: "6.2s / Frame" }
-  },
-  {
-    title: "7. CLOTH / SOFT BODIES",
-    text: "Clothing, flags, curtains, sheets, blankets, fabric, rubber, soft objects, inflatable objects, balloons, deformation, tearing, stitching, wrapping, character interaction.",
-    images: ["seventh.jpeg", "32nd.jpeg"],
-    specs: { software: "Houdini 20.5", engine: "Vellum Cloth Solver", particles: "Stitches: 250,000", time: "1.8s / Frame" }
-  },
-  {
-    title: "8. HAIR / FUR / FEATHERS",
-    text: "Human hair, animal fur, feathers, grooming, procedural hair, dynamics, wind, collisions, hairstyling, character grooming, fur deformation, simulation.",
-    images: ["eighth.jpeg"],
-    specs: { software: "Houdini 20.5", engine: "Guide Groom / Hair Sim", particles: "Strands: 350,000", time: "4.5s / Frame" }
-  },
-  {
-    title: "9. CROWD",
-    text: "Procedural large-scale agents with specific behavior and reactions. It can be: human, animals, insects etc.",
-    images: ["ninth.jpeg"],
-    specs: { software: "Houdini 20.5", engine: "Crowd State Agent Solver", particles: "Agents: 2,500", time: "0.9s / Frame" }
-  },
-  {
-    title: "10. PARTICLES",
-    text: "Sparks, dust, debris, splinters, glass fragments, shards, rain, snow, ash, embers, smoke particles, magical/energy particles, fireflies, swarms, insects, birds, sand, gravel, leaves, confetti, particle trails, forces, collisions, characters turning to dust, dissolving objects, disintegrating buildings, particle disintegration, ash/sand/digital/organic transitions.",
+    title: "2. PARTICLES",
+    text: "Sparks, dust, splinters, glass fragments, smoke, embers, shards, paper, leaves, debris clouds, impact particles, collision dust, rain, snow, ashes, smoke particles, magical and energy particles, fireflies, swarms, insects, birds, sand, gravel, leaves, confetti, particle trails, forces, collisions, characters transforming into dust, dissolving objects.",
     images: ["10th.jpeg", "fivethinth.jpeg", "sixthiinth.jpeg"],
     specs: { software: "Houdini 20.5", engine: "POP Particle Engine", particles: "32.0 Million", time: "2.5s / Frame" }
   },
   {
-    title: "11. LIGHTNING / ENERGY",
-    text: "Lightning, electrical arcs, sparks, Tesla coils, energy beams, plasma, electric fields, energy trails, procedural electricity, electrical explosions, lightning storms.",
+    title: "3. LIGHTNING / ENERGY",
+    text: "Lightning, electrical arcs, sparks, Tesla coils, energy beams, plasma, electric fields, energy trails, procedural electricity, electrical explosions, electrical storms, energy effects and stylized electrical phenomena.",
     images: ["eleventh.jpeg", "seventh17.jpeg"],
     specs: { software: "Houdini 20.5", engine: "POP/VEX Lightning Solver", particles: "Arcs: 120", time: "1.2s / Frame" }
   },
   {
-    title: "12. GROWTH",
-    text: "Buildings growing automatically, plants, vines, crystals, cities assembling, dissolving objects, organic/fractal growth, procedural transformation, surface growth, cracking, aging, corrosion.",
+    title: "4. DESTRUCTION",
+    text: "Car crashes, bullets, explosions, falling objects, character impacts, earthquakes, meteor impacts, giant creature impacts, superhero landings, shockwaves, structural collapses, building destruction, fractures, breaks, shattering, fragmentation, demolition and material deformation.",
+    images: ["forth.jpeg", "30th.jpeg", "34.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "RBD Bullet Physics", particles: "Fractures: 45,000", time: "2.1s / Frame" }
+  },
+  {
+    title: "5. SMALL SCALE LIQUIDS",
+    text: "Small-scale liquid simulations, splashes, droplets, jets, flows, pouring, object-liquid interactions, viscous liquids, oil, paint, mud, blood, foam and surface effects.",
+    images: ["fifth.jpeg", "29th.jpeg", "35.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "FLIP Fluid Solver", particles: "9.2 Million", time: "11.5s / Frame" }
+  },
+  {
+    title: "6. LARGE SCALE LIQUIDS",
+    text: "Large-scale fluid simulations, large bodies of water, oceans, waves, hurricanes, rivers, waterfalls, fluid/environment interactions, object/water interaction, flows, floods, underwater turbulence, foam, spray and whitewater.",
+    images: ["sixth.jpeg", "31th.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "Ocean Toolkit / FLIP", particles: "Spectrum Resol: 10", time: "6.2s / Frame" }
+  },
+  {
+    title: "7. CROWD SIMULATION",
+    text: "Crowds, multiple characters, collective behaviors, movement, trajectories, avoidance, interactions, agents, procedural behaviors, group simulations, urban crowds, animals and creatures.",
+    images: ["ninth.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "Crowd State Agent Solver", particles: "Agents: 2,500", time: "0.9s / Frame" }
+  },
+  {
+    title: "8. HAIR / FUR / FEATHERS",
+    text: "Hair, fur, feathers, hairstyles, motion, interactions, dynamics, wind and collisions.",
+    images: ["eighth.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "Guide Groom / Hair Sim", particles: "Strands: 350,000", time: "4.5s / Frame" }
+  },
+  {
+    title: "9. CLOTH / SOFT BODIES",
+    text: "Cloth, clothing, flags, capes, curtains, soft materials, deformations, folds, wrinkles, collisions, wind, dynamics and interactions with characters or the environment.",
+    images: ["seventh.jpeg", "32nd.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "Vellum Cloth Solver", particles: "Stitches: 250,000", time: "1.8s / Frame" }
+  },
+  {
+    title: "10. ENVIRONMENTS GENERATION",
+    text: "Cities, buildings, roads, highways, bridges, tunnels, mountains, cliffs, rocks, caves, forests, vegetation, fields, deserts, beaches, snowy landscapes, urban environments, sci-fi environments and alien planets.",
+    images: ["third.jpeg", "27th.jpeg", "28th.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "Procedural Landscape Toolkit", particles: "Tiles: 128x128", time: "5.4s / Frame" }
+  },
+  {
+    title: "11. GROWTH / ORGANIC / FRACTAL",
+    text: "Automatically growing buildings, plants, vegetation, vines, crystals, assembling cities, organic growth, fractal growth, surface growth, procedural transformations, cracks, aging, corrosion, proliferation and development of organic or mineral structures.",
     images: ["thevth.jpeg", "fortheenth.jpeg", "18th.jpeg", "19th.jpeg", "20th.jpeg", "21th.jpeg", "22nd.jpeg", "23rd.jpeg", "24th.jpeg"],
     specs: { software: "Houdini 20.5", engine: "Shortest Path Growth VEX", particles: "Voxel Dim: 256^3", time: "3.8s / Frame" }
   }
@@ -2084,76 +2170,244 @@ const houdiniCurriculumEN = [
 
 const houdiniCurriculumFR = [
   {
-    title: "1. FEU / FUMÉE",
-    text: "Feu, flammes, fumée, explosions, fireballs, shockwaves, traînées de fumée, bâtiments ou objets en feu, bougies, torches, feux de camp, explosions gaz/carburant/poussière, propagation du feu, feu/fumée volumétriques, feu coloré/magique/stylisé, braises, cendres, distorsion thermique, fumée secondaire, explosions procédurales.",
+    title: "1. NUAGE / FUMÉE / FEU / EXPLOSION",
+    text: "Nuages, brouillard, brume, vent, rayons divins, effets atmosphériques, feu, flammes, fumée, explosions, boules de feu, ondes de choc, traînées de fumée, bâtiments ou objets en feu, bougies, torches, feux de camp, explosions de gaz, de carburant ou de poussière, propagation du feu, feu et fumée volumétriques, feu coloré, magique ou stylisé, braises, cendres, distorsion thermique, fumée secondaire, explosions procédurales, fumée magique, feu magique, explosions d'énergie.",
     images: ["first 1.jpeg", "thirthinth.jpeg", "33.jpeg"],
     specs: { software: "Houdini 20.5", engine: "Sparse Pyro Solver", particles: "4.8 Millions", time: "3.2s / Frame" }
   },
   {
-    title: "2. SABLE / POUSSIÈRE",
-    text: "Simulation de sable, grains, poussière, poudre, cendres, farine, particules de type neige, dunes de sable, explosions de sable, empreintes de pas, sable poussé par le vent, objets enterrés, effondrement de sable.",
-    images: ["second.jpeg", "25th.jpeg", "26th.jpeg"],
-    specs: { software: "Houdini 20.5", engine: "Grain/Vellum Solver", particles: "12.5 Millions", time: "5.8s / Frame" }
-  },
-  {
-    title: "3. NUAGES / VOLUMÉTRIE",
-    text: "Nuages, brouillard, brume, vent, fumée, poussière, explosions volumétriques, volumes atmosphériques, rayons divins, tornades, météo volumétrique, effets atmosphériques.",
-    images: ["third.jpeg", "27th.jpeg", "28th.jpeg"],
-    specs: { software: "Houdini 20.5", engine: "Pyro/Cloud VDB Solver", particles: "Voxel Dim: 512^3", time: "8.4s / Frame" }
-  },
-  {
-    title: "4. DESTRUCTION",
-    text: "Destruction de bâtiments, destruction de murs, destruction de béton, destruction de verre, destruction de bois, destruction de métaux, destruction de véhicules, destruction de ponts, destruction de tours, destruction de roches, destruction de statues, destruction d'objets, collisions de voitures, impacts de balles, explosions, chutes d'objets, impacts de personnages, tremblements de terre, impacts de météores, impacts de créatures géantes, atterrissages de super-héros.",
-    images: ["forth.jpeg", "30th.jpeg", "34.jpeg"],
-    specs: { software: "Houdini 20.5", engine: "RBD Bullet Physics", particles: "Fractures: 45 000", time: "2.1s / Frame" }
-  },
-  {
-    title: "5. LIQUIDS / FLUIDES",
-    text: "Eau, eau de pluie, éclaboussures, versement de liquides, remplissage de récipients, vin, lait, huile, boue, lave, bave, matière gluante, matériaux en fusion, mousse, bulles, spray, gouttelettes, effets sous-marins, interaction fluide-objet.",
-    images: ["fifth.jpeg", "29th.jpeg", "35.jpeg"],
-    specs: { software: "Houdini 20.5", engine: "FLIP Fluid Solver", particles: "9.2 Millions", time: "11.5s / Frame" }
-  },
-  {
-    title: "6. OCÉAN",
-    text: "Océan, cascade, rivière, ouragan, petites et grandes vagues, vagues déferlantes, tempêtes océaniques, tsunamis, inondations côtières, sillages de bateaux, interaction bateau-eau, interaction avec les objets, turbulences sous-marines, mousse, spray, écume, déplacement océanique.",
-    images: ["sixth.jpeg", "31th.jpeg"],
-    specs: { software: "Houdini 20.5", engine: "Ocean Toolkit / FLIP", particles: "Spectrum Resol: 10", time: "6.2s / Frame" }
-  },
-  {
-    title: "7. TISSU / CORPS SOUPLES",
-    text: "Vêtements, drapeaux, rideaux, draps, couvertures, tissu, caoutchouc, objets souples, objets gonflables, ballons, déformation, déchirure, couture, emballage, interaction avec les personnages.",
-    images: ["seventh.jpeg", "32nd.jpeg"],
-    specs: { software: "Houdini 20.5", engine: "Vellum Cloth Solver", particles: "Stitches: 250 000", time: "1.8s / Frame" }
-  },
-  {
-    title: "8. CHEVEUX / FOURRURE / PLUMES",
-    text: "Cheveux humains, fourrure animale, plumes, toilettage, cheveux procéduraux, dynamique, vent, collisions, coiffure, toilettage de personnages, déformation de la fourrure, simulation.",
-    images: ["eighth.jpeg"],
-    specs: { software: "Houdini 20.5", engine: "Guide Groom / Hair Sim", particles: "Strands: 350 000", time: "4.5s / Frame" }
-  },
-  {
-    title: "9. FOULE",
-    text: "Agents procéduraux à grande échelle avec des comportements et des réactions spécifiques. Il peut s'agir d'humains, d'animaux, d'insects, etc.",
-    images: ["ninth.jpeg"],
-    specs: { software: "Houdini 20.5", engine: "Crowd State Agent Solver", particles: "Agents: 2 500", time: "0.9s / Frame" }
-  },
-  {
-    title: "10. PARTICULES",
-    text: "Étincelles, poussière, débris, éclats, fragments de verre, tessons, pluie, neige, cendres, braises, particules de fumée, particules magiques/d'énergie, lucioles, essaims, insectes, oiseaux, sable, gravier, feuilles, confettis, traînées de particules, forces, collisions, personnages se transformant en poussière, dissolution d'objets, désintégration de bâtiments, désintégration de particules, transitions cendres/sable/digitales/organiques.",
+    title: "2. PARTICULES",
+    text: "Étincelles, poussière, éclats, fragments de verre, fumée, braises, tessons, papier, feuilles, nuages de débris, particules d'impact, poussière de collision, pluie, neige, cendres, particules de fumée, particules magiques et d'énergie, lucioles, essaims, insectes, oiseaux, sable, gravier, feuilles, confettis, traînées de particules, forces, collisions, personnages se transformant en poussière, objets se dissolvant.",
     images: ["10th.jpeg", "fivethinth.jpeg", "sixthiinth.jpeg"],
     specs: { software: "Houdini 20.5", engine: "POP Particle Engine", particles: "32.0 Millions", time: "2.5s / Frame" }
   },
   {
-    title: "11. FOUDRE / ÉNERGIE",
-    text: "Foudre, arcs électriques, étincelles, bobines Tesla, faisceaux d'énergie, plasma, champs électriques, traînées d'énergie, électricité procédurale, explosions électriques, tempêtes de foudre.",
+    title: "3. FOUDRE / ÉNERGIE",
+    text: "Foudre, arcs électriques, étincelles, bobines Tesla, faisceaux d'énergie, plasma, champs électriques, traînées d'énergie, électricité procédurale, explosions électriques, tempêtes de foudre, effets d'énergie et phénomènes électriques stylisés.",
     images: ["eleventh.jpeg", "seventh17.jpeg"],
     specs: { software: "Houdini 20.5", engine: "POP/VEX Lightning Solver", particles: "Arcs: 120", time: "1.2s / Frame" }
   },
   {
-    title: "12. CROISSANCE",
-    text: "Bâtiments qui poussent automatiquement, plantes, vignes, cristaux, villes qui s'assemblent, objets qui se dissolvent, croissance organique/fractale, transformation procédurale, croissance de surface, fissuration, vieillissement, corrosion.",
+    title: "4. DESTRUCTION",
+    text: "Accidents de voiture, balles, explosions, chutes d'objets, impacts de personnages, tremblements de terre, impacts de météores, impacts de créatures géantes, atterrissages de super-héros, ondes de choc, effondrements de structures, destruction de bâtiments, fractures, cassures, éclatement, fragmentation, démolition et déformation des matériaux.",
+    images: ["forth.jpeg", "30th.jpeg", "34.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "RBD Bullet Physics", particles: "Fractures: 45 000", time: "2.1s / Frame" }
+  },
+  {
+    title: "5. LIQUIDES À PETITE ÉCHELLE",
+    text: "Simulations de liquides à petite échelle, éclaboussures, gouttelettes, jets, écoulements, versement, interactions objet-liquide, liquides visqueux, huile, peinture, boue, sang, mousse et effets de surface.",
+    images: ["fifth.jpeg", "29th.jpeg", "35.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "FLIP Fluid Solver", particles: "9.2 Millions", time: "11.5s / Frame" }
+  },
+  {
+    title: "6. LIQUIDES À GRANDE ÉCHELLE",
+    text: "Simulations de fluides à grande échelle, grandes étendues d'eau, océans, vagues, ouragans, rivières, cascades, interactions fluide/environnement, interaction objet/eau, écoulements, inondations, turbulences sous-marines, mousse, embruns et écume.",
+    images: ["sixth.jpeg", "31th.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "Ocean Toolkit / FLIP", particles: "Spectrum Resol: 10", time: "6.2s / Frame" }
+  },
+  {
+    title: "7. SIMULATION DE FOULE",
+    text: "Foules, personnages multiples, comportements collectifs, mouvements, trajectoires, évitement, interactions, agents, comportements procéduraux, simulations de groupe, foules urbaines, animaux et créatures.",
+    images: ["ninth.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "Crowd State Agent Solver", particles: "Agents: 2 500", time: "0.9s / Frame" }
+  },
+  {
+    title: "8. CHEVEUX / FOURRURE / PLUMES",
+    text: "Cheveux, fourrure, plumes, coiffures, mouvement, interactions, dynamique, vent et collisions.",
+    images: ["eighth.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "Guide Groom / Hair Sim", particles: "Strands: 350 000", time: "4.5s / Frame" }
+  },
+  {
+    title: "9. TISSU / CORPS SOUPLES",
+    text: "Tissu, vêtements, drapeaux, capes, rideaux, matériaux souples, déformations, plis, rides, collisions, vent, dynamique et interactions avec les personnages ou l'environnement.",
+    images: ["seventh.jpeg", "32nd.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "Vellum Cloth Solver", particles: "Stitches: 250 000", time: "1.8s / Frame" }
+  },
+  {
+    title: "10. GÉNÉRATION D'ENVIRONNEMENT",
+    text: "Villes, bâtiments, routes, autoroutes, ponts, tunnels, montagnes, falaises, rochers, grottes, forêts, végétation, champs, déserts, plages, paysages enneigés, environnements urbains, environnements de science-fiction et planètes extraterrestres.",
+    images: ["third.jpeg", "27th.jpeg", "28th.jpeg"],
+    specs: { software: "Houdini 20.5", engine: "Procedural Landscape Toolkit", particles: "Tuiles: 128x128", time: "5.4s / Frame" }
+  },
+  {
+    title: "11. CROISSANCE / ORGANIQUE / FRACTALE",
+    text: "Bâtiments à croissance automatique, plantes, végétation, lianes, cristaux, assemblage de villes, croissance organique, croissance fractale, croissance de surface, transformations procédurales, fissures, vieillissement, corrosion, prolifération et développement de structures organiques ou minérales.",
     images: ["thevth.jpeg", "fortheenth.jpeg", "18th.jpeg", "19th.jpeg", "20th.jpeg", "21th.jpeg", "22nd.jpeg", "23rd.jpeg", "24th.jpeg"],
     specs: { software: "Houdini 20.5", engine: "Shortest Path Growth VEX", particles: "Voxel Dim: 256^3", time: "3.8s / Frame" }
+  }
+];
+
+const nukeCurriculumEN = [
+  {
+    title: "1. PIPELINE",
+    text: "Project organization, folder structure, naming conventions, file management, formats, import/export, element preparation and workflow organization.",
+    images: ["picture1.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "Disk Cache Pipeline", particles: "Nodes: 12", time: "0.2s / Frame" }
+  },
+  {
+    title: "2. ROTOSCOPY / MASKING / CLEANUP / MATTE EXTRACTION",
+    text: "Rotoscoping, masking, matte extraction, unwanted element removal, cables, objects, people, technical equipment, reconstruction of removed areas, cleanup and shot restoration.",
+    images: ["picture2.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "RotoPaint / Inpaint", particles: "Shapes: 48", time: "1.5s / Frame" }
+  },
+  {
+    title: "3. COLOR CORRECTION",
+    text: "Color correction, exposure, contrast, saturation, changing the color of an element and harmonizing different elements within the shot.",
+    images: ["picture1.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "OCIO Color Engine", particles: "Grade Nodes", time: "0.1s / Frame" }
+  },
+  {
+    title: "4. LIGHTING / RELIGHTING",
+    text: "Light modification, creation of light sources, relighting, shadows, interactive lighting and adapting elements to the lighting of the shot.",
+    images: ["picture2.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "Nuke 3D Relight Shader", particles: "Light Nodes: 4", time: "0.8s / Frame" }
+  },
+  {
+    title: "5. IMAGE RESTORATION / RECONSTRUCTION",
+    text: "Image restoration, artifact removal, area reconstruction, correction of shooting defects, image repair and detail recovery.",
+    images: ["picture1.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "F_DeNoise / Clean", particles: "Repair Factor: 98%", time: "1.1s / Frame" }
+  },
+  {
+    title: "6. TRACKING / CAMERA TRACKING",
+    text: "2D tracking, surface tracking, camera tracking, motion analysis, stabilization and integrating elements into the movement of the shot.",
+    images: ["picture2.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "3D Camera Tracker", particles: "Solve Error: 0.45px", time: "2.4s / Frame" }
+  },
+  {
+    title: "7. MATTE PAINTING / SET EXTENSION / CAMERA PROJECTION",
+    text: "Matte painting, set extension, environment replacement or expansion, camera projection, 2D, 2.5D and 3D environments.",
+    images: ["picture1.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "3D Projector Node", particles: "Projection Layers: 8", time: "0.9s / Frame" }
+  },
+  {
+    title: "8. SKY REPLACEMENT",
+    text: "Sky replacement, mood creation, cloud integration, lighting and atmospheric adaptation.",
+    images: ["picture2.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "Sky Matte / Keyer", particles: "Atmospheric Blends", time: "0.4s / Frame" }
+  },
+  {
+    title: "9. KEYING",
+    text: "Green and blue screen removal, subject extraction, matte creation and integration of new backgrounds and environments.",
+    images: ["picture1.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "Keylight / Primatte", particles: "Fine Details: 99%", time: "0.6s / Frame" }
+  },
+  {
+    title: "10. SCREEN REPLACEMENT",
+    text: "Screen replacement, interfaces, panels, displays, phones, monitors and digital surfaces.",
+    images: ["picture2.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "CornerPin 2D", particles: "Track Points: 4", time: "0.3s / Frame" }
+  },
+  {
+    title: "11. CG INTEGRATION",
+    text: "Integration of 3D elements, characters, objects, vegetation, buildings, vehicles, creatures and effects generated in Houdini or other 3D software.",
+    images: ["picture1.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "ScanlineRender / Deep", particles: "AOVs / Light Paths", time: "1.8s / Frame" }
+  },
+  {
+    title: "12. DEEP COMPOSITING",
+    text: "Depth-based compositing, Deep data management, integration of 2D and 3D elements in space, interactions across different depth levels, occlusion management and integration of complex effects.",
+    images: ["picture2.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "Deep Merge / Deep Read", particles: "Deep Samples: 16", time: "3.5s / Frame" }
+  },
+  {
+    title: "13. MOTION BLUR / DEPTH / Z-DEPTH",
+    text: "Motion blur, depth of field, Z-depth, depth management, blur, spatial integration and motion consistency.",
+    images: ["picture1.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "ZDefocus / VectorGenerator", particles: "Depth Layers", time: "1.2s / Frame" }
+  },
+  {
+    title: "14. ATMOSPHERICS / VOLUMETRICS",
+    text: "Fog, mist, dust, smoke, rain, snow, atmospherics, god rays, volumetrics and environmental effects.",
+    images: ["picture2.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "VolumeRays / Merge", particles: "Scattering samples", time: "1.4s / Frame" }
+  }
+];
+
+const nukeCurriculumFR = [
+  {
+    title: "1. PIPELINE",
+    text: "Organisation du projet, structure des dossiers, conventions de nommage, gestion des fichiers, formats, import/export, préparation des éléments et organisation du workflow.",
+    images: ["picture1.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "Disk Cache Pipeline", particles: "Noeuds: 12", time: "0.2s / Frame" }
+  },
+  {
+    title: "2. ROTOSCOPIE / MASQUAGE / NETTOYAGE / EXTRACTION DE MATTE",
+    text: "Rotoscopie, masquage, extraction de matte, suppression d'éléments indésirables, câbles, objets, personnes, matériel technique, reconstruction des zones supprimées, nettoyage et restauration des plans.",
+    images: ["picture2.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "RotoPaint / Inpaint", particles: "Formes: 48", time: "1.5s / Frame" }
+  },
+  {
+    title: "3. CORRECTION DES COULEURS",
+    text: "Correction des couleurs, exposition, contraste, saturation, changement de couleur d'un élément et harmonisation des différents éléments dans le plan.",
+    images: ["picture1.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "OCIO Color Engine", particles: "Grade Nodes", time: "0.1s / Frame" }
+  },
+  {
+    title: "4. ÉCLAIRAGE / RECONSTRUCTION DE LUMIÈRE (RELIGHTING)",
+    text: "Modification de la lumière, création de sources lumineuses, ré-éclairage, ombres, éclairage interactif et adaptation des éléments à l'éclairage de la prise de vue.",
+    images: ["picture2.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "Nuke 3D Relight Shader", particles: "Light Nodes: 4", time: "0.8s / Frame" }
+  },
+  {
+    title: "5. RESTAURATION D'IMAGE / RECONSTRUCTION",
+    text: "Restauration d'image, suppression d'artéfacts, reconstruction de zones, correction des défauts de prise de vue, réparation d'image et récupération de détails.",
+    images: ["picture1.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "F_DeNoise / Clean", particles: "Repair Factor: 98%", time: "1.1s / Frame" }
+  },
+  {
+    title: "6. TRACKING / TRACKING DE CAMÉRA",
+    text: "Suivi 2D, suivi de surface, suivi de caméra 3D, analyse du mouvement, stabilisation et intégration d'éléments dans le mouvement de la prise de vue.",
+    images: ["picture2.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "3D Camera Tracker", particles: "Erreur: 0.45px", time: "2.4s / Frame" }
+  },
+  {
+    title: "7. MATTE PAINTING / EXTENSION DE DÉCOR / PROJECTION DE CAMÉRA",
+    text: "Matte painting, extension de décor, remplacement ou expansion de l'environnement, projection de caméra, environnements 2D, 2.5D et 3D.",
+    images: ["picture1.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "3D Projector Node", particles: "Couches Proj: 8", time: "0.9s / Frame" }
+  },
+  {
+    title: "8. REMPLACEMENT DU CIEL",
+    text: "Remplacement du ciel, création d'ambiances, intégration de nuages, adaptation de la lumière et de l'atmosphère.",
+    images: ["picture2.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "Sky Matte / Keyer", particles: "Mélanges Atmos", time: "0.4s / Frame" }
+  },
+  {
+    title: "9. INCRUSTATION / KEYING",
+    text: "Suppression des écrans verts et bleus, extraction de sujets, création de mattes et intégration de nouveaux arrière-plans et environnements.",
+    images: ["picture1.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "Keylight / Primatte", particles: "Détails: 99%", time: "0.6s / Frame" }
+  },
+  {
+    title: "10. REMPLACEMENT D'ÉCRAN",
+    text: "Remplacement d'écran, interfaces, panneaux, affichages, téléphones, moniteurs et surfaces numériques.",
+    images: ["picture2.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "CornerPin 2D", particles: "Points Suivi: 4", time: "0.3s / Frame" }
+  },
+  {
+    title: "11. INTÉGRATION CG",
+    text: "Intégration d'éléments 3D, personnages, objets, végétation, bâtiments, véhicules, créatures et effets générés dans Houdini ou d'autres logiciels 3D.",
+    images: ["picture1.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "ScanlineRender / Deep", particles: "AOVs / Light Paths", time: "1.8s / Frame" }
+  },
+  {
+    title: "12. COMPOSITING PROFOND (DEEP COMPOSITING)",
+    text: "Compositing basé sur la profondeur, gestion des données Deep, intégration d'éléments 2D et 3D dans l'espace, interactions à différents niveaux de profondeur, gestion de l'occlusion et intégration d'effets complexes.",
+    images: ["picture2.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "Deep Merge / Deep Read", particles: "Deep Samples: 16", time: "3.5s / Frame" }
+  },
+  {
+    title: "13. FLOU DE MOUVEMENT / PROFONDEUR / DEPTH Z",
+    text: "Flou de mouvement, profondeur de champ, Z-depth, gestion de la profondeur, flou, intégration spatiale et cohérence du mouvement.",
+    images: ["picture1.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "ZDefocus / VectorGenerator", particles: "Couches Prof.", time: "1.2s / Frame" }
+  },
+  {
+    title: "14. ATMOSPHERIQUE / VOLUMETRIQUE",
+    text: "Brouillard, brume, poussière, fumée, pluie, neige, effets atmosphériques, rayons divins, volumétrie et effets environnementaux.",
+    images: ["picture2.jpeg"],
+    specs: { software: "Nuke Studio 15.0", engine: "VolumeRays / Merge", particles: "Échantillons", time: "1.4s / Frame" }
   }
 ];
 
@@ -2192,7 +2446,6 @@ function renderSubCarousel(images) {
   
   trackEl.style.transform = `translateX(0%)`;
   
-  // Only show navigation arrows if there is more than 1 image
   const arrows = document.querySelectorAll('.curriculum-sub-arrow');
   arrows.forEach(arrow => {
     if (images.length > 1) {
@@ -2245,14 +2498,101 @@ function startAutoSlide(slideCount) {
   }, 4000);
 }
 
-function switchHoudiniCarousel(index) {
-  if (index < 0) index = 11;
-  if (index > 11) index = 0;
+function selectTrainingTrack(trackId) {
+  currentTrainingTrack = trackId;
   
-  currentHoudiniIndex = index;
+  document.querySelectorAll('.training-track-card').forEach(card => {
+    if (card.dataset.track === trackId) {
+      card.classList.add('active');
+    } else {
+      card.classList.remove('active');
+    }
+  });
+  
+  const track1El = document.getElementById('track1-details-panel');
+  const track2El = document.getElementById('track2-details-panel');
+  
+  if (track1El && track2El) {
+    if (trackId === 'track1') {
+      track1El.style.display = 'block';
+      track2El.style.display = 'none';
+    } else {
+      track1El.style.display = 'none';
+      track2El.style.display = 'block';
+      selectSoftwareTrack(activeSoftwareTrack);
+    }
+  }
+}
+
+function selectSoftwareTrack(softwareId) {
+  activeSoftwareTrack = softwareId;
+  
+  document.querySelectorAll('.software-switch-btn').forEach(btn => {
+    if (btn.dataset.software === softwareId) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+  
+  buildCurriculumTabs();
+  switchCurriculumItem(0);
+}
+
+function buildCurriculumTabs() {
+  const container = document.getElementById('curriculum-tabs-container');
+  if (!container) return;
   
   const currentLang = currentLanguage || 'fr';
-  const dataset = (currentLang === 'en') ? houdiniCurriculumEN : houdiniCurriculumFR;
+  let dataset = [];
+  if (activeSoftwareTrack === 'houdini') {
+    dataset = (currentLang === 'en') ? houdiniCurriculumEN : houdiniCurriculumFR;
+  } else {
+    dataset = (currentLang === 'en') ? nukeCurriculumEN : nukeCurriculumFR;
+  }
+  
+  container.innerHTML = '';
+  
+  dataset.forEach((item, idx) => {
+    const tab = document.createElement('div');
+    tab.className = `houdini-tab-indicator-bar ${idx === 0 ? 'active' : ''}`;
+    tab.id = `h-tab-${idx}`;
+    tab.onclick = () => switchCurriculumItem(idx);
+    
+    const num = document.createElement('span');
+    num.className = 'hud-num';
+    num.textContent = (idx + 1).toString().padStart(2, '0');
+    
+    const label = document.createElement('span');
+    label.className = 'hud-label';
+    const titleText = item.title.replace(/^\d+\.\s*/, '');
+    label.textContent = titleText;
+    
+    const blueLine = document.createElement('div');
+    blueLine.className = 'hud-blue-line';
+    
+    tab.appendChild(num);
+    tab.appendChild(label);
+    tab.appendChild(blueLine);
+    
+    container.appendChild(tab);
+  });
+}
+
+function switchCurriculumItem(index) {
+  const currentLang = currentLanguage || 'fr';
+  let dataset = [];
+  if (activeSoftwareTrack === 'houdini') {
+    dataset = (currentLang === 'en') ? houdiniCurriculumEN : houdiniCurriculumFR;
+  } else {
+    dataset = (currentLang === 'en') ? nukeCurriculumEN : nukeCurriculumFR;
+  }
+  
+  if (dataset.length === 0) return;
+  if (index < 0) index = dataset.length - 1;
+  if (index >= dataset.length) index = 0;
+  
+  currentCurriculumIndex = index;
   const item = dataset[index];
   
   const titleEl = document.getElementById('h-carousel-title');
@@ -2266,7 +2606,6 @@ function switchHoudiniCarousel(index) {
     descEl.style.opacity = '0.3';
     if (trackEl) trackEl.style.opacity = '0.3';
     
-    // Fade out stats elements
     const specElements = ['sim-software', 'sim-engine', 'sim-particles', 'sim-rendertime'].map(id => document.getElementById(id));
     specElements.forEach(el => { if (el) el.style.opacity = '0.3'; });
     
@@ -2275,7 +2614,6 @@ function switchHoudiniCarousel(index) {
       descEl.textContent = item.text;
       renderSubCarousel(item.images);
       
-      // Update simulation specs dashboard
       const specSoft = document.getElementById('sim-software');
       const specEng = document.getElementById('sim-engine');
       const specPart = document.getElementById('sim-particles');
@@ -2286,8 +2624,8 @@ function switchHoudiniCarousel(index) {
       if (specPart && item.specs) specPart.textContent = item.specs.particles;
       if (specTime && item.specs) specTime.textContent = item.specs.time;
       
-      badgeEl.textContent = `MENU ${(index + 1).toString().padStart(2, '0')} / 12`;
-      counterEl.textContent = `${index + 1} - 12`;
+      badgeEl.textContent = `MENU ${(index + 1).toString().padStart(2, '0')} / ${dataset.length.toString().padStart(2, '0')}`;
+      counterEl.textContent = `${index + 1} - ${dataset.length}`;
       
       titleEl.style.opacity = '1';
       descEl.style.opacity = '1';
@@ -2300,19 +2638,23 @@ function switchHoudiniCarousel(index) {
   indicatorBars.forEach((bar, idx) => {
     if (idx === index) {
       bar.classList.add('active');
-      bar.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     } else {
       bar.classList.remove('active');
     }
   });
 }
 
+function switchHoudiniCarousel(index) {
+  buildCurriculumTabs();
+  switchCurriculumItem(index);
+}
+
 function prevHoudiniCarousel() {
-  switchHoudiniCarousel(currentHoudiniIndex - 1);
+  switchCurriculumItem(currentCurriculumIndex - 1);
 }
 
 function nextHoudiniCarousel() {
-  switchHoudiniCarousel(currentHoudiniIndex + 1);
+  switchCurriculumItem(currentCurriculumIndex + 1);
 }
 
 /* --------------------------------------------------------
