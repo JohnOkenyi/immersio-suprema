@@ -811,9 +811,330 @@ function setLanguage(lang) {
       el.setAttribute('placeholder', translations[lang][key]);
     }
   });
-  // Re-draw clapperboard house canvas textures if Three.js initialized
-  if (typeof frontSlateMesh !== 'undefined' && frontSlateMesh) {
-    updateSlateTexture(frontSlateMesh, lang);
+
+function switchCurriculumItem(index) {
+  const currentLang = currentLanguage || 'fr';
+  let dataset = [];
+  if (activeSoftwareTrack === 'houdini') {
+    dataset = (currentLang === 'en') ? houdiniCurriculumEN : houdiniCurriculumFR;
+  } else {
+    dataset = (currentLang === 'en') ? nukeCurriculumEN : nukeCurriculumFR;
+  }
+  
+  if (dataset.length === 0) return;
+  if (index < 0) index = dataset.length - 1;
+  if (index >= dataset.length) index = 0;
+  
+  currentCurriculumIndex = index;
+  const item = dataset[index];
+  
+  const titleEl = document.getElementById('h-carousel-title');
+  const descEl = document.getElementById('h-carousel-desc');
+  const trackEl = document.getElementById('curriculum-slider-track');
+  const badgeEl = document.getElementById('h-carousel-badge');
+  const counterEl = document.getElementById('h-carousel-counter');
+  
+  if (titleEl) {
+    titleEl.style.opacity = '0.3';
+    descEl.style.opacity = '0.3';
+    if (trackEl) trackEl.style.opacity = '0.3';
+    
+    const specElements = ['sim-software', 'sim-engine', 'sim-particles', 'sim-rendertime'].map(id => document.getElementById(id));
+    specElements.forEach(el => { if (el) el.style.opacity = '0.3'; });
+    
+    setTimeout(() => {
+      titleEl.textContent = item.title;
+      descEl.textContent = item.text;
+      renderSubCarousel(item.images);
+      
+      const specSoft = document.getElementById('sim-software');
+      const specEng = document.getElementById('sim-engine');
+      const specPart = document.getElementById('sim-particles');
+      const specTime = document.getElementById('sim-rendertime');
+      
+      if (specSoft && item.specs) specSoft.textContent = item.specs.software;
+      if (specEng && item.specs) specEng.textContent = item.specs.engine;
+      if (specPart && item.specs) specPart.textContent = item.specs.particles;
+      if (specTime && item.specs) specTime.textContent = item.specs.time;
+      
+      badgeEl.textContent = `MENU ${(index + 1).toString().padStart(2, '0')} / ${dataset.length.toString().padStart(2, '0')}`;
+      counterEl.textContent = `${index + 1} - ${dataset.length}`;
+      
+      titleEl.style.opacity = '1';
+      descEl.style.opacity = '1';
+      if (trackEl) trackEl.style.opacity = '1';
+      specElements.forEach(el => { if (el) el.style.opacity = '1'; });
+    }, 150);
+  }
+  
+  const indicatorBars = document.querySelectorAll('.houdini-tab-indicator-bar');
+  indicatorBars.forEach((bar, idx) => {
+    if (idx === index) {
+      bar.classList.add('active');
+    } else {
+      bar.classList.remove('active');
+    }
+  });
+}
+
+function switchHoudiniCarousel(index) {
+  buildCurriculumTabs();
+  switchCurriculumItem(index);
+}
+
+function prevHoudiniCarousel() {
+  switchCurriculumItem(currentCurriculumIndex - 1);
+}
+
+function nextHoudiniCarousel() {
+  switchCurriculumItem(currentCurriculumIndex + 1);
+}
+
+/* --------------------------------------------------------
+   PIPELINE HUD STEPS SELECTOR ENGINE
+   -------------------------------------------------------- */
+const pipelineStepsData = [
+  {
+    stamp: "STAGE // 01",
+    title: "STRATEGY & ADVISORY",
+    text: "Audiovisual strategy, consulting and support, creative direction, narrative territories, coordination, and program management.",
+    core: "NARRATIVE ENGINE",
+    integration: "GLOBAL STAGE 01",
+    platforms: "FCP, UNREAL STAGE, HOUDINI",
+    complexity: "OPTIMAL // LEVEL 04",
+    meter1: "98%",
+    meter2: "92%"
+  },
+  {
+    stamp: "STAGE // 02",
+    title: "CREATIVE & PRODUCTION",
+    text: "Campaign concepts, pre-production, production and directing, advanced post-production, adaptations, and content variations.",
+    core: "CREATIVE DIRECTORY",
+    integration: "VIRTUAL CAMERA STACK",
+    platforms: "UNREAL STAGE, NUKE Studio",
+    complexity: "CRITICAL // LEVEL 08",
+    meter1: "95%",
+    meter2: "96%"
+  },
+  {
+    stamp: "STAGE // 03",
+    title: "TECHNOLOGY & VFX",
+    text: "We use 2D, 3D, VFX, AI when relevant, and advanced production technologies to expand what is creatively possible.",
+    core: "COMPUTATIONAL VFX",
+    integration: "DISTR RENDERING MATRIX",
+    platforms: "HOUDINI 20.5, PYRO SPARSE",
+    complexity: "EXTREME // LEVEL 10",
+    meter1: "99%",
+    meter2: "88%"
+  },
+  {
+    stamp: "STAGE // 04",
+    title: "DISTRIBUTION & DEPLOYMENT",
+    text: "We prepare and adapt content for TV, social media, digital platforms, and different formats and distribution environments.",
+    core: "DISTRIBUTION CORE",
+    integration: "HYBRID CLOUD FRAMEWORK",
+    platforms: "REDHAT CLOUD, DOCKER",
+    complexity: "OPTIMAL // LEVEL 05",
+    meter1: "94%",
+    meter2: "97%"
+  },
+  {
+    stamp: "STAGE // 05",
+    title: "MEASUREMENT & METRICS",
+    text: "We identify the content, formats, messages, and approaches that generate the greatest relevance and impact, while analysing audience reactions and performance.",
+    core: "ANALYTICS ENGINE",
+    integration: "BIOMETRIC TELEMETRY",
+    platforms: "CUSTOM STATS, PYTHON",
+    complexity: "MODERATE // LEVEL 06",
+    meter1: "91%",
+    meter2: "94%"
+  },
+  {
+    stamp: "STAGE // 06",
+    title: "BUILDING ASSETS",
+    text: "We build an evolving audiovisual asset library, while capturing creative codes, narrative principles, production knowledge, and learnings from every campaign.",
+    core: "ASSET LIBRARY MATRIX",
+    integration: "PERSISTENT DB CLUSTER",
+    platforms: "METADATA LEDGER, PG",
+    complexity: "OPTIMAL // LEVEL 03",
+    meter1: "97%",
+    meter2: "95%"
+  }
+];
+
+function selectHudStep(index) {
+  const stepNodes = document.querySelectorAll('.hud-step-node');
+  stepNodes.forEach((node, idx) => {
+    if (idx === index) {
+      node.classList.add('active');
+    } else {
+      node.classList.remove('active');
+    }
+  });
+
+  const data = pipelineStepsData[index];
+  if (!data) return;
+
+  const stampEl = document.getElementById('console-stage-stamp');
+  const titleEl = document.getElementById('console-stage-title');
+  const textEl = document.getElementById('console-stage-text');
+  const coreEl = document.getElementById('diag-core');
+  const integrationEl = document.getElementById('diag-integration');
+  const platformsEl = document.getElementById('diag-platforms');
+  const complexityEl = document.getElementById('diag-complexity');
+
+  if (stampEl) stampEl.textContent = data.stamp;
+  if (titleEl) titleEl.textContent = data.title;
+  if (textEl) textEl.textContent = data.text;
+  if (coreEl) coreEl.textContent = data.core;
+  if (integrationEl) integrationEl.textContent = data.integration;
+  if (platformsEl) platformsEl.textContent = data.platforms;
+  if (complexityEl) complexityEl.textContent = data.complexity;
+}
+
+/* ==========================================================================
+   AUTHENTIC VINTAGE TV SOUND EFFECTS (WEB AUDIO SYNTHESIZER)
+   ========================================================================== */
+let audioCtx = null;
+
+function playTvChannelChangeSound() {
+  try {
+    if (!audioCtx) {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      if (AudioContext) audioCtx = new AudioContext();
+    }
+    if (audioCtx && audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+    if (!audioCtx) return;
+
+    const now = audioCtx.currentTime;
+
+    // 1. Heavy Mechanical Metal Knob Clack / Click Impulse
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(140, now);
+    osc.frequency.exponentialRampToValueAtTime(25, now + 0.09);
+
+    gain.gain.setValueAtTime(0.7, now);
+    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.09);
+
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start(now);
+    osc.stop(now + 0.09);
+
+    // 2. High Frequency Metallic Latch Snap
+    const oscSnap = audioCtx.createOscillator();
+    const gainSnap = audioCtx.createGain();
+    oscSnap.type = 'square';
+    oscSnap.frequency.setValueAtTime(1600, now);
+    oscSnap.frequency.exponentialRampToValueAtTime(150, now + 0.035);
+
+    gainSnap.gain.setValueAtTime(0.35, now);
+    gainSnap.gain.exponentialRampToValueAtTime(0.001, now + 0.035);
+
+    oscSnap.connect(gainSnap);
+    gainSnap.connect(audioCtx.destination);
+    oscSnap.start(now);
+    oscSnap.stop(now + 0.035);
+
+    // 3. Analog CRT TV Static White Noise Burst (150ms)
+    const bufferSize = Math.floor(audioCtx.sampleRate * 0.15); // 150ms
+    const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+    const output = buffer.getChannelData(0);
+    for (let i = 0; i < bufferSize; i++) {
+      output[i] = Math.random() * 2 - 1;
+    }
+
+    const whiteNoise = audioCtx.createBufferSource();
+    whiteNoise.buffer = buffer;
+
+    // Bandpass filter to sound like analog CRT TV tuner static
+    const filter = audioCtx.createBiquadFilter();
+    filter.type = 'bandpass';
+    filter.frequency.setValueAtTime(1100, now);
+    filter.Q.setValueAtTime(1.4, now);
+
+    const noiseGain = audioCtx.createGain();
+    noiseGain.gain.setValueAtTime(0.22, now);
+    noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
+
+    whiteNoise.connect(filter);
+    filter.connect(noiseGain);
+    noiseGain.connect(audioCtx.destination);
+
+    whiteNoise.start(now);
+    whiteNoise.stop(now + 0.15);
+
+  } catch (e) {
+    console.warn('TV Sound Effect Exception:', e);
+  }
+}
+
+function triggerTvStaticGlitch() {
+  const glitch = document.getElementById('tvStaticGlitch');
+  if (glitch) {
+    glitch.classList.add('active');
+    setTimeout(() => {
+      glitch.classList.remove('active');
+    }, 180);
+  }
+}
+
+/* ==========================================================================
+   INTERACTIVE RETRO TV SLIDER CONTROLLER
+   ========================================================================== */
+let currentCinemaIndex = 0;
+let cinemaSlideInterval = null;
+
+function goToCinemaSlide(index, userInitiated = false) {
+  const slides = document.querySelectorAll('#cinema-main-stage .cinema-slide');
+  
+  if (!slides.length) return;
+  
+  currentCinemaIndex = (index + slides.length) % slides.length;
+
+  if (userInitiated) {
+    playTvChannelChangeSound();
+  }
+  triggerTvStaticGlitch();
+  
+  slides.forEach((slide, idx) => {
+    if (idx === currentCinemaIndex) {
+      slide.classList.add('active');
+      const video = slide.querySelector('video');
+      if (video) {
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      }
+    } else {
+      slide.classList.remove('active');
+    }
+  });
+
+  resetCinemaTimer();
+}
+
+function nextCinemaSlide() {
+  goToCinemaSlide(currentCinemaIndex + 1, true);
+}
+
+function prevCinemaSlide() {
+  goToCinemaSlide(currentCinemaIndex - 1, true);
+}
+
+function resetCinemaTimer() {
+  if (cinemaSlideInterval) clearInterval(cinemaSlideInterval);
+  cinemaSlideInterval = setInterval(() => {
+    goToCinemaSlide(currentCinemaIndex + 1, false);
+  }, 7000);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  goToCinemaSlide(0, false);
+});
     updateSlateTexture(rightSlateMesh, lang);
     updateSlateTexture(backSlateMesh, lang);
     updateSlateTexture(leftSlateMesh, lang);
@@ -2607,227 +2928,6 @@ function buildCurriculumTabs() {
 }
 
 function switchCurriculumItem(index) {
-  const currentLang = currentLanguage || 'fr';
-  let dataset = [];
-  if (activeSoftwareTrack === 'houdini') {
-    dataset = (currentLang === 'en') ? houdiniCurriculumEN : houdiniCurriculumFR;
-  } else {
-    dataset = (currentLang === 'en') ? nukeCurriculumEN : nukeCurriculumFR;
-  }
-  
-  if (dataset.length === 0) return;
-  if (index < 0) index = dataset.length - 1;
-  if (index >= dataset.length) index = 0;
-  
-  currentCurriculumIndex = index;
-  const item = dataset[index];
-  
-  const titleEl = document.getElementById('h-carousel-title');
-  const descEl = document.getElementById('h-carousel-desc');
-  const trackEl = document.getElementById('curriculum-slider-track');
-  const badgeEl = document.getElementById('h-carousel-badge');
-  const counterEl = document.getElementById('h-carousel-counter');
-  
-  if (titleEl) {
-    titleEl.style.opacity = '0.3';
-    descEl.style.opacity = '0.3';
-    if (trackEl) trackEl.style.opacity = '0.3';
-    
-    const specElements = ['sim-software', 'sim-engine', 'sim-particles', 'sim-rendertime'].map(id => document.getElementById(id));
-    specElements.forEach(el => { if (el) el.style.opacity = '0.3'; });
-    
-    setTimeout(() => {
-      titleEl.textContent = item.title;
-      descEl.textContent = item.text;
-      renderSubCarousel(item.images);
-      
-      const specSoft = document.getElementById('sim-software');
-      const specEng = document.getElementById('sim-engine');
-      const specPart = document.getElementById('sim-particles');
-      const specTime = document.getElementById('sim-rendertime');
-      
-      if (specSoft && item.specs) specSoft.textContent = item.specs.software;
-      if (specEng && item.specs) specEng.textContent = item.specs.engine;
-      if (specPart && item.specs) specPart.textContent = item.specs.particles;
-      if (specTime && item.specs) specTime.textContent = item.specs.time;
-      
-      badgeEl.textContent = `MENU ${(index + 1).toString().padStart(2, '0')} / ${dataset.length.toString().padStart(2, '0')}`;
-      counterEl.textContent = `${index + 1} - ${dataset.length}`;
-      
-      titleEl.style.opacity = '1';
-      descEl.style.opacity = '1';
-      if (trackEl) trackEl.style.opacity = '1';
-      specElements.forEach(el => { if (el) el.style.opacity = '1'; });
-    }, 150);
-  }
-  
-  const indicatorBars = document.querySelectorAll('.houdini-tab-indicator-bar');
-  indicatorBars.forEach((bar, idx) => {
-    if (idx === index) {
-      bar.classList.add('active');
-    } else {
-      bar.classList.remove('active');
-    }
-  });
-}
-
-function switchHoudiniCarousel(index) {
-  buildCurriculumTabs();
-  switchCurriculumItem(index);
-}
-
-function prevHoudiniCarousel() {
-  switchCurriculumItem(currentCurriculumIndex - 1);
-}
-
-function nextHoudiniCarousel() {
-  switchCurriculumItem(currentCurriculumIndex + 1);
-}
-
-/* --------------------------------------------------------
-   PIPELINE HUD STEPS SELECTOR ENGINE
-   -------------------------------------------------------- */
-const pipelineStepsData = [
-  {
-    stamp: "STAGE // 01",
-    title: "STRATEGY & ADVISORY",
-    text: "Audiovisual strategy, consulting and support, creative direction, narrative territories, coordination, and program management.",
-    core: "NARRATIVE ENGINE",
-    integration: "GLOBAL STAGE 01",
-    platforms: "FCP, UNREAL STAGE, HOUDINI",
-    complexity: "OPTIMAL // LEVEL 04",
-    meter1: "98%",
-    meter2: "92%"
-  },
-  {
-    stamp: "STAGE // 02",
-    title: "CREATIVE & PRODUCTION",
-    text: "Campaign concepts, pre-production, production and directing, advanced post-production, adaptations, and content variations.",
-    core: "CREATIVE DIRECTORY",
-    integration: "VIRTUAL CAMERA STACK",
-    platforms: "UNREAL STAGE, NUKE Studio",
-    complexity: "CRITICAL // LEVEL 08",
-    meter1: "95%",
-    meter2: "96%"
-  },
-  {
-    stamp: "STAGE // 03",
-    title: "TECHNOLOGY & VFX",
-    text: "We use 2D, 3D, VFX, AI when relevant, and advanced production technologies to expand what is creatively possible.",
-    core: "COMPUTATIONAL VFX",
-    integration: "DISTR RENDERING MATRIX",
-    platforms: "HOUDINI 20.5, PYRO SPARSE",
-    complexity: "EXTREME // LEVEL 10",
-    meter1: "99%",
-    meter2: "88%"
-  },
-  {
-    stamp: "STAGE // 04",
-    title: "DISTRIBUTION & DEPLOYMENT",
-    text: "We prepare and adapt content for TV, social media, digital platforms, and different formats and distribution environments.",
-    core: "DISTRIBUTION CORE",
-    integration: "HYBRID CLOUD FRAMEWORK",
-    platforms: "REDHAT CLOUD, DOCKER",
-    complexity: "OPTIMAL // LEVEL 05",
-    meter1: "94%",
-    meter2: "97%"
-  },
-  {
-    stamp: "STAGE // 05",
-    title: "MEASUREMENT & METRICS",
-    text: "We identify the content, formats, messages, and approaches that generate the greatest relevance and impact, while analysing audience reactions and performance.",
-    core: "ANALYTICS ENGINE",
-    integration: "BIOMETRIC TELEMETRY",
-    platforms: "CUSTOM STATS, PYTHON",
-    complexity: "MODERATE // LEVEL 06",
-    meter1: "91%",
-    meter2: "94%"
-  },
-  {
-    stamp: "STAGE // 06",
-    title: "BUILDING ASSETS",
-    text: "We build an evolving audiovisual asset library, while capturing creative codes, narrative principles, production knowledge, and learnings from every campaign.",
-    core: "ASSET LIBRARY MATRIX",
-    integration: "PERSISTENT DB CLUSTER",
-    platforms: "METADATA LEDGER, PG",
-    complexity: "OPTIMAL // LEVEL 03",
-    meter1: "97%",
-    meter2: "95%"
-  }
-];
-
-function selectHudStep(index) {
-  const stepNodes = document.querySelectorAll('.hud-step-node');
-  stepNodes.forEach((node, idx) => {
-    if (idx === index) {
-      node.classList.add('active');
-    } else {
-      node.classList.remove('active');
-    }
-  });
-
-  const data = pipelineStepsData[index];
-  if (!data) return;
-
-  const stampEl = document.getElementById('console-stage-stamp');
-  const titleEl = document.getElementById('console-stage-title');
-  const textEl = document.getElementById('console-stage-text');
-  const coreEl = document.getElementById('diag-core');
-  const integrationEl = document.getElementById('diag-integration');
-  const platformsEl = document.getElementById('diag-platforms');
-  const complexityEl = document.getElementById('diag-complexity');
-
-  if (stampEl) stampEl.textContent = data.stamp;
-  if (titleEl) titleEl.textContent = data.title;
-  if (textEl) textEl.textContent = data.text;
-  if (coreEl) coreEl.textContent = data.core;
-  if (integrationEl) integrationEl.textContent = data.integration;
-  if (platformsEl) platformsEl.textContent = data.platforms;
-  if (complexityEl) complexityEl.textContent = data.complexity;
-}
-
-/* ==========================================================================
-   INTERACTIVE CINEMA PROJECTOR SLIDER CONTROLLER
-   ========================================================================== */
-let currentCinemaIndex = 0;
-let cinemaSlideInterval = null;
-
-function goToCinemaSlide(index) {
-  const slides = document.querySelectorAll('#cinema-main-stage .cinema-slide');
-  const tabs = document.querySelectorAll('#cinema-main-stage .cinema-tab-btn');
-  const progressFill = document.getElementById('cinemaProgressFill');
-  
-  if (!slides.length) return;
-  
-  currentCinemaIndex = (index + slides.length) % slides.length;
-  
-  slides.forEach((slide, idx) => {
-    if (idx === currentCinemaIndex) {
-      slide.classList.add('active');
-      const video = slide.querySelector('video');
-      if (video) {
-        video.currentTime = 0;
-        video.play().catch(() => {});
-      }
-    } else {
-      slide.classList.remove('active');
-    }
-  });
-
-  tabs.forEach((tab, idx) => {
-    if (idx === currentCinemaIndex) {
-      tab.classList.add('active');
-    } else {
-      tab.classList.remove('active');
-    }
-  });
-
-  if (progressFill) {
-    const percentage = ((currentCinemaIndex + 1) / slides.length) * 100;
-    progressFill.style.width = percentage + '%';
-  }
-
-  resetCinemaTimer();
 }
 
 function nextCinemaSlide() {

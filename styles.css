@@ -5944,7 +5944,7 @@ html, body {
 }
 
 /* ==========================================================================
-   VINTAGE CRT TELEVISION SHOWCASE CONSOLE
+   VINTAGE CRT TELEVISION SHOWCASE CONSOLE (4:3 SQUARE PROPORTION)
    ========================================================================== */
 
 .cinematic-frame-item.retro-tv-mode {
@@ -5953,9 +5953,10 @@ html, body {
   box-shadow: 0 35px 90px rgba(0, 0, 0, 0.95), 0 0 60px rgba(245, 197, 66, 0.18) !important;
   position: relative;
   overflow: visible;
-  min-height: 600px !important;
   border-radius: 28px !important;
   padding: 30px 20px 20px 20px !important;
+  max-width: 780px;
+  margin: 0 auto;
 }
 
 /* Vintage TV Antenna at Top */
@@ -6006,21 +6007,19 @@ html, body {
 .vintage-tv-console {
   position: relative;
   width: 100%;
-  height: 100%;
-  min-height: 540px;
   background: 
     linear-gradient(135deg, #2b1e16 0%, #17100b 50%, #0d0906 100%); /* Warm Mahogany Wood Chassis */
-  border: 4px solid #3d2b1f;
+  border: 5px solid #3d2b1f;
   outline: 2px solid #F5C542;
-  border-radius: 24px;
+  border-radius: 26px;
   box-shadow: 
     inset 0 0 40px rgba(0, 0, 0, 0.9),
     0 20px 40px rgba(0, 0, 0, 0.8),
     0 0 30px rgba(245, 197, 66, 0.2);
   display: grid;
-  grid-template-columns: 1fr 140px;
+  grid-template-columns: 1fr 130px;
   gap: 15px;
-  padding: 16px;
+  padding: 18px;
   overflow: hidden;
 }
 
@@ -6031,22 +6030,40 @@ html, body {
   }
 }
 
-/* CRT Glass Tube Curved Screen (Green-Screen Video Container) */
+/* CRT Glass Tube Curved Screen (4:3 Square CRT Proportion) */
 .tv-crt-glass-screen {
   position: relative;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 4 / 3; /* Authentic 4:3 Square CRT Aspect Ratio */
   min-height: 480px;
   background: #000;
-  border-radius: 36px / 24px; /* Curved CRT Tube Screen Shape */
-  border: 10px solid #140d09;
+  border-radius: 40px / 30px; /* Bulbous CRT Glass Tube Shape */
+  border: 12px solid #140d09;
   outline: 2px solid rgba(245, 197, 66, 0.5);
   box-shadow: 
-    inset 0 0 45px rgba(0, 0, 0, 0.95),
+    inset 0 0 50px rgba(0, 0, 0, 0.95),
     0 0 25px rgba(245, 197, 66, 0.2);
   overflow: hidden;
   display: flex;
   align-items: flex-end;
+}
+
+/* CRT Static Flash Glitch during Channel Switch */
+.tv-static-glitch {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle, rgba(255,255,255,0.85) 1px, transparent 1px), 
+    radial-gradient(circle, rgba(0,0,0,0.95) 1px, transparent 1px);
+  background-size: 4px 4px, 6px 6px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity 0.05s ease;
+}
+
+.tv-static-glitch.active {
+  opacity: 0.9;
 }
 
 /* CRT Screen Glare */
@@ -6057,7 +6074,10 @@ html, body {
   right: 0;
   height: 45%;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, transparent 60%);
-  border-radius: 36px 36px 0 0;
+  border-radius: 40px 40px 0 0;
+  pointer-events: none;
+  z-index: 6;
+}
   pointer-events: none;
   z-index: 6;
 }
