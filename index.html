@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Custom Application Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=20260825_buttons_repaired_v7">
+  <link rel="stylesheet" href="styles.css?v=20260825_tv_static_v8">
   
   <!-- Three.js and OrbitControls for the 3D rotating clapperboard house -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -331,10 +331,10 @@
                   <div class="tv-knob knob-uhf" onclick="prevCinemaSlide()" title="UHF Volume Knob">
                     <div class="knob-line"></div>
                   </div>
-                  <div class="tv-speaker-grille">
+                  <div class="tv-speaker-grille" onclick="toggleContinuousTvStatic()" title="Toggle CRT TV Static Noise ('Shhhhh')">
                     <span></span><span></span><span></span><span></span><span></span><span></span>
                   </div>
-                  <div class="tv-power-led" title="Power On"></div>
+                  <div class="tv-power-led" onclick="toggleContinuousTvStatic()" title="Toggle CRT Static Noise ('Shhhhh')"></div>
                 </div>
 
               </div>
@@ -1804,6 +1804,6 @@
   </div>
 
   <!-- Main Logic JavaScript File -->
-  <script src="script.js?v=20260825_buttons_repaired_v7"></script>
+  <script src="script.js?v=20260825_tv_static_v8"></script>
 </body>
 </html>

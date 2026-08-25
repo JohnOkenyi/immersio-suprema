@@ -1011,6 +1011,10 @@ function selectHudStep(index) {
    ========================================================================== */
 var globalAudioCtx = typeof globalAudioCtx !== 'undefined' ? globalAudioCtx : null;
 
+var tvStaticLoopSource = null;
+var tvStaticGainNode = null;
+var isTvStaticPlaying = false;
+
 function playTvChannelChangeSound() {
   try {
     if (!globalAudioCtx) {
@@ -1024,68 +1028,149 @@ function playTvChannelChangeSound() {
 
     const now = globalAudioCtx.currentTime;
 
-    // 1. Heavy Mechanical Metal Knob Clack / Click Impulse
+    // 1. Heavy Mechanical TV Knob Dial Clack
     const osc = globalAudioCtx.createOscillator();
     const gain = globalAudioCtx.createGain();
     osc.type = 'triangle';
-    osc.frequency.setValueAtTime(140, now);
-    osc.frequency.exponentialRampToValueAtTime(25, now + 0.09);
+    osc.frequency.setValueAtTime(160, now);
+    osc.frequency.exponentialRampToValueAtTime(28, now + 0.1);
 
-    gain.gain.setValueAtTime(0.7, now);
-    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.09);
+    gain.gain.setValueAtTime(0.75, now);
+    gain.gain.exponentialRampToValueAtTime(0.005, now + 0.1);
 
     osc.connect(gain);
     gain.connect(globalAudioCtx.destination);
     osc.start(now);
-    osc.stop(now + 0.09);
+    osc.stop(now + 0.1);
 
-    // 2. High Frequency Metallic Latch Snap
+    // 2. Metallic Latch Switch Impulse
     const oscSnap = globalAudioCtx.createOscillator();
     const gainSnap = globalAudioCtx.createGain();
     oscSnap.type = 'square';
-    oscSnap.frequency.setValueAtTime(1600, now);
-    oscSnap.frequency.exponentialRampToValueAtTime(150, now + 0.035);
+    oscSnap.frequency.setValueAtTime(1800, now);
+    oscSnap.frequency.exponentialRampToValueAtTime(120, now + 0.04);
 
-    gainSnap.gain.setValueAtTime(0.35, now);
-    gainSnap.gain.exponentialRampToValueAtTime(0.001, now + 0.035);
+    gainSnap.gain.setValueAtTime(0.4, now);
+    gainSnap.gain.exponentialRampToValueAtTime(0.001, now + 0.04);
 
     oscSnap.connect(gainSnap);
     gainSnap.connect(globalAudioCtx.destination);
     oscSnap.start(now);
-    oscSnap.stop(now + 0.035);
+    oscSnap.stop(now + 0.04);
 
-    // 3. Analog CRT TV Static White Noise Burst (150ms)
-    const bufferSize = Math.floor(globalAudioCtx.sampleRate * 0.15); // 150ms
+    // 3. AUTHENTIC CRT TV NO SIGNAL STATIC WHITE NOISE "SHHHHH" BURST (350ms)
+    const duration = 0.35; // 350ms static snow hiss
+    const bufferSize = Math.floor(globalAudioCtx.sampleRate * duration);
     const buffer = globalAudioCtx.createBuffer(1, bufferSize, globalAudioCtx.sampleRate);
     const output = buffer.getChannelData(0);
+
+    // Generate textured analog white noise static snow
+    let lastOut = 0.0;
     for (let i = 0; i < bufferSize; i++) {
-      output[i] = Math.random() * 2 - 1;
+      const white = Math.random() * 2 - 1;
+      // Pinkish/white analog noise filtering for true TV "shhhhh" sound
+      output[i] = (lastOut * 0.45) + (white * 0.55);
+      lastOut = output[i];
     }
 
     const whiteNoise = globalAudioCtx.createBufferSource();
     whiteNoise.buffer = buffer;
 
-    // Bandpass filter to sound like analog CRT TV tuner static
+    // Dual-stage CRT tuner bandpass filter (850Hz center with subtle sweep)
     const filter = globalAudioCtx.createBiquadFilter();
     filter.type = 'bandpass';
-    filter.frequency.setValueAtTime(1100, now);
-    filter.Q.setValueAtTime(1.4, now);
+    filter.frequency.setValueAtTime(750, now);
+    filter.frequency.exponentialRampToValueAtTime(1250, now + 0.15);
+    filter.frequency.exponentialRampToValueAtTime(850, now + 0.35);
+    filter.Q.setValueAtTime(1.1, now);
+
+    // 60Hz CRT Mains Hum Layer
+    const humOsc = globalAudioCtx.createOscillator();
+    const humGain = globalAudioCtx.createGain();
+    humOsc.type = 'sawtooth';
+    humOsc.frequency.setValueAtTime(60, now);
+    humGain.gain.setValueAtTime(0.08, now);
+    humGain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+    humOsc.connect(humGain);
+    humGain.connect(globalAudioCtx.destination);
+    humOsc.start(now);
+    humOsc.stop(now + 0.35);
 
     const noiseGain = globalAudioCtx.createGain();
-    noiseGain.gain.setValueAtTime(0.22, now);
-    noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
+    noiseGain.gain.setValueAtTime(0.45, now); // Strong, clear "shhhhh" sound
+    noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
 
     whiteNoise.connect(filter);
     filter.connect(noiseGain);
     noiseGain.connect(globalAudioCtx.destination);
 
     whiteNoise.start(now);
-    whiteNoise.stop(now + 0.15);
+    whiteNoise.stop(now + 0.35);
 
   } catch (e) {
     console.warn('TV Sound Effect Exception:', e);
   }
 }
+
+function toggleContinuousTvStatic() {
+  try {
+    if (!globalAudioCtx) {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      if (AudioContext) globalAudioCtx = new AudioContext();
+    }
+    if (globalAudioCtx && globalAudioCtx.state === 'suspended') {
+      globalAudioCtx.resume();
+    }
+
+    if (isTvStaticPlaying) {
+      if (tvStaticGainNode) {
+        tvStaticGainNode.gain.exponentialRampToValueAtTime(0.0001, globalAudioCtx.currentTime + 0.2);
+        setTimeout(() => {
+          if (tvStaticLoopSource) {
+            tvStaticLoopSource.stop();
+            tvStaticLoopSource = null;
+          }
+        }, 220);
+      }
+      isTvStaticPlaying = false;
+      return false;
+    } else {
+      const bufferSize = globalAudioCtx.sampleRate * 2; // 2 sec loop
+      const buffer = globalAudioCtx.createBuffer(1, bufferSize, globalAudioCtx.sampleRate);
+      const output = buffer.getChannelData(0);
+      let lastOut = 0.0;
+      for (let i = 0; i < bufferSize; i++) {
+        const white = Math.random() * 2 - 1;
+        output[i] = (lastOut * 0.45) + (white * 0.55);
+        lastOut = output[i];
+      }
+
+      tvStaticLoopSource = globalAudioCtx.createBufferSource();
+      tvStaticLoopSource.buffer = buffer;
+      tvStaticLoopSource.loop = true;
+
+      const filter = globalAudioCtx.createBiquadFilter();
+      filter.type = 'bandpass';
+      filter.frequency.setValueAtTime(950, globalAudioCtx.currentTime);
+      filter.Q.setValueAtTime(1.2, globalAudioCtx.currentTime);
+
+      tvStaticGainNode = globalAudioCtx.createGain();
+      tvStaticGainNode.gain.setValueAtTime(0.18, globalAudioCtx.currentTime);
+
+      tvStaticLoopSource.connect(filter);
+      filter.connect(tvStaticGainNode);
+      tvStaticGainNode.connect(globalAudioCtx.destination);
+
+      tvStaticLoopSource.start();
+      isTvStaticPlaying = true;
+      return true;
+    }
+  } catch (e) {
+    console.warn('Continuous Static Exception:', e);
+    return false;
+  }
+}
+window.toggleContinuousTvStatic = toggleContinuousTvStatic;
 
 function triggerTvStaticGlitch() {
   const glitch = document.getElementById('tvStaticGlitch');
