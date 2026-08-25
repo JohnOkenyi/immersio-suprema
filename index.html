@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Custom Application Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=20260825_tv_static_v8">
+  <link rel="stylesheet" href="styles.css?v=20260825_dark_console_v9">
   
   <!-- Three.js and OrbitControls for the 3D rotating clapperboard house -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -358,23 +358,24 @@
     </div>
   </section>
 
-  <!-- SECTION 2.5: A STRATEGIC AUDIOVISUAL PROGRAM (SECOND PART) -->
-  <section class="apple-section apple-pure-white-bg" id="strategic-program" style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 80px;">
+  <!-- SECTION 2.5: A STRATEGIC AUDIOVISUAL PROGRAM (APPLE DIGITAL DARK COMMAND CONSOLE) -->
+  <section class="apple-section apple-digital-dark-bg" id="strategic-program">
     <div class="apple-section-container">
       
-      <div class="apple-header-block" style="margin-bottom: 40px;">
-        <span class="apple-kicker" data-i18n="strategic_kicker">A STRATEGIC AUDIOVISUAL PROGRAM</span>
-        <h2 class="apple-section-title" data-i18n="strategic_title" style="font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em;">
-          ENGINEERING IMMERSIVE PIPELINES
+      <div class="apple-header-block apple-dark-header">
+        <span class="apple-dark-kicker" data-i18n="strategic_kicker">— A STRATEGIC AUDIOVISUAL PROGRAM —</span>
+        <h2 class="apple-dark-section-title" data-i18n="strategic_title">
+          AN AGENCY PRODUCES CONTENT. <span class="gold-gradient-text">IMMERSIO SUPREMA</span> BUILDS A BRAND'S AUDIOVISUAL CAPABILITY.
         </h2>
       </div>
 
       <!-- Pipeline HUD Console Layout -->
       <div class="pipeline-hud-grid">
         
-        <!-- Left: Steps Selector (Nodes) -->
+        <!-- Left: Interactive Steps Selector (Nodes) -->
         <div class="hud-steps-menu">
           <div class="hud-step-node active" onclick="selectHudStep(0)" id="hud-step-0">
+            <div class="step-active-pill"></div>
             <span class="step-num">01</span>
             <div class="step-lbl-wrapper">
               <span class="step-kicker">STAGE 01</span>
@@ -382,7 +383,9 @@
             </div>
             <i class="fas fa-chevron-right step-chevron"></i>
           </div>
+
           <div class="hud-step-node" onclick="selectHudStep(1)" id="hud-step-1">
+            <div class="step-active-pill"></div>
             <span class="step-num">02</span>
             <div class="step-lbl-wrapper">
               <span class="step-kicker">STAGE 02</span>
@@ -390,7 +393,9 @@
             </div>
             <i class="fas fa-chevron-right step-chevron"></i>
           </div>
+
           <div class="hud-step-node" onclick="selectHudStep(2)" id="hud-step-2">
+            <div class="step-active-pill"></div>
             <span class="step-num">03</span>
             <div class="step-lbl-wrapper">
               <span class="step-kicker">STAGE 03</span>
@@ -398,7 +403,9 @@
             </div>
             <i class="fas fa-chevron-right step-chevron"></i>
           </div>
+
           <div class="hud-step-node" onclick="selectHudStep(3)" id="hud-step-3">
+            <div class="step-active-pill"></div>
             <span class="step-num">04</span>
             <div class="step-lbl-wrapper">
               <span class="step-kicker">STAGE 04</span>
@@ -406,7 +413,9 @@
             </div>
             <i class="fas fa-chevron-right step-chevron"></i>
           </div>
+
           <div class="hud-step-node" onclick="selectHudStep(4)" id="hud-step-4">
+            <div class="step-active-pill"></div>
             <span class="step-num">05</span>
             <div class="step-lbl-wrapper">
               <span class="step-kicker">STAGE 05</span>
@@ -414,7 +423,9 @@
             </div>
             <i class="fas fa-chevron-right step-chevron"></i>
           </div>
+
           <div class="hud-step-node" onclick="selectHudStep(5)" id="hud-step-5">
+            <div class="step-active-pill"></div>
             <span class="step-num">06</span>
             <div class="step-lbl-wrapper">
               <span class="step-kicker">STAGE 06</span>
@@ -424,12 +435,15 @@
           </div>
         </div>
 
-        <!-- Right: Active Viewport Console Screen -->
+        <!-- Right: Cyber Command Viewport Console Screen -->
         <div class="hud-console-viewport">
           <div class="hud-console-screen">
             
             <div class="console-header">
-              <span class="status-lbl">PRODUCTION WORKFLOW</span>
+              <div class="console-live-badge">
+                <span class="pulse-led-dot"></span>
+                <span class="status-lbl">STATUS // PIPELINE ACTIVE</span>
+              </div>
               <span class="console-id-stamp" id="console-stage-stamp">STAGE // 01</span>
             </div>
 
@@ -441,7 +455,7 @@
                 </p>
               </div>
 
-              <!-- Technical diagnostics grid -->
+              <!-- Technical diagnostics telemetry grid -->
               <div class="console-diagnostics">
                 <div class="diagnostic-card">
                   <span class="diag-label">SYSTEM CORE</span>
@@ -464,7 +478,7 @@
             </div>
 
             <div class="console-footer">
-              <span class="footer-msg">ENGINE SYSTEM STATUS: ACTIVE</span>
+              <span class="footer-msg"><i class="fas fa-microchip"></i> ENGINE SYSTEM STATUS: ONLINE</span>
               <span class="footer-sys-load">IMMERSIVITY INDEX // 98%</span>
             </div>
             
@@ -1804,6 +1818,6 @@
   </div>
 
   <!-- Main Logic JavaScript File -->
-  <script src="script.js?v=20260825_tv_static_v8"></script>
+  <script src="script.js?v=20260825_dark_console_v9"></script>
 </body>
 </html>

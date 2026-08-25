@@ -977,6 +977,10 @@ const pipelineStepsData = [
 ];
 
 function selectHudStep(index) {
+  if (typeof playUICardClickSound === 'function') {
+    try { playUICardClickSound(); } catch(e){}
+  }
+
   const stepNodes = document.querySelectorAll('.hud-step-node');
   stepNodes.forEach((node, idx) => {
     if (idx === index) {
@@ -1005,6 +1009,7 @@ function selectHudStep(index) {
   if (platformsEl) platformsEl.textContent = data.platforms;
   if (complexityEl) complexityEl.textContent = data.complexity;
 }
+window.selectHudStep = selectHudStep;
 
 /* ==========================================================================
    AUTHENTIC VINTAGE TV SOUND EFFECTS (WEB AUDIO SYNTHESIZER)

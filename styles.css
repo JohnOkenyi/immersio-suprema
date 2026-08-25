@@ -6976,6 +6976,309 @@ html, body {
   padding: 8px 12px !important;
 }
 
+/* ==========================================================================
+   SECTION 2.5: A STRATEGIC AUDIOVISUAL PROGRAM (APPLE DIGITAL DARK CONSOLE)
+   ========================================================================== */
+.apple-digital-dark-bg {
+  background-color: #07080a !important;
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(204, 164, 59, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 85% 100%, rgba(26, 30, 42, 0.5) 0%, transparent 50%);
+  color: #ffffff !important;
+  padding: 100px 0 !important;
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.apple-dark-header {
+  text-align: center;
+  max-width: 960px;
+  margin: 0 auto 60px auto;
+}
+
+.apple-dark-kicker {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  color: #cca43b;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.apple-dark-section-title {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-size: 2.3rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #ffffff !important;
+  letter-spacing: -0.02em;
+}
+
+.apple-dark-section-title .gold-gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #cca43b 55%, #e6ca65 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Pipeline HUD Grid Layout */
+.pipeline-hud-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 35px;
+  align-items: stretch;
+}
+
+@media (max-width: 1024px) {
+  .pipeline-hud-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Steps Selector (Left Menu Nodes) */
+.hud-steps-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hud-step-node {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.hud-step-node:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(204, 164, 59, 0.4);
+  transform: translateX(4px);
+}
+
+.hud-step-node.active {
+  background: linear-gradient(135deg, rgba(204, 164, 59, 0.12) 0%, rgba(15, 17, 23, 0.95) 100%);
+  border-color: #cca43b !important;
+  box-shadow: 0 0 25px rgba(204, 164, 59, 0.25), inset 0 0 15px rgba(204, 164, 59, 0.1);
+}
+
+.step-active-pill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #cca43b;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hud-step-node.active .step-active-pill {
+  opacity: 1;
+}
+
+.step-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.4);
+  transition: color 0.3s ease;
+}
+
+.hud-step-node.active .step-num {
+  color: #cca43b;
+}
+
+.step-lbl-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.step-kicker {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #cca43b;
+  text-transform: uppercase;
+}
+
+.step-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #e4e4e7;
+  letter-spacing: 0.02em;
+}
+
+.hud-step-node.active .step-name {
+  color: #ffffff;
+}
+
+.step-chevron {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.hud-step-node.active .step-chevron {
+  color: #cca43b;
+  transform: translateX(3px);
+}
+
+/* Right: Cyber Viewport Terminal */
+.hud-console-viewport {
+  background: rgba(12, 14, 20, 0.95);
+  border: 1px solid rgba(204, 164, 59, 0.25);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(204, 164, 59, 0.1);
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+}
+
+.console-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 28px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.console-live-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pulse-led-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #10b981;
+  animation: pulseLed 2s infinite;
+}
+
+@keyframes pulseLed {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.status-lbl {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #cca43b;
+}
+
+.console-id-stamp {
+  font-family: 'Outfit', monospace;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.console-body {
+  padding: 35px 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.console-stage-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.console-stage-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #a1a1aa;
+}
+
+.console-diagnostics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 640px) {
+  .console-diagnostics {
+    grid-template-columns: 1fr;
+  }
+}
+
+.diagnostic-card {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.diag-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+}
+
+.diag-val {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #cca43b;
+  letter-spacing: 0.03em;
+}
+
+.console-footer {
+  padding: 16px 28px;
+  background: rgba(0, 0, 0, 0.4);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-msg i {
+  color: #10b981;
+  margin-right: 6px;
+}
+
+.footer-sys-load {
+  color: #cca43b;
+}
+
 
 
 
