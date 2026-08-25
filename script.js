@@ -2764,21 +2764,4 @@ function selectHudStep(index) {
   if (complexityEl) complexityEl.textContent = data.complexity;
 }
 
-/* Framestore Language Dropdown Toggle */
-function toggleFsLangDropdown() {
-  const dropdown = document.getElementById('fs-lang-dropdown');
-  if (dropdown) {
-    dropdown.classList.toggle('show');
-  }
-}
-
-// Close dropdown when clicking outside
-document.addEventListener('click', function(e) {
-  const wrap = document.querySelector('.fs-lang-wrap');
-  const dropdown = document.getElementById('fs-lang-dropdown');
-  if (wrap && dropdown && !wrap.contains(e.target)) {
-    dropdown.classList.remove('show');
-  }
-});
-
 

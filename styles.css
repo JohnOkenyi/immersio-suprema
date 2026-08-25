@@ -3,28 +3,28 @@
    ========================================================================== */
 
 :root {
-  /* FRAMESTORE CINEMATIC DESIGN SYSTEM PALETTE */
-  --bg-light: #02050b;
-  --bg-dark: #02050b;       /* Deep obsidian black */
+  /* LUXURIOUS APPLE DESIGN SYSTEM PALETTE */
+  --bg-light: #ffffff;
+  --bg-dark: #000000;       /* Solid velvet black */
   --bg-pure-black: #000000; /* Pure void black */
-  --color-text-dark: #ffffff;
+  --color-text-dark: #1d1d1f; /* Apple Black */
   --color-text-light: #ffffff;
   
-  --dneg-coral: #cca43b;    /* Premium Accent Gold */
+  --dneg-coral: #cca43b;    /* Premium Apple Bronze-Gold */
   --dneg-coral-glow: rgba(204, 164, 59, 0.25);
   --vfx-cyan: #cca43b;      
   --vfx-cyan-glow: rgba(204, 164, 59, 0.15);
-  --vfx-violet: #86868b;
+  --vfx-violet: #86868b;    /* Apple Gray */
   --dneg-yellow: #cca43b;
   
-  --dneg-grey-01: #0e1117;  /* Dark Card Surface */
-  --dneg-grey-02: #86868b;  /* Secondary Gray Text */
-  --dneg-grey-03: rgba(255, 255, 255, 0.08); /* Faint Border Gray */
-  --dneg-grey-04: rgba(255, 255, 255, 0.12);
-  --dneg-grey-05: #14171f;
+  --dneg-grey-01: #f5f5f7;  /* Apple Off-White Surface */
+  --dneg-grey-02: #86868b;  /* Apple Gray Secondary Text */
+  --dneg-grey-03: #d2d2d7;  /* Apple Faint Border Gray */
+  --dneg-grey-04: #e5e5e7;
+  --dneg-grey-05: #1c1c1e;  /* Apple Dark Card Surface */
 
   /* Typography Pairing */
-  --font-display: 'Barlow Condensed', 'Outfit', sans-serif;
+  --font-display: 'Outfit', 'Montserrat', sans-serif;
   --font-serif: 'Cormorant Garamond', 'Cinzel', serif;
   --font-body: 'Inter', sans-serif;
 
@@ -5700,16 +5700,13 @@ html, body {
    -------------------------------------------------------- */
 
 /* Section header overrides */
-/* Framestore Dark Theme Overrides */
-.apple-pure-white-bg,
 .apple-pure-white-bg#studio {
-  background-color: #02050b !important; /* Framestore obsidian dark */
+  background-color: #ffffff !important; /* Page background is pure white */
   background-image: 
-    radial-gradient(circle at 85% 15%, rgba(204, 164, 59, 0.05) 0%, transparent 60%),
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px) !important;
+    radial-gradient(circle at 85% 15%, rgba(204, 164, 59, 0.03) 0%, transparent 60%),
+    linear-gradient(to right, rgba(0, 0, 0, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.015) 1px, transparent 1px) !important;
   background-size: 100% 100%, 60px 60px, 60px 60px !important;
-  color: #ffffff !important;
   position: relative;
 }
 
@@ -5719,28 +5716,28 @@ html, body {
   -webkit-text-fill-color: initial !important;
   background-clip: initial !important;
   text-fill-color: initial !important;
-  color: #ffffff !important; /* Framestore white title */
+  color: #1d1d1f !important; /* Apple primary text */
   font-family: var(--font-display) !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.15em !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.025em !important;
   line-height: 1.15 !important;
   margin-top: 15px !important;
   margin-bottom: 25px !important;
 }
 
 .apple-pure-white-bg .apple-kicker {
-  color: #cca43b !important; /* Gold brand accent */
-  background: rgba(204, 164, 59, 0.08) !important;
-  border: 1px solid rgba(204, 164, 59, 0.2) !important;
+  color: #cca43b !important; /* Gold kicker text */
+  background: linear-gradient(135deg, #fdfbf7 0%, #f7f2e8 100%) !important; /* Warm kicker background */
+  border: 1px solid #ebdcc5 !important; /* Warm gold/sand border */
   border-radius: 100px !important;
   padding: 6px 16px !important;
   font-size: 0.72rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.12em !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
   display: inline-block !important;
   margin-bottom: 5px !important;
+  box-shadow: 0 2px 8px rgba(204, 164, 59, 0.02) !important;
 }
 
 .apple-pure-white-bg .luxury-serif-italic {
@@ -5763,33 +5760,33 @@ html, body {
   font-size: 1.15rem !important;
   line-height: 1.6 !important;
   font-weight: 600 !important;
-  color: #ffffff !important;
+  color: #1d1d1f !important;
 }
 
 .apple-pure-white-bg .about-narrative-stack .about-p:last-child {
   font-size: 0.98rem !important;
   line-height: 1.65 !important;
-  color: #86868b !important;
+  color: #515154 !important; /* Warm secondary text color */
   margin-bottom: 20px !important;
 }
 
-/* About Section Pedigree (Framestore Dark Theme) */
+/* About Section Pedigree (Light Theme) */
 .apple-pure-white-bg .pedigree-card {
-  background: #0e1117 !important; /* Dark obsidian card */
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  border-top: 3px solid #cca43b !important;
-  border-radius: 12px !important;
+  background: linear-gradient(135deg, #fdfbf7 0%, #f7f2e8 100%) !important; /* Luxury warm champagne gradient card */
+  border: 1px solid #ebdcc5 !important; /* Warm sand/gold border */
+  border-top: 4px solid #cca43b !important; /* Gold luxury top bar */
+  border-radius: 20px !important;
   padding: 28px 20px !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  box-shadow: 0 8px 30px rgba(204, 164, 59, 0.03) !important; /* Soft, warm golden shadow */
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
   position: relative;
   overflow: hidden;
 }
 
 .apple-pure-white-bg .pedigree-card:hover {
-  background: #141822 !important;
-  border-color: rgba(204, 164, 59, 0.4) !important;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8) !important;
+  background: linear-gradient(135deg, #ffffff 0%, #faf3e5 100%) !important;
+  border-color: #cca43b !important;
+  box-shadow: 0 20px 40px rgba(204, 164, 59, 0.08) !important;
   transform: translateY(-5px) !important;
 }
 
@@ -5797,7 +5794,7 @@ html, body {
   font-size: 1.35rem !important;
   color: #cca43b !important;
   margin-bottom: 12px !important;
-  opacity: 0.9 !important;
+  opacity: 0.85 !important;
   transition: all 0.3s ease !important;
 }
 
@@ -5812,23 +5809,23 @@ html, body {
   -webkit-text-fill-color: initial !important;
   background-clip: initial !important;
   text-fill-color: initial !important;
-  color: #ffffff !important; /* Framestore white text */
+  color: #1d1d1f !important; /* Highly visible text */
   font-family: var(--font-display) !important;
   font-size: 1.35rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.05em !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em !important;
   margin-bottom: 8px !important;
   display: block !important;
 }
 
 .apple-pure-white-bg .pedigree-label {
-  color: #86868b !important;
+  color: #4e483f !important; /* Warm dark gray-brown for excellent readability */
   font-family: var(--font-body) !important;
   font-size: 0.76rem !important;
   line-height: 1.45 !important;
 }
 
-/* About Expertise Items (Framestore Dark Theme) */
+/* About Expertise Items (Light Theme) */
 .apple-pure-white-bg .program-list-col {
   position: relative;
 }
@@ -5840,7 +5837,7 @@ html, body {
   top: 40px;
   bottom: 40px;
   width: 1px;
-  background: linear-gradient(to bottom, rgba(204, 164, 59, 0.35) 0%, rgba(204, 164, 59, 0.05) 100%);
+  background: linear-gradient(to bottom, rgba(204, 164, 59, 0.25) 0%, rgba(204, 164, 59, 0.05) 100%);
   z-index: 1;
 }
 
@@ -5853,11 +5850,11 @@ html, body {
 .apple-pure-white-bg .program-list-col .program-list-item {
   display: flex !important;
   gap: 30px !important;
-  background: #0e1117 !important; /* Dark obsidian card background */
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  border-radius: 16px !important;
+  background: linear-gradient(135deg, #fdfbf7 0%, #f7f2e8 100%) !important; /* Warm champagne gradient card, contrasting with pure white background */
+  border: 1px solid #ebdcc5 !important; /* Warm sand/gold border */
+  border-radius: 24px !important;
   padding: 35px !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  box-shadow: 0 8px 30px rgba(204, 164, 59, 0.03) !important; /* Soft, warm golden shadow */
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
   position: relative;
   z-index: 2;
@@ -5865,9 +5862,9 @@ html, body {
 }
 
 .apple-pure-white-bg .program-list-col .program-list-item:hover {
-  background: #141822 !important;
-  border-color: rgba(204, 164, 59, 0.4) !important;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8) !important;
+  background: linear-gradient(135deg, #ffffff 0%, #faf3e5 100%) !important;
+  border-color: #cca43b !important;
+  box-shadow: 0 20px 40px rgba(204, 164, 59, 0.08) !important;
   transform: translateY(-5px) !important;
 }
 
@@ -5877,15 +5874,16 @@ html, body {
   width: 50px !important;
   height: 50px !important;
   border-radius: 50% !important;
-  background: #080a0f !important;
-  border: 1.5px solid rgba(204, 164, 59, 0.3) !important;
+  background: #ffffff !important;
+  border: 1.5px solid rgba(204, 164, 59, 0.2) !important;
   color: #cca43b !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   font-family: var(--font-display) !important;
   font-size: 1.15rem !important;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 10px rgba(204, 164, 59, 0.02) !important;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
   position: relative;
   z-index: 3;
@@ -5893,30 +5891,28 @@ html, body {
 
 .apple-pure-white-bg .program-list-item:hover .program-item-number {
   background: #cca43b !important;
-  color: #000000 !important;
+  color: #ffffff !important;
   border-color: #cca43b !important;
-  box-shadow: 0 0 15px rgba(204, 164, 59, 0.4) !important;
+  box-shadow: 0 0 15px rgba(204, 164, 59, 0.25) !important;
   transform: scale(1.1) !important;
 }
 
 .apple-pure-white-bg .program-item-kicker {
-  font-family: var(--font-display) !important;
-  font-size: 0.76rem !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.72rem !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
   color: #cca43b !important;
-  letter-spacing: 0.15em !important;
+  letter-spacing: 0.1em !important;
   display: block !important;
   margin-bottom: 8px !important;
 }
 
 .apple-pure-white-bg .program-item-title {
-  color: #ffffff !important;
+  color: #1d1d1f !important; /* Apple primary text */
   font-family: var(--font-display) !important;
-  font-size: 1.35rem !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.08em !important;
+  font-size: 1.3rem !important;
+  font-weight: 800 !important;
   margin-top: 2px !important;
   margin-bottom: 8px !important;
   line-height: 1.25 !important;
@@ -5928,21 +5924,21 @@ html, body {
 }
 
 .apple-pure-white-bg .program-item-desc {
-  color: #86868b !important;
+  color: #4e483f !important; /* Warm dark gray-brown body for readability */
   font-size: 0.94rem !important;
   line-height: 1.6 !important;
   margin-bottom: 12px !important;
 }
 
 .apple-pure-white-bg .program-meta-badge {
-  background: rgba(255, 255, 255, 0.04) !important;
-  color: #86868b !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: #f5efe6 !important; /* Warm sand badge background */
+  color: #8c7b65 !important; /* Warm gold-gray text */
+  border: 1px solid #ebdcc5 !important;
   border-radius: 100px !important;
   padding: 6px 16px !important;
   font-size: 0.72rem !important;
   font-weight: 600 !important;
-  letter-spacing: 0.08em !important;
+  letter-spacing: 0.05em !important;
   text-transform: uppercase !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -5951,9 +5947,9 @@ html, body {
 }
 
 .apple-pure-white-bg .program-list-item:hover .program-meta-badge {
-  background: rgba(204, 164, 59, 0.12) !important;
-  color: #ffffff !important;
-  border-color: rgba(204, 164, 59, 0.3) !important;
+  background: #ebdcc5 !important;
+  color: #2c251b !important;
+  border-color: #cca43b !important;
 }
 
 /* Floating interactive line on card left side */
@@ -6481,380 +6477,6 @@ html, body {
   flex: 0 1 auto !important;
   min-width: 120px !important;
   padding: 8px 12px !important;
-}
-
-/* FRAMESTORE GLOBAL OFFICES GRID */
-.framestore-offices-grid {
-  margin-bottom: 60px;
-}
-
-.framestore-offices-title {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--dneg-coral);
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.offices-cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.office-card {
-  background: #0e1117;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 24px 20px;
-  transition: all 0.3s ease;
-}
-
-.office-card:hover {
-  background: #141822;
-  border-color: rgba(204, 164, 59, 0.4);
-  transform: translateY(-3px);
-}
-
-.office-city {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #ffffff;
-  margin-bottom: 10px;
-}
-
-.office-address {
-  font-size: 0.82rem;
-  line-height: 1.5;
-  color: var(--dneg-grey-02);
-  margin-bottom: 10px;
-}
-
-.office-tel {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--dneg-coral);
-}
-
-/* ==========================================================================
-   FRAMESTORE EXACT REPLICATED HEADER & HERO SECTION
-   ========================================================================== */
-
-/* 1. Header Navigation */
-.fs-navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 75px;
-  background: rgba(12, 14, 18, 0.94);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  display: flex;
-  align-items: center;
-}
-
-.fs-nav-container {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* Framestore Logo Badge */
-.fs-brand-logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.fs-logo-circle {
-  width: 42px;
-  height: 42px;
-  background: #ffffff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
-}
-
-.fs-brand-logo:hover .fs-logo-circle {
-  transform: scale(1.05);
-}
-
-.fs-logo-svg {
-  width: 24px;
-  height: 24px;
-}
-
-/* Center Nav Links */
-.fs-menu-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.fs-nav-group {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.fs-nav-item {
-  color: #ffffff;
-  text-decoration: none;
-  font-family: 'Nunito', 'Outfit', sans-serif;
-  font-size: 0.98rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  transition: color 0.25s ease;
-  position: relative;
-}
-
-.fs-nav-item:hover {
-  color: var(--dneg-coral);
-}
-
-.fs-nav-divider {
-  color: rgba(255, 255, 255, 0.25);
-  font-size: 1.1rem;
-  font-weight: 300;
-}
-
-/* Right Nav Actions */
-.fs-nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  position: relative;
-}
-
-.fs-icon-btn {
-  background: none;
-  border: none;
-  color: #ffffff;
-  font-size: 1.1rem;
-  cursor: pointer;
-  padding: 8px;
-  transition: color 0.25s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.fs-icon-btn:hover {
-  color: var(--dneg-coral);
-}
-
-.fs-lang-wrap {
-  position: relative;
-}
-
-.fs-lang-dropdown {
-  position: absolute;
-  top: 45px;
-  right: 0;
-  background: #1d2026;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
-  padding: 8px;
-  min-width: 130px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
-  display: none;
-  flex-direction: column;
-  gap: 4px;
-  z-index: 1050;
-}
-
-.fs-lang-dropdown.show {
-  display: flex;
-}
-
-.fs-lang-option {
-  color: #ffffff;
-  padding: 10px 16px;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  font-family: var(--font-body);
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.fs-lang-option:hover,
-.fs-lang-option.active {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--dneg-coral);
-}
-
-/* 2. Framestore Hero Section */
-.fs-hero-section {
-  position: relative;
-  min-height: 100vh;
-  padding-top: 100px;
-  padding-bottom: 60px;
-  background-color: #06080d;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.fs-hero-blur-backdrop {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.fs-blur-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: blur(25px) scale(1.1);
-  opacity: 0.45;
-}
-
-.fs-blur-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center, rgba(6, 8, 13, 0.4) 0%, rgba(6, 8, 13, 0.95) 100%);
-}
-
-.fs-hero-content-wrapper {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 1400px;
-  padding: 0 30px;
-  margin: 0 auto;
-}
-
-.fs-hero-tagline {
-  color: rgba(255, 255, 255, 0.85);
-  font-family: 'Nunito', 'Outfit', sans-serif;
-  font-size: 1.15rem;
-  font-weight: 700;
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto 35px auto;
-  line-height: 1.4;
-  letter-spacing: 0.01em;
-}
-
-/* 4 Vertical Department Cards Grid */
-.fs-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
-  width: 100%;
-}
-
-.fs-hero-card {
-  position: relative;
-  height: 520px;
-  border-radius: 24px;
-  overflow: hidden;
-  text-decoration: none;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 40px 20px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.fs-card-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.fs-card-gradient-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.85) 100%);
-  transition: opacity 0.3s ease;
-}
-
-.fs-card-title {
-  position: relative;
-  z-index: 3;
-  color: #ffffff;
-  font-family: 'Nunito', 'Outfit', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 800;
-  letter-spacing: -0.01em;
-  text-align: center;
-  margin: 0;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-  transition: transform 0.4s ease, color 0.3s ease;
-}
-
-/* Card Hover Animations */
-.fs-hero-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  border-color: rgba(204, 164, 59, 0.5);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8), 0 0 20px rgba(204, 164, 59, 0.2);
-}
-
-.fs-hero-card:hover .fs-card-bg {
-  transform: scale(1.08);
-}
-
-.fs-hero-card:hover .fs-card-title {
-  transform: translateY(-5px);
-  color: #ffffff;
-}
-
-/* Mobile Responsive Stacking */
-@media (max-width: 1024px) {
-  .fs-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  .fs-hero-card {
-    height: 420px;
-  }
-  .fs-menu-wrapper {
-    display: none;
-  }
-}
-
-@media (max-width: 640px) {
-  .fs-cards-grid {
-    grid-template-columns: 1fr;
-  }
-  .fs-hero-card {
-    height: 380px;
-  }
 }
 
 
