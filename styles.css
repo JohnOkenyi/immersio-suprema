@@ -6052,6 +6052,145 @@ html, body {
   transform: scale(1.05) !important;
 }
 
+/* ==========================================================================
+   CAROUSEL SLIDER INTERACTIVE CONTROLS & STYLES
+   ========================================================================== */
+
+.cinema-slider-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.cinema-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s ease;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+}
+
+.cinema-slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+/* Nav Chevron Buttons (< and >) */
+.cinema-nav-btn {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(10, 10, 15, 0.7);
+  border: 1px solid rgba(245, 197, 66, 0.4);
+  color: #F5C542;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.35s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+.cinema-nav-btn:hover {
+  background: #F5C542;
+  color: #000000;
+  border-color: #ffffff;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 0 25px rgba(245, 197, 66, 0.5);
+}
+
+.cinema-prev-btn {
+  left: 20px;
+}
+
+.cinema-next-btn {
+  right: 20px;
+}
+
+/* Bottom Controls Bar (Tabs & Progress Bar) */
+.cinema-carousel-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  right: 30px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(10, 10, 15, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  padding: 12px 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+.cinema-tab-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.cinema-tab-btn {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: rgba(255, 255, 255, 0.65);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.cinema-tab-btn:hover,
+.cinema-tab-btn.active {
+  background: rgba(245, 197, 66, 0.18);
+  border-color: #F5C542;
+  color: #F5C542;
+  box-shadow: 0 0 15px rgba(245, 197, 66, 0.25);
+}
+
+.cinema-tab-btn .tab-num {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 0.8rem;
+}
+
+.cinema-progress-bar-track {
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.cinema-progress-fill {
+  height: 100%;
+  width: 33.33%;
+  background: linear-gradient(90deg, #FFF099 0%, #F5C542 100%);
+  box-shadow: 0 0 10px #F5C542;
+  transition: width 0.4s ease;
+}
+
 /* Cinematic Frame Article Container */
 .cinematic-frame-item {
   position: relative;

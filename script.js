@@ -2786,4 +2786,65 @@ function selectHudStep(index) {
   if (complexityEl) complexityEl.textContent = data.complexity;
 }
 
+/* ==========================================================================
+   INTERACTIVE CINEMA PROJECTOR SLIDER CONTROLLER
+   ========================================================================== */
+let currentCinemaIndex = 0;
+let cinemaSlideInterval = null;
 
+function goToCinemaSlide(index) {
+  const slides = document.querySelectorAll('#cinema-main-stage .cinema-slide');
+  const tabs = document.querySelectorAll('#cinema-main-stage .cinema-tab-btn');
+  const progressFill = document.getElementById('cinemaProgressFill');
+  
+  if (!slides.length) return;
+  
+  currentCinemaIndex = (index + slides.length) % slides.length;
+  
+  slides.forEach((slide, idx) => {
+    if (idx === currentCinemaIndex) {
+      slide.classList.add('active');
+      const video = slide.querySelector('video');
+      if (video) {
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      }
+    } else {
+      slide.classList.remove('active');
+    }
+  });
+
+  tabs.forEach((tab, idx) => {
+    if (idx === currentCinemaIndex) {
+      tab.classList.add('active');
+    } else {
+      tab.classList.remove('active');
+    }
+  });
+
+  if (progressFill) {
+    const percentage = ((currentCinemaIndex + 1) / slides.length) * 100;
+    progressFill.style.width = percentage + '%';
+  }
+
+  resetCinemaTimer();
+}
+
+function nextCinemaSlide() {
+  goToCinemaSlide(currentCinemaIndex + 1);
+}
+
+function prevCinemaSlide() {
+  goToCinemaSlide(currentCinemaIndex - 1);
+}
+
+function resetCinemaTimer() {
+  if (cinemaSlideInterval) clearInterval(cinemaSlideInterval);
+  cinemaSlideInterval = setInterval(() => {
+    nextCinemaSlide();
+  }, 7000);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  goToCinemaSlide(0);
+});
