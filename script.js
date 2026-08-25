@@ -151,7 +151,7 @@ const translations = {
         nav_why: "Tech Créative",
     hero_tagline_title: "Expertise Cinématographique. Innovation Immersive.",
     hero_tagline_desc: "Nous fusionnons l'art cinématographique et les technologies immersives pour créer des expériences qui repoussent les limites de la narration.",
-    remember_title: "NOUS CRÉONS DES EXPÉRIENCES DIGNES DE MÉMOIRE",
+    remember_title: "NOUS CRÉONS DES <span class=\"luxury-serif-italic\">expériences</span> DIGNES DE MÉMOIRE",
     remember_p1: "Nous fusionnons l'art cinématographique avec les technologies immersives en temps réel pour créer des expériences qui repoussent les limites de la narration.",
     remember_p2: "Notre studio développe des moteurs de rendu de pointe, des simulateurs interactifs de haute fidélité et des programmes de formation certifiés pour les principaux studios et organisations du monde entier.",
     remember_p3: "Notre expertise est ancrée dans certains des environnements les plus exigeants de l'industrie mondiale du divertissement. La présidente a travaillé comme directrice technique des effets 3D chez Sony Pictures Imageworks, contribuant au film d'animation, Spider-Man: Across the Spider-Verse, nommé aux Oscars.",
@@ -421,7 +421,7 @@ const translations = {
         nav_why: "Creative Tech",
     hero_tagline_title: "Cinematic Expertise. Immersive Innovation.",
     hero_tagline_desc: "We merge cinematic art with immersive technologies to create experiences that push the boundaries of storytelling.",
-    remember_title: "WE CREATE EXPERIENCES WORTH REMEMBERING",
+    remember_title: "WE CREATE <span class=\"luxury-serif-italic\">experiences</span> WORTH REMEMBERING",
     remember_p1: "We merge cinematic art with real-time immersive technologies to create experiences that push the boundaries of storytelling.",
     remember_p2: "Our studio develops cutting-edge rendering engines, high-fidelity interactive simulators, and certified training programs for leading studios and organisations worldwide.",
     remember_p3: "Our expertise is grounded in some of the most demanding environments in the global entertainment industry. The CEO has worked as Technical Director in 3D Effects at Sony Pictures Imageworks, contributing to the feature animation film, Spider-Man: Across the Spider-Verse, an Academy Award-nominated film.",
@@ -773,7 +773,12 @@ function setLanguage(lang) {
       el.classList.remove('i18n-fade');
       void el.offsetWidth;
       el.classList.add('i18n-fade');
-      el.textContent = translations[lang][key];
+      const val = translations[lang][key];
+      if (val.includes('<') || el.classList.contains('allow-html')) {
+        el.innerHTML = val;
+      } else {
+        el.textContent = val;
+      }
     }
   });
 

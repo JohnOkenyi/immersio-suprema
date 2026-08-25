@@ -5700,6 +5700,16 @@ html, body {
    -------------------------------------------------------- */
 
 /* Section header overrides */
+.apple-pure-white-bg#studio {
+  background-color: #f8fafc !important;
+  background-image: 
+    radial-gradient(circle at 85% 15%, rgba(204, 164, 59, 0.05) 0%, transparent 60%),
+    linear-gradient(to right, rgba(204, 164, 59, 0.018) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(204, 164, 59, 0.018) 1px, transparent 1px) !important;
+  background-size: 100% 100%, 60px 60px, 60px 60px !important;
+  position: relative;
+}
+
 .apple-pure-white-bg .apple-section-title {
   background: none !important;
   -webkit-background-clip: initial !important;
@@ -5707,25 +5717,89 @@ html, body {
   background-clip: initial !important;
   text-fill-color: initial !important;
   color: #1d1d1f !important;
+  font-family: var(--font-display) !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.15 !important;
+  margin-top: 15px !important;
+  margin-bottom: 25px !important;
 }
 
 .apple-pure-white-bg .apple-kicker {
   color: var(--dneg-coral) !important;
+  background: rgba(204, 164, 59, 0.06) !important;
+  border: 1px solid rgba(204, 164, 59, 0.15) !important;
+  border-radius: 100px !important;
+  padding: 6px 16px !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  display: inline-block !important;
+  margin-bottom: 5px !important;
+}
+
+.apple-pure-white-bg .luxury-serif-italic {
+  font-family: var(--font-serif) !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  text-transform: lowercase !important;
+  color: var(--dneg-coral) !important;
+  font-size: 1.1em !important;
+  letter-spacing: 0.01em !important;
+}
+
+.apple-pure-white-bg .about-narrative-stack {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+}
+
+.apple-pure-white-bg .about-narrative-stack .about-p:first-child {
+  font-size: 1.15rem !important;
+  line-height: 1.6 !important;
+  font-weight: 600 !important;
+  color: #1d1d1f !important;
+}
+
+.apple-pure-white-bg .about-narrative-stack .about-p:last-child {
+  font-size: 0.98rem !important;
+  line-height: 1.65 !important;
+  color: #515154 !important;
+  margin-bottom: 20px !important;
 }
 
 /* About Section Pedigree (Light Theme) */
 .apple-pure-white-bg .pedigree-card {
   background: #ffffff !important;
-  border: 1px solid var(--dneg-grey-03) !important;
+  border: 1px solid rgba(204, 164, 59, 0.15) !important;
+  border-top: 4px solid var(--dneg-coral) !important;
   border-radius: 16px !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
+  padding: 28px 20px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01) !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative;
+  overflow: hidden;
 }
 
 .apple-pure-white-bg .pedigree-card:hover {
   background: #ffffff !important;
   border-color: var(--dneg-coral) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
-  transform: translateY(-2px) !important;
+  box-shadow: 0 15px 35px rgba(204, 164, 59, 0.08) !important;
+  transform: translateY(-6px) !important;
+}
+
+.apple-pure-white-bg .pedigree-icon {
+  font-size: 1.35rem !important;
+  color: var(--dneg-coral) !important;
+  margin-bottom: 12px !important;
+  opacity: 0.8 !important;
+  transition: all 0.3s ease !important;
+}
+
+.apple-pure-white-bg .pedigree-card:hover .pedigree-icon {
+  transform: scale(1.15) rotate(5deg) !important;
+  opacity: 1 !important;
 }
 
 .apple-pure-white-bg .pedigree-num {
@@ -5734,40 +5808,166 @@ html, body {
   -webkit-text-fill-color: initial !important;
   background-clip: initial !important;
   text-fill-color: initial !important;
-  color: var(--dneg-coral) !important;
+  color: #1d1d1f !important;
+  font-family: var(--font-display) !important;
+  font-size: 1.35rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em !important;
+  margin-bottom: 8px !important;
+  display: block !important;
 }
 
 .apple-pure-white-bg .pedigree-label {
-  color: var(--dneg-grey-02) !important;
+  color: #6e6e73 !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.76rem !important;
+  line-height: 1.45 !important;
 }
 
 /* About Expertise Items (Light Theme) */
+.apple-pure-white-bg .program-list-col {
+  position: relative;
+}
+
+.apple-pure-white-bg .program-list-col::before {
+  content: '';
+  position: absolute;
+  left: 25px; /* Center of the number node */
+  top: 40px;
+  bottom: 40px;
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(204, 164, 59, 0.35) 0%, rgba(204, 164, 59, 0.05) 100%);
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .apple-pure-white-bg .program-list-col::before {
+    display: none !important;
+  }
+}
+
 .apple-pure-white-bg .program-list-col .program-list-item {
+  display: flex !important;
+  gap: 30px !important;
   background: #ffffff !important;
-  border: 1px solid var(--dneg-grey-03) !important;
-  border-radius: 20px !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
+  border: 1px solid rgba(204, 164, 59, 0.12) !important;
+  border-radius: 24px !important;
+  padding: 35px !important;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.01) !important;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
 }
 
 .apple-pure-white-bg .program-list-col .program-list-item:hover {
   background: #ffffff !important;
   border-color: var(--dneg-coral) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
-  transform: translateY(-2px) !important;
+  box-shadow: 0 15px 40px rgba(204, 164, 59, 0.07) !important;
+  transform: translateY(-4px) !important;
+}
+
+/* Right column list item number node */
+.apple-pure-white-bg .program-item-number {
+  flex-shrink: 0 !important;
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50% !important;
+  background: #ffffff !important;
+  border: 1.5px solid rgba(204, 164, 59, 0.25) !important;
+  color: var(--dneg-coral) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-family: var(--font-display) !important;
+  font-size: 1.15rem !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 10px rgba(204, 164, 59, 0.05) !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative;
+  z-index: 3;
+}
+
+.apple-pure-white-bg .program-list-item:hover .program-item-number {
+  background: var(--dneg-coral) !important;
+  color: #ffffff !important;
+  border-color: var(--dneg-coral) !important;
+  box-shadow: 0 0 15px rgba(204, 164, 59, 0.3) !important;
+  transform: scale(1.1) !important;
+}
+
+.apple-pure-white-bg .program-item-kicker {
+  font-family: var(--font-body) !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  color: var(--dneg-coral) !important;
+  letter-spacing: 0.1em !important;
+  display: block !important;
+  margin-bottom: 8px !important;
 }
 
 .apple-pure-white-bg .program-item-title {
-  color: var(--color-text-dark) !important;
+  color: #1d1d1f !important;
+  font-family: var(--font-display) !important;
+  font-size: 1.3rem !important;
+  font-weight: 800 !important;
+  margin-top: 2px !important;
+  margin-bottom: 8px !important;
+  line-height: 1.25 !important;
+  transition: color 0.3s ease !important;
+}
+
+.apple-pure-white-bg .program-list-item:hover .program-item-title {
+  color: var(--dneg-coral) !important;
 }
 
 .apple-pure-white-bg .program-item-desc {
-  color: #4a5568 !important;
+  color: #515154 !important;
+  font-size: 0.94rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 12px !important;
 }
 
 .apple-pure-white-bg .program-meta-badge {
-  background: #f7f9fb !important;
-  color: #4a5568 !important;
-  border: 1px solid #e2e8f0;
+  background: rgba(204, 164, 59, 0.04) !important;
+  color: var(--dneg-coral) !important;
+  border: 1px solid rgba(204, 164, 59, 0.15) !important;
+  border-radius: 100px !important;
+  padding: 6px 16px !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  transition: all 0.3s ease !important;
+}
+
+.apple-pure-white-bg .program-list-item:hover .program-meta-badge {
+  background: rgba(204, 164, 59, 0.08) !important;
+  box-shadow: 0 2px 8px rgba(204, 164, 59, 0.08) !important;
+}
+
+/* Floating interactive line on card left side */
+.apple-pure-white-bg .program-list-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 30px;
+  bottom: 30px;
+  width: 4px;
+  background: var(--dneg-coral);
+  border-radius: 0 4px 4px 0;
+  opacity: 0;
+  transition: all 0.35s ease;
+}
+
+.apple-pure-white-bg .program-list-item:hover::after {
+  opacity: 1;
+  top: 20px;
+  bottom: 20px;
 }
 
 /* Strategic Program Pipeline (Light Theme) */
