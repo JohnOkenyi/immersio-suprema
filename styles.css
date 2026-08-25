@@ -6542,6 +6542,321 @@ html, body {
   color: var(--dneg-coral);
 }
 
+/* ==========================================================================
+   FRAMESTORE EXACT REPLICATED HEADER & HERO SECTION
+   ========================================================================== */
+
+/* 1. Header Navigation */
+.fs-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  background: rgba(12, 14, 18, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+}
+
+.fs-nav-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Framestore Logo Badge */
+.fs-brand-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.fs-logo-circle {
+  width: 42px;
+  height: 42px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.fs-brand-logo:hover .fs-logo-circle {
+  transform: scale(1.05);
+}
+
+.fs-logo-svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Center Nav Links */
+.fs-menu-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.fs-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.fs-nav-item {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Nunito', 'Outfit', sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: color 0.25s ease;
+  position: relative;
+}
+
+.fs-nav-item:hover {
+  color: var(--dneg-coral);
+}
+
+.fs-nav-divider {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+/* Right Nav Actions */
+.fs-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+}
+
+.fs-icon-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 8px;
+  transition: color 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fs-icon-btn:hover {
+  color: var(--dneg-coral);
+}
+
+.fs-lang-wrap {
+  position: relative;
+}
+
+.fs-lang-dropdown {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background: #1d2026;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 8px;
+  min-width: 130px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 1050;
+}
+
+.fs-lang-dropdown.show {
+  display: flex;
+}
+
+.fs-lang-option {
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.fs-lang-option:hover,
+.fs-lang-option.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--dneg-coral);
+}
+
+/* 2. Framestore Hero Section */
+.fs-hero-section {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 100px;
+  padding-bottom: 60px;
+  background-color: #06080d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.fs-hero-blur-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.fs-blur-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(25px) scale(1.1);
+  opacity: 0.45;
+}
+
+.fs-blur-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(6, 8, 13, 0.4) 0%, rgba(6, 8, 13, 0.95) 100%);
+}
+
+.fs-hero-content-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+.fs-hero-tagline {
+  color: rgba(255, 255, 255, 0.85);
+  font-family: 'Nunito', 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 35px auto;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
+/* 4 Vertical Department Cards Grid */
+.fs-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  width: 100%;
+}
+
+.fs-hero-card {
+  position: relative;
+  height: 520px;
+  border-radius: 24px;
+  overflow: hidden;
+  text-decoration: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 40px 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fs-card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fs-card-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.85) 100%);
+  transition: opacity 0.3s ease;
+}
+
+.fs-card-title {
+  position: relative;
+  z-index: 3;
+  color: #ffffff;
+  font-family: 'Nunito', 'Outfit', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin: 0;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  transition: transform 0.4s ease, color 0.3s ease;
+}
+
+/* Card Hover Animations */
+.fs-hero-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(204, 164, 59, 0.5);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8), 0 0 20px rgba(204, 164, 59, 0.2);
+}
+
+.fs-hero-card:hover .fs-card-bg {
+  transform: scale(1.08);
+}
+
+.fs-hero-card:hover .fs-card-title {
+  transform: translateY(-5px);
+  color: #ffffff;
+}
+
+/* Mobile Responsive Stacking */
+@media (max-width: 1024px) {
+  .fs-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .fs-hero-card {
+    height: 420px;
+  }
+  .fs-menu-wrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .fs-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .fs-hero-card {
+    height: 380px;
+  }
+}
+
 
 
 

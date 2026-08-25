@@ -21,49 +21,55 @@
   <!-- Trailing Cursor (Hidden on touch screens) -->
   <div class="custom-cursor" id="custom-cursor"></div>
 
-  <!-- ADAPTIVE BRAND HEADER (DNEG NAVBAR MECHANICS) -->
-  <header class="vfx-navbar" id="main-navbar">
-    <div class="vfx-nav-container">
+  <!-- FRAMESTORE EXACT HEADER -->
+  <header class="fs-navbar" id="main-navbar">
+    <div class="fs-nav-container">
       
-      <!-- Brand Logo / Wordmark (Enlarged Circular Glassmorphic Emblem) -->
-      <a href="#home" class="vfx-brand-wrapper">
-        <div class="vfx-logo-badge">
-          <img src="logo.png" class="vfx-logo-img" alt="Immersio Logo">
-        </div>
-        <div class="vfx-brand-text">
-          <span class="vfx-brand-title">IMMERSIO SUPREMA</span>
-          <span class="vfx-brand-sub" data-i18n="brand_subtitle">CENTRE D'INNOVATION IMMERSIF</span>
+      <!-- Framestore Squircle Logo Badge -->
+      <a href="#home" class="fs-brand-logo">
+        <div class="fs-logo-circle">
+          <svg viewBox="0 0 52 51" fill="none" class="fs-logo-svg">
+            <path d="M26 0C7.3 0.2 0.3 8.4 0 25.5C0.3 42.6 7.3 50.8 26 50.9H26C44.7 50.8 51.7 42.6 52 25.5C51.7 8.4 44.7 0.2 26 0ZM35.2 16.8C35.7 16.3 39.5 12.4 41 11.4C42.4 10.5 43.5 12.4 43.2 12.8C42.9 13.1 36.9 18.3 36.5 18.6C35.7 19.1 34.7 17.4 35.2 16.8ZM31 40.5H30.1C30.1 40.5 29.1 40.5 28.7 39.5C26.9 35.3 24 28.2 23.5 28C23 27.7 19.4 27.3 17.1 27V36.8H20.6V39.2H9.1V37.1C9.8 37 10.3 36.9 10.6 36.7C10.9 36.5 11.1 36.2 11.3 35.8C11.4 35.5 11.5 35.1 11.6 34.6C11.6 34 11.6 32.1 11.6 32.1V12.8C16.4 11 24.8 10 25 11.3C25.2 13 25.2 17.2 22.2 17.2C21.1 17.2 20.3 16.1 19.8 14.4C19.4 14.6 17.1 15.4 17.1 15.4V24C19 23.8 21.5 23.6 22.3 23.2C24.5 22.1 28.5 14.4 30.1 10.5H31.1V40.5Z" fill="#000"/>
+          </svg>
         </div>
       </a>
       
-      <!-- Center Desktop Navigation Links -->
-      <nav class="vfx-menu-wrapper">
-        <ul class="vfx-nav-menu">
-          <li><a href="#home" class="vfx-nav-link active" data-i18n="nav_home">Home</a></li>
-          <li><a href="#showcase" class="vfx-nav-link" data-i18n="nav_showcase">Work</a></li>
-          <li><a href="#studio" class="vfx-nav-link" data-i18n="nav_studio">About</a></li>
-          <li><a href="#strategic-program" class="vfx-nav-link" data-i18n="nav_why">Capabilities</a></li>
-          <li><a href="#technology" class="vfx-nav-link" data-i18n="nav_technology">Labs</a></li>
-          <li><a href="#training" class="vfx-nav-link" data-i18n="nav_training">Academy</a></li>
-          <li><a href="#contact" class="vfx-nav-link" data-i18n="nav_contact">Contact</a></li>
-        </ul>
+      <!-- Framestore Center Navigation -->
+      <nav class="fs-menu-wrapper">
+        <div class="fs-nav-group">
+          <a href="#showcase" class="fs-nav-item" onclick="filterMosaic('commercials', this)">Advertising</a>
+          <a href="#showcase" class="fs-nav-item" onclick="filterMosaic('film', this)">Film</a>
+          <a href="#showcase" class="fs-nav-item" onclick="filterMosaic('episodic', this)">Episodic</a>
+          <a href="#showcase" class="fs-nav-item" onclick="filterMosaic('immersive', this)">Immersive</a>
+        </div>
+        <span class="fs-nav-divider">|</span>
+        <div class="fs-nav-group">
+          <a href="#technology" class="fs-nav-item">Ai</a>
+          <a href="#technology" class="fs-nav-item">Technology</a>
+          <a href="#studio" class="fs-nav-item">Explore</a>
+          <a href="#training" class="fs-nav-item">Careers</a>
+          <a href="#contact" class="fs-nav-item">Contact</a>
+        </div>
       </nav>
       
-      <!-- Right Header Actions (Sound, Apply button, and Language switcher) -->
-      <div class="vfx-nav-actions">
-        <!-- Bilingual switcher -->
-        <div class="lang-switcher">
-          <span class="lang-option active" id="lang-fr" onclick="setLanguage('fr')">FR</span>
-          <span class="lang-divider">/</span>
-          <span class="lang-option" id="lang-en" onclick="setLanguage('en')">EN</span>
-        </div>
-
-        <button class="vfx-icon-btn" id="sound-toggle" aria-label="Toggle sound">
-          <i class="fas fa-volume-mute" id="sound-icon"></i>
+      <!-- Right Header Actions (Search & Globe Language Dropdown) -->
+      <div class="fs-nav-actions">
+        <button class="fs-icon-btn" id="fs-search-btn" aria-label="Search">
+          <i class="fas fa-search"></i>
         </button>
         
-        <a href="#contact" class="vfx-btn-pill-apply" data-i18n="apply_now">Apply Now</a>
-        
+        <div class="fs-lang-wrap">
+          <button class="fs-icon-btn" id="fs-globe-btn" onclick="toggleFsLangDropdown()" aria-label="Language">
+            <i class="fas fa-globe"></i>
+          </button>
+
+          <!-- Framestore Language Floating Card Dropdown -->
+          <div class="fs-lang-dropdown" id="fs-lang-dropdown">
+            <div class="fs-lang-option active" onclick="setLanguage('en'); toggleFsLangDropdown();">English</div>
+            <div class="fs-lang-option" onclick="setLanguage('fr'); toggleFsLangDropdown();">Français</div>
+          </div>
+        </div>
+
         <!-- Burger menu trigger button for mobile -->
         <button class="burger-menu-btn" id="burger-menu-btn" aria-label="Open menu">
           <span></span>
@@ -79,7 +85,6 @@
   <div class="menu-drawer" id="menu-drawer">
     <div class="menu-drawer-container">
       <div class="drawer-col-left">
-        <!-- Search wrapper with drawer language selector inside -->
         <div class="drawer-search-box">
           <div class="lang-switcher drawer-lang-switch">
             <span class="lang-option active" id="drawer-lang-fr" onclick="setLanguage('fr')">FR</span>
@@ -89,67 +94,80 @@
         </div>
         
         <ul class="drawer-secondary-links">
-          <li><a href="#home" class="secondary-link-item" onclick="toggleMenuDrawer()"><span class="link-prefix">01.</span> <span data-i18n="nav_home">Home</span></a></li>
-          <li><a href="#studio" class="secondary-link-item" onclick="toggleMenuDrawer()"><span class="link-prefix">02.</span> <span data-i18n="nav_studio">About us</span></a></li>
-          <li><a href="#strategic-program" class="secondary-link-item" onclick="toggleMenuDrawer()"><span class="link-prefix">03.</span> <span data-i18n="nav_why">Creative Tech</span></a></li>
-          <li><a href="#showcase" class="secondary-link-item" onclick="toggleMenuDrawer()"><span class="link-prefix">04.</span> <span data-i18n="nav_showcase">Showcase</span></a></li>
-          <li><a href="#technology" class="secondary-link-item" onclick="toggleMenuDrawer()"><span class="link-prefix">05.</span> <span data-i18n="nav_technology">Sandbox</span></a></li>
-          <li><a href="#training" class="secondary-link-item" onclick="toggleMenuDrawer()"><span class="link-prefix">06.</span> <span data-i18n="nav_training">Academy & Admissions</span></a></li>
-          <li><a href="#contact" class="secondary-link-item" onclick="toggleMenuDrawer()"><span class="link-prefix">07.</span> <span data-i18n="nav_contact">Contact</span></a></li>
+          <li><a href="#home" class="secondary-link-item" onclick="toggleMenuDrawer()"><span class="link-prefix">01.</span> <span>Home</span></a></li>
+          <li><a href="#showcase" class="secondary-link-item" onclick="toggleMenuDrawer()"><span class="link-prefix">02.</span> <span>Work</span></a></li>
+          <li><a href="#studio" class="secondary-link-item" onclick="toggleMenuDrawer()"><span class="link-prefix">03.</span> <span>Explore</span></a></li>
+          <li><a href="#technology" class="secondary-link-item" onclick="toggleMenuDrawer()"><span class="link-prefix">04.</span> <span>Technology</span></a></li>
+          <li><a href="#contact" class="secondary-link-item" onclick="toggleMenuDrawer()"><span class="link-prefix">05.</span> <span>Contact</span></a></li>
         </ul>
         
         <div class="drawer-contact-info">
-          <p>cto-office@immersio.com</p>
-          <p data-i18n="drawer_accred">VES Accredited Member Collective</p>
+          <p>info@framestore.com</p>
+          <p>Academy Award® Winning Visual Effects</p>
         </div>
       </div>
       
       <div class="drawer-col-right">
         <ul class="drawer-main-links">
-          <li><a href="javascript:void(0)" class="drawer-main-link" onclick="handleMenuDivisionClick('vfx')"><span>IMMERSIO ADVERTISING</span></a></li>
-          <li><a href="javascript:void(0)" class="drawer-main-link" onclick="handleMenuDivisionClick('animation')"><span>IMMERSIO FILMS</span></a></li>
-          <li><a href="javascript:void(0)" class="drawer-main-link" onclick="handleMenuDivisionClick('simulation')"><span>IMMERSIO SCIENCE</span></a></li>
+          <li><a href="#showcase" class="drawer-main-link" onclick="handleMenuDivisionClick('vfx')"><span>ADVERTISING</span></a></li>
+          <li><a href="#showcase" class="drawer-main-link" onclick="handleMenuDivisionClick('animation')"><span>FILM</span></a></li>
+          <li><a href="#showcase" class="drawer-main-link" onclick="handleMenuDivisionClick('simulation')"><span>EPISODIC</span></a></li>
         </ul>
       </div>
     </div>
   </div>
 
-  <!-- SECTION 1: HERO VIEWPORT (DIGITAL DOMAIN STYLE FULL SCREEN VIDEO BACKDROP) -->
-  <section class="digital-domain-hero" id="home">
-    <div class="hero-video-backdrop">
-      <video id="hero-video" autoplay loop muted playsinline>
+  <!-- SECTION 1: FRAMESTORE HERO 4-PILL DEPARTMENTS CAROUSEL -->
+  <section class="fs-hero-section" id="home">
+    
+    <!-- Ambient blurred background video/still -->
+    <div class="fs-hero-blur-backdrop">
+      <video autoplay loop muted playsinline class="fs-blur-video">
         <source src="showreel_2.mp4" type="video/mp4">
       </video>
+      <div class="fs-blur-overlay"></div>
     </div>
-    <div class="hero-video-overlay-tint"></div>
     
-    <div class="hero-overlay-content">
-      <h1 class="hero-brand-title">IMMERSIO SUPREMA</h1>
-      <p class="hero-brand-subtitle" data-i18n="hero_subtitle">CENTRE D'INNOVATION IMMERSIF</p>
-      
-      <div class="hero-action-buttons">
-        <a href="#showcase" class="ms-btn black" data-i18n="watch_showreel"><i class="fas fa-play"></i> Watch Showreel</a>
-        <a href="#studio" class="ms-btn secondary" data-i18n="explore_studio">Explore Studio</a>
+    <div class="fs-hero-content-wrapper">
+      <!-- Framestore Hero Subtitle Tagline -->
+      <p class="fs-hero-tagline">
+        Film, episodic, advertising or immersive experiences. Driven by creativity and inspired by the...
+      </p>
+
+      <!-- 4 Vertical Department Cards Grid -->
+      <div class="fs-cards-grid">
+        
+        <!-- Card 1: Advertising -->
+        <a href="#showcase" class="fs-hero-card" onclick="filterMosaic('commercials', this)">
+          <div class="fs-card-bg" style="background-image: url('picture1.jpeg');"></div>
+          <div class="fs-card-gradient-overlay"></div>
+          <h2 class="fs-card-title">Advertising</h2>
+        </a>
+
+        <!-- Card 2: Film -->
+        <a href="#showcase" class="fs-hero-card" onclick="filterMosaic('film', this)">
+          <div class="fs-card-bg" style="background-image: url('picture2.jpeg');"></div>
+          <div class="fs-card-gradient-overlay"></div>
+          <h2 class="fs-card-title">Film</h2>
+        </a>
+
+        <!-- Card 3: Episodic -->
+        <a href="#showcase" class="fs-hero-card" onclick="filterMosaic('episodic', this)">
+          <div class="fs-card-bg" style="background-image: url('picture1.jpeg');"></div>
+          <div class="fs-card-gradient-overlay"></div>
+          <h2 class="fs-card-title">Episodic</h2>
+        </a>
+
+        <!-- Card 4: Immersive -->
+        <a href="#showcase" class="fs-hero-card" onclick="filterMosaic('immersive', this)">
+          <div class="fs-card-bg" style="background-image: url('picture2.jpeg');"></div>
+          <div class="fs-card-gradient-overlay"></div>
+          <h2 class="fs-card-title">Immersive</h2>
+        </a>
+
       </div>
     </div>
-    
-    <!-- Centered Scroll down indicator with bounce chevron -->
-    <a href="#studio" class="hero-scroll-indicator">
-      <span class="scroll-lbl" data-i18n="featured_work">FEATURED WORK</span>
-      <i class="fas fa-chevron-down scroll-arrow-icon"></i>
-    </a>
   </section>
-
-  <!-- DIGITAL DOMAIN STYLE TAGLINE STRIP -->
-  <div class="hero-quote-bar">
-    <div class="quote-bar-container">
-      <span data-i18n="quote_transform">TRANSFORMER LE DIVERTISSEMENT</span>
-      <span class="quote-separator">+</span>
-      <span data-i18n="quote_tech">TECHNOLOGIE AVANT-GARDISTE</span>
-      <span class="quote-separator">+</span>
-      <span data-i18n="quote_innov">PROMOUVOIR L'INNOVATION</span>
-    </div>
-  </div>
 
   <!-- SECTION 3: DNEG WORK OVERVIEW HERO LANDING & SONY MOSAIC ARCHIVE -->
   <section class="apple-section apple-dark-bg" id="showcase" style="padding-top: 0;">
