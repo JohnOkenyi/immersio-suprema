@@ -812,6 +812,20 @@ function setLanguage(lang) {
     }
   });
 
+  // Re-draw clapperboard house canvas textures if Three.js initialized
+  if (typeof frontSlateMesh !== 'undefined' && frontSlateMesh) {
+    updateSlateTexture(frontSlateMesh, lang);
+    updateSlateTexture(rightSlateMesh, lang);
+    updateSlateTexture(backSlateMesh, lang);
+    updateSlateTexture(leftSlateMesh, lang);
+  }
+
+  // Update Houdini carousel translations
+  if (typeof switchHoudiniCarousel === 'function') {
+    switchHoudiniCarousel(currentHoudiniIndex);
+  }
+}
+
 function switchCurriculumItem(index) {
   const currentLang = currentLanguage || 'fr';
   let dataset = [];

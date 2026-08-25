@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Custom Application Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=20260820_v4">
+  <link rel="stylesheet" href="styles.css?v=20260825_tv_sound_fix_v5">
   
   <!-- Three.js and OrbitControls for the 3D rotating clapperboard house -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -58,7 +58,7 @@
           <span class="lang-option" id="lang-en" onclick="setLanguage('en')">EN</span>
         </div>
 
-        <button class="vfx-icon-btn" id="sound-toggle" aria-label="Toggle sound">
+        <button class="vfx-icon-btn" id="sound-toggle" onclick="toggleAudio()" aria-label="Toggle sound">
           <i class="fas fa-volume-mute" id="sound-icon"></i>
         </button>
         
@@ -1804,6 +1804,6 @@
   </div>
 
   <!-- Main Logic JavaScript File -->
-  <script src="script.js?v=20260820_v4"></script>
+  <script src="script.js?v=20260825_tv_sound_fix_v5"></script>
 </body>
 </html>
