@@ -3022,7 +3022,72 @@ function buildCurriculumTabs() {
 }
 
 function switchCurriculumItem(index) {
+  const currentLang = currentLanguage || 'fr';
+  let dataset = [];
+  if (activeSoftwareTrack === 'houdini') {
+    dataset = (currentLang === 'en') ? houdiniCurriculumEN : houdiniCurriculumFR;
+  } else {
+    dataset = (currentLang === 'en') ? nukeCurriculumEN : nukeCurriculumFR;
+  }
+  
+  if (!dataset || dataset.length === 0) return;
+  if (index < 0) index = dataset.length - 1;
+  if (index >= dataset.length) index = 0;
+  
+  currentCurriculumIndex = index;
+  const item = dataset[index];
+  
+  const titleEl = document.getElementById('h-carousel-title');
+  const descEl = document.getElementById('h-carousel-desc');
+  const trackEl = document.getElementById('curriculum-slider-track');
+  const badgeEl = document.getElementById('h-carousel-badge');
+  const counterEl = document.getElementById('h-carousel-counter');
+  
+  if (titleEl) {
+    titleEl.style.opacity = '0.3';
+    if (descEl) descEl.style.opacity = '0.3';
+    if (trackEl) trackEl.style.opacity = '0.3';
+    
+    const specElements = ['sim-software', 'sim-engine', 'sim-particles', 'sim-rendertime'].map(id => document.getElementById(id));
+    specElements.forEach(el => { if (el) el.style.opacity = '0.3'; });
+    
+    setTimeout(() => {
+      if (titleEl) titleEl.textContent = item.title;
+      if (descEl) descEl.textContent = item.text;
+      renderSubCarousel(item.images);
+      
+      const specSoft = document.getElementById('sim-software');
+      const specEng = document.getElementById('sim-engine');
+      const specPart = document.getElementById('sim-particles');
+      const specTime = document.getElementById('sim-rendertime');
+      
+      if (specSoft && item.specs) specSoft.textContent = item.specs.software;
+      if (specEng && item.specs) specEng.textContent = item.specs.engine;
+      if (specPart && item.specs) specPart.textContent = item.specs.particles;
+      if (specTime && item.specs) specTime.textContent = item.specs.time;
+      
+      if (badgeEl) badgeEl.textContent = `MENU ${(index + 1).toString().padStart(2, '0')} / ${dataset.length.toString().padStart(2, '0')}`;
+      if (counterEl) counterEl.textContent = `${index + 1} - ${dataset.length}`;
+      
+      if (titleEl) titleEl.style.opacity = '1';
+      if (descEl) descEl.style.opacity = '1';
+      if (trackEl) trackEl.style.opacity = '1';
+      specElements.forEach(el => { if (el) el.style.opacity = '1'; });
+    }, 150);
+  } else {
+    renderSubCarousel(item.images);
+  }
+  
+  const indicatorBars = document.querySelectorAll('.houdini-tab-indicator-bar');
+  indicatorBars.forEach((bar, idx) => {
+    if (idx === index) {
+      bar.classList.add('active');
+    } else {
+      bar.classList.remove('active');
+    }
+  });
 }
+window.switchCurriculumItem = switchCurriculumItem;
 
 /* ==========================================================================
    AUTHENTIC VINTAGE TV SOUND EFFECTS (WEB AUDIO SYNTHESIZER)
@@ -3173,6 +3238,8 @@ window.playTvChannelChangeSound = playTvChannelChangeSound;
 
 document.addEventListener('DOMContentLoaded', () => {
   goToCinemaSlide(0, false);
+  buildCurriculumTabs();
+  switchCurriculumItem(0);
 
   // Attach direct event listeners to language options
   const frBtn = document.getElementById('lang-fr');
