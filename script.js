@@ -1009,24 +1009,24 @@ function selectHudStep(index) {
 /* ==========================================================================
    AUTHENTIC VINTAGE TV SOUND EFFECTS (WEB AUDIO SYNTHESIZER)
    ========================================================================== */
-let audioCtx = null;
+var globalAudioCtx = typeof globalAudioCtx !== 'undefined' ? globalAudioCtx : null;
 
 function playTvChannelChangeSound() {
   try {
-    if (!audioCtx) {
+    if (!globalAudioCtx) {
       const AudioContext = window.AudioContext || window.webkitAudioContext;
-      if (AudioContext) audioCtx = new AudioContext();
+      if (AudioContext) globalAudioCtx = new AudioContext();
     }
-    if (audioCtx && audioCtx.state === 'suspended') {
-      audioCtx.resume();
+    if (globalAudioCtx && globalAudioCtx.state === 'suspended') {
+      globalAudioCtx.resume();
     }
-    if (!audioCtx) return;
+    if (!globalAudioCtx) return;
 
-    const now = audioCtx.currentTime;
+    const now = globalAudioCtx.currentTime;
 
     // 1. Heavy Mechanical Metal Knob Clack / Click Impulse
-    const osc = audioCtx.createOscillator();
-    const gain = audioCtx.createGain();
+    const osc = globalAudioCtx.createOscillator();
+    const gain = globalAudioCtx.createGain();
     osc.type = 'triangle';
     osc.frequency.setValueAtTime(140, now);
     osc.frequency.exponentialRampToValueAtTime(25, now + 0.09);
@@ -1035,13 +1035,13 @@ function playTvChannelChangeSound() {
     gain.gain.exponentialRampToValueAtTime(0.01, now + 0.09);
 
     osc.connect(gain);
-    gain.connect(audioCtx.destination);
+    gain.connect(globalAudioCtx.destination);
     osc.start(now);
     osc.stop(now + 0.09);
 
     // 2. High Frequency Metallic Latch Snap
-    const oscSnap = audioCtx.createOscillator();
-    const gainSnap = audioCtx.createGain();
+    const oscSnap = globalAudioCtx.createOscillator();
+    const gainSnap = globalAudioCtx.createGain();
     oscSnap.type = 'square';
     oscSnap.frequency.setValueAtTime(1600, now);
     oscSnap.frequency.exponentialRampToValueAtTime(150, now + 0.035);
@@ -1050,34 +1050,34 @@ function playTvChannelChangeSound() {
     gainSnap.gain.exponentialRampToValueAtTime(0.001, now + 0.035);
 
     oscSnap.connect(gainSnap);
-    gainSnap.connect(audioCtx.destination);
+    gainSnap.connect(globalAudioCtx.destination);
     oscSnap.start(now);
     oscSnap.stop(now + 0.035);
 
     // 3. Analog CRT TV Static White Noise Burst (150ms)
-    const bufferSize = Math.floor(audioCtx.sampleRate * 0.15); // 150ms
-    const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+    const bufferSize = Math.floor(globalAudioCtx.sampleRate * 0.15); // 150ms
+    const buffer = globalAudioCtx.createBuffer(1, bufferSize, globalAudioCtx.sampleRate);
     const output = buffer.getChannelData(0);
     for (let i = 0; i < bufferSize; i++) {
       output[i] = Math.random() * 2 - 1;
     }
 
-    const whiteNoise = audioCtx.createBufferSource();
+    const whiteNoise = globalAudioCtx.createBufferSource();
     whiteNoise.buffer = buffer;
 
     // Bandpass filter to sound like analog CRT TV tuner static
-    const filter = audioCtx.createBiquadFilter();
+    const filter = globalAudioCtx.createBiquadFilter();
     filter.type = 'bandpass';
     filter.frequency.setValueAtTime(1100, now);
     filter.Q.setValueAtTime(1.4, now);
 
-    const noiseGain = audioCtx.createGain();
+    const noiseGain = globalAudioCtx.createGain();
     noiseGain.gain.setValueAtTime(0.22, now);
     noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
 
     whiteNoise.connect(filter);
     filter.connect(noiseGain);
-    noiseGain.connect(audioCtx.destination);
+    noiseGain.connect(globalAudioCtx.destination);
 
     whiteNoise.start(now);
     whiteNoise.stop(now + 0.15);
@@ -1100,8 +1100,8 @@ function triggerTvStaticGlitch() {
 /* ==========================================================================
    INTERACTIVE RETRO TV SLIDER CONTROLLER
    ========================================================================== */
-let currentCinemaIndex = 0;
-let cinemaSlideInterval = null;
+var currentCinemaIndex = 0;
+var cinemaSlideInterval = null;
 
 function goToCinemaSlide(index, userInitiated = false) {
   const slides = document.querySelectorAll('#cinema-main-stage .cinema-slide');
@@ -1149,16 +1149,6 @@ function resetCinemaTimer() {
 document.addEventListener('DOMContentLoaded', () => {
   goToCinemaSlide(0, false);
 });
-    updateSlateTexture(rightSlateMesh, lang);
-    updateSlateTexture(backSlateMesh, lang);
-    updateSlateTexture(leftSlateMesh, lang);
-  }
-
-  // Update Houdini carousel translations
-  if (typeof switchHoudiniCarousel === 'function') {
-    switchHoudiniCarousel(currentHoudiniIndex);
-  }
-}
 
 document.addEventListener('DOMContentLoaded', () => {
   // Force page scroll restoration to top on load
@@ -1880,19 +1870,19 @@ function initHero3DCard() {
 /* --------------------------------------------------------------------------
    8. SCI-FI GAME UI HOVER & SELECTION SOUND SYNTHESIZER (WEB AUDIO API)
    -------------------------------------------------------------------------- */
-let uiAudioCtx = null;
+var globalAudioCtx = null;
 
 function getUIAudioContext() {
-  if (!uiAudioCtx) {
+  if (!globalAudioCtx) {
     const AudioCtxClass = window.AudioContext || window.webkitAudioContext;
     if (AudioCtxClass) {
-      uiAudioCtx = new AudioCtxClass();
+      globalAudioCtx = new AudioCtxClass();
     }
   }
-  if (uiAudioCtx && uiAudioCtx.state === 'suspended') {
-    uiAudioCtx.resume();
+  if (globalAudioCtx && globalAudioCtx.state === 'suspended') {
+    globalAudioCtx.resume();
   }
-  return uiAudioCtx;
+  return globalAudioCtx;
 }
 
 // Crisp Sci-Fi Game UI Menu Hover Selection Sound (Pitch Sweep 750Hz -> 1350Hz)
@@ -2944,21 +2934,175 @@ function buildCurriculumTabs() {
 function switchCurriculumItem(index) {
 }
 
+/* ==========================================================================
+   AUTHENTIC VINTAGE TV SOUND EFFECTS (WEB AUDIO SYNTHESIZER)
+   ========================================================================== */
+// var globalAudioCtx = null;
+
+function playTvChannelChangeSound() {
+  try {
+    if (!globalAudioCtx) {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      if (AudioContext) globalAudioCtx = new AudioContext();
+    }
+    if (globalAudioCtx && globalAudioCtx.state === 'suspended') {
+      globalAudioCtx.resume();
+    }
+    if (!globalAudioCtx) return;
+
+    const now = globalAudioCtx.currentTime;
+
+    // 1. Heavy Mechanical Metal Knob Clack / Click Impulse
+    const osc = globalAudioCtx.createOscillator();
+    const gain = globalAudioCtx.createGain();
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(140, now);
+    osc.frequency.exponentialRampToValueAtTime(25, now + 0.09);
+
+    gain.gain.setValueAtTime(0.7, now);
+    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.09);
+
+    osc.connect(gain);
+    gain.connect(globalAudioCtx.destination);
+    osc.start(now);
+    osc.stop(now + 0.09);
+
+    // 2. High Frequency Metallic Latch Snap
+    const oscSnap = globalAudioCtx.createOscillator();
+    const gainSnap = globalAudioCtx.createGain();
+    oscSnap.type = 'square';
+    oscSnap.frequency.setValueAtTime(1600, now);
+    oscSnap.frequency.exponentialRampToValueAtTime(150, now + 0.035);
+
+    gainSnap.gain.setValueAtTime(0.35, now);
+    gainSnap.gain.exponentialRampToValueAtTime(0.001, now + 0.035);
+
+    oscSnap.connect(gainSnap);
+    gainSnap.connect(globalAudioCtx.destination);
+    oscSnap.start(now);
+    oscSnap.stop(now + 0.035);
+
+    // 3. Analog CRT TV Static White Noise Burst (150ms)
+    const bufferSize = Math.floor(globalAudioCtx.sampleRate * 0.15); // 150ms
+    const buffer = globalAudioCtx.createBuffer(1, bufferSize, globalAudioCtx.sampleRate);
+    const output = buffer.getChannelData(0);
+    for (let i = 0; i < bufferSize; i++) {
+      output[i] = Math.random() * 2 - 1;
+    }
+
+    const whiteNoise = globalAudioCtx.createBufferSource();
+    whiteNoise.buffer = buffer;
+
+    // Bandpass filter to sound like analog CRT TV tuner static
+    const filter = globalAudioCtx.createBiquadFilter();
+    filter.type = 'bandpass';
+    filter.frequency.setValueAtTime(1100, now);
+    filter.Q.setValueAtTime(1.4, now);
+
+    const noiseGain = globalAudioCtx.createGain();
+    noiseGain.gain.setValueAtTime(0.22, now);
+    noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
+
+    whiteNoise.connect(filter);
+    filter.connect(noiseGain);
+    noiseGain.connect(globalAudioCtx.destination);
+
+    whiteNoise.start(now);
+    whiteNoise.stop(now + 0.15);
+
+  } catch (e) {
+    console.warn('TV Sound Effect Exception:', e);
+  }
+}
+
+function triggerTvStaticGlitch() {
+  const glitch = document.getElementById('tvStaticGlitch');
+  if (glitch) {
+    glitch.classList.add('active');
+    setTimeout(() => {
+      glitch.classList.remove('active');
+    }, 180);
+  }
+}
+
+/* ==========================================================================
+   INTERACTIVE RETRO TV SLIDER CONTROLLER
+   ========================================================================== */
+var currentCinemaIndex = 0;
+var cinemaSlideInterval = null;
+
+function goToCinemaSlide(index, userInitiated = false) {
+  const slides = document.querySelectorAll('#cinema-main-stage .cinema-slide');
+  
+  if (!slides.length) return;
+  
+  currentCinemaIndex = (index + slides.length) % slides.length;
+
+  if (userInitiated) {
+    playTvChannelChangeSound();
+  }
+  triggerTvStaticGlitch();
+  
+  slides.forEach((slide, idx) => {
+    if (idx === currentCinemaIndex) {
+      slide.classList.add('active');
+      const video = slide.querySelector('video');
+      if (video) {
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      }
+    } else {
+      slide.classList.remove('active');
+    }
+  });
+
+  resetCinemaTimer();
+}
+
 function nextCinemaSlide() {
-  goToCinemaSlide(currentCinemaIndex + 1);
+  goToCinemaSlide(currentCinemaIndex + 1, true);
 }
 
 function prevCinemaSlide() {
-  goToCinemaSlide(currentCinemaIndex - 1);
+  goToCinemaSlide(currentCinemaIndex - 1, true);
 }
 
 function resetCinemaTimer() {
   if (cinemaSlideInterval) clearInterval(cinemaSlideInterval);
   cinemaSlideInterval = setInterval(() => {
-    nextCinemaSlide();
+    goToCinemaSlide(currentCinemaIndex + 1, false);
   }, 7000);
 }
 
+/* GLOBAL WINDOW EXPORTS */
+window.setLanguage = typeof setLanguage !== 'undefined' ? setLanguage : function(){};
+window.goToCinemaSlide = goToCinemaSlide;
+window.nextCinemaSlide = nextCinemaSlide;
+window.prevCinemaSlide = prevCinemaSlide;
+window.playTvChannelChangeSound = playTvChannelChangeSound;
+
 document.addEventListener('DOMContentLoaded', () => {
-  goToCinemaSlide(0);
+  goToCinemaSlide(0, false);
+
+  // Attach direct event listeners to language options
+  const frBtn = document.getElementById('lang-fr');
+  const enBtn = document.getElementById('lang-en');
+  const frDrawer = document.getElementById('drawer-lang-fr');
+  const enDrawer = document.getElementById('drawer-lang-en');
+
+  if (frBtn) frBtn.addEventListener('click', () => setLanguage('fr'));
+  if (enBtn) enBtn.addEventListener('click', () => setLanguage('en'));
+  if (frDrawer) frDrawer.addEventListener('click', () => setLanguage('fr'));
+  if (enDrawer) enDrawer.addEventListener('click', () => setLanguage('en'));
+
+  // Attach direct event listeners to TV buttons & knobs
+  const tvPrevBtn = document.querySelector('.cinema-prev-btn');
+  const tvNextBtn = document.querySelector('.cinema-next-btn');
+  const tvKnobVhf = document.querySelector('.knob-vhf');
+  const tvKnobUhf = document.querySelector('.knob-uhf');
+
+  if (tvPrevBtn) tvPrevBtn.addEventListener('click', prevCinemaSlide);
+  if (tvNextBtn) tvNextBtn.addEventListener('click', nextCinemaSlide);
+  if (tvKnobVhf) tvKnobVhf.addEventListener('click', nextCinemaSlide);
+  if (tvKnobUhf) tvKnobUhf.addEventListener('click', prevCinemaSlide);
 });
