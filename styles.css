@@ -1263,9 +1263,17 @@ body.vfx-body {
    6. INTERACTIVE VIEWPORT SANDBOX (DNEG STYLED PARAMETERS - DARK THEME)
    -------------------------------------------------------------------------- */
 .dneg-dark-controls-box {
-  background: #1c1c24 !important;
+  background: #161617 !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
   color: var(--color-text-light) !important;
+}
+
+.dneg-dark-controls-box .ctrl-header-title {
+  color: #ffffff !important;
+}
+
+.dneg-dark-controls-box .slider-meta {
+  color: var(--dneg-grey-04) !important;
 }
 
 .apple-sandbox-container {
@@ -6038,6 +6046,99 @@ html, body {
 .apple-footer-bottom {
   border-top: 1px solid var(--dneg-grey-03) !important;
   color: var(--dneg-grey-02) !important;
+}
+
+/* Sidebar and Filter Elements (Light theme overrides) */
+.apple-dark-bg .poster-sidebar {
+  border-right: 1px solid var(--dneg-grey-03) !important;
+}
+
+@media (max-width: 991px) {
+  .apple-dark-bg .poster-sidebar {
+    border-right: none !important;
+    border-bottom: 1px solid var(--dneg-grey-03) !important;
+  }
+}
+
+.apple-dark-bg .sidebar-filter-title {
+  color: var(--color-text-dark) !important;
+  border-bottom: 1px solid var(--dneg-grey-03) !important;
+}
+
+.apple-dark-bg .search-input-wrapper input {
+  background: #ffffff !important;
+  border: 1px solid var(--dneg-grey-03) !important;
+  color: var(--color-text-dark) !important;
+}
+
+.apple-dark-bg .search-input-wrapper input:focus {
+  border-color: var(--dneg-coral) !important;
+}
+
+.apple-dark-bg .search-input-wrapper input::placeholder {
+  color: var(--dneg-grey-02) !important;
+  opacity: 1;
+}
+
+.apple-dark-bg .custom-checkbox-label {
+  border: 1px solid var(--dneg-grey-03) !important;
+  background: #ffffff !important;
+  color: var(--color-text-dark) !important;
+}
+
+.apple-dark-bg .custom-checkbox-label:hover {
+  border-color: var(--dneg-grey-02) !important;
+  color: var(--color-text-dark) !important;
+}
+
+.apple-dark-bg .custom-checkbox-label:has(input[type="checkbox"]:checked) {
+  background-color: var(--color-text-dark) !important;
+  border-color: var(--color-text-dark) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+.apple-dark-bg .reset-filter-btn {
+  border: 1px solid var(--dneg-grey-03) !important;
+  color: var(--color-text-dark) !important;
+  background: #ffffff !important;
+}
+
+.apple-dark-bg .reset-filter-btn:hover {
+  background: var(--color-text-dark) !important;
+  color: #ffffff !important;
+  border-color: var(--color-text-dark) !important;
+}
+
+/* Partner Logo Grid (Light Theme visibility) */
+.apple-pure-white-bg .dneg-logo-item,
+.apple-dark-bg .dneg-logo-item {
+  color: var(--dneg-grey-02) !important;
+}
+
+.apple-pure-white-bg .dneg-logo-item:hover,
+.apple-dark-bg .dneg-logo-item:hover {
+  color: var(--color-text-dark) !important;
+}
+
+/* Division Switch Buttons (Showcase Section tabs) */
+.apple-dark-bg .div-switch-btn {
+  background: #ffffff !important;
+  border: 1px solid var(--dneg-grey-03) !important;
+  color: var(--color-text-dark) !important;
+}
+
+.apple-dark-bg .div-switch-btn:hover {
+  background: var(--dneg-grey-01) !important;
+  border-color: var(--dneg-grey-02) !important;
+  color: var(--color-text-dark) !important;
+}
+
+.apple-dark-bg .div-switch-btn.active {
+  background: var(--color-text-dark) !important;
+  border-color: var(--color-text-dark) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
 }
 
 
