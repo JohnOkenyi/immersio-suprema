@@ -5701,7 +5701,7 @@ html, body {
 
 /* Section header overrides */
 .apple-pure-white-bg#studio {
-  background-color: #f5f5f7 !important; /* Apple signature light background */
+  background-color: #ffffff !important; /* Page background is pure white */
   background-image: 
     radial-gradient(circle at 85% 15%, rgba(204, 164, 59, 0.03) 0%, transparent 60%),
     linear-gradient(to right, rgba(0, 0, 0, 0.015) 1px, transparent 1px),
@@ -5716,7 +5716,7 @@ html, body {
   -webkit-text-fill-color: initial !important;
   background-clip: initial !important;
   text-fill-color: initial !important;
-  color: #1d1d1f !important; /* Apple primary black text */
+  color: #1d1d1f !important; /* Apple primary text */
   font-family: var(--font-display) !important;
   font-weight: 800 !important;
   letter-spacing: -0.025em !important;
@@ -5726,9 +5726,9 @@ html, body {
 }
 
 .apple-pure-white-bg .apple-kicker {
-  color: #cca43b !important; /* Gold brand accent */
-  background: #ffffff !important; /* Contrast white kicker badge */
-  border: 1px solid #d2d2d7 !important; /* Apple border */
+  color: #cca43b !important; /* Gold kicker text */
+  background: linear-gradient(135deg, #fdfbf7 0%, #f7f2e8 100%) !important; /* Warm kicker background */
+  border: 1px solid #ebdcc5 !important; /* Warm gold/sand border */
   border-radius: 100px !important;
   padding: 6px 16px !important;
   font-size: 0.72rem !important;
@@ -5737,7 +5737,7 @@ html, body {
   text-transform: uppercase !important;
   display: inline-block !important;
   margin-bottom: 5px !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.01) !important;
+  box-shadow: 0 2px 8px rgba(204, 164, 59, 0.02) !important;
 }
 
 .apple-pure-white-bg .luxury-serif-italic {
@@ -5760,33 +5760,33 @@ html, body {
   font-size: 1.15rem !important;
   line-height: 1.6 !important;
   font-weight: 600 !important;
-  color: #1d1d1f !important; /* Apple primary text */
+  color: #1d1d1f !important;
 }
 
 .apple-pure-white-bg .about-narrative-stack .about-p:last-child {
   font-size: 0.98rem !important;
   line-height: 1.65 !important;
-  color: #86868b !important; /* Apple secondary gray text */
+  color: #515154 !important; /* Warm secondary text color */
   margin-bottom: 20px !important;
 }
 
 /* About Section Pedigree (Light Theme) */
 .apple-pure-white-bg .pedigree-card {
-  background: #ffffff !important; /* Card background is pure white */
-  border: 1px solid #d2d2d7 !important; /* Apple gray border */
+  background: linear-gradient(135deg, #fdfbf7 0%, #f7f2e8 100%) !important; /* Luxury warm champagne gradient card */
+  border: 1px solid #ebdcc5 !important; /* Warm sand/gold border */
   border-top: 4px solid #cca43b !important; /* Gold luxury top bar */
   border-radius: 20px !important;
   padding: 28px 20px !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important; /* Soft, clean drop shadow */
+  box-shadow: 0 8px 30px rgba(204, 164, 59, 0.03) !important; /* Soft, warm golden shadow */
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
   position: relative;
   overflow: hidden;
 }
 
 .apple-pure-white-bg .pedigree-card:hover {
-  background: #ffffff !important;
+  background: linear-gradient(135deg, #ffffff 0%, #faf3e5 100%) !important;
   border-color: #cca43b !important;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04) !important;
+  box-shadow: 0 20px 40px rgba(204, 164, 59, 0.08) !important;
   transform: translateY(-5px) !important;
 }
 
@@ -5794,7 +5794,7 @@ html, body {
   font-size: 1.35rem !important;
   color: #cca43b !important;
   margin-bottom: 12px !important;
-  opacity: 0.8 !important;
+  opacity: 0.85 !important;
   transition: all 0.3s ease !important;
 }
 
@@ -5809,7 +5809,7 @@ html, body {
   -webkit-text-fill-color: initial !important;
   background-clip: initial !important;
   text-fill-color: initial !important;
-  color: #1d1d1f !important; /* Primary text inside card */
+  color: #1d1d1f !important; /* Highly visible text */
   font-family: var(--font-display) !important;
   font-size: 1.35rem !important;
   font-weight: 800 !important;
@@ -5819,7 +5819,7 @@ html, body {
 }
 
 .apple-pure-white-bg .pedigree-label {
-  color: #86868b !important; /* Secondary text inside card */
+  color: #4e483f !important; /* Warm dark gray-brown for excellent readability */
   font-family: var(--font-body) !important;
   font-size: 0.76rem !important;
   line-height: 1.45 !important;
@@ -5850,11 +5850,11 @@ html, body {
 .apple-pure-white-bg .program-list-col .program-list-item {
   display: flex !important;
   gap: 30px !important;
-  background: #ffffff !important; /* Card background is pure white, contrasting with #f5f5f7 background */
-  border: 1px solid #d2d2d7 !important; /* Apple gray border */
+  background: linear-gradient(135deg, #fdfbf7 0%, #f7f2e8 100%) !important; /* Warm champagne gradient card, contrasting with pure white background */
+  border: 1px solid #ebdcc5 !important; /* Warm sand/gold border */
   border-radius: 24px !important;
   padding: 35px !important;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.02) !important; /* Soft, clean drop shadow */
+  box-shadow: 0 8px 30px rgba(204, 164, 59, 0.03) !important; /* Soft, warm golden shadow */
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
   position: relative;
   z-index: 2;
@@ -5862,9 +5862,9 @@ html, body {
 }
 
 .apple-pure-white-bg .program-list-col .program-list-item:hover {
-  background: #ffffff !important;
+  background: linear-gradient(135deg, #ffffff 0%, #faf3e5 100%) !important;
   border-color: #cca43b !important;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 20px 40px rgba(204, 164, 59, 0.08) !important;
   transform: translateY(-5px) !important;
 }
 
@@ -5883,7 +5883,7 @@ html, body {
   font-family: var(--font-display) !important;
   font-size: 1.15rem !important;
   font-weight: 800 !important;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01) !important;
+  box-shadow: 0 4px 10px rgba(204, 164, 59, 0.02) !important;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
   position: relative;
   z-index: 3;
@@ -5924,16 +5924,16 @@ html, body {
 }
 
 .apple-pure-white-bg .program-item-desc {
-  color: #86868b !important; /* Apple secondary gray text */
+  color: #4e483f !important; /* Warm dark gray-brown body for readability */
   font-size: 0.94rem !important;
   line-height: 1.6 !important;
   margin-bottom: 12px !important;
 }
 
 .apple-pure-white-bg .program-meta-badge {
-  background: #f5f5f7 !important; /* Apple gray kicker background */
-  color: #86868b !important; /* Apple secondary gray text */
-  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  background: #f5efe6 !important; /* Warm sand badge background */
+  color: #8c7b65 !important; /* Warm gold-gray text */
+  border: 1px solid #ebdcc5 !important;
   border-radius: 100px !important;
   padding: 6px 16px !important;
   font-size: 0.72rem !important;
@@ -5947,9 +5947,9 @@ html, body {
 }
 
 .apple-pure-white-bg .program-list-item:hover .program-meta-badge {
-  background: #e8e8ed !important;
-  color: #1d1d1f !important;
-  border-color: rgba(0, 0, 0, 0.08) !important;
+  background: #ebdcc5 !important;
+  color: #2c251b !important;
+  border-color: #cca43b !important;
 }
 
 /* Floating interactive line on card left side */
