@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Custom Application Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=20260825_square_tv_v12">
+  <link rel="stylesheet" href="styles.css?v=20260825_scifi_cards_v13">
   
   <!-- Three.js and OrbitControls for the 3D rotating clapperboard house -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -455,24 +455,118 @@
                 </p>
               </div>
 
-              <!-- Technical diagnostics telemetry grid -->
+              <!-- Technical diagnostics telemetry grid (Futuristic 3D Sci-Fi Digital HUD Console) -->
               <div class="console-diagnostics">
-                <div class="diagnostic-card">
-                  <span class="diag-label">SYSTEM CORE</span>
-                  <span class="diag-val" id="diag-core">NARRATIVE ENGINE</span>
+                
+                <!-- Card 1: System Core -->
+                <div class="diagnostic-card scifi-3d-card" onmouseenter="playSciFiChirpSound()" id="diag-card-0">
+                  <span class="hud-corner corner-tl"></span>
+                  <span class="hud-corner corner-tr"></span>
+                  <span class="hud-corner corner-bl"></span>
+                  <span class="hud-corner corner-br"></span>
+                  <div class="card-3d-shine"></div>
+                  
+                  <div class="diag-header">
+                    <span class="diag-label">SYSTEM CORE</span>
+                    <span class="diag-sub-stamp">[ SYS // 01 ]</span>
+                  </div>
+                  
+                  <div class="diag-main-row">
+                    <span class="diag-val" id="diag-core">NARRATIVE ENGINE</span>
+                    <div class="diag-led-badge"><span class="pulse-dot-cyan"></span><span class="diag-status-lbl">ACTIVE</span></div>
+                  </div>
+
+                  <div class="diag-visualizer">
+                    <svg class="diag-wave-svg" viewBox="0 0 160 20" preserveAspectRatio="none">
+                      <path d="M0,10 Q20,2 40,10 T80,10 T120,10 T160,10" stroke="rgba(204, 164, 59, 0.7)" stroke-width="1.5" fill="none" class="wave-line-1"/>
+                      <path d="M0,10 Q20,18 40,10 T80,10 T120,10 T160,10" stroke="rgba(0, 240, 255, 0.5)" stroke-width="1" fill="none" class="wave-line-2"/>
+                    </svg>
+                  </div>
                 </div>
-                <div class="diagnostic-card">
-                  <span class="diag-label">PIPELINE INTEGRATION</span>
-                  <span class="diag-val" id="diag-integration">GLOBAL STAGE 01</span>
+
+                <!-- Card 2: Pipeline Integration -->
+                <div class="diagnostic-card scifi-3d-card" onmouseenter="playSciFiChirpSound()" id="diag-card-1">
+                  <span class="hud-corner corner-tl"></span>
+                  <span class="hud-corner corner-tr"></span>
+                  <span class="hud-corner corner-bl"></span>
+                  <span class="hud-corner corner-br"></span>
+                  <div class="card-3d-shine"></div>
+                  
+                  <div class="diag-header">
+                    <span class="diag-label">PIPELINE INTEGRATION</span>
+                    <span class="diag-sub-stamp">[ PIPE // 02 ]</span>
+                  </div>
+                  
+                  <div class="diag-main-row">
+                    <span class="diag-val" id="diag-integration">GLOBAL STAGE 01</span>
+                    <div class="diag-led-badge"><span class="pulse-dot-gold"></span><span class="diag-status-lbl">SYNCED</span></div>
+                  </div>
+
+                  <div class="diag-visualizer">
+                    <div class="diag-eq-bars">
+                      <span style="--h: 60%; --d: 0.1s;"></span>
+                      <span style="--h: 90%; --d: 0.3s;"></span>
+                      <span style="--h: 40%; --d: 0.2s;"></span>
+                      <span style="--h: 75%; --d: 0.4s;"></span>
+                      <span style="--h: 100%; --d: 0.15s;"></span>
+                      <span style="--h: 55%; --d: 0.35s;"></span>
+                      <span style="--h: 85%; --d: 0.25s;"></span>
+                      <span style="--h: 45%; --d: 0.05s;"></span>
+                    </div>
+                  </div>
                 </div>
-                <div class="diagnostic-card">
-                  <span class="diag-label">ACTIVE PLATFORMS</span>
-                  <span class="diag-val" id="diag-platforms">FCP, UNREAL STAGE, HOUDINI</span>
+
+                <!-- Card 3: Active Platforms -->
+                <div class="diagnostic-card scifi-3d-card" onmouseenter="playSciFiChirpSound()" id="diag-card-2">
+                  <span class="hud-corner corner-tl"></span>
+                  <span class="hud-corner corner-tr"></span>
+                  <span class="hud-corner corner-bl"></span>
+                  <span class="hud-corner corner-br"></span>
+                  <div class="card-3d-shine"></div>
+                  
+                  <div class="diag-header">
+                    <span class="diag-label">ACTIVE PLATFORMS</span>
+                    <span class="diag-sub-stamp">[ PLAT // 03 ]</span>
+                  </div>
+                  
+                  <div class="diag-main-row">
+                    <span class="diag-val" id="diag-platforms">FCP, UNREAL STAGE, HOUDINI</span>
+                  </div>
+
+                  <div class="diag-visualizer">
+                    <div class="diag-tech-pills" id="diag-tech-pills">
+                      <span class="cyber-pill">UNREAL 5.4</span>
+                      <span class="cyber-pill">HOUDINI 20.5</span>
+                      <span class="cyber-pill">NUKE 15</span>
+                    </div>
+                  </div>
                 </div>
-                <div class="diagnostic-card">
-                  <span class="diag-label">COMPLEXITY FACTOR</span>
-                  <span class="diag-val" id="diag-complexity">OPTIMAL // LEVEL 04</span>
+
+                <!-- Card 4: Complexity Factor -->
+                <div class="diagnostic-card scifi-3d-card" onmouseenter="playSciFiChirpSound()" id="diag-card-3">
+                  <span class="hud-corner corner-tl"></span>
+                  <span class="hud-corner corner-tr"></span>
+                  <span class="hud-corner corner-bl"></span>
+                  <span class="hud-corner corner-br"></span>
+                  <div class="card-3d-shine"></div>
+                  
+                  <div class="diag-header">
+                    <span class="diag-label">COMPLEXITY FACTOR</span>
+                    <span class="diag-sub-stamp">[ CPLX // 04 ]</span>
+                  </div>
+                  
+                  <div class="diag-main-row">
+                    <span class="diag-val" id="diag-complexity">OPTIMAL // LEVEL 04</span>
+                    <div class="diag-led-badge"><span class="pulse-dot-green"></span><span class="diag-status-lbl">100% READY</span></div>
+                  </div>
+
+                  <div class="diag-visualizer">
+                    <div class="diag-progress-bar">
+                      <div class="diag-progress-fill" id="diag-progress-fill" style="width: 85%;"></div>
+                    </div>
+                  </div>
                 </div>
+
               </div>
 
             </div>
@@ -1818,6 +1912,6 @@
   </div>
 
   <!-- Main Logic JavaScript File -->
-  <script src="script.js?v=20260825_square_tv_v12"></script>
+  <script src="script.js?v=20260825_scifi_cards_v13"></script>
 </body>
 </html>

@@ -7231,30 +7231,264 @@ html, body {
   }
 }
 
-.diagnostic-card {
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 12px;
-  padding: 16px 20px;
+/* ==========================================================================
+   FUTURISTIC 3D SCI-FI DIGITAL HUD TELEMETRY DIAGNOSTIC CARDS
+   ========================================================================== */
+
+.console-diagnostics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  perspective: 1200px;
+}
+
+@media (max-width: 640px) {
+  .console-diagnostics {
+    grid-template-columns: 1fr;
+  }
+}
+
+.diagnostic-card.scifi-3d-card {
+  position: relative;
+  background: rgba(14, 17, 24, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 18px 22px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  justify-content: space-between;
+  gap: 12px;
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.diagnostic-card.scifi-3d-card:hover {
+  border-color: rgba(204, 164, 59, 0.6);
+  box-shadow: 
+    0 20px 45px rgba(0, 0, 0, 0.6), 
+    0 0 30px rgba(204, 164, 59, 0.25),
+    inset 0 0 15px rgba(204, 164, 59, 0.1);
+}
+
+/* 3D Radial Light Sheen Overlay */
+.card-3d-shine {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(204, 164, 59, 0.25), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.diagnostic-card.scifi-3d-card:hover .card-3d-shine {
+  opacity: 1;
+}
+
+/* Futuristic Sci-Fi Tech Corner Brackets */
+.hud-corner {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: rgba(204, 164, 59, 0.4);
+  border-style: solid;
+  pointer-events: none;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.hud-corner.corner-tl { top: 6px; left: 6px; border-width: 2px 0 0 2px; }
+.hud-corner.corner-tr { top: 6px; right: 6px; border-width: 2px 2px 0 0; }
+.hud-corner.corner-bl { bottom: 6px; left: 6px; border-width: 0 0 2px 2px; }
+.hud-corner.corner-br { bottom: 6px; right: 6px; border-width: 0 2px 2px 0; }
+
+.diagnostic-card.scifi-3d-card:hover .hud-corner {
+  border-color: #cca43b;
+  box-shadow: 0 0 8px rgba(204, 164, 59, 0.8);
+}
+
+/* Card Header Row */
+.diag-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
 }
 
 .diag-label {
+  font-family: var(--font-body);
   font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: rgba(255, 255, 255, 0.45);
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
 }
 
+.diag-sub-stamp {
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: rgba(204, 164, 59, 0.7);
+  letter-spacing: 0.1em;
+}
+
+/* Main Value & Status LED Row */
+.diag-main-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+  gap: 10px;
+}
+
 .diag-val {
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.95rem;
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 0%, #cca43b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 12px rgba(204, 164, 59, 0.3);
+}
+
+.diag-led-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 3px 8px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pulse-dot-cyan {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00f0ff;
+  box-shadow: 0 0 8px #00f0ff;
+  animation: cyanPulse 1.5s infinite ease-in-out;
+}
+
+.pulse-dot-gold {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #cca43b;
+  box-shadow: 0 0 8px #cca43b;
+  animation: cyanPulse 1.5s infinite ease-in-out;
+}
+
+.pulse-dot-green {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: cyanPulse 1.5s infinite ease-in-out;
+}
+
+@keyframes cyanPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+}
+
+.diag-status-lbl {
+  font-family: 'Monaco', monospace;
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.1em;
+}
+
+/* Telemetry Visualizer Widgets */
+.diag-visualizer {
+  position: relative;
+  z-index: 3;
+  margin-top: 4px;
+}
+
+/* Waveform SVG */
+.diag-wave-svg {
+  width: 100%;
+  height: 18px;
+  display: block;
+}
+
+.wave-line-1 {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 0;
+  animation: waveDash 3s linear infinite;
+}
+
+@keyframes waveDash {
+  to { stroke-dashoffset: -200; }
+}
+
+/* Equalizer Bars */
+.diag-eq-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 16px;
+  width: 100%;
+}
+
+.diag-eq-bars span {
+  flex: 1;
+  height: var(--h);
+  background: linear-gradient(180deg, #cca43b 0%, rgba(204, 164, 59, 0.2) 100%);
+  border-radius: 2px;
+  animation: eqFlicker 1.2s infinite ease-in-out alternate;
+  animation-delay: var(--d);
+}
+
+@keyframes eqFlicker {
+  0% { height: 20%; opacity: 0.4; }
+  100% { height: var(--h); opacity: 1; }
+}
+
+/* Tech Pills */
+.diag-tech-pills {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.cyber-pill {
+  font-family: 'Monaco', monospace;
+  font-size: 0.58rem;
   font-weight: 700;
   color: #cca43b;
-  letter-spacing: 0.03em;
+  background: rgba(204, 164, 59, 0.1);
+  border: 1px solid rgba(204, 164, 59, 0.3);
+  padding: 2px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+
+/* Progress Meter */
+.diag-progress-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 100px;
+  overflow: hidden;
+  border: 1px solid rgba(204, 164, 59, 0.2);
+}
+
+.diag-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #cca43b 0%, #10b981 100%);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
+  border-radius: 100px;
+  transition: width 0.5s ease;
 }
 
 .console-footer {

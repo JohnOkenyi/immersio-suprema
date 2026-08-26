@@ -3229,17 +3229,83 @@ function resetCinemaTimer() {
   }, 7000);
 }
 
+function playSciFiChirpSound() {
+  try {
+    if (!globalAudioCtx) {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      if (AudioContext) globalAudioCtx = new AudioContext();
+    }
+    if (globalAudioCtx && globalAudioCtx.state === 'suspended') {
+      globalAudioCtx.resume();
+    }
+    if (!globalAudioCtx) return;
+
+    const now = globalAudioCtx.currentTime;
+    const osc = globalAudioCtx.createOscillator();
+    const gain = globalAudioCtx.createGain();
+    
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(1400, now);
+    osc.frequency.exponentialRampToValueAtTime(2800, now + 0.035);
+    
+    gain.gain.setValueAtTime(0.05, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.035);
+    
+    osc.connect(gain);
+    gain.connect(globalAudioCtx.destination);
+    
+    osc.start(now);
+    osc.stop(now + 0.035);
+  } catch (e) {}
+}
+
 /* GLOBAL WINDOW EXPORTS */
 window.setLanguage = typeof setLanguage !== 'undefined' ? setLanguage : function(){};
 window.goToCinemaSlide = goToCinemaSlide;
 window.nextCinemaSlide = nextCinemaSlide;
 window.prevCinemaSlide = prevCinemaSlide;
 window.playTvChannelChangeSound = playTvChannelChangeSound;
+window.playSciFiChirpSound = playSciFiChirpSound;
 
 document.addEventListener('DOMContentLoaded', () => {
   goToCinemaSlide(0, false);
   buildCurriculumTabs();
   switchCurriculumItem(0);
+
+  // 3D Parallax Mouse Tilt for Sci-Fi Diagnostic HUD Cards
+  const scifiCards = document.querySelectorAll('.scifi-3d-card');
+  scifiCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const rotateX = ((y - centerY) / centerY) * -12;
+      const rotateY = ((x - centerX) / centerX) * 12;
+      
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(12px) scale(1.03)`;
+      
+      const shine = card.querySelector('.card-3d-shine');
+      if (shine) {
+        shine.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(204, 164, 59, 0.35), transparent 70%)`;
+      }
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px) scale(1.0)';
+    });
+
+    card.addEventListener('click', () => {
+      playSciFiChirpSound();
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(-4px) scale(0.97)';
+      setTimeout(() => {
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(12px) scale(1.03)';
+      }, 150);
+    });
+  });
 
   // Attach direct event listeners to language options
   const frBtn = document.getElementById('lang-fr');
