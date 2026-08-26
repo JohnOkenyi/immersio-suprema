@@ -5954,50 +5954,55 @@ html, body {
   position: relative;
   overflow: visible;
   padding: 0 !important;
-  max-width: 550px;
+  max-width: 680px;
   margin: 0 auto;
 }
 
-/* Vintage TV Antenna at Top */
+/* Vintage TV Antenna Mounted Flush at Top of Cabinet */
 .tv-antenna-wrapper {
   position: absolute;
-  top: -40px;
+  top: -34px;
   left: 50%;
   transform: translateX(-50%);
-  width: 130px;
-  height: 42px;
+  width: 140px;
+  height: 36px;
   z-index: 10;
   pointer-events: none;
 }
 
 .tv-antenna-base {
-  width: 30px;
-  height: 12px;
+  width: 36px;
+  height: 10px;
   background: linear-gradient(180deg, #554433 0%, #221a14 100%);
   border: 1px solid #F5C542;
+  border-bottom: none;
   border-radius: 6px 6px 0 0;
   margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   box-shadow: 0 0 10px rgba(245, 197, 66, 0.4);
 }
 
 .tv-antenna-rod {
   position: absolute;
-  bottom: 10px;
+  bottom: 8px;
   width: 3px;
-  height: 48px;
+  height: 44px;
   background: linear-gradient(180deg, #d4af37 0%, #775522 100%);
   border-radius: 2px;
   box-shadow: 0 0 8px rgba(245, 197, 66, 0.5);
 }
 
 .tv-antenna-rod.rod-left {
-  left: 34px;
+  left: 38px;
   transform: rotate(-30deg);
   transform-origin: bottom center;
 }
 
 .tv-antenna-rod.rod-right {
-  right: 34px;
+  right: 38px;
   transform: rotate(30deg);
   transform-origin: bottom center;
 }
@@ -6016,9 +6021,9 @@ html, body {
     0 20px 40px rgba(0, 0, 0, 0.8),
     0 0 30px rgba(245, 197, 66, 0.2);
   display: grid;
-  grid-template-columns: 1fr 96px;
-  gap: 12px;
-  padding: 14px;
+  grid-template-columns: 1fr 115px;
+  gap: 14px;
+  padding: 16px;
   overflow: hidden;
 }
 
@@ -6029,12 +6034,12 @@ html, body {
   }
 }
 
-/* CRT Glass Tube Curved Screen (Square-Proportioned CRT) */
+/* CRT Glass Tube Curved Screen */
 .tv-crt-glass-screen {
   position: relative;
   width: 100%;
-  aspect-ratio: 1.15 / 1; /* Compact Square CRT Aspect Ratio */
-  min-height: 350px;
+  aspect-ratio: 1.25 / 1;
+  min-height: 380px;
   background: #000;
   border-radius: 32px / 26px; /* Bulbous CRT Glass Tube Shape */
   border: 10px solid #140d09;
