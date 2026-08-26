@@ -5955,7 +5955,9 @@ html, body {
   overflow: visible;
   padding: 0 !important;
   max-width: 680px;
-  margin: 0 auto;
+  margin: 40px auto 0 auto !important;
+  min-height: auto !important;
+  display: block !important;
 }
 
 /* Vintage TV Antenna Mounted Flush at Top of Cabinet */
