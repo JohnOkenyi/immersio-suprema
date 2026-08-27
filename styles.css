@@ -7497,6 +7497,150 @@ html, body {
   transition: width 0.5s ease;
 }
 
+/* Diagnostic Card Background Picture & Sci-Fi Overlay Styling */
+.diagnostic-card.has-bg-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.diag-img-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.diag-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.45) contrast(1.25) saturate(1.3);
+  opacity: 0.55;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+}
+
+.diagnostic-card.scifi-3d-card:hover .diag-bg-img {
+  transform: scale(1.1);
+  opacity: 0.8;
+  filter: brightness(0.6) contrast(1.3) saturate(1.4);
+}
+
+.diag-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(14, 17, 24, 0.72) 0%, rgba(10, 12, 18, 0.94) 100%);
+  z-index: 1;
+}
+
+.diag-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(204, 164, 59, 0.15) 1px, transparent 1px);
+  background-size: 10px 10px;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+/* Diagram Section Titles & Labels */
+.diag-visual-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: rgba(204, 164, 59, 0.85);
+  margin-bottom: 6px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.diag-visual-title i {
+  color: #00f0ff;
+  margin-right: 4px;
+}
+
+.diag-live-hz {
+  font-family: 'Monaco', monospace;
+  font-size: 0.58rem;
+  color: #00f0ff;
+  background: rgba(0, 240, 255, 0.12);
+  padding: 1px 6px;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 6px rgba(0, 240, 255, 0.2);
+}
+
+/* Interactive Modular Stage Flow Diagram (Card 2) */
+.diag-pipeline-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2px;
+  width: 100%;
+  margin-top: 4px;
+  padding: 4px 0;
+}
+
+.pipe-node {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.pipe-node.active {
+  background: rgba(204, 164, 59, 0.3);
+  border-color: #cca43b;
+  box-shadow: 0 0 10px rgba(204, 164, 59, 0.7);
+}
+
+.pipe-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.pipe-node.active .pipe-dot {
+  background: #cca43b;
+  box-shadow: 0 0 6px #cca43b;
+}
+
+.pipe-lbl {
+  font-size: 0.46rem;
+  font-family: 'Monaco', monospace;
+  color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  bottom: -13px;
+}
+
+.pipe-node.active .pipe-lbl {
+  color: #cca43b;
+  font-weight: 700;
+}
+
+.pipe-line {
+  flex: 1;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.pipe-line.active {
+  background: linear-gradient(90deg, #cca43b, #00f0ff);
+  box-shadow: 0 0 6px rgba(0, 240, 255, 0.4);
+}
+
 .console-footer {
   padding: 16px 28px;
   background: rgba(0, 0, 0, 0.4);

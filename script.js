@@ -917,7 +917,14 @@ const pipelineStepsData = [
     platforms: "FCP, UNREAL STAGE, HOUDINI",
     complexity: "OPTIMAL // LEVEL 04",
     meter1: "98%",
-    meter2: "92%"
+    meter2: "92%",
+    images: ["picture1.jpeg", "picture2.jpeg", "third.jpeg", "fifth.jpeg"],
+    pills: [
+      '<span class="cyber-pill"><i class="fas fa-gamepad"></i> UNREAL 5.4</span>',
+      '<span class="cyber-pill"><i class="fas fa-magic"></i> HOUDINI 20.5</span>',
+      '<span class="cyber-pill"><i class="fas fa-film"></i> NUKE 15</span>'
+    ],
+    progress: "98%"
   },
   {
     stamp: "STAGE // 02",
@@ -928,7 +935,14 @@ const pipelineStepsData = [
     platforms: "UNREAL STAGE, NUKE Studio",
     complexity: "CRITICAL // LEVEL 08",
     meter1: "95%",
-    meter2: "96%"
+    meter2: "96%",
+    images: ["first 1.jpeg", "second.jpeg", "forth.jpeg", "sixth.jpeg"],
+    pills: [
+      '<span class="cyber-pill"><i class="fas fa-camera"></i> RED V-RAPTOR</span>',
+      '<span class="cyber-pill"><i class="fas fa-video"></i> ARRI ALEXA 35</span>',
+      '<span class="cyber-pill"><i class="fas fa-sliders-h"></i> DAVINCI 19</span>'
+    ],
+    progress: "95%"
   },
   {
     stamp: "STAGE // 03",
@@ -939,7 +953,14 @@ const pipelineStepsData = [
     platforms: "HOUDINI 20.5, PYRO SPARSE",
     complexity: "EXTREME // LEVEL 10",
     meter1: "99%",
-    meter2: "88%"
+    meter2: "88%",
+    images: ["seventh.jpeg", "eighth.jpeg", "ninth.jpeg", "10th.jpeg"],
+    pills: [
+      '<span class="cyber-pill"><i class="fas fa-cubes"></i> HOUDINI PYRO</span>',
+      '<span class="cyber-pill"><i class="fas fa-bolt"></i> UNREAL NIAGARA</span>',
+      '<span class="cyber-pill"><i class="fas fa-brain"></i> AI STABLE VFX</span>'
+    ],
+    progress: "99%"
   },
   {
     stamp: "STAGE // 04",
@@ -950,7 +971,14 @@ const pipelineStepsData = [
     platforms: "REDHAT CLOUD, DOCKER",
     complexity: "OPTIMAL // LEVEL 05",
     meter1: "94%",
-    meter2: "97%"
+    meter2: "97%",
+    images: ["eleventh.jpeg", "thirthinth.jpeg", "fortheenth.jpeg", "fivethinth.jpeg"],
+    pills: [
+      '<span class="cyber-pill"><i class="fas fa-tv"></i> BROADCAST 4K</span>',
+      '<span class="cyber-pill"><i class="fas fa-cloud-upload-alt"></i> CLOUD CDN</span>',
+      '<span class="cyber-pill"><i class="fas fa-mobile-alt"></i> MULTI-ASPECT</span>'
+    ],
+    progress: "94%"
   },
   {
     stamp: "STAGE // 05",
@@ -961,7 +989,14 @@ const pipelineStepsData = [
     platforms: "CUSTOM STATS, PYTHON",
     complexity: "MODERATE // LEVEL 06",
     meter1: "91%",
-    meter2: "94%"
+    meter2: "94%",
+    images: ["sixthiinth.jpeg", "18th.jpeg", "19th.jpeg", "20th.jpeg"],
+    pills: [
+      '<span class="cyber-pill"><i class="fas fa-chart-line"></i> TELEMETRY AI</span>',
+      '<span class="cyber-pill"><i class="fas fa-eye"></i> RETENTION LAB</span>',
+      '<span class="cyber-pill"><i class="fas fa-bullseye"></i> IMPACT INDEX</span>'
+    ],
+    progress: "91%"
   },
   {
     stamp: "STAGE // 06",
@@ -972,7 +1007,14 @@ const pipelineStepsData = [
     platforms: "METADATA LEDGER, PG",
     complexity: "OPTIMAL // LEVEL 03",
     meter1: "97%",
-    meter2: "95%"
+    meter2: "95%",
+    images: ["21th.jpeg", "22nd.jpeg", "23rd.jpeg", "24th.jpeg"],
+    pills: [
+      '<span class="cyber-pill"><i class="fas fa-database"></i> VAULT DB</span>',
+      '<span class="cyber-pill"><i class="fas fa-tags"></i> SMART META</span>',
+      '<span class="cyber-pill"><i class="fas fa-sync"></i> AUTO ARCHIVE</span>'
+    ],
+    progress: "97%"
   }
 ];
 
@@ -1000,6 +1042,9 @@ function selectHudStep(index) {
   const integrationEl = document.getElementById('diag-integration');
   const platformsEl = document.getElementById('diag-platforms');
   const complexityEl = document.getElementById('diag-complexity');
+  const pillsEl = document.getElementById('diag-tech-pills');
+  const fillEl = document.getElementById('diag-progress-fill');
+  const percLblEl = document.getElementById('diag-perc-lbl');
 
   if (stampEl) stampEl.textContent = data.stamp;
   if (titleEl) titleEl.textContent = data.title;
@@ -1008,6 +1053,54 @@ function selectHudStep(index) {
   if (integrationEl) integrationEl.textContent = data.integration;
   if (platformsEl) platformsEl.textContent = data.platforms;
   if (complexityEl) complexityEl.textContent = data.complexity;
+
+  // Dynamically update diagnostic card background images
+  if (data.images && data.images.length >= 4) {
+    for (let i = 0; i < 4; i++) {
+      const imgEl = document.getElementById(`diag-img-${i}`);
+      if (imgEl) {
+        imgEl.style.opacity = '0.1';
+        setTimeout(() => {
+          imgEl.src = data.images[i];
+          imgEl.style.opacity = '0.55';
+        }, 150);
+      }
+    }
+  }
+
+  // Update Modular Stage Flow Diagram nodes (Card 2)
+  const pipeContainer = document.getElementById('diag-pipeline-flow');
+  if (pipeContainer) {
+    const nodes = pipeContainer.querySelectorAll('.pipe-node');
+    const lines = pipeContainer.querySelectorAll('.pipe-line');
+    nodes.forEach((n, idx) => {
+      if (idx <= index) {
+        n.classList.add('active');
+      } else {
+        n.classList.remove('active');
+      }
+    });
+    lines.forEach((l, idx) => {
+      if (idx < index) {
+        l.classList.add('active');
+      } else {
+        l.classList.remove('active');
+      }
+    });
+  }
+
+  // Update Tech Pills (Card 3)
+  if (pillsEl && data.pills) {
+    pillsEl.innerHTML = data.pills.join('');
+  }
+
+  // Update Telemetry Progress Meter (Card 4)
+  if (fillEl && data.progress) {
+    fillEl.style.width = data.progress;
+  }
+  if (percLblEl && data.progress) {
+    percLblEl.textContent = data.progress;
+  }
 }
 window.selectHudStep = selectHudStep;
 
