@@ -917,28 +917,28 @@ const pipelineStepsData = [
         title: "Audiovisual Strategy",
         tag: "Executive Planning",
         desc: "Aligning brand vision with cinematic visual direction to capture target audience engagement.",
-        image: "picture1.jpeg",
+        image: "custom_stage1_1.jpg",
         icon: "fa-compass"
       },
       {
         title: "Narrative Territories",
         tag: "Brand Storytelling",
         desc: "Defining unique storytelling frameworks and emotional resonant themes across media touchpoints.",
-        image: "picture2.jpeg",
+        image: "custom_stage1_2.jpg",
         icon: "fa-feather-alt"
       },
       {
         title: "Creative Direction",
         tag: "Visual Governance",
         desc: "Overseeing holistic visual identity, artistic tone, and brand aesthetic guidelines.",
-        image: "third.jpeg",
+        image: "custom_stage1_3.jpg",
         icon: "fa-palette"
       },
       {
         title: "Program Governance",
         tag: "End-to-End Control",
         desc: "Structured roadmap execution, cross-functional milestone tracking, and quality assurance.",
-        image: "fifth.jpeg",
+        image: "custom_stage1_4.jpg",
         icon: "fa-tasks"
       }
     ]
@@ -952,28 +952,28 @@ const pipelineStepsData = [
         title: "Campaign Concepts",
         tag: "Concept Ideation",
         desc: "Breakthrough creative concepts designed for high-impact multi-channel campaigns.",
-        image: "first 1.jpeg",
+        image: "custom_stage2_1.jpg",
         icon: "fa-lightbulb"
       },
       {
         title: "Cinematic Production",
         tag: "Live-Action & Virtual",
         desc: "World-class film direction, virtual production integration, and high-end set execution.",
-        image: "second.jpeg",
+        image: "custom_stage2_2.jpg",
         icon: "fa-video"
       },
       {
         title: "Post-Production Mastery",
         tag: "Editing & Color",
         desc: "Master-grade editorial assembly, custom color grading, and precision sound design.",
-        image: "forth.jpeg",
+        image: "custom_stage2_3.jpg",
         icon: "fa-film"
       },
       {
         title: "Content Adaptation",
         tag: "Multi-Format Delivery",
         desc: "Tailored aspect ratio variations, social cuts, and localized campaign assets.",
-        image: "sixth.jpeg",
+        image: "custom_stage2_4.jpg",
         icon: "fa-expand-arrows-alt"
       }
     ]
@@ -987,28 +987,28 @@ const pipelineStepsData = [
         title: "Computational VFX",
         tag: "Visual Effects",
         desc: "Photorealistic 3D simulations, particle systems, and complex visual magic.",
-        image: "seventh.jpeg",
+        image: "custom_stage3_1.jpg",
         icon: "fa-magic"
       },
       {
         title: "Real-Time Engine",
         tag: "Unreal Engine 5.4",
         desc: "Real-time rendering, virtual environments, and interactive camera tracking.",
-        image: "eighth.jpeg",
+        image: "custom_stage3_2.jpg",
         icon: "fa-gamepad"
       },
       {
         title: "Procedural Environments",
         tag: "Houdini FX",
         desc: "Algorithmic landscape design, pyro effects, and dynamic fluid simulations.",
-        image: "ninth.jpeg",
+        image: "custom_stage3_3.jpg",
         icon: "fa-cubes"
       },
       {
         title: "AI & Generative Workflows",
         tag: "Smart Augmentation",
         desc: "Ethical AI tool integration to accelerate concept previz and style exploration.",
-        image: "10th.jpeg",
+        image: "custom_stage3_4.jpg",
         icon: "fa-brain"
       }
     ]
@@ -1022,28 +1022,28 @@ const pipelineStepsData = [
         title: "Broadcast Mastering",
         tag: "Technical Compliance",
         desc: "Pristine 4K/HDR mastering compliant with international broadcast standards.",
-        image: "eleventh.jpeg",
+        image: "custom_stage4_1.jpg",
         icon: "fa-tv"
       },
       {
         title: "Multi-Platform Delivery",
         tag: "Omni-Channel",
         desc: "Optimized encoding for streaming networks, social channels, and web platforms.",
-        image: "thirthinth.jpeg",
+        image: "custom_stage4_2.jpg",
         icon: "fa-network-wired"
       },
       {
         title: "Cloud Content Hub",
         tag: "Global CDN",
         desc: "High-speed secure digital asset delivery and cloud distribution pipelines.",
-        image: "fortheenth.jpeg",
+        image: "custom_stage4_3.jpg",
         icon: "fa-cloud-upload-alt"
       },
       {
         title: "Dynamic Localization",
         tag: "Global Scale",
         desc: "Subtitling, voiceover integration, and market-specific graphic adaptations.",
-        image: "fivethinth.jpeg",
+        image: "custom_stage4_4.jpg",
         icon: "fa-globe"
       }
     ]
@@ -1057,28 +1057,28 @@ const pipelineStepsData = [
         title: "Audience Analytics",
         tag: "Performance Insights",
         desc: "Tracking viewer retention, attention heatmaps, and campaign engagement depth.",
-        image: "sixthiinth.jpeg",
+        image: "custom_stage5_1.jpg",
         icon: "fa-chart-bar"
       },
       {
         title: "Content Resonance Index",
         tag: "Impact Assessment",
         desc: "Qualitative and quantitative evaluation of brand recall and emotional response.",
-        image: "18th.jpeg",
+        image: "custom_stage5_2.jpg",
         icon: "fa-heartbeat"
       },
       {
         title: "Multi-Variant Testing",
         tag: "Optimization",
         desc: "Data-driven A/B testing of creative hooks, pacing, and calls to action.",
-        image: "19th.jpeg",
+        image: "custom_stage5_3.jpg",
         icon: "fa-vials"
       },
       {
         title: "ROI & Conversion Metrics",
         tag: "Value Tracking",
         desc: "Measuring campaign attribution, lead conversions, and brand equity growth.",
-        image: "20th.jpeg",
+        image: "custom_stage5_4.jpg",
         icon: "fa-chart-line"
       }
     ]
@@ -1092,28 +1092,28 @@ const pipelineStepsData = [
         title: "Digital Vault & Archiving",
         tag: "Asset Preservation",
         desc: "Secure, structured cloud vaulting of raw footage, project files, and master deliverables.",
-        image: "21th.jpeg",
+        image: "custom_stage6_1.jpg",
         icon: "fa-box-archive"
       },
       {
         title: "Modular Brand Libraries",
         tag: "Reusable Elements",
         desc: "Organizing 3D models, motion graphics, and audio stems for future campaign speed.",
-        image: "22nd.jpeg",
+        image: "custom_stage6_2.jpg",
         icon: "fa-layer-group"
       },
       {
         title: "Smart Metadata Tagging",
         tag: "Instant Retrieval",
         desc: "AI-assisted tagging of scenes, talent, products, and locations for rapid search.",
-        image: "23rd.jpeg",
+        image: "custom_stage6_3.jpg",
         icon: "fa-tags"
       },
       {
         title: "Creative Playbook",
         tag: "Knowledge Transfer",
         desc: "Documenting technical workflows, creative codes, and strategic learnings per brand.",
-        image: "24th.jpeg",
+        image: "custom_stage6_4.jpg",
         icon: "fa-book-open"
       }
     ]
@@ -1155,39 +1155,72 @@ function selectHudStep(index) {
 }
 
 function renderStageDeliverables(data) {
-  const gridEl = document.getElementById('stage-deliverables-grid');
+  const orbitalEl = document.getElementById('orbital-cards-container');
+  if (orbitalEl) {
+    const angleStep = 360 / data.options.length;
+    orbitalEl.innerHTML = data.options.map((opt, idx) => {
+      const angle = idx * angleStep;
+      return `
+        <div class="orbital-node ${idx === currentActiveOptionIndex ? 'active' : ''}" 
+             style="--node-angle: ${angle}deg" 
+             onclick="selectOrbitalOption(${idx})">
+          <div class="orbital-node-inner">
+            <img src="${opt.image}" alt="${opt.title}" />
+            <div class="orbital-node-overlay"></div>
+          </div>
+        </div>
+      `;
+    }).join('');
 
-  if (gridEl) {
-    gridEl.innerHTML = data.options.map((opt, idx) => `
-      <div class="deliverable-card ${idx === currentActiveOptionIndex ? 'active-option' : ''}" onclick="selectDeliverableOption(${idx})">
-        <div class="deliverable-card-media">
-          <img src="${opt.image}" alt="${opt.title}" loading="lazy" />
-          <div class="deliverable-media-overlay"></div>
-          <span class="deliverable-tag"><i class="fas ${opt.icon}"></i> ${opt.tag}</span>
-        </div>
-        <div class="deliverable-card-body">
-          <h4 class="deliverable-title">${opt.title}</h4>
-          <p class="deliverable-desc">${opt.desc}</p>
-        </div>
-      </div>
-    `).join('');
+    updateOrbitalFocusCard(data.options[currentActiveOptionIndex]);
   }
 }
 
-function selectDeliverableOption(optIndex) {
+function selectOrbitalOption(optIndex) {
   currentActiveOptionIndex = optIndex;
-  const cards = document.querySelectorAll('.deliverable-card');
-  cards.forEach((c, idx) => {
-    if (idx === optIndex) c.classList.add('active-option');
-    else c.classList.remove('active-option');
+  const data = pipelineStepsData[currentStageIndex];
+  if (!data) return;
+
+  const nodes = document.querySelectorAll('.orbital-node');
+  nodes.forEach((n, idx) => {
+    if (idx === optIndex) n.classList.add('active');
+    else n.classList.remove('active');
   });
+
+  const angleStep = 360 / data.options.length;
+  const targetRotation = - (optIndex * angleStep);
+  const ring = document.getElementById('orbital-ring');
+  if (ring) {
+    ring.style.transform = `rotate(${targetRotation}deg)`;
+  }
+
+  updateOrbitalFocusCard(data.options[optIndex]);
   if (typeof playSciFiChirpSound === 'function') {
     try { playSciFiChirpSound(); } catch(e){}
   }
 }
 
+function updateOrbitalFocusCard(opt) {
+  if (!opt) return;
+  const focusImg = document.getElementById('orbital-focus-img');
+  const focusTag = document.getElementById('orbital-focus-tag');
+  const focusTitle = document.getElementById('orbital-focus-title');
+  const focusDesc = document.getElementById('orbital-focus-desc');
+
+  if (focusImg) {
+    focusImg.style.opacity = '0.2';
+    setTimeout(() => {
+      focusImg.src = opt.image;
+      focusImg.style.opacity = '1';
+    }, 120);
+  }
+  if (focusTag) focusTag.innerHTML = `<i class="fas ${opt.icon}"></i> ${opt.tag}`;
+  if (focusTitle) focusTitle.textContent = opt.title;
+  if (focusDesc) focusDesc.textContent = opt.desc;
+}
+
 window.selectHudStep = selectHudStep;
-window.selectDeliverableOption = selectDeliverableOption;
+window.selectOrbitalOption = selectOrbitalOption;
 
 /* ==========================================================================
    AUTHENTIC VINTAGE TV SOUND EFFECTS (WEB AUDIO SYNTHESIZER)

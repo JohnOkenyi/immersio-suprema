@@ -455,61 +455,51 @@
                 </p>
               </div>
 
-              <!-- World-Class Deliverables Showcase Container -->
-              <div class="stage-showcase-container" id="stage-showcase-container">
+              <!-- 3D Orbit Deliverables Showcase Container -->
+              <div class="stage-showcase-container mode-orbital" id="stage-showcase-container">
                 
-                <!-- 2x2 Glassmorphism Deliverables Grid -->
-                <div class="stage-deliverables-grid" id="stage-deliverables-grid">
+                <div class="orbital-stage-wrapper" id="orbital-stage-wrapper">
                   
-                  <!-- Card 1 -->
-                  <div class="deliverable-card active-option" onclick="selectDeliverableOption(0)">
-                    <div class="deliverable-card-media">
-                      <img src="picture1.jpeg" alt="Audiovisual Strategy" loading="lazy" />
-                      <div class="deliverable-media-overlay"></div>
-                      <span class="deliverable-tag"><i class="fas fa-compass"></i> Executive Planning</span>
-                    </div>
-                    <div class="deliverable-card-body">
-                      <h4 class="deliverable-title">Audiovisual Strategy</h4>
-                      <p class="deliverable-desc">Aligning brand vision with cinematic visual direction to capture target audience engagement.</p>
-                    </div>
-                  </div>
-
-                  <!-- Card 2 -->
-                  <div class="deliverable-card" onclick="selectDeliverableOption(1)">
-                    <div class="deliverable-card-media">
-                      <img src="picture2.jpeg" alt="Narrative Territories" loading="lazy" />
-                      <div class="deliverable-media-overlay"></div>
-                      <span class="deliverable-tag"><i class="fas fa-feather-alt"></i> Brand Storytelling</span>
-                    </div>
-                    <div class="deliverable-card-body">
-                      <h4 class="deliverable-title">Narrative Territories</h4>
-                      <p class="deliverable-desc">Defining unique storytelling frameworks and emotional resonant themes across media touchpoints.</p>
+                  <!-- Center Focus Deliverable Card -->
+                  <div class="orbital-stage-center">
+                    <div class="orbital-focus-preview">
+                      <img id="orbital-focus-img" src="custom_stage1_1.jpg" alt="Active Deliverable" />
+                      <div class="orbital-focus-overlay"></div>
+                      <div class="orbital-focus-info">
+                        <span class="deliverable-tag" id="orbital-focus-tag"><i class="fas fa-compass"></i> Executive Planning</span>
+                        <h4 class="orbital-focus-title" id="orbital-focus-title">Audiovisual Strategy</h4>
+                        <p class="orbital-focus-desc" id="orbital-focus-desc">Aligning brand vision with cinematic visual direction to capture target audience engagement.</p>
+                      </div>
                     </div>
                   </div>
 
-                  <!-- Card 3 -->
-                  <div class="deliverable-card" onclick="selectDeliverableOption(2)">
-                    <div class="deliverable-card-media">
-                      <img src="third.jpeg" alt="Creative Direction" loading="lazy" />
-                      <div class="deliverable-media-overlay"></div>
-                      <span class="deliverable-tag"><i class="fas fa-palette"></i> Visual Governance</span>
-                    </div>
-                    <div class="deliverable-card-body">
-                      <h4 class="deliverable-title">Creative Direction</h4>
-                      <p class="deliverable-desc">Overseeing holistic visual identity, artistic tone, and brand aesthetic guidelines.</p>
-                    </div>
-                  </div>
-
-                  <!-- Card 4 -->
-                  <div class="deliverable-card" onclick="selectDeliverableOption(3)">
-                    <div class="deliverable-card-media">
-                      <img src="fifth.jpeg" alt="Program Governance" loading="lazy" />
-                      <div class="deliverable-media-overlay"></div>
-                      <span class="deliverable-tag"><i class="fas fa-tasks"></i> End-to-End Control</span>
-                    </div>
-                    <div class="deliverable-card-body">
-                      <h4 class="deliverable-title">Program Governance</h4>
-                      <p class="deliverable-desc">Structured roadmap execution, cross-functional milestone tracking, and quality assurance.</p>
+                  <!-- Rotating Orbital Ring with 4 Nodes -->
+                  <div class="orbital-ring" id="orbital-ring">
+                    <div class="orbital-cards-container" id="orbital-cards-container">
+                      <div class="orbital-node active" style="--node-angle: 0deg" onclick="selectOrbitalOption(0)">
+                        <div class="orbital-node-inner">
+                          <img src="custom_stage1_1.jpg" alt="Audiovisual Strategy" />
+                          <div class="orbital-node-overlay"></div>
+                        </div>
+                      </div>
+                      <div class="orbital-node" style="--node-angle: 90deg" onclick="selectOrbitalOption(1)">
+                        <div class="orbital-node-inner">
+                          <img src="custom_stage1_2.jpg" alt="Narrative Territories" />
+                          <div class="orbital-node-overlay"></div>
+                        </div>
+                      </div>
+                      <div class="orbital-node" style="--node-angle: 180deg" onclick="selectOrbitalOption(2)">
+                        <div class="orbital-node-inner">
+                          <img src="custom_stage1_3.jpg" alt="Creative Direction" />
+                          <div class="orbital-node-overlay"></div>
+                        </div>
+                      </div>
+                      <div class="orbital-node" style="--node-angle: 270deg" onclick="selectOrbitalOption(3)">
+                        <div class="orbital-node-inner">
+                          <img src="custom_stage1_4.jpg" alt="Program Governance" />
+                          <div class="orbital-node-overlay"></div>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
