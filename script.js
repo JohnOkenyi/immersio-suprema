@@ -917,28 +917,28 @@ const pipelineStepsData = [
         title: "Audiovisual Strategy",
         tag: "Executive Planning",
         desc: "Aligning brand vision with cinematic visual direction to capture target audience engagement.",
-        image: "custom_stage1_1.jpg",
+        image: "picture1.jpeg",
         icon: "fa-compass"
       },
       {
         title: "Narrative Territories",
         tag: "Brand Storytelling",
         desc: "Defining unique storytelling frameworks and emotional resonant themes across media touchpoints.",
-        image: "custom_stage1_2.jpg",
+        image: "picture2.jpeg",
         icon: "fa-feather-alt"
       },
       {
         title: "Creative Direction",
         tag: "Visual Governance",
         desc: "Overseeing holistic visual identity, artistic tone, and brand aesthetic guidelines.",
-        image: "custom_stage1_3.jpg",
+        image: "third.jpeg",
         icon: "fa-palette"
       },
       {
         title: "Program Governance",
         tag: "End-to-End Control",
         desc: "Structured roadmap execution, cross-functional milestone tracking, and quality assurance.",
-        image: "custom_stage1_4.jpg",
+        image: "fifth.jpeg",
         icon: "fa-tasks"
       }
     ]
@@ -952,28 +952,28 @@ const pipelineStepsData = [
         title: "Campaign Concepts",
         tag: "Concept Ideation",
         desc: "Breakthrough creative concepts designed for high-impact multi-channel campaigns.",
-        image: "custom_stage2_1.jpg",
+        image: "first 1.jpeg",
         icon: "fa-lightbulb"
       },
       {
         title: "Cinematic Production",
         tag: "Live-Action & Virtual",
         desc: "World-class film direction, virtual production integration, and high-end set execution.",
-        image: "custom_stage2_2.jpg",
+        image: "second.jpeg",
         icon: "fa-video"
       },
       {
         title: "Post-Production Mastery",
         tag: "Editing & Color",
         desc: "Master-grade editorial assembly, custom color grading, and precision sound design.",
-        image: "custom_stage2_3.jpg",
+        image: "forth.jpeg",
         icon: "fa-film"
       },
       {
         title: "Content Adaptation",
         tag: "Multi-Format Delivery",
         desc: "Tailored aspect ratio variations, social cuts, and localized campaign assets.",
-        image: "custom_stage2_4.jpg",
+        image: "sixth.jpeg",
         icon: "fa-expand-arrows-alt"
       }
     ]
@@ -987,28 +987,28 @@ const pipelineStepsData = [
         title: "Computational VFX",
         tag: "Visual Effects",
         desc: "Photorealistic 3D simulations, particle systems, and complex visual magic.",
-        image: "custom_stage3_1.jpg",
+        image: "seventh.jpeg",
         icon: "fa-magic"
       },
       {
         title: "Real-Time Engine",
         tag: "Unreal Engine 5.4",
         desc: "Real-time rendering, virtual environments, and interactive camera tracking.",
-        image: "custom_stage3_2.jpg",
+        image: "eighth.jpeg",
         icon: "fa-gamepad"
       },
       {
         title: "Procedural Environments",
         tag: "Houdini FX",
         desc: "Algorithmic landscape design, pyro effects, and dynamic fluid simulations.",
-        image: "custom_stage3_3.jpg",
+        image: "ninth.jpeg",
         icon: "fa-cubes"
       },
       {
         title: "AI & Generative Workflows",
         tag: "Smart Augmentation",
         desc: "Ethical AI tool integration to accelerate concept previz and style exploration.",
-        image: "custom_stage3_4.jpg",
+        image: "10th.jpeg",
         icon: "fa-brain"
       }
     ]
@@ -1022,28 +1022,28 @@ const pipelineStepsData = [
         title: "Broadcast Mastering",
         tag: "Technical Compliance",
         desc: "Pristine 4K/HDR mastering compliant with international broadcast standards.",
-        image: "custom_stage4_1.jpg",
+        image: "eleventh.jpeg",
         icon: "fa-tv"
       },
       {
         title: "Multi-Platform Delivery",
         tag: "Omni-Channel",
         desc: "Optimized encoding for streaming networks, social channels, and web platforms.",
-        image: "custom_stage4_2.jpg",
+        image: "thirthinth.jpeg",
         icon: "fa-network-wired"
       },
       {
         title: "Cloud Content Hub",
         tag: "Global CDN",
         desc: "High-speed secure digital asset delivery and cloud distribution pipelines.",
-        image: "custom_stage4_3.jpg",
+        image: "fortheenth.jpeg",
         icon: "fa-cloud-upload-alt"
       },
       {
         title: "Dynamic Localization",
         tag: "Global Scale",
         desc: "Subtitling, voiceover integration, and market-specific graphic adaptations.",
-        image: "custom_stage4_4.jpg",
+        image: "fivethinth.jpeg",
         icon: "fa-globe"
       }
     ]
@@ -1057,28 +1057,28 @@ const pipelineStepsData = [
         title: "Audience Analytics",
         tag: "Performance Insights",
         desc: "Tracking viewer retention, attention heatmaps, and campaign engagement depth.",
-        image: "custom_stage5_1.jpg",
+        image: "sixthiinth.jpeg",
         icon: "fa-chart-bar"
       },
       {
         title: "Content Resonance Index",
         tag: "Impact Assessment",
         desc: "Qualitative and quantitative evaluation of brand recall and emotional response.",
-        image: "custom_stage5_2.jpg",
+        image: "18th.jpeg",
         icon: "fa-heartbeat"
       },
       {
         title: "Multi-Variant Testing",
         tag: "Optimization",
         desc: "Data-driven A/B testing of creative hooks, pacing, and calls to action.",
-        image: "custom_stage5_3.jpg",
+        image: "19th.jpeg",
         icon: "fa-vials"
       },
       {
         title: "ROI & Conversion Metrics",
         tag: "Value Tracking",
         desc: "Measuring campaign attribution, lead conversions, and brand equity growth.",
-        image: "custom_stage5_4.jpg",
+        image: "20th.jpeg",
         icon: "fa-chart-line"
       }
     ]
@@ -1092,28 +1092,28 @@ const pipelineStepsData = [
         title: "Digital Vault & Archiving",
         tag: "Asset Preservation",
         desc: "Secure, structured cloud vaulting of raw footage, project files, and master deliverables.",
-        image: "custom_stage6_1.jpg",
+        image: "21th.jpeg",
         icon: "fa-box-archive"
       },
       {
         title: "Modular Brand Libraries",
         tag: "Reusable Elements",
         desc: "Organizing 3D models, motion graphics, and audio stems for future campaign speed.",
-        image: "custom_stage6_2.jpg",
+        image: "22nd.jpeg",
         icon: "fa-layer-group"
       },
       {
         title: "Smart Metadata Tagging",
         tag: "Instant Retrieval",
         desc: "AI-assisted tagging of scenes, talent, products, and locations for rapid search.",
-        image: "custom_stage6_3.jpg",
+        image: "23rd.jpeg",
         icon: "fa-tags"
       },
       {
         title: "Creative Playbook",
         tag: "Knowledge Transfer",
         desc: "Documenting technical workflows, creative codes, and strategic learnings per brand.",
-        image: "custom_stage6_4.jpg",
+        image: "24th.jpeg",
         icon: "fa-book-open"
       }
     ]
