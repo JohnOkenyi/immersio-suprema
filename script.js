@@ -1156,7 +1156,6 @@ function selectHudStep(index) {
 
 function renderStageDeliverables(data) {
   const gridEl = document.getElementById('stage-deliverables-grid');
-  const orbitalEl = document.getElementById('orbital-cards-container');
 
   if (gridEl) {
     gridEl.innerHTML = data.options.map((opt, idx) => `
@@ -1173,26 +1172,6 @@ function renderStageDeliverables(data) {
       </div>
     `).join('');
   }
-
-  if (orbitalEl) {
-    const angleStep = 360 / data.options.length;
-    orbitalEl.innerHTML = data.options.map((opt, idx) => {
-      const angle = idx * angleStep;
-      return `
-        <div class="orbital-node ${idx === currentActiveOptionIndex ? 'active' : ''}" 
-             style="--node-angle: ${angle}deg" 
-             onclick="selectOrbitalOption(${idx})">
-          <div class="orbital-node-inner">
-            <img src="${opt.image}" alt="${opt.title}" />
-            <div class="orbital-node-overlay"></div>
-            <span class="orbital-node-title">${opt.title}</span>
-          </div>
-        </div>
-      `;
-    }).join('');
-
-    updateOrbitalFocusCard(data.options[currentActiveOptionIndex]);
-  }
 }
 
 function selectDeliverableOption(optIndex) {
@@ -1207,76 +1186,8 @@ function selectDeliverableOption(optIndex) {
   }
 }
 
-function selectOrbitalOption(optIndex) {
-  currentActiveOptionIndex = optIndex;
-  const data = pipelineStepsData[currentStageIndex];
-  if (!data) return;
-
-  const nodes = document.querySelectorAll('.orbital-node');
-  nodes.forEach((n, idx) => {
-    if (idx === optIndex) n.classList.add('active');
-    else n.classList.remove('active');
-  });
-
-  const angleStep = 360 / data.options.length;
-  const targetRotation = - (optIndex * angleStep);
-  const ring = document.getElementById('orbital-ring');
-  if (ring) {
-    ring.style.transform = `rotate(${targetRotation}deg)`;
-  }
-
-  updateOrbitalFocusCard(data.options[optIndex]);
-  if (typeof playSciFiChirpSound === 'function') {
-    try { playSciFiChirpSound(); } catch(e){}
-  }
-}
-
-function updateOrbitalFocusCard(opt) {
-  if (!opt) return;
-  const focusImg = document.getElementById('orbital-focus-img');
-  const focusTag = document.getElementById('orbital-focus-tag');
-  const focusTitle = document.getElementById('orbital-focus-title');
-  const focusDesc = document.getElementById('orbital-focus-desc');
-
-  if (focusImg) {
-    focusImg.style.opacity = '0.2';
-    setTimeout(() => {
-      focusImg.src = opt.image;
-      focusImg.style.opacity = '1';
-    }, 150);
-  }
-  if (focusTag) focusTag.innerHTML = `<i class="fas ${opt.icon}"></i> ${opt.tag}`;
-  if (focusTitle) focusTitle.textContent = opt.title;
-  if (focusDesc) focusDesc.textContent = opt.desc;
-}
-
-function toggleShowcaseView(mode) {
-  const container = document.getElementById('stage-showcase-container');
-  const btnGrid = document.getElementById('btn-view-grid');
-  const btnOrbit = document.getElementById('btn-view-orbit');
-
-  if (!container) return;
-
-  if (mode === 'orbit') {
-    container.classList.add('mode-orbital');
-    container.classList.remove('mode-grid');
-    if (btnGrid) btnGrid.classList.remove('active');
-    if (btnOrbit) btnOrbit.classList.add('active');
-  } else {
-    container.classList.add('mode-grid');
-    container.classList.remove('mode-orbital');
-    if (btnGrid) btnGrid.classList.add('active');
-    if (btnOrbit) btnOrbit.classList.remove('active');
-  }
-
-  const data = pipelineStepsData[currentStageIndex];
-  if (data) renderStageDeliverables(data);
-}
-
 window.selectHudStep = selectHudStep;
 window.selectDeliverableOption = selectDeliverableOption;
-window.selectOrbitalOption = selectOrbitalOption;
-window.toggleShowcaseView = toggleShowcaseView;
 
 /* ==========================================================================
    AUTHENTIC VINTAGE TV SOUND EFFECTS (WEB AUDIO SYNTHESIZER)
