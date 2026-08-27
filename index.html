@@ -442,9 +442,19 @@
             <div class="console-header">
               <div class="console-live-badge">
                 <span class="pulse-led-dot"></span>
-                <span class="status-lbl">STATUS // PIPELINE ACTIVE</span>
+                <span class="status-lbl">STAGE EXECUTION MATRIX</span>
               </div>
-              <span class="console-id-stamp" id="console-stage-stamp">STAGE // 01</span>
+              <div class="showcase-controls">
+                <div class="view-mode-toggle">
+                  <button class="view-btn active" id="btn-view-grid" onclick="toggleShowcaseView('grid')" title="Grid View">
+                    <i class="fas fa-th-large"></i> Grid
+                  </button>
+                  <button class="view-btn" id="btn-view-orbit" onclick="toggleShowcaseView('orbit')" title="3D Circular Orbit">
+                    <i class="fas fa-circle-notch"></i> 3D Orbit
+                  </button>
+                </div>
+                <span class="console-id-stamp" id="console-stage-stamp">STAGE // 01</span>
+              </div>
             </div>
 
             <div class="console-body">
@@ -455,157 +465,83 @@
                 </p>
               </div>
 
-              <!-- Technical diagnostics telemetry grid (Futuristic 3D Sci-Fi Digital HUD Console) -->
-              <div class="console-diagnostics">
+              <!-- World-Class Deliverables Showcase Container -->
+              <div class="stage-showcase-container mode-grid" id="stage-showcase-container">
                 
-                <!-- Card 1: System Core (Narrative Engine) -->
-                <div class="diagnostic-card scifi-3d-card has-bg-image" onmouseenter="playSciFiChirpSound()" id="diag-card-0">
-                  <div class="diag-img-wrap">
-                    <img class="diag-bg-img" id="diag-img-0" src="picture1.jpeg" alt="System Core Visual">
-                    <div class="diag-img-overlay"></div>
-                    <div class="diag-grid-pattern"></div>
-                  </div>
+                <!-- View Mode 1: 2x2 Glassmorphism Deliverables Grid -->
+                <div class="stage-deliverables-grid" id="stage-deliverables-grid">
                   
-                  <span class="hud-corner corner-tl"></span>
-                  <span class="hud-corner corner-tr"></span>
-                  <span class="hud-corner corner-bl"></span>
-                  <span class="hud-corner corner-br"></span>
-                  <div class="card-3d-shine"></div>
-                  
-                  <div class="diag-header">
-                    <span class="diag-label"><i class="fas fa-brain"></i> SYSTEM CORE</span>
-                    <span class="diag-sub-stamp">[ SYS // 01 ]</span>
-                  </div>
-                  
-                  <div class="diag-main-row">
-                    <span class="diag-val" id="diag-core">NARRATIVE ENGINE</span>
-                    <div class="diag-led-badge"><span class="pulse-dot-cyan"></span><span class="diag-status-lbl" id="diag-status-0">ACTIVE</span></div>
+                  <!-- Card 1 -->
+                  <div class="deliverable-card active-option" onclick="selectDeliverableOption(0)">
+                    <div class="deliverable-card-media">
+                      <img src="picture1.jpeg" alt="Audiovisual Strategy" loading="lazy" />
+                      <div class="deliverable-media-overlay"></div>
+                      <span class="deliverable-tag"><i class="fas fa-compass"></i> Executive Planning</span>
+                    </div>
+                    <div class="deliverable-card-body">
+                      <h4 class="deliverable-title">Audiovisual Strategy</h4>
+                      <p class="deliverable-desc">Aligning brand vision with cinematic visual direction to capture target audience engagement.</p>
+                    </div>
                   </div>
 
-                  <div class="diag-visualizer">
-                    <div class="diag-visual-title">
-                      <span><i class="fas fa-wave-square"></i> FREQUENCY MATRIX DIAGRAM</span>
-                      <span class="diag-live-hz">48.2 kHz</span>
+                  <!-- Card 2 -->
+                  <div class="deliverable-card" onclick="selectDeliverableOption(1)">
+                    <div class="deliverable-card-media">
+                      <img src="picture2.jpeg" alt="Narrative Territories" loading="lazy" />
+                      <div class="deliverable-media-overlay"></div>
+                      <span class="deliverable-tag"><i class="fas fa-feather-alt"></i> Brand Storytelling</span>
                     </div>
-                    <svg class="diag-wave-svg" viewBox="0 0 160 20" preserveAspectRatio="none">
-                      <path d="M0,10 Q20,2 40,10 T80,10 T120,10 T160,10" stroke="rgba(204, 164, 59, 0.85)" stroke-width="1.8" fill="none" class="wave-line-1"/>
-                      <path d="M0,10 Q20,18 40,10 T80,10 T120,10 T160,10" stroke="rgba(0, 240, 255, 0.7)" stroke-width="1.2" fill="none" class="wave-line-2"/>
-                    </svg>
+                    <div class="deliverable-card-body">
+                      <h4 class="deliverable-title">Narrative Territories</h4>
+                      <p class="deliverable-desc">Defining unique storytelling frameworks and emotional resonant themes across media touchpoints.</p>
+                    </div>
                   </div>
+
+                  <!-- Card 3 -->
+                  <div class="deliverable-card" onclick="selectDeliverableOption(2)">
+                    <div class="deliverable-card-media">
+                      <img src="third.jpeg" alt="Creative Direction" loading="lazy" />
+                      <div class="deliverable-media-overlay"></div>
+                      <span class="deliverable-tag"><i class="fas fa-palette"></i> Visual Governance</span>
+                    </div>
+                    <div class="deliverable-card-body">
+                      <h4 class="deliverable-title">Creative Direction</h4>
+                      <p class="deliverable-desc">Overseeing holistic visual identity, artistic tone, and brand aesthetic guidelines.</p>
+                    </div>
+                  </div>
+
+                  <!-- Card 4 -->
+                  <div class="deliverable-card" onclick="selectDeliverableOption(3)">
+                    <div class="deliverable-card-media">
+                      <img src="fifth.jpeg" alt="Program Governance" loading="lazy" />
+                      <div class="deliverable-media-overlay"></div>
+                      <span class="deliverable-tag"><i class="fas fa-tasks"></i> End-to-End Control</span>
+                    </div>
+                    <div class="deliverable-card-body">
+                      <h4 class="deliverable-title">Program Governance</h4>
+                      <p class="deliverable-desc">Structured roadmap execution, cross-functional milestone tracking, and quality assurance.</p>
+                    </div>
+                  </div>
+
                 </div>
 
-                <!-- Card 2: Pipeline Integration (Stage Flow) -->
-                <div class="diagnostic-card scifi-3d-card has-bg-image" onmouseenter="playSciFiChirpSound()" id="diag-card-1">
-                  <div class="diag-img-wrap">
-                    <img class="diag-bg-img" id="diag-img-1" src="picture2.jpeg" alt="Pipeline Integration Visual">
-                    <div class="diag-img-overlay"></div>
-                    <div class="diag-grid-pattern"></div>
-                  </div>
-
-                  <span class="hud-corner corner-tl"></span>
-                  <span class="hud-corner corner-tr"></span>
-                  <span class="hud-corner corner-bl"></span>
-                  <span class="hud-corner corner-br"></span>
-                  <div class="card-3d-shine"></div>
-                  
-                  <div class="diag-header">
-                    <span class="diag-label"><i class="fas fa-project-diagram"></i> PIPELINE INTEGRATION</span>
-                    <span class="diag-sub-stamp">[ PIPE // 02 ]</span>
-                  </div>
-                  
-                  <div class="diag-main-row">
-                    <span class="diag-val" id="diag-integration">GLOBAL STAGE 01</span>
-                    <div class="diag-led-badge"><span class="pulse-dot-gold"></span><span class="diag-status-lbl" id="diag-status-1">SYNCED</span></div>
-                  </div>
-
-                  <div class="diag-visualizer">
-                    <div class="diag-visual-title">
-                      <span><i class="fas fa-sitemap"></i> MODULAR STAGE FLOW DIAGRAM</span>
-                      <span class="diag-live-hz">STAGE 01/06</span>
-                    </div>
-                    <div class="diag-pipeline-flow" id="diag-pipeline-flow">
-                      <div class="pipe-node active"><span class="pipe-dot"></span><span class="pipe-lbl">S1</span></div>
-                      <div class="pipe-line active"></div>
-                      <div class="pipe-node"><span class="pipe-dot"></span><span class="pipe-lbl">S2</span></div>
-                      <div class="pipe-line"></div>
-                      <div class="pipe-node"><span class="pipe-dot"></span><span class="pipe-lbl">S3</span></div>
-                      <div class="pipe-line"></div>
-                      <div class="pipe-node"><span class="pipe-dot"></span><span class="pipe-lbl">S4</span></div>
-                      <div class="pipe-line"></div>
-                      <div class="pipe-node"><span class="pipe-dot"></span><span class="pipe-lbl">S5</span></div>
-                      <div class="pipe-line"></div>
-                      <div class="pipe-node"><span class="pipe-dot"></span><span class="pipe-lbl">S6</span></div>
+                <!-- View Mode 2: 3D Circular Orbit Layout -->
+                <div class="orbital-stage-wrapper" id="orbital-stage-wrapper">
+                  <div class="orbital-stage-center">
+                    <div class="orbital-focus-preview">
+                      <img id="orbital-focus-img" src="picture1.jpeg" alt="Active Deliverable" />
+                      <div class="orbital-focus-overlay"></div>
+                      <div class="orbital-focus-info">
+                        <span class="deliverable-tag" id="orbital-focus-tag"><i class="fas fa-compass"></i> Executive Planning</span>
+                        <h4 class="orbital-focus-title" id="orbital-focus-title">Audiovisual Strategy</h4>
+                        <p class="orbital-focus-desc" id="orbital-focus-desc">Aligning brand vision with cinematic visual direction to capture target audience engagement.</p>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <!-- Card 3: Active Platforms (Tech Stack Matrix) -->
-                <div class="diagnostic-card scifi-3d-card has-bg-image" onmouseenter="playSciFiChirpSound()" id="diag-card-2">
-                  <div class="diag-img-wrap">
-                    <img class="diag-bg-img" id="diag-img-2" src="third.jpeg" alt="Active Platforms Visual">
-                    <div class="diag-img-overlay"></div>
-                    <div class="diag-grid-pattern"></div>
-                  </div>
-
-                  <span class="hud-corner corner-tl"></span>
-                  <span class="hud-corner corner-tr"></span>
-                  <span class="hud-corner corner-bl"></span>
-                  <span class="hud-corner corner-br"></span>
-                  <div class="card-3d-shine"></div>
-                  
-                  <div class="diag-header">
-                    <span class="diag-label"><i class="fas fa-layer-group"></i> ACTIVE PLATFORMS</span>
-                    <span class="diag-sub-stamp">[ PLAT // 03 ]</span>
-                  </div>
-                  
-                  <div class="diag-main-row">
-                    <span class="diag-val" id="diag-platforms">FCP, UNREAL STAGE, HOUDINI</span>
-                  </div>
-
-                  <div class="diag-visualizer">
-                    <div class="diag-visual-title">
-                      <span><i class="fas fa-cubes"></i> ENGINE TECH STACK MATRIX</span>
-                      <span class="diag-live-hz">3 ACTIVE</span>
-                    </div>
-                    <div class="diag-tech-pills" id="diag-tech-pills">
-                      <span class="cyber-pill"><i class="fas fa-gamepad"></i> UNREAL 5.4</span>
-                      <span class="cyber-pill"><i class="fas fa-magic"></i> HOUDINI 20.5</span>
-                      <span class="cyber-pill"><i class="fas fa-film"></i> NUKE 15</span>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Card 4: Complexity Factor (Telemetry Radar & Progress) -->
-                <div class="diagnostic-card scifi-3d-card has-bg-image" onmouseenter="playSciFiChirpSound()" id="diag-card-3">
-                  <div class="diag-img-wrap">
-                    <img class="diag-bg-img" id="diag-img-3" src="fifth.jpeg" alt="Complexity Factor Visual">
-                    <div class="diag-img-overlay"></div>
-                    <div class="diag-grid-pattern"></div>
-                  </div>
-
-                  <span class="hud-corner corner-tl"></span>
-                  <span class="hud-corner corner-tr"></span>
-                  <span class="hud-corner corner-bl"></span>
-                  <span class="hud-corner corner-br"></span>
-                  <div class="card-3d-shine"></div>
-                  
-                  <div class="diag-header">
-                    <span class="diag-label"><i class="fas fa-tachometer-alt"></i> COMPLEXITY FACTOR</span>
-                    <span class="diag-sub-stamp">[ CPLX // 04 ]</span>
-                  </div>
-                  
-                  <div class="diag-main-row">
-                    <span class="diag-val" id="diag-complexity">OPTIMAL // LEVEL 04</span>
-                    <div class="diag-led-badge"><span class="pulse-dot-green"></span><span class="diag-status-lbl" id="diag-status-3">100% READY</span></div>
-                  </div>
-
-                  <div class="diag-visualizer">
-                    <div class="diag-visual-title">
-                      <span><i class="fas fa-microchip"></i> TELEMETRY READINESS METRIC</span>
-                      <span class="diag-live-hz" id="diag-perc-lbl">98%</span>
-                    </div>
-                    <div class="diag-progress-bar">
-                      <div class="diag-progress-fill" id="diag-progress-fill" style="width: 98%;"></div>
+                  <div class="orbital-ring" id="orbital-ring">
+                    <div class="orbital-cards-container" id="orbital-cards-container">
+                      <!-- Rendered dynamically by JS in orbital mode -->
                     </div>
                   </div>
                 </div>
@@ -615,8 +551,8 @@
             </div>
 
             <div class="console-footer">
-              <span class="footer-msg"><i class="fas fa-microchip"></i> ENGINE SYSTEM STATUS: ONLINE</span>
-              <span class="footer-sys-load">IMMERSIVITY INDEX // 98%</span>
+              <span class="footer-msg"><i class="fas fa-sparkles"></i> IMMERSIO SUPREMA // STAGE SHOWCASE</span>
+              <span class="footer-sys-load">QUALITY ASSURED // 100%</span>
             </div>
             
           </div>

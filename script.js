@@ -912,113 +912,221 @@ const pipelineStepsData = [
     stamp: "STAGE // 01",
     title: "STRATEGY & ADVISORY",
     text: "Audiovisual strategy, consulting and support, creative direction, narrative territories, coordination, and program management.",
-    core: "NARRATIVE ENGINE",
-    integration: "GLOBAL STAGE 01",
-    platforms: "FCP, UNREAL STAGE, HOUDINI",
-    complexity: "OPTIMAL // LEVEL 04",
-    meter1: "98%",
-    meter2: "92%",
-    images: ["picture1.jpeg", "picture2.jpeg", "third.jpeg", "fifth.jpeg"],
-    pills: [
-      '<span class="cyber-pill"><i class="fas fa-gamepad"></i> UNREAL 5.4</span>',
-      '<span class="cyber-pill"><i class="fas fa-magic"></i> HOUDINI 20.5</span>',
-      '<span class="cyber-pill"><i class="fas fa-film"></i> NUKE 15</span>'
-    ],
-    progress: "98%"
+    options: [
+      {
+        title: "Audiovisual Strategy",
+        tag: "Executive Planning",
+        desc: "Aligning brand vision with cinematic visual direction to capture target audience engagement.",
+        image: "picture1.jpeg",
+        icon: "fa-compass"
+      },
+      {
+        title: "Narrative Territories",
+        tag: "Brand Storytelling",
+        desc: "Defining unique storytelling frameworks and emotional resonant themes across media touchpoints.",
+        image: "picture2.jpeg",
+        icon: "fa-feather-alt"
+      },
+      {
+        title: "Creative Direction",
+        tag: "Visual Governance",
+        desc: "Overseeing holistic visual identity, artistic tone, and brand aesthetic guidelines.",
+        image: "third.jpeg",
+        icon: "fa-palette"
+      },
+      {
+        title: "Program Governance",
+        tag: "End-to-End Control",
+        desc: "Structured roadmap execution, cross-functional milestone tracking, and quality assurance.",
+        image: "fifth.jpeg",
+        icon: "fa-tasks"
+      }
+    ]
   },
   {
     stamp: "STAGE // 02",
     title: "CREATIVE & PRODUCTION",
     text: "Campaign concepts, pre-production, production and directing, advanced post-production, adaptations, and content variations.",
-    core: "CREATIVE DIRECTORY",
-    integration: "VIRTUAL CAMERA STACK",
-    platforms: "UNREAL STAGE, NUKE Studio",
-    complexity: "CRITICAL // LEVEL 08",
-    meter1: "95%",
-    meter2: "96%",
-    images: ["first 1.jpeg", "second.jpeg", "forth.jpeg", "sixth.jpeg"],
-    pills: [
-      '<span class="cyber-pill"><i class="fas fa-camera"></i> RED V-RAPTOR</span>',
-      '<span class="cyber-pill"><i class="fas fa-video"></i> ARRI ALEXA 35</span>',
-      '<span class="cyber-pill"><i class="fas fa-sliders-h"></i> DAVINCI 19</span>'
-    ],
-    progress: "95%"
+    options: [
+      {
+        title: "Campaign Concepts",
+        tag: "Concept Ideation",
+        desc: "Breakthrough creative concepts designed for high-impact multi-channel campaigns.",
+        image: "first 1.jpeg",
+        icon: "fa-lightbulb"
+      },
+      {
+        title: "Cinematic Production",
+        tag: "Live-Action & Virtual",
+        desc: "World-class film direction, virtual production integration, and high-end set execution.",
+        image: "second.jpeg",
+        icon: "fa-video"
+      },
+      {
+        title: "Post-Production Mastery",
+        tag: "Editing & Color",
+        desc: "Master-grade editorial assembly, custom color grading, and precision sound design.",
+        image: "forth.jpeg",
+        icon: "fa-film"
+      },
+      {
+        title: "Content Adaptation",
+        tag: "Multi-Format Delivery",
+        desc: "Tailored aspect ratio variations, social cuts, and localized campaign assets.",
+        image: "sixth.jpeg",
+        icon: "fa-expand-arrows-alt"
+      }
+    ]
   },
   {
     stamp: "STAGE // 03",
     title: "TECHNOLOGY & VFX",
     text: "We use 2D, 3D, VFX, AI when relevant, and advanced production technologies to expand what is creatively possible.",
-    core: "COMPUTATIONAL VFX",
-    integration: "DISTR RENDERING MATRIX",
-    platforms: "HOUDINI 20.5, PYRO SPARSE",
-    complexity: "EXTREME // LEVEL 10",
-    meter1: "99%",
-    meter2: "88%",
-    images: ["seventh.jpeg", "eighth.jpeg", "ninth.jpeg", "10th.jpeg"],
-    pills: [
-      '<span class="cyber-pill"><i class="fas fa-cubes"></i> HOUDINI PYRO</span>',
-      '<span class="cyber-pill"><i class="fas fa-bolt"></i> UNREAL NIAGARA</span>',
-      '<span class="cyber-pill"><i class="fas fa-brain"></i> AI STABLE VFX</span>'
-    ],
-    progress: "99%"
+    options: [
+      {
+        title: "Computational VFX",
+        tag: "Visual Effects",
+        desc: "Photorealistic 3D simulations, particle systems, and complex visual magic.",
+        image: "seventh.jpeg",
+        icon: "fa-magic"
+      },
+      {
+        title: "Real-Time Engine",
+        tag: "Unreal Engine 5.4",
+        desc: "Real-time rendering, virtual environments, and interactive camera tracking.",
+        image: "eighth.jpeg",
+        icon: "fa-gamepad"
+      },
+      {
+        title: "Procedural Environments",
+        tag: "Houdini FX",
+        desc: "Algorithmic landscape design, pyro effects, and dynamic fluid simulations.",
+        image: "ninth.jpeg",
+        icon: "fa-cubes"
+      },
+      {
+        title: "AI & Generative Workflows",
+        tag: "Smart Augmentation",
+        desc: "Ethical AI tool integration to accelerate concept previz and style exploration.",
+        image: "10th.jpeg",
+        icon: "fa-brain"
+      }
+    ]
   },
   {
     stamp: "STAGE // 04",
     title: "DISTRIBUTION & DEPLOYMENT",
     text: "We prepare and adapt content for TV, social media, digital platforms, and different formats and distribution environments.",
-    core: "DISTRIBUTION CORE",
-    integration: "HYBRID CLOUD FRAMEWORK",
-    platforms: "REDHAT CLOUD, DOCKER",
-    complexity: "OPTIMAL // LEVEL 05",
-    meter1: "94%",
-    meter2: "97%",
-    images: ["eleventh.jpeg", "thirthinth.jpeg", "fortheenth.jpeg", "fivethinth.jpeg"],
-    pills: [
-      '<span class="cyber-pill"><i class="fas fa-tv"></i> BROADCAST 4K</span>',
-      '<span class="cyber-pill"><i class="fas fa-cloud-upload-alt"></i> CLOUD CDN</span>',
-      '<span class="cyber-pill"><i class="fas fa-mobile-alt"></i> MULTI-ASPECT</span>'
-    ],
-    progress: "94%"
+    options: [
+      {
+        title: "Broadcast Mastering",
+        tag: "Technical Compliance",
+        desc: "Pristine 4K/HDR mastering compliant with international broadcast standards.",
+        image: "eleventh.jpeg",
+        icon: "fa-tv"
+      },
+      {
+        title: "Multi-Platform Delivery",
+        tag: "Omni-Channel",
+        desc: "Optimized encoding for streaming networks, social channels, and web platforms.",
+        image: "thirthinth.jpeg",
+        icon: "fa-network-wired"
+      },
+      {
+        title: "Cloud Content Hub",
+        tag: "Global CDN",
+        desc: "High-speed secure digital asset delivery and cloud distribution pipelines.",
+        image: "fortheenth.jpeg",
+        icon: "fa-cloud-upload-alt"
+      },
+      {
+        title: "Dynamic Localization",
+        tag: "Global Scale",
+        desc: "Subtitling, voiceover integration, and market-specific graphic adaptations.",
+        image: "fivethinth.jpeg",
+        icon: "fa-globe"
+      }
+    ]
   },
   {
     stamp: "STAGE // 05",
     title: "MEASUREMENT & METRICS",
     text: "We identify the content, formats, messages, and approaches that generate the greatest relevance and impact, while analysing audience reactions and performance.",
-    core: "ANALYTICS ENGINE",
-    integration: "BIOMETRIC TELEMETRY",
-    platforms: "CUSTOM STATS, PYTHON",
-    complexity: "MODERATE // LEVEL 06",
-    meter1: "91%",
-    meter2: "94%",
-    images: ["sixthiinth.jpeg", "18th.jpeg", "19th.jpeg", "20th.jpeg"],
-    pills: [
-      '<span class="cyber-pill"><i class="fas fa-chart-line"></i> TELEMETRY AI</span>',
-      '<span class="cyber-pill"><i class="fas fa-eye"></i> RETENTION LAB</span>',
-      '<span class="cyber-pill"><i class="fas fa-bullseye"></i> IMPACT INDEX</span>'
-    ],
-    progress: "91%"
+    options: [
+      {
+        title: "Audience Analytics",
+        tag: "Performance Insights",
+        desc: "Tracking viewer retention, attention heatmaps, and campaign engagement depth.",
+        image: "sixthiinth.jpeg",
+        icon: "fa-chart-bar"
+      },
+      {
+        title: "Content Resonance Index",
+        tag: "Impact Assessment",
+        desc: "Qualitative and quantitative evaluation of brand recall and emotional response.",
+        image: "18th.jpeg",
+        icon: "fa-heartbeat"
+      },
+      {
+        title: "Multi-Variant Testing",
+        tag: "Optimization",
+        desc: "Data-driven A/B testing of creative hooks, pacing, and calls to action.",
+        image: "19th.jpeg",
+        icon: "fa-vials"
+      },
+      {
+        title: "ROI & Conversion Metrics",
+        tag: "Value Tracking",
+        desc: "Measuring campaign attribution, lead conversions, and brand equity growth.",
+        image: "20th.jpeg",
+        icon: "fa-chart-line"
+      }
+    ]
   },
   {
     stamp: "STAGE // 06",
     title: "BUILDING ASSETS",
     text: "We build an evolving audiovisual asset library, while capturing creative codes, narrative principles, production knowledge, and learnings from every campaign.",
-    core: "ASSET LIBRARY MATRIX",
-    integration: "PERSISTENT DB CLUSTER",
-    platforms: "METADATA LEDGER, PG",
-    complexity: "OPTIMAL // LEVEL 03",
-    meter1: "97%",
-    meter2: "95%",
-    images: ["21th.jpeg", "22nd.jpeg", "23rd.jpeg", "24th.jpeg"],
-    pills: [
-      '<span class="cyber-pill"><i class="fas fa-database"></i> VAULT DB</span>',
-      '<span class="cyber-pill"><i class="fas fa-tags"></i> SMART META</span>',
-      '<span class="cyber-pill"><i class="fas fa-sync"></i> AUTO ARCHIVE</span>'
-    ],
-    progress: "97%"
+    options: [
+      {
+        title: "Digital Vault & Archiving",
+        tag: "Asset Preservation",
+        desc: "Secure, structured cloud vaulting of raw footage, project files, and master deliverables.",
+        image: "21th.jpeg",
+        icon: "fa-box-archive"
+      },
+      {
+        title: "Modular Brand Libraries",
+        tag: "Reusable Elements",
+        desc: "Organizing 3D models, motion graphics, and audio stems for future campaign speed.",
+        image: "22nd.jpeg",
+        icon: "fa-layer-group"
+      },
+      {
+        title: "Smart Metadata Tagging",
+        tag: "Instant Retrieval",
+        desc: "AI-assisted tagging of scenes, talent, products, and locations for rapid search.",
+        image: "23rd.jpeg",
+        icon: "fa-tags"
+      },
+      {
+        title: "Creative Playbook",
+        tag: "Knowledge Transfer",
+        desc: "Documenting technical workflows, creative codes, and strategic learnings per brand.",
+        image: "24th.jpeg",
+        icon: "fa-book-open"
+      }
+    ]
   }
 ];
 
+let currentStageIndex = 0;
+let currentActiveOptionIndex = 0;
+
 function selectHudStep(index) {
+  currentStageIndex = index;
+  currentActiveOptionIndex = 0;
+
   if (typeof playUICardClickSound === 'function') {
     try { playUICardClickSound(); } catch(e){}
   }
@@ -1038,71 +1146,137 @@ function selectHudStep(index) {
   const stampEl = document.getElementById('console-stage-stamp');
   const titleEl = document.getElementById('console-stage-title');
   const textEl = document.getElementById('console-stage-text');
-  const coreEl = document.getElementById('diag-core');
-  const integrationEl = document.getElementById('diag-integration');
-  const platformsEl = document.getElementById('diag-platforms');
-  const complexityEl = document.getElementById('diag-complexity');
-  const pillsEl = document.getElementById('diag-tech-pills');
-  const fillEl = document.getElementById('diag-progress-fill');
-  const percLblEl = document.getElementById('diag-perc-lbl');
 
   if (stampEl) stampEl.textContent = data.stamp;
   if (titleEl) titleEl.textContent = data.title;
   if (textEl) textEl.textContent = data.text;
-  if (coreEl) coreEl.textContent = data.core;
-  if (integrationEl) integrationEl.textContent = data.integration;
-  if (platformsEl) platformsEl.textContent = data.platforms;
-  if (complexityEl) complexityEl.textContent = data.complexity;
 
-  // Dynamically update diagnostic card background images
-  if (data.images && data.images.length >= 4) {
-    for (let i = 0; i < 4; i++) {
-      const imgEl = document.getElementById(`diag-img-${i}`);
-      if (imgEl) {
-        imgEl.style.opacity = '0.1';
-        setTimeout(() => {
-          imgEl.src = data.images[i];
-          imgEl.style.opacity = '0.55';
-        }, 150);
-      }
-    }
+  renderStageDeliverables(data);
+}
+
+function renderStageDeliverables(data) {
+  const gridEl = document.getElementById('stage-deliverables-grid');
+  const orbitalEl = document.getElementById('orbital-cards-container');
+
+  if (gridEl) {
+    gridEl.innerHTML = data.options.map((opt, idx) => `
+      <div class="deliverable-card ${idx === currentActiveOptionIndex ? 'active-option' : ''}" onclick="selectDeliverableOption(${idx})">
+        <div class="deliverable-card-media">
+          <img src="${opt.image}" alt="${opt.title}" loading="lazy" />
+          <div class="deliverable-media-overlay"></div>
+          <span class="deliverable-tag"><i class="fas ${opt.icon}"></i> ${opt.tag}</span>
+        </div>
+        <div class="deliverable-card-body">
+          <h4 class="deliverable-title">${opt.title}</h4>
+          <p class="deliverable-desc">${opt.desc}</p>
+        </div>
+      </div>
+    `).join('');
   }
 
-  // Update Modular Stage Flow Diagram nodes (Card 2)
-  const pipeContainer = document.getElementById('diag-pipeline-flow');
-  if (pipeContainer) {
-    const nodes = pipeContainer.querySelectorAll('.pipe-node');
-    const lines = pipeContainer.querySelectorAll('.pipe-line');
-    nodes.forEach((n, idx) => {
-      if (idx <= index) {
-        n.classList.add('active');
-      } else {
-        n.classList.remove('active');
-      }
-    });
-    lines.forEach((l, idx) => {
-      if (idx < index) {
-        l.classList.add('active');
-      } else {
-        l.classList.remove('active');
-      }
-    });
-  }
+  if (orbitalEl) {
+    const angleStep = 360 / data.options.length;
+    orbitalEl.innerHTML = data.options.map((opt, idx) => {
+      const angle = idx * angleStep;
+      return `
+        <div class="orbital-node ${idx === currentActiveOptionIndex ? 'active' : ''}" 
+             style="--node-angle: ${angle}deg" 
+             onclick="selectOrbitalOption(${idx})">
+          <div class="orbital-node-inner">
+            <img src="${opt.image}" alt="${opt.title}" />
+            <div class="orbital-node-overlay"></div>
+            <span class="orbital-node-title">${opt.title}</span>
+          </div>
+        </div>
+      `;
+    }).join('');
 
-  // Update Tech Pills (Card 3)
-  if (pillsEl && data.pills) {
-    pillsEl.innerHTML = data.pills.join('');
-  }
-
-  // Update Telemetry Progress Meter (Card 4)
-  if (fillEl && data.progress) {
-    fillEl.style.width = data.progress;
-  }
-  if (percLblEl && data.progress) {
-    percLblEl.textContent = data.progress;
+    updateOrbitalFocusCard(data.options[currentActiveOptionIndex]);
   }
 }
+
+function selectDeliverableOption(optIndex) {
+  currentActiveOptionIndex = optIndex;
+  const cards = document.querySelectorAll('.deliverable-card');
+  cards.forEach((c, idx) => {
+    if (idx === optIndex) c.classList.add('active-option');
+    else c.classList.remove('active-option');
+  });
+  if (typeof playSciFiChirpSound === 'function') {
+    try { playSciFiChirpSound(); } catch(e){}
+  }
+}
+
+function selectOrbitalOption(optIndex) {
+  currentActiveOptionIndex = optIndex;
+  const data = pipelineStepsData[currentStageIndex];
+  if (!data) return;
+
+  const nodes = document.querySelectorAll('.orbital-node');
+  nodes.forEach((n, idx) => {
+    if (idx === optIndex) n.classList.add('active');
+    else n.classList.remove('active');
+  });
+
+  const angleStep = 360 / data.options.length;
+  const targetRotation = - (optIndex * angleStep);
+  const ring = document.getElementById('orbital-ring');
+  if (ring) {
+    ring.style.transform = `rotate(${targetRotation}deg)`;
+  }
+
+  updateOrbitalFocusCard(data.options[optIndex]);
+  if (typeof playSciFiChirpSound === 'function') {
+    try { playSciFiChirpSound(); } catch(e){}
+  }
+}
+
+function updateOrbitalFocusCard(opt) {
+  if (!opt) return;
+  const focusImg = document.getElementById('orbital-focus-img');
+  const focusTag = document.getElementById('orbital-focus-tag');
+  const focusTitle = document.getElementById('orbital-focus-title');
+  const focusDesc = document.getElementById('orbital-focus-desc');
+
+  if (focusImg) {
+    focusImg.style.opacity = '0.2';
+    setTimeout(() => {
+      focusImg.src = opt.image;
+      focusImg.style.opacity = '1';
+    }, 150);
+  }
+  if (focusTag) focusTag.innerHTML = `<i class="fas ${opt.icon}"></i> ${opt.tag}`;
+  if (focusTitle) focusTitle.textContent = opt.title;
+  if (focusDesc) focusDesc.textContent = opt.desc;
+}
+
+function toggleShowcaseView(mode) {
+  const container = document.getElementById('stage-showcase-container');
+  const btnGrid = document.getElementById('btn-view-grid');
+  const btnOrbit = document.getElementById('btn-view-orbit');
+
+  if (!container) return;
+
+  if (mode === 'orbit') {
+    container.classList.add('mode-orbital');
+    container.classList.remove('mode-grid');
+    if (btnGrid) btnGrid.classList.remove('active');
+    if (btnOrbit) btnOrbit.classList.add('active');
+  } else {
+    container.classList.add('mode-grid');
+    container.classList.remove('mode-orbital');
+    if (btnGrid) btnGrid.classList.add('active');
+    if (btnOrbit) btnOrbit.classList.remove('active');
+  }
+
+  const data = pipelineStepsData[currentStageIndex];
+  if (data) renderStageDeliverables(data);
+}
+
 window.selectHudStep = selectHudStep;
+window.selectDeliverableOption = selectDeliverableOption;
+window.selectOrbitalOption = selectOrbitalOption;
+window.toggleShowcaseView = toggleShowcaseView;
 
 /* ==========================================================================
    AUTHENTIC VINTAGE TV SOUND EFFECTS (WEB AUDIO SYNTHESIZER)
